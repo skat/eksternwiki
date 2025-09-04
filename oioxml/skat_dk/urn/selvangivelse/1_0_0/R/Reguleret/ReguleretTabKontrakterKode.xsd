@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:regulerettabkontrakterkode="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="ReguleretTabKontrakterKode" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>I rubrik 87 felt 782 skal angives, om der ønsker at årets tab på aktiebaserede finansielle kontrakter skal anvendes i årets gevinst på aktier optaget til handel på et reguleret marked. Hvis man er gift, kan man vælge om tab kun skal bruges i egen gevinst på aktier eller om tabet skal overføres til ægtefælle, hvis man ikke selv kan bruge det. Værdisættet (felt 782 rubrik 87)  Blank - Tab modregnes ikke.  Markering i denne rubrik betyder, at tab på aktiebaserede finansielle kontrakter ikke bliver modregnet i gevinst på aktier optaget til handel på reguleret marked. 1 -Tab modregnes i egen indkomst.  Markering i denne rubrik betyder, at tab på aktiebaserede finansielle kontrakter kun bruges i egen gevinst på aktier optaget til handel på reguleret marked. 2 -Tab modregnes i egen og ægtefælles indkomst.  Markering i denne rubrik betyder, at tab på aktiebaserede finansielle kontrakter, som ikke brugers overføres til ægtefælle. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

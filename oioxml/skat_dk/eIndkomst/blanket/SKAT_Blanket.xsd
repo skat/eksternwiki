@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanket/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Angiver hvilke blanketter som anvendes for hvilke pligter/forretningsområder. Der findes ikke altid specifikke blanketter ved angivelse af punktafgifter. Blanketterne opbygges så i stedet ved hjælp af blankettens parametre.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/blanket/SKAT_BlanketNummerIdentifikator.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/blanket/SKAT_BlanketNavn.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/blanket/SKAT_BlanketKortNavn.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/blanket/SKAT_BlanketGyldigPeriode.xsd"/>
+</xs:schema>

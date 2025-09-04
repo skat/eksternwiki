@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:tofamilieenhedbenyttelseskode="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="TofamilieenhedBenyttelseskode" type="xs:integer">
+        <xs:annotation>
+            <xs:documentation>Kode vedrører lejlighedens anvendelse i danske tofamilieshuse. Koden kan have følgende værdier:   1 = angiver har rådighed over lejligheden 2 = medejer har rådighed over lejligheden 3 = angiver udlejer lejligheden hele året  Koden skal kun indberettes på ejendomme opsat med to enhedsløbenumre (felt 705=4). Koden skal sammen med enhedsløbenr indberettes på hver enkelt lejlighed. Værdien 2 kan ikke indberettes på begge enhedsløbenumre. </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

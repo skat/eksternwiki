@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/feltenhedtype/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Beskrivelser af enhedstyper, fx antal eller beløb eller EURO mv.</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/xkom_dk/XKOM_DateInterval.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/feltenhedtype/SKAT_FeltEnhedTypeKode.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/feltenhedtype/SKAT_FeltEnhedTypeTekst.xsd"/>
+	<xs:element name="FeltEnhedTypeGyldigPeriode" type="xkom:DateIntervalType"/>
+</xs:schema>

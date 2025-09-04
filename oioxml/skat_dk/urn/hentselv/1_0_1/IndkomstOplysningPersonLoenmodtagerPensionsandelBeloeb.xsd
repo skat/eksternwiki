@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:indkomstoplysningpersonloenmodtagerpensionsandelbeloeb="urn:oio:skat:hentselv:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.1" version="1.0" xml:lang="DA">
+	<xs:element name="IndkomstOplysningPersonLoenmodtagerPensionsandelBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Lønmodtagerens egen andel af fradragsberettiget, arbejdsgiveradministreret opsparing til pension. ATP-opsparing skal ikke indgå i feltet.  Forekommer der eget bidrag til fradragsberettiget/bortseelsesberettiget, arbejdsgiveradministreret pension, skal beløbet indberettes for perioder i 2017 og senere. Beløb kan indberettes for 2016.  For statsansatte, hvor arbejdsgiver reelt indbetaler det fulde beløb - altså ingen reel egenbetaling - men det fremgår af lønsedlen, at en tredjedel af beløbet betragtes som egenbetaling, da skal denne tredjedel indberettes.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

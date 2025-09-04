@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:personkontroloplysninggaeldrealkreditinstitutejerstatuskode="urn:oio:skat:hentselv:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="PersonKontrolOplysningGaeldRealkreditinstitutEjerStatusKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A - Udlodning, med fradragsret, model 2. B - Udlodning, med fradragsret, model 3. C - Som A, med for valutaudlændinge. D - Som B, med for valutaudlændinge. U - Diplomater mv. 0 - Kontohaver er enkeltperson, ikke valutaudlænding. 1 - Kontohaver er enkeltperson, valutaudlænding. 2 - Kontohaver er forening, selskab el.lign., ikke valutaudlænding. 4 - Konto deles af 2 personer. 5 - Konto deles af 2 personer, hvoraf mindst en er valutaudlænding. 7 - Flygtninge, kun gældende i IRTE(minus OBLG). 8 - Depotkode af KAP (Kapitalpension, Selvpension, Ratepension mfl.)Børneopsparingsdepoter</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

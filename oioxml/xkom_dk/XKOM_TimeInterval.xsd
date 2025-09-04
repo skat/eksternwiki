@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns:xkom-2006="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<include schemaLocation="http://eksternwiki.skat.dk/oioxml/xkom_dk/XKOM_DurationMeasure.xsd"/>
+	<import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/xkom_dk/XKOM_StartDateTime.xsd"/>
+	<import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/xkom_dk/XKOM_EndDateTime.xsd"/>
+	<element name="TimeInterval" type="xkom:TimeIntervalType"/>
+	<complexType name="TimeIntervalType">
+		<choice>
+			<sequence>
+				<element ref="xkom-2006:StartDateTime"/>
+				<choice minOccurs="0">
+					<element ref="xkom-2006:EndDateTime"/>
+					<element ref="xkom:DurationMeasure"/>
+				</choice>
+			</sequence>
+			<sequence>
+				<element ref="xkom:DurationMeasure"/>
+				<element ref="xkom-2006:EndDateTime" minOccurs="0"/>
+			</sequence>
+			<element ref="xkom-2006:EndDateTime"/>
+		</choice>
+	</complexType>
+</schema>

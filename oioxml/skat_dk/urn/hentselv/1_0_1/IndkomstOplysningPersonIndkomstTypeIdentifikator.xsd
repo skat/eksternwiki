@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:indkomstoplysningpersonindkomsttypeidentifikator="urn:oio:skat:hentselv:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.1" version="1.0" xml:lang="DA">
+	<xs:element name="IndkomstOplysningPersonIndkomstTypeIdentifikator" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Indkomsttype-kode der identificerer indberetningen nærmere:
+
+00 = Almindelige lønmodtagere.
+
+01 = Personer der modtager uddannelsesydelse (SU) - må kun bruges af SU-styrelsen.
+
+02 = Anvendes ikke pt.
+
+03 = Ansatte under reglerne vedr. Grønlandsskat
+
+04 = Personer der modtager anden personlig indkomst, hvoraf der ikke skal betales AM-bidrag. Fx, dagpenge, G-dages-godtgørelse, pension, kommunal ressourceforløbsydelse, når den er på baggrund af anden ydelse end kontanthjælp, kommunalt flekslønstilskud, anden overførselsindkomst - ikke sygedagpenge udbetalt af det offentlige, hvor der skal anvendes indkomsttype 07
+
+05 = Personer der alene får udbetalt B-indkomst. Hvis personen også har fået A-indkomst, så bruges koden 00.
+
+06 = Personer der får kontanthjælp - må kun bruges af kommuner.
+
+07 = Syge- og barselsdagpenge udbetalt af det offentlige, direkte til personen.
+
+08 = Personer der beskattes efter KSL §48E og F - udenlandske forskere og nøglemedarbejdere mv. Anvendes kode 08 skal rubrik kode 68 udfyldes med kode 48 for 25%'s beskatning eller kode 33 for 33%'s beskatning, i én og samme indberetning (Det er altså nu muligt at lade sig beskatte med 33 % i 5 år, i stedet for 25% i 3 år)
+
+09 = AM-bidragsfri og A-skattefri løn i ansættelsesforhold, ref. danske virksomheders udenlandske medarbejderes løn for arbejde udført i udlandet. Kode 0014 i record 6001.
+
+20 = Udbetaling af indkomst fra Arbejdsmarkedets Fond for Udstationerede lønmodtagere
+
+24 = Som kode 04, men for ydelser, hvori der ikke kan ske lønindeholdelse. Denne kode skal bl.a. bruges til VEU-godtgørelse og forsikringsydelser, der er A-skattepligtige, men hvori der ikke må lønindeholdes, jf. inddrivelsesbekendtgørelsens §12. Indberetter skal have bevilling hos SKAT for at kunne indberette indkomst med denne beskæftigelseskode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

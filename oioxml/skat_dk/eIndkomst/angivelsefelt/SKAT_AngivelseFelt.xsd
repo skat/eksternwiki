@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Indeholder oplysning om alle de felter, der er indberettet for en given blanket for en given lønningsperiode for en given virksomhed. Der kan være fra 1 til mange forekomster af blanketfelt til en blanket.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelsefelt/SKAT_AngivelseFeltIndholdTekst.xsd"/>
+	<!-- AngivelseFeltNummer er udgået -->
+</xs:schema>

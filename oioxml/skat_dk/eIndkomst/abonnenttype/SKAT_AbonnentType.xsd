@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Angiver de abonnenter, som der kan oprettes abonnement for, dvs. hvem der abonnerer. Der kan ikke dynamisk oprettes nye værdier af abonnenttype, medmindre dette er omfattet af et standardabonnement.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/abonnenttype/SKAT_AbonnentTypeKode.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/abonnenttype/SKAT_AbonnentTypeTekst.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/abonnenttype/SKAT_AbonnentTypeGyldigPeriode.xsd"/>
+</xs:schema>

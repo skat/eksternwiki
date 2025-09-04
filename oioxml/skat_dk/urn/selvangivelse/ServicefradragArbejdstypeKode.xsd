@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:servicefradragarbejdstypekode="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="ServicefradragArbejdstypeKode" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Koder der kan indberettes: A1 A2 A3 A4 A5 B1 B2 B3 B4 Kodebeskrivelse: A1 = Rengøring og vinduespudsning (RENPUDS) A2 = Børnepasning (BØRNEPAS) A3 = Havearbejde, (HAVEARB) A4 = Installation af tyverialarm(INSTYVA) A5 = Reparation af hårde hvidevarer(REPHHVA) B1 = Klima- og miljøsikring(KLIMLJØ) B2 = Arbejde på vedvarende energianlæg(VDVNRGA) B3 = Energirenovering af husets ydre lag(ENRGREN) B4 = Forbedring af varme-, køling-, og ventilationsanlæg(VAKØVEN) Bemærkninger: Kode A# = serviceydelser med max grænse (grundbeløb i 202510-niveau 5.417.500 kr.) Felt 461 Kode b# = Håndværkerydelser med max grænse (grundbeløb i 2025-niveau 8.600 kr.) Felt 460 Beløbsgrænsen reguleres årligt.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Indeholder sammenhæng mellem indkomstudbetaler og indkomstmodtager ved erhvervelse af forskellige indkomsttyper, eksempelvis løn for personligt arbejde i tjenesteforhold, udbetaling af pension, kontanthjælp, understøttelse osv. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/ansaettelseforhold/SKAT_AnsaettelseforholdTilhoersforholdTekst.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/ansaettelseforhold/SKAT_AnsaettelseforholdMedarbejderIdentifikator.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/ansaettelseforhold/SKAT_AnsaettelseforholdSupplerendeMedarbejderIdentifikator.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/ansaettelseforhold/SKAT_AnsaettelseforholdPeriode.xsd"/>
+</xs:schema>

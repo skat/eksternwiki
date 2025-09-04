@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:personselvangivelsebeskatningsordningkode="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="PersonSelvangivelseBeskatningsordningKode" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Kode for valgt beskatningsordning, som fx kan være beskatning efter kapitalafkastordningen (kaldes også for virksomhedskode). Felt 184.  Værdisæt: Blank = Ikke i virksomhedsordning eller kapitalafkastordning, ikke vekselerer. 1 = Virksomhedsordning, ikke vekselerer. 2 = Virksomhedsordning, vekselerer. 3 = Ikke i virksomhedsordning eller kapitalafkastordning, vekselerer. 4 = Kapitalafkastordning, ikke vekselerer. 5 = Kapitalafkastordning, vekselerer. (Koderne 2, 3 og 5 kan ikke tilvælges via TastSelv). </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

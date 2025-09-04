@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/person/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Privat person identificeret ved et personnummer (CPR-nummer). </xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/xkom_dk/XKOM_DateInterval.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://eksternwiki.skat.dk/oioxml/cpr_dk/PersonCivilRegistrationIdentifier.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/person/SKAT_PersonGyldigPeriode.xsd"/>
+	<xs:element name="PersonCPRNummer" type="cpr:PersonCivilRegistrationIdentifierType">
+		<xs:annotation>
+			<xs:documentation>CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PersonNavnAdresseBeskyttelseMarkering" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Generel type for markeringer. Kan være 1=sand eller 0=falsk</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PersonFødselDato" type="xs:date"/>
+</xs:schema>

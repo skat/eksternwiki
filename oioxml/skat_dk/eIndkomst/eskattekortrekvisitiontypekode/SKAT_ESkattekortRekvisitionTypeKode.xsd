@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:eskattekortrekvisitiontypekode="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekortrekvisitiontypekode/xml/schemas/20071202/" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekortrekvisitiontypekode/xml/schemas/20071202/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="ESkattekortRekvisitionTypeKode" type="eskattekortrekvisitiontypekode:ESkattekortRekvisitionTypeKodeType">
+    <annotation>
+      <documentation>Kode som entydig identificerer den type af eSkattekort, som en bruger rekvirerer.   Der kan pt. anvendes følgende værdier af eSkattekortRekvisitionType:  1 = hovedkort 2 = bikort 6 = hovedkort uden lønindeholdelse  7 = bikort uden lønindeholdelse</documentation>
+    </annotation>
+  </element>
+  <simpleType name="ESkattekortRekvisitionTypeKodeType">
+    <restriction base="string">
+      <enumeration value="01" />
+      <enumeration value="02" />
+      <enumeration value="06" />
+      <enumeration value="07" />
+    </restriction>
+  </simpleType>
+</schema>

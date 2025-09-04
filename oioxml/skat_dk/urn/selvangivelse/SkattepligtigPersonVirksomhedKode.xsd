@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:skattepligtigpersonvirksomhedkode="urn:oio:skat:hentselv:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="SkattepligtigPersonVirksomhedKode" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Felt 184: Virksomhedskode (VIRKKOD)  Koden anvendes til at vise, om skatteyderen er tilmeldt virksomhedsordningen eller kapitalafkastordningen og/eller er vekselerer.  Koden har følgende værdier:  Blank = Ikke i virksomhedsordning eller kapitalafkastordning, ikke vekselerer. 1 =  Virksomhedsordning, ikke vekselerer. 2 = Virksomhedsordning, vekselerer. (se endvidere beskrivelsen til felt 246) 3 = Ikke i virksomhedsordning eller kapitalafkastordning, vekselerer. 4 = Kapitalafkastordning, ikke vekselerer. 5 = Kapitalafkastordning, vekselerer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

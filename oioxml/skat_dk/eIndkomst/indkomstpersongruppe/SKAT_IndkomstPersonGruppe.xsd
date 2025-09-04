@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstpersongruppe/xml/schemas/20071202/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Angiver de oplysninger, som er fælles for en indberetning til eIndkomst, for en gruppe af indkomstmodtagere</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/indkomstpersongruppe/SKAT_IndkomstPersonGruppeDispositionDato.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/indkomstpersongruppe/SKAT_IndkomstPersonGruppeForudBagudLoenKode.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/indkomstpersongruppe/SKAT_IndkomstPersonGruppeTilbagefoertVirksomhedEgenIdentifikator.xsd"/>
+	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/indkomstpersongruppe/SKAT_IndkomstPersonGruppeTilbagefoertIndikator.xsd"/>
+</xs:schema>
