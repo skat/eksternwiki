@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:eindkomst="urn:oio:skat:eindkomst:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../class/SoegeAarMaanedTilKode.xsd"/>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../class/SoegeAarMaanedFraKode.xsd"/>
+	<xs:element name="SoegeAarMaanedLukketStruktur" type="eindkomstws:SoegeAarMaanedLukketStrukturType"/>
+	<xs:complexType name="SoegeAarMaanedLukketStrukturType">
+		<xs:sequence>
+			<xs:element ref="eindkomst:SoegeAarMaanedFraKode"/>
+			<xs:element ref="eindkomst:SoegeAarMaanedTilKode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

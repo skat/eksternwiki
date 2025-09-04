@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringopskrivningaarsagkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringOpskrivningAarsagKode" type="fordringopskrivningaarsagkode:FordringOpskrivningAarsagKodeType">
+		<xs:annotation>
+			<xs:documentation>Mulighed for at vælge en årsag til opskrivning af fordring ud fra en fast liste. Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige.
+Mulige koder:
+FEJL: Tidligere fejlagtigt nedskrevet. 
+TIND: Tilbageført indbetaling 
+FAST: Endelig fastsættelse (0 beløb tilladt)
+TRVE: Transport verificeret (0 beløb tilladt)
+ANDN: Anden </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FordringOpskrivningAarsagKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FEJL"/>
+			<xs:enumeration value="TIND"/>
+			<xs:enumeration value="FAST"/>
+			<xs:enumeration value="ANDN"/>
+			<xs:enumeration value="TRVE"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

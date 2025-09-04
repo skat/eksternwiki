@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>FødevareErhverv kalder denne service for at informere DMI, hvis FødevareErhverv har en transport  i en udbetaling og der er et overskydende beløb til modregning hos til SKAT.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/DMIFERVModregningModtag_IType.xsd"/>
+	<xs:include schemaLocation="../view/DMIFERVModregningModtag_OType.xsd"/>
+	<xs:element name="DMIFERVModregningModtagInterface" type="dmiws:DMIFERVModregningModtagInterfaceType"/>
+	<xs:complexType name="DMIFERVModregningModtagInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmiws:DMIFERVModregningModtag_I"/>
+			<xs:element ref="dmiws:DMIFERVModregningModtag_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

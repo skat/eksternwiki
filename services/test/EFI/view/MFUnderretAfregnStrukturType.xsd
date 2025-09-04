@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/TransaktionVirkningDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringTypeKategoriKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HaeftelseSubsidiaerKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HaeftelseFormKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverAfregningUnderretKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverAfregningPeriode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverAfregningIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverAfregningDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringProduktionEnhedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="../view/FordringHaverAfregningBeloebStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/FordringAfregningBeloebStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/FordringRestBeloebStrukturType.xsd"/>
+	<xs:element name="MFUnderretAfregnStruktur" type="efiws:MFUnderretAfregnStrukturType"/>
+	<xs:complexType name="MFUnderretAfregnStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringHaverAfregningUnderretKode"/>
+			<xs:element name="UdligningAfregningListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="UdligningAfregning" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efi:FordringHaverAfregningIdentifikator"/>
+									<xs:element ref="efiws:FordringHaverAfregningBeloebStruktur"/>
+									<xs:element ref="efi:FordringHaverAfregningDato"/>
+									<xs:element ref="efi:FordringHaverAfregningPeriode"/>
+									<xs:element name="FordringHaverFordringListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="FordringerOmfattetAfUdligningenAfregningen" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+															<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator"/>
+															<xs:element ref="efi:FordringProduktionEnhedIdentifikator" minOccurs="0"/>
+															<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+															<xs:element ref="efi:FordringFordringArtKode"/>
+															<xs:element ref="efi:FordringTypeKode"/>
+															<xs:element ref="efi:FordringTypeKategoriKode"/>
+															<xs:element ref="efi:TransaktionVirkningDato"/>
+															<xs:element name="HaeftelsesforholdListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="Haeftelsesforhold" minOccurs="1" maxOccurs="unbounded">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="efiws:KundeStruktur"/>
+																					<xs:element ref="efi:HaeftelseFormKode"/>
+																					<xs:element ref="efi:HaeftelseSubsidiaerKode" minOccurs="0"/>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element ref="efiws:FordringAfregningBeloebStruktur"/>
+															<xs:element ref="efiws:FordringRestBeloebStruktur"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

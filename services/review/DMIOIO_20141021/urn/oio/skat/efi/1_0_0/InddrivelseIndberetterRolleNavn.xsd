@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:inddrivelseindberetterrollenavn="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="InddrivelseIndberetterRolleNavn" type="inddrivelseindberetterrollenavn:InddrivelseIndberetterRolleNavnType">
+		<xs:annotation>
+			<xs:documentation>Indberetterens rolle.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="InddrivelseIndberetterRolleNavnType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Borger"/>
+			<xs:enumeration value="Virksomhed"/>
+			<xs:enumeration value="System"/>
+			<xs:enumeration value="Medarbejder"/>
+			<xs:enumeration value="Fordringshaver"/>
+			<xs:enumeration value="Rettighedshaver"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nkspu="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/" xmlns:types="local" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/"><xs:simpleType name="BICIdentifierType"><xs:restriction base="xs:string"><xs:pattern value="[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}"/></xs:restriction></xs:simpleType><xs:element name="BICIdentifier" type="nkspu:BICIdentifierType"/></xs:schema>

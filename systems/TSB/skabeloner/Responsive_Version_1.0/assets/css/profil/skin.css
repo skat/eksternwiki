@@ -1,0 +1,292 @@
+﻿/* DEFAULT (TILPASNING) ***********************************************/
+a {
+	background-color: transparent;
+	color: #000099;
+	font-family:  Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+body {
+	background-color: white;
+	color: #3F6075;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+/* SKIN (TILPASNING) **************************************************/
+
+/* MILJOE *************************************************************/
+#skinmiljoe {
+	background-color: transparent;
+	color: red;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	height: auto;
+	left: 0;
+	padding-left: 10px;
+	position: absolute;
+	top: 20px;
+	white-space: nowrap;
+	width: auto;
+	z-index: 5;
+}
+/* SAG ****************************************************************/
+#skinpartident {
+	font-size: 8pt;
+	height: auto;
+	left: 0;
+	padding-left: 10px;
+	position: absolute;
+	top: 35px;
+	white-space: nowrap;
+	width: auto;
+	z-index: 10;
+}
+a.skinpartlink {
+	background-image: url("../../images/profil/latransp.gif");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	display: block;         /* Af hensyn til padding-left i IE5.0 */
+	font-size: 8pt;
+	padding-left: 9px;
+}
+/* TOP ****************************************************************/
+#skintop {
+	height: auto;
+	margin-top: 1px;
+	position: relative;
+	width: 100%;
+}
+table.skintop {
+	border-collapse: collapse;
+	border-spacing: 0; 
+	width: 100%;
+}
+td.skintopmenu {
+	background-color: white;
+	color: #3F6075;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	height: 16px;
+	padding: 0;
+	white-space: nowrap;
+	width: 100%; 
+}
+span.skintopmenulinkfoerst {
+	padding-left: 10px;
+}
+span.skintopmenulinknaest {
+	padding-left: 8px;
+}
+span.skintopmenulinkbrud {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+a.skintopmenulink {
+	background-color: white;
+	color: #3F6075;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+}
+td.skinlogoimg {
+	padding: 0;
+	vertical-align: bottom;            /* Af hensyn til skalering */
+}
+img.skinlogo {
+	border: none;
+	display: block;  /* Af hensyn til strict.dtd i visse browsere */
+	height: 80px;
+	margin: 0;
+	padding: 0;
+	width: 160px;
+}
+td.skinlogobar {
+	color: #3F6075;
+	background-image: url("../../images/profil/header_bg_gradient.gif");
+	background-repeat: repeat-y;       /* Af hensyn til skalering */
+	background-color: #FFC61E;
+	height: 64px;
+	padding: 0;
+}
+div.skinlogobarminbredde { /* Holder logo vaek fra gradueret topfarve */
+	height: auto;
+	width: 440px;                 /* 600px - width paa logo 160px */
+}
+/* SYSTEMMENU *********************************************************/
+#skinsystemmenu {
+	background-color: #658091;
+	color: white;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	height: auto;                      /* Af hensyn til skalering */
+	line-height: 25px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+	min-width: 600px;
+	padding-bottom: 1px;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+	text-align: left;
+}
+span.skinsystemmenulinkfoerst {
+	padding-left: 10px;
+	padding-right: 8px;
+}
+span.skinsystemmenulinknaest {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+a.skinsystemmenulink {
+	background-color: #658091;
+	color: white;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+}
+a.skinsystemmenulink:active {
+	color: #FFC61E;
+}
+a.skinsystemmenulink:active:hover {
+	color: white;
+}
+a.skinsystemmenulink:focus {
+	color: #FFC61E;
+}
+a.skinsystemmenulink:focus:hover {
+	color: white;
+}
+/* SYSTEMNAVN *********************************************************/
+#skinsystemnavn {
+	color: #3F6075;
+	background-color: #FFF8E3;
+	height: auto;
+	min-width: 600px;
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+#skinsystemnavnskaerm {
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 600px;
+	text-align: left;
+}
+img.skinsystemnavnskaerm {
+	display: block;  /* Af hensyn til strict.dtd i visse browsere */
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	width: 600px;
+}
+div.skinsystemnavnstregskaerm {
+	background-color: #658091;
+	background-image: url("../../images/profil/hr_bg.gif");
+	background-repeat: no-repeat;
+	height: 5px;
+	margin-left: 2px;
+	width: 300px;
+}
+div.skinsystemnavnstregskaerm hr {
+	display: none;
+}
+#skinsystemnavnprint {
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 4px;
+	position: relative;
+	width: 600px;
+	text-align: left;
+}
+div.skinsystemnavnprint {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20pt;
+	font-style: italic;
+	height: auto;
+	width: auto;
+	text-align: left;
+}
+div.skinsystemnavnstregprint {
+	border-top: 3px solid #3F6075;
+	height: auto;
+	line-height: 1px;
+	margin-top: 2px;
+	width: 298px;
+}
+/* BUND ***************************************************************/
+#skinbund {
+	background-color: #658091;
+	color: white;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	height: auto;                      /* Af hensyn til skalering */
+	line-height: 25px;
+	margin-top: 1px;
+	min-width: 600px;
+	padding-bottom: 1px;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+	text-align: left;
+}
+span.skinbundmenulink {
+	padding-left: 10px;
+}
+a.skinbundmenulink {
+	background-color: #658091;
+	color: white;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+}
+a.skinbundmenulink:active {
+	color: #FFC61E;
+}
+a.skinbundmenulink:active:hover {
+	color: white;
+}
+a.skinbundmenulink:focus {
+	color: #FFC61E;
+}
+a.skinbundmenulink:focus:hover {
+	color: white;
+}
+/* FORMULAR ***********************************************************/
+input.skinknapnormal {
+	color: #000000;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	height: 20pt;
+	text-align: center;
+	width: 75pt;
+}
+input.skinknapudvidet {
+	color: #000000;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	height: 20pt;
+	text-align: center;
+	width: 125pt;
+}
+/* GENERELT ***********************************************************/
+div.skinminbredde { /* Simulerer css-egenskaben min-width i IE mv.    */
+	height: auto;
+	line-height: 1px;
+	width: 600px;
+}
+
+@media screen {
+	#skinsystemnavnprint {display: none}
+	#skinsystemnavnprint {display: none}      /* Af hensyn til IE4 */
+}

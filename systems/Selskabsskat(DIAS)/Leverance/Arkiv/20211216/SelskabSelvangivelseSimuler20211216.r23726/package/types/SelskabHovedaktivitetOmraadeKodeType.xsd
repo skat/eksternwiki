@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="SelskabHovedaktivitetOmrådeKodeType">
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver den skattepligtiges hovedaktivitetsområde.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="PRODUKTION"/>
+                  <xs:enumeration value="HANDEL"/>
+                  <xs:enumeration value="FINANCIEL"/>
+                  <xs:enumeration value="SERVICE"/>
+                  <xs:enumeration value="ANDET"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

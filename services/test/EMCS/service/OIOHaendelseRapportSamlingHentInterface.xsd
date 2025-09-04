@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="../view/OIOHaendelseRapportSamlingHent_IType.xsd"/>
+	<xs:include schemaLocation="../view/OIOHaendelseRapportSamlingHent_OType.xsd"/>
+	<xs:element name="OIOHaendelseRapportSamlingHentInterface" type="struct:OIOHaendelseRapportSamlingHentInterfaceType"/>
+	<xs:complexType name="OIOHaendelseRapportSamlingHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="struct:OIOHaendelseRapportSamlingHent_I"/>
+			<xs:element ref="struct:OIOHaendelseRapportSamlingHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

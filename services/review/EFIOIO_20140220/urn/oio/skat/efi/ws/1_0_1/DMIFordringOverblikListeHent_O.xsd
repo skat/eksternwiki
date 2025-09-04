@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/InddrivelseFordringHaverNavn.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetInddrivelseGebyrDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetInddrivelseRenteDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetOpkraevningGebyrDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetOpkraevningRenteDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeIkkeGaeldIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeSamletGaeldAntalHovedfordringerKvantitet.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeSamletGaeldAeldsteModtagelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeSamletGaeldDKKBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeTypeKode.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringStiftelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringSidsteRettidigeBetalingDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringModtagelseDatoTid.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="KundeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringPeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringRestBeloebStruktur.xsd"/>
+	<xs:element name="DMIFordringOverblikListeHent_O" type="efiws:DMIFordringOverblikListeHent_OType">
+	</xs:element>
+	<xs:complexType name="DMIFordringOverblikListeHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="FordringOverblikListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FordringOverblik" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efiws:KundeStruktur"/>
+									<xs:element name="KundeStatusOpsummering">
+										<xs:complexType>
+											<xs:choice>
+												<xs:sequence>
+													<xs:element name="KundeHarGaeld">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="efi:KundeSamletGaeldDKKBeloeb"/>
+																<xs:element ref="efi:KundeSamletGaeldAeldsteModtagelseDato"/>
+																<xs:element ref="efi:KundeSamletGaeldAntalHovedfordringerKvantitet"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:element ref="efi:KundeIkkeGaeldIndikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="HovedFordringListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="HovedFordringInformation" minOccurs="0" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+															<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+															<xs:element ref="efi:FordringTypeKode"/>
+															<xs:element ref="efi:FordringSidsteRettidigeBetalingDato"/>
+															<xs:element ref="efi:FordringModtagelseDatoTid"/>
+															<xs:element ref="efi:FordringStiftelseDato"/>
+															<xs:element ref="efiws:FordringPeriodeStruktur"/>
+															<xs:element ref="efiws:FordringRestBeloebStruktur"/>
+															<xs:element ref="efi:TilknyttetOpkraevningRenteDKKBeloeb"/>
+															<xs:element ref="efi:TilknyttetOpkraevningGebyrDKKBeloeb"/>
+															<xs:element ref="efi:TilknyttetInddrivelseRenteDKKBeloeb"/>
+															<xs:element ref="efi:TilknyttetInddrivelseGebyrDKKBeloeb"/>
+															<xs:element name="FordringshaverInfo">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="dmi:SkatKundeIdentifikator"/>
+																		<xs:element ref="dmi:SkatKundeTypeKode"/>
+																		<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+																		<xs:element ref="efi:InddrivelseFordringHaverNavn"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

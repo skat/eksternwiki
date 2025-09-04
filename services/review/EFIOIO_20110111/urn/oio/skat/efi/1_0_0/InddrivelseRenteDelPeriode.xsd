@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:inddrivelserentedelperiode="urn:oio:skat:efi:1.0.0" xmlns:dateintervaltype="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" schemaLocation="../../../../../xkom_dk/xml/schemas/2007/09/01/DateInterval.xsd"/>
+	<xs:element name="InddrivelseRenteDelPeriode" type="dateintervaltype:DateIntervalType">
+		<xs:annotation>
+			<xs:documentation>Dato hvorfra renten beregnes eller tilskrives</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

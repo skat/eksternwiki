@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Indeholder navn på et land.</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/>
+	<xs:include schemaLocation="LandNavn.xsd"/>
+	<xs:element name="LandKode" type="dkcc:CountryIdentificationCodeType"/>
+</xs:schema>

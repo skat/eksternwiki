@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringUnderretningIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringUnderretningDatoTid.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverIdentifikator.xsd"/><xs:include schemaLocation="MFUnderretReturnerStruktur.xsd"/>
+	<xs:include schemaLocation="MFUnderretAfskrivStruktur.xsd"/>
+	<xs:include schemaLocation="MFUnderretAfregnStruktur.xsd"/>
+	<xs:include schemaLocation="MFUnderretRenteTilskrivningStruktur.xsd"/>
+	<xs:include schemaLocation="MFUnderretModregningStruktur.xsd"/>
+	<xs:include schemaLocation="MFUnderretNyFordringHaverStruktur.xsd"/>
+	<xs:element name="MFUnderretSamlingHent_O" type="efiws:MFUnderretSamlingHent_OType">
+	</xs:element>
+	<xs:complexType name="MFUnderretSamlingHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="UnderretSamling" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MFUnderret" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efi:ModtagFordringUnderretningIdentifikator"/>
+									<xs:element ref="efi:ModtagFordringUnderretningDatoTid"/>
+									<xs:element ref="efi:FordringHaverIdentifikator"/>
+									<xs:element name="UnderretValg">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="efiws:MFUnderretReturnerStruktur"/>
+												<xs:element ref="efiws:MFUnderretAfskrivStruktur"/>
+												<xs:element ref="efiws:MFUnderretAfregnStruktur"/>
+												<xs:element ref="efiws:MFUnderretRenteTilskrivningStruktur"/>
+												<xs:element ref="efiws:MFUnderretModregningStruktur"/>
+												<xs:element ref="efiws:MFUnderretNyFordringHaverStruktur"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

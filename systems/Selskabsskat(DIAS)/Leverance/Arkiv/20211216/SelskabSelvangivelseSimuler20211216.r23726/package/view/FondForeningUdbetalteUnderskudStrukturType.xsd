@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Underskud.xsd"/>
+         <xs:include schemaLocation="../class/ForskningAktivitet.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/SaerbeskattetForskning.xsd"/>
+         <xs:include schemaLocation="../class/SambeskattetForskning.xsd"/>
+         <xs:include schemaLocation="../class/TIN.xsd"/>
+         <xs:include schemaLocation="../class/AktionaerForskning.xsd"/>
+				     
+         <xs:include schemaLocation="../class/SelskabHaendelse.xsd"/>
+         <xs:include schemaLocation="../view/UnderskudForskningAktionaerStrukturType.xsd"/>
+				     
+         <xs:element name="FondForeningUdbetalteUnderskudStruktur"
+                     type="skat2012:FondForeningUdbetalteUnderskudStrukturType"/>
+         <xs:complexType name="FondForeningUdbetalteUnderskudStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:UnderskudForskningUdbetalingAnsøgning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UnderskudForskning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UnderskudForskningSambeskatning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ForskningAktivitetAnsøger" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="KontaktoplysningerAnsøger" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:PersonNavnNavn" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:EmailAdresseEmail" minOccurs="0"/>
+
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="Fastnettelefon" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="skat2012:TelefonInternationalNummer"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="Mobiltelefon" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="skat2012:TelefonInternationalNummer"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="skat2012:SærbeskattetForskningPeriode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærbeskattetForskningPeriodeHent" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærbeskattetForskningSkattepligtigIndkomstFørUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærbeskattetForskningSkatteværdiUnderskudAnsøgt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærbeskattetForskningOmkostningStraksafskrivning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærbeskattetForskningNedsættelseUnderskudSkattekredit"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SambeskattetForskningPeriode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SambeskattetForskningPeriodeHent" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SambeskattetForskningSkattepligtigIndkomstFørUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SambeskattetForskningSkatteværdiUnderskudAnsøgt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SambeskattetForskningOmkostningStraksafskrivning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SambeskattetForskningNedsættelseUnderskudSkattekredit"
+                           minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="OplysningerAktionær" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:ForskningAktivitetPeriodeHent" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:TINNummer" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:PersonNavnNavn" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:AktionærForskningBeløbTilUdbetaling" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="skat2012:AktionærForskningUnderskudSum" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedSkatteordning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedPeriode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedPeriodeHent" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedSkattepligtigIndkomstFørUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedSkatteværdiUnderskudAnsøgt"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedOmkostningStraksafskrivning"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedNedsættelseUnderskudSkattekredit"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktionærForskningVirksomhedUnderskud" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UnderskudForskningAktionærStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseForhøjetFradragAfskrivningsloven" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseForhøjetFradragAfskrivningslovenAnskaffelsessum"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseForhøjetFradragLigningsloven" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseForhøjetFradragLigningslovenAnskaffelsessum"
+                           minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

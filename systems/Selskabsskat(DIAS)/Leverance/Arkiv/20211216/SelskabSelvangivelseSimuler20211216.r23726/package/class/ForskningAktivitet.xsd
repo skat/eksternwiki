@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Oplysninger vedrørende anvendelse af skattekreditordningen </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel1Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:element name="ForskningAktivitetAnsøger" type="skat2012:TalHel1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af hvem der ansøger om skattekredit. Felt 604</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForskningAktivitetPeriodeHent" type="skat2012:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver perioden der ansøges om udbetaling af skattekredit for. Felt 615</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

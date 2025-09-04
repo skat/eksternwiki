@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         
+         <xs:element name="SelskabSkattepligtTilmeldt" type="skat2012:MarkeringType">
+            <xs:annotation>
+               <xs:documentation>Angiver om selskabet er tilmeldt som selskabsskattepligtigt. (Ved bestilling sættes feltet til den ØNSKEDE tilstand) (true = ja, false = nej)</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

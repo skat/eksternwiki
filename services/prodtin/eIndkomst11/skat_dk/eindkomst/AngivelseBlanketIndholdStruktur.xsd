@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AngivelseNiveau1.xsd"/>
+         <xs:element name="AngivelseBlanketIndholdStruktur" type="fase2:AngivelseBlanketIndholdStrukturType"/>
+         <xs:complexType name="AngivelseBlanketIndholdStrukturType">
+               <xs:sequence>
+               <xs:element name="AngivelseOplysningSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="fase2:AngivelseNiveau1"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

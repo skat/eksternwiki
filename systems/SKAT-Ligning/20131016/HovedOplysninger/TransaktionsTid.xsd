@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tsk="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:element name="TransaktionsTid" type="tsk:TransaktionsTidType">
+		<xs:annotation>
+			<xs:documentation source="../meta/TransaktionsTid.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="TransaktionsTidType">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:spilws="urn:oio:skat:spil:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:spil:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:spil="urn:oio:skat:spil:1.0.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:nemkonto="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningDato.xsd"/><xs:import namespace="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/" schemaLocation="../../../../../../oes_dk/nemkonto/xml/schemas/2007/10/01/IBANIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/" schemaLocation="../../../../../../oes_dk/nemkonto/xml/schemas/2007/10/01/BICIdentifier.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningModtagerDanskKontoNummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningModtagerMomsnummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/DistrictName.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningModtagerPostNummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningModtagerAdresseTekst.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpilVelgoerendeFormaalUdlodningModtagerNavn.xsd"/><xs:element name="SpillestedUdlodningListeStruktur" type="spilws:SpillestedUdlodningListeStrukturType"/>
+	<xs:complexType name="SpillestedUdlodningListeStrukturType">
+		<xs:sequence>
+			<xs:element name="UdlodningListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Spillested" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="UdlodningListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Udlodning" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="Modtager">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningModtagerNavn" minOccurs="0"/>
+																		<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningModtagerAdresseTekst" minOccurs="0"/>
+																		<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningModtagerPostNummerIdentifikator" minOccurs="0"/>
+																		<xs:element ref="dkcc:DistrictName" minOccurs="0"/>
+																		<xs:element ref="dkcc1:CountryIdentificationCode"/>
+																		<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningModtagerMomsnummerIdentifikator"/>
+																		<xs:element name="KontoOplysningValg">
+																			<xs:complexType>
+																				<xs:choice>
+																					<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningModtagerDanskKontoNummerIdentifikator"/>
+																					<xs:sequence>
+																						<xs:element name="Udland">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element ref="nemkonto:BICIdentifier"/>
+																									<xs:element ref="nemkonto:IBANIdentifier"/>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:choice>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningDato"/>
+															<xs:element ref="spil:SpilVelgoerendeFormaalUdlodningBeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

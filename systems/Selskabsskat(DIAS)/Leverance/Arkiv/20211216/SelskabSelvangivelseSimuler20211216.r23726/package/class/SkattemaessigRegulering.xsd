@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositiv10UdenDecimalerType.xsd"/>
+         <xs:element name="SkattemæssigReguleringDebitorTabTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af tab på debitorer. Felt 148</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringUkuransNedskrivningTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Samlet nedskrivning af varelager for ukurans. Felt 149</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringFratrukneHensættelserTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af fratrukne hensættelser. Felt 150</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringLånIndfrielseGevinstTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Samlet gevinst/tab ved indfrielse af kontantlån. Felt 156</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringTilbageførtIndtægtIkkeSkattePligtigTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af visse tilbageførte ikke skattepligtige indtægter. Felt 130</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringTilbageførtIkkeFradragUdgiftTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af visse tilbageførte ikke fradragsberettigede udgifter. Felt 131</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringTabImmaterielSalgTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af skattemæssige tab på salg af immaterielle aktiver (goodwill mv.). Felt 134</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringGevinstAktierEjendomTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af skattemæssige gevinster af: 1 aktier (realisations- og lagerbeskattede) 2 salg af fast ejendom 3 salg af immaterielle aktiver (goodwill mv.) Felt 135</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringGevinstAktierIndgår"
+                     type="skat2012:BeløbPositiv10UdenDecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om aktier (realisations- og lagerbeskattede) indgår i den samlede skattemæssige gevinst.  Felt 136</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringGevinstSalgEjendomIndgår"
+                     type="skat2012:BeløbPositiv10UdenDecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om salg af fast ejendom indgår i den samlede skattemæssige gevinst.  Felt 137</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattemæssigReguleringGevinstSalgImmaterielleIndgår"
+                     type="skat2012:BeløbPositiv10UdenDecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om salg af immaterielle aktiver (goodwill mv.) indgår i den samlede skattemæssige gevinst.  Felt 138</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

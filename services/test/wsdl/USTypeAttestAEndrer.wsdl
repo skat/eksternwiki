@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:oio:skat:motor:ws:1.0.1" name="USTypeAttestAendrerService" xmlns:fase2_1="urn:oio:skat:motor:ws:1.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At marker en typeattest som inaktiv / aktiv ved at opdaterer gyldighedsdatoerne til den.</xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:motor:ws:1.0.1">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/450280/artefact/USTypeAttestAEndrerInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="USTypeAttestAendrerServiceRequest">
+		<part name="Request" element="fase2_1:USTypeAttestAendrer_I"/>
+	</message>
+	<message name="USTypeAttestAendrerServiceResponse">
+		<part name="Response" element="fase2_1:USTypeAttestAendrer_O"/>
+	</message>
+	<portType name="USTypeAttestAendrerServicePortType">
+		<operation name="getUSTypeAttestAendrer">
+			<input message="fase2_1:USTypeAttestAendrerServiceRequest"/>
+			<output message="fase2_1:USTypeAttestAendrerServiceResponse"/>
+		</operation>
+	</portType>
+</definitions>

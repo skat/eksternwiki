@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:complexType name="AnySkat2012XMLType">
+               <xs:sequence>
+                  <xs:any namespace="##any" processContents="skip"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:schema>

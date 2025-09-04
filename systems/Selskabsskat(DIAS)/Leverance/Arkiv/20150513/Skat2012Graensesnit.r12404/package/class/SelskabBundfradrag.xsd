@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="SelskabBundfradragØvrigIndkomst" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bundfradrag i øvrig indkomst (max 25.000 kr. for fonde/200.000 kr. for foreninger) dog max beløb i rubrik 2.  Rubrik 3 og Rubrik 28. Felt 005</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabBundfradragØvrigIndkomstMaks" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bundfradrag, dog max det beløb som fratrækkes i felt 005 Felt 228</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

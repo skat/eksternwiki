@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="GenbeskatningSkyggeSambeskatningSaldo" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Genbeskatningssaldo, jf. Lov nr. 426 af 6. juni 2005 § 15, stk. 8 og 9 som ændret ved Lov nr. 344 af 18. april 2007 § 6 (skyggesambeskatning). Felt 181.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GenbeskatningSkyggeSambeskatningKreditLandSaldo"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Genbeskatningssaldo, se lov nr. 426 af 6. juni 2005 § 15, stk. 8 og 9 som ændret ved lov nr. 344 af 18. april 2007 § 6 (skyggesambeskatning) - kreditland. Felt 181a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GenbeskatningSkyggeSambeskatningExemptionLandSaldo"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Genbeskatningssaldo, se lov nr. 426 af 6. juni 2005 § 15, stk. 8 og 9 som ændret ved lov nr. 344 af 18. april 2007 § 6 (skyggesambeskatning) - exemptionland. Felt 181b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:eindkomst="http://rep.oio.dk/skat.dk/eindkomst/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="IndkomstOplysningPersonHentService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+			<xsd:include schemaLocation="http://rep.oio.dk/skat.dk/eindkomst/service/IndkomstOplysningPersonHentInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="IndkomstOplysningPersonHentServiceRequest">
+		<part name="Request" element="eindkomst:IndkomstOplysningPersonHent_I"/>
+	</message>
+	<message name="IndkomstOplysningPersonHentServiceResponse">
+		<part name="Response" element="eindkomst:IndkomstOplysningPersonHent_O"/>
+	</message>
+	<portType name="IndkomstOplysningPersonHentServicePortType">
+		<operation name="getIndkomstOplysningPersonHent">
+			<input message="eindkomst:IndkomstOplysningPersonHentServiceRequest"/>
+			<output message="eindkomst:IndkomstOplysningPersonHentServiceResponse"/>
+		</operation>
+	</portType>
+	<binding name="IndkomstOplysningPersonHentServiceBinding" type="eindkomst:IndkomstOplysningPersonHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getIndkomstOplysningPersonHent">
+			<soap:operation soapAction="getIndkomstOplysningPersonHent"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="IndkomstOplysningPersonHentServiceBindingQSService">
+		<port name="IndkomstOplysningPersonHentServiceBindingQSPort" binding="eindkomst:IndkomstOplysningPersonHentServiceBinding">
+			<soap:address location="http://85.81.229.78:8080/IndkomstOplysningPersonHentStub"/>
+		</port>
+	</service>
+</definitions>

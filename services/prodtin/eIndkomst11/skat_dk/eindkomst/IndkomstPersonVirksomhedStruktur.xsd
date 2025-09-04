@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="IndberetningForVirksomhedStruktur.xsd"/>
+         <xs:element name="IndkomstPersonVirksomhedStruktur" type="fase2:IndkomstPersonVirksomhedStrukturType"/>
+         <xs:complexType name="IndkomstPersonVirksomhedStrukturType">
+               <xs:sequence>
+               <xs:element name="PersonVirksomhedValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="Person">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				                    </xs:sequence>
+                        <xs:sequence>
+                           <xs:element name="Virksomhed">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2:IndberetningForVirksomhedStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

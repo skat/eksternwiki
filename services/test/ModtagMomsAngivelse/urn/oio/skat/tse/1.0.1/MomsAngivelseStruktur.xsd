@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:momsangivelse="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" xmlns:betaling="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" xmlns:tse2009="urn:oio:skat:tse:1.0.1" xmlns:tse2008="urn:oio:skat:tse:1.0.0" targetNamespace="urn:oio:skat:tse:1.0.1" elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="AngiverSEnummerIdentifikator.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/angivelse/xml/schemas/2006/09/01/ValutaKode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/angivelse/xml/schemas/2006/09/01/AngivelsePeriodeStruktur.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/betaling/xml/schemas/2006/09/01/BetalingsFormidlerKode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/betaling/xml/schemas/2006/09/01/BetalingsDato.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/betaling/xml/schemas/2006/09/01/BetalingsBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseAfgiftTilSvarBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseCOtoAfgiftBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseEksportOmsBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseElAfgiftBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseEUkoebBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseEUsalgBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseGasAfgiftBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseKulAfgiftBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseKoebsMomsBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseEUkoebMomsBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseOlieAfgiftBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseSalgsMomsBeloeb.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/MomsAngivelseVandAfgiftBeloeb.xsd"/>
+	<xs:import namespace="urn:oio:skat:tse:1.0.0" schemaLocation="../1.0.0/MomsAngivelseMomsEUYdelserBeloeb.xsd"/>
+	<xs:element name="MomsAngivelseStruktur" type="tse2009:MomsAngivelseStrukturType">
+		<xs:annotation>
+			<xs:documentation>Samling af felter for en angiver (momspligtig virksomhed) i forbindelse med momsafregning til SKAT.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MomsAngivelseStrukturType">
+		<xs:sequence>
+			<xs:element ref="tse2009:AngiverSEnummerIdentifikator"/>
+			<xs:element ref="angivelse:AngivelsePeriodeStruktur"/>
+			<xs:element ref="angivelse:ValutaKode"/>
+			<xs:element ref="betaling:BetalingsFormidlerKode" minOccurs="0"/>
+			<xs:element ref="betaling:BetalingsDato" minOccurs="0"/>
+			<xs:element ref="betaling:BetalingsBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseAfgiftTilSvarBeloeb"/>
+			<xs:element ref="momsangivelse:MomsAngivelseCOtoAfgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseEksportOmsBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseElAfgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseEUkoebBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseEUsalgBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseGasAfgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseKulAfgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseKoebsMomsBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseEUkoebMomsBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseOlieAfgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseSalgsMomsBeloeb" minOccurs="0"/>
+			<xs:element ref="momsangivelse:MomsAngivelseVandAfgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="tse2008:MomsAngivelseMomsEUYdelserBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

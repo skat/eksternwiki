@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Informationer til brug for skattekreditordningen hvor ansøger er samme aktionær med flere selskaber.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ13Decimaler2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:element name="AktionærForskningSærbeskattetPeriode" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der ansøges for en periode der er kortere end 12 måneder. Felt 624MS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSærbeskattetSkattepligtigIndkomstFørUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Negativ skattepligtig indkomst før reduktion af underskud vedr. forsøgs- og forskningsaktiviteter. Felt 606MS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSærbeskattetUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiv underskudsbeløb jf. udbetaling af skatteværdien af underskud, der stammer fra forsknings- og udviklingsudgifter, jf. ligningsloven. Felt 009c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSærbeskattetSkatteværdiUnderskudAnsøgt"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skatteværdien af underskuddet der søges om udbetaling af. Felt 609MS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSærbeskattetOmkostningStraksafskrivning"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om omkostningerne der ligger til grund for ansøgning om skattekredit, er straksafskrevet efter ligningsloven eller afskrivningsloven. Felt 611MS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSærbeskattetNedsættelseUnderskudSkattekredit"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af at underskud til fremførsel nedsættes tilsvarende det underskud der ligger til grund for ansøgning om skattekredit. Felt 612MS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningBeløbTilUdbetaling"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Samlet beløb som ansøges om udbetaling af under skattekreditordningen. Felt 618</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSambeskattetPeriode" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der ansøges for en periode der er kortere end 12 måneder. Felt 624MJ</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSambeskattetSkattepligtigIndkomstFørUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Negativ sambeskatningsindkomst før reduktion af underskud vedr. forsøgs- og forskningsaktiviteter. Felt 613MJ</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSambeskattetUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiv underskudsbeløb jf. udbetaling af skatteværdien af underskud, der stammer fra forsknings- og udviklingsudgifter, jf. ligningsloven. Felt 009d</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSambeskattetSkatteværdiUnderskudAnsøgt"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skatteværdien af underskuddet der søges om udbetaling af. Felt 609MJ</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSambeskattetOmkostningStraksafskrivning"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om omkostningerne der ligger til grund for ansøgning om skattekredit, er straksafskrevet efter ligningsloven eller afskrivningsloven. Felt 611MJ</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningSambeskattetNedsættelseUnderskudSkattekredit"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af at underskud til fremførsel nedsættes tilsvarende det underskud der ligger til grund for ansøgning om skattekredit. Felt 612MJ</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedPeriode" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der ansøges for en periode der er kortere end 12 måneder. Felt 607R</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedPeriodeHent" type="skat2012:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den faktiske indkomstperiode som er registreret på selskabet i systemet. Felt 607RA</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedSkattepligtigIndkomstFørUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Negativ skattepligtig indkomst før reduktion af underskud vedr. forsøgs- og forskningsaktiviteter. Felt 613R</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiv underskudsbeløb jf. udbetaling af skatteværdien af underskud, der stammer fra forsknings- og udviklingsudgifter, jf. ligningsloven. Felt 009e</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedSkatteordning" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der i ansøgningen om skattekredit indgår virksomheder under virksomhedsskatteordningen. Felt 625</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedSkatteværdiUnderskudAnsøgt"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skatteværdien af underskuddet der søges om udbetaling af. Felt 609R</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedOmkostningStraksafskrivning"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om omkostningerne der ligger til grund for ansøgning om skattekredit, er straksafskrevet efter ligningsloven eller afskrivningsloven. Felt 611R</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningVirksomhedNedsættelseUnderskudSkattekredit"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af at underskud til fremførsel nedsættes tilsvarende det underskud der ligger til grund for ansøgning om skattekredit. Felt 612R</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktionærForskningUnderskudSum"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skatteværdien af underskuddet der søges om udbetaling af. Felt 610</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

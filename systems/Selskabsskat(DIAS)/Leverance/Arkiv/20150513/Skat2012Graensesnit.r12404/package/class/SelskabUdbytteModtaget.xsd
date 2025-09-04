@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Modtaget udbytte for et selskab</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:element name="SelskabUdbytteModtagetDanskUdenSkat" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet dansk udbytte (brutto) uden indeholdelse af udbytteskat i indkomståret. Felt 091</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteModtagetUdenlandskUdenSkat" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet udenlandsk udbytte (brutto) i indkomståret. Felt 094</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteModtagetDansk16EnHalvProcentMedSkat"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet dansk udbytte (brutto) med indeholdelse af 16,5% udbytteskat i indkomståret. Felt 096.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteModtagetDansk22ProcentMedSkat"
+                     type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet dansk udbytte (brutto) med indeholdelse af 22% udbytteskat i indkomståret. Felt 192.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteModtagetDansk25ProcentMedSkat" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet dansk udbytte (brutto) med indeholdelse af 25% udbytteskat i indkomståret. Felt 190</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteModtagetDansk27ProcentMedSkat"
+                     type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet dansk udbytte (brutto) med indeholdelse af 27% udbytteskat i indkomståret. Felt 191</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteModtagetDansk28ProcentMedSkat" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Erhvervet dansk udbytte (brutto) med indeholdelse af 28% udbytteskat i indkomståret. Felt 093</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

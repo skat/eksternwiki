@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SelskabSelvangivelse.xsd"/>
+         <xs:include schemaLocation="../operational/SkattefriOmstruktureringIndberetningDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/SkattefriOmstruktureringAftaleDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/SkattefriOmstrukturering.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DokumentNummerListeStrukturType.xsd"/>
+				     
+         <xs:element name="LigningSagSkattefriOmstruktureringStruktur"
+                     type="skat2012:LigningSagSkattefriOmstruktureringStrukturType"/>
+         <xs:complexType name="LigningSagSkattefriOmstruktureringStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2012:SelskabSelvangivelseIndkomstÅr"/>
+                  
+                  <xs:element ref="skat2012:SkattefriOmstruktureringIndberetningDato"/>
+                  
+                  <xs:element ref="skat2012:SkattefriOmstruktureringAftaleDato"/>
+                  
+                  <xs:element ref="skat2012:SkattefriOmstruktureringVirkningDato"/>
+
+               <xs:element ref="skat2012:DokumentNummerListeStruktur" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

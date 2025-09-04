@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPersonligIndkomstExemptionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPensionExemptionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPensionCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskIndkomstHalvLempelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskIndkomstPersonligIndkomstCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskIndkomstGammelExemptionBeloeb.xsd"/><xs:element name="UdenlandskPersonligIndkomstNedslagStruktur" type="selvangivelsews:UdenlandskPersonligIndkomstNedslagStrukturType"/>
+	<xs:complexType name="UdenlandskPersonligIndkomstNedslagStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:NedslagUdenlandskIndkomstHalvLempelseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskIndkomstPersonligIndkomstCreditBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskPensionCreditBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskPersonligIndkomstExemptionBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskPensionExemptionBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskIndkomstGammelExemptionBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

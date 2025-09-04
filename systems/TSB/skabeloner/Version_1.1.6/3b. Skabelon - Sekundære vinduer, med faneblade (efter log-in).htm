@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]><html class="ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if IE 8]><html class="ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if IE 9]><html class="ie9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>3b. Skabelon - Sekundære vinduer, med faneblade (efter log-in)</title>
+<link href="Styles/TastSelvMain.css" rel="stylesheet" type="text/css" />
+<link href="Styles/print.css" rel="stylesheet" type="text/css" media="print" />
+<script type="text/javascript" src="Scripts/TastSelvMain.js"></script>
+</head>
+<body>
+<div id="skts-body-sekundaer-vindue">
+  <div id="skts-logo-op"><img src="Images/toplogo.jpg" alt="" /></div>
+  <div id="skts-logo-ned">
+    <div class="skts-miljoe"><span id="skts-header-miljoe">BRGT</span>&nbsp;<span id="skts-header-versionsnr">ver. 12.3.0.17</span></div>
+    <img src="Images/logo.gif" alt="SKATs logo" />
+    <ul id="skts-skip-links">
+    	<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+    </ul>
+    </div>
+    <div id="skts-globalmenu-container">
+      <ul id="skts-globalmenu-venstre">
+        <li><a href="#" class="skts-globalmenu-venstre-link">Luk vindue</a></li>
+      </ul>
+      <div class="skts-slut-float"></div>
+    </div>
+    <div class="skts-brugeroplysninger-skaerm">
+        <p id="skts-brugeroplysninger">
+            Logget på: Jens Skov, e-mail-adresse: j.skov@gmail.com, telefon: 23 45 67 89</p>
+    </div>
+    <div class="skts-brugeroplysninger-print">
+        <p class="skts-normal-tekst">
+            Jens Skov, cpr-nummer 220549-1235</p>
+    </div>
+    <div id="skts-midter-container-med-brugeroplysninger">
+        <div id="skts-indhold-container-hele-bredden">
+              <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Overskrift</h1>
+                <div style="width:1px;"> <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+                  <a id="skts-skip-link-target-indhold" class="skts-link-target-skjul">Indhold</a>
+                  </div>
+               <ul id="skts-faneblade">
+                <li class="skts-faneblad-markeret"><a href="#" class="skts-tooltip-holder">2013<span class="skts-tooltip"> Indsæt forklarende tekst til link</span></a></li>
+                <li><a href="#" class="skts-tooltip-holder" >2012<span class="skts-tooltip"> Indsæt forklarende tekst til link</span></a></li>
+                <li><a href="#" class="skts-tooltip-holder">Tidligere<span class="skts-tooltip"> Indsæt forklarende tekst til link</span></a></li>
+              </ul>
+              <div class="skts-slut-float"></div>
+              <div id="skts-indhold-skabelon3b" class="skts-indhold-smal">
+                <p class="skts-broedtekst">Her indlægges formular mv.</p>
+              </div><!--End .skts-indhold-smal-->
+          </div>
+      </div><!--End #skts-midter-container-med-brugeroplysninger-->
+  </div><!--End #skts-body-sekundaer-vindue-->
+
+<!-- Her køres javascript som kun må køres når hele siden er loaded. F.eks. skip link javascript til Chrome og Opera.
+Grunden til at dette ikke ligger i onload, er for ikke at lave yderligere restriktioner for brugeren af skabelonerne. -->
+<script type="text/javascript">
+
+    // Skip link til Chrome og Safari
+    if (skts_isWebkit || skts_isOpera) {
+        opsaetSkipLink("skts-skip-til-indhold", "skts-skip-link-target-indhold");
+    }
+</script>
+</body>
+</html>

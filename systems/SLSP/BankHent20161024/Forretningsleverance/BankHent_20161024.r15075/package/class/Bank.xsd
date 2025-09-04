@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder stamoplysninger vedrørende alle banker og bankfilialer registreret i SLS-P</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BankRegistreringNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/BankAdresseType.xsd"/>
+         <xs:include schemaLocation="../types/PostNummerType.xsd"/>
+         <xs:include schemaLocation="../types/BankPostdistriktType.xsd"/>
+         <xs:element name="BankRegistreringNummer" type="fase1:BankRegistreringNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Virksomhedens reg-nr for den specifikke angivelsestype.  Foruden de angivelsestyper, hvor TastSelv Erhverv håndterer betalingen, kan virksomheden også tilmelde angivelsestypen Importspecifikation, selv om TastSelv Erhverv ikke håndterer angivelse og betaling vedrørende Import.  Når en bankkonto er tilmeldt og videregivet til PBS, anvendes den ikke mere i TastSelv Erhverv, og skal heller ikke præsenteres på nogen grænseflade.   Er betalingsformidler PBS kan betalingsformen PBS først anvendes i TastSelv Erhverv når kontoen er oprettet i PBS LeverandørService (leverance retur skal være modtaget fra PBS).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BankNavn" type="fase1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en bank navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BankFilialNavn" type="fase1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en bankfilials navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BankAdresse" type="fase1:BankAdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en bank eller bankfilials adresse (vejnavn og husnummer)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BankByNavn" type="fase1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en bank eller bankfilials adresse (bynavn/lokalt stednavn)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BankPostNummer" type="fase1:PostNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver postnummer (4-cifre)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BankPostdistrikt" type="fase1:BankPostdistriktType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en bank eller bankfilials postdistriktnavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

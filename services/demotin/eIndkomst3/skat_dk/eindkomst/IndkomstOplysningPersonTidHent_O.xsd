@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomst="urn:oio:skat:eindkomst:1.0.0" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../../urn/oio/skat/eindkomst/1_0_0/PakketStrukturBase64Data.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="PersonIndkomstOplysningStruktur.xsd"/>
+	<xs:element name="IndkomstOplysningPersonTidHent_O" type="fase2:IndkomstOplysningPersonTidHent_OType"/>
+	<xs:complexType name="IndkomstOplysningPersonTidHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="IndkomstOplysningPersonTidUddata" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="fase2:PersonIndkomstOplysningStruktur" minOccurs="0"/>
+						<xs:element ref="eindkomst:PakketStrukturBase64Data" minOccurs="0"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

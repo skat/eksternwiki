@@ -1,0 +1,124 @@
+#skts-bornebidrag-fold, #skts-aegtefaellebidrag-fold, #skts-aftaegtsydelse-fold {
+  clear: both;
+  font-size: 80%;
+}
+
+#skts-ikke-cpr-barn, #skts-ikke-cpr-modt {
+  margin: 2% 1% 0 0;
+}
+
+#skts-bornebidrag-fold > .skts-foldet-ind {
+  margin: 2% 0 0 0;
+}
+
+
+#skts-indberet-procent {
+    text-align: right;
+}
+
+#skts-postnr {
+  width: 4em;
+}
+
+#skts-husnummer {
+  width: 3em;
+}
+
+#skts-foedselsdato, #skts-foedsel {
+  margin: 0 0 1em 0;
+}
+
+#skts-startdato {
+  width: 6em;
+}
+
+#skts-slutdato {
+  width: 6em;
+}
+
+/* Override TastSelvMain.css */
+.skts-layout2-linje_resultat {
+  width: 84%;
+}
+
+h2.skts-layout2-heading {
+  width: 81%;
+}
+
+span.skts-layout1-delresul_tal {
+  float: right;
+  margin-right: 0.8em;
+}
+
+h2.skts-layout2-heading {
+    background-color: #F7F7F7;
+}
+
+p.skts-layout2-linje_resultat {
+    background-color: #F7F7F7;
+    width: 80%;
+}
+
+table.skts-layout2-table { width: 82%; }
+
+
+/* override datepicker */
+.ui-widget-content {
+  border: 1px solid #3F6075;
+}
+
+.ui-datepicker {
+	margin: 5px auto 0;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+.ui-widget-header {
+    background-color: #ffd662;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+	font-weight: bold;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	color: #666666;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+	background: #ededed;
+	background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
+	background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: linear-gradient(top,  #ededed 0%,#dedede 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	-moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+.ui-datepicker-unselectable .ui-state-default {
+	background: #f4f4f4;
+	color: #b4b3b3;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+	background: #f7f7f7;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+	background: #4f7392;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	color: #fff;
+	text-shadow: 0px 1px 0px #4d7a85;
+	filter: dropshadow(color=#4d7a85, offx=0, offy=1);
+	border: 1px solid #55838f;
+	position: relative;
+	margin: -1px;
+}
+
+

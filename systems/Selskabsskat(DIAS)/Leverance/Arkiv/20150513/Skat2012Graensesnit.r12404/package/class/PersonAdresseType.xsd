@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Beskriver typen af personadresser, fx Almindelig Syddansk (A), Grønlandsk Adresse (G) mv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:element name="PersonAdresseTypeKode" type="skat2012:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskriver typen af personadresser, fx Almindelig Syddansk, Grønlandsk Adresse mv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonAdresseTypeESKode" type="skat2012:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode i Erhvervssystemet (ES) for personadresser.  Der findes pt to koder: 01 = Bopælsadresse 03 = Udenlandsk adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

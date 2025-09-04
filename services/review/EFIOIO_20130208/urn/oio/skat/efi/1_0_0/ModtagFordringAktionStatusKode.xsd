@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:modtagfordringaktionstatuskode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ModtagFordringAktionStatusKode" type="modtagfordringaktionstatuskode:ModtagFordringAktionStatusKodeType">
+		<xs:annotation>
+			<xs:documentation>Status for modtag fordrings behandling af en indberettet fordrings aktion.  MODTAGET:        Modtaget men ikke behandlet endnu, SAGSBEHAND: Sendt til manuel sagsbehandling,  AFVIST: Fordring aktion er afvist, UDFOERT:     Fordring aktion er færdig behandlet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="ModtagFordringAktionStatusKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MODTAGET"/>
+			<xs:enumeration value="SAGSBEHAND"/>
+			<xs:enumeration value="AFVIST"/>
+			<xs:enumeration value="UDFOERT"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

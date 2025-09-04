@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Formålet med servicen er at oprette en udenlandsk personlig ejer på en virksomhed, der registreres med udenlandsk personnummer. </xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/UdenlandskPersonOpret_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskPersonOpret_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskPersonOpret_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="UdenlandskPersonOpretInterface"
+                     type="skat2012:UdenlandskPersonOpretInterfaceType"/>
+         <xs:complexType name="UdenlandskPersonOpretInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:UdenlandskPersonOpret_I"/>
+               <xs:element ref="skat2012:UdenlandskPersonOpret_O"/>
+               <xs:element ref="skat2012:UdenlandskPersonOpret_FejlId"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

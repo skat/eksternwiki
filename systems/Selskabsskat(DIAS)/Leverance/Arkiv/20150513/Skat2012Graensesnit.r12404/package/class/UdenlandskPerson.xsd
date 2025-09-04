@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Klasse som indeholder udenlandske personer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/UdenlandskPersonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/KoebersMomsNummerType.xsd"/>
+         <xs:include schemaLocation="../types/LandeNummerKodeType.xsd"/>
+         <xs:element name="UdenlandskPersonNummer" type="skat2012:UdenlandskPersonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer der entydigt identificerer de for SKATs relevante udenlandske personer, der ikke er registreret ved et dansk CPR-nummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskPersonFødselDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskPersonÅrsag" type="skat2012:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Årsagen til at en Kunde er blevet oprettet eller afsluttet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskPersonMomsRegistreringNummer"
+                     type="skat2012:KøbersMomsNummerType">
+               
+            </xs:element>
+         <xs:element name="UdenlandskPersonRegistreringsnummerLandeKode"
+                     type="skat2012:LandeNummerKodeType">
+               
+            </xs:element>
+         <xs:element name="UdenlandskPersonSkatteRegistreringNummer"
+                     type="skat2012:UdenlandskPersonNummerType">
+               
+            </xs:element>
+      </xs:schema>

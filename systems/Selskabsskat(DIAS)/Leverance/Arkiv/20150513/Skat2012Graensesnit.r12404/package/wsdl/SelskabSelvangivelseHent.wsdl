@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                        name="SelskabSelvangivelseHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>At kunne hente oplysninger vedrørende et eller flere selskabers selvangivelser for et eller flere år. En selvangivelse omfatter her de felter selskab skal eller kan angive.</xs:documentation>
+            <xs:documentation>1.4</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+               <xsd:include schemaLocation="../service/SelskabSelvangivelseHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="SelskabSelvangivelseHentServiceRequest">
+            <wsdl:part name="Request" element="skat2012:SelskabSelvangivelseHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="SelskabSelvangivelseHentServiceResponse">
+            <wsdl:part name="Response" element="skat2012:SelskabSelvangivelseHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="skat2012:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="skat2012:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="SelskabSelvangivelseHentServicePortType">
+            <wsdl:operation name="getSelskabSelvangivelseHent">
+               <wsdl:input message="skat2012:SelskabSelvangivelseHentServiceRequest"/>
+               <wsdl:output message="skat2012:SelskabSelvangivelseHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="skat2012:KompenserTransRequest"/>
+               <wsdl:output message="skat2012:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

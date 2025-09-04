@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/LigningMyndighed.xsd"/>
+         <xs:include schemaLocation="../class/LigningArt.xsd"/>
+         <xs:include schemaLocation="../class/LigningAfgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/LigningTema.xsd"/>
+         <xs:element name="SelvangivelseKendelseKodeStruktur"
+                     type="skat2012:SelvangivelseKendelseKodeStrukturType"/>
+         <xs:complexType name="SelvangivelseKendelseKodeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:LigningMyndighedKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningArtKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseKendelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseSystemBeregnetUnderskudMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseDatterselskabLempelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseCreditLempelseUdenlandskIndkomst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseExemptionLempelseUdenlandskIndkomst"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseGoodwillALPgf40" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseÆndretNedslagALPgf40" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseÆndredeØvrigeNedslagALPgf40" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseCreditLempelseALPgf40" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseExemptionLempelseALPgf40" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseEfterfølgendeAfOgNedskrivninger" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseØvrigeStatistikRettelser" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseÆndretAfskrivningGrundlag" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelsePeriodeForskydning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseKontrolArtOgDybdeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseKontrolleretOmsætning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseRessourceForbrugMinutter" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseAktionærLån" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseSegmenteringKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseTPLigning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseBindendeLigningSvarRessourceForbrugTimer"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseBindendeLigningSvarTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseLigningResultatAnnuleret" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseGenoptagelseAngivelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LigningAfgørelseGenoptagelseGodkendt" minOccurs="0"/>
+
+
+               <xs:element name="LigningTemaListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="LigningTema" minOccurs="0" maxOccurs="3">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="skat2012:LigningTemaKode" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:LigningAfgørelseLignetBeløb" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

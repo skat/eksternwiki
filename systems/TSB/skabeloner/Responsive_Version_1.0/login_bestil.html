@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>	
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<a href="http://www.skat.dk" class="skts-tooltip-holder">Gå til skat.dk<span class="skts-tooltip"> Link til skat.dk</span></a>
+			</nav>
+			<form id="mainForm">
+				<div class="skts-grid-fixed-height skts-grid-pad-front">
+					<div class="skts-col-1">
+						<h1>Bestil ny TastSelv-kode</h1>
+						<!-- Error box -->
+						<div class="skts-grid skts-grid-pad skts-error-box skts-minus-margin-left"> 
+							<div style="width:1px;"> <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+								<a id="skts-skip-link-target-fejl" class="skts-link-target-hide" href="#skts-skip-link-target-fejl" tabindex="-1">Start af inhold</a>
+							</div>
+							<div class="skts-col-2-3">
+								<h2>Ups! Det ser ud som om noget ikke stemmer.</h2>
+								<ul class="skts-nostyle-list">
+									<li><a class="skts-error-description skts-tooltip-holder" id="pnrServerError" href="#" onclick="fokusRubrik(document.getElementById('pnr')); return false;">Cpr-nummeret er ikke korrekt.<span class="skts-tooltip"> Gå til feltet</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<input type="hidden" name="dispatch" value="Valider"> 
+						<ul class="skts-nostyle-list">
+							<li class="skts-section-wrapper">
+								<div class="skts-label-text">
+									<label for="pnr">Cpr-nummer</label>
+								</div>
+								<ul>
+									<li>
+										<input id="pnr" type="password" class="skts-cpr" name="tastselvKode" size="16"  maxlength="16" data-validation-type="tsCode" data-validation-event="blur"  aria-required="true" aria-invalid="true" aria-describedby="pnrError" >
+									</li>
+									<li class="skts-error-text" role="alert">(!) Cpr-nummer er ikke udfyldt korrekt.</li>
+								</ul>
+							</li>
+						</ul>
+						<p class="skts-button-container">
+							<input type="button" class="skts-button-primary" value="Fortsæt"  onclick="window.location.href = 'login_bestil2.html'">							
+						</p>						
+					</div>
+				</div>
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+		<script src="assets/js/valinput.js"></script>
+		<script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>        
+		<script type="text/javascript">
+			var pnrFemaleSkip = "010101,130713,150320,210221,010165,010166";
+			var pnrMaleSkip = "010159,010101,020320,230323,100334,010150,010155,010755,010156,010756,010757,010160,010162,010164,010165,010166,010167,010169,010170";
+		</script>
+		<div class="hidden" id="pnrError">Feltet skal udfyldes og skal være et valid cpr-nummer</div>
+    </body>
+</html>

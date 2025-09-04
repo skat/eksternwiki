@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html id="data-ng-app" data-ng-app="skts-guide">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>TastSelv - HTML Guide</title>
+  <link href="../sktscommon/Styles/normalize.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../sktscommon/Styles/jquery-ui.custom.css" type="text/css" />
+  <link href="assets/css/prettify.css" rel="stylesheet" type="text/css" />
+  <link href="../sktscommon/Styles/TastSelvMain.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="skts-body">
+    <div id="skts-logo">
+      <div id="skts-logo-op"><img src="../sktscommon/Images/toplogo.jpg" alt="" /></div>
+      <div id="skts-logo-ned">
+        <a href="#" title="Introduktion"><img src="../sktscommon/Images/logo.gif" alt="Til forside" /></a>
+        <ul id="skts-skip-links">
+          <li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">G&aring; til indhold</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="skts-hoved-container" data-ng-controller="ContentCtrl">
+      <div id="skts-globalmenu-container" class="ng-cloak">
+        <ul data-ng-controller="MenuListCtrl" id="skts-globalmenu-venstre" >
+          <li data-ng-repeat="menu in menues">
+            <a  href="#{{menu.href}}"  class="skts-globalmenu-venstre-link" data-ng-class="getClass(menu.href)" ng-bind-html="menu.text"></a>
+          </li>
+        </ul>
+        <div class="skts-slut-float"></div>
+      </div>
+
+      <div id="skts-midter-container-uden-brugeroplysninger">
+
+        <div data-ng-view="" scroll-position></div>
+
+      </div>
+      <div id="skts-footer">
+        <address>
+          &nbsp;
+        </address>
+        <div class="skts-hoejrejuster">
+          <label for="debug">debug</label>
+          <input id="debug" type="checkbox" ng-model="debug" ng-change="change()" />
+        </div>
+      </div><!--End #skts-footer-->
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="http://code.angularjs.org/1.2.5/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.5/angular-route.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.5/angular-sanitize.min.js"></script>
+    <script src="../sktscommon/Scripts/TastSelvMain.js" type="text/javascript"></script>
+    <script src="assets/js/app.js" type="text/javascript"></script>
+    <script src="assets/js/controllers.js" type="text/javascript"></script>
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/guide.js"></script>
+  </div>
+</body>
+</html>
+

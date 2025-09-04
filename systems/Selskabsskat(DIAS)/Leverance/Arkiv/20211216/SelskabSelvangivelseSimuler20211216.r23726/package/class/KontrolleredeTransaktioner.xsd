@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder generelle oplysninger om virksomheders kontrollerede transaktioner.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel6Type.xsd"/>
+         <xs:element name="KontrolleredeTransaktionerParagraf3BSkattepligtig"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet tilhører kredsen af skattepligtige omfattet af skattekontrollovens paragraf 3 B om kontrollerede transaktioner, jf. vejledningen 05.020. (True = ja, False = nej). Felt 059</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerOver5Mio" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver at de samlede kontrollerede transaktioner overstiger 5 mio. i indkomståret. Felt 067</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerOmfattetAfSkattekontrollovPgf3BStk6"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver at den skattepligtige er omfattet af skattekontrollovens paragraf 3B, stk. 6. (True = ja). Felt 503</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerUdenlandskeEnhederDKSambeskattet"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om de udenlandske enheder indgår i den danske sambeskatning. (True = ja, False = nej). Felt 509</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederDK" type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i Danmark. Felt 505</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederØvrigeEU" type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i de øvrige EU-/EØS-lande. Felt 506</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederØvrigeEUFastDrift"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i de øvrige EU-/EØS-lande, heraf faste driftsteder. Felt 506a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederDKSambeskattet"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal sambeskattede enheder, der har været kontrollerede transaktioner med i Danmark.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederØvrigeEUSambeskattet"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal sambeskattede enheder, der har været kontrollerede transaktioner med i de øvrige EU-/EØS-lande.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederNonEUMedDobbeltbeskatning"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i stater uden for EU/EØS, som Danmark har en dobbeltbeskatningsoverenskomst med. Felt 507</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederNonEUMedDobbeltbeskatningFastDrift"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i stater uden for EU/EØS, som Danmark har en dobbeltbeskatningsoverenskomst med, heraf faste driftsteder. Felt 507a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederNonEUMedDobbeltBeskatningSambeskattet"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal sambeskattede enheder, der har været kontrollerede transaktioner med i stater uden for EU/EØS, som Danmark har en dobbeltbeskatningsoverenskomst med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederNonEUEjDobbeltbeskatning"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i stater uden for EU/EØS, som Danmark ikke har en dobbeltbeskatningsoverenskomst med. Felt 508</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederNonEUEjDobbeltbeskatningFastDrift"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal enheder, der har været kontrollerede transaktioner med i stater uden for EU/EØS, som Danmark ikke har en dobbeltbeskatningsoverenskomst med, heraf faste driftsteder. Felt 508a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerEnhederNonEUEjDobbeltbeskatningSambeskattet"
+                     type="skat2012:TalHel6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det nøjagtige antal sambeskattede enheder, der har været kontrollerede transaktioner med i stater uden for EU/EØS, som Danmark ikke har en dobbeltbeskatningsoverenskomst med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerBalancesumUnderMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om koncernen har en balancesum under 125 mio kr.  Felt 503a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontrolleredeTransaktionerOmsætningUnderMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om koncernen har en omsætning under 250 mio kr.  Felt 503b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BankAdresseType">
+               <xs:annotation>
+                  <xs:documentation>Angiver en bank eller bankfilials adresse (vejnavn og husnummer)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="68"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

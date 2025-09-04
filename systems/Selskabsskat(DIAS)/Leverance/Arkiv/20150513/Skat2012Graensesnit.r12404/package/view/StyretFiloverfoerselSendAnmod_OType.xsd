@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/StyretFiloverfoerselServiceQName.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/StyretFiloverfoerselBeskedQName.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/StyretFiloverfoerselUploadURL.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/StyretFiloverfoerselBrugerNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/StyretFiloverfoerselPassword.xsd"/>
+				     
+         <xs:element name="StyretFiloverførselSendAnmod_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:StyretFiloverførselSendAnmod_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="StyretFiloverførselSendAnmod_OType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="skat2012:StyretFiloverførselServiceQName" minOccurs="0"/>
+                  
+                     <xs:element ref="skat2012:StyretFiloverførselBeskedQName" minOccurs="0"/>
+                  
+                     <xs:element ref="skat2012:StyretFiloverførselUploadURL" minOccurs="0"/>
+                  
+                     <xs:element ref="skat2012:StyretFiloverførselBrugerNavn" minOccurs="0"/>
+                  
+                     <xs:element ref="skat2012:StyretFiloverførselPassword" minOccurs="0"/>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/PersonAdresseType.xsd"/>
+         <xs:include schemaLocation="../class/PersonAdresse.xsd"/>
+         <xs:include schemaLocation="../class/AdresseType.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:element name="PersonAdresseOplysningStruktur"
+                     type="skat2012:PersonAdresseOplysningStrukturType"/>
+         <xs:complexType name="PersonAdresseOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2012:PersonAdresseTypeESKode"/>
+                  
+                  <xs:element ref="skat2012:PersonAdresseBeskyttelseMarkering"/>
+                  
+                  <xs:element ref="skat2012:AdresseTypeKode"/>
+               <xs:element name="AdresseValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="Adresse">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:AdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseVejNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseFraHusBogstav" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseTilHusNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseTilHusBogstav" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseEtageTekst" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseSideDørTekst" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseCONavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseByNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdressePostNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdressePostDistrikt" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseVejKode" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdressePostBox" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseGyldigFra" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AdresseGyldigTil" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:LandKode" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:MyndighedNummer" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="AlternativAdresse">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:AlternativAdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAnvendelseKode" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseGyldigFra" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AlternativAdresseGyldigTil" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:LandKode" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AbonnentAdgangStruktur.xsd"/>
+         <xs:include schemaLocation="AbonnentVirksomhedStruktur.xsd"/>
+         <xs:include schemaLocation="JuridiskIndkomstUdbetalerStruktur.xsd"/>
+         <xs:include schemaLocation="SoegePeriodeLukketStruktur.xsd"/>
+         <xs:include schemaLocation="AfregnendeEnhedFaellesRegistreringStruktur.xsd"/>
+         <xs:include schemaLocation="IndberetningPligtigVirksomhedStruktur.xsd"/>
+         <xs:element name="AnsaettelseForholdPersonKontroller_I" type="fase2:AnsaettelseForholdPersonKontroller_IType"/>
+         <xs:complexType name="AnsaettelseForholdPersonKontroller_IType">
+            <xs:sequence>
+               <xs:element ref="kontekst:HovedOplysninger"/>
+                     <xs:element name="AnsaettelseForholdKontrolInddata">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:sequence>
+                                 <xs:element name="KontrolAnsatJuridiskEnhed">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2:AbonnentAdgangStruktur"/>
+                                          <xs:element ref="fase2:AbonnentVirksomhedStruktur"/>
+                                          <xs:element name="KontrolAnsatEnhedValg">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element name="KontrolAnsatJuridiskEnhed">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2:JuridiskIndkomstUdbetalerStruktur"/>
+                                                            <xs:element name="AnsatPersonSamling">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element maxOccurs="unbounded" minOccurs="1" name="AnsatPerson">
+                                                                        <xs:complexType>
+                                                                           <xs:sequence>
+                                                                              <xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+                                                                              <xs:element ref="fase2:SoegePeriodeLukketStruktur"/>
+                                                                           </xs:sequence>
+                                                                        </xs:complexType>
+                                                                     </xs:element>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				                          </xs:sequence>
+                              <xs:sequence>
+                                 <xs:element name="KontrolAnsatEnhedUdenAfregningFaellesRegistrering">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2:AbonnentAdgangStruktur"/>
+                                          <xs:element ref="fase2:AbonnentVirksomhedStruktur"/>
+                                          <xs:element name="KontrolAnsatEnhedValg">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element name="KontrolAnsatJuridiskEnhed">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2:AfregnendeEnhedFaellesRegistreringStruktur"/>
+                                                            <xs:element ref="fase2:IndberetningPligtigVirksomhedStruktur"/>
+                                                            <xs:element name="AnsatPersonSamling">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element maxOccurs="unbounded" minOccurs="1" name="AnsatPerson">
+                                                                        <xs:complexType>
+                                                                           <xs:sequence>
+                                                                              <xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+                                                                              <xs:element ref="fase2:SoegePeriodeLukketStruktur"/>
+                                                                           </xs:sequence>
+                                                                        </xs:complexType>
+                                                                     </xs:element>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

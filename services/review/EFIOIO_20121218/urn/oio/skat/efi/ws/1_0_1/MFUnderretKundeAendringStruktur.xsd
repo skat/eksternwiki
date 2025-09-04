@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/AlternativKontaktIdentifikator.xsd"/><xs:include schemaLocation="AlternativKontaktReferenceStruktur.xsd"/>
+	<xs:include schemaLocation="AlternativKontaktErstatningNummerStruktur.xsd"/>
+	<xs:element name="MFUnderretKundeAendringStruktur" type="efiws:MFUnderretKundeAendringStrukturType"/>
+	<xs:complexType name="MFUnderretKundeAendringStrukturType">
+		<xs:sequence>
+			<xs:element name="KundeAendringValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="CPRNummerSkift">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+										<xs:element name="NytCPRNummer">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="AKRNummerSkift">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="efi:AlternativKontaktIdentifikator"/>
+										<xs:element name="AlternativKontaktReferenceStrukturListe">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="efiws:AlternativKontaktReferenceStruktur" minOccurs="0" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="efiws:AlternativKontaktErstatningNummerStruktur"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

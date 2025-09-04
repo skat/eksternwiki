@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:haeftelsekildekode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="HaeftelseKildeKode" type="haeftelsekildekode:HaeftelseKildeKodeType">
+		<xs:annotation>
+			<xs:documentation>Angiver hvem der har oprettet oplysninger om hæftelse
+Værdisæt:
+MF: Anvendes hvis fordringshaver medsender oplysninger om hæfter, når fordring oprettes.
+FH: Fordringshaver angiver selv via selvbetjeningsløsning et hæftelsesforhold.
+EFI: Når løsningen har påsat en hæfter f.eks. I forbindelse med en udlægsforretning hvor en ægtefælle går fra at være en potientel hæfter til en reel hæfter.
+Kunne også være en ændring som er opstået som følge af en ændring i CSR-P vedr. civilstand f.eks. skilsmisse.
+SB: Sagsbehandler manuelt opdatere en hæftelse f.eks. hvis kunden viser at pgl. er udtrådt af et I/S og som følge heraf ikke hæfter længere. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="HaeftelseKildeKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MF"/>
+			<xs:enumeration value="EFI"/>
+			<xs:enumeration value="FH"/>
+			<xs:enumeration value="SB"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

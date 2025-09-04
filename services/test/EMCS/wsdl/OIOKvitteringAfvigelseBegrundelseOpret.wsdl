@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" name="OIOKvitteringAfvigelseBegrundelseOpretService">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1">
+			<xsd:include schemaLocation="../service/OIOKvitteringAfvigelseBegrundelseOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="OIOKvitteringAfvigelseBegrundelseOpretServiceRequest">
+		<wsdl:part name="Request" element="struct:OIOKvitteringAfvigelseBegrundelseOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="OIOKvitteringAfvigelseBegrundelseOpretServiceResponse">
+		<wsdl:part name="Response" element="struct:OIOKvitteringAfvigelseBegrundelseOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="OIOKvitteringAfvigelseBegrundelseOpretServicePortType">
+		<wsdl:operation name="getOIOKvitteringAfvigelseBegrundelseOpret">
+			<wsdl:input message="struct:OIOKvitteringAfvigelseBegrundelseOpretServiceRequest"/>
+			<wsdl:output message="struct:OIOKvitteringAfvigelseBegrundelseOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

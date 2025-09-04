@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="AfskrivningDriftDriftsmidlerTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af skattemæssige afskrivninger på driftsmidler, skibe og inventar. Felt 143</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfskrivningDriftSmåAktiverStraksTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af straksafskrivning på småaktiver. Felt 144</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

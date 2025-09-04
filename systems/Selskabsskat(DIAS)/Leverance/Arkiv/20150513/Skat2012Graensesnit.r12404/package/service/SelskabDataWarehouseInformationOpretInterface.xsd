@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>At overføre relevant selskabsinformation fra Selskabsskat til SKATs Data Warehouse.</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/SelskabDataWarehouseInformationOpret_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAnmod_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAnmod_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAfslut_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAfslut_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASDWEksempel1StrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASDWEksempel2StrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="SelskabDataWarehouseInformationOpretInterface"
+                     type="skat2012:SelskabDataWarehouseInformationOpretInterfaceType"/>
+         <xs:complexType name="SelskabDataWarehouseInformationOpretInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:SelskabDataWarehouseInformationOpret_FejlId"/>
+               <xs:element ref="skat2012:StyretFiloverførselSendAnmod_I"/>
+               <xs:element ref="skat2012:StyretFiloverførselSendAnmod_O"/>
+               <xs:element ref="skat2012:StyretFiloverførselSendAfslut_I"/>
+               <xs:element ref="skat2012:StyretFiloverførselSendAfslut_O"/>
+               <xs:element ref="skat2012:StyretFiloverførselModtagAnmod_I"/>
+               <xs:element ref="skat2012:StyretFiloverførselModtagAnmod_O"/>
+               <xs:element ref="skat2012:StyretFiloverførselModtagAfslut_I"/>
+               <xs:element ref="skat2012:StyretFiloverførselModtagAfslut_O"/>
+               <xs:element ref="skat2012:DIASDWEksempel1Struktur"/>
+               <xs:element ref="skat2012:DIASDWEksempel2Struktur"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

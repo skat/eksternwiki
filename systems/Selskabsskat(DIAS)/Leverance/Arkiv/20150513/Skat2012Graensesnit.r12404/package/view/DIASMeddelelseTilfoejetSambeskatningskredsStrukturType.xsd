@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/SelskabSambeskatningAEndring.xsd"/>
+         <xs:element name="DIASMeddelelseTilføjetSambeskatningskredsStruktur"
+                     type="skat2012:DIASMeddelelseTilføjetSambeskatningskredsStrukturType"/>
+         <xs:complexType name="DIASMeddelelseTilføjetSambeskatningskredsStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element name="Aktør">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2012:VirksomhedNavnFirmaNavn"/>
+                  
+                           <xs:element ref="skat2012:VirksomhedCVRNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="TilføjetSelskab">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2012:VirksomhedNavnFirmaNavn"/>
+                  
+                           <xs:element ref="skat2012:VirksomhedCVRNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Godkender">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2012:VirksomhedNavnFirmaNavn"/>
+                  
+                           <xs:element ref="skat2012:VirksomhedCVRNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element ref="skat2012:SelskabSambeskatningÆndringStartDato"/>
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

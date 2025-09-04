@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                        name="VirksomhedHændelseSamlingHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>At man kan forespørge på virksomhedshændelser i SKATs Erhvervssystem (ES). En virksomhedshændelse kan fx være en nyoprettet eller en ophørt virksomhed. Man kan således spørge om der er nyoprettede virksomheder i ES eller om der nogle, der er ophørte. En virksomhedshændelse kan desuden være en ændring virksomheds forhold, dvs. en ændring i de oplysninger, som er tilknyttet virksomheden i ES. Man kan således spørge om en virksomheds adresse er ændret. Eller om der er ændringer i dens registreringsforhold.</xs:documentation>
+            <xs:documentation>1.5</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+               <xsd:include schemaLocation="../service/VirksomhedHaendelseSamlingHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="VirksomhedHændelseSamlingHentServiceRequest">
+            <wsdl:part name="Request" element="skat2012:VirksomhedHændelseSamlingHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="VirksomhedHændelseSamlingHentServiceResponse">
+            <wsdl:part name="Response" element="skat2012:VirksomhedHændelseSamlingHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="skat2012:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="skat2012:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="VirksomhedHændelseSamlingHentServicePortType">
+            <wsdl:operation name="getVirksomhedHændelseSamlingHent">
+               <wsdl:input message="skat2012:VirksomhedHændelseSamlingHentServiceRequest"/>
+               <wsdl:output message="skat2012:VirksomhedHændelseSamlingHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="skat2012:KompenserTransRequest"/>
+               <wsdl:output message="skat2012:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

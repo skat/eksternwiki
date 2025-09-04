@@ -1,0 +1,230 @@
+html {
+  overflow-y:scroll;
+}
+
+code {
+    color: rgb(221, 17, 68);
+}
+
+.ng-cloak { display: none; }
+
+.bs-docs-example:after {
+    content: "Eksempel";
+}
+.bs-docs-example:after {
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 0 4px 0;
+    color: #9DA0A4;
+    content: "Example";
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 3px 7px;
+    position: absolute;
+    top: -1px;
+}
+.bs-docs-example {
+    border: 1px solid #EBEBF3;
+    overflow: hidden;
+}
+.bs-docs-example {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.bs-docs-example + .prettyprint {
+    margin-top: -16px;
+    margin-bottom: 3em;
+}
+
+.bs-docs-example {
+	border: 1px solid #ebebf3;
+  padding: 3em 0;
+  overflow:  visible;
+}
+
+.bs-docs-example:after {
+  content: "Eksempel";
+}
+
+.bs-callout {
+    border-left: 5px solid #EEEEEE;
+    margin: 20px 0;
+    padding: 1px 1px 1px 15px;
+}
+
+.bs-callout-info {
+    background-color: #F0F7FD;
+    border-color: #D0E3F0;
+}
+
+.prettyprint.linenums {
+  font-size: 11px;
+}
+
+/* show id frame */
+.skts-guide-frame { 
+	outline: rgb(165, 185,203) dashed 1px;
+	position: relative;
+}
+
+.skts-guide-frame:after {
+	color: rgb(145, 169,191);
+	position: absolute;
+	right: 0;
+	bottom: 0;
+   	font-size: 7pt;
+}
+
+.skts-guide-fitme { width: 100% !important; } 
+
+div.skts-guide-disabled > span, div.skts-guide-disabled > span.tag { color: gray; }
+
+#skts-indhold-guide { 
+	float: right; 
+	width: 80%;
+}
+#skts-indhold-bred-guide { 
+	float: right; 
+	width: 100%;
+}
+
+/* Overrides to TastSelvMain.css */
+#skts-body { 
+    margin: 0 1em;
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#skts-venstre-menu-container { width: 19%; }
+#skts-venstre-menu-container.affix {
+    position:fixed;  
+    top:1em;  
+    width: 14.6%;
+}
+
+#skts-body.skts-guide-frame { min-height: 400px; }
+#skts-hoved-container.skts-guide-frame { min-height: 400px; }
+#skts-midter-container-med-brugeroplysninger.skts-guide-frame { min-height: 330px; }
+#skts-venstre-menu-container.skts-guide-frame { min-height: 330px; width:25% }
+#skts-venstre-menu-ramme.skts-guide-frame { min-height: 250px; }
+#skts-indhold-container-hoejre.skts-guide-frame { min-height: 300px; }
+#skts-tastselv-menu-rammer-container { min-height: 300px; }
+#skts-tastselv-menu-aarsopgoerelse-ramme { min-height: 250px; }
+#skts-tastselv-menu-forskudsopgoerelse-ramme { min-height: 250px; }
+#skts-tastselv-menu-indhold-container { min-height: 350px; }
+
+.skts-layout1-foldblok.skts-guide-frame:after {
+	content: "skts-layout1-foldblok";
+}
+#skts-logo.skts-guide-frame:after {
+	content: "skts-logo";
+}
+#skts-hoved-container.skts-guide-frame:after {
+	content: "skts-hoved-container";
+}
+#skts-globalmenu-container.skts-guide-frame:after {
+	content: "skts-globalmenu-container";
+}
+#skts-midter-container-med-brugeroplysninger.skts-guide-frame:after {
+	content: "skts-midter-container-med-brugeroplysninger";
+}
+#skts-venstre-menu-container.skts-guide-frame:after {
+	content: "skts-venstre-menu-container";
+}
+#skts-venstre-menu-ramme.skts-guide-frame:after {
+	content: "skts-venstre-menu-ramme";
+}
+#skts-indhold-container-hoejre.skts-guide-frame:after {
+	content: "skts-indhold-container-hoejre";
+}
+#skts-tastselv-menu-rammer-container.skts-guide-frame:after {
+	content: "skts-tastselv-menu-rammer-container";
+}
+#skts-tastselv-menu-aarsopgoerelse-ramme.skts-guide-frame:after {
+	content: "skts-tastselv-menu-aarsopgoerelse-ramme";
+}
+#skts-tastselv-menu-forskudsopgoerelse-ramme.skts-guide-frame:after {
+	content: "skts-tastselv-menu-forskudsopgoerelse-ramme";
+}
+#skts-tastselv-menu-indhold-container.skts-guide-frame:after {
+	content: "skts-tastselv-menu-indhold-container";
+}
+.skts-indhold-smal.skts-guide-frame:after {
+	content: "skts-indhold-smal";
+}
+.skts-layout1-login-venstre-ramme:after {
+  content: "skts-layout1-login-venstre-ramme";
+}
+.skts-layout1-login-hoejre-ramme:after {
+  content: "skts-layout1-login-hoejre-ramme";
+}
+.skts-indhold-bred.skts-guide-frame:after {
+	content: "skts-indhold-bred";
+}
+#skts-footer.skts-guide-frame:after {
+	content: "skts-footer";
+	left: 0;
+}
+
+/* Progress bar */
+
+#progress {
+	position: fixed;
+	z-index: 2147483647;
+	top: 0;
+	left: -6px;
+	width: 1%;
+	height: 2px;
+	background: #0088CC;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	-moz-transition: width 500ms ease-out,opacity 400ms linear;
+	-ms-transition: width 500ms ease-out,opacity 400ms linear;
+	-o-transition: width 500ms ease-out,opacity 400ms linear;
+	-webkit-transition: width 500ms ease-out,opacity 400ms linear;
+	transition: width 500ms ease-out,opacity 400ms linear;
+}
+
+#progress dd, #progress dt {
+	position: absolute;
+	top: 0;
+	height: 2px;
+	-moz-box-shadow: #0088CC 1px 0 6px 1px;
+	-ms-box-shadow: #0088CC 1px 0 6px 1px;
+	-webkit-box-shadow: #0088CC 1px 0 6px 1px;
+	box-shadow: #0088CC 1px 0 6px 1px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+}
+
+#progress dt {
+	opacity: .6;
+	width: 180px;
+	right: -80px;
+	clip: rect(-6px,90px,14px,-6px);
+}
+
+#progress dd {
+	opacity: .6;
+	width: 20px;
+	right: 0;
+	clip: rect(-6px,22px,14px,10px);
+}  
+
+.bs-docs-example.debug  *:hover { outline:1px solid #89A81E }                   /* Solid Green */
+.bs-docs-example.debug  * *:hover { outline:1px solid #F34607 }                 /* Solid Orange */
+.bs-docs-example.debug  * * *:hover { outline:1px solid #5984C3 }               /* Solid Blue */
+.bs-docs-example.debug  * * * *:hover { outline:1px solid #CD1821 }             /* Solid Red */
+.bs-docs-example.debug  * * * * *:hover { outline:1px dotted #89A81E }          /* Dotted Green */
+.bs-docs-example.debug  * * * * * *:hover { outline:1px dotted #F34607 }        /* Dotted Orange */
+.bs-docs-example.debug  * * * * * * *:hover { outline:1px dotted #5984C3 }      /* Dotted Blue */
+.bs-docs-example.debug  * * * * * * * *:hover { outline:1px dotted #CD1821 }    /* Dotted Red */
+

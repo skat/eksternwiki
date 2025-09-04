@@ -1,0 +1,14 @@
+How the programme is used is explained here:
+To be able to run the program Java needs to be installed. The program is tested with Java version 1.6.0_24
+ 
+For validation of standard records version 1 the programme is called with the parameters:
+standard-record-validator.cmd –version 1 –file pathToZipFile 
+ 
+For validation of standard records version 2 the programme is called with the parameters:
+standard-record-validator.cmd –version 2 –file pathToZipFile
+ 
+For every XML file included in the zip file the programme will write whether the XML schema is OK or not OK. The information’s are also saved in a log. The log is located in the catalog named “logs”. When the programme is through all the files a resume is written, e.g.
+ 
+***Summary***:
+89323 files were processed
+No errors were found

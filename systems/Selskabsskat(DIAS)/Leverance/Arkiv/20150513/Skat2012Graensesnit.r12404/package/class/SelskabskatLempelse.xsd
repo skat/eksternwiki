@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:element name="SelskabskatLempelseTotal" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet lempelse for udenlandsk skat efter Ligningslovens § 33 eller en dobbeltbeskatningsoverenskomst (maksimum den danske skat). Felt 019</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

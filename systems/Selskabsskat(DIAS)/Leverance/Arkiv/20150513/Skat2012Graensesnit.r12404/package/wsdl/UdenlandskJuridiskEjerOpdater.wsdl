@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                        name="UdenlandskJuridiskEjerOpdaterService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Formålet med servicen er at ændre på en i Erhvervssystemet allerede registreret udenlandsk juridisk ejer, dvs. en ikke personlig ejer. Ændringerne kan vedrøre navn, adresse, landekode og kontaktoplysninger.</xs:documentation>
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+               <xsd:include schemaLocation="../service/UdenlandskJuridiskEjerOpdaterInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="UdenlandskJuridiskEjerOpdaterServiceRequest">
+            <wsdl:part name="Request" element="skat2012:UdenlandskJuridiskEjerOpdater_I"/>
+         </wsdl:message>
+         <wsdl:message name="UdenlandskJuridiskEjerOpdaterServiceResponse">
+            <wsdl:part name="Response" element="skat2012:UdenlandskJuridiskEjerOpdater_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="skat2012:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="skat2012:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="UdenlandskJuridiskEjerOpdaterServicePortType">
+            <wsdl:operation name="getUdenlandskJuridiskEjerOpdater">
+               <wsdl:input message="skat2012:UdenlandskJuridiskEjerOpdaterServiceRequest"/>
+               <wsdl:output message="skat2012:UdenlandskJuridiskEjerOpdaterServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="skat2012:KompenserTransRequest"/>
+               <wsdl:output message="skat2012:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

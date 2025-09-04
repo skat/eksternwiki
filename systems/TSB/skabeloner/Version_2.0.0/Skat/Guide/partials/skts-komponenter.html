@@ -1,0 +1,417 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Komponenter</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a href="" data-ng-click="scrollTo('brugeroplys')">Bruger oplysninger</a></li>
+      <li><a href="" data-ng-click="scrollTo('ikoner')">Ikoner og tekst</a></li>
+      <li><a href="" data-ng-click="scrollTo('resultatlinie')">Resultat linie</a></li>
+      <li><a href="" data-ng-click="scrollTo('footertekst')">Footer tekst</a></li>
+      <li><a href="" data-ng-click="scrollTo('tabeller')">Tabeller</a></li>
+      <li><a href="" data-ng-click="scrollTo('foldud')">Foldud komponenter</a></li>
+      <li><a href="" data-ng-click="scrollTo('fejl')">Fejlh&aring;ndtering</a></li>
+      <li><a href="" data-ng-click="scrollTo('kolonner')">Kolonner</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="skts-indhold-guide">
+  <p class="skts-broedtekst">
+    Disse komponenter er typisk sammensat af flere html elementer p&aring; siden. De kan desuden bruges i en given context, f.eks. kan <code>skts-layout1-sammen</code> klassen kun bruges indenfor for en div dekoreret med klassen <code>skts-layout1-foldblok</code> s&aring;fremt der &oslash;nskes en automatisk generering af farvning af linier.</p>
+
+  <h2 id="brugeroplys">Bruger oplysninger</h2>
+  <p class="skts-broedtekst">Viser oplysninger for en indlogget bruger &oslash;verst p&aring; siden. Bem&aelig;rk at brugeroplysningerne en inkluderet to gange. Den &oslash;verste sektion viser brugeren for en sk&aelig;rm og den nederste bruges ved print. Begge sektioner skal inkluderes.</p>
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-brugeroplysninger-skaerm">
+      <p id="skts-brugeroplysninger">
+        Logget p&aring;: Jens Skov, e-mail-adresse: j.skov@gmail.com, telefon: 23 45 67 89
+        (<a class="skts-tooltip-holder skts-link-fremhaevning" href="#">ret kontaktoplysninger<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>)
+      </p>
+    </div>
+    <div class="skts-brugeroplysninger-print">
+      <p class="skts-normal-tekst">Jens Skov, cpr-nummer 220549-1235</p>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="ikoner">Ikoner og tekst</h2>
+  <h3>Top ikon for print og pdf</h3>
+  <p class="skts-broedtekst">Dette viser pdf og print ikon i h&oslash;jre hj&oslash;rne af siden</p>
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-layout1-link-topikon">
+      <a tabindex="0"><img src="../sktscommon/Images/Print.png" title="Udskriv" alt="Udskriv til printer">Udskriv</a>
+      <a tabindex="0"><img src="../sktscommon/Images/pdf.png" title="PDF" alt="Vis i PDF">PDF</a>
+    </div>
+  </div>
+
+  <h3>Hj&aelig;lp</h3>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-broedtekst">   
+      <label class="skts-layout2-label" for="skts-ikke-cpr-barn">
+        <a class="skts-label" href="#">Link</a>
+        <a class="skts-hjaelp skts-tooltip-holder" href="#">
+          <span class="skts-tooltip">&Aring;bner i nyt vindue</span>
+        </a>
+      </label>
+    </p>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="resultatlinie">Resultat linier</h2>
+  <p class="skts-broedtekst">Viser et resultat af en beregning</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen-nodetail skts-layout1-linje_resultat skts-layout1-linje_overstreg">
+      <span class="skts-layout1-tekst">Overskydende skat inkl. procentgodtg&oslash;relse&nbsp;</span><span>1.716,00 kr.</span>
+    </p>
+  </div>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen-nodetail skts-layout1-linje_overstreg_dobbeltunderstreg">
+      <span class="skts-layout1-tekst">Overskydende skat inkl. procentgodtg&oslash;relse&nbsp;</span><span>1.716,00 kr.</span>
+    </p>
+  </div>
+
+  <h2 id="footertekst">Footer tekst</h2>
+  <p class="skts-broedtekst">Denne komponent danner footer teksten indenfor en indholdsramme. <code>skts-footer-version</code> og <code>skts-footer-versions-link</code> skubbes til h&oslash;jre indenfor rammen.</p>
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-layout1-footer skts-lille-tekst">
+      <p>Cpr.nr. 012345-6789</p>
+      <p>&AElig;gtef&aelig;lles cpr.nr. 023456-7890<span class="skts-footer-version">07.03.13 &Aring;rsopg&oslash;relse | <a class="skts-footer-versions-link" href="#">04.03.13 &Aring;rsopg&oslash;relse</a></span></p>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="tabeller">Tabeller</h2>
+
+  <h3>Tabel i skatteberegning</h3>
+  <p class="skts-broedtekst">Denne tabel bruges i &Aring;rsopg&oslash;relsen for at vise en detaljeret beregning af AM-bidrag. Bem&aelig;rk at den f&oslash;rste celle i <code>thead</code> er sat som en <code>td</code> og data til <code>&amp;nbsp&semi;</code> da den ikke indeholder noget.</p>
+  <p class="skts-broedtekst">Der skal ogs&aring; s&aelig;ttes en <code>caption</code>; dette er prim&aelig;rt brugt af tilg&aelig;ngeligheds &aring;rsager og vil vha. stylesheetet ikke blive vist til en almindelig bruger.</p>
+
+  <div class="skts-layout1-beregning-detaljer">
+    <div class="bs-docs-example" data-pretty>
+      <table class="skts-layout1-detaljer-table">
+        <caption>F&oslash;r AM-bidrag$SEPAM-bidrag$SEPEfter AM-bidrag</caption>
+        <thead>
+          <tr>
+            <td id="AM-O-1-A"></td><td>F&oslash;r AM-bidrag</td><td>AM-bidrag</td><td>Efter AM-bidrag</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="AM-P45">Resultat af virksomhed</td><td>1.234.567 kr.</td><td>1.234.567 kr.</td><td>1.234.567 kr.</td>
+          </tr>
+          <tr>
+            <td id="AM-P48">Godtg&oslash;relse vedr. biblioteksafgift mv.</td><td>1.234.567 kr.</td><td>1.234.567 kr.</td><td>1.234.567 kr.</td>
+          </tr>
+          <tr>
+            <td id="AM-P47">L&oslash;nindkomst mv.</td><td>1.234.567 kr.</td><td>1.234.567 kr.</td><td>1.234.567 kr.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="skts-broedtekst">Ovenst&aring;ende tabel er indlagt i en div med klassen <code>skts-layout1-beregning-detaljer</code> for at opn&aring; den rette font st&oslash;rrelse. Dette element er ikke vist i dette eksempel</p>
+
+  <h3>Indholds tabel</h3>
+  <p class="skts-broedtekst">Denne tabel type bruges prim&aelig;rt til meddelelser</p>
+  <div class="bs-docs-example" data-pretty>
+    <table class="skts-indholds-tabel1" summary="F&oslash;rste kolonne indeholder link til din forskudsopg&oslash;relse i pdf-format. Anden kolonne viser dato for k&oslash;rsel af din forskudsopg&oslash;relse.">
+      <tr class="skts-lille-tekst">
+        <th scope="col" class="skts-tabel-pdf-dokumenter">Pdf-dokumenter</th>
+        <th scope="col" class="skts-tabel-dato">Dato</th>
+      </tr>
+      <tr class="skts-broedtekst skts-link-aktuelt" onmouseover="showHighlight(this)" onmouseout="clearHighlight(this)" onclick="aabnPdf();return false">
+        <td><a href="#" class="skts-tooltip-holder">Forskudsopg&oslash;relse 2013 - aktuel<span class="skts-tooltip"> 05-11-2013 (&Aring;bner nyt vindue)</span></a></td>
+        <td class="skts-indholds-tabel-nowrap">05-11-2013</td>
+      </tr>
+      <tr class="skts-broedtekst" onmouseover="showHighlight(this)" onmouseout="clearHighlight(this)" onclick="aabnPdf();return false">
+        <td><a href="#" class="skts-tooltip-holder">Forskudsopg&oslash;relse 2013<span class="skts-tooltip"> 05-11-2013 (&Aring;bner nyt vindue)</span></a></td>
+        <td class="skts-indholds-tabel-nowrap">05-11-2013</td>
+      </tr>
+    </table>
+  </div>	
+
+  <h3>Indholds tabel 2</h3>
+  <p class="skts-broedtekst">Denne tabel type bruges prim&aelig;rt til meddelelser</p>
+  <div class="bs-docs-example" data-pretty>
+    <table class="skts-indholds-tabel2" summary="F&oslash;rste kolonne indeholder seneste betalingsdato, anden kolonne giro kort nummeret, og tredje kolonne restskat bel&oslash;bet.">
+      <tr class="skts-lille-tekst">
+        <th scope="col" class="skts-tabel-betalingsdato">Seneste betalingsdato</th>
+        <th scope="col" class="skts-tabel-betalingslinje">Betalingslinje</th>
+        <th scope="col" class="skts-tabel-beloeb skts-kolonne-placering3">Bel&oslash;b</th>
+      </tr>
+      <tr class="skts-broedtekst skts-indholds-tabel2-ulige">
+        <td>20.8.2013</td>
+        <td>&gt; 71 + 432556632535</td>
+        <td class="skts-kolonne-placering3 skts-indholds-tabel-nowrap">500,00 kr.</td>
+      </tr>
+      <tr class="skts-broedtekst skts-indholds-tabel2-lige">
+        <td>20.9.2013</td>
+        <td>&gt; 71 + 432556632535</td>
+        <td class="skts-kolonne-placering3 skts-indholds-tabel-nowrap">500,00 kr.</td>
+      </tr>
+      <tr class="skts-broedtekst skts-indholds-tabel2-ulige">
+        <td>20.10.2013</td>
+        <td>&gt; 71 + 432556632535</td>
+        <td class="skts-kolonne-placering3 skts-indholds-tabel-nowrap">500,00 kr.</td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>Tabel til skattekort</h3>
+  <div class="bs-docs-example" data-pretty>
+    <table class="skts-indrykket-tabel1 skts-broedtekst" summary="Tabellen indeholder skattekortoplysningerne fra din aktuelle forskudsopg&oslash;relse.">
+      <caption>
+        Skattekort
+      </caption>
+      <tr>
+        <th scope="row">Tr&aelig;kprocent:</th>
+        <td>39%</td>
+      </tr>
+      <tr>
+        <th scope="row">Fradrag pr. md./pr. 14. dg.:</th>
+        <td>2.105 kr./1.080 kr.</td>
+      </tr>
+      <tr>
+        <th scope="row">Gyldigt fra:</th>
+        <td>01.02.2013</td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>Tabel med udfoldning</h3>
+  <div class="bs-docs-example" data-pretty>
+    <table class="skts-layout2-table">
+      <caption>Beskrivelse af tabel</caption>
+      <thead>
+        <tr class="skts-layout2-heading">
+          <th>Vis</th>
+          <th>Beskrivelse</th>
+          <th>Periode</th>
+          <th>Bidrag</th>
+          <th>Ret</th>
+          <th class="skts-fold skts-layout2-detaljer">Yderligere information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="skts-vis-mere">
+          <td><a tabindex="0" class="skts-pil skts-pil-ind"></a></td>
+          <td>Oplyst via TastSelv</td>
+          <td>02.02.2013 - 02.12.2013</td>
+          <td>60.173 kr.</td>
+          <td><span class="skts-tooltip-holder"><abbr title="&Aring;bner rettebillede i nyt vindue"><img alt="" src="../sktscommon/Images/blyant.png"></abbr><span class="skts-tooltip">&Aring;bner i nyt vindue</span></span> </td>
+          <td class="skts-fold skts-layout2-detaljer">
+            <p>Privat aftale. 02.02.2013 - 28.02.2013. 27 dage á 214,29 kr. = 5785,71 kr.</p>
+            <p>Privat aftale. 01.03.2013 - 30.11.2013. 9 mdr. á 6000,00 kr. = 54.000,00 kr.</p>
+            <p>Privat aftale. 01.12.2013 - 02.12.2013. 2 dage á 194,55 kr. = 387,10 kr.</p>
+          </td>
+        </tr>
+        <tr class="skts-vis-mere">
+          <td><a tabindex="0" class="skts-pil"></a></td>
+          <td>Till&aelig;g uden fradrag</td>
+          <td></td>
+          <td>- 1.434 kr.</td>
+          <td></td>
+          <td class="skts-fold skts-layout2-detaljer">
+            <p>Privat aftale. 02.02.2013 - 28.02.2013. 27 dage á 5,11 kr. = 137,89 kr.</p>
+            <p>Privat aftale. 01.03.2013 - 30.11.2013. 9 mdr. á 143,00 kr. = 1287,00 kr.</p>
+            <p>Privat aftale. 01.12.2013 - 02.12.2013. 2 dage á 4,61 kr. = 9,23 kr.</p>
+          </td>
+        </tr>
+        <tr class="skts-layout1-linje_overstreg">
+          <td></td>
+          <td>Det bel&oslash;b, du f&aring;r fradrag for</td>
+          <td></td>
+          <td>58.739 kr.</td>
+          <td></td>
+          <td class="skts-fold skts-layout2-detaljer"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="foldud">Foldud objekter</h2>
+  <div class="bs-docs-example" data-pretty>
+    <a class="skts-sekundaer-link skts-tooltip-holder" href="javascript:foldudToggle('skts-foldud-objekt','skts-foldud-tekst',null,null,false);">SKATs kommentarer til din &aring;rsopg&oslash;relse<span id="skts-foldud-tekst"> - fold ud</span></a>
+    <div id="skts-foldud-objekt" class="skts-foldet-ind">
+      <div class="skts-wrap-folde-ud-tekst skts-lille-tekst">
+        <p>Vi f&aring;r de fleste oplysninger til din &aring;rsopg&oslash;relse automatisk. Men du skal rette den, hvis der er fejl eller mangler.</p><p>Brug funktionen <a href="#" class="skts-link-fremhaevning">Ret &aring;rsopg&oslash;relsen/selvangivelsen</a>. Du skal typisk indtaste noget, hvis du har virksomhed, v&aelig;rdipapirer, lejeindt&aelig;gter eller fradrag for fx b&oslash;rnebidrag eller befordring.</p><p>Du kan se vores oplysninger under <a href="#" class="skts-link-fremhaevning skts-tooltip-holder">Skatteoplysninger<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>.</p>
+      </div>
+    </div>
+  </div>	
+
+  <h3>Beregninsglinier i &aring;rsopg&oslash;relsen</h3>
+  <p class="skts-broedtekst">Denne beregningslinie folder ud under linien. Dette g&oslash;res med klassen <code>skts-layout1-sammen</code>. Klassen <code>skts-layout1-detaljer</code> skjules vha. javascript og foldes ud n&aring;r der trykkes p&aring; linien.</p>
+  <p class="skts-broedtekst">Det f&oslash;rste span felt indeholder tekst; det andet indeholder typisk et bel&oslash;b og det tredje a felt indeholder navigations pilen for at kunne folde linien ud. Det skal dog bem&aelig;rkes at lige meget hvor brugeren trykker p&aring; linien vil denne foldes ud.</p>
+  <p class="skts-broedtekst">Alle felter under <code>skts-layout1-detaljer</code> er stylet som blok level elementer, de st&aring;r derfor under hinanden.</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen">
+      <span>L&oslash;nindkomst mv.</span>
+      <span class="skts-layout1-delresul_tal">325.361 kr.</span>
+      <a tabindex="0" class="skts-pil"></a>
+    </p>
+    <p class="skts-layout1-detaljer">
+      <span>Rubrik 11: L&oslash;nindkomst mv.</span>
+      <span>Heraf AM-bidrag: 26.028 kr.</span>
+      <a href="#" class="skts-sekundaer-link">Se hvor oplysningerne til rubrik 11 kommer fra</a>
+    </p>
+  </div>
+  <p class="skts-broedtekst">Denne linie har et yderligere felt som kan udfyldes. Der er ialt 4 li felter i linien, hvoraf en af dem kan udfyldes med en kort tekst, som sammen med et tooltip giver en forklaring til dette felt. Derudover er der samme functionalitet som ovenfor.</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen-ext"><span>Renteindt&aelig;gter&nbsp;</span><span class="skts-tooltip-holder"><abbr title="Vi har &aelig;ndret bel&oslash;bet for dig">A</abbr><span class="skts-tooltip">Vi har &aelig;ndret bel&oslash;bet for dig</span></span> <span>36 kr.</span><span><a tabindex="0" class="skts-pil skts-pil-ind"></a></span>
+    </p>
+    <p class="skts-layout1-detaljer" style="display: block;">
+      <span>Rubrik 41: Renteudgifter til realkreditinstitut</span>
+      <a class="skts-sekundaer-link skts-layout1-padding-bottom" href="#">Se hvor oplysningerne til rubrik 41 kommer fra</a>
+    </p>
+  </div>
+  <p class="skts-broedtekst">F&oslash;lgende linie har ikke en foldud del eller en pil som brugeren kan trykke p&aring;:</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen-nodetail">
+      <span>Linie uden foldud</span>
+      <span class="skts-layout1-delresul_tal">36 kr.</span>
+    </p>
+  </div>
+
+  <p class="skts-broedtekst">F&oslash;lgende linie har ikke en foldud del eller en pil som brugeren kan trykke p&aring;, men har et ekstra felt:</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen-nodetail-ext">
+      <span>Linie uden foldud</span>
+      <span>A</span>
+      <span class="skts-layout1-delresul_tal">36 kr.</span>
+    </p>
+  </div>
+
+  <h4>Farvning af linier</h4>
+  <p class="skts-broedtekst">Man har ikke behov for at farve linierne, disse farvel&aelig;gges n&aring;r dokumentet loades via javascript. Dette kr&aelig;ver at linien, som er et <code>&lt;p&gt;</code>, annoterers med en class som starter med <code>skts-layout1-sammen</code>. Desuden kr&aelig;ves det at hver block indenfor farvningen af linier starter med et tag andet end et <code>&lt;p&gt;</code> tag s&aring;dan at javascript kombonenten ved hvorn&aring;r der skal startes forfra p&aring; farvningen. F.eks. i &aring;rsopg&oslash;relsen er hver linie sat med et <code>p</code> tag og disse er  afgr&aelig;nset med et <code>&lt;h3&gt;</code> tag.</p>
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-layout1-foldblok">
+      <h3 class="skts-layout1-lille-overskrift">Kapitalindkomst:</h3>
+      <p class="skts-layout1-sammen-ext"><span>Renteindt&aelig;gter&nbsp;</span><span class="skts-tooltip-holder"><abbr title="Vi har &aelig;ndret bel&oslash;bet for dig">A</abbr><span class="skts-tooltip">Vi har &aelig;ndret bel&oslash;bet for dig</span></span> <span>36 kr.</span><span><a tabindex="0" class="skts-pil skts-pil-ind"></a></span>
+      </p>
+      <p class="skts-layout1-detaljer">
+        <span>Rubrik 41: Renteudgifter til realkreditinstitut</span>
+        <a href="#" class="skts-sekundaer-link">Se hvor oplysningerne til rubrik 41 kommer fra</a>
+      </p>
+      <p class="skts-layout1-sammen">
+        <span>Renteudgifter til realkreditinstitut</span>
+        <span class="skts-layout1-delresul_tal">-30.500 kr.</span>
+        <a tabindex="0" class="skts-pil"></a>
+      </p>
+      <p class="skts-layout1-detaljer">
+        <span>Rubrik 41: Renteudgifter til realkreditinstitut</span>
+        <a href="#" class="skts-sekundaer-link">Se hvor oplysningerne til rubrik 41 kommer fra</a>
+      </p>
+      <p class="skts-layout1-sammen-nodetail">
+        <span>Linie uden foldud</span>
+        <span class="skts-layout1-delresul_tal">-2.229 kr.</span>
+      </p>
+      <p class="skts-layout1-sammen">
+        <span>Renteudgifter til pengeinstitut</span>
+        <span class="skts-layout1-delresul_tal">-2.229 kr.</span>
+        <a tabindex="0" class="skts-pil"></a>
+      </p>
+      <p class="skts-layout1-detaljer">
+        <span>Rubrik 42: Renteudgifter til pengeinstitut</span>
+        <a href="#" class="skts-sekundaer-link">Se hvor oplysningerne til rubrik 42 kommer fra</a>
+      </p>
+    </div>
+  </div>
+
+  <h3>Yderligere beregninsglinier i &aring;rsopg&oslash;relsen</h3>
+  <p class="skts-broedtekst">Denne beregnings del viser et eksempel p&aring; hvordan der foldes ud under en linie. Samtidig indeholder den et eksempel p&aring; formateringen af forskellige bel&oslash;b ved understregning. Eksempelvis bruges klassen <code>skts-layout1-linje_understreg</code> for at understrege og <code>skts-layout1-linje_resultat</code> bruges for at vise et resultat.</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-layout1-sammen">
+      <span>Betalt skat&nbsp;</span><span>108.593,00 kr.</span><span><a class="skts-pil skts-pil-ind" tabindex="0"></a></span>
+    </p>
+    <p class="skts-layout1-beregning-detaljer skts-layout1-detaljer skts-layout1-opgoerelse">
+      <span class="skts-layout1-tekst">Indeholdt AM-bidrag af l&oslash;nindkomst&nbsp;</span><span class="skts-layout1-delresul_tal">26.028,00 kr.</span>
+      <span class="skts-layout1-tekst">Indeholdt A-skat&nbsp;</span><span class="skts-layout1-delresul_tal">79.105,00 kr.</span>
+      <span class="skts-layout1-tekst">Indeholdt udbytteskat af aktieindkomst 27 % af 8.000&nbsp;</span><span class="skts-layout1-delresul_tal">2.160,00 kr.</span>
+      <span class="skts-layout1-container skts-layout1-linje_understreg"><span class="skts-layout1-tekst">Kompensation for forh&oslash;jede afgifter (gr&oslash;n check)&nbsp;</span><span class="skts-layout1-delresul_tal">2.160,00 kr.</span></span>
+      <span class="skts-layout1-container skts-layout1-linje_resultat skts-layout1-padding-bottom"><span class="skts-layout1-tekst">Betalt skat&nbsp;</span><span class="skts-layout1-delresul_tal">108.593,00 kr.</span></span>
+    </p>
+  </div>
+
+  <p class="skts-broedtekst">Denne linie indeholder ingen funktionalitet, men er typisk en del af et overordnet foldudobjekt.</p>
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-layout1-beregning-detaljer skts-layout1-detaljer skts-layout1-opgoerelse">
+      <p class="skts-broedtekst">
+        <span class="skts-layout1-tekst">AM-bidrag 8,00 %</span><span class="skts-layout1-delresul_tal">26.028,00 kr.</span>
+      </p>
+    </div>
+  </div>
+
+  <h2 id="fejl">Fejlh&aring;ndtering</h2>
+  <div class="bs-docs-example" data-pretty>
+    <div id="skts-indhold-aarsopgoerelse-ret-kontaktoplysninger-fejl" class="skts-indhold-smal">  
+      <div class="skts-fejl-meddelelse-boks"> 
+        <div style="width:1px;"> <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til n&aelig;rmest for&aelig;ldre som har et layout -->
+          <a id="skts-skip-link-target-fejl" class="skts-link-target-skjul">Fejl</a>
+        </div>
+        <ol class="skts-broedtekst">
+          <li><a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-email')); return false;">Du mangler at indtaste en e-mail-adresse.<span class="skts-tooltip"> G&aring; til feltet</span></a></li>
+          <li><a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-repeat-email')); return false;">Du mangler at gentage e-mail-adressen.<span class="skts-tooltip"> G&aring; til feltet</span></a></li>
+          <li><span class="skts-fejltekst-info">Bel&oslash;bet m&aring; ikke overstige din samlede indkomst</span>&nbsp;<a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-indberet-beloebmaaned')); return false;">(g&aring; til feltet)<span class="skts-tooltip"> G&aring; til feltet</span></a>.</li>
+
+
+          <!--Nedenst&aring;ende er en anden mulig feltype som skal bruges hvis brugeren ikke taster ens email adresser. Denne skal hoppe ned til repeat email felter -->
+          <!--<li><a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-repeat-email')); return false;">Du skal taste det samme i "E-mail-adresse" og "Gentag e-mail-adresse".<span class="skts-tooltip"> G&aring; til feltet</span></a></li>-->
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-docs-example" data-pretty>
+    <fieldset id="skts-aarsopgoerelse-email-fieldset" class="skts-input-liste skts-broedtekst">
+      <div class="skts-field-nede">
+        <label class="skts-ledetekst" for="skts-email">E-mail-adresse: </label>
+        <input type="text" class="skts-layout2-text skts-felter-fejl" onblur="validerEmailInput(this);" id="skts-email"/>
+        <div class="skts-slut-float"></div>
+      </div>
+      <div class="skts-field-nede">
+        <label class="skts-ledetekst" for="skts-repeat-email">Gentag e-mail-adresse: </label>
+        <input type="text" class="skts-layout2-text skts-felter-fejl" onblur="validerEmailInput(this);" id="skts-repeat-email"/>
+        <div class="skts-slut-float"></div>
+      </div>
+      <div class="skts-knapper-placering1">
+        <input type="submit" class="skts-knap-primaer" value="Gem"/><input type="button" class="skts-knap-sekundaer" value="Sp&oslash;rg mig senere"/>
+      </div>
+    </fieldset>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="kolonner">Kolonner</h2>
+
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-kolonner-to">
+      <div class="skts-kolonne1"><span>Indtast direkte:</span>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+          K&oslash;rsel til og fra arbejde (befordring)<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+          Aktier og v&aelig;rdipapirer<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+      </div>
+      <div class="skts-kolonne2"><span>Orientering fra SKAT:</span> 
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+          Om din &aring;rsopg&oslash;relse<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder" title="Viser vindue med orientering fra SKAT" >
+          Om udenlandsk indkomst<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+      </div>
+      <div class="skts-slut-float"></div>
+    </div>
+  </div>
+
+
+
+  <!-- skabelon
+    <h2>Overskrift</h2>
+    <p class="skts-broedtekst">Forklaring<p>
+    <div class="bs-docs-example" data-pretty>
+      Html code
+    </div>
+-->
+</div>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SaerligeIndkomstforhold.xsd"/>
+         <xs:include schemaLocation="../class/TonnageAngivelse.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/TonnageAktivitetBindingperiodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BasisoplysningerRederiStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BasisoplysningerOperatoerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TonnageSkattepligtigIndkomstRegnskabstalStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RevisorErklaeringForholdStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FlagoplysningerStrukturType.xsd"/>
+				     
+         <xs:element name="SærligeIndkomstforholdStruktur"
+                     type="skat2012:SærligeIndkomstforholdStrukturType"/>
+         <xs:complexType name="SærligeIndkomstforholdStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:SærligeIndkomstforholdHybrideFinansInstrumenterMarkering"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærligeIndkomstforholdCFCIndkomstMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærligeIndkomstforholdTonnageMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseBeskatningTilvalgt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAktivitetBindingperiodeStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BasisoplysningerRederiStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BasisoplysningerOperatørStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageSkattepligtigIndkomstRegnskabstalStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:RevisorErklæringForholdStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FlagoplysningerStruktur" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

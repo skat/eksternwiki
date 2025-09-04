@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver den periode, en virksomhed driftsmæssigt aflægger regnskab for.  Anvendes bl.a. til opsætning af angivelsesperiode for virksomheder registreret for moms - landbrug.  Indkomstår og skatteår kan udledes af regnskabsperiode. Regnskabsperiode styrer udsendelse af selvangivelse for virksomheder med selskabsskattepligt.  Regnskabsperioder skal være ens for alle enkeltmandsvirksomheder med samme ejer, samt for alle selskaber med samme CVR-nr.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/VirksomhedRegnskabPeriodeKodeType.xsd"/>
+         <xs:element name="VirksomhedRegnskabPeriodeStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for regnskabsperioden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedRegnskabPeriodeSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for regnskabsperioden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedRegnskabPeriodeKode"
+                     type="skat2012:VirksomhedRegnskabPeriodeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der entydigt identificerer de mulige typer af  regnskabsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

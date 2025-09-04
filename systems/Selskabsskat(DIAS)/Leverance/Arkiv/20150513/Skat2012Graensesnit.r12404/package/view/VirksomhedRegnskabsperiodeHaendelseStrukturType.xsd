@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/VirksomhedRegnskabPeriode.xsd"/>
+         <xs:element name="VirksomhedRegnskabsperiodeHændelseStruktur"
+                     type="skat2012:VirksomhedRegnskabsperiodeHændelseStrukturType"/>
+         <xs:complexType name="VirksomhedRegnskabsperiodeHændelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="FørVærdiListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="FørVærdi" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeKode"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeStartDato"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeSlutDato"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="EfterVærdiListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="EfterVærdi" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeKode"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeStartDato"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeSlutDato"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

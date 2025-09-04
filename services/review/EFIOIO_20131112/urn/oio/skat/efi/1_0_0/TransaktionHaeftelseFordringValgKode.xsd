@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:transaktionhaeftelsefordringvalgkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="TransaktionHaeftelseFordringValgKode" type="transaktionhaeftelsefordringvalgkode:TransaktionHaeftelseFordringValgKodeType">
+		<xs:annotation>
+			<xs:documentation>Angiver om en transaktion er en hæftelse eller en fordring. H: Hæftelse F: Fordring</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="TransaktionHaeftelseFordringValgKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="H"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:dmi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:skatkundetypekode="urn:oio:skat:dmi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="SkatKundeTypeKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Identificere typen af kunde, dvs. hvad SkatKundeNummer dækker over. 
+Værdisæt: 
+CVR-Virksomhed
+SE-Virksomhed
+CPR-Person
+AKR-DMR-Person
+AKR-DMR-Virksomhed
+AKR-DMR-Ukendt
+AKR-EFI-Person
+AKR-EFI-Virksomhed
+AKR-EFI-Myndighed
+AKR-EFI-Ukendt</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

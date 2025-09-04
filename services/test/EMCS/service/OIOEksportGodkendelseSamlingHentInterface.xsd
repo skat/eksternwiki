@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="../view/OIOEksportGodkendelseSamlingHent_IType.xsd"/>
+	<xs:include schemaLocation="../view/OIOEksportGodkendelseSamlingHent_OType.xsd"/>
+	<xs:element name="OIOEksportGodkendelseSamlingHentInterface" type="struct:OIOEksportGodkendelseSamlingHentInterfaceType"/>
+	<xs:complexType name="OIOEksportGodkendelseSamlingHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="struct:OIOEksportGodkendelseSamlingHent_I"/>
+			<xs:element ref="struct:OIOEksportGodkendelseSamlingHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

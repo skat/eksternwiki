@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:modtagfordringdokumentartkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ModtagFordringDokumentArtKode" type="modtagfordringdokumentartkode:ModtagFordringDokumentArtKodeType">
+		<xs:annotation>
+			<xs:documentation>Dokument arten karakteriserer dokumentets indhold ved modtagelse af en fordring. 
+
+Anvender fast enumeration:
+ANDET
+BETALINGEVNE
+BIDRAGSRESOLUTION
+BUDGET
+DOM
+FRIVILLIGTFORLIG
+MODREGNING
+OMPOSTERING
+SAGSFREMSTILLING
+TRANSPORT </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="ModtagFordringDokumentArtKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ANDET"/>
+			<xs:enumeration value="BETALINGEVNE"/>
+			<xs:enumeration value="BIDRAGSRESOLUTION"/>
+			<xs:enumeration value="BUDGET"/>
+			<xs:enumeration value="DOM"/>
+			<xs:enumeration value="FRIVILLIGTFORLIG"/>
+			<xs:enumeration value="MODREGNING"/>
+			<xs:enumeration value="OMPOSTERING"/>
+			<xs:enumeration value="SAGSFREMSTILLING"/>
+			<xs:enumeration value="TRANSPORT"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

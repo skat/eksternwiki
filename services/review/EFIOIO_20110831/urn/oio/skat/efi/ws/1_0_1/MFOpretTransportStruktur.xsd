@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingNemKontoAftaleIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TransportUdlaegUbegraensetIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TransportUdlaegAcceptDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringArtKode.xsd"/><xs:include schemaLocation="EFIKundeIdentStruktur.xsd"/>
+	<xs:include schemaLocation="FordringBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="MyndighedUdbetalingPeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="MFDokumentStruktur.xsd"/>
+	<xs:include schemaLocation="MFTransportRettighedshaverStruktur.xsd"/>
+	<xs:element name="MFOpretTransportStruktur" type="efiws:MFOpretTransportStrukturType"/>
+	<xs:complexType name="MFOpretTransportStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringFordringArtKode"/>
+			<xs:element ref="efi:FordringTypeKode"/>
+			<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+			<xs:element ref="efiws:EFIKundeIdentStruktur"/>
+			<xs:element ref="efiws:FordringBeloebStruktur" minOccurs="0"/>
+			<xs:element ref="efi:TransportUdlaegUbegraensetIndikator"/>
+			<xs:element ref="efi:MyndighedUdbetalingNemKontoAftaleIdentifikator"/>
+			<xs:element ref="efi:MyndighedUdbetalingTypeKode"/>
+			<xs:element ref="efiws:MyndighedUdbetalingPeriodeStruktur"/>
+			<xs:element ref="efi:TransportUdlaegAcceptDato" minOccurs="0"/>
+			<xs:element name="TransportDokument" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFDokumentStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransportRettighedshaverListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFTransportRettighedshaverStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

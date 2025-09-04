@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soegeaarmaanedfrakode="http://rep.oio.dk/skat.dk/eindkomst/class/soegeaarmaanedfrakode/xml/schemas/20071202/" xmlns:soegeaarmaanedtilkode="http://rep.oio.dk/skat.dk/eindkomst/class/soegeaarmaanedtilkode/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/soegeaarmaanedtilkode/xml/schemas/20071202/" schemaLocation="class/soegeaarmaanedtilkode/xml/schemas/20071202/SoegeAarMaanedTilKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/soegeaarmaanedfrakode/xml/schemas/20071202/" schemaLocation="class/soegeaarmaanedfrakode/xml/schemas/20071202/SoegeAarMaanedFraKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="SoegeAarMaanedAabenStruktur" type="fase2:SoegeAarMaanedAabenStrukturType"/>
+         <xs:complexType name="SoegeAarMaanedAabenStrukturType">
+            <xs:sequence>
+                  <xs:element ref="soegeaarmaanedfrakode:SoegeAarMaanedFraKode"/>
+                  <xs:element minOccurs="0" ref="soegeaarmaanedtilkode:SoegeAarMaanedTilKode"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

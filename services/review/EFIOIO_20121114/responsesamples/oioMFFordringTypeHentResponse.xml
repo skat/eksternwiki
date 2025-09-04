@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:MFFordringTypeHent_O xmlns:ns16="urn:oio:oib:pension:1.0.0"
+	xmlns="urn:oio:skat:efi:1.0.0" xmlns:ns17="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2006/01/23/"
+	xmlns:ns14="urn:oio:dkal:1.0.0" xmlns:ns15="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/"
+	xmlns:ns18="http://rep.oio.dk/cpr.dk/xml/schemas/2008/05/01/"
+	xmlns:ns19="http://rep.oio.dk/uvm.dk/studieadm/common/xml/schemas/2006/02/20/"
+	xmlns:ns21="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/05/19/"
+	xmlns:ns9="http://rep.oio.dk/skat.dk/motor/class/driftform/xml/schemas/20080401/"
+	xmlns:ns5="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/"
+	xmlns:ns12="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/"
+	xmlns:ns6="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/"
+	xmlns:ns13="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/"
+	xmlns:ns7="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/"
+	xmlns:ns10="urn:oio:skat:ntse:1.0.0" xmlns:ns20="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/"
+	xmlns:ns8="urn:oio:skat:dmi:1.0.0" xmlns:ns11="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/"
+	xmlns:ns2="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/"
+	xmlns:ns4="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+	xmlns:ns3="urn:oio:skat:efi:ws:1.0.1">
+	<ns7:HovedOplysningerSvar>
+		<ns7:TransaktionIdentifikator>0123456789B</ns7:TransaktionIdentifikator>
+		<ns7:ServiceIdentifikator>MFFordringTypeHent</ns7:ServiceIdentifikator>
+		<ns7:TransaktionTid>2012-10-28T00:10:03.250+02:00</ns7:TransaktionTid>
+		<ns7:SvarStruktur />
+	</ns7:HovedOplysningerSvar>
+	<ns3:FordringTypeInfo>
+		<ns3:FordringhaverSystemIDStruktur>
+			<ns6:VirksomhedSENummerIdentifikator>12345678</ns6:VirksomhedSENummerIdentifikator>
+		</ns3:FordringhaverSystemIDStruktur>
+		<ns3:FordringTypeSamling>
+			<ns3:FordringType>
+				<FordringTypeKode>REINDDR</FordringTypeKode>
+				<FordringTypeNavn>Rente, Inddrivelse</FordringTypeNavn>
+			</ns3:FordringType>
+			<ns3:FordringType>
+				<FordringTypeKode>DAKONTR</FordringTypeKode>
+				<FordringTypeNavn>Kontrolafgift jf. jernbaneloven</FordringTypeNavn>
+			</ns3:FordringType>
+			<ns3:FordringType>
+				<FordringTypeKode>REOPKRÆ</FordringTypeKode>
+				<FordringTypeNavn>Rente, Opkrævning</FordringTypeNavn>
+			</ns3:FordringType>
+			<ns3:FordringType>
+				<FordringTypeKode>CFCIVIL</FordringTypeKode>
+				<FordringTypeNavn>Civilretlig restance</FordringTypeNavn>
+			</ns3:FordringType>
+			<ns3:FordringType>
+				<FordringTypeKode>GEOPKRÆ</FordringTypeKode>
+				<FordringTypeNavn>Gebyr, Opkrævning</FordringTypeNavn>
+			</ns3:FordringType>
+		</ns3:FordringTypeSamling>
+	</ns3:FordringTypeInfo>
+</ns3:MFFordringTypeHent_O>

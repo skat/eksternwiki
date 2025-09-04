@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringopskrivningbeloeb="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringOpskrivningBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Det beløb en fordring ønskes eller er opskrevet med i den indrapporterede valuta.  Forudsætning for 0 er at FordringOpskrivningÅrsagKode = Endelig Fastsættelse</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

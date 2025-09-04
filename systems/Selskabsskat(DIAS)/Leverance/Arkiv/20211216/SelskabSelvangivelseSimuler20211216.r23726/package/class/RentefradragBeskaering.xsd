@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="RentefradragBeskæringErUdgifterBegrænset" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om fonden/foreningen nettofinansieringsudgifter er begrænset jf. selskabsskattelovens § 11 B eller § 11 C. (True = ja, False = nej). Felt 195.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RentefradragBeskæringNettoFinansieringsUdgifter"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets nettofinansieringsudgifter jf. selskabsskattelovens § 11 B, stk. 4. Felt 196</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RentefradragBeskæringAktiversSkattemæssigVærdi" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattemæssig værdi af fondens/foreningens aktiver jf. selskabsskattelovens § 11 B, stk. 5. Felt 197</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RentefradragBeskæringSaldoFremfør" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>EBIT-saldo til fremførsel. EBIT står for earnings before interest and taxes, og kaldes også på dansk driftsresultatet. EBIT angiver, hvor meget en virksomhed har tjent over en given periode efter alle driftsudgifter (både variable og faste). Felt198</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

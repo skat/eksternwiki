@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/motor/class/virksomhedadressetype/xml/schemas/20080401/" version="1.0" xml:lang="DA">
+<element name="VirksomhedAdresseTypeKode" type="string">
+<annotation>
+<documentation>VirksomhedAdresseType angiver de typer af adresse, som kan oprettes for en virksomhed i forskellige situationer. VirksomhedAdresseType. VirksomhedAdresseType indeholder følgende tilladte værdier:
+
+01	Virksomhed
+02	Fors. (selsk. selvang.)
+03	Hjemstedadr - selskab mfl
+04	Lager for T 1 varer
+05	Fjernregistrering
+06	Bo
+07	Postboks
+08	Harpunadresse
+09	Regnskab
+10	Lager
+12	Udenlandsk
+13	Fors. (moms/lønsum)
+14	Gammel virksomhedsadresse
+15	Frivillig registrering
+16	Spillestedsadresse
+
+AdresseFormType angiver altså hvilken former for adresse, der tillades oprettes, hvorimod VirksomhedAdresseType angiver de adresser, der kan oprettes for en virksomhed.
+
+Der findes i Erhvervssystemet tillige regler, som angiver tilladte kombinationer af AdresseFormType og VirksomhedAdresseType. 
+
+VirksomhedAdresseType = 01 kan således alene oprettes for AdresseFormType = 01 osv.</documentation>
+</annotation>
+</element>
+</schema>

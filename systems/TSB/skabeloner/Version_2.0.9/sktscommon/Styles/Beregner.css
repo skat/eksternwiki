@@ -1,0 +1,564 @@
+body {
+	font-family: helvetica;
+	background-color:#d9d9d9;
+	margin: 0px;
+	color:black;
+	overflow-y:scroll;
+	padding:0;
+	
+	background-image:url("noise.png");
+	/*
+	background-image:url("bunker.jpg");
+	background-attachment:fixed;
+	background-repeat:no-repeat;*/
+}
+
+h2 {margin:0px;
+	font-weight:normal;}	
+	
+p {margin:0px;
+font-size:90%;}
+
+#fejlmed {
+background: #d9d9d9;
+padding:5px;
+width:250px;
+border: 1px solid red;
+font-size:85%;
+position:absolute;
+}
+
+
+.linje_sum {
+margin-top:8px;
+border-top:1px solid #3F6075;  
+border-bottom:1px solid #3F6075;  
+
+
+}
+
+.fagforening_format {
+	display:inline-block;
+	width:100px;
+	padding-left:5px;
+	padding-right:5px;
+}
+	
+
+.fagforening_format_2 {
+	display:inline-block;
+	
+	padding-left:5px;
+	padding-right:5px;
+}
+		
+.fagforening_format_3 {
+	display:inline-block;
+	width:205px;
+	padding-left:5px;
+	padding-right:5px;
+}
+	
+		
+		
+
+
+.kontakt_skjul {
+	margin-top:15px;
+	color:#3F6075;}
+	
+#Ramme{
+	margin-left:auto;
+	margin-right:auto;
+	padding: 0px 0px 0px 10px;
+	
+	overflow:hidden;
+	
+	width:940px;}
+
+#Header{
+	display:block;
+	overflow:hidden; 
+	padding: 0px;
+	margin: 0px 0px 0px 0px ;}
+
+.venstre {
+	float:left;}
+	
+	
+#globalnav {
+	float:left;
+	width:845px;
+	margin-left:5px;
+	margin-bottom: 20px;
+	padding-left:10px;
+	color:white;
+	background:#3f6075; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZX");
+	background:-moz-linear-gradient(top, #3f6075 0%, #4d6d8e 51%, #4f7593 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f6075), color-stop(51%,#4d6d8e), color-stop(100%,#4f7593)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* Opera 11.10+ */
+	background:-ms-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* IE10+ */
+	background:linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f6075', endColorstr='#4f7593',GradientType=0 ); /* IE6-8 */}
+	/* background-repeat:repeat-x; */
+
+#globalnav ul {
+	
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	line-height:2;}
+	
+
+#nav_venstre {
+	float:left;}
+	
+#nav_hojre {
+	float:right;}
+	
+#globalnav li {
+	display:inline;
+	padding: 8px;
+	font-weight:bold;
+	line-height:2;
+	border-left: 1px solid white;}
+
+.sogefelt {
+	border-radius:4px;
+	height:13px;
+	} 
+
+
+
+.venstre_overskrift {
+	font-size:110%;
+	margin-top:10px;
+	margin-bottom:8px;
+	font-weight:normal;
+	border-bottom:1px dotted #d9d9d9;
+}
+	
+label {
+	font-size:90%;}	
+
+#venstre {
+	float:left;
+	width:20px;
+	margin-left:5px;
+	padding:7px 13px 0px 0px;
+	height:800px;
+}
+
+#hojre {
+	float:left;
+	width:80px;
+	margin-left:5px;
+	padding:7px;
+	color:gray;
+	height:800px;
+}
+
+.foldud_tekst {
+	padding-left:5px;
+}
+
+
+#visbesked_1 {
+	position:absolute;
+	width:200px;
+	background: rgba(224, 224, 224, 0.8); 
+	border:1px solid #3F6075;
+	font-weight:bold;
+	padding:5px;
+	font-size:70%;
+}
+
+.felter {
+	padding:5px;
+	width:120px;
+	margin-left:5px;
+}
+
+.valghej {
+	width:200px;
+	padding:5px;
+	margin-left:5px;
+
+}
+
+#vis_forskel {
+	padding:5px;
+	display:inline-block;
+	font-size:100%;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+#centrum {
+	margin-top:80px;
+	margin-left:20px;
+	margin-right:20px;
+	width:460px;
+	padding:20px;
+	background-color:#F5F5F5;
+	border:1px solid #3F6075;
+	min-height:600px;
+	background: rgba(224, 224, 224, 0.8); 
+	float:left;
+	}
+
+#overskrift_centrum {
+margin: 5px 0px 15px 0px;
+overflow:hidden;
+
+}	
+
+.overskrift_main {
+float:left;
+color:black;
+margin-top:25px;
+font-size:170%;
+}
+
+.kommunevalg {
+padding:5px;
+line-height:25px;
+width:190px;
+}
+
+.tekst_main {
+margin-bottom:17px;
+line-height:1.5;
+color:black;
+}
+
+.fremhavet {
+font-size:140%;
+font-weight:bold;
+color: gray;}
+	
+#ramme_beregner_1 {
+
+overflow:hidden;
+width:450px;
+margin:0px;
+border:1px solid #3F6075;
+background-color:white;
+}
+
+.beregner_tekst {
+font-weight:bold;
+font-size:20px;
+margin-bottom:2px;
+margin-top: 10px;
+}
+
+#indkomst{
+margin:10px;
+}
+
+.udfold {
+display:inline-block;
+text-align:right;
+margin-right:5px;
+font-size:12px;
+width:185px;
+}
+
+.loonfelt {
+padding:6px;
+margin-left:15px;
+font-size:100%;
+width:110px;
+text-align:center;
+}
+
+.omraade {
+width:230px;
+display:inline-block;
+font-size:14px;
+font-weight:700;
+}
+
+.emne {
+margin: 3px 7px 5px 0px;
+
+color:#3F6075;
+font-size:12px;
+padding:0px;
+border-bottom: 1px solid gray; 
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+
+}
+
+.omraade_resul {
+display:inline-block;
+margin-top:20px;
+margin-left:10px;
+font-size:150%;
+font-weight:bold;
+}
+
+
+#resultat {
+position:absolute;
+width:340px;
+background:white;
+padding:7px;
+border:1px solid #3F6075;
+}
+
+#pr_maaned {
+font-size:140%;
+
+}
+
+#udbetalt {
+font-size:160%;
+font-weight:bold;
+}
+
+
+.info_resultat {
+font-weight:normal;
+font-size:12px;
+
+}
+
+.attention {
+font-size:9px;
+line-height:11px;
+color:#3F6075;
+}
+
+.udregning {
+line-height:16px;
+font-size:12px;
+}
+
+
+.info_resultat_bold {
+font-size:13px;
+line-height:15px;
+font-weight:bold;
+border-bottom:1px solid #D0D0D0;
+width:100%;
+margin-bottom:4px;
+display:inline-block;
+}
+
+
+
+.ja {
+height:20px;
+width:25px;
+text-align:center;
+display:inline-block;
+margin-left:-4px;
+color:white;
+cursor:pointer;
+padding:1px 5px 1px 5px;
+border-radius: 0px 3px 3px 0px;
+}
+
+
+
+.nej {
+height:20px;
+width:25px;
+text-align:center;
+display:inline-block;
+margin-left:-4px;
+color:white;
+cursor:pointer;
+padding:1px 5px 1px 5px;
+border-radius: 3px 0px 0px 3px;
+}
+
+#nej_korsel {
+border:3px solid #3F6075;
+}
+
+.ekstra {
+padding:0px 5px 0px 0px;
+font-size:80%;
+}
+
+.resultat_01 {
+font-size:160%;
+font-weight:bold;
+}
+
+td {font-size:60%}
+
+.overskrift_beregner {
+	color: #fef4e9;
+	padding: 3px 5px 3px 16px;
+	font-weight:bold; 
+	font-size: 120%;
+	background-color:#3F6075;	
+} 
+
+.knap {
+	color: #fef4e9;
+	padding: 5px;
+	cursor:pointer;
+	background:#3f6075; 
+	width:50px;
+	height:25px;
+	font-size: 120%;
+	float:right;
+	font-weight:bold;	
+}
+
+.blaheader {
+color:white;
+	background:#3f6075; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZX");
+	background:-moz-linear-gradient(top, #3f6075 0%, #4d6d8e 51%, #4f7593 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f6075), color-stop(51%,#4d6d8e), color-stop(100%,#4f7593)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* Opera 11.10+ */
+	background:-ms-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* IE10+ */
+	background:linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f6075', endColorstr='#4f7593',GradientType=0 ); /* IE6-8 */	
+}
+
+#blatop {
+height:50px;
+}
+
+#blacentrum {
+height:18px;
+background:#3f6075;
+color:white;
+margin:-20px;}
+
+
+.infotekst {
+margin-top:10px;
+width:140px;
+display:block; 
+float:right; 
+border-radius:7px; 
+padding: 5px; 
+border: 1px dotted #3F6075;
+font-weight:100;}
+
+.afstand {
+clear:both;
+height:6px;
+padding:0px;
+}
+
+#vis_marginal {
+font-size:12px;
+}
+
+
+.afstand_lille {
+clear:both;
+height:0px;
+margin-top:-3px;
+padding:0px;
+}
+
+.procentkaj {
+color:gray;
+}
+
+.procentkaj_lille {
+color:gray;
+font-size:12px;
+line-height:13px;
+}
+
+#procentskat {
+font-size:20px;
+}
+
+#marginal1000 {
+font-size:15px;
+color:black;
+}
+
+.afstand_linje {
+clear:both;
+margin:10px 8px 3px 0px; 
+padding:0px 0px 0px 0px;
+border-bottom:1px solid gray;
+}
+
+
+
+
+.indhold_beregner {
+padding-left: 12px;
+background-color:white;
+}
+
+
+.kontakt {
+display:block;
+font-weight:bold;
+float:left;
+width:400px;
+padding:5px;
+font-size:80%;
+margin-top:5px;	
+clear:left;}
+
+.kontakt_input{
+float:left;
+clear:left;
+margin:5px 0px 0px 5px;
+display:block;
+width:200px;
+padding:5px;
+border: 1px solid #3F6075;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+
+
+.beskriv_snyd {
+height:200px;
+width:400px;
+border: 1px solid gray;
+margin-left:5px;
+}
+
+
+
+
+
+.tekst {
+width:550px;
+height:100px;
+padding:0px;
+align:top;}
+
+
+
+

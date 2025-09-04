@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Informationer til brug for skattekreditordningen hvor ansøger er en sambeskatning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ13Decimaler2Type.xsd"/>
+         <xs:element name="SambeskattetForskningPeriode" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der ansøges for en periode der er kortere end 12 måneder. Felt 607J</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SambeskattetForskningPeriodeHent" type="skat2012:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den faktiske indkomstperiode som er registreret på selskabet i systemet. Felt 607JA</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SambeskattetForskningSkattepligtigIndkomstFørUnderskud"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Negativ sambeskatningsindkomst før reduktion af underskud vedr. forsøgs- og forskningsaktiviteter. Felt 613</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SambeskattetForskningSkatteværdiUnderskudAnsøgt"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skatteværdien af underskuddet der søges om udbetaling af under skattekreditordningen. Felt 609J</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SambeskattetForskningOmkostningStraksafskrivning"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om omkostningerne der ligger til grund for ansøgning om skattekredit, er straksafskrevet efter ligningsloven eller afskrivningsloven. Felt 611J</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SambeskattetForskningNedsættelseUnderskudSkattekredit"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af at underskud til fremførsel nedsættes tilsvarende det underskud der ligger til grund for ansøgning om skattekredit. Felt 612J</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

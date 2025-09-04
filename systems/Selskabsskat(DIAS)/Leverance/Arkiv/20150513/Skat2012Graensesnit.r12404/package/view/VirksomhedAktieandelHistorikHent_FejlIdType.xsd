@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../operational/InkluderHistorikMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         <xs:include schemaLocation="../class/EjerForhold.xsd"/>
+         <xs:include schemaLocation="../class/UdenlandskPerson.xsd"/>
+         <xs:include schemaLocation="../class/UdenlandskVirksomhed.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:element name="VirksomhedAktieandelHistorikHent_FejlId"
+                     type="skat2012:VirksomhedAktieandelHistorikHent_FejlIdType"/>
+         <xs:complexType name="VirksomhedAktieandelHistorikHent_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:InkluderHistorikMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EjerRolleTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EjerForholdGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UdenlandskPersonNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UdenlandskVirksomhedNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PersonCPRNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MyndighedNummer" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

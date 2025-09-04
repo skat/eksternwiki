@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Attributterne i denne klasse er særlige regnskabstal som anvendes ifm. angivelse af tonnage. (Flere af disse attributter er sandsynligvis dubletter af allerede definerede dataelementer med andre navne, men der udestår en forretningsmæssig afklaring.)</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="TonnageRegnskabstalResultatAssocierede" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsmæssig resultat i associerede og tilknyttede virksomheder, som er indregnet i resultatopgørelsen Felt 320</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageRegnskabstalTonnageIndkomst" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tonnageindkomst, jf. tonnageskattelovens § 15, stk. 1 Felt 316</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageRegnskabstalFordelingOverskudUnderskudSambeskattet"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordeling af årets overskud/underskud fra sambeskattede selskaber Felt 317</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageRegnskabstalUnderskudFradragTidligereÅr" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendt underskud fra tidligere indkomstår/delperioder - egne underskud og/eller underskud fra sambeskattede selskaber Felt 318</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

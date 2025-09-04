@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:tse:1.0.1" xmlns:tse="http://rep.oio.dk/skat.dk/TSE/service/momsangivelsemodtag/xml/schemas/2006/09/01/" xmlns:tse2009="urn:oio:skat:tse:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation></xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="http://digitaliser.dk/resource/247616/artefact/MomsAngivelseInputStruktur.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/service/momsangivelsemodtag/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247488/artefact/SKAT_MomsAngivelseOutputStruktur.xsd"/>
+	<xs:element name="eSkattekortHentInterface" type="tse2009:eSkattekortHentInterfaceType"/>
+	<xs:complexType name="eSkattekortHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="tse2009:MomsAngivelseInputStruktur"/>
+			<xs:element ref="tse:MomsAngivelseOutputStruktur"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

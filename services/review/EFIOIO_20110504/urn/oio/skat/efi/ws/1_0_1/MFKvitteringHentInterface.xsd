@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>At hente resultater (kvitteringer) fra den asynkrone behandling af fordringsaktioner indberettet med MFFordringIndberet.</xs:documentation>
+		<xs:documentation>r4325</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../../../../../../urn/oio/skat/efi/ws/1_0_1/MFKvitteringHent_I.xsd"/>
+	<xs:include schemaLocation="../../../../../../urn/oio/skat/efi/ws/1_0_1/MFKvitteringHent_O.xsd"/>
+	<xs:element name="MFKvitteringHentInterface" type="efiws:MFKvitteringHentInterfaceType"/>
+	<xs:complexType name="MFKvitteringHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="efiws:MFKvitteringHent_I"/>
+			<xs:element ref="efiws:MFKvitteringHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

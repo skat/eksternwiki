@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AbonnentAdgangStruktur.xsd"/>
+         <xs:include schemaLocation="AbonnentStruktur.xsd"/>
+         <xs:include schemaLocation="PersonIndkomstSoegeStruktur.xsd"/>
+         <xs:element name="AnsaettelseForholdPersonHent_I" type="fase2:AnsaettelseForholdPersonHent_IType"/>
+         <xs:complexType name="AnsaettelseForholdPersonHent_IType">
+            <xs:sequence>
+               <xs:element ref="kontekst:HovedOplysninger"/>
+                     <xs:element name="AnsaettelseForholdPersonInddata">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2:AbonnentAdgangStruktur"/>
+                              <xs:element ref="fase2:AbonnentStruktur"/>
+                              <xs:element name="AnsaettelseForholdPerson">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element maxOccurs="unbounded" minOccurs="1" ref="fase2:PersonIndkomstSoegeStruktur"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

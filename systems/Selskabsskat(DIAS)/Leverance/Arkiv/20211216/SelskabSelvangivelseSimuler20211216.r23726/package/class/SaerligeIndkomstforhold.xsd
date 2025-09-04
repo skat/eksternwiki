@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="SærligeIndkomstforholdTonnageMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet driver rederi- og/eller operatørvirksomhed, som kan omfattes af tonnageskatteordningen. (True = ja, False = nej). Felt 300</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SærligeIndkomstforholdCFCIndkomstMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har CFC-indkomst. (True = ja, False = nej). Felt 066</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SærligeIndkomstforholdHybrideFinansInstrumenterMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er omfattet af selskabsskattelovens § 2 B. (True = ja, False = nej). Felt 069</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SærligeIndkomstforholdCFCIndkomst" type="skat2012:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver størrelsen på selskabets CFC Indkomst  Felt 066a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

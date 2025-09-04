@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:emcs="urn:oio:skat:emcs:1.0.1">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/569212/artefact/LedsagedokumentARCIdentifikator.xsd"/><xs:include schemaLocation="../view/AdresseEUStrukturType.xsd"/>
+	<xs:element name="HændelseRapportStruktur" type="struct:HændelseRapportStrukturType"/>
+	<xs:complexType name="HændelseRapportStrukturType">
+		<xs:sequence>
+			<xs:element ref="struct:HændelseRapportBeskedType"/>
+			<xs:element ref="struct:HændelseRapportHændelseValideretDatoTid" minOccurs="0"/>
+			<xs:element ref="struct:HændelseRapportNummer" minOccurs="0"/>
+			<xs:element ref="struct:HændelseRapportAfsenderMedlemStat" minOccurs="0"/>
+			<xs:element ref="emcs:LedsagedokumentARCIdentifikator" minOccurs="0"/>
+			<xs:element ref="struct:LedsageDokumentSekvensNummer" minOccurs="0"/>
+			<xs:element ref="struct:ToldstedReferenceNummer" minOccurs="0"/>
+			<xs:element ref="struct:MedlemStatKode" minOccurs="0"/>
+			<xs:element name="HændelsesRapport" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HændelseSted">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:HændelseRapportHændelseDato"/>
+									<xs:element ref="struct:HændelseRapportHændelseSted" minOccurs="0"/>
+									<xs:element ref="struct:SprogKode" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Afsender">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:ToldstedMedarbejder" minOccurs="0"/>
+									<xs:element ref="struct:HændelseRapportAfsender"/>
+									<xs:element ref="struct:HændelseRapportAfsenderKode"/>
+									<xs:element name="HændelseRapportAfsenderSupplerendeOplysning" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:HændelseRapportAfsenderSupplerendeOplysning"/>
+												<xs:element ref="struct:SprogKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="struct:HændelseRapportTransportÆndring" minOccurs="0"/>
+						<xs:element name="Kommentar" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:HændelseRapportKommentar"/>
+									<xs:element ref="struct:SprogKode"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BevisDokumentationSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BevisDokumentation" minOccurs="0" maxOccurs="9">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Myndighed" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:BevisDokumentationUdstedendeMyndighed"/>
+												<xs:element ref="struct:SprogKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="struct:BevisDokumentationType"/>
+									<xs:element name="Reference">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:BevisDokumentationReference"/>
+												<xs:element ref="struct:SprogKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="SupplerendeOplysning" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:BevisDokumentationSupplerendeOplysning"/>
+												<xs:element ref="struct:SprogKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="struct:BevisDokumentationBilledeBevis" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NyTransportArrangør" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:TransportArrangørMomsNummer" minOccurs="0"/>
+						<xs:element ref="struct:TransportArrangørNavn"/>
+						<xs:element ref="struct:AdresseEUStruktur"/>
+						<xs:element ref="struct:SprogKode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NyTransportør" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:TransportørMomsNummer" minOccurs="0"/>
+						<xs:element ref="struct:TransportørNavn"/>
+						<xs:element ref="struct:AdresseEUStruktur"/>
+						<xs:element ref="struct:SprogKode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransportOplysningSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TransportOplysning" minOccurs="0" maxOccurs="99">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:TransportEnhedTypeKode"/>
+									<xs:element ref="struct:TransportEnhedIdentifikation" minOccurs="0"/>
+									<xs:element name="TransportOplysningSupplerendeOplysning" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:TransportOplysningSupplerendeOplysning"/>
+												<xs:element ref="struct:SprogKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Forsegling">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:ForseglingIdentifikation" minOccurs="0"/>
+												<xs:element name="ForseglingBeskrivelse" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="struct:ForseglingBeskrivelse"/>
+															<xs:element ref="struct:SprogKode"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="HændelseSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Hændelse" minOccurs="0" maxOccurs="99">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:HændelseKode"/>
+									<xs:element name="HændelseAssocieretInformation" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:HændelseAssocieretInformation"/>
+												<xs:element ref="struct:SprogKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="struct:EMCSVarePostLøbeNummer" minOccurs="0"/>
+									<xs:element ref="struct:VarePostAfvigelsePositivNegativMarkering" minOccurs="0"/>
+									<xs:element ref="struct:VarePostAfvigelseStørrelse" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

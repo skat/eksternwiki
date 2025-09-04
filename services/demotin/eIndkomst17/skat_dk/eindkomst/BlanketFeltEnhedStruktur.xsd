@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:blanketfelt="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:feltenhedtype="http://rep.oio.dk/skat.dk/eindkomst/class/feltenhedtype/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/feltenhedtype/xml/schemas/20071202/" schemaLocation="class/feltenhedtype/xml/schemas/20071202/FeltEnhedTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" schemaLocation="class/blanketfelt/xml/schemas/20071202/BlanketFeltNummerIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="BlanketFeltEnhedStruktur" type="fase2:BlanketFeltEnhedStrukturType"/>
+         <xs:complexType name="BlanketFeltEnhedStrukturType">
+               <xs:sequence>
+                  <xs:element ref="blanketfelt:BlanketFeltNummerIdentifikator"/>
+                  <xs:element ref="feltenhedtype:FeltEnhedTypeKode"/>
+               </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

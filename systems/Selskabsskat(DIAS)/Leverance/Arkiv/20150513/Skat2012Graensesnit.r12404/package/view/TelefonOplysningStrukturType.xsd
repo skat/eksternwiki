@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Fax.xsd"/>
+         <xs:element name="TelefonOplysningStruktur" type="skat2012:TelefonOplysningStrukturType"/>
+         <xs:complexType name="TelefonOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="TelefonOplysningTypeValgStruktur">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="Telefon">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2012:TelefonGyldigFra"/>
+
+                                    <xs:element ref="skat2012:TelefonGyldigTil" minOccurs="0"/>
+
+
+                                    <xs:element name="TelefonTypeValgStruktur">
+                                       <xs:complexType>
+                                          <xs:choice>
+                                             <xs:sequence>
+                                                <xs:element name="DanskFastnet">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="skat2012:TelefonNummer"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+				
+				                                         </xs:sequence>
+                                             <xs:sequence>
+				
+                                                <xs:element name="UdlandFastnet">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+
+                                                         <xs:element ref="skat2012:TelefonLandeKode" minOccurs="0"/>
+
+                                                         <xs:element ref="skat2012:TelefonUdenlandskNummer"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+				
+				                                         </xs:sequence>
+                                             <xs:sequence>
+				
+                                                <xs:element name="DanskMobil">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="skat2012:TelefonNummer"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+				
+				                                         </xs:sequence>
+                                             <xs:sequence>
+				
+                                                <xs:element name="UdlandMobil">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+
+                                                         <xs:element ref="skat2012:TelefonLandeKode" minOccurs="0"/>
+
+                                                         <xs:element ref="skat2012:TelefonUdenlandskNummer"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:choice>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EmailAdresse">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2012:EmailAdresseEmail"/>
+                  
+                                    <xs:element ref="skat2012:EmailAdresseGyldigFra"/>
+
+                                    <xs:element ref="skat2012:EmailAdresseGyldigTil" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="Fax">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2012:FaxGyldigFra"/>
+
+                                    <xs:element ref="skat2012:FaxGyldigTil" minOccurs="0"/>
+
+
+                                    <xs:element name="FaxLandeValgStruktur">
+                                       <xs:complexType>
+                                          <xs:choice>
+                                             <xs:sequence>
+                                                <xs:element name="Danmark">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="skat2012:FaxNummer"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+				
+				                                         </xs:sequence>
+                                             <xs:sequence>
+				
+                                                <xs:element name="Udland">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+
+                                                         <xs:element ref="skat2012:FaxLandeKode" minOccurs="0"/>
+
+                                                         <xs:element ref="skat2012:FaxUdlandNummer"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:choice>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

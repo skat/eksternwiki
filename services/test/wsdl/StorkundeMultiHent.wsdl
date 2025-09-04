@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:fase2="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="StorkundeMultiHentService" targetNamespace="http://rep.oio.dk/skat.dk/tinglysningsafgift/">
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/tinglysningsafgift/">
+			<xsd:include schemaLocation="http://85.81.229.78/rel_rep.oio.dk/skat.dk/tinglysningsafgift/service/StorkundeMultiHentInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="StorkundeMultiHentServiceRequest">
+		<part name="Request" element="fase2:StorkundeMultiHent_I"/>
+	</message>
+	<message name="StorkundeMultiHentServiceResponse">
+		<part name="StorkundeMultiHent_O" element="fase2:StorkundeMultiHent_O"/>
+	</message>
+	<portType name="StorkundeMultiHentServicePortType">
+		<operation name="getStorkundeMultiHent">
+			<input message="fase2:StorkundeMultiHentServiceRequest"/>
+			<output message="fase2:StorkundeMultiHentServiceResponse"/>
+		</operation>
+	</portType>
+	<binding name="StorkundeMultiHentServiceSoapBinding" type="fase2:StorkundeMultiHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getStorkundeMultiHent">
+			<soap:operation soapAction="urn:#getStorkundeMultiHent" style="document"/>
+			<input>
+				<soap:body parts="Request" use="literal"/>
+			</input>
+			<output>
+				<soap:body parts="StorkundeMultiHent_O" use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="StorkundeMultiHentService">
+		<port name="StorkundeMultiHentSoapPort" binding="fase2:StorkundeMultiHentServiceSoapBinding">
+			<soap:address location="https://194.239.239.106:443/eTl/OIOStorkundeMultiHent/StorkundeMultiHent"/>
+		</port>
+	</service>
+</definitions>

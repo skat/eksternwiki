@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="PositivTalHel3Decimaler7Type">
+               <xs:annotation>
+                  <xs:documentation>Et positivt decimaltal med op til 3 cifre på venstre side af kommaet og 7 decimaler. (0 - 999.9999999)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:decimal">
+                  <xs:maxInclusive value="999.9999999"/>
+                  <xs:minInclusive value="0"/>
+                  <xs:totalDigits value="10"/>
+                  <xs:fractionDigits value="7"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

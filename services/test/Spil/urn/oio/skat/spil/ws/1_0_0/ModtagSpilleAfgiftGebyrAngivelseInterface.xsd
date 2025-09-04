@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:spilws="urn:oio:skat:spil:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:spil:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Formålet med denne service er, at virksomheden vha. menuen Punktafgifter stoerre end Filoverfør (SPIL) med en xml-fil skal kunne indberette antallet af spilleautomater for angivelse af det faste gebyr for hver enkelt opstillet spilleautomat samt de månedlige angivelser med tilhørende specifikationer og evt. Supplerende oplysninger (udlodninger til velgørende formål).</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="ModtagSpilleAfgiftGebyrAngivelse_I.xsd"/>
+	<xs:include schemaLocation="ModtagSpilleAfgiftGebyrAngivelse_O.xsd"/>
+	<xs:element name="ModtagSpilleAfgiftGebyrAngivelseInterface" type="spilws:ModtagSpilleAfgiftGebyrAngivelseInterfaceType"/>
+	<xs:complexType name="ModtagSpilleAfgiftGebyrAngivelseInterfaceType">
+		<xs:choice>
+			<xs:element ref="spilws:ModtagSpilleAfgiftGebyrAngivelse_I"/>
+			<xs:element ref="spilws:ModtagSpilleAfgiftGebyrAngivelse_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

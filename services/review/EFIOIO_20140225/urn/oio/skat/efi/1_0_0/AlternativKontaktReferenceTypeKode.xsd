@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:alternativkontaktreferencetypekode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="AlternativKontaktReferenceTypeKode" type="alternativkontaktreferencetypekode:AlternativKontaktReferenceTypeKodeType">
+		<xs:annotation>
+			<xs:documentation>Typen af den alternative nøgle, fx pasnummer, udenlandsk personnummer, kørekortnummer mv.
+
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="AlternativKontaktReferenceTypeKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Pasnummer"/>
+			<xs:enumeration value="Koerekortnummer"/>
+			<xs:enumeration value="Telefonnummer"/>
+			<xs:enumeration value="EANNummer"/>
+			<xs:enumeration value="UdenlandskNummerplade"/>
+			<xs:enumeration value="IntenNoegle"/>
+			<xs:enumeration value="UdenlandskPersonnummer"/>
+			<xs:enumeration value="UdenlandskVirksomhedsnummer"/>
+			<xs:enumeration value="AndenNoegle"/>
+			<xs:enumeration value="AdresseloesPersonMedCPR"/>
+			<xs:enumeration value="UdgaaetVirksomhedMedCvrEllerSe"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

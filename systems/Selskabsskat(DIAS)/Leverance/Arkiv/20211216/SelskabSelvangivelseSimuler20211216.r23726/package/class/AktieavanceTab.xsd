@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="AktieavanceTabSaldo" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tabssaldo ultimo efter aktieavancebeskatningslovens §§ 9, 19, 43, Kursgevinstlovens § 31A og nettokurstab ultimo efter § 22, stk. 9 i lov nr. 525 af 12. juni 2009. Felt 086</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktieavanceTabAnvendt" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Aktietab anvendt efter aktieavancebeskatningslovens §§ 9, 19, 43, Kursgevinstlovens § 31A og nettokurstab ultimo efter § 22, stk. 9 i lov nr. 525 af 12. juni 2009.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

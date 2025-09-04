@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Diverse hændelser der kan være sket i løbet af selskabets indkomstår, som kan have relevans for kontrol af korrekt brug af skattereglerne. Herunder gældskonvertering, bortseelse af underskud, ændring af ejerkreds mv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/UdenlandskVirksomhedNummerType.xsd"/>
+         <xs:include schemaLocation="../types/SENummerType.xsd"/>
+         <xs:include schemaLocation="../types/Maks100Procent6DecimalerType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ13Decimaler2Type.xsd"/>
+         <xs:element name="SelskabHændelseTvangAkkordMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har opnået en tvangsakkord, jf. selskabsskattelovens § 12 A, stk. 1. (True = ja, False = nej). Felt 161a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseTvangAkkordDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for opnåelse af tvangsakkord, jf. selskabsskattelovens § 12 A, stk. 1. Felt 161aa</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseTvangAkkord" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opnået tvangsakkord, jf. selskabsskattelovens § 12 A, stk. 1. Felt 161ab</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGældEftergivelse" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har opnået gældseftergivelse, jf. selskabsskattelovens § 12 B. (True = ja, False = nej). Felt 161b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGældEftergivelseDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for gældseftergivelse, jf. selskabsskattelovens § 12 B. Felt 161ba</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseEftergivetGæld" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Eftergivet gæld, jf. selskabsskattelovens § 12 B. Felt 161bb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseFrivilligAkkordMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har opnået en frivillig akkord, jf. selskabsskattelovens § 12 B. (True = ja, False = nej). Felt 161c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseFrivilligAkkordDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for opnåelse af tvangsakkord, jf. selskabsskattelovens § 12 B. Felt 161ca</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseFrivilligAkkord" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opnået frivillig akkord, jf. selskabsskattelovens § 12 B. Felt 161cb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseKreditorGældKonvertering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kreditor har konverteret sit tilgodehavende til aktier/anparter i selskabet (gældskonvertering), jf. selskabsskattelovens § 12 A, stk. 3. (True = ja, False = nej). Felt 161d</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseKreditorGældKonverteringDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for konvertering af tilgodehavende til aktier/anparter i selskabet (gældskonvertering), jf. selskabsskattelovens § 12 A, stk. 3. Felt 161da</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseKreditorKonverteretGæld" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af konverterede tilgodehavende til aktier/anparter i selskabet (gældskonvertering), jf. selskabsskattelovens § 12 A, stk. 3. Felt 161db</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGældNedbringelsePgf12C" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabets gæld er nedbragt eller indfriet i forbindelse med kontant kapitalforhøjelse eller et tilskud, jf. selskabsskattelovens § 12 C. (True = ja, False = nej). Felt 161e</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGældNedbringelsePgf12CDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for nedbringelse eller indfrielse af selskabets gæld i forbindelse med kontant kapitalforhøjelse eller et tilskud, jf. selskabsskattelovens § 12 C. Felt 161ea</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelsePgf12CNedbragtGæld" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af nedbragt eller indfriet gæld i forbindelse med kontant kapitalforhøjelse eller et tilskud, jf. selskabsskattelovens § 12 C. Felt 161eb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOverHalvEjerkredsÆndring" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om ejerkredsen i selskabet er ændret med mere end 50% af kapitalen eller stemmerne, jf. selskabsskattelovens § 12 D. (True = ja, False = nej). Felt 161f</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOverHalvEjerkredsÆndringDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for ændring af ejerkredsen i selskabet, jf. selskabsskattelovens § 12 D. Felt 161fa</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseEjerkredsUdenRisikoErhverv" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ændring af ejerkreds: Angiver om selskabet i det væsentlige er uden økonomisk risiko ved erhvervsmæssig aktivitet eller ved erhvervsmæssig aktivitet i et eller flere datterselskaber, hvori selskabet ejer mindst 25 % af selskabskapitalen. (True = ja, False = nej). Felt 161fb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseEjerkredsPositivNettoKapitalIndtægterMedTillæg"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ejerkredsændring: Selskabets positive nettokapitalindtægter med tillæg af indkomst fra udlejning af afskrivningsberettigede driftsmidler og skibe. Felt 161fb1</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseSkattefriOmstruktureringMedUnderskud"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har deltaget i en skattefri omstrukturering, og der er underskud i perioden fra omstruktureringsdatoen og til den dag, hvor omstruktureringen er vedtaget i alle de deltagende selskaber (mellemperioden), jf. fusionsskattelovens § 8, stk. 7. (True = ja, False = nej). Felt 161g</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOmstruktureringUdenRisikoErhverv"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattefri omstrukturering: Angiver om selskabet i det væsentlige er uden økonomisk risiko ved erhvervsmæssig aktivitet eller ved erhvervsmæssig aktivitet i et eller flere datterselskaber, hvori selskabet ejer mindst 25 % af selskabskapitalen. (True = ja, False = nej). Felt 161ga</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOmstruktureringMellemperiodeUnderskud"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Størrelsen af underskuddet i mellemperioden ved den skattefri omstrukturering. Felt 161ga1</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOmstruktureringPositivNettoKapitalIndtægterMedTillæg"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattefri omstrukturering: Selskabets positive nettokapitalindtægter med tillæg af indkomst fra udlejning af afskrivningsberettigede driftsmidler og skibe. Felt 161ga2</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseSambeskatningOgUnderskudUdland"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er skattepligtig, jf. selskabsskattelovens § 2, stk. 1, litra a (fast driftssted), i en sambeskatning, og underskud kan anvendes i udlandet, jf. selskabsskattelovens § 31, stk. 2, 2. pkt. (True = ja, False = nej) Felt 161h</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er indskyder i en skattefri omstrukturering (ophørsspaltning, grenspaltning, tilførsel af aktiver), hvor et eller flere af de modtagende selskaber er et udenlandsk selskab, som ikke indgår i en valgt international sambeskatning. (True = ja, False = nej) Felt 161i</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningUdenlandskVirksomhedNummer"
+                     type="skat2012:UdenlandskVirksomhedNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Modtager IDnr. der entydigt identificerer udenlandsk virksomhed Felt 161ia</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilNonSambeskattetMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er indskyder i en skattefri omstrukturering (ophørsspaltning, grenspaltning, tilførsel af aktiver), hvor indskyder og modtager ikke er sambeskattet på omstruktureringstidspunktet. (True = ja, False = nej) Felt 161j</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilNonSambeskattetVirksomhedSENummer"
+                     type="skat2012:SENummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Modtager se-nr. Felt 161ja</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseBortseFremførselUnderskudPgf33H"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet ønsker at bortse fra fremførsel af underskud, jf. ligningslovens § 33 H. (True = ja, False = nej) Felt 161k</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseBortseFremførselUnderskudPgf33HBeløb"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Underskuddet der er bortset fra, fra tidligere år eller årets underskud jf. ligningslovens § 33H Felt 161Ka</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseBortseFremførselUnderskudPgf33HPositivLempelseIndkomst"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Positiv lempelsesindkomst. (Selskabet ønsker at bortse fra fremførsel af underskud, jf. ligningslovens § 33 H). Felt 161kb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseBortseFremførselUnderskudPgf31Stk9"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet ønsker at bortse fra fremførsel af underskud, jf. selskabsskattelovens § 31, stk. 9. (True = ja, False = nej). Felt 161L</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseSkattefriAktieombyt" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er foretaget skattefri aktieombytning. (True = ja, False = nej). Felt 162a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOmstrukturering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er foretaget skattepligtig eller skattefri omstrukturering. (True = ja, False = nej) Felt 162b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseImmatrielleAktiverKøbSalg" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er der købt eller solgt immaterielle aktiver (goodwill mv.). Felt 163</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOmstruktureringUdenTilladelse"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den skattefri omstrukturering er gennemført uden tilladelse. (True = ja, False = nej). Felt 164</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseHandletVirksomhed" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er foretaget køb/salg af virksomhed. (True = ja, False = nej) Felt 162c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseKøbtImmaterielleAktiver" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er købt/modtaget immaterielle aktiver (goodwill mv.). (True = ja, False = nej) Felt 163a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseImmaterielleAktiverKøbt" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bruttoværdien af de immaterielle aktiver, der er købt/modtaget. Felt 163aa</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseImmaterielleAktiverKøbtInternt" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bruttoværdien af de immaterielle aktiver, der er købt/modtaget koncern internt. Felt 163ab</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseSolgtImmaterielleAktiver" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er solgt/overdraget immaterielle aktiver (goodwill mv.). (True = ja, False = nej) Felt 163b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseImmaterielleAktiverSolgt" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bruttoværdien af de immaterielle aktiver, der er solgt/overdraget. Felt 163ba</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseImmaterielleAktiverSolgtInternt" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bruttoværdien af de immaterielle aktiver, der er solgt/overdraget koncern internt. Felt 163bb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGenanbringelseEjendom" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er der foretaget anmodning/genanbringelse af ejendomsavance Felt 167</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseUnderskudPåvirkning" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er sket hændelser i årets løb, som påvirker selskabets anvendelse af underskud. (True = ja, False = nej). Felt 161</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningOmstruktureringDato"
+                     type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for omstrukturering Felt 161ib</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningIndsatProcentandelOverført"
+                     type="skat2012:Maks100Procent6DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indtast procentandel, som er overført Felt 161ic</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilNonSambeskattetOmstrukteringDato"
+                     type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for omstrukturering Felt 161jb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskyderSkattefriTilNonSambeskattetProcentandelOverført"
+                     type="skat2012:Maks100Procent6DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indtast procentandel, som er overført Felt 161jc</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseSkattepligtigFusionMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er der foretaget skattepligtig fusion? Feltet er obligatorisk og skal udfyldes med Ja (=true) eller Nej (=false).   Der vælges Ja, hvis der sker en udlodning af hele fondens/foreningen formue til en anden fond/forening, og hvor fonden/foreningen ophører, og der udarbejdes en afsluttende skatteopgørelse.  Felt 162d </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseSelvangiveMedUnderskudMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet selvangiver med underskudsbegrænsning jf. selskabsskattelovens § 12, stk. 2. (True = ja, False = nej).   Felt 161M</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGensidigtBebyrdendeAftaleMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er indgået en gensidigt bebyrdende aftale om overdragelse af et eller flere aktiver, omfattet af LL §12B, hvor vederlag helt eller delvist udgør en løbende ydelse.   Der er tale om en løbende ydelse, når der hersker usikkerhed om enten ydelsens varighed eller ydelsens årlige størrelse, når ydelsen løber ud over aftale året.  Felt 166</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseUdenlandskPensionsinstitutFastEjendom"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om et pensionsinstitut har oppebåret indtægt eller fortjeneste der beskattes med særlig skatteprocent. Felt 070</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseForhøjetFradragAfskrivningsloven"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om selskabet har benyttet sig af det særlige fradrag i afskrivningsloven. (straksafskrivning af visse driftsmidler relateret til forskning).  Felt 108a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseForhøjetFradragAfskrivningslovenAnskaffelsessum"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af anskaffelsessummen der ligger til grund for fradraget tilkendegivet i SelskabHændelseForhøjetFradragAfskrivningsloven   Felt 108b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseForhøjetFradragLigningsloven" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om selskabet har benyttet sig af det særlige fradrag i ligningsloven.  Felt 109a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseForhøjetFradragLigningslovenAnskaffelsessum"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af de faktiske udgifter der ligger til grund for fradraget tilkendegivet i SelskabHændelseForhøjetFradragLigningsloven Felt 109b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseGældNedsat" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der er sket gældsnedsættelse Felt 161n</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseHovedaktionærAktierSalg" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om den skattepligtige har afstået hovedaktionæraktier efter bestemmelsen i aktieavancebeskatningsloven. Felt 168 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseInvestorFradragLov" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om selskabet har investorer der gør brug af fradrag i investorfradragsloven. Felt 199</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseInvestorFradragIndberetning" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om selskabet har foretaget den lovpligtige indberetning hvis de har investorer der har gjort brug af investorfradragsloven. Felt 199a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseIndskudAktierInvestorfradragFond"
+                     type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om der er foretaget kapitalindskud hvor der indgår aktier tegnet af investorfradragsfonde. Felt 199b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseOmsætningPassivKapital" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilkendegivelse af om omsætningen i overvejende grad består af passiv kapitalanbringelse. Felt 199c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseEndeligUnderskudUdlandMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering for udenlandske endelige underskud i året Felt 090</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseEndeligUnderskudUdlandBeløb" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af udenlandske endelige underskud i året Felt 090a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseDriftmiddelafskrivning5D" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Har selskabet benyttet sig af det forhøjede fradrag jf. afskrivningslovens § 5D.  Felt 110a </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabHændelseDriftmiddelafskrivning5DBeløb" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiv den faktiske anskaffelsessum, som er påvirket af afskrivningslovens § 5D om forhøjede afskrivninger af driftsmidler.  Felt 110b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

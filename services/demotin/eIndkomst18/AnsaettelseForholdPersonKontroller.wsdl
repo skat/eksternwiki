@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="AnsaettelseForholdPersonKontrollerService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r22141</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+               <xsd:include schemaLocation="skat_dk/eindkomst/AnsaettelseForholdPersonKontrollerInterface.xsd"/>
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="AnsaettelseForholdPersonKontrollerServiceRequest">
+            <wsdl:part element="fase2:AnsaettelseForholdPersonKontroller_I" name="Request"/>
+         </wsdl:message>
+         <wsdl:message name="AnsaettelseForholdPersonKontrollerServiceResponse">
+            <wsdl:part element="fase2:AnsaettelseForholdPersonKontroller_O" name="Response"/>
+         </wsdl:message>
+         <wsdl:portType name="AnsaettelseForholdPersonKontrollerServicePortType">
+            <wsdl:operation name="getAnsaettelseForholdPersonKontroller">
+               <wsdl:input message="fase2:AnsaettelseForholdPersonKontrollerServiceRequest"/>
+               <wsdl:output message="fase2:AnsaettelseForholdPersonKontrollerServiceResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         <wsdl:binding name="AnsaettelseForholdPersonKontrollerServiceBinding" type="fase2:AnsaettelseForholdPersonKontrollerServicePortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsdl:operation name="getAnsaettelseForholdPersonKontroller">
+<soap:operation soapAction="getAnsaettelseForholdPersonKontroller" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsdl:input>
+<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="AnsættelseForholdPersonKontrollerServiceBindingQSService">
+		<wsdl:port binding="fase2:AnsaettelseForholdPersonKontrollerServiceBinding" name="AnsaettelseForholdPersonKontrollerServiceBindingQSPort">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/AnsaettelseForholdPersonKontrollerV2ServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

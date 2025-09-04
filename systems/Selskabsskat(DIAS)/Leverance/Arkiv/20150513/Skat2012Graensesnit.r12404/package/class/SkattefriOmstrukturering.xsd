@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Begreber som relaterer til til skattefri omstrukturering af selskaber.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst10Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="SkattefriOmstruktureringTypeKode" type="skat2012:Tekst10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver typen af skattefri omstrukturering:  FUS: Skattefri fusion GREN: Skattefri grenspaltning OPSP: Skattefri ophørsspaltning TILA: Skattefri tilførsel af aktiver</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattefriOmstruktureringVirkningDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen hvor den skattefri omstrukturering træder i kraft (får retsvirkning).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

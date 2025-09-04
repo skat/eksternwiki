@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KursTabBeregning.xsd"/>
+         <xs:include schemaLocation="../class/SkattefriIndtaegt.xsd"/>
+         <xs:include schemaLocation="../class/SelskabSkattepligtigIndkomst.xsd"/>
+         <xs:include schemaLocation="../class/UddelingOpgoerelse.xsd"/>
+         <xs:element name="FondForeningOpgørelseStruktur"
+                     type="skat2012:FondForeningOpgørelseStrukturType"/>
+         <xs:complexType name="FondForeningOpgørelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:KursTabBeregningIndkomstFørNettotab" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KursTabBeregningIndkomstNettotab" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SkattefriIndtægtTotal" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KursTabBeregningFradragMinusSkattefriIndtægt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KursTabBeregningYderligereFradrag" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KursTabBeregningTotal" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstFørUddelinger" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UddelingOpgørelseTotal" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UddelingOpgørelseBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KursTabBeregningIndkomstNettotabOverført" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

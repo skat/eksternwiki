@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et underskud haves altid af et selskab, og et underskud ejes altid af et selskab. Hvis selskabet som har underskudet stadig findes, skal det også være det samme selskab som ejer underskuddet. Hvis selskabet som har underskuddet er ophørt, vil det være et andet selskab som er ejer underskuddet. Denne differentiering er relvant for underskudsregisteret når der sker fusioner og spaltninger af selskaber.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="UnderskudTotalSaldo" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver underskudssaldo ultimo til modregning i fremtidig indkomst. Felt 085 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UnderskudTotalAnvendt" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattemæssigt underskud, fremført fra tidligere indkomstår anvendt i året. Felt 003</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UnderskudForskningUdbetalingAnsøgning" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har søgt om udbetaling af skatteværdien af underskud, der stammer fra forsknings- og udviklingsudgifter, jf. ligningslovens § 8 X. (True = ja, False = nej). Felt 009</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UnderskudForskning" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiv underskudsbeløb jf. udbetaling af skatteværdien af underskud, der stammer fra forsknings- og udviklingsudgifter, jf. ligningslovens § 8 X. Felt 009a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UnderskudIkkeTidligereUdligning" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Underskud, der ikke er anvendt til udligning af indkomst fra tidligere delperioder. Felt 166a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

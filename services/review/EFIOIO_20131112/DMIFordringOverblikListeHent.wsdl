@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:efi:ws:1.0.1" 
+xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+name="DMIFordringOverblikListeHentService">
+<xs:include schemaLocation="policy/skat-b2b-x509-policy.xml" />
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At udstille aggregeret gældsinformation fra inddrivelse til eksterne interessenter (så de ikke skal forholde sig til detaljerne i DMIs datamodel.)</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1">
+			<xsd:include schemaLocation="urn/oio/skat/efi/ws/1_0_1/DMIFordringOverblikListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="DMIFordringOverblikListeHentServiceRequest">
+		<wsdl:part name="Request" element="efiws:DMIFordringOverblikListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="DMIFordringOverblikListeHentServiceResponse">
+		<wsdl:part name="Response" element="efiws:DMIFordringOverblikListeHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="DMIFordringOverblikListeHentServicePortType">
+		<wsdl:operation name="getDMIFordringOverblikListeHent">
+			<wsdl:input message="efiws:DMIFordringOverblikListeHentServiceRequest"/>
+			<wsdl:output message="efiws:DMIFordringOverblikListeHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DMIFordringOverblikListeHentServiceBinding" type="efiws:DMIFordringOverblikListeHentServicePortType">
+		<wsp:PolicyReference URI="policy/skat-b2b-x509-policy.xml#skat-b2b-x509-policy"/>
+		<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getDMIFordringOverblikListeHent">
+			<soap12:operation soapAction="getDMIFordringOverblikListeHent"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+				<wsp:PolicyReference URI="policy/skat-b2b-x509-policy.xml#skat-b2b-x509-policy"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DMIFordringOverblikListeHentServiceBindingQSService">
+		<wsdl:port name="DMIFordringOverblikListeHentServiceBindingQSPort" binding="efiws:DMIFordringOverblikListeHentServiceBinding">
+			<soap12:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

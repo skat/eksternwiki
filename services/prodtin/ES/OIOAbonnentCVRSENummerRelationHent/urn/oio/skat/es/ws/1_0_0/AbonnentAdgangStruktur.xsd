@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:abonnementtype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" xmlns:abonnenttype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" xmlns:adgangformaaltype="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:es:ws:1.0.0" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/abonnementtype/xml/schemas/20071202/AbonnementTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/AdgangFormaalTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/abonnenttype/xml/schemas/20071202/AbonnentTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="AbonnentAdgangStruktur" type="esws:AbonnentAdgangStrukturType"/>
+         <xs:complexType name="AbonnentAdgangStrukturType">
+               <xs:sequence>
+                  <xs:element ref="abonnenttype:AbonnentTypeKode"/>
+                  <xs:element ref="abonnementtype:AbonnementTypeKode"/>
+                  <xs:element ref="adgangformaaltype:AdgangFormaalTypeKode"/>
+               </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

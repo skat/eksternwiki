@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]><html class="ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if IE 8]><html class="ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if IE 9]><html class="ie9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2a. Skabelon - Primære vinduer, uden faneblade (efter log-in)</title>
+    <link href="Styles/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/TastSelvMain.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.keyboard-focus.js" type="text/javascript"></script>
+    <script src="Scripts/TastSelvMain.js" type="text/javascript"></script>
+    <script src="Scripts/TastSelvMenu.js" type="text/javascript"></script>
+    <script src="Scripts/webtrends.load.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="skts-cookieouter" id="CookieBox" runat="server">
+        <div class="skts-cookieinner" id="InnerCookieBox" runat="server">
+            <div class="skts-cookieinner-box1">
+                <a href="#" lang="en" class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" onclick="javascript:changeLanguage();"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+                <a href="#" lang="da" class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" onclick="javascript:$('.skts-cookieouter').hide()"><span class="skts-tooltip"> Luk cookie besked</span></a>
+            </div>
+            <div class="skts-cookieinner-box2">
+                 <p class="skts-broedtekst" id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a href="#" class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a href="#" onclick="javascript:openCookieDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&layout=353121', 'aboutCookies');" class="skts-tooltip-holder">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+            </div>           
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function () {
+                if ($('html').is('.ie8')) {
+                    var head = document.getElementsByTagName('head')[0],
+                    style = document.createElement('style');
+                    style.type = 'text/css';
+                    style.styleSheet.cssText = ':before,:after{content:none !important';
+                    head.appendChild(style);
+                    setTimeout(function () {
+                        head.removeChild(style);
+                    }, 0);
+                }
+
+                var currentCookieSetting = readCookie(cookieName);
+                if (currentCookieSetting !== cookieYes && currentCookieSetting !== cookieNo) {
+                    $('.skts-cookieouter').show();
+                    writeCookie(cookieName, cookieYes, 365, cookieDomain, cookiePath);
+                }
+            });
+            //]]>
+        </script>
+    </div>
+<div id="skts-body">
+  <div id="skts-logo-op"><img src="Images/toplogo.jpg" alt="" /></div>
+  <div id="skts-logo-ned">
+    <div class="skts-miljoe"><span id="skts-header-miljoe">BRGT</span>&nbsp;<span id="skts-header-versionsnr">ver. 12.3.0.17</span></div>
+    <a href="#"><img src="Images/logo.gif" alt="Til forside" /></a>
+    <ul id="skts-skip-links">
+    	<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+    </ul>
+    </div>
+  <div id="skts-hoved-container">
+    <div id="skts-globalmenu-container">
+      <ul id="skts-globalmenu-venstre">
+        <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-venstre-link-yderst">Forside</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link">Årsopgørelse</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-link-markeret">Forskudsopgørelse</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link">Betaling</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link">Skatteoplysninger</a></li>
+        <li><a href="javascript:void(0)" class="skts-globalmenu-venstre-link skts-globalmenu-link-inaktiv skts-tooltip-holder ">Motor<span class="skts-tooltip"> Linket er inaktivt</span></a></li>
+      </ul>
+      <ul id="skts-globalmenu-hoejre">
+        <li><a href="#" class="skts-globalmenu-hoejre-link">Kontakt</a></li>
+        <li><a href="#" class="skts-globalmenu-hoejre-link">Profil</a></li>
+        <li><a href="#" class="skts-globalmenu-hoejre-link skts-tooltip-holder">Hjælp<span class="skts-tooltip"> Åbner nyt vindue</span></a></li>
+        <li><a href="#" class="skts-globalmenu-hoejre-link skts-globalmenu-hoejre-link-yderst skts-globalmenu-link-logaf">Log af</a></li>
+      </ul>
+      <div class="skts-slut-float"></div>
+    </div>
+      <div class="skts-brugeroplysninger-skaerm">
+          <p id="skts-brugeroplysninger">
+              Logget på: Jens Skov, e-mail-adresse: j.skov@gmail.com, telefon: 23 45 67 89
+              (<a class="skts-tooltip-holder skts-link-fremhaevning" href="#">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)</p>
+      </div>
+      <div class="skts-brugeroplysninger-print">
+        <p class="skts-normal-tekst">Jens Skov, cpr-nummer 220549-1235</p>
+      </div>
+      <div id="skts-midter-container-med-brugeroplysninger">
+      <div id="skts-venstre-menu-container">
+        <div id="skts-venstre-menu-ramme">
+          <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Overskrift<span class=skts-skaermlaeser-tekst> - Menu</span></h1>
+          <ul class="skts-venstre-menu-elementer">
+            <li><a class="skts-venstre-menu-element-link-markeret skts-venstre-menu-element-yderst" href="#">Link til menupunkt, hvor siden er i fokus</a></li>
+            <li><a href="#">Link til menupunkt, hvor siden ikke er i fokus</a></li>
+            <li><a href="#" class="skts-tooltip-holder">Link som åbner nyt vindue<span class="skts-tooltip"> Åbner nyt vindue</span></a></li>
+            <li><a class="skts-venstre-menu-element-link-inaktiv skts-tooltip-holder" href="javascript:void(0)">Link til deaktiveret menupunkt<span class="skts-tooltip"> Linket er inaktivt</span></a></li>
+          </ul>
+        </div>
+      </div><!--End #skts-venstre-menu-container-->
+      <div id="skts-indhold-container-hoejre">
+          <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Overskrift</h1>
+          <!-- Du skal vælge om du vil bruge en smal eller en bred div:
+          <div id="skts-indhold-skabelon2a" class="skts-indhold-smal">
+          -->
+          <div id="skts-indhold-skabelon2a" class="skts-indhold-bred">
+            <div style="width:1px;"> <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+              <a id="skts-skip-link-target-indhold" class="skts-link-target-skjul">Indhold</a>
+              </div>
+            <p class="skts-broedtekst">Her indlægges formular mv.</p>
+          </div><!--End .skts-indhold-smal-->
+      </div><!--End #skts-indhold-container-hoejre-->
+      <div class="skts-slut-float"></div>
+    </div><!--End #skts-midter-container-med-brugeroplysninger-->
+    <div id="skts-footer">
+        <address>
+            SKAT: 72 22 18 18
+        </address>
+        <div class="skts-hoejrejuster" >                
+            <a class="skts-lille-tekst skts-tooltip-holder" href="#" onclick="javascript:openCookieDialog(); return false;">
+            Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+        </div>
+    </div><!--End #skts-footer-->
+  </div><!--End #skts-hoved-container-->
+</div><!--End #skts-body-->
+
+<!-- Her køres javascript som kun må køres når hele siden er loaded. F.eks. skip link javascript til Chrome og Opera.
+Grunden til at dette ikke ligger i onload, er for ikke at lave yderligere restriktioner for brugeren af skabelonerne. -->
+<script type="text/javascript">
+
+    // Skip link til Chrome og Safari    
+    if (skts_isWebkit || skts_isOpera) {
+        opsaetSkipLink("skts-skip-til-indhold", "skts-skip-link-target-indhold");
+    }
+</script>
+</body>
+</html>

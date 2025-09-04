@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:schema="http://rep.oio.dk/oib/beskaeftigelse/xml.schema/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/oib/beskaeftigelse/xml.schema/" schemaLocation="../../oib/beskaeftigelse/xml_schema/MedarbejderAnsatIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="JuridiskIndkomstUdbetalerStruktur.xsd"/>
+         <xs:include schemaLocation="AfregnendeEnhedFaellesRegistreringStruktur.xsd"/>
+         <xs:element name="AnsaettelseForholdPersonKontroller_O" type="fase2:AnsaettelseForholdPersonKontroller_OType"/>
+         <xs:complexType name="AnsaettelseForholdPersonKontroller_OType">
+            <xs:sequence>
+               <xs:element ref="kontekst:HovedOplysningerSvar"/>
+                     <xs:element minOccurs="0" name="AnsaettelseForholdKontrolUddata">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="AnsaettelseForholdKontrol">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="AnsatHosVirksomhed">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2:JuridiskIndkomstUdbetalerStruktur"/>
+				                                            <xs:element ref="fase2:AfregnendeEnhedFaellesRegistreringStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element name="AnsaettelseKontrolResultatSamling">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element maxOccurs="unbounded" minOccurs="1" name="AnsaettelseKontrolResultat">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+                                                         <xs:element ref="schema:MedarbejderAnsatIndikator"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

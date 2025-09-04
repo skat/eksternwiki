@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>		
+		</header>
+		<div class="skts-content-container">
+			<ul>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="login_tastselv_kode.html">Login med TastSelv-kode</a>
+					<ul>
+						<li><a style="color: green" href="login_tastselv_kode.html?error=1">- med server fejl</a></li>
+					</ul>
+				</li>
+				<li><a href="login_bestil.html">Login - bestil nyt TastSelv-kode</a>
+					<ul>
+						<li><a style="color: green" href="login_bestil.html?error=1">- med server fejl</a></li>
+					</ul>
+				</li>
+				<li><a href="login_bestil2.html">Login - bestil nyt TastSelv-kode type</a></li>
+				<li>Login - bestil nyt TastSelv-kode kvittering
+					<ul>
+						<li><a style="color: green"  href="login_kvittering.html?sendType=email">- Email</a></li>
+						<li><a style="color: green"  href="login_kvittering.html?sendType=sms">- Sms</a></li>
+						<li><a style="color: green" href="login_kvittering.html?sendType=brev">- Brev</a></li>
+					</ul>
+				</li>
+				<li><a href="forside.html">Forsiden</a></li>
+				<li><a href="sider_ikke_med_i_flow/forskud.html">Forskud - se</a>
+					<ul>
+						<li>KUN TIL DEMO, ikke med i flow (med responsive venstre menu)</li>
+					</ul>
+				</li>
+				<li><a href="forskud_ret.html">Forskud - ret</a>
+					<ul>
+						<li><a style="color: green" href="forskud_ret.html?error=1">Server fejl</a></li>
+						<li><a style="color: green" href="forskud_ret.html?auto=1">Autoforskud workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?btax=1">B-skat workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?property=1&propType=buy">Købt ejendomme workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?sick=1">Selvstændig syg i 2015 workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?nothing=1">Intet registreret workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?spouse=1">Medarbejdende ægtefælle workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?undivided=B">Uskiftet bo - levende workflow</a></li>
+						<li><a style="color: green" href="forskud_ret.html?undivided=3">Uskiftet bo - ægtefælle workflow</a></li>
+					</ul>
+				</li>
+				<li><a href="forskud_ret_laast.html">Forskud - ret - låst</a>
+					<ul>
+						<li><a style="color: green" href="forskud_ret_laast.html?undivided=1">Uskiftet bo start workflow</a></li>
+						<li><a style="color: green" href="forskud_ret_laast.html?btax=1">B-skat workflow</a></li>
+					</ul>
+				</li>
+				<li><a href="forskud_godkend.html">Forskud - godkend</a>
+					<ul>
+						<li><a style="color: green"  href="forskud_godkend.html?auto=1"> - med Orientering</a></li>						
+					</ul>
+				</li>
+				<li><a href="forskud_godkend_uskiftet_bo.html">Forskud - godkend uskiftet bo</a></li>
+				<li><a href="forskud_kvittering.html">Forskud - kvittering</a>
+					<ul>
+						<li><a style="color: green" href="forskud_kvittering.html?undivided=3">Uskiftet - bo kvittering</a></li>
+					</ul>
+				</li>
+				<li><a href="forskud_liste_forrige.html">Forskud - liste - forrige</a></li>
+				<li><a href="forskud_liste_alle.html">Forskud - liste - oversigt</a></li>
+				<li><a href="forskud_liste_alle_aar.html">Forskud - liste - år</a></li>
+				<li><a href="autoforskud_godkend_afvisning.html">Autoforskud - godkend afvisning</a>
+					<ul>
+						<li><a style="color: green" href="autoforskud_godkend_afvisning.html?auto=1"> - med Orientering</a></li>
+					</ul>
+				</li>
+				<li><a href="opsamling.html">Opsamling</a></li>		
+				<li><a href="opsamling_kvittering.html">Opsamling kvittering</a></li>
+				<li><a href="ejendom_dansk_search.html">Ejendom - søg</a>
+					<ul>
+						<li><a style="color: green" href="ejendom_dansk_search.html?search=1">- med resultat</a></li>
+					</ul>
+				</li>
+				<li><a href="ejendom_dansk.html">Ejendom - dansk - køb</a></li>
+				<li><a href="ejendom_dansk_ret.html">Ejendom - dansk - ret</a></li>
+				<li><a href="ejendom_udenlandsk.html">Ejendom - udenlandsk - køb</a></li>
+				<li><a href="ejendom_udenlandsk_ret.html">Ejendom - udenlandsk - ret</a>
+					<ul>
+						<li><a style="color: green" href="ejendom_udenlandsk_ret.html?error=1">- med server fejl</a></li>
+					</ul>
+				</li>
+				<li><a href="ejendom_salg.html">Ejendom - salg</a></li>
+				<li><a href="meddelelsesside.html">Meddelelsesside - stystemfejl</a></li>
+			</ul>
+			<footer><address>SKAT: <a href="tel:72221818">72 22 18 18</a></address></footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>        
+    </body>
+</html>

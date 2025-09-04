@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst6Type.xsd"/>
+         <xs:element name="LigningTemaKode" type="skat2012:Tekst6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilket ligningstema det relevante ligningsbeløb er lignet under. (Ligningstemaer kan f.eks. inddelt i moms, lønsum og selskabsskat). Felt 058a eller felt 1058a eller 2058a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

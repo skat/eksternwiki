@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetOpkraevningRenteDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetOpkraevningGebyrDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetInddrivelseRenteDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TilknyttetInddrivelseGebyrDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringSaldoPerDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/RestanceInformationBagatelGraenseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeSamletGaeldAeldsteModtagelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeRestanceHovedfordringerKvantitet.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeRestanceSamletGaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeTypeKode.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="../../../../../../xkom_dk/xml/schemas/2007/04/15/EndDate.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverRestanceKundeSamletGaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/InddrivelseFordringHaverNavn.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringStiftelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringModtagelseDatoTid.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringSidsteRettidigeBetalingDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:include schemaLocation="KundeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringPeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringRestBeloebStruktur.xsd"/>
+	<xs:element name="DMIFordringOverblikHent_O" type="efiws:DMIFordringOverblikHent_OType">
+	</xs:element>
+	<xs:complexType name="DMIFordringOverblikHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element ref="efi:FordringSaldoPerDato" minOccurs="0"/>
+			<xs:element ref="xkom:EndDate" minOccurs="0"/>
+			<xs:element ref="efi:RestanceInformationBagatelGraenseBeloeb" minOccurs="0"/>
+			<xs:element ref="efiws:KundeStruktur" minOccurs="0"/>
+			<xs:element name="SamletGaeld" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:KundeRestanceSamletGaeldBeloeb"/>
+						<xs:element ref="efi:KundeSamletGaeldAeldsteModtagelseDato"/>
+						<xs:element ref="efi:KundeRestanceHovedfordringerKvantitet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FordringshaverSpecifikationListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FordringhaverSpecifikation" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="FordringshaverInfo">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="dmi:SkatKundeIdentifikator"/>
+												<xs:element ref="dmi:SkatKundeTypeKode"/>
+												<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+												<xs:element ref="efi:InddrivelseFordringHaverNavn"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="efi:FordringHaverRestanceKundeSamletGaeldBeloeb"/>
+									<xs:element name="HovedfordringSpecifikationListe" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="HovedfordringSpecifikation" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator"/>
+															<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+															<xs:element ref="efi:FordringTypeKode"/>
+															<xs:element ref="efi:FordringFordringArtKode"/>
+															<xs:element ref="efi:FordringSidsteRettidigeBetalingDato"/>
+															<xs:element ref="efi:FordringModtagelseDatoTid"/>
+															<xs:element ref="efi:FordringStiftelseDato"/>
+															<xs:element ref="efiws:FordringPeriodeStruktur"/>
+															<xs:element ref="efiws:FordringRestBeloebStruktur"/>
+															<xs:element ref="efi:TilknyttetOpkraevningRenteDKKBeloeb"/>
+															<xs:element ref="efi:TilknyttetOpkraevningGebyrDKKBeloeb"/>
+															<xs:element ref="efi:TilknyttetInddrivelseRenteDKKBeloeb"/>
+															<xs:element ref="efi:TilknyttetInddrivelseGebyrDKKBeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

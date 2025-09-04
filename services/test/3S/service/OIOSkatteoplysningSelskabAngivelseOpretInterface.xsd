@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ssws="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>At modtage skatteoplysninger i XBRL-format fra Erhvervs- og Selskabsstyrelsen.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/OIOSkatteoplysningSelskabAngivelseOpret_IType.xsd"/>
+	<xs:include schemaLocation="../view/OIOSkatteoplysningSelskabAngivelseOpret_OType.xsd"/>
+	<xs:element name="OIOSkatteoplysningSelskabAngivelseOpretInterface" type="ssws:OIOSkatteoplysningSelskabAngivelseOpretInterfaceType"/>
+	<xs:complexType name="OIOSkatteoplysningSelskabAngivelseOpretInterfaceType">
+		<xs:choice>
+			<xs:element ref="ssws:OIOSkatteoplysningSelskabAngivelseOpret_I"/>
+			<xs:element ref="ssws:OIOSkatteoplysningSelskabAngivelseOpret_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

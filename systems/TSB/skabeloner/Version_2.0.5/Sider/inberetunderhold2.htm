@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>TastSelv - B&oslash;rnebidrag</title>
+  <link href="../sktscommon/Styles/vendor/normalize.css" rel="stylesheet" type="text/css" />
+  <link href="../sktscommon/Styles/vendor/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+  <link href="../sktscommon/Styles/TastSelvMain.css" rel="stylesheet" type="text/css" />
+  <link href="../sktscommon/Styles/TastSelvIndberetBidrag.css" rel="stylesheet" type="text/css" />
+  <link href="../sktscommon/Styles/print.css" rel="stylesheet" type="text/css" media="print" />
+  <script src="../sktscommon/Scripts/vendor/modernizr.js" type="text/javascript"></script> 
+  <style type="text/css" media="all">
+    .ui-datepicker-year { display: none; }
+  </style>
+</head>
+<body>
+  <div id="skts-body-sekundaer-vindue">
+    <div id="skts-logo-op"><img src="../sktscommon/Images/toplogo.jpg" alt="" /></div>
+    <div id="skts-logo-ned">
+      <div class="skts-miljoe"><span id="skts-header-miljoe">BRGT</span>&nbsp;<span id="skts-header-versionsnr">ver. 12.3.0.17</span></div>
+      <img src="../sktscommon/Images/logo.gif" alt="SKATs logo" />
+      <ul id="skts-skip-links">
+        <li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">G&aring; til indhold</a></li>
+      </ul>
+    </div>
+    <div id="skts-globalmenu-container">
+      <ul id="skts-globalmenu-venstre">
+        <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-flugter skts-globalmenu-venstre-link-yderst">Luk vindue</a></li>
+      </ul>
+      <div class="skts-slut-float"></div>
+    </div>
+    <div class="skts-brugeroplysninger-skaerm">
+      <p id="skts-brugeroplysninger">
+        Logget p&aring;: Jens Skov, e-mail-adresse: j.skov@gmail.com, telefon: 23 45 67 89</p>
+    </div>
+    <div class="skts-brugeroplysninger-print">
+      <p class="skts-normal-tekst">
+        Jens Skov, cpr-nummer 220549-1235</p>
+    </div>
+
+    <div id="skts-midter-container-med-brugeroplysninger">
+      <div id="skts-indhold-container-hele-bredden">
+        <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Indberet underholdsbidrag for 2013 - trin 2 af 2</h1>
+        <div style="width: 1px;">
+          <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til n&aelig;rmest for&aelig;ldre som har et layout -->
+          <a id="skts-skip-link-target-indhold" class="skts-link-target-skjul">Indhold</a>
+        </div>
+        <div id="skts-indhold-skabelon3a" class="skts-indhold-bred">
+          <form action="javascript:void(0);">
+            <h2 class="skts-indhold-undertitel">V&aelig;lg dit b&oslash;rnebidrag til Benjamin Hansen (010211-1359)</h2>
+            <p class="skts-broedtekst">
+              <a href="#">Den periode i 2013, bidraget d&aelig;kker</a><a class="skts-hjaelp skts-tooltip-holder" href="javascript:void(0);"><span class="skts-tooltip">&Aring;bner i nyt vindue</span></a>
+            </p>
+            <ul class="skts-layout2-input-gruppe">
+              <li><input id="skts-heleaaret" class="skts-vis-mere" name="periode" type="radio" /><label for="skts-heleaaret">Hele &aring;ret</label></li>
+              <li><input id="skts-delafaaret" class="skts-vis-mere" name="periode" type="radio" /><label for="skts-delafaaret">En del af &aring;ret</label>
+                <div class="skts-fold">
+                  <div class="skts-layout2-input-par">
+                    <label class="skts-layout2-label" for="skts-startdato">Fra</label>
+                    <input id="skts-startdato" pattern="([3][01]|[012][0-9])\.([0]?[1-9]|[1][0]|[1]{2}|[1][2])" maxlength="5" placeholder="dd.mm" type="text">
+                  </div>
+                  <div class="skts-layout2-input-par">
+                    <label class="skts-layout2-label" for="skts-slutdato">Til</label>
+                    <input id="skts-slutdato" pattern="([3][01]|[012][0-9])\.([0]?[1-9]|[1][0]|[1]{2}|[1][2])" maxlength="5" placeholder="dd.mm" type="text">
+                  </div>
+                </div>
+                <div class="skts-slut-float"></div>
+              </li>
+              <li><input class="skts-vis-mere" id="skts-engangsbeloeb" name="periode" type="radio" /><label class="skts-layout2-label-inline" for="skts-engangsbeloeb">Engangsbel&oslash;b ved d&aring;b eller konfirmation</label>
+                <div class="skts-fold">
+                  <label class="skts-layout2-label" for="skts-indbetalingdaab"><a href="#">Bel&oslash;b vedr. d&aring;b</a><a href="#" class="skts-hjaelp skts-tooltip-holder"></a></label>
+                  <input id="skts-indbetalingdaab" class="skts-beloeb" maxlength="10" type="text">
+                  <label class="skts-layout2-label" for="skts-indbetalingkonfirmation"><a href="#">Bel&oslash;b vedr. konfirmation</a><a href="#" class="skts-hjaelp skts-tooltip-holder"></a></label>
+                  <input id="skts-indbetalingkonfirmation" class="skts-beloeb" maxlength="10" type="text">
+                </div>
+              </li>
+            </ul>
+            <div id="skts-indberet-beloeb">
+              <p class="skts-broedtekst">
+                <a href="#">Det bel&oslash;b, du betaler pr. m&aring;ned</a><a class="skts-hjaelp skts-tooltip-holder" href="javascript:void(0);"><span class="skts-tooltip">&Aring;bner i nyt vindue</span></a>
+              </p>
+              <ul class="skts-layout2-input-gruppe">
+                <li><input id="skts-normal" class="skts-vis-mere" name="beloeb" type="radio" /><label class="skts-layout2-label-inline" for="skts-normal">Normalbidrag (1.247 kr.)</label></li>
+                <li><input id="skts-normalprocent" class="skts-vis-mere" name="beloeb" type="radio" /><label class="skts-layout2-label-inline" for="skts-normalprocent">Normalbidrag med procenttill&aelig;g</label>
+                  <div class="skts-fold">
+                    <label class="skts-layout2-label" for="skts-indberet-procent">Procenttill&aelig;g</label>
+                    <select id="skts-indberet-procent" name="select">
+                      <option value="25" selected>25 %</option> 
+                      <option value="50">50 %</option>
+                      <option value="100">100 %</option>
+                      <option value="200">200 %</option>
+                      <option value="300">300 %</option>
+                    </select>
+                  </div>
+                </li>
+                <li><input id="skts-privataftale" class="skts-vis-mere" name="beloeb" type="radio" /><label class="skts-layout2-label-inline" for="skts-privataftale">Bel&oslash;b efter privat aftale</label>
+                  <div class="skts-fold">
+                    <label class="skts-layout2-label" for="skts-indberet-beloebmaaned">Bel&oslash;b pr. m&aring;ned</label>
+                    <input id="skts-indberet-beloebmaaned" type="text" maxlength="10" class="skts-beloeb">
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <p class="skts-broedtekst">Beregnet &aring;rligt bidrag<strong class="skts-layout1-overskydende">14.964 kr.</strong></p>
+            <p>
+              <button class="skts-knap-primaer">Beregn</button><button class="skts-knap-sekundaer">Annuller</button>
+            </p>
+          </form>
+        </div><!--End .skts-indhold-bred-->
+      </div>
+    </div><!--End #skts-midter-container-med-brugeroplysninger-->
+  </div><!--End #skts-body-sekundaer-vindue-->
+
+  <!-- Her k&oslash;res javascript som kun m&aring; k&oslash;res n&aring;r hele siden er loaded. F.eks. skip link javascript til Chrome og Opera.
+Grunden til at dette ikke ligger i onload, er for ikke at lave yderligere restriktioner for brugeren af skabelonerne. -->
+
+  <script type="text/javascript" src="../sktscommon/Scripts/vendor/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="../sktscommon/Scripts/vendor/jquery.keyboard-focus.js"></script>
+  <script type="text/javascript" src="../sktscommon/Scripts/vendor/jquery-ui-1.10.3.custom.js"></script>
+  <script type="text/javascript" src="../sktscommon/Scripts/vendor/jquery.ui.datepicker-da.js"></script>
+  <script type="text/javascript" src="../sktscommon/Scripts/TastSelvMain.js"> </script>
+  <script type="text/javascript" src="../sktscommon/Scripts/TastSelvIndberetBidrag.js"> </script>
+  <script type="text/javascript" src="../sktscommon/Scripts/vendor/accesifyhtml5.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    AccessifyHTML5({
+header: "body #skts-globalmenu-container",
+footer: "body footer",
+main: "#skts-hoved-container"
+});
+
+// Skip link til Chrome og Safari
+if (skts_isWebkit || skts_isOpera) {
+  opsaetSkipLink("skts-skip-til-indhold", "skts-skip-link-target-indhold");
+}
+
+// Set up datepickers for this page
+
+$(document).ready(function() {
+    $('#skts-startdato').datepicker({ 
+dateFormat: 'dd.mm', 
+minDate: new Date(2013, 1 - 1, 1),
+maxDate: new Date(2013, 12 - 1, 31),
+onSelect: function( selectedDate ) {
+$( '#skts-slutdato' ).datepicker( 'option', 'minDate', selectedDate );
+}
+});
+    $('#skts-slutdato').datepicker({ 
+dateFormat: 'dd.mm', 
+minDate: new Date(2013, 1 - 1, 1),
+maxDate: new Date(2013, 12 - 1, 31),
+onSelect: function( selectedDate ) {
+$('#skts-startdato' ).datepicker( 'option', 'maxDate', selectedDate);
+}
+});
+    });
+  </script>
+</body>
+</html>

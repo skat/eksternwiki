@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:efi:ws:1.0.1" name="MFFordringIndberetService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Benyttes til indberetning af fordringsaktioner fra en fordringshaver. En fordringaktion er enten en ny fordring der skal oprettes eller en ændring til en tidligere indberettet fordring.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1">
+			<xsd:include schemaLocation="../service/MFFordringIndberetInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MFFordringIndberetServiceRequest">
+		<wsdl:part name="Request" element="efiws:MFFordringIndberet_I"/>
+	</wsdl:message>
+	<wsdl:message name="MFFordringIndberetServiceResponse">
+		<wsdl:part name="Response" element="efiws:MFFordringIndberet_O"/>
+	</wsdl:message>
+	<wsdl:portType name="MFFordringIndberetServicePortType">
+		<wsdl:operation name="getMFFordringIndberet">
+			<wsdl:input message="efiws:MFFordringIndberetServiceRequest"/>
+			<wsdl:output message="efiws:MFFordringIndberetServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

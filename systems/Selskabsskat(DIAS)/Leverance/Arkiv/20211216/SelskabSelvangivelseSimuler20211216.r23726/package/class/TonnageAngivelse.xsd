@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angivelse af tonnage i forbindelse med selvangivelse</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TonnageAngivelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="TonnageAngivelseAktivitetType" type="skat2012:TonnageAngivelseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver type af tonnagebeskattet aktivitet selskabet driver: R: Rederivirksomhed, jf. tonnageskattelovens § 6 O: Operatørvirksomhed, jf. tonnageskattelovens § 21 a B: Både rederi- og operatørvirksomhed  Felt 302</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseTonnageskattePligtigIndkomstMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har haft tonnageskattepligtig indkomst i den periode der selvangives for? (True = Ja) Felt 305a og felt 310a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseBeskatningTilvalgt" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om indkomsten fra rederi- og/eller operatørvirksomheden skal beskattes efter reglerne i tonnageskatteloven. (True = tilvalgt, False = fravalgt) Felt 301</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseUdlejningMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Jf. tonnageskatteloven angives det, om et rederi i gennemsnit over et indkomstår udlejer eller videreudlejer (bareboatcharter) større end 50 pct. af den samlede bruttotonnage for rederivirksomheden. Hvis ja beskattes indkomst fra den overskydende del efter skattelovgivningens almindelige regler.  Felt 392 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseFlagandelRederiMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en rederivirksomhed, i gennemsnit over den periode der selvangives for, har fastholdt eller forøget flagandelen for den EU/EØS-registrerede bruttotonnage i forhold til flagandelen registreret på basisdagen, jf. tonnageskatteloven.  Felt 393</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseEjedeFlagandelFaldRederiMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om flagandelen for den ejede EU/EØS-registrerede bruttotonnage er faldet med mindst 60 pct.  Felt 393a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseFlagandelOpeMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en operatørvirksomhed, i gennemsnit over den periode der selvangives for, har fastholdt eller forøget flagandelen for den EU/EØS-registrerede bruttotonnage i forhold til flagandelen registreret på basisdagen, jf. tonnageskatteloven.  Felt 394</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseEjedeFlagandelFaldOpeMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om flagandelen for den opererede EU/EØS-registrerede bruttotonnage er faldet med mindst 60 pct.   Felt 394a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseRådighedRederiMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den bruttotonnage, som et rederi i gennemsnit over indkomståret har haft til rådighed fra lejede skibe, er mere end fire gange den bruttotonnage, som ejes af rederiet selv, jf. tonnageskatteloven.  Felt 395</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseOmsætningRederiMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udgør omsætningen ved tilknyttet virksomhed 50 pct. eller mere af den samlede omsætning fra rederivirksomhed, jf. tonnageskatteloven.  Felt 396</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseEnigMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om et selskab erklærer sig enig i, at samtlige betingelser for tonnageskatteordningen er opfyldt.  Felt 397</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseOvergangssaldoMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om et selskab har en negativ overgangssaldo på skibe og/eller driftsmidler, jf. tonnageskatteloven.  Felt 398</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

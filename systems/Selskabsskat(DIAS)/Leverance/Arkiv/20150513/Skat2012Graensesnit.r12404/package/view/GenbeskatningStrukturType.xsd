@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/GenbeskatningInternationalSambeskatning.xsd"/>
+         <xs:include schemaLocation="../class/GenbeskatningSkyggeSambeskatning.xsd"/>
+         <xs:element name="GenbeskatningStruktur" type="skat2012:GenbeskatningStrukturType"/>
+         <xs:complexType name="GenbeskatningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:GenbeskatningInternationalSambeskatningKreditLandSaldo"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:GenbeskatningInternationalSambeskatningExemptionLandSaldo"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:GenbeskatningInternationalSambeskatningSaldo" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:GenbeskatningSkyggeSambeskatningKreditLandSaldo" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:GenbeskatningSkyggeSambeskatningExemptionLandSaldo" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:GenbeskatningSkyggeSambeskatningSaldo" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

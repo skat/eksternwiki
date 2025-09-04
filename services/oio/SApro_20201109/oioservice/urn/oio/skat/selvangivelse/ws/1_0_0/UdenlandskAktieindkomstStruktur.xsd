@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueAktieBevisKursvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SagHandlingTypeTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatUdbytteskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatKapitalIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAktieAktiebaseretInvesteringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAktieObligationsbaseretInvesteringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretUdbytteUdenlandskKapitalIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretUdbytteUdenlandskBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretGevinstUdenlandskBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjReguleretUdbytteUdenlandskBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjReguleretGevinstUdenlandskBeloeb.xsd"/><xs:element name="UdenlandskAktieindkomstStruktur" type="selvangivelsews:UdenlandskAktieindkomstStrukturType"/>
+	<xs:complexType name="UdenlandskAktieindkomstStrukturType">
+		<xs:sequence>
+			<xs:element name="UdenlandskAktieindkomst">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="UdenlandskAktieindkomstSletUaendret" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:SagHandlingTypeTekst" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="UdenlandskAktieindkomstOpretRet" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:SagHandlingTypeTekst" minOccurs="0"/>
+									<xs:element ref="dkcc:CountryIdentificationCode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:ReguleretUdbytteUdenlandskKapitalIndkomstBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjReguleretUdbytteUdenlandskBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjReguleretGevinstUdenlandskBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:ReguleretUdbytteUdenlandskBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:ReguleretGevinstUdenlandskBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskFormueAktieBevisKursvaerdiBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskSkatKapitalIndkomstBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskSkatUdbytteskatBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskAktieObligationsbaseretInvesteringBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskAktieAktiebaseretInvesteringBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

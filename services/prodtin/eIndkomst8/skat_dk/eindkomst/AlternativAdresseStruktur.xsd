@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:alternativadresse="http://rep.oio.dk/skat.dk/eindkomst/class/alternativadresse/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:land="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/alternativadresse/xml/schemas/20071202/" schemaLocation="class/alternativadresse/xml/schemas/20071202/AlternativAdresseAdresseLinie1.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" schemaLocation="class/land/xml/schemas/20071202/LandKode.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:element name="AlternativAdresseStruktur" type="fase2:AlternativAdresseStrukturType"/>
+	<xs:complexType name="AlternativAdresseStrukturType">
+		<xs:sequence>
+			<xs:element ref="alternativadresse:AlternativAdresseAdresseLinie1"/>
+			<xs:element ref="alternativadresse:AlternativAdresseAdresseLinie2"/>
+			<xs:element ref="alternativadresse:AlternativAdresseAdresseLinie3"/>
+			<xs:element ref="alternativadresse:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+			<xs:element ref="alternativadresse:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+			<xs:element ref="land:LandKode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

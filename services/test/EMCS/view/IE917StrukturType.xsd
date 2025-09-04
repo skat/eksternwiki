@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/BeskedOplysningStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/LedsageDokumentEUFejlStrukturType.xsd"/>
+	<xs:element name="IE917Struktur" type="struct:IE917StrukturType"/>
+	<xs:complexType name="IE917StrukturType">
+		<xs:sequence>
+			<xs:element name="IE917">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:BeskedOplysningStruktur"/>
+						<xs:element ref="struct:LedsageDokumentEUFejlStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

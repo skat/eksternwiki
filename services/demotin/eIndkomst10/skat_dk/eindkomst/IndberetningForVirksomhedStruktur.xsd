@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:element name="IndberetningForVirksomhedStruktur" type="fase2:IndberetningForVirksomhedStrukturType"/>
+	<xs:complexType name="IndberetningForVirksomhedStrukturType">
+		<xs:sequence>
+			<xs:element name="IndberetningForVirksomhed">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

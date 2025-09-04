@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r4177</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SpilFil.xsd"/>
+         <xs:include schemaLocation="../class/Tilladelsesindehaver.xsd"/>
+         <xs:include schemaLocation="../class/SpilCertifikat.xsd"/>
+         <xs:include schemaLocation="../class/SpilKategori.xsd"/>
+         <xs:include schemaLocation="../class/SpilType.xsd"/>
+         <xs:include schemaLocation="../class/PuljespilNoegle.xsd"/>
+         <xs:include schemaLocation="../class/Puljespil.xsd"/>
+         <xs:include schemaLocation="../class/Spil.xsd"/>
+         <xs:include schemaLocation="../class/ValutaOplysning.xsd"/>
+         <xs:include schemaLocation="../class/GevinstPulje.xsd"/>
+         <xs:element name="PuljespilStartStruktur" type="fase2.1:PuljespilStartStrukturType"/>
+         <xs:complexType name="PuljespilStartStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="PuljespilStartStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="FilInformation">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:SpilFilIdentifikation"/>
+
+                                 <xs:element ref="fase2.1:SpilFilErstatningIdentifikation" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="TilladelsesindehaverOgSpil">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:TilladelsesindehaverNavn"/>
+                  
+                                 <xs:element ref="fase2.1:SpilCertifikatIdentifikation"/>
+                  
+                                 <xs:element ref="fase2.1:SpilCertifikatTilladelsestype"/>
+                  
+                                 <xs:element ref="fase2.1:SpilKategoriNavn"/>
+                  
+                                 <xs:element ref="fase2.1:SpilTypeNavn"/>
+                  
+                                 <xs:element ref="fase2.1:SpilTypeIdentifikation"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="GenerelPuljeNøgleListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="GenerelPuljeNøgle" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:PuljespilNøgleKampNummer"/>
+                  
+                                          <xs:element ref="fase2.1:PuljespilNøgleBeskrivelse"/>
+                  
+                                          <xs:element ref="fase2.1:PuljespilNøgleGenerel"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="Pulje">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:PuljespilGevinstPuljeProcent"/>
+                  
+                                 <xs:element ref="fase2.1:PuljespilAntalResultatPuljer"/>
+                  
+                                 <xs:element ref="fase2.1:PuljespilPuljeoverførsel"/>
+                  
+                                 <xs:element ref="fase2.1:PuljespilAntalKampe"/>
+                  
+                                 <xs:element ref="fase2.1:PuljespilRækkePris"/>
+                  
+                                 <xs:element ref="fase2.1:SpilForventetSlutDatoTid"/>
+                  
+                                 <xs:element ref="fase2.1:ValutaOplysningKode"/>
+                                 <xs:element name="ResultatPuljeListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="ResultatPulje" minOccurs="1" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:GevinstPuljeIdentifikation"/>
+                  
+                                                   <xs:element ref="fase2.1:GevinstPuljeGevinstProcent"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

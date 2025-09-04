@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:ansaettelseforhold="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" schemaLocation="class/ansaettelseforhold/xml/schemas/20071202/AnsaettelseforholdMedarbejderIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AnsaettelsePeriodeStruktur.xsd"/>
+         <xs:include schemaLocation="AngivelseBlanketIndholdStruktur.xsd"/>
+         <xs:element name="AnsaettelsePeriodeOplysningStruktur" type="fase2:AnsaettelsePeriodeOplysningStrukturType"/>
+         <xs:complexType name="AnsaettelsePeriodeOplysningStrukturType">
+            <xs:sequence>
+                  <xs:element ref="fase2:AnsaettelsePeriodeStruktur"/>
+                  <xs:element minOccurs="0" ref="ansaettelseforhold:AnsaettelseforholdMedarbejderIdentifikator"/>
+                  <xs:element minOccurs="0" ref="fase2:AngivelseBlanketIndholdStruktur"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

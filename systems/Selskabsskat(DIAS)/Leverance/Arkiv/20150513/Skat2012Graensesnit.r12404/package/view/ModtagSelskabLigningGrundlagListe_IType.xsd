@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/SelskabSelvangivelse.xsd"/>
+         <xs:include schemaLocation="../operational/SelvangivelseVersion.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirksomhedOphoerMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Selvangivelse.xsd"/>
+         <xs:include schemaLocation="../operational/BeskatningFormKode.xsd"/>
+				     
+         <xs:include schemaLocation="../class/LigningGrundlag.xsd"/>
+         <xs:include schemaLocation="../class/Underskud.xsd"/>
+         <xs:include schemaLocation="../class/SelskabSkattepligtigIndkomst.xsd"/>
+         <xs:include schemaLocation="../class/LigningMyndighed.xsd"/>
+         <xs:include schemaLocation="../class/LigningAfgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/SelskabskatLempelse.xsd"/>
+         <xs:include schemaLocation="../class/ModtagetGaver.xsd"/>
+         <xs:include schemaLocation="../class/SelskabUdbytteModtaget.xsd"/>
+         <xs:include schemaLocation="../class/FondForeningErklaering.xsd"/>
+         <xs:include schemaLocation="../class/SelskabUdbytteUdloddet.xsd"/>
+         <xs:include schemaLocation="../class/AktieavanceTab.xsd"/>
+         <xs:include schemaLocation="../class/EjendomTab.xsd"/>
+         <xs:include schemaLocation="../class/KursgevinstTab.xsd"/>
+         <xs:element name="ModtagSelskabLigningGrundlagListe_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:ModtagSelskabLigningGrundlagListe_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="ModtagSelskabLigningGrundlagListe_IType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="LigningGrundlagListe">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="LigningGrundlag" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="GrundlagStamoplysninger">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="skat2012:VirksomhedSENummer"/>
+                  
+                                                <xs:element ref="skat2012:SelskabSelvangivelseIndkomstÅr"/>
+                  
+                                                <xs:element ref="skat2012:SelvangivelseVersion"/>
+                  
+                                                <xs:element ref="skat2012:VirksomhedOphørMarkering"/>
+                  
+                                                <xs:element ref="skat2012:SelvangivelseDelperiodeStart"/>
+                  
+                                                <xs:element ref="skat2012:SelvangivelseDelperiodeSlut"/>
+                  
+                                                <xs:element ref="skat2012:BeskatningFormKode"/>
+
+                                                <xs:element ref="skat2012:LigningGrundlagFunktionAdskillelseMedarbejderNummer"
+                                                      minOccurs="0"/>
+
+
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="GrundlagOplysninger" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="skat2012:UnderskudTotalAnvendt" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabSkattepligtigIndkomstEfterAnvendtUnderskud" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabSkattepligtigIndkomstAnsatEfterAnvendtUnderskud"
+                                                      minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabSelvangivelseTaksation" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningMyndighedKode" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseKendelseDato" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabskatLempelseTotal" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="KredsSum" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseDatterselskabLempelse" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseCreditLempelseUdenlandskIndkomst" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseExemptionLempelseUdenlandskIndkomst"
+                                                      minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseGoodwillALPgf40" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseÆndretNedslagALPgf40" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseÆndredeØvrigeNedslagALPgf40" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseCreditLempelseALPgf40" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:LigningAfgørelseExemptionLempelseALPgf40" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabSelvangivelseSkatteTillæg" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:ModtagetGaverFamilieFondStiftelse" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:UnderskudTotalSaldo" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabUdbytteModtagetDanskUdenSkat" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabUdbytteModtagetDansk25ProcentMedSkat" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabUdbytteModtagetDansk27ProcentMedSkat" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="skat2012:SelskabUdbytteModtagetDansk22ProcentMedSkat" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+
+                                       <xs:element ref="skat2012:FondForeningErklæringTilvalgt" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:LigningAfgørelseKontrolArtOgDybdeKode" minOccurs="0"/>
+
+
+                                       <xs:element name="SelskabListe">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="Selskab" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="skat2012:VirksomhedSENummer"/>
+
+                                                         <xs:element ref="skat2012:SelvangivelseDelperiodeStart" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:SelvangivelseDelperiodeSlut" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:SelskabUdbytteUdloddetTotal" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:SelskabUdbytteUdloddetEgneAktier" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:AktieavanceTabSaldo" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:EjendomTabSaldo" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:KursgevinstTabSaldo" minOccurs="0"/>
+
+
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

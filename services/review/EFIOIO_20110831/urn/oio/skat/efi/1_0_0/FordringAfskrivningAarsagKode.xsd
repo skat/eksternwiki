@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringafskrivningaarsagkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringAfskrivningAarsagKode" type="fordringafskrivningaarsagkode:FordringAfskrivningAarsagKodeType">
+		<xs:annotation>
+			<xs:documentation>Sagsbehandlers mulighed for at vælge en årsag til afskrivning af fordring ud fra en fast liste. Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige.
+
+Koder:
+AKRD: Akkordordning
+ANDN: Anden
+AUTO: Automatisk afskrivning på baggrund af manglende evne gennem en årrække.
+BGTL: Automatiske afskrivninger under x kr..
+DØDB: Død/dødsbo.
+EFTG: Eftergivelse
+FEJL: Fejlagtig pålignet
+FORA: Forældelse
+GLDS: Gældssanereing.
+KONK: Konkurs </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FordringAfskrivningAarsagKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ANDN"/>
+			<xs:enumeration value="AKRD"/>
+			<xs:enumeration value="AUTO"/>
+			<xs:enumeration value="BGTL"/>
+			<xs:enumeration value="DODB"/>
+			<xs:enumeration value="EFTG"/>
+			<xs:enumeration value="FEJL"/>
+			<xs:enumeration value="FORA"/>
+			<xs:enumeration value="GLDS"/>
+			<xs:enumeration value="KONK"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:spilws="urn:oio:skat:spil:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:spil:ws:1.0.0" name="SpecifikationSpilAngivelseMultiOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet med denne service er at oprette specifikationer til punktafgiftsangivelsen vedrørende afgift af gevinstgivende spilleautomater via filoverførsel, incl. Kvitteringsnummer - dvs xml-upload af angivelse og specifikationer. Anvendes både i forbindelse med filoverførsel og systemintegration.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:spil:ws:1.0.0">
+			<xsd:include schemaLocation="urn/oio/skat/spil/ws/1_0_0/SpecifikationSpilAngivelseMultiOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="SpecifikationSpilAngivelseMultiOpretServiceRequest">
+		<wsdl:part name="Request" element="spilws:SpecifikationSpilAngivelseMultiOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="SpecifikationSpilAngivelseMultiOpretServiceResponse">
+		<wsdl:part name="Response" element="spilws:SpecifikationSpilAngivelseMultiOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="SpecifikationSpilAngivelseMultiOpretServicePortType">
+		<wsdl:operation name="getSpecifikationSpilAngivelseMultiOpret">
+			<wsdl:input message="spilws:SpecifikationSpilAngivelseMultiOpretServiceRequest"/>
+			<wsdl:output message="spilws:SpecifikationSpilAngivelseMultiOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver forretningsområde og evt. supplerende forretningsområde for en given virksomhed, pligt og periode. Forretningsområdeforhold skal betragtes som en underopdeling af Registreringsforhold. Endvidere må der, når der oprettes et forretningsområdeforhold, ikke i samme periode findes et selvstændigt aktivt angivelsesfrekvensforhold for det overliggende registreringsforhold. Der kan være fra et til flere forretningsområdeforhold til samme registreringsforhold på samme tid. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeTreCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="ForretningOmrådeForholdKode" type="skat2012:KodeTreCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der entydigt indetificerer et forretningsområde. F.eks. 006 = Varemodtager 007 = Oplagshaver 014 = Byerhverv 015 = Landbrug/fiskeri m.v.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForretningOmrådeForholdGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag et givet forretningsområdeforhold gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForretningOmrådeForholdGyldigTil" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag et givet forretningsområdeforhold gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

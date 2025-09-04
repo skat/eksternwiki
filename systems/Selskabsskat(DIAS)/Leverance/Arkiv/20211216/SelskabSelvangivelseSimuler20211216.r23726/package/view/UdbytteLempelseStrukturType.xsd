@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/SelskabskatLempelse.xsd"/>
+         <xs:include schemaLocation="../class/SelskabUdbytteUdloddet.xsd"/>
+         <xs:include schemaLocation="../view/UdbytteModtagetStrukturType.xsd"/>
+				     
+         <xs:element name="UdbytteLempelseStruktur" type="skat2012:UdbytteLempelseStrukturType"/>
+         <xs:complexType name="UdbytteLempelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:UdbytteModtagetStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabskatLempelseTotal" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabUdbytteUdloddetEgneAktier" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabUdbytteUdloddetTotal" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

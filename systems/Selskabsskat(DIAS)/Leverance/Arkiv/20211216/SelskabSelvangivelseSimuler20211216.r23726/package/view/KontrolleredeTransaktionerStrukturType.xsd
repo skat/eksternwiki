@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/IndflydelseForhold.xsd"/>
+         <xs:include schemaLocation="../class/KontrolleredeTransaktioner.xsd"/>
+         <xs:include schemaLocation="../class/SelskabHovedaktivitetOmraade.xsd"/>
+         <xs:include schemaLocation="../class/KontrolleretGaeld.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KontrolleredeTransaktionerKoebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KontrolleredeTransaktionerSalgStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KontrolleredeTransaktionerIndtaegterStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KontrolleredeTransaktionerUdgifterStrukturType.xsd"/>
+				     
+         <xs:element name="KontrolleredeTransaktionerStruktur"
+                     type="skat2012:KontrolleredeTransaktionerStrukturType"/>
+         <xs:complexType name="KontrolleredeTransaktionerStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:IndflydelseForholdBestemmendeIndflydelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:IndflydelseForholdUnderlagtBestemmendeIndflydelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:IndflydelseForholdKoncernForbundet" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerOmfattetAfSkattekontrollovPgf3BStk6"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerBalancesumUnderMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerOmsætningUnderMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHovedaktivitetOmrådeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederDK" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederØvrigeEU" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederØvrigeEUFastDrift" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederNonEUMedDobbeltbeskatning"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederNonEUMedDobbeltbeskatningFastDrift"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederNonEUEjDobbeltbeskatning"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerEnhederNonEUEjDobbeltbeskatningFastDrift"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerUdenlandskeEnhederDKSambeskattet"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerParagraf3BSkattepligtig" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerOver5Mio" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerOverGrænseMedStorFremmedkapital"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerKøbStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerSalgStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerIndtægterStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerUdgifterStruktur" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

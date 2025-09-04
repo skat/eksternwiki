@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                        name="BankHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Henter en banks/filials navn og adresse til brug for præsentation i skærmbilleder</xs:documentation>
+            <xs:documentation>r15075</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/">
+               <xsd:include schemaLocation="../service/BankHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="BankHentServiceRequest">
+            <wsdl:part name="Request" element="fase1:BankHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="BankHentServiceResponse">
+            <wsdl:part name="Response" element="fase1:BankHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="BankHentServicePortType">
+            <wsdl:operation name="getBankHent">
+               <wsdl:input message="fase1:BankHentServiceRequest"/>
+               <wsdl:output message="fase1:BankHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase1:KompenserTransRequest"/>
+               <wsdl:output message="fase1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

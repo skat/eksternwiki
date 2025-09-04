@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Info om behandling af en sag i SKAT-Ligning</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/AnySkat2012XMLType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel10Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:element name="LigningAfgørelseIndhold" type="skat2012:AnySkat2012XMLType">
+               
+               <xs:annotation>
+                  <xs:documentation>Detailoplysninger om den specifike afgørelse i SKAT-Ligning. Skal overholde et af de respektive SKAT-Ligning afgørelse schemaer (eksempelvis LigningAfgørelseOmlægRegnskabsperiodeStruktur)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseKendelseDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor kendelsen har retsvirkning. Felt 014</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseDatterselskabLempelse" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datterselskabslempelse iht. SEL § 17 stk. 2 - nedslagsbeløb beregnes af SKAT, og beløbet fratrækkes i den beregnede indkomstskat. Felt 020</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseCreditLempelseUdenlandskIndkomst"
+                     type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Credit lempelse for udenlandsk indkomst i form af et nedslagsbeløb, der fratrækkes i den beregnede indkomstskat. Felt 021</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseExemptionLempelseUdenlandskIndkomst"
+                     type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Exemption lempelse for udenlandsk indkomst i form af et nedslagsbeløb, der fratrækkes i den beregnede indkomstskat. Felt 022</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseGoodwillALPgf40" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afskrivningsberettiget værdi af goodwill, rettigheder m.v. jfr. afskrivningslovens § 40 stk. 1. Felt 025</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseÆndretNedslagALPgf40" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nedslag jfr. afskrivningslovens § 40 stk. 1. Felt 026</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseÆndredeØvrigeNedslagALPgf40"
+                     type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nedslag jfr. afskrivningslovens § 40 stk. 2 og 3. Felt 027</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseCreditLempelseALPgf40" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den forholdsmæssige del af credit lempelse for udenlandsk indkomst, der falder på nedslagsbeløb jfr. afskrivningslovens § 40. Felt 028</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseExemptionLempelseALPgf40"
+                     type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den forholdsmæssige del af exemption lempelse for udenlandsk indkomst, der falder på nedslagsbeløb jfr. afskrivningslovens § 40. Felt 029</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseEfterfølgendeAfOgNedskrivninger"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af efterfølgende af- og nedskrivninger til udligning af en forhøjelse/nedsættelse. Felt 051</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseØvrigeStatistikRettelser" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forhøjelse eller nedsættelse af den skattepligtige indkomst, som ikke er dækket af de øvrige værdier i felterne 51, 53 og 54. Felt 052</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseÆndretAfskrivningGrundlag" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb for ligningsmæssige ændringer af et afskrivningsgrundlag, som får virkning for afskrivningsbeløbet i følgende indkomstår. Felt 053</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelsePeriodeForskydning" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb for reguleringer, som er udtryk for en periodeforskydning mellem flere indkomstår. Felt 054</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseKontrolArtOgDybdeKode" type="skat2012:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver kontrolart og kontroldybde for indkomstansættelsen. Felt 055  Værdisæt: 10: Servicebesøg, ingen ansættelsesændringer. 11: Systemtjek, ingen ansættelsesændringer. 12: Tjek Ansættelsesændring og ændring i skattepligtig indkomst - Ny årsopgørelse. 17: Spot Ansættelsesændring og ændring i skattepligtig indkomst - Ny årsopgørelse. 18: Kontrol Ansættelsesændring og ændring i skattepligtig indkomst - Ny årsopgørelse. 22: Tjek Enighed mellem skatteyder og SKAT, kode genererer ekstra tekst på årsopgørelsen, altid årsopgørelse uanset ændring i skattepligtig indkomst. 27 Spot Enighed mellem skatteyder og SKAT, kode genererer ekstra tekst på årsopgørelsen, altid årsopgørelse uanset ændring i skattepligtig indkomst. 28 Kontrol Enighed mellem skatteyder og SKAT, kode genererer ekstra tekst på årsopgørelsen, altid årsopgørelse uanset ændring i skattepligtig indkomst. 32: Tjek Ændring af årsopgørelse hvor der ikke er ændring i skattepligtig indkomst. 37: Spot Ændring af årsopgørelse hvor der ikke er ændring i skattepligtig indkomst. 38: Kontrol Ændring af årsopgørelse hvor der ikke er ændring i skattepligtig indkomst. 44: Moder/datterselskab indsættes ved indberetning af indkomstændring fra de særskilte datterselskabskontroller på selve moderselskabet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseKontrolleretOmsætning" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den kontrollerede omsætning. Felt 056</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseRessourceForbrugMinutter" type="skat2012:TalHel10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den forbrugte tid til kontrol af virksomhedens ansættelse af skattepligtig indkomst (i minutter). Felt 057</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseLignetBeløb" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Lignet beløb for det aktuelle ligningstema. Felt 058 eller felt 1058 eller felt 2058</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseAktionærLån" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er aktionærlån. (True = ja, False = nej) Felt 060</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseSegmenteringKode" type="skat2012:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver, hvilket segment selskabet hører til. Felt 062</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseTPLigning" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er foretaget TP-ligning. (True = ja, False = nej) Felt 063</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseBindendeLigningSvarRessourceForbrugTimer"
+                     type="skat2012:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Registreret tidsforbrug for bindende ligningssvar (i timer). Felt 097</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseBindendeLigningSvarTypeKode" type="skat2012:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver typen af bindende ligningssvar. Felt 098</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningAfgørelseLigningResultatAnnuleret" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om ligningssvaret er annuleret. (True = ja, False = nej). Felt 198</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

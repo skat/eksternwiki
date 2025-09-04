@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel1Type.xsd"/>
+         
+         <xs:element name="AfstemOpdateringMarkering" type="skat2012:TalHel1Type">
+            <xs:annotation>
+               <xs:documentation>SKAT-Ligning skal sætte et af følgende flag:  1 -  Afstem 2 -  Afstem og Opdater </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

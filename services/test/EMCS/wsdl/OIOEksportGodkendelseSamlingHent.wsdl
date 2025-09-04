@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" name="OIOEksportGodkendelseSamlingHentService">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1">
+			<xsd:include schemaLocation="../service/OIOEksportGodkendelseSamlingHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="OIOEksportGodkendelseSamlingHentServiceRequest">
+		<wsdl:part name="Request" element="struct:OIOEksportGodkendelseSamlingHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="OIOEksportGodkendelseSamlingHentServiceResponse">
+		<wsdl:part name="Response" element="struct:OIOEksportGodkendelseSamlingHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="OIOEksportGodkendelseSamlingHentServicePortType">
+		<wsdl:operation name="getOIOEksportGodkendelseSamlingHent">
+			<wsdl:input message="struct:OIOEksportGodkendelseSamlingHentServiceRequest"/>
+			<wsdl:output message="struct:OIOEksportGodkendelseSamlingHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

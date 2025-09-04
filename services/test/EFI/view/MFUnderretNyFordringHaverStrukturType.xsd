@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringTypeKategoriKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HaeftelseSubsidiaerKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HaeftelseStartDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HaeftelseSlutDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HaeftelseFormKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringStiftelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringSidsteRettidigeBetalingDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringProduktionEnhedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringForfaldDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringHaverBeskrivelseTekst.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="../view/FordringBeloebStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+	<xs:element name="MFUnderretNyFordringHaverStruktur" type="efiws:MFUnderretNyFordringHaverStrukturType"/>
+	<xs:complexType name="MFUnderretNyFordringHaverStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+			<xs:element ref="efi:FordringFordringArtKode"/>
+			<xs:element ref="efi:FordringTypeKode"/>
+			<xs:element ref="efi:FordringTypeKategoriKode"/>
+			<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator"/>
+			<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+			<xs:element ref="efi:FordringProduktionEnhedIdentifikator" minOccurs="0"/>
+			<xs:element ref="efi:FordringStiftelseDato"/>
+			<xs:element ref="efi:FordringForfaldDato"/>
+			<xs:element ref="efi:FordringSidsteRettidigeBetalingDato"/>
+			<xs:element ref="efiws:FordringBeloebStruktur"/>
+			<xs:element ref="efiws:FordringPeriodeStruktur"/>
+			<xs:element ref="efi:FordringFordringHaverBeskrivelseTekst" minOccurs="0"/>
+			<xs:element name="FordringHaeftelseListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FordringHaeftelse" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efiws:KundeStruktur"/>
+									<xs:element ref="efi:HaeftelseFormKode"/>
+									<xs:element ref="efi:HaeftelseSubsidiaerKode" minOccurs="0"/>
+									<xs:element ref="efi:HaeftelseStartDato"/>
+									<xs:element ref="efi:HaeftelseSlutDato" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GammelFordringHaver">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:FordringHaverIdentifikator"/>
+						<xs:element ref="efiws:KundeStruktur"/>
+						<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

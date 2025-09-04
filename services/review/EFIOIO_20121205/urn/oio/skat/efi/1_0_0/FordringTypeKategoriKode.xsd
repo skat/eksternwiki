@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringtypekategorikode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringTypeKategoriKode" type="fordringtypekategorikode:FordringTypeKategoriKodeType">
+		<xs:annotation>
+			<xs:documentation>Fordringskategori angiver om det er en hovedfordring, en Inddrivelsesrente, en opkrævningsrente  eller et inddrivelsesgebyr</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FordringTypeKategoriKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HF"/>
+			<xs:enumeration value="IR"/>
+			<xs:enumeration value="OG"/>
+			<xs:enumeration value="OR"/>
+			<xs:enumeration value="IG"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

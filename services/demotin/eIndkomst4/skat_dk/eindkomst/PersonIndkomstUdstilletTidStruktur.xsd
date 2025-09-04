@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:indkomstoplysningadgangreferencenummer="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" schemaLocation="class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/IndkomstOplysningAdgangReferenceNummerIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="SoegePeriodeDatoTidLukketStruktur.xsd"/>
+         <xs:element name="PersonIndkomstUdstilletTidStruktur" type="fase2:PersonIndkomstUdstilletTidStrukturType"/>
+         <xs:complexType name="PersonIndkomstUdstilletTidStrukturType">
+               <xs:sequence>
+                  <xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+               <xs:element minOccurs="0" ref="indkomstoplysningadgangreferencenummer:IndkomstOplysningAdgangReferenceNummerIdentifikator"/>
+               <xs:element ref="fase2:SoegePeriodeDatoTidLukketStruktur"/>
+               </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

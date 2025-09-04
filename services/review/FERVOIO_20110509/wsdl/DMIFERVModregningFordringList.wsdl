@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" name="DMIFERVModregningFordringListService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>FødevareErhverv kalder denne service for at få listet fordringer for en kunde, hvor der må foretages modregning i DMI. Gælder kun fordringsarterne inddrivelse og modregning. Der spørges kun når FERV har en transport i den aktuelle udbetaling til kunden.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0">
+			<xsd:include schemaLocation="../service/DMIFERVModregningFordringListInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="DMIFERVModregningFordringListServiceRequest">
+		<wsdl:part name="Request" element="dmiws:DMIFERVModregningFordringList_I"/>
+	</wsdl:message>
+	<wsdl:message name="DMIFERVModregningFordringListServiceResponse">
+		<wsdl:part name="Response" element="dmiws:DMIFERVModregningFordringList_O"/>
+	</wsdl:message>
+	<wsdl:portType name="DMIFERVModregningFordringListServicePortType">
+		<wsdl:operation name="getDMIFERVModregningFordringList">
+			<wsdl:input message="dmiws:DMIFERVModregningFordringListServiceRequest"/>
+			<wsdl:output message="dmiws:DMIFERVModregningFordringListServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

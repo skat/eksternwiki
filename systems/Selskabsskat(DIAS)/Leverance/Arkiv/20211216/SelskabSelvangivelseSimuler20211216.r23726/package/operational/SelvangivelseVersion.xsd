@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         
+         <xs:element name="SelvangivelseVersion" type="skat2012:TalHelType">
+            <xs:annotation>
+               <xs:documentation>Løbenummer som angiver den aktuelle version af en selvangivelse. Bemærk ved taksation fastsat af SKATligning: her bliver det version 0.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:momsangivelse="urn:oio:skat:tse:1.0.1" targetNamespace="urn:oio:skat:tse:1.0.1" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:include schemaLocation="MomsAngivelseStruktur.xsd"/>
+	<xs:include schemaLocation="IndberetterSEnummerIdentifikator.xsd"/>
+	<xs:element name="MomsAngivelseInputStruktur" type="momsangivelse:MomsAngivelseInputStrukturType">
+		<xs:annotation>
+			<xs:documentation>Denne inputstruktur kan oprette en eller flere momsangivelser og returnere en kvittering pr. angivelse. Indberetter skal være tilmeldt TastSelv Erhverv vedrørende Moms (ved indberetning for egen virksomhed) eller være autoriseret indberetter for den eller de virksomheder der angives på vegne af. Angiver skal være tilmeldt TastSelv Erhverv vedrørende Moms. Hvis betalingsanmodning  ønskes videregivet til PBS skal angiver tillige være tilmeldt PBS vedrørende Moms i TastSelv Erhverv. Yderligere valideringer oplyses af SKAT..</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MomsAngivelseInputStrukturType">
+		<xs:sequence>
+			<xs:element ref="momsangivelse:IndberetterSEnummerIdentifikator"/>
+			<xs:element ref="momsangivelse:MomsAngivelseStruktur" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

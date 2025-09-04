@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/TransportRettighedHaverEjerMarkering.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/TransportRettighedHaverProcent.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/TransportRettighedHaverPrioritetIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/TransportRettighedHaverModtagerIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/TransportRettighedHaverBeskedIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverIdentifikator.xsd"/><xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TransportUdlaegRettighedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TransportRettighedHaverBeloebStrukturType.xsd"/>
+	<xs:element name="MFTransportRettighedshaverStruktur" type="efiws:MFTransportRettighedshaverStrukturType"/>
+	<xs:complexType name="MFTransportRettighedshaverStrukturType">
+		<xs:sequence>
+			<xs:element ref="efiws:EFIKundeIdentStruktur"/>
+			<xs:element ref="efi:FordringHaverIdentifikator" minOccurs="0"/>
+			<xs:element ref="efiws:TransportUdlaegRettighedStruktur" minOccurs="0"/>
+			<xs:element ref="efi:TransportRettighedHaverBeskedIndikator"/>
+			<xs:element ref="efi:TransportRettighedHaverEjerMarkering"/>
+			<xs:element ref="efi:TransportRettighedHaverModtagerIndikator"/>
+			<xs:element ref="efi:TransportRettighedHaverPrioritetIdentifikator"/>
+			<xs:element name="TransportRettighedhaverUdbetalingFordeling" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="efi:TransportRettighedHaverProcent"/>
+						<xs:element ref="efiws:TransportRettighedHaverBeloebStruktur"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

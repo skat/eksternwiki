@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:slspws="urn:oio:skat:slsp:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:slsp:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:r75="urn:oio:skat:r75:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:r75:1.0.0" schemaLocation="../../../r75/1_0_0/BankPostdistriktIdentifier.xsd"/><xs:import namespace="urn:oio:skat:r75:1.0.0" schemaLocation="../../../r75/1_0_0/BankPostNummerIdentifier.xsd"/><xs:import namespace="urn:oio:skat:r75:1.0.0" schemaLocation="../../../r75/1_0_0/BankByNavn.xsd"/><xs:import namespace="urn:oio:skat:r75:1.0.0" schemaLocation="../../../r75/1_0_0/BankAdresseNavn.xsd"/><xs:import namespace="urn:oio:skat:r75:1.0.0" schemaLocation="../../../r75/1_0_0/BankFilialNavn.xsd"/><xs:import namespace="urn:oio:skat:r75:1.0.0" schemaLocation="../../../r75/1_0_0/BankNavn.xsd"/><xs:element name="BankHent_O" type="slspws:BankHent_OType">
+	</xs:element>
+	<xs:complexType name="BankHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="BankListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BankUddata" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="r75:BankNavn" minOccurs="0"/>
+									<xs:element ref="r75:BankFilialNavn" minOccurs="0"/>
+									<xs:element ref="r75:BankAdresseNavn"/>
+									<xs:element ref="r75:BankByNavn" minOccurs="0"/>
+									<xs:element ref="r75:BankPostNummerIdentifier"/>
+									<xs:element ref="r75:BankPostdistriktIdentifier"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

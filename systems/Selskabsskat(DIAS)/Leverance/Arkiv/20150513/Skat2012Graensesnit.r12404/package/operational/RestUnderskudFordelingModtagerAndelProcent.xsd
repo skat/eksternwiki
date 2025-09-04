@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Maks100Procent6DecimalerType.xsd"/>
+         
+         <xs:element name="RestUnderskudFordelingModtagerAndelProcent"
+                     type="skat2012:Maks100Procent6DecimalerType">
+            <xs:annotation>
+               <xs:documentation>0-100 med 6 decimaler (Anvendes til angivelse af procent</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

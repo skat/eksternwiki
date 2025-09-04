@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SelskabSkattepligtigIndkomst.xsd"/>
+         <xs:include schemaLocation="../class/SelskabIndtaegt.xsd"/>
+         <xs:include schemaLocation="../class/SelskabBundfradrag.xsd"/>
+         <xs:include schemaLocation="../class/Underskud.xsd"/>
+         <xs:element name="SelskabSkattepligtigIndkomstStruktur"
+                     type="skat2012:SelskabSkattepligtigIndkomstStrukturType"/>
+         <xs:complexType name="SelskabSkattepligtigIndkomstStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstFørUnderskud" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstAnsatFørFradragUnderskudTidligereÅr"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstErhvervsmæssigNettoIndkomst"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstØvrigNettoIndkomst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstPositivIndkomst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstFørUnderskudTotal" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstEfterUnderskudSELParagraf12"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstFradragUddelinger" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstFradragYderligereNettotab"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstBruttoAnsat" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstSkattetillægAntalDage" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstAnsatUbenyttetHensættelseAlmennyttigeFormål"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstEfterAnvendtUnderskud" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabIndtægtPositivNettoKapitalMedTillægUdlejning"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabBundfradragØvrigIndkomst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UnderskudTotalSaldo" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UnderskudTotalAnvendt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstAnsatFørFradragUnderskudTidligereÅrTotal"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabskattepligtigIndkomstUdenlandskPensionsinstitutFastEjendom"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabskattepligtigIndkomstUdenlandskPensionsinstitutFastEjendomSum"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstUnderskudForskningAnvendt"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstEgneUnderskudTidligereÅr"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstSamUnderskudIndkomståret"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstSamUnderskudTidligereÅr"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstEfterFordelingUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstUnderskudForskning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstEfterUnderskud" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

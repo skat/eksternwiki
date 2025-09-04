@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r15075</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Bank.xsd"/>
+         <xs:element name="BankHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase1:BankHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r15075"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="BankHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="BankListe" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="BankUddata" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="fase1:BankNavn" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase1:BankFilialNavn" minOccurs="0"/>
+
+                                       <xs:element ref="fase1:BankAdresse"/>
+
+                                       <xs:element ref="fase1:BankByNavn" minOccurs="0"/>
+
+                                       <xs:element ref="fase1:BankPostNummer"/>
+                  
+                                       <xs:element ref="fase1:BankPostdistrikt"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

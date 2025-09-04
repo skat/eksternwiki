@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst25Type.xsd"/>
+         <xs:include schemaLocation="../types/AArstalType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="VirksomhedOplysningStatusTekst" type="skat2012:Tekst25Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Status for en virksomhedoplysnings/-gruppe   - Aktiv =stoerre end (annul_kod=1) Forekomsten er aktiv på dags dato. Forekomsten må ændres/slettes afhængig af forretningsreglerne - Fremtidig =stoerre end (annul_kod=1) Forekomsten har en startdato, der ligger efter dags dato. Forekomsten må ændres/slettes afhængig af forretningsreglerne - Afsluttet =stoerre end (annul_kod=1) Forekomsten er afsluttet med en slutdato, der ligger før dags dato. Forekomsten må ændres/slettes afhængig af forretningsreglerne  Nedenstående tekster kommer kun ud, når der vises rettelseshistorik:  - Slettet =stoerre end (annul_kod=2 eller 3) Forekomsten er slettet af bruger. Forekomsten må ikke ændres/slettes. - Ændret =stoerre end (annul_kod=4) Oprindelig forekomst, der er ændret af bruger. Forekomsten må ikke ændres/slettes. - Fejlrettet =stoerre end (annul_kod=5) Oprindelig forekomst, der er slettet af bruger. Forekomsten må ikke ændres/slettes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedOplysningHandlingÅrstal" type="skat2012:ÅrstalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Årstal for hvornår en given handling (oprettelse/ændring/sletning) er foretaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedOplysningHandlingIdent" type="skat2012:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>En entydig nøgle for en given handling for en virksomhedsoplysning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

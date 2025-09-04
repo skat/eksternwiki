@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ansaettelseforhold="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" schemaLocation="class/ansaettelseforhold/xml/schemas/20071202/AnsaettelseforholdPeriode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="../../xkom_dk/xml/schemas/2007/04/15/EndDate.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:element name="AnsaettelsePeriodeStruktur" type="fase2:AnsaettelsePeriodeStrukturType"/>
+	<xs:complexType name="AnsaettelsePeriodeStrukturType">
+		<xs:sequence>
+			<xs:element ref="ansaettelseforhold:AnsaettelseforholdPeriode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

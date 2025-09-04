@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="VirksomhedIndkomstOplysningStruktur.xsd"/>
+	<xs:element name="IndkomstOplysningVirksomhedHent_O" type="fase2:IndkomstOplysningVirksomhedHent_OType"/>
+	<xs:complexType name="IndkomstOplysningVirksomhedHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="IndkomstOplysningVirksomhedUddata" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IndkomstOplysningVirksomhedSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2:VirksomhedIndkomstOplysningStruktur"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

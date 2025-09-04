@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringfordringartkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringFordringArtKode" type="fordringfordringartkode:FordringFordringArtKodeType">
+		<xs:annotation>
+			<xs:documentation>Koder der anvendes til at definere om en fordring er en Inddrivelsesfordring, Opkrævningsfordring, Modregningsfordring eller en Transport.
+Mulige koder:
+INDR: Inddrivelsesfordring
+OPKR: Opkrævningsfordring
+MODR: Modregningsfordring 
+TRAN: Transport </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FordringFordringArtKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OPKR"/>
+			<xs:enumeration value="INDR"/>
+			<xs:enumeration value="MODR"/>
+			<xs:enumeration value="TRAN"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

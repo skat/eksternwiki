@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="http://digitaliser.dk/resource/2665/artefact/SKAT_VirksomhedSENummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/AlternativKontaktIdentifikator.xsd"/><xs:element name="EFIKundeIdentStruktur" type="efiws:EFIKundeIdentStrukturType"/>
+	<xs:complexType name="EFIKundeIdentStrukturType">
+		<xs:sequence>
+			<xs:element name="IdentValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+						<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+						<xs:element ref="efi:AlternativKontaktIdentifikator"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ctxt="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" 
+ xmlns:tse2009="urn:oio:skat:tse:1.0.1" targetNamespace="urn:oio:skat:tse:1.0.1" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../skat.dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/>
+	<xs:include schemaLocation="AngivelseKvitteringStruktur.xsd"/>
+	<xs:element name="MomsAngivelseOutputStruktur" type="tse2009:MomsAngivelseOutputStrukturType">
+		<xs:annotation>
+			<xs:documentation>Denne outputstruktur returnerer en kvittering pr. momsangivelse.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="MomsAngivelseOutputStrukturType">
+		<xs:sequence>
+			<xs:element ref="ctxt:HovedOplysningerSvar"/>
+			<xs:element ref="tse2009:AngivelseKvitteringStruktur" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

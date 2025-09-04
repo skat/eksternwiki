@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SelskabSelvangivelse.xsd"/>
+         <xs:include schemaLocation="../class/ModtagetGaver.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/SelskabSkattepligtigIndkomstStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KildeartsbestemteTabAnvendtStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/GenbeskatningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdbytteLempelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KontrolleredeTransaktionerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RenteFradragBeskaeringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SaerligeIndkomstforholdStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ReguleringAnvendelseUnderskudStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SelskabSelvangivelseSpecifikkeHaendelserStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RegnskaboplysningerRevisorbistandStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SelvangivelseKendelseKodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SelskabSelvangivelseFradragStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FondForeningErklaeringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FondForeningUdbetalteUnderskudStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FondForeningOpgoerelseStrukturType.xsd"/>
+				     
+         <xs:element name="SelskabSelvangivelseOplysningStruktur"
+                     type="skat2012:SelskabSelvangivelseOplysningStrukturType"/>
+         <xs:complexType name="SelskabSelvangivelseOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:SelskabSelvangivelseTaksation" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSelvangivelseSkatteTillæg" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ModtagetGaverFamilieFondStiftelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSkattepligtigIndkomstStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KildeartsbestemteTabAnvendtStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:GenbeskatningStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UdbytteLempelseStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KontrolleredeTransaktionerStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:RenteFradragBeskæringStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SærligeIndkomstforholdStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ReguleringAnvendelseUnderskudStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSelvangivelseSpecifikkeHændelserStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:RegnskaboplysningerRevisorbistandStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelvangivelseKendelseKodeStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabSelvangivelseFradragStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningUdbetalteUnderskudStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningOpgørelseStruktur" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

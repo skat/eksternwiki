@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="../view/OIOLedsageDokumentNotifikationSamlingHent_IType.xsd"/>
+	<xs:include schemaLocation="../view/OIOLedsageDokumentNotifikationSamlingHent_OType.xsd"/>
+	<xs:element name="OIOLedsageDokumentNotifikationSamlingHentInterface" type="struct:OIOLedsageDokumentNotifikationSamlingHentInterfaceType"/>
+	<xs:complexType name="OIOLedsageDokumentNotifikationSamlingHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="struct:OIOLedsageDokumentNotifikationSamlingHent_I"/>
+			<xs:element ref="struct:OIOLedsageDokumentNotifikationSamlingHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

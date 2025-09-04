@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:element name="LigningMyndighedKode" type="skat2012:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvad der har initieret en given sag. Felt 012  Værdisæt: 11: Teknisk rettelse 12: Ansættelse på SKATs initiativ 13: Ansættelse på selskabets initiativ 14: Givet skriftlig påtale 15: Ligningsrådet 16: Landsskatteretten 17: Domstolsafgørelser 92: Selskabslignende ansættelse (Kommune, Kommunefællesskab, Told- og skatteregion eller Told- og Skattestyrelsen). 93: Tilsynssager (Ændringer i den skattepligtige indkomst i tilsynssager. Koden kan kun benyttes af tilsyns-Told- og skatteregion). 94: Call-in sager (Ændringer i den skattepligtige indkomst i Call-in sager.Koden kan kun benyttes af tilsyns-Told- og skatteregion eller Told- og Skattestyrelsen). 95: Fællessager (Ændringer i den skattepligtige indkomst er foretaget ved samarbejde mellem kommune, kommunefællesskaber, Told- og skatteregion eller Told- og Skattestyrelsen). 99: Skatteankenævnet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

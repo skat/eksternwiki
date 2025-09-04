@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Lis Frederiksen (Told- og Skattestyrelsen) -->
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by Henrik Klubien (CSC Danmark A/S) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tsk="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" targetNamespace="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="TransaktionsID.xsd"/>
+	<xs:include schemaLocation="TransaktionsTid.xsd"/>
+	<!-- HovedOplysninger -->
+	<xs:element name="HovedOplysninger" type="tsk:HovedOplysningerType"/>
+	<xs:complexType name="HovedOplysningerType">
+		<xs:sequence>
+			<xs:element ref="tsk:TransaktionsID"/>
+			<xs:element ref="tsk:TransaktionsTid"/>
+			<xs:element ref="tsk:BrugerKode" minOccurs="0"/>
+			<xs:element ref="tsk:RolleKode" minOccurs="0"/>
+			<xs:element ref="tsk:StedKode" minOccurs="0"/>
+			<xs:element ref="tsk:Testmode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BrugerKode" type="tsk:BrugerKodeType">
+		<xs:annotation>
+			<xs:documentation source="../meta/BrugerKode.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="BrugerKodeType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="RolleKode" type="tsk:RolleKodeType">
+		<xs:annotation>
+			<xs:documentation source="../meta/RolleKode.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="RolleKodeType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="StedKode" type="tsk:StedKodeType">
+		<xs:annotation>
+			<xs:documentation source="../meta/StedKode.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="StedKodeType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Testmode">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean">
+				<xs:pattern value="true"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

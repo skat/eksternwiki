@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         <xs:include schemaLocation="../class/DriftFormForhold.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/DriftFormHaeftelseForhold.xsd"/>
+         <xs:include schemaLocation="../operational/VirksomhedOplysningBehandlingKode.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedRegistreringStatusType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedRegistreringStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedStatusType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedStatusForhold.xsd"/>
+				     
+         <xs:include schemaLocation="../class/SkatteRegnskabValuta.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AktieKlasse.xsd"/>
+         <xs:include schemaLocation="../class/AktieKapital.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BrancheType.xsd"/>
+         <xs:include schemaLocation="../class/Branche.xsd"/>
+         <xs:include schemaLocation="../operational/BrancheForholdStartDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BrancheForholdSlutDato.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/VirksomhedRegnskabPeriode.xsd"/>
+         <xs:include schemaLocation="../class/HenvisningRolle.xsd"/>
+         <xs:include schemaLocation="../class/HenvisningType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedHenvisning.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Fogedomraade.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedLederType.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Pligt.xsd"/>
+         <xs:include schemaLocation="../class/BevillingType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedKontoForhold.xsd"/>
+         <xs:include schemaLocation="../class/Bank.xsd"/>
+         <xs:include schemaLocation="../class/BankKonto.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNemKontoForhold.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         <xs:include schemaLocation="../class/EjerForhold.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/AktieAndel.xsd"/>
+         <xs:include schemaLocation="../class/StemmeAndel.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LederForholdHistorikStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EjerLederTypeValgStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedAdresseStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="VirksomhedOpdater_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:VirksomhedOpdater_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="VirksomhedOpdater_IType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="skat2012:VirksomhedSENummer"/>
+
+                     <xs:element ref="skat2012:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="VirksomhedNavn" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedNavnFirmaNavnKort"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedNavnFirmaNavn"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedNavnGyldigFra"/>
+
+                                 <xs:element ref="skat2012:VirksomhedNavnGyldigTil" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="DriftForm" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:DriftFormKode"/>
+                  
+                                 <xs:element ref="skat2012:DriftFormForholdStartDato"/>
+
+                                 <xs:element ref="skat2012:DriftFormForholdSlutDato" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="VirksomhedLand" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:LandKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="HæftelseForhold" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:DriftFormHæftelseForhold"/>
+                  
+                                 <xs:element ref="skat2012:DriftFormHæftelseForholdGyldigFra"/>
+
+                                 <xs:element ref="skat2012:DriftFormHæftelseForholdGyldigTil" minOccurs="0"/>
+
+                                 <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="RegistreringStatus" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedRegistreringStatusTypeKode"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegistreringStatusGyldigFra"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="VirksomhedStatus" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedStatusTypeKode"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedStatusForholdGyldigFra"/>
+
+                                 <xs:element ref="skat2012:VirksomhedStatusForholdGyldigTil" minOccurs="0"/>
+
+                                 <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="RegnskabValuta" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:SkatteRegnskabValutaKode"/>
+                  
+                                 <xs:element ref="skat2012:SkatteRegnskabValutaCentralBankNavn"/>
+                  
+                                 <xs:element ref="skat2012:SkatteRegnskabValutaGyldigFra"/>
+
+                                 <xs:element ref="skat2012:SkatteRegnskabValutaGyldigTil" minOccurs="0"/>
+
+                                 <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="AktieKlasseListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="AktieKlasse" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Identifikation">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="skat2012:AktieKlasseTypeKode"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element ref="skat2012:AktieKapitalBeløb"/>
+                  
+                                          <xs:element ref="skat2012:AktieKapitalGyldigFra"/>
+
+                                          <xs:element ref="skat2012:AktieKapitalÆndreKode" minOccurs="0"/>
+
+                                          <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="BrancheForholdListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="BrancheForhold" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Identifikation">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="skat2012:BrancheTypeKode"/>
+                  
+                                                   <xs:element ref="skat2012:BrancheNummer"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element ref="skat2012:BrancheForholdStartDato"/>
+
+                                          <xs:element ref="skat2012:BrancheForholdSlutDato" minOccurs="0"/>
+
+                                          <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="Regnskabsperiode" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeKode"/>
+                  
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeStartDato"/>
+
+                                 <xs:element ref="skat2012:VirksomhedRegnskabPeriodeSlutDato" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="VirksomhedHenvisningListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="VirksomhedHenvisning" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Identifikation">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="skat2012:VirksomhedSENummer"/>
+                  
+                                                   <xs:element ref="skat2012:HenvisningRolleKode"/>
+                  
+                                                   <xs:element ref="skat2012:HenvisningTypeKode"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element ref="skat2012:VirksomhedHenvisningStartDato"/>
+
+                                          <xs:element ref="skat2012:VirksomhedHenvisningSlutDato" minOccurs="0"/>
+
+                                          <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+
+
+                     <xs:element ref="skat2012:FogedområdeNummer" minOccurs="0"/>
+
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="EjerLederListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="EjerLeder" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="skat2012:VirksomhedLederTypeKode"/>
+                  
+                                          <xs:element ref="skat2012:LederForholdHistorikStruktur"/>
+                  
+                                          <xs:element ref="skat2012:EjerLederTypeValgStruktur"/>
+                  
+                                          <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="VirksomhedAdresseOplysningListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="VirksomhedAdresseOplysning" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="skat2012:VirksomhedAdresseStruktur"/>
+
+                                          <xs:element ref="skat2012:PligtKode" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2012:BevillingTypeKode" minOccurs="0"/>
+
+                                          <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="KontoOplysning" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:VirksomhedKontoForholdType"/>
+                                 <xs:element name="VirksomhedKontoValg">
+                                    <xs:complexType>
+                                       <xs:choice>
+                                          <xs:sequence>
+                                             <xs:element name="SpecifikKonto">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element ref="skat2012:BankRegisteringsnummer"/>
+                  
+                                                      <xs:element ref="skat2012:BankKontoNummer"/>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+				
+				                                      </xs:sequence>
+                                          <xs:sequence>
+				
+                                             <xs:element name="NemKonto">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element ref="skat2012:VirksomhedNemKontoForholdKontoIdent"/>
+
+                                                      <xs:element ref="skat2012:VirksomhedNemKontoForholdTidsstempel" minOccurs="0"/>
+
+                                                      <xs:element ref="skat2012:VirksomhedNemKontoForholdStartDato"/>
+
+                                                      <xs:element ref="skat2012:VirksomhedNemKontoForholdSlutDato" minOccurs="0"/>
+
+
+                                                      <!--Sequence removed-->
+
+                                                         <xs:element name="KontoEjer" minOccurs="0">
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:element ref="skat2012:VirksomhedSENummer"/>
+                                                               </xs:sequence>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                      
+
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:choice>
+                                    </xs:complexType>
+                                 </xs:element>
+                                 <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="EjerListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="Ejer" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="skat2012:EjerRolleTypeKode"/>
+                  
+                                          <xs:element ref="skat2012:EjerForholdGyldigFra"/>
+
+                                          <xs:element ref="skat2012:EjerForholdGyldigTil" minOccurs="0"/>
+
+                                          <xs:element ref="skat2012:EjerLederTypeValgStruktur"/>
+
+                                          <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode" minOccurs="0"/>
+
+
+                                          <!--Sequence removed-->
+
+                                             <xs:element name="AktieAndelListe" minOccurs="0">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+
+                                                      <xs:element name="AktieAndel" minOccurs="1" maxOccurs="unbounded">
+                                                         <xs:complexType>
+                                                            <xs:sequence>
+                                                               <xs:element ref="skat2012:AktieKlasseTypeKode"/>
+
+                                                               <xs:element ref="skat2012:AktieAndelBeløb" minOccurs="0"/>
+
+
+
+                                                               <xs:element ref="skat2012:AktieAndelProcent" minOccurs="0"/>
+
+
+
+                                                               <xs:element ref="skat2012:StemmeAndelProcent" minOccurs="0"/>
+
+                                                               <xs:element ref="skat2012:AktieAndelGyldigFra"/>
+
+                                                               <xs:element ref="skat2012:AktieAndelGyldigTil" minOccurs="0"/>
+
+                                                               <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode"/>
+                                                            </xs:sequence>
+                                                         </xs:complexType>
+                                                      </xs:element>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+
+                                          
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

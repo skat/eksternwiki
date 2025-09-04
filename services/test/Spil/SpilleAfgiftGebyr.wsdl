@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:spilws="http://rep.oio.dk/skat.dk/TSE/service/spilleafgiftgebyrangivelsemodtag/xml/schemas/2006/09/01/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/spilleafgiftgebyrangivelsemodtag/xml/schemas/2006/09/01/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="SpilleAfgiftGebyrService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>
+		</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/spilleafgiftgebyrangivelsemodtag/xml/schemas/2006/09/01/">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/2470824/artefact/SKAT_SpilleAfgiftGebyrInputStruktur.xsd"/>
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/2470824/artefact/SKAT_SpilleAfgiftGebyrOutputStruktur.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="SpilleAfgiftGebyrServiceRequest">
+		<wsdl:part name="Request" element="spilws:SpilleAfgiftGebyrInputStruktur"/>
+	</wsdl:message>
+	<wsdl:message name="SpilleAfgiftGebyrServiceResponse">
+		<wsdl:part name="Response" element="spilws:SpilleAfgiftGebyrOutputStruktur"/>
+	</wsdl:message>
+	<wsdl:portType name="SpilleAfgiftGebyrServicePortType">
+		<wsdl:operation name="getSpilleAfgiftGebyr">
+			<wsdl:input message="spilws:SpilleAfgiftGebyrServiceRequest"/>
+			<wsdl:output message="spilws:SpilleAfgiftGebyrServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SpilleAfgiftGebyrServiceBinding" type="spilws:SpilleAfgiftGebyrServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getSpilleAfgiftGebyr">
+			<soap:operation soapAction="getSpilleAfgiftGebyr"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SpilleAfgiftGebyrServiceBindingQSService">
+		<wsdl:port name="SpilleAfgiftGebyrHentServiceBindingQSPort" binding="spilws:SpilleAfgiftGebyrServiceBinding">
+			<soap:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

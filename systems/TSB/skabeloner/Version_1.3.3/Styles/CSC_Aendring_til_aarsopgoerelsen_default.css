@@ -1,0 +1,533 @@
+/**Nyt Design**/
+/*
+ Udkommenteret nedenstående type selectors pga flg: 
+        - Hovedreglen er at type selectors kun må ikke må være i denne CSS fil. 
+        - Mange af dem findes i TastSelvMain.css
+        - Der er nogle af dem som ikke bliver brugt, og ikke skal bruges mere
+*/
+/*
+a {
+	background-color: transparent;
+	color: #000099;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+}
+a.link {
+	background-image: url("../Images/rubrik_m.gif");
+	background-position: 0 1px;
+	background-repeat: no-repeat;
+	display: list-item;
+	float: left;
+	list-style-type: none;
+	padding-left: 10px;
+	
+}
+a:hover {
+	text-decoration: underline;
+}
+big {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 11pt;
+}
+body {
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+form {
+	display: inline;
+}
+h1 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12pt;
+}
+h2 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12pt;
+}
+h3 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+h5 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 9pt;
+}
+hr {
+	color: #CCCCCC;
+}
+*/
+
+img.inputinfo {
+	cursor: help;
+}
+
+/**Nyt Design**/
+/*
+ Udkommenteret nedenstående type selectors pga flg: 
+        - Hovedreglen er at type selectors kun må ikke må være i denne CSS fil. 
+        - Mange af dem findes i TastSelvMain.css
+        - Der er nogle af dem som ikke bliver brugt, og ikke skal bruges mere
+*/
+/*
+input {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+*/
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+input.deaktiveret {
+	background-color: #dfdfdf;
+	/* font-family: Arial, Verdana, Helvetica, sans-serif; */
+	/* font-size: 10pt; */
+	font-size: 100%;
+	-moz-user-focus: ignore;
+	/* width: 100px; */
+	width: 80%;	
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+input.deaktiveretfelt {
+	background-color: #dfdfdf;
+	/* font-family: Arial, Verdana, Helvetica, sans-serif; */
+	/* font-size: 10pt; */
+	font-size: 100%;
+	font-style:italic;
+	-moz-user-focus: ignore;
+	/* width: 100px; */
+	width: 80%;
+	
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+input.inputbred {
+	/* width: 100px; */
+	width: 80%;
+}
+
+/**Nyt Design**/
+/*
+ Udkommenteret nedenstående type selectors pga flg: 
+        - Hovedreglen er at type selectors kun må ikke må være i denne CSS fil. 
+        - Mange af dem findes i TastSelvMain.css
+        - Der er nogle af dem som ikke bliver brugt, og ikke skal bruges mere
+*/
+/*
+li {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+p {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+small {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+table{
+	border-collapse: collapse; border-spacing: 0; 
+}
+*/
+table.meddelelse {
+	background-color: #FFFFCC;
+	border: 1px solid black;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color="#777777", direction=135, strength=3);
+	padding: 5px;
+	-moz-border-radius: 10px;
+}
+table.gruppeknapper {
+	border-top: 2px solid #B8B8B8;
+}
+
+/**Nyt Design**/
+/*
+ Udkommenteret nedenstående type selectors pga flg: 
+        - Hovedreglen er at type selectors kun må ikke må være i denne CSS fil. 
+        - Mange af dem findes i TastSelvMain.css
+        - Der er nogle af dem som ikke bliver brugt, og ikke skal bruges mere
+*/
+/*
+td {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 80%;
+}
+*/
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+td.emne {
+	/* font-size: 12pt; */
+	font-size: 100%;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+td.emnelille {
+	/* font-size: 11pt; */
+	font-size: 90%;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+td.gruppe {
+	border-top: 2px solid #B8B8B8;
+	/* font-size: 10pt; */
+	font-size: 80%;
+	font-weight: bold;
+	height: 35px;
+}
+/**Nyt Design**/
+/* Ændret faste størrelser til procent samt nu arver den farve fra dens forælder HTML element */
+td.overgruppe {
+	border-top: 3px solid #999999;
+	/* font-size: 12pt; */
+	font-size: 125%;
+	font-weight: bold;
+	height: 35px;
+	/* color: #3F6075; */
+	padding-top:5px;
+}
+td.ident {
+	text-align: right;
+}
+td.identstreger {
+	border-bottom: 2px solid #B8B8B8;
+	border-top: 2px solid #B8B8B8;
+	height: 40px;
+}
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+td.ledetekst {
+	border-bottom: 1px solid #CCCCCC;
+	/* font-size: 8pt; */
+	font-size: 85%;
+	font-weight: bold;
+}
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+td.ledetekstgruppe {
+	border-bottom: 1px solid #CCCCCC;
+	/* font-size: 10pt; */
+	font-size: 100%;
+	font-weight: bold;
+}
+td.ledetekstgruppe2 {
+	border-bottom: 1px solid #CCCCCC;
+    /* font-size: 10pt; */
+	font-size: 100%;
+	font-weight: bold;
+	padding-bottom:10px;
+}
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding som så cellen følger indholdets størrelse */
+td.rubriktekstform {
+	font-weight: normal;
+	border-bottom: 1px solid #CCCCCC;
+	/* height: 70px; */
+	padding: 10px 0 10px 0;
+}
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding så cellen følger indholdets størrelse */
+td.rubriktekstformbund {
+	font-weight: normal;
+	/* height: 70px; */
+	padding: 10px 0 10px 0;
+}
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding så cellen følger indholdets størrelse */
+td.rubriktekstform4l {
+	border-bottom: 1px solid #CCCCCC;
+	/* height: 90px; */
+	padding: 10px 0 10px 0;
+}
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding så cellen følger indholdets størrelse */
+td.rubriktekstudenadskiller {
+	font-weight: normal;
+	/*height: 40px;*/
+	padding: 10px 0 10px 0;	
+}
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding så cellen følger indholdets størrelse */
+td.rubriktekstspecial {
+    border-bottom: 1px solid #CCCCCC;
+	font-weight: normal;
+	/*height: 40px;*/
+	padding: 10px 0 10px 0;
+}
+
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding så cellen følger indholdets størrelse */
+td.rubriktekstformejd1 {
+	/* height: 53px; */
+	padding: 10px 0 10px 0;	
+}
+/**Nyt Design**/
+/* Height må ikke være fast størelse. Derfor padding så cellen følger indholdets størrelse */
+td.rubriktekstformejd2 {
+	border-bottom: 1px solid #CCCCCC;
+	/* height: 53px; */
+	padding: 10px 0 10px 0;	
+}
+td.stregbundfed {
+	border-bottom: 3px solid black;
+}
+td.stregbundtynd {
+	border-bottom: 1px solid black;
+}
+td.stregbundtyndgraa {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+
+/**Nyt Design**/
+/* Tabeller og kolonner bredder for 7 og 4 kolonner*/
+table.tabel-7-kolonne td.kolonne1_7
+{
+    width: 45%;
+}
+table.tabel-7-kolonne td.kolonne2_7
+{
+    width: 7%;
+}
+table.tabel-7-kolonne td.kolonne3_7
+{
+    width: 3%;
+}
+table.tabel-7-kolonne td.kolonne4_7
+{
+    width: 13%;
+}
+table.tabel-7-kolonne td.kolonne5_7
+{
+    width: 3%;
+}
+table.tabel-7-kolonne td.kolonne6_7
+{
+    width: 2%;
+}
+table.tabel-7-kolonne td.kolonne7_7
+{
+    width: 27%;
+}
+
+table.tabel-4-kolonne td.kolonne1_4
+{
+    width: 63%;
+}
+table.tabel-4-kolonne td.kolonne2_4
+{
+    width: 7%;
+}
+table.tabel-4-kolonne td.kolonne3_4
+{
+    width: 3%;
+}
+table.tabel-4-kolonne td.kolonne4_4
+{
+    width: 27%;
+}
+
+
+/**Nyt Design**/
+/* Internet Explorer 8 renderer Verdana fonten lidt bredere end ie9 som gør at kolonne 2 bryder ordet. Derfor lidt bredere kolonne 2 */
+.ie8 table.tabel-7-kolonne td.kolonne1_7
+{
+    width: 44%;
+}
+.ie8 table.tabel-7-kolonne td.kolonne2_7
+{
+    width: 8%;
+}
+.ie8 table.tabel-4-kolonne td.kolonne1_4
+{
+    width: 62%;
+}
+.ie8 table.tabel-4-kolonne td.kolonne2_4
+{
+    width: 8%;
+}
+
+/**Nyt Design**/
+/* Internet Explorer 7 renderes rammerne lidt smallere så derfor lidt bredere kolonner */
+.ie7 table.tabel-7-kolonne td.kolonne1_7
+{
+    width: 43%;
+}
+.ie7 table.tabel-7-kolonne td.kolonne2_7
+{
+    width: 8%;
+}
+.ie7 table.tabel-7-kolonne td.kolonne6_7
+{
+    width: 3%;
+}
+
+.ie7 table.tabel-4-kolonne td.kolonne1_4
+{
+    width: 62%;
+}
+.ie7 table.tabel-4-kolonne td.kolonne2_4
+{
+    width: 8%;
+}
+
+/**Nyt Design**/
+/*
+ Udkommenteret nedenstående type selectors pga flg: 
+        - Hovedreglen er at type selectors kun må ikke må være i denne CSS fil. 
+        - Mange af dem findes i TastSelvMain.css
+        - Der er nogle af dem som ikke bliver brugt, og ikke skal bruges mere
+*/
+/*
+th {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+ul {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+*/
+
+/**Nyt Design**/
+/* Tilsvarende findes i TastSelvMain.css */
+/*
+.linktekst {
+	.linktekst {
+	font-size: 10pt;
+	font-weight: normal;
+	border-bottom: 1px solid #000099;
+}
+*/
+
+/**Nyt Design**/
+/* Prefixed med skts-csc-legacy-html for at sikre at den kun rammer gammel kode */
+.skts-csc-legacy-html  th {
+	font-size: 80%;
+}
+
+/**Nyt Design**/
+/* Tilføjet nedenstående med descendant selectoren skts-csc-legacy-html som sikrer at den kun rammer gammel kode. Tabellerne skal være fixed for at break-word forneden virker */
+.skts-csc-legacy-html  table {
+	table-layout:fixed;
+}
+
+/**Nyt Design**/
+/* Tilføjet nedenstående med descendant selectoren skts-csc-legacy-html som sikrer at den kun rammer gammel kode. Tilføjet break-word så ordene bliver brudt ved skalering af tekst */
+.skts-csc-legacy-html  td {
+	word-wrap:break-word;
+}
+
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+.typelille {
+	/* font-size: 8pt; */
+	font-size: 85%;
+	font-weight: normal;
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+.typenormal {
+	/* font-size: 10pt; */
+	font-size: 100%;
+	font-weight: normal;
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent */
+.typelille1 {			/* blå tekst *****************/
+	/* font-size: 8pt; */
+	font-size: 100%;
+	font-weight: normal;
+	border-bottom: 1px solid #000099
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent samt nu arver den farve og font fra dens forælder HTML element */
+.typefold {			/* blå tekst *****************/
+    /* font-size: 10pt;*/
+	font-size: 100%;
+	font-weight: bold;
+	/* font-family:Arial, Helvetica, sans-serif; */
+ 	/* color: #3F6075;*/
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent samt nu arver den farve og font fra dens forælder HTML element */
+.helplink {
+    /* font-size: 10pt; */
+	font-size: 100%;
+    /* color: #000099; */
+    /* font-family: Arial, Verdana, Helvetica, sans-serif; */
+    text-decoration: none;
+	background: url(../Images/help.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+	display: block;
+	padding-right: 18px;
+	width: auto;
+}
+.helpimage {
+    border: none;
+    vertical-align: middle;
+}
+
+/**Nyt Design**/
+/* Ændret faste størrelser til procent samt nu arver den farve og font fra dens forælder HTML element */
+.fold {
+ /* font-size: 10pt; */
+ font-size: 105%;
+ font-weight:bold;
+ /* font-family:Arial, Helvetica, sans-serif; */
+ /* color: #3F6075; */
+ vertical-align:sub;
+}
+
+
+/**Nyt Design**/
+/* Prefixed med skts-csc-legacy-html for at sikre at den kun rammer gammel kode */
+/* Tilføjet [type="text"] så den kun ramme text input */
+@media screen 
+{
+    /* input:focus {text-align: left} */
+    .skts-csc-legacy-html input[type="text"]:focus {text-align: left}
+}
+
+
+/**Nyt Design**/
+/* skts-csc-legacy-html er introduceret så der gammel kode kan styles. */
+.skts-csc-legacy-html
+{
+    font-size: 100%;
+}
+
+
+/**Nyt Design**/
+/* Kommenteret syntaktisk forkert, derfor udkommenteret */
+/*
+@media print {
+//	.ejprint {display: none}
+//	img.ainfo {display: none} skal kunne ses i forslagene
+//	table.gruppeknapper {display: none}
+}
+*/
+/**Nyt Design**/
+/* Prefixed med skts-csc-legacy-html for at sikre at den kun rammer gammel kode */
+@media screen, print {
+	.skts-csc-legacy-html h1 {margin-bottom: 12pt}
+	.skts-csc-legacy-html h2 {margin-bottom: 12pt}
+	.skts-csc-legacy-html h3 {margin-bottom: 10pt}
+	.skts-csc-legacy-html h5 {margin-bottom: 9pt}
+	.skts-csc-legacy-html input[type="text"] {text-align: right}
+}

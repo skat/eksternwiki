@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En sag i SKAT-Ligning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst15Type.xsd"/>
+         <xs:include schemaLocation="../types/AnySkat2012XMLType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst10Type.xsd"/>
+         <xs:element name="LigningSagID" type="skat2012:Tekst15Type">
+               
+               <xs:annotation>
+                  <xs:documentation>ID til unik identifikation af en sag i SKAT-Ligning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningSagIndhold" type="skat2012:AnySkat2012XMLType">
+               
+               <xs:annotation>
+                  <xs:documentation>Detailoplysninger om den specifikke SKAT-Ligning sag. Skal overholde et af de respektive SKAT-Ligning sag skemaer (Eksempelvis skemaet for LigningSagSelvangivelseGenoptagelseStruktur.)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningSagTypeKode" type="skat2012:Tekst10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Entydig kode som identificerer typen for en SKAT-Ligning sag.  Værdisæt: BSKPGF: Ændring af beskatningsparagraf BSKPGS: Ændring til/fra særlig beskatningsparagraf (§2A, §2C og §3A) EFTSKT: Eftergivelse af skattetillæg MANUEL: Sag til manuel behandling MTSKPL: Ændre midlertidig skattepligt OMLREG: Omlægning af regnskabsperiode REGVAL: Ændring af regnskabsvaluta SELGEN: Genoptagelse af selvangivelse SELUDS: Udsættelse af selvangivelse SKØNAN: Skønsmæssig ansættelse af selvangivelse SKFOMS: Skattefri omstrukturering </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

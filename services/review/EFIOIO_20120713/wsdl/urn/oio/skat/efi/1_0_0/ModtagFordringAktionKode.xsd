@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:modtagfordringaktionkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ModtagFordringAktionKode" type="modtagfordringaktionkode:ModtagFordringAktionKodeType">
+		<xs:annotation>
+			<xs:documentation>Kode der angiver hvilken type fordring aktion der indberettes. Modsvarer hvad der udfyldes i AktionValg.
+
+Enum omfatter:
+OPRETFORDRING, 
+OPRETTRANSPORT,
+AENDRFORDRING,
+AENDRTRANSPORT,
+NEDSKRIV,
+OPSKRIV,
+TILBAGEKALD
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="ModtagFordringAktionKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OPRETFORDRING"/>
+			<xs:enumeration value="OPRETTRANSPORT"/>
+			<xs:enumeration value="AENDRFORDRING"/>
+			<xs:enumeration value="AENDRTRANSPORT"/>
+			<xs:enumeration value="NEDSKRIV"/>
+			<xs:enumeration value="OPSKRIV"/>
+			<xs:enumeration value="TILBAGEKALD"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

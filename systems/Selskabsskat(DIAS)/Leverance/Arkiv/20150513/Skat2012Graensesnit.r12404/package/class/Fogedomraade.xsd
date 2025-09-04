@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Til en virksomhed (CVR- og SE-nr) er der tilknyttet et fogedområdenummer. Dette nummer dannes i Erhvervssystemet.  Fogedområdenummer er en opdeling af virksomheder/selskaber til brug for sagsbehandlingen i SKAT.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/FogedomraadeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="FogedområdeNummer" type="skat2012:FogedområdeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fogedområdenummeret er 2 cifret og tildeles i Erhvervssystemet efter bestemte kriterier. Er et forsøg på at gruppere virksomhederne til brug for sagsbehandlingen herunder behandling af negative angivelser, hvor man kan udsøge/filtrerer  for et fogedområdenummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FogedområdeTekst" type="skat2012:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Teksten beskriver kort, hvilket fogedområde virksomheden er tildelt, det kan være: - Nyregistreret - Afmeldt - Dødsbo</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

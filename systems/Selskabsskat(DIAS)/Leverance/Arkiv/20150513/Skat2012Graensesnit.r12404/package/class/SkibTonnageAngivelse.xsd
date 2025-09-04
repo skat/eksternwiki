@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angivelserne for hvert skib anvendes til at beregne registreret bruttotonnage. For hvert skib angives et antal dage hvor ejerandel og flagfordeling (indenfor/udenfor EU/EØS) er konstant. (Svarende til en linie i den tidligere tonnage-blanket.). Ofte er der kun en angivelse per skib (per selskab). Der skal IKKE nul-angives. Når en af de to paramtre ændrer sig i løbet af året resulterer det i flere angivelser per skib (per selskab).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/PositivTalHel3Decimaler7Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/PositivTalHel7Decimaler2Type.xsd"/>
+         <xs:element name="SkibTonnageAngivelseEjerAndel"
+                     type="skat2012:PositivTalHel3Decimaler7Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ejerandel i procent - for den periode (i indkomståret) hvor skibet har været registreret hhv. indenfor eller udenfor EU/EØS. (Maks. 100%) Felt 400Rc</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkibTonnageAngivelseAntalDage" type="skat2012:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage (i indkomståret) som skibet har været registreret hhv. indenfor eller udenfor EU/EØS. Felt 400Rd eller felt 400Od</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkibTonnageAngivelseGennemsnitBruttoTonnage"
+                     type="skat2012:PositivTalHel7Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Gennemsnitsberegning for  bruttotonnage registreret. Rederi: Indenfor EU Felt 400Rf Undenfor EU Felt 400Rh  Operatør: Indenfor EU Felt 411Of  Undenfor EU Felt 411Oh</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

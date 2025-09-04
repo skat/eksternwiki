@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ntsews="urn:oio:skat:ntse:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:ntse:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:ntse="urn:oio:skat:ntse:1.0.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247432/artefact/SKAT_HovedOplysningerSvar.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/2105/artefact/SKAT_AngivelseKvitteringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1310858/artefact/ValutaKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/6587/artefact/SKAT_AngivelseDatoTid.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1311086/artefact/BetalingBeloeb.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1311067/artefact/BetalingDato.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1310940/artefact/BetalingFormidlerKode.xsd"/><xs:include schemaLocation="../view/AngiverVirksomhedSENummerType.xsd"/>
+	<xs:include schemaLocation="../view/AngivelseValgtPeriodeType.xsd"/>
+	<xs:include schemaLocation="../view/OCRLinieType.xsd"/>
+	<xs:element name="MomsAngivelseSystemIntegration_O" type="ntsews:MomsAngivelseSystemIntegration_OType">
+	</xs:element>
+	<xs:complexType name="MomsAngivelseSystemIntegration_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="Kvitteringsliste" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Kvittering" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="ntsews:AngiverVirksomhedSENummer"/>
+									<xs:element ref="ntsews:AngivelseValgtPeriode"/>
+									<xs:element ref="angivelse:AngivelseKvitteringIdentifikator"/>
+									<xs:element ref="ntsews:OCRLinie" minOccurs="0"/>
+									<xs:element ref="angivelse:AngivelseDatoTid"/>
+									<xs:element ref="ntse:ValutaKode" minOccurs="0"/>
+									<xs:element ref="ntse:BetalingFormidlerKode" minOccurs="0"/>
+									<xs:element ref="ntse:BetalingDato" minOccurs="0"/>
+									<xs:element ref="ntse:BetalingBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

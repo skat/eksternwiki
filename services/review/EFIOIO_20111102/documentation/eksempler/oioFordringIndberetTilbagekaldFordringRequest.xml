@@ -1,0 +1,31 @@
+<urn:MFFordringIndberet_I xmlns:urn="urn:oio:skat:efi:ws:1.0.1" xmlns:ns="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:ns1="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:urn1="urn:oio:skat:efi:1.0.0">
+         <ns:HovedOplysninger>
+            <ns:TransaktionIdentifikator>20110715-0900000</ns:TransaktionIdentifikator>
+            <ns:TransaktionTid>2011-08-10T00:00:00.000+02:00</ns:TransaktionTid>
+         </ns:HovedOplysninger>
+         <urn:FordringhaverSystemIDStruktur>
+            <ns1:VirksomhedSENummerIdentifikator>87654542</ns1:VirksomhedSENummerIdentifikator>
+         </urn:FordringhaverSystemIDStruktur>
+         <urn1:ModtagFordringLeveranceIdentifikator>9</urn1:ModtagFordringLeveranceIdentifikator>
+         <urn:FordringAktionSamling>
+            <urn:FordringAktion>
+               <urn1:ModtagFordringAktionKode>TILBAGEKALD</urn1:ModtagFordringAktionKode>
+               <urn1:FordringHaverIdentifikator>201</urn1:FordringHaverIdentifikator>
+               <urn:AktionValg>
+                  <urn:MFTilbagekaldFordringStruktur>
+                     <urn1:FordringInddrivelseFordringIdentifikator>1</urn1:FordringInddrivelseFordringIdentifikator>
+                     <urn:HovedFordringTilbagekaldAarsagStruktur>
+                        <urn1:HovedFordringTilbagekaldAarsagKode>ANDN</urn1:HovedFordringTilbagekaldAarsagKode>
+                        <urn1:HovedFordringTilbageAarsagBegrundelseTekst>Anden Begrundelse</urn1:HovedFordringTilbageAarsagBegrundelseTekst>
+                        <urn1:HovedFordringTilbageAarsagTekst>Anden Årsag</urn1:HovedFordringTilbageAarsagTekst>
+                     </urn:HovedFordringTilbagekaldAarsagStruktur>
+                     <urn:RelateretFordringKategoriListe>
+                        <urn1:FordringTypeKategoriKode>IR</urn1:FordringTypeKategoriKode>
+                     </urn:RelateretFordringKategoriListe>
+                     <urn1:FordringVirkningFraDato>2011-08-10+02:00</urn1:FordringVirkningFraDato>
+                     <urn1:FordringTilbageOmkostningBetalingIndikator>false</urn1:FordringTilbageOmkostningBetalingIndikator>
+                  </urn:MFTilbagekaldFordringStruktur>
+               </urn:AktionValg>
+            </urn:FordringAktion>
+         </urn:FordringAktionSamling>
+      </urn:MFFordringIndberet_I>

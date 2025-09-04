@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:kob:ws:1.0.0" name="KreditoplysningBureauDebitorSletService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Servicen sletter en registrering af en kunde hos et kreditoplysningsbureau.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0">
+			<xsd:include schemaLocation="urn/oio/skat/kob/ws/1_0_0/KreditoplysningBureauDebitorSletInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="KreditoplysningBureauDebitorSletServiceRequest">
+		<wsdl:part name="Request" element="kobws:KreditoplysningBureauDebitorSlet_I"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorSletServiceResponse">
+		<wsdl:part name="Response" element="kobws:KreditoplysningBureauDebitorSlet_O"/>
+	</wsdl:message>
+	<wsdl:portType name="KreditoplysningBureauDebitorSletServicePortType">
+		<wsdl:operation name="getKreditoplysningBureauDebitorSlet">
+			<wsdl:input message="kobws:KreditoplysningBureauDebitorSletServiceRequest"/>
+			<wsdl:output message="kobws:KreditoplysningBureauDebitorSletServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

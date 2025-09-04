@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Grundlæggende oplysninger om et skib</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel7Type.xsd"/>
+         <xs:include schemaLocation="../types/PositivTalHel7Decimaler2Type.xsd"/>
+         <xs:element name="SkibLøbeNummer" type="skat2012:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skibsløbenummer som DIAS genererer i forbindelse med indberetning. Løbenummeren er unikt for et givet SE-Nummer i et indkomstår. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkibNavn" type="skat2012:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skibets navn. Felt 400Ra eller felt 400Oa</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkibIMO" type="skat2012:TalHel7Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Et unikt syvcifret identifikationsnummer for skibe.  IHS Fairplay - det tidligere Lloyd's Skibsregister - står for tildelingen.  Nummeret bliver tildelt alle skibe med en bruttoton på 100 og derover. Der er dog et par undtagelser, bl.a. pramme. Men pramme kan godt omfattes af tonnageskatteordningen, såfremt de er lastebærende og har en bruttotonnage på 2.000 ton eller derover, dvs. i relation til indberetning af flagoplysninger bliver de sidestillet med et almindeligt skib. Ifølge den danske tonnageskattelov kan skibe med en bruttotonnage på 20 eller derover omfattes af ordningen, så der kan også være skibe som ikke er tildelt et IMO-nr.  Det er muligt at validere IMO-nummeret: The integrity of an IMO number can be verified by its check digit, which is the rightmost digit. This is done by multiplying each of the leftmost six digits by a factor corresponding to their position from right to left, and adding those products together. The rightmost digit of this sum is the check digit. For example, for IMO 7654329: 7×7 + 6×6 + 5×5 + 4×4 + 3×3 + 2×2 = 139 Se endvidere følgende link http://en.wikipedia.org/wiki/IMO_number og http://www.ihsfairplay.com/IMO/imo.html Felt 400Rb eller felt 400Ob</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkibBruttoTonnage" type="skat2012:PositivTalHel7Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skibets registrerede bruttotonnage. Gælder for: Rederier, indenfor EU/EØS: Felt 400Re Rederier, udenfor EU/EØS: Felt 400Rg Operatører, indenfor EU/EØS: Felt 411Oe Operatører, udenfor EU/EØS: Felt 411Og </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

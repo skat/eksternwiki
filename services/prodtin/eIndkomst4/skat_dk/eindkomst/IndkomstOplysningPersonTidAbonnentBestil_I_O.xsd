@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:abonnentbestillingidentifikator="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" schemaLocation="class/abonnentbestillingidentifikator/xml/schemas/20071202/AbonnentBestillingIdentifikator.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:element name="IndkomstOplysningPersonTidAbonnentBestil_I_O" type="fase2:IndkomstOplysningPersonTidAbonnentBestil_I_OType"/>
+	<xs:complexType name="IndkomstOplysningPersonTidAbonnentBestil_I_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element ref="abonnentbestillingidentifikator:AbonnentBestillingIdentifikator" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

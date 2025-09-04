@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ13Decimaler2Type.xsd"/>
+         <xs:element name="RegnskabPraksisÆndring" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er sket ændring i regnskabpraksis eller værdiansættelsesprincipper i løbet af året. (Ja = True) Felt 128</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPraksisSælgerpantebrev" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Oplysning om den skattepligtige har afstået en ejendom med sælgerpantebrev, hvorved fortjenesten udskydes til at blive medregnet den skattepligtige indkomst i senere indkomstår. Felt 157</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPraksisSælgerpantebrevHændelse" type="skat2012:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Oplysning om der er sket en hændelse i indkomståret, som medfører at den resterende udskudte fortjeneste skal indgå i opgørelsen af den skattepligtige indkomst. Felt 157a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPraksisSælgerpantebrevSaldo"
+                     type="skat2012:BeløbPositivNegativ13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Oplysning om størrelse på henstandssaldoen som skabt ved salg af fast ejendom med sælgerpantebrev. Felt 157b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

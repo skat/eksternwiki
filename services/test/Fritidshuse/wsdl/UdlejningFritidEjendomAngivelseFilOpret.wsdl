@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:hsws="urn:oio:skat:fritidshus:ws:1.0.2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:fritidshus:ws:1.0.2" name="UdlejningFritidEjendomAngivelseFilOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Definerer OIO XML som skal anvendes ifm. filoverførsel ved upload af en eller flere angivelser vedrørende indkomst for udlejning af en fritidsbolig for et bestemt indkomstår. (Ikke en rigtig service)</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:fritidshus:ws:1.0.2">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/2192953/artefact/UdlejningFritidEjendomAngivelseFilOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="UdlejningFritidEjendomAngivelseFilOpretServiceRequest">
+		<wsdl:part name="Request" element="hsws:UdlejningFritidEjendomAngivelseFilOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="UdlejningFritidEjendomAngivelseFilOpretServiceResponse">
+		<wsdl:part name="Response" element="hsws:UdlejningFritidEjendomAngivelseFilOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="UdlejningFritidEjendomAngivelseFilOpretServicePortType">
+		<wsdl:operation name="getUdlejningFritidEjendomAngivelseFilOpret">
+			<wsdl:input message="hsws:UdlejningFritidEjendomAngivelseFilOpretServiceRequest"/>
+			<wsdl:output message="hsws:UdlejningFritidEjendomAngivelseFilOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

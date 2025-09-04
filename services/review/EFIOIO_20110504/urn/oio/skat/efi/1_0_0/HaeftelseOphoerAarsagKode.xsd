@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:haeftelseophoeraarsagkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="HaeftelseOphoerAarsagKode" type="haeftelseophoeraarsagkode:HaeftelseOphoerAarsagKodeType">
+		<xs:annotation>
+			<xs:documentation>Bruges til at definere årsagen til at et hæftelsesforhold er ophørt.
+Mulige værdier:
+FEJL: Hæftelse forkert 
+SOPH: Samlivsophævelse 
+GLDS: Gældsanering 
+AKRD: Akkord 
+ANDN: Anden </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="HaeftelseOphoerAarsagKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FEJL"/>
+			<xs:enumeration value="SOPH"/>
+			<xs:enumeration value="GLDS"/>
+			<xs:enumeration value="AKRD"/>
+			<xs:enumeration value="ANDN"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

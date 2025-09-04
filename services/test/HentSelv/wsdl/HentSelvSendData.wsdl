@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" name="HentSelvSendDataService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Web servicen HentSelvSendData returnerer en række oplysninger af værdi for pengeinstitutters kreditevaluering af private låntagere. En bank kan tilgå servicen såfremt der foreligger et samtykke fra den enkelte borger, samt en videreanvendelsesaftale med Skatteministeriet.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1">
+			<xsd:include schemaLocation="../service/HentSelvSendDataInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="HentSelvSendDataServiceRequest">
+		<wsdl:part name="Request" element="hsws:HentSelvSendData_I"/>
+	</wsdl:message>
+	<wsdl:message name="HentSelvSendDataServiceResponse">
+		<wsdl:part name="Response" element="hsws:HentSelvSendData_O"/>
+	</wsdl:message>
+	<wsdl:portType name="HentSelvSendDataServicePortType">
+		<wsdl:operation name="getHentSelvSendData">
+			<wsdl:input message="hsws:HentSelvSendDataServiceRequest"/>
+			<wsdl:output message="hsws:HentSelvSendDataServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

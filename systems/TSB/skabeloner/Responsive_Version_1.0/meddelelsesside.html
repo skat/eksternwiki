@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html" class="skts-selected">Forside</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<br/>
+			<form id="mainForm">
+				<div class="skts-grid-fixed-height skts-grid-pad">
+					<div class="skts-col-1">
+						<h1>Beklager, siden er udløbet.</h1>
+					</div>
+				</div>
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>        
+    </body>
+</html>

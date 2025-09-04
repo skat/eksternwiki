@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 (http://www.altova.com) by SKAT, Hovedcentret (SKAT, Hovedcentret) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Lis Frederiksen (Told- og Skattestyrelsen) -->
+<xs:schema xmlns:tsk="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="TransaktionsID.xsd"/>
+	<xs:include schemaLocation="TransaktionsTid.xsd"/>
+	<xs:include schemaLocation="ServiceID.xsd"/>
+	<!-- HovedOplysningerSvar -->
+	<xs:element name="HovedOplysningerSvar" type="tsk:HovedOplysningerSvarType"/>
+	<xs:complexType name="HovedOplysningerSvarType">
+		<xs:sequence>
+			<xs:element ref="tsk:TransaktionsID"/>
+			<xs:element ref="tsk:ServiceID"/>
+			<xs:element ref="tsk:TransaktionsTid"/>
+			<xs:element name="SvarReaktion" type="tsk:SvarReaktionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Fejl" type="tsk:FejlType"/>
+	<xs:complexType name="FejlType">
+		<xs:sequence>
+			<xs:element ref="tsk:FejlNummer" minOccurs="0"/>
+			<xs:element ref="tsk:FejlTekst"/>
+			<xs:element ref="tsk:ServiceID" minOccurs="0"/>
+			<xs:element ref="tsk:Identifikation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="FejlNummer" type="tsk:FejlNummerType">
+		<xs:annotation>
+			<xs:documentation source="../meta/FejlNummer.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FejlNummerType">
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="FejlTekst" type="tsk:FejlTekstType">
+		<xs:annotation>
+			<xs:documentation source="../meta/FejlTekst.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FejlTekstType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Advis" type="tsk:AdvisType"/>
+	<xs:complexType name="AdvisType">
+		<xs:sequence>
+			<xs:element ref="tsk:AdvisNummer" minOccurs="0"/>
+			<xs:element ref="tsk:AdvisTekst"/>
+			<xs:element ref="tsk:ServiceID" minOccurs="0"/>
+			<xs:element ref="tsk:Identifikation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AdvisNummer" type="tsk:AdvisNummerType">
+		<xs:annotation>
+			<xs:documentation source="../meta/AdvisNummer.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="AdvisNummerType">
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="AdvisTekst" type="tsk:AdvisTekstType">
+		<xs:annotation>
+			<xs:documentation source="../meta/AdvisTekst.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="AdvisTekstType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SvarReaktionType">
+		<xs:choice>
+			<xs:element ref="tsk:Advis"/>
+			<xs:element ref="tsk:Fejl"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Identifikation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any namespace="##other" processContents="skip"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

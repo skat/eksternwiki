@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/BeskedOplysningStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/HaendelseRapportStrukturType.xsd"/>
+	<xs:element name="IE840Struktur" type="struct:IE840StrukturType"/>
+	<xs:complexType name="IE840StrukturType">
+		<xs:sequence>
+			<xs:element ref="struct:BeskedOplysningStruktur"/>
+			<xs:element ref="struct:HændelseRapportStruktur"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="GenbeskatningInternationalSambeskatningSaldo" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Genbeskatningssaldo, jf. selskabsskattelovens § 31B, stk. 2, se § 31A, stk. 10 (international sambeskatning). Felt 180</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GenbeskatningInternationalSambeskatningKreditLandSaldo"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Genbeskatningssaldo, jf. selskabsskattelovens § 31 B, stk. 2, se § 31 A, stk. 10 (international sambeskatning) - kreditland. Felt 180a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GenbeskatningInternationalSambeskatningExemptionLandSaldo"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Genbeskatningssaldo, jf. selskabsskattelovens § 31 B, stk. 2, se § 31 A, stk. 10 (international sambeskatning) - exemptionland. Felt 180b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:element name="SelskabUdbytteUdloddetTotal" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets udloddede udbytte på grundlag af det aktuelle indkomstår inkl. ekstraordinær udlodning. Felt 037</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabUdbytteUdloddetEgneAktier" type="skat2012:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udloddet udbytte af egne aktier på grundlag af det aktuelle indkomstår inkl. ekstraordinær udlodning, egne aktier. Felt 038</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:es:ws:1.0.0" version="1.0" xml:lang="DA">
+         <xs:annotation>
+            <xs:documentation>Formålet er at hente alle relationer mellem SE-nummer og eventuelt CVR-nummer og virksomhedstype på grundlag af et SE-nummer med tilhørende start- og eventuel ophørsdato for virksomhed.  Hvis det angivne SE-nummer er et CVR-nummer hentes alle tilhørende administrative enheder.   Hvis det angivne SE-nummer er en administrativ enhed, hentes på grundlag af CVR-nummer alle øvrige tilhørende administrative enheder   Servicen udstilles alene til de myndigheder og andre, som har indgået en abonnementsaftale med told- og Skatteforvaltningen herom. </xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="OIOAbonnentCVRSENummerRelationHent_I.xsd"/>
+         <xs:include schemaLocation="OIOAbonnentCVRSENummerRelationHent_O.xsd"/>
+         <xs:element name="OIOAbonnentCVRSENummerRelationHentInterface" type="esws:OIOAbonnentCVRSENummerRelationHentInterfaceType"/>
+         <xs:complexType name="OIOAbonnentCVRSENummerRelationHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="esws:OIOAbonnentCVRSENummerRelationHent_I"/>
+               <xs:element ref="esws:OIOAbonnentCVRSENummerRelationHent_O"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

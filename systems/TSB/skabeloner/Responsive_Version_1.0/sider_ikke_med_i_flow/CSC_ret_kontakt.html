@@ -1,0 +1,120 @@
+<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head>  
+<title>SKATs TastSelv</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../assets/css/profil/default.css" type="text/css">  
+<link rel="stylesheet" href="../assets/css/profil/skin.css" type="text/css">
+<style type="text/css">@import "/styles/profil/skinprint.css";</style>
+<script type="text/javascript" language="javascript" src="../assets/js/profil/vindue.js"></script><style type="text/css"></style>
+<script type="text/javascript" language="javascript" src="../assets/js/profil/event_handler.js"></script>
+<script type="text/javascript" language="javascript" src="../assets/js/profil/validering.js"></script>
+<script type="text/javascript" language="JavaScript">
+var hjaelp_mappe = "http://www.skat.dk/SKAT.aspx?oID=";
+var indlaes_side = "/html/profil/side_indlaeses.htm";
+</script>  
+</head>
+<body>  
+
+
+
+<div><a id="til_toppen" name="til_toppen"></a></div> 
+<div id="skinmiljoe">Demo</div> 
+  
+<div id="skintop"> 
+  <table cellspacing="0" cellpadding="0" class="skintop"> 
+    <tbody><tr> 
+      <td nowrap="" class="skintopmenu">&nbsp;</td> 
+      <td rowspan="2" class="skinlogoimg"><img src="../assets/img/profil/logo.gif" alt="SKAT logo" class="skinlogo"></td> 
+    </tr> 
+    <tr> 
+      <td class="skinlogobar"><div class="skinlogobarminbredde">&nbsp;</div></td> 
+    </tr> 
+  </tbody></table> 
+</div> 
+<div id="skinsystemmenu"> <span class="skinsystemmenulinkfoerst"><a href="#" onclick="check_luk_vindue();return false" title="Lukker vindue" class="skinsystemmenulink">Luk</a></span> | <span class="skinsystemmenulinknaest"><a href="#" onclick="aabn_hjaelp_vindue('2095498');return false" title="Viser vindue med hj&aelig;lp" class="skinsystemmenulink">Hj&aelig;lp</a></span> 
+  <div class="skinminbredde"> 
+    <!-- --> 
+  </div> 
+</div> 
+<br>
+
+<table border="0" width="600" align="center"> 
+  	  <tbody><tr> 
+    	<td class="ident"><strong>Personnummer: </strong> 01 04 42-01 68</td> 
+  	    </tr> 
+	</tbody></table> 
+<br>
+<table border="0" width="600" align="center"> 
+    <tbody><tr> 
+      <td class="emne">F&aring; e-mail eller sms fra SKAT</td> 
+    </tr> 
+</tbody></table> 
+
+ 
+<form name="ProfilForm" method="post" action="/borger/profil/EmailKvit.do" onsubmit="return stamopl_inputant()"> 
+<table align="center" border="0" width="600">
+ <tbody><tr> 
+    <td>
+	<p>Du kan her indtaste din e-mail-adresse og/eller dit mobilnummer. S&aring; vil du f&aring; besked via e-mail eller sms, 
+	  n&aring;r din forskudsopg&oslash;relse og &aring;rsopg&oslash;relse ligger i din Skattemappe, orientering om vores nyhedsbreve 
+	  samt anden information til dig.</p>
+	<p>Har du allerede indtastet kontaktoplysninger? <strong>Tjek om de stadig er rigtige.</strong></p>
+	<p><strong>Kontaktoplysninger</strong></p>
+	</td> 
+  </tr> 
+</tbody></table> 
+<br> 
+<table border="0" width="600" align="center"> 
+    <tbody><tr> 
+      <td width="300">E-mail-adresse</td> 
+      <td width="300" align="right"><input name="email1" size="50" maxlength="72" onblur="valider_email(this)" class="inputleft" value=""></td> 
+    </tr> 
+</tbody></table> 
+<table border="0" width="600" align="center">  
+    <tbody><tr> 
+      <td width="300">Gentag e-mail-adresse</td> 
+      <td width="300" align="right"><input name="email2" size="50" maxlength="72" onblur="valider_email(this)" class="inputleft" value=""></td> 
+    </tr> 
+  </tbody></table> 
+
+<br>
+<table border="0" width="600" align="center"> 
+  <tbody><tr> 
+    <td width="300">&nbsp;</td> 
+    <td align="left" class="typelille" width="300">Kun danske mobilnumre uden landekode</td> 
+  </tr> 
+  <tr> 
+    <td width="300">Mobilnummer</td> 
+    <td width="300" align="right"><input name="mobil1" size="50" maxlength="8" class="inputleft" value=""></td> 
+  </tr> 
+</tbody></table> 
+  <table border="0" width="600" align="center">  
+    <tbody><tr> 
+      <td width="300">Gentag mobilnummer</td> 
+      <td width="300" align="right"><input name="mobil2" size="50" maxlength="8" class="inputleft" value=""></td> 
+    </tr> 
+  </tbody></table> 
+  
+<br> 
+<table border="0" width="600" align="center" class="gruppeknapper">  
+    <tbody><tr> 
+     <td>
+     <br>
+      Klik p&aring; knappen "Godkend" for at godkende kontaktoplysningerne.<br>
+      </td>
+    </tr> 
+    <tr>  
+       <td align="center"><br>
+        <input type="submit" name="godkend" value="Godkend" title="Godkend" class="skinknapnormal">
+        <input type="button" name="retur" value="Retur" onclick="check_luk_vindue();return false" title="Retur" class="skinknapnormal"> </td> 
+    </tr>
+  </tbody></table> 
+  <br> 
+  <input type="hidden" name="pnr" value="0104420168"> 
+  <input type="hidden" name="eof" value="eof"> 
+</form> 
+<div id="skinbund">&nbsp;
+  <div class="skinminbredde"><!-- --></div>
+</div>
+
+
+</body></html>

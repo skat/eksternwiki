@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                        name="UdenlandskPersonAdresseHistorikHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Formålet med servicen er at hente oplysninger om alle de adresser en udenlandsk person er eller har været registreret med i Erhvervssystemet, så man kan se et historisk forløb.   </xs:documentation>
+            <xs:documentation>1.1</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+               <xsd:include schemaLocation="../service/UdenlandskPersonAdresseHistorikHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="UdenlandskPersonAdresseHistorikHentServiceRequest">
+            <wsdl:part name="Request" element="skat2012:UdenlandskPersonAdresseHistorikHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="UdenlandskPersonAdresseHistorikHentServiceResponse">
+            <wsdl:part name="Response" element="skat2012:UdenlandskPersonAdresseHistorikHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="skat2012:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="skat2012:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="UdenlandskPersonAdresseHistorikHentServicePortType">
+            <wsdl:operation name="getUdenlandskPersonAdresseHistorikHent">
+               <wsdl:input message="skat2012:UdenlandskPersonAdresseHistorikHentServiceRequest"/>
+               <wsdl:output message="skat2012:UdenlandskPersonAdresseHistorikHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="skat2012:KompenserTransRequest"/>
+               <wsdl:output message="skat2012:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

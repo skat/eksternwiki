@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:felter="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" xmlns:momsangivelse="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" version="1.0">
+<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" schemaLocation="../../../../../../../../group/rep_oio_dk_skat_dk_TSE_felter_xml_schemas_2006_09_01.xsd"/>
+<xs:element name="MomsAngivelseCOtoAfgiftBeloeb" type="felter:FemtenCifreSeksDecimalerBeloebType">
+<xs:annotation>
+<xs:documentation>CO2-afgift fratrukket i forbindelse med momsangivelsen.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:schema>

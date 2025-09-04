@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s1:definitions name="eSkattekortHentService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="SkatEsbAuthentication">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+  </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part">wls:SecurityHeader(wsu:Timestamp)</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="Sign.xml">
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SystemHeaders()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SecurityHeader(wsu:Timestamp)
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+      wsp:Body()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+          <wssp:TokenIssuer>CN=skttudd01web01,O=Skat,C=DK,CN=TDC OCES Systemtest CA II,O=TDC,C=DK,</wssp:TokenIssuer>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+    <wssp:MessageAge Age="60" xmlns:wssp="http://www.bea.com/wls90/security/policy"/>
+  </wsp:Policy>
+	  <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		    <xs:documentation>
+Formålet er at udstille eSkattekort til offentlige myndigheder, A-kasser o. lign., der har brug for et øjebliks-billede af skattekortoplysninger og, som SKAT har givet tilladelse hertil. Der er udelukkende tale om en udstilling af det/de ønskede skattekortoplysninger.   Formålet er også at udstille skattekortoplysninger til brug ved opsplitning af indeholdt A-skat i reel A-skat og i lønindeholdelse.  Det kontrolleres, at SKAT har givet bruger tilladelse til at få udstillet det/de ønskede skattekortoplysninger, herunder om bruger kan få alle oplysninger om eSkattekort med specifikation af trækprocent i A-skat og lønindeholdelse - og andre kun de traditionelle skattekortoplysninger.  Der hentes eSkattekort, som er gyldige på den anførte SøgeDatoFra, hvis eSkattekortAlleMarkering er 'Falsk', dvs. det er angivet, at der alene ønskes eSkattekort, som er gældende på den anførte dato ønskes.  Der hentes eSkattekort, som er gyldige på samt fra og med den anførte SøgeDatoFra, hvis eSkattekortAl-leMarkering er 'Sand', dvs. der er angivet, at der ønskes eSkattekort, som er gældende på den anførte dato samt eventuelle 'nyere' eSkattekort.  En anvender af servicen kan pt. anvende følgende værdier af eSkattekortRekvisitionTypeKode:  01 = hovedkort 02 = bikort 06 = hovedkort uden lønindeholdelse  07 = bikort uden lønindeholdelse  Hvis der er anvendt: eSkattekortRekvisitionTypeKode = 01 (Hovedkort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 01 = Bruttokort 02 = Hovedkort 03 = Frikort  eSkattekortRekvisitionTypeKode = 02 (Bikort) så kan svaret indeholde følgende værdier af eSkatte-kortTypeKode: 00 = Intet skattekort 01 = Bruttokort 03 = Frikort 04 = Bikort  eSkattekortRekvisitionTypeKode = 06 (Hovedkort uden lønindeholdelse) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 03 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Bå-de eSkattekortTrækProcent, eSkattekortForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  05 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortForskudTrækProcent vil være udfyldt)  06 = Hovedkort uden lønindeholdelse  eSkattekortRekvisitionTypeKode = 07 (Bikort uden lønindeholdelse) så kan svaret indeholde føl-gende værdier af eSkattekortTypeKode: 00 = Intet skattekort 03 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  05 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortForskudTrækProcent vil være udfyldt) 07 = Bikort uden lønindeholdelse    </xs:documentation>
+	  </xs:annotation>
+	  <s1:types>
+		    <xsd:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			      <xsd:include schemaLocation="http://rep.oio.dk/skat.dk/eindkomst/service/eSkattekortHentInterface.xsd"/>
+		    </xsd:schema>
+	  </s1:types>
+	  <s1:message name="eSkattekortHentServiceRequest">
+		    <s1:part element="fase2:eSkattekortHent_I" name="Request"/>
+	  </s1:message>
+	  <s1:message name="eSkattekortHentServiceResponse">
+		    <s1:part element="fase2:eSkattekortHent_O" name="Response"/>
+	  </s1:message>
+	  <s1:portType name="eSkattekortHentServicePortType">
+		    <s1:operation name="geteSkattekortHent">
+			      <s1:input message="fase2:eSkattekortHentServiceRequest"/>
+			      <s1:output message="fase2:eSkattekortHentServiceResponse"/>
+		    </s1:operation>
+	  </s1:portType>
+	   <s1:binding name="eSkattekortHentServiceBinding" type="fase2:eSkattekortHentServicePortType">
+		    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		    <s1:operation name="geteSkattekortHent">
+			      <soap:operation soapAction=""/>
+			      <s1:input>
+				        <soap:body use="literal"/>
+			      </s1:input>
+			      <s1:output>
+				        <soap:body use="literal"/>
+			      </s1:output>
+		    </s1:operation>
+	  </s1:binding>
+	  <s1:service name="eSkattekortHentService">
+		    <s1:port binding="fase2:eSkattekortHentServiceBinding" name="eSkattekortHentService">
+			      <soap:address location="https://services.extranet.demo.skat.dk/vericert/services/eSkattekortHentServicePort"/>
+		    </s1:port>
+	  </s1:service>
+</s1:definitions>

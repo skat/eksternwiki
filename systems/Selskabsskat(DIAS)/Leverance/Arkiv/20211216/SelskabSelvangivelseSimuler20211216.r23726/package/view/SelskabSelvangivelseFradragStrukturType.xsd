@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/UddelingOpgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/HensaettelseOpgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/UddelingFradrag.xsd"/>
+         <xs:include schemaLocation="../class/HensaettelseBenyttelseOpgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/HenlaeggelseBenyttelseOpgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/UdbytteUdlodningOpgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/SelskabBundfradrag.xsd"/>
+         <xs:include schemaLocation="../class/SelskabIndtaegt.xsd"/>
+         <xs:element name="SelskabSelvangivelseFradragStruktur"
+                     type="skat2012:SelskabSelvangivelseFradragStrukturType"/>
+         <xs:complexType name="SelskabSelvangivelseFradragStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="Uddelinger" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:UddelingOpgørelseAlmenVelgørendeTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:UddelingOpgørelseSkattepligtigTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseOpgørelseAlmenVelgørendeFormålTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:UddelingFradragTotal" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="BenyttetHensættelser" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:HensættelseBenyttelseOpgørelseAlmenVelgørendeTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseBenyttelseOpgørelseAndreFormålTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseBenyttelseOpgørelseIkkeAnvendtEfterbeskatningTotal"
+                                    minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseBenyttelseOpgørelseUltimoSaldo" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseBenyttelseOpgørelseIkkeAnvendtTotal" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="BenyttetHenlæggelser" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:HenlæggelseBenyttelseOpgørelseAlmenVelgørendeTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HenlæggelseBenyttelseOpgørelseAndreFormålTotal" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="Hensættelser" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:HensættelseOpgørelseKonsolideringFondKapitalTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseOpgørelseEfterSærligTilladelseTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseOpgørelseKonsolideringForeningFormueTotal"
+                                    minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:HensættelseOpgørelseFradragTotal" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="SumAfUdbytteUdlodning" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:UdbytteUdlodningOpgørelseTotal" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="skat2012:SelskabBundfradragØvrigIndkomstMaks" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabIndtægtSkattefriUdbytteUdlodningTotal" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabIndtægtSkattefriFradragTotal" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

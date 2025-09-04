@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" name="OIOLedsageDokumentOpsplitningOpretService">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1">
+			<xsd:include schemaLocation="../service/OIOLedsageDokumentOpsplitningOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="OIOLedsageDokumentOpsplitningOpretServiceRequest">
+		<wsdl:part name="Request" element="struct:OIOLedsageDokumentOpsplitningOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="OIOLedsageDokumentOpsplitningOpretServiceResponse">
+		<wsdl:part name="Response" element="struct:OIOLedsageDokumentOpsplitningOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="OIOLedsageDokumentOpsplitningOpretServicePortType">
+		<wsdl:operation name="getOIOLedsageDokumentOpsplitningOpret">
+			<wsdl:input message="struct:OIOLedsageDokumentOpsplitningOpretServiceRequest"/>
+			<wsdl:output message="struct:OIOLedsageDokumentOpsplitningOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

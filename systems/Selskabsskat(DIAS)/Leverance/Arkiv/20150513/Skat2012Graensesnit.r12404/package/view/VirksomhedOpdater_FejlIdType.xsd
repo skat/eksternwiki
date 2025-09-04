@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../class/AdresseType.xsd"/>
+         <xs:include schemaLocation="../class/AktieAndel.xsd"/>
+         <xs:include schemaLocation="../class/AktieKapital.xsd"/>
+         <xs:include schemaLocation="../class/AktieKlasse.xsd"/>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../class/BankKonto.xsd"/>
+         <xs:include schemaLocation="../class/Bank.xsd"/>
+         <xs:include schemaLocation="../class/BevillingType.xsd"/>
+         <xs:include schemaLocation="../operational/BrancheForholdSlutDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BrancheForholdStartDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Branche.xsd"/>
+         <xs:include schemaLocation="../class/BrancheType.xsd"/>
+         <xs:include schemaLocation="../class/DriftFormForhold.xsd"/>
+         <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         <xs:include schemaLocation="../class/DriftFormHaeftelseForhold.xsd"/>
+         <xs:include schemaLocation="../class/EjerForhold.xsd"/>
+         <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         <xs:include schemaLocation="../class/Fogedomraade.xsd"/>
+         <xs:include schemaLocation="../class/HenvisningRolle.xsd"/>
+         <xs:include schemaLocation="../class/HenvisningType.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/LedelseForhold.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/Pligt.xsd"/>
+         <xs:include schemaLocation="../class/SkatteRegnskabValuta.xsd"/>
+         <xs:include schemaLocation="../class/StemmeAndel.xsd"/>
+         <xs:include schemaLocation="../class/UdenlandskPerson.xsd"/>
+         <xs:include schemaLocation="../class/UdenlandskVirksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedAdresseType.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedHenvisning.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedKontoForhold.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedLederType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNemKontoForhold.xsd"/>
+         <xs:include schemaLocation="../operational/VirksomhedOplysningBehandlingKode.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedRegistreringStatus.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedRegistreringStatusType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedRegnskabPeriode.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedStatusForhold.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedStatusType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedType.xsd"/>
+         <xs:element name="VirksomhedOpdater_FejlId" type="skat2012:VirksomhedOpdater_FejlIdType"/>
+         <xs:complexType name="VirksomhedOpdater_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:AdresseByNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseCONavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseEtageTekst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseFraHusBogstav" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdressePostBox" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdressePostDistrikt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdressePostNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseSideDørTekst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseTilHusBogstav" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseTilHusNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseVejKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseVejNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieAndelBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieAndelGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieAndelGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieAndelProcent" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieKapitalBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieKapitalGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieKapitalÆndreKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AktieKlasseTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseAnvendelseKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AlternativAdresseGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BankKontoNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BankRegisteringsnummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BevillingTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BrancheForholdSlutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BrancheForholdStartDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BrancheNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BrancheTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormForholdSlutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormForholdStartDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormHæftelseForhold" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormHæftelseForholdGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormHæftelseForholdGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EjerForholdGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EjerForholdGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EjerRolleTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FogedområdeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:HenvisningRolleKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:HenvisningTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LandKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LedelseForholdGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LedelseForholdGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MyndighedNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MyndighedNavnKort" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MyndighedNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MyndighedType" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PersonCPRNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PersonNavnEfterNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PersonNavnForNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PersonNavnNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PligtKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SkatteRegnskabValutaCentralBankNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SkatteRegnskabValutaGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SkatteRegnskabValutaGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SkatteRegnskabValutaKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:StemmeAndelProcent" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UdenlandskPersonNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:UdenlandskVirksomhedNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedAdresseTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedHenvisningSlutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedHenvisningStartDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedKontoForholdType" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedLederTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNavnFirmaNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNavnFirmaNavnKort" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNavnGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNavnGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNemKontoForholdKontoIdent" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNemKontoForholdSlutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNemKontoForholdStartDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNemKontoForholdTidsstempel" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedOplysningBehandlingKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedRegistreringStatusGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedRegistreringStatusTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedRegnskabPeriodeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedRegnskabPeriodeSlutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedRegnskabPeriodeStartDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedStatusForholdGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedStatusForholdGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedStatusTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedTypeKode" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

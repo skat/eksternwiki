@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringLeveranceIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringAktionStatusAendretDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="FordringhaverSystemIDStruktur.xsd"/>
+	<xs:element name="MFKvitteringHent_I" type="efiws:MFKvitteringHent_IType">
+	</xs:element>
+	<xs:complexType name="MFKvitteringHent_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="efiws:FordringhaverSystemIDStruktur"/>
+			<xs:element ref="efi:ModtagFordringLeveranceIdentifikator" minOccurs="0"/>
+			<xs:element ref="efi:FordringHaverIdentifikator" minOccurs="0"/>
+			<xs:element name="SoegeDatoFra" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:ModtagFordringAktionStatusAendretDato"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FordringIDSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:FordringInddrivelseFordringIdentifikator" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

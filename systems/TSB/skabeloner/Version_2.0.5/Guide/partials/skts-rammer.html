@@ -1,0 +1,242 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Rammer</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a data-ng-click="scrollTo('hoved')" href="">Hoved ramme</a></li>
+      <li><a data-ng-click="scrollTo('logo')" href="">Logo</a></li>
+      <li><a data-ng-click="scrollTo('indholdcontainer')" href="">Indholdscontainere</a></li>
+      <li><a data-ng-click="scrollTo('sekundaere')" href="">Sekund&aelig;re vinduer</a></li>
+      <li><a data-ng-click="scrollTo('sidespecifik')" href="">Side specifikke layouts</a></li>
+    </ul>
+  </div>
+</div>
+<div id="skts-indhold-guide">
+  <h2 id="hoved">Hoved ramme</h2>
+  <p class="skts-broedtekst">Dette er hoved rammen for en side p&aring; TastSelv. Den best&aring;r af et logo container (<code>skts-logo</code>), en global menu container (<code>skts-globalmenu-container</code>) og en indholds container (<code>skts-midter-container-med-brugeroplysninger</code>). Desuden skal footer containeren ogs&aring; inkluderes (<code>skts-footer</code>).</p>
+  <div data-pretty>
+    <div id="skts-body" class="skts-guide-frame skts-guide-fitme">
+      <div id="skts-logo" class="skts-guide-frame">
+        <div id="skts-logo-op">
+          <img src="../sktscommon/Images/toplogo.jpg" alt="">
+        </div>
+        <div id="skts-logo-ned">
+          <a href="#" title="Til forside"><img src="../sktscommon/Images/logo.gif" alt="Til forside"></a>
+        </div>
+      </div>
+      <div id="skts-hoved-container" class="skts-guide-frame">
+        <div id="skts-globalmenu-container" class="skts-guide-frame">
+          <ul id="skts-globalmenu-venstre">
+            <li>
+              <a class="skts-globalmenu-venstre-link">Menu</a>
+            </li>
+          </ul>
+          <div class="skts-slut-float"></div>
+        </div>
+        <div id="skts-midter-container-med-brugeroplysninger" class="skts-guide-frame">
+        </div>
+        <div id="skts-footer" class="skts-guide-frame">
+          <address>
+            &nbsp;
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="skts-broedtekst">Id til midter containeren kan ogs&aring; skiftes til <code>skts-midter-container-uden-brugeroplysninger</code> afh&aelig;ngigt om man inkluderer bruger oplysninger eller ej i sk&aelig;rmbilledet.</p>
+
+  <hr class="skts-hr" />
+
+  <h2 id="logo">Logo</h2>
+  <p class="skts-broedtekst">Logo omr&aring;det best&aring;r af to containere, en container, <code>skts-logo-op</code>, indeholder toppen af billedet for logoet; den anden container, <code>skts-logo-ned</code> indeholder den nederste del af logoet. Der er desuden inkluderet en <code>a</code> til forsiden p&aring; TastSelv.</p>
+  <div data-pretty>
+    <div id="skts-body" class="skts-guide-fitme">
+      <div id="skts-logo">
+        <div id="skts-logo-op">
+          <img src="../sktscommon/Images/toplogo.jpg" alt="">
+        </div>
+        <div id="skts-logo-ned">
+          <a href="#" title="Til forside"><img src="../sktscommon/Images/logo.gif" alt="Til forside"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="indholdcontainer">Indholds containere</h2>
+  <p class="skts-broedtekst">Indholds containere bruges til at strukturere indholdet p&aring; siden. De angives som et id til hver container. I nedenst&aring;ende eksempel bruges container id'et <code>skts-venstre-menu-container</code> til at indeholde venstre menuen og id'et <code>skts-indhold-container-hoejre</code> til at strukturere indholdet.</p>
+  <p class="skts-broedtekst">Man kan ogs&aring; v&aelig;lge at bruge id'et <code>skts-indhold-container-hele-bredden</code> eller <code>skts-indhold-container-hele-bredden-foer-login</code> til at fylde hele bredden af siden, man skal i dette tilf&aelig;lde ikke bruge venstre menu containeren.</p>
+  <p class="skts-broedtekst">Klasserne <code>skts-indhold-smal</code> og <code>skts-indhold-bred</code> kan ogs&aring; bruges i en indholds container for at styre bredden af indholdet.</p>
+  <div data-pretty>
+    <div id="skts-body" class="skts-guide-fitme">
+      <div id="skts-logo">
+        <div id="skts-logo-op">
+          <img src="../sktscommon/Images/toplogo.jpg" alt="">
+        </div>
+        <div id="skts-logo-ned">
+          <a href="#" title="Til forside"><img src="../sktscommon/Images/logo.gif" alt="Til forside"></a>
+        </div>
+      </div>
+      <div id="skts-hoved-container">
+        <div id="skts-globalmenu-container">
+          <ul id="skts-globalmenu-venstre">
+            <li>
+              <a class="skts-globalmenu-venstre-link">Menu</a>
+            </li>
+          </ul>
+          <div class="skts-slut-float"></div>
+        </div>
+        <div id="skts-midter-container-med-brugeroplysninger">
+          <div id="skts-venstre-menu-container" class="skts-guide-frame">
+            <div id="skts-venstre-menu-ramme" class="skts-guide-frame">
+            </div>
+          </div>
+          <div id="skts-indhold-container-hoejre" class="skts-guide-frame">
+            <div class="skts-indhold-smal skts-guide-frame">
+              <p class="skts-broedtekst">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="skts-indhold-bred skts-guide-frame">
+              <p class="skts-broedtekst">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+        <div id="skts-footer" class="skts-guide-frame">
+          <address>
+            &nbsp;
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="sekundaere">Sekund&aelig;re vinduer</h2>
+  <p class="skts-broedtekst">Disse vinduer bruges prim&aelig;rt som popup vinduer eller til specifik information til brugeren for bestemte omr&aring;der p&aring; TastSelv</p>
+  <h3>Indholdsvindue 1</h3>
+  <div data-pretty>
+    <div id="skts-body" class="skts-guide-fitme">
+      <div id="skts-logo-op"><img alt="" src="../sktscommon/Images/toplogo.jpg"></div>
+      <div id="skts-logo-ned">
+        <a href="#"><img alt="Til forside" src="../sktscommon/Images/logo.gif"></a>
+        <ul id="skts-skip-links">
+          <li><a href="#skts-skip-link-target-indhold" id="skts-skip-til-indhold">G&aring; til indhold</a></li>
+        </ul>
+      </div>
+      <div id="skts-hoved-container">
+        <div id="skts-globalmenu-container">
+          <ul id="skts-globalmenu-venstre">
+            <li><a class="skts-globalmenu-venstre-link skts-globalmenu-flugter skts-globalmenu-venstre-link-yderst" href="#">Luk vindue</a></li>
+          </ul>
+          <div class="skts-slut-float"></div>
+        </div>
+        <div id="skts-midter-container-uden-brugeroplysninger">
+          <div id="skts-indhold-container-hele-bredden-foer-login">
+            <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container-foer-login">
+              Overskrift</h1>
+            <div style="width: 1px;">
+              <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til n&aelig;rmest for&aelig;ldre som har et layout -->
+              <a class="skts-link-target-skjul" id="skts-skip-link-target-indhold">Indhold</a>
+            </div>
+            <div class="skts-indhold-smal" id="skts-indhold-skabelon4">
+              <p class="skts-broedtekst">
+                Her indl&aelig;gges formular mv.</p>
+            </div><!--End .skts-indhold-smal-->
+          </div><!--End #skts-indhold-container-hele-bredden-foer-login-->
+        </div>
+        <div id="skts-footer">
+          &nbsp;    
+        </div><!--End #skts-footer-->
+      </div><!--End #skts-hovedcontainer-->
+    </div>
+  </div>
+
+  <h3>Inholdsvindue 2</h3>
+  <div data-pretty>
+    <div id="skts-body-sekundaer-vindue">
+      <div id="skts-logo-op">
+        <img src="../sktscommon/Images/toplogo.jpg" alt="" />
+      </div>
+      <div id="skts-logo-ned">
+        <img src="../sktscommon/Images/logo.gif" alt="SKATs logo" />
+        <ul id="skts-skip-links">
+          <li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">G&aring; til indhold</a></li>
+        </ul>
+      </div>
+      <div id="skts-globalmenu-container">
+        <ul id="skts-globalmenu-venstre">
+          <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-flugter skts-globalmenu-venstre-link-yderst">Luk vindue</a></li>
+        </ul>
+        <div class="skts-slut-float"></div>
+      </div>
+      <div id="skts-midter-container-uden-brugeroplysninger">
+        <div id="skts-indhold-container-hele-bredden">
+          <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">
+            Overskrift</h1>
+          <div style="width: 1px;">
+            <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til n&aelig;rmest for&aelig;ldre som har et layout -->
+            <a id="skts-skip-link-target-indhold" class="skts-link-target-skjul">Indhold</a>
+          </div>
+          <div id="skts-indhold-skabelon7" class="skts-indhold-smal">
+            <p class="skts-broedtekst">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="sidespecifik">Side specifikke layouts</h2>
+
+  <h4>Login forside (før login)</h4>
+  <div data-pretty>
+    <div id="skts-hoved-container" class="skts-guide-frame">
+      <div class="skts-layout1-login-venstre-ramme skts-guide-frame">
+        <p class="skts-broedtekst">Indhold</p>
+      </div>
+      <div class="skts-layout1-login-hoejre-ramme skts-guide-frame">
+        <p class="skts-broedtekst">Indhold</p>
+      </div>
+    </div>
+  </div>
+
+  <h4>TastSelv forside</h4>
+  <div data-pretty>
+    <div id="skts-tastselv-menu-indhold-container" class="skts-guide-frame">
+      <div id="skts-tastselv-menu-rammer-container" class="skts-guide-frame skts-guide-fitme">
+        <div id="skts-tastselv-menu-aarsopgoerelse-ramme" class="skts-guide-frame">
+        </div>
+        <div id="skts-tastselv-menu-forskudsopgoerelse-ramme" class="skts-guide-frame">
+          <div id="skts-tastselv-menu-ramme-hoejde-justering"></div>
+        </div>
+        <div class="skts-slut-float"></div>
+      </div>
+    </div>
+  </div>
+
+  <h4>&Aring;rsopg&oslash;relsen</h4>
+  <p class="skts-broedtekst">Indholds rammen for &aring;rsopg&oslash;relsen best&aring;r af af klassen <code>skts-indhold-bred skts-guide-frame</code>. Indenfor denne ramme kan der placeres en ramme <code>skts-layout1-foldblok</code>, hvori linier for f.eks. <strong>Indkomster og fradrag</strong> kan angives. Denne blok bruges af javascript for at udregne farvel&aelig;gningen af disse linier.</p>
+  <div data-pretty>
+    <div id="skts-midter-container-med-brugeroplysninger">
+      <div id="skts-venstre-menu-container"></div>
+      <div id="skts-indhold-container-hoejre">
+        <div class="skts-indhold-bred skts-guide-frame" id="skts-indhold-aarsopgoerelse"> 
+          <div class="skts-layout1-foldblok skts-guide-frame" style="min-height: 200px; margin-top: 100px; margin-bottom: 100px">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skts-slut-float"></div>
+  </div>
+
+  <!-- skabelon
+    <h2>Overskrift</h2>
+    <p>Forklaring</p>
+    <div class="bs-docs-example" data-pretty>
+      Html code
+    </div>
+  -->
+
+</div>

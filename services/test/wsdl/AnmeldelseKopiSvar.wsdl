@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:sintifc="http://rep.oio.dk/tinglysning.dk/svarservice/interface/integration/1/" xmlns:sintbnd="http://rep.oio.dk/tinglysning.dk/svarservice/binding/integration/1/" targetNamespace="http://rep.oio.dk/tinglysning.dk/svarservice/binding/integration/1/" name="AnmeldelseKopiSvar">
+	<import namespace="http://rep.oio.dk/tinglysning.dk/svarservice/interface/integration/1/" location="http://85.81.229.78/rel_rep.oio.dk/tinglysning.dk/svarservice/interface/integration/1/AnmeldelseKopiSvar.wsdl"/>
+	<binding name="AnmeldelseKopiSvar" type="sintifc:AnmeldelseKopiSvar">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="AnmeldelseSvarModtag">
+			<soap:operation soapAction="urn:#AnmeldelseSvarModtag"/>
+			<input>
+				<soap:body use="literal" parts="body"/>
+				<soap:header use="literal" message="sintifc:AnmeldelseSvarModtagRequest" part="sekvensnummerheader"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="Modtagerfejl">
+				<soap:fault use="literal" name="Modtagerfejl"/>
+			</fault>
+		</operation>
+		<operation name="AnmaerkningStatusModtag">
+			<soap:operation soapAction="urn:#AnmaerkningStatusModtag"/>
+			<input>
+				<soap:body use="literal" parts="body"/>
+				<soap:header use="literal" message="sintifc:AnmaerkningStatusModtagRequest" part="sekvensnummerheader"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="Modtagerfejl">
+				<soap:fault use="literal" name="Modtagerfejl"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="AnmeldelseKopiSvar">
+		<port name="AnmeldelseKopiSvar" binding="sintbnd:AnmeldelseKopiSvar">
+			<soap:address location="https://194.239.239.106:443/eTl/eTlAnmeldelseKopiSvar/AnmeldelseKopiSvar"/>
+		</port>
+	</service>
+</definitions>

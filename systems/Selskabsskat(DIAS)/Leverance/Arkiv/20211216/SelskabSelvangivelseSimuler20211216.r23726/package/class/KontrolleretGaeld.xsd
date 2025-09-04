@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="KontrolleredeTransaktionerOverGrænseMedStorFremmedkapital"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver at selskabet har kontrolleret gæld over 10 millioner kr. samtidig med at forholdet mellem fremmedkapital og egenkapital overstiger 4:1, jfr. selskabsskattelovens paragraf 11. Felt 068</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

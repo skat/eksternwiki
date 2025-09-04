@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/ModtagFordringNoteTekst.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/ModtagFordringNoteOprettetDatoTid.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/ModtagFordringNoteOprettetReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/ModtagFordringFordringEksternReference.xsd"/><xs:element name="MFNoteStruktur" type="efiws:MFNoteStrukturType"/>
+	<xs:complexType name="MFNoteStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:ModtagFordringNoteOprettetDatoTid" minOccurs="0"/>
+			<xs:element ref="efi:ModtagFordringNoteOprettetReference" minOccurs="0"/>
+			<xs:element ref="efi:ModtagFordringFordringEksternReference" minOccurs="0"/>
+			<xs:element ref="efi:ModtagFordringNoteTekst"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

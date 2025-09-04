@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKategoriKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseSubsidiaerKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseFormKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringAfskrivningVirkningFraDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringAfskrivningDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringProduktionEnhedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="AfskrivningAarsagStruktur.xsd"/>
+	<xs:include schemaLocation="KundeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringRestBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="HaeftelseRestBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="AfskrevetBeloebStruktur.xsd"/>
+	<xs:element name="MFUnderretAfskrivStruktur" type="efiws:MFUnderretAfskrivStrukturType"/>
+	<xs:complexType name="MFUnderretAfskrivStrukturType">
+		<xs:sequence>
+			<xs:element name="FordringAfskrivningListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FordringAfskrivning" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+									<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator"/>
+									<xs:element ref="efi:FordringProduktionEnhedIdentifikator" minOccurs="0"/>
+									<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+									<xs:element ref="efi:FordringFordringArtKode"/>
+									<xs:element ref="efi:FordringTypeKode"/>
+									<xs:element ref="efi:FordringTypeKategoriKode"/>
+									<xs:element ref="efi:FordringAfskrivningVirkningFraDato"/>
+									<xs:element ref="efiws:AfskrivningAarsagStruktur"/>
+									<xs:element ref="efi:FordringAfskrivningDato"/>
+									<xs:element name="AfskrivHaeftelse" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="efiws:KundeStruktur"/>
+												<xs:element ref="efi:HaeftelseFormKode"/>
+												<xs:element ref="efi:HaeftelseSubsidiaerKode" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="RestbeloebValg">
+										<xs:complexType>
+											<xs:choice>
+												<xs:sequence>
+													<xs:element name="FordringRestBeloeb">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="efiws:FordringRestBeloebStruktur"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:sequence>
+													<xs:element name="HaeftelseRestBeloeb">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="efiws:HaeftelseRestBeloebStruktur"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="efiws:AfskrevetBeloebStruktur"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

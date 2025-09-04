@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:alternativkontakttypekode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="AlternativKontaktTypeKode" type="alternativkontakttypekode:AlternativKontaktTypeKodeType">
+		<xs:annotation>
+			<xs:documentation>Type af alternativ kontakt. Kan enten være virksomhed, person, udenlandsk myndighed eller ukendt.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="AlternativKontaktTypeKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Person"/>
+			<xs:enumeration value="Virksomhed"/>
+			<xs:enumeration value="Myndighed"/>
+			<xs:enumeration value="Ukendt"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,120 @@
+﻿a {
+	color: #000099;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a.fane {
+	background-color: #f1f1f1;
+	display: block;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	line-height: 16pt;
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #CCCCCC;
+}
+
+a.fane:hover {
+	text-decoration: underline;
+}
+body {
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+div.typelille {
+	font-size: 8pt;
+}
+div.faneaktiv {
+	background-color: white;
+	border-left: 1px solid #999999;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #999999;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	line-height: 16pt;
+	text-align: center;
+}
+form {
+	display: inline;
+}
+input {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+input.inputleft {
+	text-align: left;
+}
+li {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+p {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+table.gruppe {
+	border-top: 1px solid black;
+}
+table.gruppeknapper {
+	border-top: 1px solid black;
+}
+table.meddelelse {
+	background-color: #FFFFCC;
+	border: 1px solid black;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color="#777777", direction=135, strength=3);
+	padding: 5px;
+	-moz-border-radius: 10px;
+}
+table.meddelelse_print_IE {
+	background-color: white;
+	border: 1px solid black;
+	padding: 5px;
+}
+td {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+td.emne {
+	font-size: 12pt;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+td.fanestreg {
+	border-bottom: 1px solid #999999;
+}
+td.gruppe {
+	border-top: 1px solid black;
+	font-weight: bold;
+	line-height: 25px;
+}
+td.ident {
+	text-align: right;
+}
+td.typelille {
+	font-size: 8pt;
+}
+ul {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+@media screen {
+	.ejskaerm {display: none}
+	input:focus {text-align: left}
+}
+
+@media print {
+	.ejprint {display: none}
+	table.gruppeknapper {display: none}
+	table.meddelelse {background-color: white}
+	}

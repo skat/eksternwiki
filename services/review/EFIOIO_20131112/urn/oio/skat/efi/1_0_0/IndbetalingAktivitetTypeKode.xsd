@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indbetalingaktivitettypekode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="IndbetalingAktivitetTypeKode" type="indbetalingaktivitettypekode:IndbetalingAktivitetTypeKodeType">
+		<xs:annotation>
+			<xs:documentation>Kode der entydigt identificerer akttiviteten  Værdisæt (enum):  DAEKNING  - Fordring dækket med indbetaling DAEKNOPH - Dækning for fordring ophævet FORDKORR - Fordring korrigeret med mere end restsaldo</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="IndbetalingAktivitetTypeKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DAEKNING"/>
+			<xs:enumeration value="DAEKNOPH"/>
+			<xs:enumeration value="FORDKORR"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-fejl" href="#skts-skip-link-target-fejl" onclick="document.getElementById('skts-skip-link-target-fejl').focus();">Gå til fejlbesked</a></li>
+			</ul>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a href="forskud_ret.html" class="skts-selected">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="javascript:void(0);">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<form id="mainForm">
+				<div class="skts-grid-fixed-height skts-grid-pad">
+					<div class="skts-col-1 skts-small-text skts-align-right">
+						<p class="skts-user-info">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk (<a target="_blank" class="skts-tooltip-holder skts-link-enhance" href="sider_ikke_med_i_flow/CSC_ret_kontakt.html">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)</p>
+					</div>
+					<div class="skts-print-only"><p>VUR-test-05, cpr-nummer 010389-7750</p></div>
+					<div class="skts-col-1">
+						<div class="skts-module-container">
+							<div class="skts-module-header skts-align-with-tab">
+								<h1>
+									Forskudsopgørelse 
+								</h1>
+							</div>
+							<div style="width: 1px;">
+								<!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+								<a id="skts-skip-link-target-indhold" class="skts-link-target-hide" href="#skts-skip-link-target-indhold" tabindex="-1">Start af indhold</a>
+							</div>
+							<ul id="skts-tabs">
+								<li class="skts-onclick-checkAendringer"><a href="forskud_ret.html" class="skts-tooltip-holder">2015<span class="skts-tooltip">Se forskudsopgørelsen for 2015 </span></a></li><li class="skts-onclick-checkAendringer skts-tab-selected"><a href="forskud_liste_forrige.html" class="skts-tooltip-holder">2014<span class="skts-tooltip">Se forskudsopgørelsen for 2014 </span></a></li><li class="skts-onclick-checkAendringer"><a href="forskud_liste_alle.html" class="skts-tooltip-holder">Tidligere<span class="skts-tooltip">Se forskudsopgørelsen for tidligere år </span></a></li>
+							</ul>
+							<div class="skts-grid skts-grid-pad">
+								<div class="skts-col-2-3">
+									<div id="currentyear">
+										<h2 id="breadcrumbs" >Forskudsopgørelsen 2014</h2>
+										<p>Beløbene på forskudsopgørelsen (skattekortet) bestemmer, hvad din arbejdsgiver trækker i skat i løbet af året.</p>
+										<table class="skts-standard-table skts-pdf-table">
+											<caption class="visuallyhidden">Første kolonne indeholder link til din forskudsopgørelse i pdf-format. Anden kolonne viser dato for kørsel af din forskudsopgørelse.</caption>
+											<thead>
+												<tr>
+													<th>Pdf-dokumenter</th>
+													<th>Dato</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr id="trLink_20101028130212" class="skts-pdf-warning">
+													<td><a id="link_20101028130212" class="skts-tooltip-holder" href="javascript:void(0);">Forskudsopgørelse 2014 <span class="skts-tooltip">Pdf fra 28-10-2014 åbner i et nyt vindue</span></a></td>
+													<td id="timestamp_20101028130212" class="skts-indholds-tabel-nowrap">28-10-2014</td>
+												</tr>
+												<tr id="trLink_20101028130213" class="skts-pdf-warning" >
+													<td><a id="link_20101028130213" class="skts-tooltip-holder" href="javascript:void(0);">Forskudsopgørelse 2014 <span class="skts-tooltip">Pdf fra 20-09-2014 åbner i et  nyt vindue</span></a></td>
+													<td id="timestamp_20101028130213" class="skts-indholds-tabel-nowrap">20-09-2014</td>
+												</tr>
+												<tr id="trLink_20101028130214" class="skts-pdf-warning" >
+													<td><a id="link_20101028130214" class="skts-tooltip-holder" href="javascript:void(0);">Forslag til forskudsopgørelse (annulleret) 2014 <span class="skts-tooltip">Pdf fra 01-07-2014 åbner i et  nyt vindue</span></a></td>
+													<td id="timestamp_20101028130214" class="skts-indholds-tabel-nowrap">01-07-2014</td>
+												</tr>
+												<tr id="trLink_20101028130215" class="skts-pdf-warning" >
+													<td><a id="link_20101028130215" class="skts-tooltip-holder" href="javascript:void(0);">Forskudsopgørelse 2014 <span class="skts-tooltip">Pdf fra 12-02-2014 åbner i et  nyt vindue</span></a></td>
+													<td id="timestamp_20101028130215" class="skts-indholds-tabel-nowrap">12-02-2014</td>
+												</tr>
+											</tbody>
+										</table>
+										<br/>
+										<p class="skts-small-text"><a target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1816617&layout=353121" class="skts-tooltip-holder skts-icon-right-open-big">Pdf-dokumentet åbner ikke - se hvorfor<span class="skts-tooltip"> Åbner nyt vindue</span></a></p>  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+		<div id="vissidediv">
+			<form name="visside" id="visside" method="get" action="forskudsopgoerelsevis.aspx" target="PdfSide">
+				<input type="hidden" id="aid" name="aid">
+				<input type="hidden" id="Lager" name="Lager">
+				<input type="hidden" id="DocIndex" name="DocIndex">
+				<input type="hidden" id="Koerselsdato" name="Koerselsdato">
+				<input type="hidden" id="AutoForskud" name="AutoForskud">
+			</form>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		<script type="text/javascript">
+			//<![CDATA[
+			var aabneVinduer = {};
+			function OpenDialog(url, winName, width, height, showScroll, resizable, menubar, status, toolbar, forceOpen, forceNonModal, vinduer) {
+				win_width = width;
+				win_height = height;
+				win_left = (screen.width / 2) - (win_width / 2);
+				win_top = (screen.height / 2) - (win_height / 2);
+				if (ModalOK() && !forceNonModal) {
+					var options = "dialogwidth:" + win_width + "px;dialogheight:" + win_height + "px;dialogLeft:" + win_left + ";dialogTop:" + win_top + ";resizable:no;status:no;help:no;scroll:" + showScroll;
+					try {
+						window.showModalDialog(url, self, options);
+					} catch (e) { } // If popup blocker is set, an exception is thrown. We ignore, as most browsers inform the user.
+				}
+				else {
+					var vindue = vinduer[winName];
+					if ( forceOpen || !vindue || vindue.closed) {
+						var options = "width=" + win_width + ",height=" + win_height + ",Left=" + win_left + ",Top=" + win_top + ",resizable=" + resizable + ",status="+status+",menubar="+menubar+ ",toolbar="+toolbar+",help=no,scrollbars=" + showScroll;
+						var rc = window.open(url, winName, options);
+						vinduer[winName] = rc;
+						try {
+							rc.window.focus(); // Hvis indholdet i vinduet er PDF (Acro Reader) så kan denne fejle
+						} catch (e) { }
+						return true;
+					}
+					else {
+						try {
+							vindue.window.focus(); // Hvis indholdet i vinduet er PDF (Acro Reader) så kan denne fejle
+						} catch (e) {
+							try {
+								vindue.focus(); 
+							}
+							catch (e) {
+							}
+						}
+						return false;
+					}
+				}
+			}
+			function ModalOK()
+			{
+				modal = false;
+				if (navigator.appName && navigator.appName == "Microsoft Internet Explorer") {
+					if (window.showModalDialog) {
+						modal = true;
+					}
+				}
+				return modal;
+			}
+			function lukAabneVinduer() {
+				for (var vId in aabneVinduer) {
+					var v = aabneVinduer[vId]
+					if (v && !v.closed) {
+						v.close();
+					}
+				}
+			}
+			var IE = false;
+			if (document.all && document.getElementById) {
+				IE = true;
+				if ((navigator.userAgent).indexOf("Opera") != -1) {
+					IE = false;
+				}
+			}
+			function checkMeddelelsePrint() {  // P.g.a. fejl i IE
+				var el = document.getElementById('meddelelse');
+				if (el != null) {
+					el.className = "meddelelse";
+				}
+			}
+			function checkMeddelelseSkaerm() {  // P.g.a. fejl i IE
+				var el = document.getElementById('meddelelse');
+				if (el != null) {
+					el.className = "meddelelsePrintIE";
+				}
+			}
+			if (IE == true) {
+				window.onbeforeprint = checkMeddelelseSkaerm;
+				window.onafterprint = checkMeddelelsePrint;
+			}
+			window.onunload = lukAabneVinduer;
+			//]]>
+		</script>
+		<script type="text/javascript">
+			//<![CDATA[
+			function VisSkmpPdfSide(DocIndex, dato, Lager, autoForskud, aid) {
+			  OpenDialog( 'Blank.htm', 'Forskudsopgoerelsen', '700', '700', 'yes', 'yes', 'no', 'yes', 'no', true, true, aabneVinduer );
+			  document.visside.aid.value = aid;
+			  document.visside.Lager.value = Lager;
+			  document.visside.DocIndex.value = DocIndex;
+			  document.visside.Koerselsdato.value = dato;
+			  document.visside.AutoForskud.value = autoForskud;
+			  document.visside.target = 'Forskudsopgoerelsen';
+			  document.visside.submit();
+			}
+		//]]>
+		</script>
+    </body>
+</html>

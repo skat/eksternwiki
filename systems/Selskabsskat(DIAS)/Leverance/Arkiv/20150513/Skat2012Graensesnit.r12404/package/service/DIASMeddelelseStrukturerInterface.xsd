@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Dette er IKKE en reel service, men udelukkende en teknisk indkapsling af de strukturer der indeholder forretningsdata til DIAS brevskabeloner.</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DIASMeddelelseAngivetIndskyderOmstruktureringStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseAnmodningSambeskatningStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseFjernetFraSambeskatningskredsStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseForlaengelseRegnskabsperiodeAdvisStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseOmstruktureringAnmodningSystemAfvisningStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelsePaalaegSkattetillaegStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelsePaalaegSkattetillaegSkatLigningStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelsePaamindAfmeldTonnageStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelsePaamindSnarligSelvangivelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelsePaamindTilmeldInternationalSambeskatningStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelsePaamindTilmeldTonnageStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseRykkerManglendeSelvangivelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseSambeskatningAnmodningSvarStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseSambeskatningAnmodningSystemAfvisningStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseSelvangivetAfSaelgerStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseSvarOmstruktureringStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseTilfoejetSambeskatningskredsStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseUdpegetAdministrationsselskabStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DIASMeddelelseUdtraadtAdministrationsselskabStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DIASMeddelelseStrukturerInterface"
+                     type="skat2012:DIASMeddelelseStrukturerInterfaceType"/>
+         <xs:complexType name="DIASMeddelelseStrukturerInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:DIASMeddelelseAngivetIndskyderOmstruktureringStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseAnmodningSambeskatningStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseFjernetFraSambeskatningskredsStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseForlængelseRegnskabsperiodeAdvisStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseOmstruktureringAnmodningSystemAfvisningStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelsePålægSkattetillægStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelsePålægSkattetillægSkatLigningStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelsePåmindAfmeldTonnageStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelsePåmindSnarligSelvangivelseStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelsePåmindTilmeldInternationalSambeskatningStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelsePåmindTilmeldTonnageStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseRykkerManglendeSelvangivelseStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseSambeskatningAnmodningSvarStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseSambeskatningAnmodningSystemAfvisningStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseSelvangivetAfSælgerStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseSvarOmstruktureringStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseTilføjetSambeskatningskredsStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseUdpegetAdministrationsselskabStruktur"/>
+               <xs:element ref="skat2012:DIASMeddelelseUdtrådtAdministrationsselskabStruktur"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

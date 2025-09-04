@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:kob:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:kreditoplysningaeldstefundamentetableringtypekode="urn:oio:skat:kob:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="KreditoplysningAeldsteFundamentEtableringTypeKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Den type som fundamentet er etableret ved og som er lagt til grund for fremsendelsen.  EFI vælger den fundamentetableringstype som følger fundamentetableringstypen på fordringen, som giver KreditoplBurÆldsteFundament  EFI anvender ikke oplysningen, men Kreditoplysningsbureauet er forpligtet til at give oplysningen videre til statisk brug.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

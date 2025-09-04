@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/TonnageErklaering.xsd"/>
+         <xs:element name="RevisorErklæringForholdStruktur"
+                     type="skat2012:RevisorErklæringForholdStrukturType"/>
+         <xs:complexType name="RevisorErklæringForholdStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:TonnageErklæringForskelligtValgPGF3" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageErklæringBareBoatUdlejningPGF6Stk2" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageErklæringTimeCharterUdlejning" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

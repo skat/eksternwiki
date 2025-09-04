@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:xkom1="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="../../xkom_dk/xml/schemas/2006/09/01/StartDate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="../../xkom_dk/xml/schemas/2007/04/15/EndDate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="eIndkomstAnvendtGyldigFraTilStruktur" type="fase2:eIndkomstAnvendtGyldigFraTilStrukturType"/>
+         <xs:complexType name="eIndkomstAnvendtGyldigFraTilStrukturType">
+               <xs:sequence>
+               <xs:element minOccurs="0" ref="xkom1:StartDate"/>
+               <xs:element minOccurs="0" ref="xkom:EndDate"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

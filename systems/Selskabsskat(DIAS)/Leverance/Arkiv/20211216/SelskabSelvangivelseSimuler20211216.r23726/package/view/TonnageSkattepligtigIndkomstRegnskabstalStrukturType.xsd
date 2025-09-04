@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/TonnageRegnskabstal.xsd"/>
+         <xs:include schemaLocation="../class/TonnageAngivelse.xsd"/>
+         <xs:element name="TonnageSkattepligtigIndkomstRegnskabstalStruktur"
+                     type="skat2012:TonnageSkattepligtigIndkomstRegnskabstalStrukturType"/>
+         <xs:complexType name="TonnageSkattepligtigIndkomstRegnskabstalStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:TonnageRegnskabstalResultatFørSkat" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageRegnskabstalResultatAssocierede" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageRegnskabstalTonnageIndkomst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageRegnskabstalFordelingOverskudUnderskudSambeskattet"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageRegnskabstalUnderskudFradragTidligereÅr" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseTonnageskattePligtigIndkomstMarkering"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageRegnskabstalNettoomsætningDKK" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

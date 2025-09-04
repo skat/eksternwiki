@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En klasse af aktier</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/AktieklasseType.xsd"/>
+         <xs:element name="AktieKlasseTypeKode" type="skat2012:AktieklasseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Aktieklasse for aktiekapital Aktie_klasse_kod Aktie_klasse_txt 001 A 002 Præference 003 Stam 004 Ordinær 005 Almindelig 006 Konvertible 007 Konvertible-A 008 B 009 Konvertible_B 010 C 011 Konvertible-C 012 D 013 Konvertible-D 014 E 015 Konvertible-E 016 F 017 Konvertible-F 018 G 019 Konvertible-G 020 H 021 Konvertible-H 022 I 023 Konvertible-I 024 J 025 Konvertible-J 026 K 027 Konvertible-K 028 L 029 Konvertible-L 030 M 031 Konvertible-M 032 N 033 Konvertible-N 034 O 035 Konvertible-O 036 P 037 Konvertible-P 038 Q 039 Konvertible-Q 040 R 041 Konvertible-R 042 S 043 Konvertible-S 044 T 045 Konvertible-T 046 U 047 Konvertible-U 048 V 049 Konvertible-V 050 W 051 Konvertible-W 052 X 053 Konvertible-X 054 Y 055 Konvertible-Y 056 Z 057 Konvertible-Z 058 Æ 059 Konvertible-Æ 060 Ø 061 Konvertible-Ø 062 Å 063 Konvertible-Å 064 A2 065 B2 066 LI 067 SI 068 SII 069 SIII 070 1 071 2 072 Aktie 073 Anpart 074 Hovedaktionær 075 Dominerende 076 Konverteret kapital 077 Aktiekapital i Euro  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

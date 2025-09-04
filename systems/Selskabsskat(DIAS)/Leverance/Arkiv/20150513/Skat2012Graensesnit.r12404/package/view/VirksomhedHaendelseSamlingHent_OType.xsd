@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedHaendelse.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/VirksomhedOprettelseHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedOphoerHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/PrimaerAdresseAEndringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/PrimaerTelefonSamlingAEndringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/PrimaerEmailSamlingAEndringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedDriftformHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedPligtHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedStatusHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedRegnskabsperiodeHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedBeskatningParagrafHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedBevillingForholdHaendelseStrukturType.xsd"/>
+				     
+         <xs:element name="VirksomhedHændelseSamlingHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:VirksomhedHændelseSamlingHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="VirksomhedHændelseSamlingHent_OType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="Svar" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="VirksomhedHændelseListe">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element name="VirksomhedHændelse" minOccurs="0" maxOccurs="unbounded">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element name="Identifikation">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="skat2012:VirksomhedSENummer"/>
+                  
+                                                         <xs:element ref="skat2012:VirksomhedNavnFirmaNavn"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element ref="skat2012:VirksomhedHændelseRealTidspunkt"/>
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="HændelseOplysningValg" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:choice>
+                                                            <xs:element ref="skat2012:VirksomhedOprettelseHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedOphørHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:PrimærAdresseÆndringStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:PrimærTelefonSamlingÆndringStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:PrimærEmailSamlingÆndringStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedDriftformHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedPligtHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedStatusHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedRegnskabsperiodeHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedBeskatningParagrafHændelseStruktur"/>
+				
+				
+				                                                        <xs:element ref="skat2012:VirksomhedBevillingForholdHændelseStruktur"/>
+                                                         </xs:choice>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                
+
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

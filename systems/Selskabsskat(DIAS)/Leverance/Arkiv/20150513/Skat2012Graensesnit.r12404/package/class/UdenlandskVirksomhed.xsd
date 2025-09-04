@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En klasse som håndterer udenlandske virksomheder</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/UdenlandskVirksomhedNummerType.xsd"/>
+         <xs:include schemaLocation="../types/BolskType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="UdenlandskVirksomhedID" type="skat2012:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik systemID for udenlandsk virksomhed.  Fortløbende nummer som starter ved 10000000001.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskVirksomhedNummer"
+                     type="skat2012:UdenlandskVirksomhedNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer der entydigt identificerer de for SKAT relevante udenlandske virksomeder, der ikke er registreret ved et dansk CVR/SE-nummer.  Svarer lige nu til identifikation fundet i Erhvervssystemet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskVirksomhedAktiv" type="skat2012:BolskType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af, om den udenlandske virksomhed er aktiv i relation til SKAT forhold. Hvis ikke den er aktiv, betyder det, at SKAT ikke længere har interesse i eller udeståender med virksomheden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskVirksomhedOphørDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdato for virksomheden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

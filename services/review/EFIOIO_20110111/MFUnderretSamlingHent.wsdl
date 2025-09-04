@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:efi:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MFUnderretSamlingHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Hent underretnings meddelelser der ligger klar til fordringshaveren, </xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1">
+			<xsd:include schemaLocation="urn/oio/skat/efi/ws/1_0_1/MFUnderretSamlingHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MFUnderretSamlingHentServiceRequest">
+		<wsdl:part name="Request" element="efiws:MFUnderretSamlingHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="MFUnderretSamlingHentServiceResponse">
+		<wsdl:part name="Response" element="efiws:MFUnderretSamlingHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="MFUnderretSamlingHentServicePortType">
+		<wsdl:operation name="getMFUnderretSamlingHent">
+			<wsdl:input message="efiws:MFUnderretSamlingHentServiceRequest"/>
+			<wsdl:output message="efiws:MFUnderretSamlingHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MFUnderretSamlingHentServiceBinding" type="efiws:MFUnderretSamlingHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getMFUnderretSamlingHent">
+			<soap:operation soapAction="getMFUnderretSamlingHent"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MFUnderretSamlingHentServiceBindingQSService">
+		<wsdl:port name="MFUnderretSamlingHentHentServiceBindingQSPort" binding="efiws:MFUnderretSamlingHentServiceBinding">
+			<soap:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

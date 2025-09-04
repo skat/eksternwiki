@@ -1,0 +1,36 @@
+<urn:MFFordringIndberet_I xmlns:urn="urn:oio:skat:efi:ws:1.0.1" xmlns:ns="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" 
+        xmlns:ns1="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:urn2="urn:oio:skat:ntse:1.0.0" 
+        xmlns:ns2="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/"          
+        xmlns:urn1="urn:oio:skat:efi:1.0.0">
+         <ns:HovedOplysninger>
+            <ns:TransaktionIdentifikator>20110715-0900000</ns:TransaktionIdentifikator>
+            <ns:TransaktionTid>2011-08-10T00:00:00.000+02:00</ns:TransaktionTid>
+         </ns:HovedOplysninger>
+         <urn:FordringhaverSystemIDStruktur>
+            <ns1:VirksomhedSENummerIdentifikator>87654542</ns1:VirksomhedSENummerIdentifikator>
+         </urn:FordringhaverSystemIDStruktur>
+         <urn1:ModtagFordringLeveranceIdentifikator>9</urn1:ModtagFordringLeveranceIdentifikator>
+         <urn:FordringAktionSamling>
+
+            <urn:FordringAktion>
+               <urn1:ModtagFordringAktionKode>NEDSKRIV</urn1:ModtagFordringAktionKode>
+               <urn1:FordringHaverIdentifikator>201</urn1:FordringHaverIdentifikator>
+               <urn:AktionValg>
+                  <urn:MFNedskrivFordringStruktur>
+                     <urn1:FordringInddrivelseFordringIdentifikator>1</urn1:FordringInddrivelseFordringIdentifikator>
+                     <urn1:FordringNedskrivningVirkningFraDato>2011-08-10+02:00</urn1:FordringNedskrivningVirkningFraDato>
+                     <urn:NedskrivningAarsagStruktur>
+                        <urn1:FordringNedskrivningAarsagKode>ANDN</urn1:FordringNedskrivningAarsagKode>
+                        <urn1:FordringNedskrivningAarsagBegrundelseTekst>Ændring</urn1:FordringNedskrivningAarsagBegrundelseTekst>
+                        <urn1:FordringNedskrivningAarsagTekst>ÆndringNedskrivning</urn1:FordringNedskrivningAarsagTekst>
+                     </urn:NedskrivningAarsagStruktur>
+                     <urn:NedskrivningBeloebStruktur>
+                        <urn2:ValutaKode>DKK</urn2:ValutaKode>
+                        <urn1:FordringNedskrivningBeloeb>500</urn1:FordringNedskrivningBeloeb>
+                        <urn1:FordringNedskrivningDKKBeloeb>500</urn1:FordringNedskrivningDKKBeloeb>
+                     </urn:NedskrivningBeloebStruktur>
+                  </urn:MFNedskrivFordringStruktur>
+               </urn:AktionValg>
+            </urn:FordringAktion>
+         </urn:FordringAktionSamling>
+      </urn:MFFordringIndberet_I>

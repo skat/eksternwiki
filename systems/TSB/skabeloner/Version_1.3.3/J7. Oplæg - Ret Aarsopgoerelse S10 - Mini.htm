@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]><html class="ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if IE 8]><html class="ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if IE 9]><html class="ie9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="da" lang="da"> <!--<![endif]-->
+<head><title>Ret årsopgørelse</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="Styles/TastSelvMain.css" rel="stylesheet" type="text/css" />
+<link href="Styles/print.css" rel="stylesheet" type="text/css" media="print" />
+<link href="Styles/CSC_Aendring_til_aarsopgoerelsen_default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Scripts/TastSelvMain.js"></script>
+<script type="text/javascript" src="Scripts/vindue.js"></script>
+<script type="text/javascript" src="Scripts/event_handler.js"></script>
+<script type="text/javascript" src="Scripts/validering.js"></script>
+<script type="text/javascript" src="Scripts/visning.js"></script>
+<script type="text/javascript" src="Scripts/TastSelvMain.js"></script>
+
+<script type="text/javascript">
+    var hjaelp_mappe = "http://www.skat.dk/SKAT.aspx?oID=";
+    var html_mappe = "/borger/selvangivelse2011/html/";
+    var indlaes_side = "/borger/selvangivelse2011/html/side_indlaeses.htm";
+    var indkomstfradrag_status = "false";
+    var aktie_status = "false";
+    var oevrigevirk_status = "false";
+    var forskudtregn_status = "false";
+</script></head>
+<body>
+<div id="skts-body">
+  <div id="skts-logo-op"><img src="Images/toplogo.jpg" alt="" /></div>
+  <div id="skts-logo-ned">
+    <div class="skts-miljoe"><span id="skts-header-miljoe">BRGT</span>&nbsp;<span id="skts-header-versionsnr">ver. 12.3.0.17</span></div>
+    <a href="#"><img src="Images/logo.gif" alt="Til forside" /></a>
+    <ul id="skts-skip-links">
+    	<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+    </ul>
+    </div>
+  <div id="skts-hoved-container">
+    <div id="skts-globalmenu-container">
+      <ul id="skts-globalmenu-venstre">
+        <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-venstre-link-yderst">Forside</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-link-markeret">Årsopgørelse</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link">Forskudsopgørelse</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link">Betaling</a></li>
+        <li><a href="#" class="skts-globalmenu-venstre-link">Skatteoplysninger</a></li>
+        <li><a href="javascript:void(0)" class="skts-globalmenu-venstre-link skts-globalmenu-link-inaktiv skts-tooltip-holder ">Motor<span class="skts-tooltip"> Linket er inaktivt</span></a></li>
+      </ul>
+      <ul id="skts-globalmenu-hoejre">
+        <li><a href="#" class="skts-globalmenu-hoejre-link skts-onclick-checkAendringer">Kontakt</a></li>
+        <li><a href="#" class="skts-globalmenu-hoejre-link skts-onclick-checkAendringer">Profil</a></li>
+        <li><a href="#" class="skts-globalmenu-hoejre-link skts-tooltip-holder">Hjælp<span class="skts-tooltip"> Åbner nyt vindue</span></a></li>
+        <li><a href="#" class="skts-globalmenu-hoejre-link skts-globalmenu-hoejre-link-yderst skts-globalmenu-link-logaf skts-onclick-checkAendringer">Log af</a></li>
+      </ul>
+      <div class="skts-slut-float"></div>
+    </div>
+      <div class="skts-brugeroplysninger-skaerm">
+    <p id="skts-brugeroplysninger">Logget på: Jens Skov, e-mail-adresse: j.skov@gmail.com, telefon: 23 45 67 89 (<a class="skts-tooltip-holder skts-link-fremhaevning" href="#">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)</p>
+    </div>
+          <div class="skts-brugeroplysninger-print">
+        <p class="skts-normal-tekst">Jens Skov, cpr-nummer 220549-1235</p>
+      </div>
+
+    <div id="skts-midter-container-med-brugeroplysninger">
+      <div id="skts-venstre-menu-container">
+        <div id="skts-venstre-menu-ramme">
+          <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Årsopgørelse</h1>
+          <ul class="skts-venstre-menu-elementer">
+            <li><a href="#" class="skts-venstre-menu-element-yderst">Se årsopgørelsen</a></li>
+            <li><a href="#" class="skts-venstre-menu-element-link-markeret">Ret årsopgørelsen/selvangivelsen</a></li>
+            <li><a href="#">Betal restskat</a></li>
+            <li><a href="#">Indberet servicefradrag (håndværkerfradrag)</a></li>
+            <li><a href="#">Se personlige skatteoplysninger</a></li>
+            <li><a href="#">Beregn skatten</a></li>
+            <li><a href="#">Se kvitteringer for indtastning</a></li>
+          </ul>
+        </div>
+      </div><!--End #skts-venstre-menu-container-->
+      <div id="skts-indhold-container-hoejre">
+          <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Ret årsopgørelse</h1>
+            <div style="width:1px;"> <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+              <a id="skts-skip-link-target-indhold" class="skts-link-target-skjul">Indhold</a>
+              </div>
+           <ul id="skts-faneblade">
+            <li class="skts-faneblad-markeret"><a href="#" class="skts-tooltip-holder" >2012<span class="skts-tooltip"> Ret årsopgørelsen for 2012</span></a></li>
+            <li><a href="#" class="skts-tooltip-holder" >2011<span class="skts-tooltip"> Ret årsopgørelsen for 2011</span></a></li>
+            <li><a href="#" class="skts-tooltip-holder">Tidligere<span class="skts-tooltip">  Ret årsopgørelsen for tidligere år</span></a></li>
+          </ul>
+          <div class="skts-slut-float"></div>
+          <!-- Du skal vælge om du vil bruge en smal eller en bred div:
+          <div id="skts-indhold-skabelon2b" class="skts-indhold-smal">
+          -->
+          <div id="skts-indhold-ret-aarsopgoerelse" class="skts-indhold-bred skts-broedtekst">
+
+
+<form action="/borger/selvangivelse2011/selvangivelse_godkend.do" method="post" name="indberetning">
+<input name="indkomstfradragknap" value="false" type="hidden"/>
+<input name="aktieknap" value="false" type="hidden"/>
+<input name="oevrigevirkknap" value="false" type="hidden"/>
+<input name="forskudtregnknap" value="false" type="hidden"/>
+<input name="ejfortryktindkmedam" value="false" type="hidden"/>
+<input name="ejfortryktindkudenam" value="false" type="hidden"/>
+<input name="ejfortryktfradragpers" value="false" type="hidden"/>
+<input name="ejfortryktkapindk" value="false" type="hidden"/>
+<input name="ejfortryktfradragkap" value="false" type="hidden"/>
+<input name="ejfortryktfradraglign" value="false" type="hidden"/>
+<input name="ejfortryktaktieindk" value="false" type="hidden"/>
+<input name="ejfortryktandenaktie" value="false" type="hidden"/>
+<input name="emptyrubrik11f" value="false" type="hidden"/>
+<input name="emptyrubrik12f" value="false" type="hidden"/>
+<input name="emptyrubrik14f" value="false" type="hidden"/>
+<input name="emptyrubrik16f" value="false" type="hidden"/>
+<input name="emptyrubrik17f" value="false" type="hidden"/>
+<input name="emptyrubrik18f" value="false" type="hidden"/>
+<input name="emptyrubrik21f" value="false" type="hidden"/>
+<input name="emptyrubrik22f" value="false" type="hidden"/>
+<input name="emptyrubrik23f" value="false" type="hidden"/>
+<input name="emptyrubrik24f" value="false" type="hidden"/>
+<input name="emptyrubrik459f" value="false" type="hidden"/>
+<input name="emptyrubrik30f" value="false" type="hidden"/>
+<input name="emptyrubrik31f" value="false" type="hidden"/>
+<input name="emptyrubrik33f" value="false" type="hidden"/>
+<input name="emptyrubrik34f" value="false" type="hidden"/>
+<input name="emptyrubrik37f" value="false" type="hidden"/>
+<input name="emptyrubrik38f" value="false" type="hidden"/>
+<input name="emptyrubrik41f" value="false" type="hidden"/>
+<input name="emptyrubrik42f" value="false" type="hidden"/>
+<input name="emptyrubrik43f" value="false" type="hidden"/>
+<input name="emptyrubrik50f" value="false" type="hidden"/>
+<input name="emptyrubrik51f" value="false" type="hidden"/>
+<input name="emptyrubrik52f" value="false" type="hidden"/>
+<input name="emptyrubrik54f" value="false" type="hidden"/>
+<input name="emptyrubrik55f" value="false" type="hidden"/>
+<input name="emptyrubrik447f" value="false" type="hidden"/>
+<input name="emptyrubrik448f" value="false" type="hidden"/>
+<input name="emptyrubrik56f" value="false" type="hidden"/>
+<input name="emptyrubrik59f" value="false" type="hidden"/>
+<input name="emptyrubrik460f" value="false" type="hidden"/>
+<input name="emptyrubrik61f" value="false" type="hidden"/>
+<input name="emptyrubrik63f" value="false" type="hidden"/>
+<input name="emptyrubrik64f" value="false" type="hidden"/>
+<input name="emptyrubrik66f" value="false" type="hidden"/>
+
+<input type="hidden" id="skts-dirty" value="false" />
+
+  <p>Fristen for at selvangive for 2012 var den 1. juli 2013. Brug denne side, hvis du vil:</p>
+    <ul class="skts-liste1">
+      <li>Rette din årsopgørelse for 2012 efter fristen</li>
+      <li>Selvangive for 2012 og har fået udsættelse</li>
+      <li>Selvangive for 2012 og ikke har fået udsættelse (du skal så betale et skattetillæg).</li>
+  </ul>
+  <p class=""><strong>Begrund dine rettelser</strong><br />
+     Hvis du retter i rubrikkerne, skal du begrunde dine rettelser her:
+  </p>
+  <textarea name="genoptagTekst" style="width:100%;" wrap="hard" cols="63" rows="4" onkeydown="tekstCounter(this.form.genoptagTekst,this.form.chLeft,235);" onkeyup="tekstCounter(this.form.genoptagTekst,this.form.chLeft,235);"></textarea>
+  <input readonly="readonly" name="chLeft" size="3" maxlength="3" value="235" type="text" style="display:none;"/>
+    
+  <p class="skts-lille-tekst">Eksempel: ”Rubrik 44: Jeg havde glemt at fratrække renteudgifter til nye pantebreve.”<br />
+  Begrundelsen bliver læst, hvis vi kontrollerer dine rettelser. Vi sender ikke noget svar.</p>
+
+  <div class="skts-skillelinie-top"></div>
+  <div class="skts-kolonner-to">
+    <div class="skts-kolonne1"><span>Indtast direkte:</span>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+        Kørsel til og fra arbejde (befordring)<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+         <a href="#" class="skts-primaer-link skts-tooltip-holder">
+        Aktier og værdipapirer<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+    </div>
+    <div class="skts-kolonne2"><span>Orientering fra SKAT:</span> 
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+        Om din årsopgørelse<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder" title="Viser vindue med orientering fra SKAT" >
+        Om udenlandsk indkomst<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+    </div>
+    <div class="skts-slut-float"></div>
+  </div>
+
+  <div class="skts-csc-legacy-html">
+ <!--****INDKOMST OG FRADRAG****************************************************************--> 
+ <a id="indkomstfradrag"></a>
+ <table class="tabel-7-kolonne" border="0" width="100%"> 
+    <tbody>
+        <tr>
+            <td class="kolonne1_7" />
+            <td class="kolonne2_7" />
+            <td class="kolonne3_7" />
+            <td class="kolonne4_7" />
+            <td class="kolonne5_7" />
+            <td class="kolonne6_7" />
+            <td class="kolonne7_7" />
+        </tr>
+        <tr> 
+      <td colspan="7" class="overgruppe">Indkomst og fradrag </td> 
+    </tr>
+    <tr id="indkomstfradrag_fold" style="display:None;">
+       <td colspan="7">
+          <a class="fold" href="#" onclick="aendreVisIndkomstFradrag('false');return false" tabindex="-1">
+              <img src="Images/unfold.gif" border="0" alt=""/>
+             Saml rubrikker
+             </a>
+       </td>
+    </tr>
+    <tr id="indkomstfradrag_unfold">
+        <td colspan="7">
+           <a class="fold" href="#" onclick="aendreVisIndkomstFradrag('true');return false" tabindex="-1">
+              <img src="Images/fold.gif" border="0" alt=""/>
+             Vis alle rubrikker 
+            </a>
+       </td> 
+    </tr>
+    <!--****Personlig indkomst med arbejdsmarkedsbidrag****************************--> 
+   <tr id="synlig_top_indkmedam">
+      <td colspan="7"><hr style="border: 1px solid #B4B4B4"/></td> 
+    </tr> 
+   <tr id="synlig_tr_indkmedam"> 
+      <td class="ledetekstgruppe2" valign="top">Personlig indkomst, hvoraf der skal betales AM-bidrag (8 %)</td> 
+      <td class="ledetekst" align="center" valign="top">Rubrik</td> 
+      <td>&nbsp;</td> 
+      <td colspan="2" class="ledetekst" align="center" valign="top">Servicebrev<br />
+          <span class="typelille">Beløb/Godkendt</span></td>
+      <td>&nbsp;</td> 
+      <td class="ledetekst" align="center" valign="top">Beløb</td> 
+    </tr>
+    <tr id="synlig_tr_11"> 
+      <td class="rubriktekstform">
+        <a class="helplink" href="#" onclick="aabn_hjaelp_vindue('1976115');return false" tabindex="-1">
+          Lønindkomst, bestyrelseshonorar og personalegoder, der er 
+            A-indkomst, f.eks. fri bil og multimedie, før fradrag af AM-bidrag
+        </a></td>
+      <td align="center">11</td> 
+      <td align="center"></td> 
+      <td align="right"><a href="#" onclick="aabn_spec_fortrykt_vindue('11','1.111.000');return false" title="Klik for specifikation" tabindex="-1"><strong>1.111.000</strong></a></td>
+      <td align="center"><input value="1" name="rubrik11_ok" title="Klik her for godkendelse af beløb" type="checkbox"/></td>
+      <td>&nbsp;</td> 
+      <td style="text-align:right;">
+        <input name="rubrik11" maxlength="10" onblur="valider_blb(11,this);return false" class="deaktiveret" readonly="readonly" type="text" value="111.000"/>,00</td> 
+    </tr> 
+    <tr id="synlig_tr_12"> 
+      <td class="rubriktekstform">
+        <a class="helplink" href="#" onclick="aabn_hjaelp_vindue('1975986');return false" tabindex="-1">
+          Honorarer, indkomst ved hushjælp og værdien af nogle personalegoder før fradrag af AM-bidrag
+        </a></td>
+      <td align="center">12</td> 
+      <td align="center"></td> 
+      <td align="right"><a href="#" onclick="aabn_spec_fortrykt_vindue('12','12.000');return false" title="Klik for specifikation" tabindex="-1"><strong>12.000</strong></a></td>
+      <td align="center"><input value="1" name="rubrik12_ok" title="Klik her for godkendelse af beløb" type="checkbox"/></td>
+      <td>&nbsp;</td> 
+      <td style="text-align:right;">
+        <input name="rubrik12" maxlength="10" onblur="valider_blb(12,this);return false" class="inputbred" type="text" value="12.000"/>,00</td> 
+    </tr>
+  </tbody></table>
+  <!--****AKTIE***************************************************************************--> 
+   
+  
+  <table class="tabel-4-kolonne" border="0" width="100%"> 
+  	<tbody>
+          <tr>
+            <td class="kolonne1_4" />
+            <td class="kolonne2_4" />
+            <td class="kolonne3_4" />
+            <td class="kolonne4_4" />
+          </tr>
+          <tr>
+  		<td colspan="4" class="overgruppe">Virksomhedsindkomst og fradrag</td> 
+  	</tr>
+  <!--****Virksomhedsoplysninger**************************************-->
+   <tr>
+        <td colspan="4"><hr style="border: 1px solid #B4B4B4"/></td> 
+   </tr> 
+    <tr>
+      <td class="ledetekstgruppe2" valign="top">Virksomhedsoplysninger<br />
+        <div class="typenormal"><em>Husk også at udfylde regnskabsoplysninger</em></div>
+      </td>
+      <td class="ledetekst" align="center" valign="top">Rubrik</td> 
+      <td>&nbsp;</td> 
+      <td class="ledetekst" align="center" valign="top">Beløb</td> 
+    </tr> 
+    <tr> 
+      <td class="rubriktekstform">
+        <a class="helplink" href="#" onclick="aabn_hjaelp_vindue('1976130');return false" tabindex="-1">
+          Overskud af selvstændig virksomhed før beløb overført til medarbejdende 
+          ægtefælle, før AM-bidrag og før renter  
+        </a></td>
+      <td align="center">111</td>
+      <td>&nbsp;</td> 
+      <td style="text-align:right;">
+        <input name="rubrik111" maxlength="11" onblur="valider_blb(111,this);return false" class="inputbred" type="text"/>,00</td> 
+    </tr> 
+    </tbody></table>
+
+<br />
+<!--****Kommandoknapper********************************************************--> 
+  <div class="skts-knapper-placering2 skts-knapper-ramme">
+                      <input type="submit" class="skts-knap-primaer" value="Godkend" /><input type="button" class="skts-knap-sekundaer skts-knap-nulstil-margin skts-onclick-checkAendringer" value="Fortryd" />
+  </div>
+
+    <br />
+
+<input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+<input name="registmp" value="" type="hidden"/> 
+<input name="rubrik51f" value="51.000" type="hidden"/>
+<input name="gammel51" value="108.000" type="hidden"/>
+<input name="beregn51" value="" type="hidden"/>
+<input name="sidenavn" value="indberet_sa" type="hidden"/>
+<input name="menuvalg" value="S10_AENDR_D" type="hidden"/>
+<input name="indberetFundet" value="ja" type="hidden"/>
+<input name="HSTANAKTSKPLKOD" value="" type="hidden"/>
+<input name="HSTANAKTBHOKOD" value="" type="hidden"/>
+<input name="HSTFTJAKTBLB" value="" type="hidden"/>
+<input name="HSTRTIMOTAVAKOD" value="" type="hidden"/>
+<input name="NSKHSTSADEJOPKBLB" value="" type="hidden"/>
+<input name="NSKHSTSADOPKBLB" value="" type="hidden"/>
+<input name="ULTAKTOVGSADBLB" value="" type="hidden"/>
+<input name="FEJLNR" value="" type="hidden"/>
+<input name="BERAKTSELVOVFKOD" value="" type="hidden"/>
+<input name="RGUANSSUMKOD" value="" type="hidden"/>
+<input name="HSTANSKATKOD" value="" type="hidden"/>
+<input name="SHSTANLOEYDSKOD" value="" type="hidden"/>
+<input name="HSTSADOPKEJNSKBLB" value="" type="hidden"/>
+<input name="FEJL2NR" value="" type="hidden"/>
+<input name="BOPLANDEUNODKOD" value="" type="hidden"/>
+<input name="eof" value="ok" type="hidden"/>
+</div>  
+</form> 
+
+              
+<form action="/borger/selvangivelse2011/selvangivelse_r75spec.do" method="post" name="spec_fortrykt" target="Spec_fortrykt" onsubmit="return false">
+  <input name="sidenavn" value="spec_fortrykt" type="hidden"/>
+  <input name="rubriknr" value="" type="hidden"/>
+  <input name="rubriksum" value="" type="hidden"/>
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+</form>
+<form action="/borger/selvangivelse2011/selvangivelse_orient.do" method="post" name="orient" target="Orient" onsubmit="return false">
+  <input name="sidenavn" value="orient" type="hidden"/>
+  <input name="rubriknr" value="" type="hidden"/>
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+</form>  
+<form method="post" name="befor" target="Befor" action="/borger/befor/BeforOpgoer.do" onsubmit="return false">
+  <input name="funkKod" value="" type="hidden"/>
+  <input name="personNr" value="xxxxxxxxxx" type="hidden"/>
+  <input name="indkaar" value="2011" type="hidden"/>
+</form>  
+<form method="post" name="spec_befor" target="Spec_befor" action="/borger/befor/BeforSpecifikation.do" onsubmit="return false">
+  <input name="funkKod" value="" type="hidden"/>
+  <input name="rubrik51f" value="51.000" type="hidden"/>
+  <input name="personNr" value="xxxxxxxxxx" type="hidden"/>
+  <input name="indkaar" value="2011" type="hidden"/>
+</form> 
+<form method="post" name="regnskab" target="Regnskab" action="/borger/regnskabsoplysning2011/regnskabsoplysning.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+</form>
+<form method="post" name="udlindk" target="Udlindk" action="/borger/udenlandskindkomst2011/indkomst.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+</form>
+<form method="post" name="ejd" target="Ejd" action="/borger/ejendom2011/ejendom.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>  
+  <input name="enr" value="" type="hidden"/>
+  <input name="lbnr" value="" type="hidden"/>
+</form>   
+<form method="post" name="udlejd" target="Udlejd" action="/borger/udenlandskejendom2011/udenlandskejendom_aendre.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+  <input name="enr" value="" type="hidden"/>
+  <input name="lbnr" value="" type="hidden"/>
+</form>  
+<form method="post" name="nyUdlejd" target="NyUdlejd" action="/borger/udenlandskejendom2011/udenlandskejendom_opret.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+</form>  
+<form method="post" name="aktiehenstand" target="Aktiehenstand" action="/Aktiesystem/Overfoer.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+  <input name="vindue" value="J" type="hidden"/>
+  <input name="overfoer" value="J" type="hidden"/>
+  <input name="indkaar" value="2011" type="hidden"/>
+</form>   
+<form method="post" name="spec_aktiehenstand" target="Spec_aktiehenstand" action="/Aktiesystem/Overfoer.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+  <input name="indkaar" value="2011" type="hidden"/>
+</form>    
+<form method="post" name="aktie" target="Aktie" action="/borger/aktie/Opgorelse.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+  <input name="vindue" value="J" type="hidden"/>
+  <input name="overfoer" value="J" type="hidden"/>
+</form>      
+<form method="post" name="genanbringelse" target="Genanbringelse" action="/borger/genanbringelse2011/genanbringelse.do" onsubmit="return false">
+  <input name="pnr" value="xxxxxxxxxx" type="hidden"/>
+</form>
+        </div><!--End .skts-indhold-bred-->
+      </div><!--End #skts-indhold-container-hoejre-->
+      <div class="skts-slut-float"></div>
+     </div><!--End #skts-midter-container-med-brugeroplysninger-->
+    <div id="skts-footer">
+      <address>
+      SKAT: 72 22 18 18
+      </address>
+    </div><!--End #skts-footer-->
+</div><!--End #skts-hoved-container-->
+</div><!--End #skts-body-->
+
+<!-- Her køres javascript som kun må køres når hele siden er loaded. F.eks. skip link javascript til Chrome og Opera.
+Grunden til at dette ikke ligger i onload, er for ikke at lave yderligere restriktioner for brugeren af skabelonerne. -->
+<script type="text/javascript">
+
+    // Skip link til Chrome og Safari
+    if (skts_isWebkit || skts_isOpera) {
+        opsaetSkipLink("skts-skip-til-indhold", "skts-skip-link-target-indhold");
+    }
+    tilfoejCheckAendringerMedIdListe(['skts-venstre-menu-ramme', 'skts-faneblade', 'skts-globalmenu-venstre']);
+    tilfoejCheckAendringerMedKlassenavn('skts-onclick-checkAendringer');
+</script>
+
+</body></html>

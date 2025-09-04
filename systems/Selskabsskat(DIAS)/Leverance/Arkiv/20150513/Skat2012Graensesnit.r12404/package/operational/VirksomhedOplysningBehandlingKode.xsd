@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BehandlingKodeType.xsd"/>
+         
+         <xs:element name="VirksomhedOplysningBehandlingKode" type="skat2012:BehandlingKodeType">
+            <xs:annotation>
+               <xs:documentation>Transient action-kode forændringer af oplysninger på virksomheder i ES.  O = oprettelse af forekomst E = ændring af forekomst S = sletning af forekomst og evt. underliggende forhold  P = ophør af forekomst eller ændring af slutdato + ophør af de underliggende forhold (slutdato opsættes på overforhold)   Generelt når behandlingskoden er S eller P, må der ikke være ændringer med til de tilhørende underforhold, da der automatisk vil blive udført kaskader på alle underforhold.   </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="CRUDFunktionTypeType">
+               <xs:annotation>
+                  <xs:documentation>Angiver en af de fire primære funktionstyper ifm. persistering af data (CRUD).</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:pattern value="C R U D"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

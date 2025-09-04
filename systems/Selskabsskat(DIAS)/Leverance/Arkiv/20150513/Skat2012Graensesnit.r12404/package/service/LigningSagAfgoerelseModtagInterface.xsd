@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Anvendes til at Selskabsskat-systemet kan modtage afgørelser fra SKAT-Ligning og at ændringer derfor må gennemføres.</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/LigningSagAfgoerelseModtag_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagAfgoerelseModtag_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagAfgoerelseModtag_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseOmlaegRegnskabsperiodeStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseSelvangivelseUdsaettelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseSelvangivelseSkatteAnsaettelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseAEndreBeskatningsparagrafStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseAEndreMidlertidigSkattepligtStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseTilmeldSkattepligtForholdStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseEftergivelseSkatteTillaegStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningAfgoerelseAEndreRegnskabValutaStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="LigningSagAfgørelseModtagInterface"
+                     type="skat2012:LigningSagAfgørelseModtagInterfaceType"/>
+         <xs:complexType name="LigningSagAfgørelseModtagInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:LigningSagAfgørelseModtag_I"/>
+               <xs:element ref="skat2012:LigningSagAfgørelseModtag_O"/>
+               <xs:element ref="skat2012:LigningSagAfgørelseModtag_FejlId"/>
+               <xs:element ref="skat2012:LigningAfgørelseOmlægRegnskabsperiodeStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseSelvangivelseUdsættelseStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseSelvangivelseSkatteAnsættelseStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseÆndreBeskatningsparagrafStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseÆndreMidlertidigSkattepligtStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseTilmeldSkattepligtForholdStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseEftergivelseSkatteTillægStruktur"/>
+               <xs:element ref="skat2012:LigningAfgørelseÆndreRegnskabValutaStruktur"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

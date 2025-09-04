@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="http://digitaliser.dk/resource/3166/artefact/DKCC_CountryIdentificationCode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/AlternativKontaktReferenceTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/AlternativKontaktReferenceTekst.xsd"/><xs:element name="AlternativKontaktReferenceStruktur" type="efiws:AlternativKontaktReferenceStrukturType"/>
+	<xs:complexType name="AlternativKontaktReferenceStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:AlternativKontaktReferenceTypeKode"/>
+			<xs:element ref="efi:AlternativKontaktReferenceTekst"/>
+			<xs:element ref="dkcc:CountryIdentificationCode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

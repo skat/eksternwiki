@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../view/SelskabSelvangivelseStrukturType.xsd"/>
+				     
+         <xs:element name="SelskabSelvangivelseSimuler_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:SelskabSelvangivelseSimuler_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="SelskabSelvangivelseSimuler_IType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="SelvangivelseListe">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="skat2012:SelskabSelvangivelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

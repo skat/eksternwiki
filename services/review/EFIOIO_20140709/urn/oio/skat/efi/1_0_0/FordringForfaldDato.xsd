@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringforfalddato="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringForfaldDato" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Tidspunktet hvor en fordring forfalder til betaling. Eksempelvis kan forfaldsdatoen være den 1. i en kalendermåned, mens sidste rettidig betalingsdato kan være 10. i forfaldsmåneden.  Opkrævningsmyndigheden: Vil være den dato, hvor en angivelse kan indgå i kontoens saldo, hvis virksomheden betaler fordringen (f.eks. skatten/afgiften) før SRB.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

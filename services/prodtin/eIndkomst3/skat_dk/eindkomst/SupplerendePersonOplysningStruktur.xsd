@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2006/01/23/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" xmlns:person="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/person/" xmlns:supplerendepersonoplysning="http://rep.oio.dk/skat.dk/eindkomst/class/supplerendepersonoplysning/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/supplerendepersonoplysning/xml/schemas/20071202/" schemaLocation="class/supplerendepersonoplysning/xml/schemas/20071202/SupplerendePersonOplysningFoedselTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2006/01/23/" schemaLocation="../../ebxml/xml/schemas/dkcc/2006/01/23/PersonGenderCode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" schemaLocation="../../itst_dk/xml/schemas/2006/01/17/PersonName.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/person/" schemaLocation="../../oioxml/skat_dk/eIndkomst/person/TINIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AlternativAdresseStruktur.xsd"/>
+         <xs:element name="SupplerendePersonOplysningStruktur" type="fase2:SupplerendePersonOplysningStrukturType"/>
+         <xs:complexType name="SupplerendePersonOplysningStrukturType">
+               <xs:sequence>
+               <xs:element minOccurs="0" ref="person:TINIdentifikator"/>
+               <xs:element ref="itst:PersonName"/>
+               <xs:element minOccurs="0" ref="supplerendepersonoplysning:SupplerendePersonOplysningFoedselTekst"/>
+               <xs:element minOccurs="0" ref="dkcc:PersonGenderCode"/>
+               <xs:element ref="fase2:AlternativAdresseStruktur"/>
+               </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

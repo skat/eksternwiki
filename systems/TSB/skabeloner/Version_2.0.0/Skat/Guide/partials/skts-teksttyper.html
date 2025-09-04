@@ -1,0 +1,101 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Generelt</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a href="" data-ng-click="scrollTo('overskrifter')">Overskrifter</a></li>
+      <li><a href="" data-ng-click="scrollTo('teksttyper')">Teksttyper</a></li>
+      <li><a href="" data-ng-click="scrollTo('tilgaengelighed')">Tilg&aelig;ngelig tekst</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="skts-indhold-guide">
+
+  <h2 id="overskrifter">Overskrifter</h2>
+
+  <h3>Rammeoverskrift</h3>
+  <p class="skts-broedtekst">Denne ramme overskrift bruges f&oslash;r en bruger er logget ind.</p>
+  <div class="bs-docs-example" data-pretty>
+    <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container-foer-login">Overskrift</h1>
+  </div>	
+
+  <h3>Undertitel</h3>
+  <p class="skts-broedtekst">TODO</p>
+  <div class="bs-docs-example" data-pretty>
+    <h2 class="skts-indhold-undertitel">Du skal tjekke de oplysninger, vi bruger til at beregne din skat</h2>
+  </div>	
+
+  <h3>Rammeoverskrift</h3>
+  <p class="skts-broedtekst">Angiver en overskrifts ramme til f.eks. &aring;rsopg&oslash;relsen</p>
+  <div class="bs-docs-example" data-pretty>
+    <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Se &aring;rsopg&oslash;relsen</h1>
+  </div>
+
+  <h3>Underoverskift</h3>
+  <p class="skts-broedtekst">Bruges til at markere overskrifter i blokke i &aring;rsopg&oslash;relsen.</p>
+  <div class="bs-docs-example" data-pretty>
+    <h3 class="skts-layout1-lille-overskrift">Personlig indkomst:</h3>
+  </div>
+  
+  <h3>Overskrift login side</h3>
+  <div class="bs-docs-example" data-pretty>
+    <h2 class="skts-layout1-login-heading">Overskrift login</h2>
+  </div>
+
+  <h3>Sprogspecifik overskrift på login side</h3>
+  <div class="bs-docs-example" data-pretty>
+    <h2 class="skts-layout1-login-heading-english">English</h2>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="teksttyper">Teksttyper</h2>
+
+  <h3>Br&oslash;dtekst</h3>
+  <p class="skts-broedtekst">Bruges til at vise br&oslash;dtekst i den rette st&oslash;rrelse</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-broedtekst">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+
+  <h3>Fremh&aelig;vet skrift</h3>
+  <p class="skts-broedtekst">Viser en Fremh&aelig;vet skrift for penge tilbage i skat</p>
+  <div class="bs-docs-example" data-pretty>
+    <strong class="skts-layout1-overskydende">1.716 kr.</strong>
+  </div>
+  <div class="bs-docs-example" data-pretty>
+    <strong class="skts-layout1-skylder">716 kr.</strong>
+  </div>
+
+  <h3>Lille tekst</h3>
+  <p class="skts-broedtekst">Denne klasse s&aelig;tter teksten til 80% i forhold til det element som det indeholder. F.eks. er <code>&lt;p&gt;</code> elementet 80% af stylesheet skriften, hvis denne klasse indlejres i s&aring; bliver den 80% af <code>&lt;p&gt;</code> elementet, alts&aring; 64% ift. font st&oslash;rrelsen defineret i stylesheetet.</p>
+  <div class="bs-docs-example" data-pretty>
+    <span class="skts-lille-tekst">Eksempel: ”Rubrik 44: Jeg havde glemt at fratr&aelig;kke renteudgifter til nye pantebreve.”<br />
+      Begrundelsen bliver l&aelig;st, hvis vi kontrollerer dine rettelser. Vi sender ikke noget svar.</span>
+    <p class="skts-broedtekst">
+      <span class="skts-lille-tekst">Denne tekst er samme st&oslash;rrelse, men skaleres op da den er indeholdt i skts-broedtekst</span>
+    </p>
+  </div>	
+
+  <h3>Milj&oslash; fremh&aelig;vning</h3>
+  <p class="skts-broedtekst">Fremh&aelig;ver det aktuelle milj&oslash; hvor platformen k&oslash;rer, bruges normalt indenfor logo omr&aring;det.</p>
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-miljoe">
+      <span id="skts-header-miljoe">BRGT</span>&nbsp;<span id="skts-header-versionsnr">ver. 12.3.0.17</span>
+    </div>
+  </div>
+
+  <h2 id="tilgaengelighed">Tilg&aelig;ngelig tekst</h2>
+  <p class="skts-broedtekst">Sk&aelig;rml&aelig;ser tekst, vises kun i sk&aelig;rml&aelig;ser</p>
+  <div class="bs-docs-example" data-pretty>
+    <p class="skts-skaermlaeser-tekst">Skjult tekst, vises kun i sk&aelig;rml&aelig;ser</p>
+  </div>
+
+  <!-- skabelon
+    <h3>Overskrift</h3>
+    <p class="skts-broedtekst">Forklaring<p>
+    <div class="bs-docs-example" data-pretty>
+      Html code
+    </div>
+  -->
+</div>
+

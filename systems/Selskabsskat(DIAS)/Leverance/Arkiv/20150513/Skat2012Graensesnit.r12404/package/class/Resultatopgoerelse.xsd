@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Resultatopgørelsen som indgår i et selskabs årsrapport.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="ResultatopgørelseNettoOmsætning" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets nettoomsætning. Felt 111</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ResultatopgørelseNettoOmsætningUnderHalvMil"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er nettoomsætningen under 500.000 kr.? (gælder for hele sambeskatningskredsen). (True = ja, False = nej) Felt 099</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ResultatopgørelseVareForbrug" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets vareforbrug. Felt 112</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ResultatopgørelseRegnskabsmæssigeAfskrivninger" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets regnskabsmæssige afskrivninger. Felt 113</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ResultatopgørelseOrdinærtResultat" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets ordinære resultat før financiering og ekstraordinære poster. Felt 115</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ResultatopgørelseResultatFørSkat" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsmæssigt resultat før skat Felt 319</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ResultatopgørelseSkatter" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets skatter i regnskabsåret. (skatteudgift anføres som positivt beløb, skatteindtægt anføres som negativt beløb). Felt 117</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

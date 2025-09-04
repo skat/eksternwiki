@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:emcs="urn:oio:skat:emcs:1.0.1" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247432/artefact/SKAT_HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/571418/artefact/IE917BeskedTekst.xsd"/><xs:element name="OIOLedsageDokumentNotifikationOpret_O" type="struct:OIOLedsageDokumentNotifikationOpret_OType">
+	</xs:element>
+	<xs:complexType name="OIOLedsageDokumentNotifikationOpret_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element ref="emcs:IE917BeskedTekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

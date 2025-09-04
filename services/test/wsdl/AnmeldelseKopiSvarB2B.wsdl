@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="AnmeldelseKopiSvarServiceDefinitions" targetNamespace="http://service" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ed="http://rep.oio.dk/tinglysning.dk/documentation" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sanmmsg="http://rep.oio.dk/tinglysning.dk/svarservice/message/anmeldelse/1/" xmlns:sintifc="http://rep.oio.dk/tinglysning.dk/svarservice/interface/integration/1/" xmlns:sintmsg="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="Status" type="sintmsg:StatusType">
+        <xsd:annotation>
+          <xsd:documentation>Indikerer at operationen er udført af service provideren med succes.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:simpleType name="StatusType">
+        <xsd:restriction base="string">
+          <xsd:enumeration value="modtaget"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Sekvensnummer" type="sintmsg:SekvensnummerType"/>
+      <xsd:simpleType name="SekvensnummerType">
+        <xsd:restriction base="nonNegativeInteger"/>
+      </xsd:simpleType>
+      <xsd:element name="Modtagerfejl" type="sintmsg:ModtagerfejlType"/>
+      <xsd:complexType name="ModtagerfejlType">
+        <xsd:sequence>
+          <xsd:element name="Fejlkode" type="nonNegativeInteger"/>
+          <xsd:element name="Fejlbeskrivelse" type="string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:ed="http://rep.oio.dk/tinglysning.dk/documentation" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sanmmsg="http://rep.oio.dk/tinglysning.dk/svarservice/message/anmeldelse/1/" xmlns:sintifc="http://rep.oio.dk/tinglysning.dk/svarservice/interface/integration/1/" xmlns:sintmsg="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			
+			
+		</xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/tinglysning.dk/svarservice/message/anmeldelse/1/" version="1.60.4" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:anm="http://rep.oio.dk/tinglysning.dk/schema/anmeldelse/1/" xmlns:ed="http://rep.oio.dk/tinglysning.dk/documentation" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:model="http://rep.oio.dk/tinglysning.dk/schema/model/1/" xmlns:msgadm="http://rep.oio.dk/tinglysning.dk/service/message/administration/1/" xmlns:msgext="http://rep.oio.dk/tinglysning.dk/svarservice/message/anmeldelse/1/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sanmmsg="http://rep.oio.dk/tinglysning.dk/svarservice/message/anmeldelse/1/" xmlns:sintifc="http://rep.oio.dk/tinglysning.dk/svarservice/interface/integration/1/" xmlns:sintmsg="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="AnmeldelseSvarModtag" type="msgext:AnmeldelseSvarModtagType">
+        <xsd:annotation>
+          <xsd:documentation>
+       Sendes som endelig kvittering for tinglysningen. Implicerer status 'afsluttet' for sagen.
+       </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:complexType name="AnmeldelseSvarModtagType">
+        <xsd:sequence>
+          <xsd:any namespace="##any" processContents="skip"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://service" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anmeldelseSvarModtag">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns:AnmeldelseSvarModtag" xmlns:ns="http://rep.oio.dk/tinglysning.dk/svarservice/message/anmeldelse/1/"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="anmeldelseSvarModtagResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns:Status" xmlns:ns="http://rep.oio.dk/tinglysning.dk/svarservice/message/integration/1/"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s0:types>
+  <s0:message name="anmeldelseSvarModtag">
+    <s0:part element="s1:anmeldelseSvarModtag" name="parameters"/>
+    <s0:part element="s2:Sekvensnummer" name="sekvensnummerheader_arg"/>
+  </s0:message>
+  <s0:message name="anmeldelseSvarModtagResponse">
+    <s0:part element="s1:anmeldelseSvarModtagResponse" name="parameters"/>
+  </s0:message>
+  <s0:portType name="AnmeldelseKopiSvar">
+    <s0:operation name="anmeldelseSvarModtag" parameterOrder="parameters sekvensnummerheader_arg">
+      <s0:input message="s1:anmeldelseSvarModtag"/>
+      <s0:output message="s1:anmeldelseSvarModtagResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="AnmeldelseKopiSvarServiceSoapBinding" type="s1:AnmeldelseKopiSvar">
+    <s3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="anmeldelseSvarModtag">
+      <s3:operation soapAction="" style="document"/>
+      <s0:input>
+        <s3:body parts="parameters" use="literal"/>
+        <s3:header message="s1:anmeldelseSvarModtag" part="sekvensnummerheader_arg" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body parts="parameters" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="AnmeldelseKopiSvarService">
+    <s0:port binding="s1:AnmeldelseKopiSvarServiceSoapBinding" name="AnmeldelseKopiSvarSoapPort">
+      <s3:address location="https://194.239.239.106:443/eTl/eTlAnmeldelseKopiSvar/AnmeldelseKopiSvar"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

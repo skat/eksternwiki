@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>	
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+			</ul>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html" class="skts-selected">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a href="forskud_ret.html" >Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="javascript:void(0);">Hjælp<span class="skts-tooltip"> Åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<div style="width: 1px;">
+				<!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+				<a id="skts-skip-link-target-indhold" class="skts-link-target-hide" href="#skts-skip-link-target-indhold" tabindex="-1">Start af indhold</a>
+			</div>
+			<div class="skts-grid-fixed-height skts-grid-pad-front">
+				<h1>Velkommen VUR-test-05</h1>
+				<div class="skts-userInfo">	
+					<p class="skts-small-text">Du har oplyst e-mail-adressen <strong>test@gmail.dk</strong> (<a target="_blank" class="skts-tooltip-holder skts-link-enhance" href="sider_ikke_med_i_flow/CSC_ret_kontakt.html">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)<br/></p>
+				</div>
+				<div class="skts-print-only"><p>VUR-test-05, cpr-nummer 010389-7750</p></div>
+				<div id="skts-css-table" class="skts-col-1">
+					<div class="skts-t-col">
+						<div class="skts-module-header">
+							<h2><a  class="skts-tooltip-holder"  href="javascript:void(0);" onclick="document.fAarsopgrammetop.submit();return false;">Årsopgørelse<span class="skts-tooltip"> Gå til årsopgørelse</span></a></h2>
+							<p>Din skat for 2014 og tidligere år</p>
+						</div>	
+						<ul class="skts-link-list">
+							<li><a class="skts-icon-right-open-big" href="javascript:void(0);" onclick="document.fAarsopg.submit();return false;">Se årsopgørelsen for 2014</a></li>
+							<li><a class="skts-icon-right-open-big" href="javascript:void(0);" onclick="document.fSelvang.submit();return false;">Ret årsopgørelsen for 2014</a></li>
+							<li><a class="skts-icon-right-open-big" href="javascript:void(0);" onclick="document.fBetalingsopl.submit();return false;">Betal restskat</a></li>
+							<!--
+								<li><a class="skts-icon-right-open-big" href="javascript:void(0);" onclick="document.fIndberetServicefradrag.submit();return false;">Indberet servicefradrag (håndværkerfradrag)</a></li>
+							-->
+						</ul>
+						
+					</div>
+					<div class="skts-t-col skts-spacing-col"><br/></div>
+					<div class="skts-t-col">
+						<div class="skts-module-header">
+							<h2><a class="skts-tooltip-holder" href="forskud_ret.html">Forskudsopgørelse (skattekort)<span class="skts-tooltip"> Gå til Forskudsopgørelse</span></a></h2>
+							<p>Den skat, du betaler i løbet af 2015</p>
+						</div>	
+						<ul class="skts-link-list">
+							<li><a class="skts-icon-right-open-big" href="forskud_ret.html">Forskudsopgørelsen for 2015</a></li>
+							<li><a class="skts-icon-right-open-big" href="javascript:void(0);" onclick="document.fEindkomst.submit();return false;">Søg i indkomstoplysninger</a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>        
+    </body>
+</html>

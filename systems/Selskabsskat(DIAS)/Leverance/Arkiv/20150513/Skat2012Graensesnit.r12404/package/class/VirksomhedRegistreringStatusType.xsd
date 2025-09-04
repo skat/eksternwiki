@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:element name="VirksomhedRegistreringStatusTypeKode"
+                     type="skat2012:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>01 - Nyregistreret 02 - Nyreg.-overtagelse af virksomhed 03 - Genstart 04 - Genstart-overtagelse af virksomhed 05 - Omdannelse 09 - Tvangsregistreret 10 - Dobbelt registreret 11 - Nyregistrering mod sikkerhedsstillelse 12 - Udl. virk uden herboende repr/driftssted 13 - Udenlandsk virksomhed med dansk ledelse </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedRegistreringStatusTypeTekst" type="skat2012:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>01 - Nyregistreret 02 - Nyreg.-overtagelse af virksomhed 03 - Genstart 04 - Genstart-overtagelse af virksomhed 05 - Omdannelse 09 - Tvangsregistreret 10 - Dobbelt registreret 11 - Nyregistrering mod sikkerhedsstillelse 12 - Udl. virk uden herboende repr/driftssted 13 - Udenlandsk virksomhed med dansk ledelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

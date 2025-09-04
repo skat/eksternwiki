@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="HensættelseBenyttelseOpgørelseIkkeAnvendtTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af tidligere års hensættelser der ikke er anvendt/efterbeskattet (primo minus årets anvendelse)  (Rubrik 32, Felt 211 på Selvangivelse for fonde + visse foreninger)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HensættelseBenyttelseOpgørelseIkkeAnvendtEfterbeskatningTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Efterbeskatning af ubenyttede hensættelser, efer fondbeskatningsloven §4 st 6 før rentetillæg. Rubrik 35 Felt 217</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HensættelseBenyttelseOpgørelseAlmenVelgørendeTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af hensættelser benyttet til almenvelgørende/almennyttige formål i indkomståret.  (Rubrik 33 - Felt 213 i Selvangivelse for fonde + visse foreninger)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HensættelseBenyttelseOpgørelseAndreFormålTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af hensættelser benyttet til andre formål i indkomståret, som skal efterbeskattes  (Rubrik 34 - Felt 215 i Selvangivelse for fonde + visse foreninger)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HensættelseBenyttelseOpgørelseUltimoSaldo" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ultimosaldo af hensættelser foretaget, mens fonden/foreningen var beskattet efter selskabsskattelovens § 1, stk. 1, nr. 6 Felt 218</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

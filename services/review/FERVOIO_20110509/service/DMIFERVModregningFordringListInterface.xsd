@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>FødevareErhverv kalder denne service for at få listet fordringer for en kunde, hvor der må foretages modregning i DMI. Gælder kun fordringsarterne inddrivelse og modregning. Der spørges kun når FERV har en transport i den aktuelle udbetaling til kunden.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/DMIFERVModregningFordringList_IType.xsd"/>
+	<xs:include schemaLocation="../view/DMIFERVModregningFordringList_OType.xsd"/>
+	<xs:element name="DMIFERVModregningFordringListInterface" type="dmiws:DMIFERVModregningFordringListInterfaceType"/>
+	<xs:complexType name="DMIFERVModregningFordringListInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmiws:DMIFERVModregningFordringList_I"/>
+			<xs:element ref="dmiws:DMIFERVModregningFordringList_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

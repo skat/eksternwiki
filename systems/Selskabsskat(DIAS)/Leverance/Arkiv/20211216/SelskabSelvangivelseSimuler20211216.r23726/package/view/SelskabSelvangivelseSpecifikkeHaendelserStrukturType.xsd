@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SelskabHaendelse.xsd"/>
+         <xs:element name="SelskabSelvangivelseSpecifikkeHændelserStruktur"
+                     type="skat2012:SelskabSelvangivelseSpecifikkeHændelserStrukturType"/>
+         <xs:complexType name="SelskabSelvangivelseSpecifikkeHændelserStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:SelskabHændelseSkattefriAktieombyt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOmstruktureringUdenTilladelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOmstrukturering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseHandletVirksomhed" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseKøbtImmaterielleAktiver" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseImmaterielleAktiverKøbt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseImmaterielleAktiverKøbtInternt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseSolgtImmaterielleAktiver" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseImmaterielleAktiverSolgt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseImmaterielleAktiverSolgtInternt" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseImmatrielleAktiverKøbSalg" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseGenanbringelseEjendom" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseTvangAkkordDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseGældEftergivelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseEftergivetGæld" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseFrivilligAkkordDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseFrivilligAkkord" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseKreditorGældKonverteringDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseKreditorKonverteretGæld" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseGældNedbringelsePgf12CDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelsePgf12CNedbragtGæld" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOverHalvEjerkredsÆndringDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseEjerkredsUdenRisikoErhverv" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseEjerkredsPositivNettoKapitalIndtægterMedTillæg"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOmstruktureringUdenRisikoErhverv" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOmstruktureringMellemperiodeUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOmstruktureringPositivNettoKapitalIndtægterMedTillæg"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseBortseFremførselUnderskudPgf33HBeløb"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseBortseFremførselUnderskudPgf33HPositivLempelseIndkomst"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseSkattepligtigFusionMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningMarkering"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseHovedaktionærAktierSalg" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseInvestorFradragLov" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseInvestorFradragIndberetning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseIndskudAktierInvestorfradragFond" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOmsætningPassivKapital" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseEndeligUnderskudUdlandMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseEndeligUnderskudUdlandBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseDriftmiddelafskrivning5D" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseDriftmiddelafskrivning5DBeløb" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="SkattefriTilEjIntSambeskatningListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="SkattefriTilEjIntSambeskatning" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningUdenlandskVirksomhedNummer"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningOmstruktureringDato"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilEjIntSambeskatningIndsatProcentandelOverført"
+                                             minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+
+               <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilNonSambeskattetMarkering"
+                           minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="SkattefriTilNonSambeskattetListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="SkattefriTilNonSambeskattet" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilNonSambeskattetVirksomhedSENummer"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilNonSambeskattetOmstrukteringDato"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SelskabHændelseIndskyderSkattefriTilNonSambeskattetProcentandelOverført"
+                                             minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

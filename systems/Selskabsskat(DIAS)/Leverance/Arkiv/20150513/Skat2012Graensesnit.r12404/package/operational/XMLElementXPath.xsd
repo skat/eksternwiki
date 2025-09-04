@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/XPathType.xsd"/>
+         
+         <xs:element name="XMLElementXPath" type="skat2012:XPathType">
+            <xs:annotation>
+               <xs:documentation>XPath-udtryk, som udpeger en eller flere noder.  I overførsler til datawarehouse anvendes udtrykket til at udpege relevante elementer i den medfølgende datafil. </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

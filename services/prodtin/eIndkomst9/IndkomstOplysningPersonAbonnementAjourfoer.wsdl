@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="IndkomstOplysningPersonAbonnementAjourfoerService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r18357</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+               <xsd:include schemaLocation="skat_dk/eindkomst/IndkomstOplysningPersonAbonnementAjourfoerInterface.xsd"/>
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="IndkomstOplysningPersonAbonnementAjourfoerServiceRequest">
+            <wsdl:part element="fase2:IndkomstOplysningPersonAbonnementAjourfoer_I" name="Request"/>
+         </wsdl:message>
+         <wsdl:message name="IndkomstOplysningPersonAbonnementAjourfoerServiceResponse">
+            <wsdl:part element="fase2:IndkomstOplysningPersonAbonnementAjourfoer_O" name="Response"/>
+         </wsdl:message>
+         <wsdl:portType name="IndkomstOplysningPersonAbonnementAjourfoerServicePortType">
+            <wsdl:operation name="getIndkomstOplysningPersonAbonnementAjourfoer">
+               <wsdl:input message="fase2:IndkomstOplysningPersonAbonnementAjourfoerServiceRequest"/>
+               <wsdl:output message="fase2:IndkomstOplysningPersonAbonnementAjourfoerServiceResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         <wsdl:binding name="IndkomstOplysningPersonAbonnementAjourfoerServiceBinding" type="fase2:IndkomstOplysningPersonAbonnementAjourfoerServicePortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsdl:operation name="getIndkomstOplysningPersonAbonnementAjourfoer">
+<soap:operation soapAction="getIndkomstOplysningPersonAbonnementAjourfoer" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsdl:input>
+<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="IndkomstOplysningPersonAbonnementAjourfoerServiceBindingQSService">
+		<wsdl:port name="IndkomstOplysningPersonAbonnementAjourfoerServiceBindingQSPort" binding="fase2:IndkomstOplysningPersonAbonnementAjourfoerServiceBinding">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/IndkomstOplysningPersonAbonnementAjourfoerV2ServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

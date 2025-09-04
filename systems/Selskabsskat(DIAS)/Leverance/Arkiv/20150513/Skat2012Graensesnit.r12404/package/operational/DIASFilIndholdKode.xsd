@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst15Type.xsd"/>
+         
+         <xs:element name="DIASFilIndholdKode" type="skat2012:Tekst15Type">
+            <xs:annotation>
+               <xs:documentation>Kode som angiver hvad filens indhold drejer sig om. (Koderne er angivet i Bilag 03.04.03.22)  BESTYRELSE ERKLTILLAD FLGBREV FUNDATS INDKMV INDKTRANS KONCERNSTRUK KULBRSÆRBL LEMPELSEUDL MEDLEMLST OMLINDKÅR PALREVISOR SKATTEANS SSLPGF5B TONNREVERK VEDTÆGTER XSKATTEANS ÅRSRAPP ÅRSRAPTRANS ØVRREGNSKAB</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

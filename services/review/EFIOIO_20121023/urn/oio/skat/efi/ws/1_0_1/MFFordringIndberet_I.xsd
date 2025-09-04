@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringLeveranceIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringAktionKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverIdentifikator.xsd"/><xs:include schemaLocation="FordringhaverSystemIDStruktur.xsd"/>
+	<xs:include schemaLocation="MFOpretFordringStruktur.xsd"/>
+	<xs:include schemaLocation="MFOpretTransportStruktur.xsd"/>
+	<xs:include schemaLocation="MFAendrFordringStruktur.xsd"/>
+	<xs:include schemaLocation="MFAendrTransportStruktur.xsd"/>
+	<xs:include schemaLocation="MFNedskrivFordringStruktur.xsd"/>
+	<xs:include schemaLocation="MFOpskrivFordringStruktur.xsd"/>
+	<xs:include schemaLocation="MFTilbagekaldFordringStruktur.xsd"/>
+	<xs:element name="MFFordringIndberet_I" type="efiws:MFFordringIndberet_IType">
+	</xs:element>
+	<xs:complexType name="MFFordringIndberet_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="efiws:FordringhaverSystemIDStruktur"/>
+			<xs:element ref="efi:ModtagFordringLeveranceIdentifikator"/>
+			<xs:element name="FordringAktionSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FordringAktion" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efi:ModtagFordringAktionKode"/>
+									<xs:element ref="efi:FordringHaverIdentifikator"/>
+									<xs:element name="AktionValg">
+										<xs:complexType>
+											<xs:choice>
+												<xs:sequence>
+													<xs:element name="OpretFordringAktion">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="efiws:MFOpretFordringStruktur"/>
+																<xs:element name="OpretUnderfordringSamling">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="efiws:MFOpretFordringStruktur" minOccurs="0" maxOccurs="unbounded"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:element ref="efiws:MFOpretTransportStruktur"/>
+												<xs:element ref="efiws:MFAendrFordringStruktur"/>
+												<xs:element ref="efiws:MFAendrTransportStruktur"/>
+												<xs:element ref="efiws:MFNedskrivFordringStruktur"/>
+												<xs:element ref="efiws:MFOpskrivFordringStruktur"/>
+												<xs:element ref="efiws:MFTilbagekaldFordringStruktur"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

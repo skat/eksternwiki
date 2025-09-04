@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r4325</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../../../../urn/oio/skat/efi/1_0_0/HovedFordringReturDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../../../../urn/oio/skat/efi/1_0_0/FordringVirkningFraDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../../../../urn/oio/skat/efi/1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="../../../../../../urn/oio/skat/efi/ws/1_0_1/HovedFordringReturnerAarsagStruktur.xsd"/>
+	<xs:element name="MFUnderretReturnerStruktur" type="efiws:MFUnderretReturnerStrukturType"/>
+	<xs:complexType name="MFUnderretReturnerStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+			<xs:element ref="efiws:HovedFordringReturnerAarsagStruktur"/>
+			<xs:element ref="efi:HovedFordringReturDato"/>
+			<xs:element ref="efi:FordringVirkningFraDato"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

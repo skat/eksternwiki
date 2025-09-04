@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>At oprette en kunde hos et kreditoplysningsbureau.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="KreditoplysningBureauDebitorOpret_I.xsd"/>
+	<xs:include schemaLocation="KreditoplysningBureauDebitorOpret_O.xsd"/>
+	<xs:element name="KreditoplysningBureauDebitorOpretInterface" type="kobws:KreditoplysningBureauDebitorOpretInterfaceType"/>
+	<xs:complexType name="KreditoplysningBureauDebitorOpretInterfaceType">
+		<xs:choice>
+			<xs:element ref="kobws:KreditoplysningBureauDebitorOpret_I"/>
+			<xs:element ref="kobws:KreditoplysningBureauDebitorOpret_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

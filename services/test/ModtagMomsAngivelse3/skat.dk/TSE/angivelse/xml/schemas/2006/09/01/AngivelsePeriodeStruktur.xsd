@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" version="1.0">
+<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="../../../../../../../../group/rep_oio_dk_xkom_dk_xml_schemas_2006_09_01.xsd"/>
+<xs:element name="AngivelsePeriodeStruktur" type="xkom:TimeRangeStructureType">
+<xs:annotation>
+<xs:documentation>Periode der angives for. Perioden afhænger af virksomhedens registrering hos SKAT og vil fremgå af det registreringsbevis som virksomheden modtager.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:schema>

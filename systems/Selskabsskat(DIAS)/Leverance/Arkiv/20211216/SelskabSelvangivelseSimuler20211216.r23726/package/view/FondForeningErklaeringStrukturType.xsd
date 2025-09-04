@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/FondForeningErklaering.xsd"/>
+         <xs:element name="FondForeningErklæringStruktur"
+                     type="skat2012:FondForeningErklæringStrukturType"/>
+         <xs:complexType name="FondForeningErklæringStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:FondForeningErklæringForeningMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringFondMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringBegrundelseKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringSELForeningIndkomst" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringSELForeningIndkomstEkstraordinær"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringSELForeningMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringFBLIndkomstBeløbHøj" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringFBLIndkomstBeløbLav" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FondForeningErklæringFBLIndkomstMarkering" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

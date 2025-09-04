@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:indkomstoplysningadgangmedarbejderidentifikator="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangmedarbejderidentifikator/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangmedarbejderidentifikator/xml/schemas/20071202/" schemaLocation="class/indkomstoplysningadgangmedarbejderidentifikator/xml/schemas/20071202/IndkomstOplysningAdgangMedarbejderIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AbonnentVirksomhedStruktur.xsd"/>
+         <xs:element name="AbonnentStruktur" type="fase2:AbonnentStrukturType"/>
+         <xs:complexType name="AbonnentStrukturType">
+            <xs:sequence>
+                  <xs:element ref="fase2:AbonnentVirksomhedStruktur"/>
+                  <xs:element minOccurs="0" ref="indkomstoplysningadgangmedarbejderidentifikator:IndkomstOplysningAdgangMedarbejderIdentifikator"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:spilws="urn:oio:skat:spil:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:spil:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:spil="urn:oio:skat:spil:1.0.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" xmlns:angivelse1="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:ntse="urn:oio:skat:ntse:1.0.0" xmlns:tse="urn:oio:skat:tse:1.0.1" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:tse:1.0.1" schemaLocation="../../../tse/1_0_1/IndberetterSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="../../../ntse/1_0_0/ValutaKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/TSE/angivelse/xml/schemas/2006/09/01/AngivelseKvitteringIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/TSE/angivelse/xml/schemas/2006/09/01/AngivelseDatoTid.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/angivelse/xml/schemas/20071202/AngivelseValgtIndberetningFormKode.xsd"/><xs:import namespace="urn:oio:skat:spil:1.0.0" schemaLocation="../../1_0_0/SpillestedTilladelseIdentifikator.xsd"/><xs:include schemaLocation="IndberetterVirksomhedSENummer.xsd"/>
+	<xs:include schemaLocation="AngiverVirksomhedCVRNummer.xsd"/>
+	<xs:include schemaLocation="AngivelseValgtPeriode.xsd"/>
+	<xs:include schemaLocation="SpilTivoliSpecifikation.xsd"/>
+	<xs:include schemaLocation="SpilRestaurationSpecifikation.xsd"/>
+	<xs:include schemaLocation="SpilSpillehalSpecifikationOgUdlodninger.xsd"/>
+	<xs:element name="SpecifikationSpilAngivelseMultiOpret_I" type="spilws:SpecifikationSpilAngivelseMultiOpret_IType">
+	</xs:element>
+	<xs:complexType name="SpecifikationSpilAngivelseMultiOpret_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="tse:IndberetterSEnummerIdentifikator"/>
+			<xs:element ref="angivelse:AngivelseValgtIndberetningFormKode"/>
+			<xs:element name="SpecifikationMultiListeInddata">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SpecifikationMultiEnhedInddata" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="spilws:AngiverVirksomhedCVRNummer"/>
+									<xs:element ref="angivelse1:AngivelseDatoTid"/>
+									<xs:element ref="angivelse1:AngivelseKvitteringIdentifikator"/>
+									<xs:element ref="spilws:AngivelseValgtPeriode"/>
+									<xs:element ref="ntse:ValutaKode"/>
+									<xs:element name="SpecifikationSpilAngivelseInddataListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="SpecifikationSpilAngivelseInddata" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="spil:SpillestedTilladelseIdentifikator"/>
+															<xs:element name="SpecifikationstypeInddata">
+																<xs:complexType>
+																	<xs:choice>
+																		<xs:element ref="spilws:SpilTivoliSpecifikation"/>
+																		<xs:element ref="spilws:SpilRestaurationSpecifikation"/>
+																		<xs:element ref="spilws:SpilSpillehalSpecifikationOgUdlodninger"/>
+																	</xs:choice>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Formålet med servicen er at hente oplysninger om alle de telefonnumre en udenlandsk person er eller har været registreret med i Erhvervssystemet, så man kan se et historisk forløb.   </xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/UdenlandskPersonTelefonHistorikHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskPersonTelefonHistorikHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskPersonTelefonHistorikHent_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="UdenlandskPersonTelefonHistorikHentInterface"
+                     type="skat2012:UdenlandskPersonTelefonHistorikHentInterfaceType"/>
+         <xs:complexType name="UdenlandskPersonTelefonHistorikHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:UdenlandskPersonTelefonHistorikHent_I"/>
+               <xs:element ref="skat2012:UdenlandskPersonTelefonHistorikHent_O"/>
+               <xs:element ref="skat2012:UdenlandskPersonTelefonHistorikHent_FejlId"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

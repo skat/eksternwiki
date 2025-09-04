@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Fortæller hvordan et selskabs aktiekapital er sammensat.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebPositiv10UdenDecimalerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:element name="AktieAndelBeløb" type="skat2012:BeløbPositiv10UdenDecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver aktieandelens beløb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktieAndelGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdatoen for aktieandel (år md dg)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktieAndelGyldigTil" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdatoen for aktieandel (år md dg)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktieAndelProcent" type="skat2012:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver aktieandelen i procent.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

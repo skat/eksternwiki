@@ -1,0 +1,165 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">Introduktion</h1>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a data-ng-click="scrollTo('omguiden')" href="">Om guiden</a></li>
+      <li><a data-ng-click="scrollTo('retningslinjer')" href="">Retningslinjer</a></li>
+      <li><a data-ng-click="scrollTo('html-version')" href="">Html version</a></li>
+      <li><a data-ng-click="scrollTo('principperresponse')" href="">Principper for responsivt design</a></li>
+      <li><a data-ng-click="scrollTo('html5-features')" href="">Brug af Html5 features</a></li>
+      <li><a data-ng-click="scrollTo('andre-features')" href="">Brug af andre features</a></li>
+      <li><a data-ng-click="scrollTo('html-reset')" href="">Reset</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="skts-indhold-guide">
+  <h1 id="omguiden">Om guiden</h1>
+
+  <p class="skts-broedtekst">Denne guide er tilt&aelig;nkt udviklere der st&aring;r overfor at skulle udvikle eller opdatere l&oslash;sninger, der er integreret i Skat TastSelv.</p>
+  <p class="skts-broedtekst">Guiden behandler b&aring;de de overordnede designprincipper men ogs&aring; formatteringen af enkelte HTML-elementer.</p>
+  <p class="skts-broedtekst">Form&aring;let med guiden er at sikre en ensartet brugeroplevelse p&aring; skat.dk og is&aelig;r TastSelv. Guiden har dog ligeldes det vigtige form&aring;l at sikre, at siderne kan vises tilfredstillende p&aring; alle sk&aelig;rmst&oslash;rrelser, herunder ogs&aring; smartphones og tablets via nogle responsive design principper.</p>
+  <h2>Hj&aelig;lp til guiden</h2>
+
+  <p class="skts-broedtekst">I guidens tekster formatteres teknisk indhold, hovedsageligt CSS-klassenavne og HTML-tags s&aring;ledes: <code>css-klassenavn.</code></p>
+
+  <p class="skts-broedtekst">L&aelig;ngere kodestumper vil v&aelig;re formatterede i blokke:</p>
+  <div data-pretty class="bs-docs-example">
+    <p class="skts-broedtekst">
+      Penge tilbage: <span class="skts-layout1-overskydende">1000</span>
+    </p>
+  </div>
+
+  <p class="skts-broedtekst">Guiden bruger TastSelvMain.css som stylesheet og alle &aelig;ndringer til dette stylesheet reflekteres direkte i denne guide.</p>
+
+  <h2>Tilpasninger</h2>
+  <p class="skts-broedtekst">Det er ikke tilladt at &aelig;ndre p&aring; det grundl&aelig;ggede layout og typografier, som de er angivet i guiden. </p>
+  <p class="skts-broedtekst">Eventuelle tilpasninger kan tilf&oslash;jes i tilf&aelig;lde, hvor der &oslash;nskes funktionalitet, som ikke er underst&oslash;ttet af guiden. Tilpasninger skal visuelt have samme look and feel, som de &oslash;vrige elementer.</p>
+  <p class="skts-broedtekst">Tilpasninger skal laves i et separat stylesheet.</p>
+
+  <h3>Browser underst&oslash;ttelse for brug af denne guide</h3>
+  <p class="skts-broedtekst">Denne guide underst&oslash;tter de fleste moderne browsere, dvs. IE9+, Firefox20+, Chrome20+.</p> 
+  <p class="skts-broedtekst">Specielt for Chrome: Hvis guiden ikke hostes p&aring; en decideret webserver men k&oslash;res direkte fra en local maskine skal man starte browseren s&aring;ledes: <code>chrome.exe –allow-file-access-from-files</code></p>
+
+  <hr class="skts-hr" />
+
+  <h1 id="retningslinjer">Retningslinjer</h1>
+
+  <h2>Validt og velformet HTML</h2>
+  <p class="skts-broedtekst">HTML-kode skal v&aelig;re valid html og v&aelig;re velformet og semantisk korrekt.</p>
+  <p class="skts-broedtekst">I det omfang det er muligt og giver mening er det dog tilladt at berige integrationer med Javascript, s&aring; l&aelig;nge det ikke indvirker negativt p&aring; brugeroplevelsen og guidens &oslash;vrige principper.</p>
+  <p class="skts-broedtekst">JQuery indeholder en r&aelig;kke komponenter og javascriptbibliotekter, der er kompartible out of the box, hvorfor det er hensigtsm&aelig;ssigt at tage udgangspunkt i disse.</p>
+  <p class="skts-broedtekst">Javascript skal inkluderes i eksterne filer, og inkluderes i bunden af HTML siden.</p>
+
+  <h2>Tilg&aelig;ngelighed</h2>
+  <p class="skts-broedtekst">L&oslash;sninger skal overholde principperne for WCAG 2.0 level AA.</p>
+
+  <h2 id="browser-underst">Browser underst&oslash;ttelse</h2>
+  <p class="skts-broedtekst">Underst&oslash;ttelse af browsere findes under <a href="http://85.81.229.78/systems/TSB/GDG/">GDG</a> dokumentet</p>
+  <p class="skts-broedtekst">Guiden indeholder i vid udstr&aelig;kning elementer fra HTML5 og CSS3, der ikke er fuldt underst&oslash;ttede i alle browsere. Det er tilladt at benytte s&aring;danne elementer progressivt, s&aring; l&aelig;nge de ikke er n&oslash;dvendige for funktioner eller &oslash;del&aelig;gger look and feel.</p>
+
+  <hr class="skts-hr" />
+
+  <h2 id="html-version">HTML Version</h2>
+  <p class="skts-broedtekst">Denne version af guiden bruger HTML5 specifikationen. For at bruge denne specifikation skal html elementet udfyldes s&aring;ledes:</p>
+  <pre class="prettyprint">
+&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&nbsp;lang=&quot;da&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/html&gt;</pre>
+
+  <hr class="skts-hr" />
+
+  <h2 id="principperresponse">Principper for responsivt design</h2>
+
+  <p class="skts-broedtekst">For alle st&oslash;rrelser der angives i stylesheets skal dette angives med <code>em</code> eller ved procent</p>
+  <p class="skts-broedtekst">Der skal s&aring;vidt muligt bruges simpel markup, med prim&aelig;r brug af allerede underst&oslash;ttede html elementer. Div og span tags skal s&aring;vidt muligt undg&aring;s og skal kun bruges til layout form&aring;l (positionering p&aring; siden og/eller i forhold til andre elemeneter p&aring; siden). Hvis der bruges div tags skal disse s&aring; vidt muligt undg&aring;s at indlejres i hinanden.</p>
+  <p class="skts-broedtekst">Der m&aring; ikke bruges inline styling eller javascript, alt styling og javascript skal angives i eksterne css og js filer.</p>
+
+  <div class="skts-broedtekst">
+    Brug:
+    <ul>
+      <li>HTML5 doctype &amp; guidelines</li>
+      <li>Et reset stylesheet (fx: normalize.css)</li>
+      <li>Et simpelt og semantisk kernelayout</li>
+      <li>Simple teknikker til kritiske elementer (s&aring;som navigation og menuer) </li>
+    </ul>
+    Ingen:
+    <ul>
+      <li>Un&oslash;dvendigt indviklede div’er</li>
+      <li>Inline stylesheets</li>
+      <li>Kritisk vigtig JS eller Flash uden fallback</li>
+      <li>Redundant eller ikke 100% n&oslash;dvendig kode</li>
+    </ul>
+  </div>
+  <p class="skts-broedtekst">Tables skal kun bruges til tabul&aelig;r data og m&aring; ikke bruges til at positionere elementer p&aring; siden.</p>
+  <hr class="skts-hr" />
+
+  <h2 id="html5-features">Brug af HTML5 features</h2>
+  <h3>css background-image</h3>
+  <p class="skts-broedtekst">CSS3 background-image optioner inholder background-clip, background-origin og background-size. Disse kan bruges, dog skal der for IE8, hvor disse egenskaber ikke er supporterede bruges en fallback farve da den ikke kan fortolke dem.</p>
+  <h3>css border-radius</h3>
+  <p class="skts-broedtekst">
+    Denne CSS egenskab kan for det meste bruges af alle browsere uden et prefix. Hvis ikke det underst&oslash;ttes af en browser vil den rendere kantede hj&oslash;rner. Note: ved brug p&aring; st&oslash;rre elementer kan der opleves en degradering af performance
+  </p>
+  <h3>box-sizing</h3>
+  <p class="skts-broedtekst">Er underst&oslash;ttet af de fleste browsere, med foranstillede fallbacks: <code>-moz-box-sizing: border-box;</code> for Firefox. IE8 underst&oslash;tter ikke <code>box-sizing: border-box;</code> med <code>min-width/max-width</code> og <code>min-height/max-height</code>.
+  </p>
+  <h3>dataset</h3>
+  <p class="skts-broedtekst">data-* attributter kan bruges i alle browsere, i &aelig;ldre browsere kan man bruge <code>elem.getAttribute('data-blabla')</code> istedet for <code>elem.dataset.blabla</code> for at tilg&aring; dem.
+  </p>
+  <h3>@font-face</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes af alle browsere
+  </p>
+  <h3>form validation</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes kun af de mest moderne browsere. JQuery form validation kan bruges i stedet.
+  </p>
+  <h3>gradients</h3>
+  <p class="skts-broedtekst">Brugen af gradients skal altid prefixes med <code>-o-, -webkit-, -moz-</code> n&aring;r gradients bruges som background. Brug en fallback farve hvis en browser ikke kan rendere en gradient. Brug gerne linear-gradient, eksempel:
+    <code>background-image: linear-gradient(to bottom right, red, rgba(255,0,0,0));</code>
+  </p>
+  <h3>HTML5 elementer</h3>
+  <p class="skts-broedtekst">Alle nuv&aelig;rende (moderne) browsere underst&oslash;tter:  <code>&lt;aside&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;</code>. For IE8 kan modernizr.jz polyfill bruges til at underst&oslash;tte disse elementer.
+  </p>
+  <h3>&lt;input type=number&gt;</h3>
+  <p class="skts-broedtekst">Dette input vil falde tilbage til tekstuel input hvis det ikke underst&oslash;ttes.
+  </p>
+  <h3>&lt;input type=range&gt;</h3>
+  <p class="skts-broedtekst">Dette input vil falde tilbage til tekstuel input hvis det ikke underst&oslash;ttes.
+  </p>
+  <h3>&lt;input type=search&gt;</h3>
+  <p class="skts-broedtekst">Dette input vil falde tilbage til tekstuel input hvis det ikke underst&oslash;ttes.
+  </p>
+  <h3>&lt;input[placeholder]&gt;</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes af de fleste moderne browsere, hvis ikke de underst&oslash;ttes ignoreres de.
+  </p>
+  <h3>media queries</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes ikke af IE8
+  </p>
+  <h3>min/max-width/height</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes af alle browsere.
+  </p>
+  <h3>opacity</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes af alle browsere indtil IE8, for denne browser kan <code>filter</code> (som er MS specifik) bruges.
+  </p>
+  <h3>position:fixed</h3>
+  <p class="skts-broedtekst">Underst&oslash;ttes af alle browsere indtil IE8, for mobile browsere skal der findes en anden l&oslash;sning, da de ikke underst&oslash;tter dette s&aring; godt.
+  </p>
+  <h3>pseudo elementer</h3>
+  <p class="skts-broedtekst">CSS3 specificerer at der skal bruges et dobbelt kolon "::" ved brug af pseudo elementer. CSS specifikationen kr&aelig;ver at browsere underst&oslash;tter b&aring;de enkelt og dobbelt kolon. IE8 underst&oslash;tter ikke dobbelt kolon, brug derfor altid enkelt, eksempelvis: <code>:first-line, :first-letter, :before og :after</code>
+  </p>
+
+  <hr class="skts-hr" />
+
+  <h2 id="andre-features">Brug af andre css eller html features</h2>
+  <h2>CSS</h2>
+  <h3>nth-* selectors</h3>
+  <p class="skts-broedtekst">IE8 har ingen underst&oslash;ttelse af disse selectors, et alternativ er at enumerere s&aring;ledes <code>element sub-element:first-child + sub-element + sub-element + sub-element</code>, et eksempel kunne v&aelig;re at finde den tredje td i en table: <code>table td:first-child + td + td</code></p>
+
+  <hr class="skts-hr" />
+
+  <h2 id="html-reset">Reset</h2>
+  <p class="skts-broedtekst">For at g&oslash;re renderingen af elementer p&aring; siden mere konsistent bruges et s&aring;kaldt reset stylesheet. Der er valgt et reset stylesheet som kaldes <strong>normalize.css</strong>. Dette stylesheet g&oslash;r at alle elementer p&aring; siden nulstilles til en standard v&aelig;rdi uafh&aelig;ngigt af hvilken browser der bruges. Derudover kan man i mange tilf&aelig;lde undg&aring; at lave specielle styles til specifikke browsere.</p>
+  <p class="skts-broedtekst">Denne fil skal inkluderes i head elementet p&aring; siden som det f&oslash;rste stylesheet der refereres.</p>
+</div>
+

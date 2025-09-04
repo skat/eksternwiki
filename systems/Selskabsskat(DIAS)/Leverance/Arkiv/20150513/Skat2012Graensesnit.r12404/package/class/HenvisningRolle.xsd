@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver de mulige roller der kan tildeles de mulige henvisningstyper. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="HenvisningRolleKode" type="skat2012:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fortæller hvilke indbyrdes roller to SE_nr kan have i en henvisning.  Værdisæt: 01: Afregnende 02: Ikke afregnende 03: Fortsættende 04: Ophørende 05: Modtagende 06: Indskydende 07: Nyt 08: Gammelt 09: Moderselskab 10: Datterselskab 11: Modregnende 12: Ikke modregnende 13: Fælles regnskabsfunktion 14: Reguleringsforpligtigelse 15: Anden kontrolhenvisning  16: Anden koncernsammenhæng 17: Modtager 18: Afgiver</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningRolleTekst" type="skat2012:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder de mulige typer af henvisningsroller i klartekst. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningRolleHjælpeTekst" type="skat2012:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Formålet med hjælpeteksten er at give brugeren en supplerende og/eller forklarende bemærkning til en konkret forekomst af et grunddataværdisæt. Hjælpeteksten anvendes som hjælp til brugeren, hvor denne eksempelvis bliver i tvivl om indholdet af en konkret forekomst af et grunddataværdisæt.  Hjælpeteksten kan, når det er relevant, indeholder reference til lovgivningens paragraffer og faglige vejledninger., hvor brugeren kan finde yderligere hjælp. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningRolleGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver start dato for en henvisningsrolle. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningRolleGyldigTil" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver start dato for en henvisningsrolle. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

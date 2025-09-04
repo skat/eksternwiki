@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:kob:ws:1.0.0" name="KreditoplysningBureauDebitorStatusHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At liste statusændringer for sager, som er registreret hos et kreditoplysningsbureau.    </xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0">
+			<xsd:include schemaLocation="urn/oio/skat/kob/ws/1_0_0/KreditoplysningBureauDebitorStatusHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="KreditoplysningBureauDebitorStatusHentServiceRequest">
+		<wsdl:part name="Request" element="kobws:KreditoplysningBureauDebitorStatusHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorStatusHentServiceResponse">
+		<wsdl:part name="Response" element="kobws:KreditoplysningBureauDebitorStatusHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="KreditoplysningBureauDebitorStatusHentServicePortType">
+		<wsdl:operation name="getKreditoplysningBureauDebitorStatusHent">
+			<wsdl:input message="kobws:KreditoplysningBureauDebitorStatusHentServiceRequest"/>
+			<wsdl:output message="kobws:KreditoplysningBureauDebitorStatusHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

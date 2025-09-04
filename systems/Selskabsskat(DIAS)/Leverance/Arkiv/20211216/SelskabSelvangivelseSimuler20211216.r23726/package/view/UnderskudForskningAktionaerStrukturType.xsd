@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/AktionaerForskning.xsd"/>
+         <xs:element name="UnderskudForskningAktionærStruktur"
+                     type="skat2012:UnderskudForskningAktionærStrukturType"/>
+         <xs:complexType name="UnderskudForskningAktionærStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="SelskabSærbeskattetListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="SelskabSærbeskattet" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:VirksomhedNavnFirmaNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSærbeskattetPeriode" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSærbeskattetSkattepligtigIndkomstFørUnderskud"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSærbeskattetSkatteværdiUnderskudAnsøgt"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSærbeskattetUnderskud" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSærbeskattetOmkostningStraksafskrivning"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSærbeskattetNedsættelseUnderskudSkattekredit"
+                                             minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="SelskabSambeskattetListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="SelskabSambeskattet" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:VirksomhedNavnFirmaNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSambeskattetPeriode" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSambeskattetSkattepligtigIndkomstFørUnderskud"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSambeskattetSkatteværdiUnderskudAnsøgt"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSambeskattetUnderskud" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSambeskattetOmkostningStraksafskrivning"
+                                             minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:AktionærForskningSambeskattetNedsættelseUnderskudSkattekredit"
+                                             minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

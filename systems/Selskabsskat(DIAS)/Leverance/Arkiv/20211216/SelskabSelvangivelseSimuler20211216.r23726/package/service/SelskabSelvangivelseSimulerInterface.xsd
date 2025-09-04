@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Anvendes til at simulere opdateringer af en eller flere selvangivelser - potentielt flere selskaber og flere indkomstår.</xs:documentation>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/SelskabSelvangivelseSimuler_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/SelskabSelvangivelseSimuler_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/SelskabSelvangivelseSimuler_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="SelskabSelvangivelseSimulerInterface"
+                     type="skat2012:SelskabSelvangivelseSimulerInterfaceType"/>
+         <xs:complexType name="SelskabSelvangivelseSimulerInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:SelskabSelvangivelseSimuler_I"/>
+               <xs:element ref="skat2012:SelskabSelvangivelseSimuler_O"/>
+               <xs:element ref="skat2012:SelskabSelvangivelseSimuler_FejlId"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

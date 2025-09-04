@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SelskabDataWarehouseInformationOpretService" targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+	<types>
+		<xsd:schema targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+			<xsd:include schemaLocation="../service/SelskabDataWarehouseInformationOpretInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	
+	
+	
+	<!-- STF'ified I method -->
+	<message name="SelskabDataWarehouseInformationOpretSTFSendAnmodRequest">
+		<part element="skat2012:StyretFiloverførselSendAnmod_I" name="Request"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFSendAnmodResponse">
+		<part element="skat2012:StyretFiloverførselSendAnmod_O" name="Response"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFSendAfslutRequest">
+		<part element="skat2012:StyretFiloverførselSendAfslut_I" name="Request"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFSendAfslutResponse">
+		<part element="skat2012:StyretFiloverførselSendAfslut_O" name="Response"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFModtagAnmodRequest">
+		<part element="skat2012:StyretFiloverførselModtagAnmod_I" name="Request"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFModtagAnmodResponse">
+		<part element="skat2012:StyretFiloverførselModtagAnmod_O" name="Response"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFModtagAfslutRequest">
+		<part element="skat2012:StyretFiloverførselModtagAfslut_I" name="Request"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretSTFModtagAfslutResponse">
+		<part element="skat2012:StyretFiloverførselModtagAfslut_O" name="Response"/>
+	</message>
+	
+	<!-- Asynchronous O method standard messages -->
+	<!--
+	<message name="SelskabDataWarehouseInformationOpretServiceRequest_O">
+		<part name="Request" element="skat2012:SelskabDataWarehouseInformationOpret_O_I"/>
+	</message>
+	<message name="SelskabDataWarehouseInformationOpretServiceResponse_O">
+		<part name="Response" element="skat2012:SelskabDataWarehouseInformationOpret_O_O"/>
+	</message>
+	-->
+	<!-- Standard messages for all services -->
+	<message name="KompenserTransRequest">
+		<part element="skat2012:KompenserTrans" name="Request"/>
+	</message>
+	<message name="KompenserTransResponse">
+		<part element="skat2012:KompenserTransSvar" name="Response"/>
+	</message>
+		
+		
+	<portType name="SelskabDataWarehouseInformationOpretServiceAsynkronPortType">
+	
+		<!-- Replace proper I operation with STF operations -->
+		<operation name="getStyretfiloverførselSendAnmod">
+			<input message="skat2012:SelskabDataWarehouseInformationOpretSTFSendAnmodRequest"/>
+			<output message="skat2012:SelskabDataWarehouseInformationOpretSTFSendAnmodResponse"/>
+		</operation>
+		<operation name="getStyretfiloverførselSendAfslut">
+			<input message="skat2012:SelskabDataWarehouseInformationOpretSTFSendAfslutRequest"/>
+			<output message="skat2012:SelskabDataWarehouseInformationOpretSTFSendAfslutResponse"/>
+		</operation>
+		<operation name="getStyretfiloverførselModtagAnmod">
+			<input message="skat2012:SelskabDataWarehouseInformationOpretSTFModtagAnmodRequest"/>
+			<output message="skat2012:SelskabDataWarehouseInformationOpretSTFModtagAnmodResponse"/>
+		</operation>
+		<operation name="getStyretfiloverførselModtagAfslut">
+			<input message="skat2012:SelskabDataWarehouseInformationOpretSTFModtagAfslutRequest"/>
+			<output message="skat2012:SelskabDataWarehouseInformationOpretSTFModtagAfslutResponse"/>
+		</operation>
+	
+		<!-- Asynchronous O operation -->
+		<!--
+		<operation name="getSelskabDataWarehouseInformationOpret_O">
+			<input message="skat2012:SelskabDataWarehouseInformationOpretServiceRequest_O"/>
+			<output message="skat2012:SelskabDataWarehouseInformationOpretServiceResponse_O"/>
+		</operation>
+		-->
+		<!-- Default operation - always present -->
+		<operation name="getKompenserTrans">
+			<input message="skat2012:KompenserTransRequest"/>
+			<output message="skat2012:KompenserTransResponse"/>
+		</operation>
+	</portType>
+		
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:documentation>At overføre relevant selskabsinformation fra Selskabsskat til SKATs Data Warehouse.</xs:documentation>
+<xs:documentation>1.1</xs:documentation>
+<xs:documentation>r12404</xs:documentation>
+</xs:annotation>
+</definitions>

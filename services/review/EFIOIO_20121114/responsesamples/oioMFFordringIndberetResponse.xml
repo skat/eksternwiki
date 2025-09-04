@@ -1,0 +1,40 @@
+<oefiws:MFFordringIndberet_O xmlns:oefiws="urn:oio:skat:efi:ws:1.0.1">
+   <ok:HovedOplysningerSvar xmlns:ok="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/">
+      <ok:TransaktionIdentifikator>my</ok:TransaktionIdentifikator>
+      <ok:ServiceIdentifikator>MFFordringIndberet</ok:ServiceIdentifikator>
+      <ok:TransaktionTid>2012-10-11T13:29:04.387+02:00</ok:TransaktionTid>
+      <ok:SvarStruktur/>
+   </ok:HovedOplysningerSvar>
+   <oefiws:FordringInfo>
+      <oefiws:FordringhaverSystemIDStruktur>
+         <ns3:VirksomhedSENummerIdentifikator xmlns:ns3="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/">12345678</ns3:VirksomhedSENummerIdentifikator>
+      </oefiws:FordringhaverSystemIDStruktur>
+      <oefi:ModtagFordringLeveranceIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">5020</oefi:ModtagFordringLeveranceIdentifikator>
+      <oefiws:FordringAktionStatusSamling>
+         <oefiws:MFAktionStruktur>
+            <oefi:FordringInddrivelseFordringIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">54137</oefi:FordringInddrivelseFordringIdentifikator>
+            <oefi:FordringInddrivelseHovedFordringIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">54137</oefi:FordringInddrivelseHovedFordringIdentifikator>
+            <oefi:FordringFordringHaverReference xmlns:oefi="urn:oio:skat:efi:1.0.0">ABC36</oefi:FordringFordringHaverReference>
+            <oefi:ModtagFordringAktionIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">53983</oefi:ModtagFordringAktionIdentifikator>
+            <oefi:ModtagFordringAktionKode xmlns:oefi="urn:oio:skat:efi:1.0.0">OPRETFORDRING</oefi:ModtagFordringAktionKode>
+            <oefi:FordringHaverIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">1234</oefi:FordringHaverIdentifikator>
+            <oefi:ModtagFordringAktionStatusKode xmlns:oefi="urn:oio:skat:efi:1.0.0">MODTAGET</oefi:ModtagFordringAktionStatusKode>
+            <oefi:ModtagFordringAktionStatusAendretDato xmlns:oefi="urn:oio:skat:efi:1.0.0">2012-10-11+02:00</oefi:ModtagFordringAktionStatusAendretDato>
+            <oefi:FordringModtagelseDatoTid xmlns:oefi="urn:oio:skat:efi:1.0.0">2012-10-11T13:29:03.772+02:00</oefi:FordringModtagelseDatoTid>
+            <oefiws:AfvistAarsagSamling/>
+         </oefiws:MFAktionStruktur>
+         <oefiws:MFAktionStruktur>
+            <oefi:FordringInddrivelseFordringIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">54138</oefi:FordringInddrivelseFordringIdentifikator>
+            <oefi:FordringInddrivelseHovedFordringIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">54137</oefi:FordringInddrivelseHovedFordringIdentifikator>
+            <oefi:FordringFordringHaverReference xmlns:oefi="urn:oio:skat:efi:1.0.0">ABC36</oefi:FordringFordringHaverReference>
+            <oefi:ModtagFordringAktionIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">53984</oefi:ModtagFordringAktionIdentifikator>
+            <oefi:ModtagFordringAktionKode xmlns:oefi="urn:oio:skat:efi:1.0.0">OPRETFORDRING</oefi:ModtagFordringAktionKode>
+            <oefi:FordringHaverIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">1234</oefi:FordringHaverIdentifikator>
+            <oefi:ModtagFordringAktionStatusKode xmlns:oefi="urn:oio:skat:efi:1.0.0">MODTAGET</oefi:ModtagFordringAktionStatusKode>
+            <oefi:ModtagFordringAktionStatusAendretDato xmlns:oefi="urn:oio:skat:efi:1.0.0">2012-10-11+02:00</oefi:ModtagFordringAktionStatusAendretDato>
+            <oefi:FordringModtagelseDatoTid xmlns:oefi="urn:oio:skat:efi:1.0.0">2012-10-11T13:29:03.772+02:00</oefi:FordringModtagelseDatoTid>
+            <oefiws:AfvistAarsagSamling/>
+         </oefiws:MFAktionStruktur>
+      </oefiws:FordringAktionStatusSamling>
+   </oefiws:FordringInfo>
+</oefiws:MFFordringIndberet_O>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringPaaklagetIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringStiftelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringSidsteRettidigeBetalingDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringProduktionEnhedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringModtagelseDatoTid.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringForfaldDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverBeskrivelseTekst.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:include schemaLocation="FordringBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="FordringPeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringOprindeligBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="MFNoteStruktur.xsd"/>
+	<xs:include schemaLocation="MFDokumentStruktur.xsd"/>
+	<xs:include schemaLocation="RenteValgStruktur.xsd"/>
+	<xs:include schemaLocation="MFHaeftelseStruktur.xsd"/>
+	<xs:element name="MFOpretFordringStruktur" type="efiws:MFOpretFordringStrukturType"/>
+	<xs:complexType name="MFOpretFordringStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringFordringArtKode"/>
+			<xs:element ref="efi:FordringTypeKode"/>
+			<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+			<xs:element ref="efi:FordringProduktionEnhedIdentifikator" minOccurs="0"/>
+			<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator" minOccurs="0"/>
+			<xs:element ref="efi:FordringFordringHaverBeskrivelseTekst" minOccurs="0"/>
+			<xs:element ref="efi:FordringModtagelseDatoTid" minOccurs="0"/>
+			<xs:element ref="efi:FordringStiftelseDato" minOccurs="0"/>
+			<xs:element ref="efi:FordringForfaldDato"/>
+			<xs:element ref="efi:FordringSidsteRettidigeBetalingDato"/>
+			<xs:element ref="efiws:FordringBeloebStruktur"/>
+			<xs:element ref="efiws:FordringPeriodeStruktur"/>
+			<xs:element ref="efi:ModtagFordringPaaklagetIndikator"/>
+			<xs:element ref="efiws:FordringOprindeligBeloebStruktur"/>
+			<xs:element name="SagsbemaerkningSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFNoteStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DokumentSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFDokumentStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="efiws:RenteValgStruktur" minOccurs="0"/>
+			<xs:element ref="efi:FordringHaverIdentifikator"/>
+			<xs:element name="FordringHaeftelseSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFHaeftelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

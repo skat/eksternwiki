@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/05/19/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/alternativadresse/xml/schemas/20071202/" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Indeholder em uordnet adresse (eller fritekst adresse). Dvs. adresse inddata som fremgår som en enkelt streng.</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/05/19/" schemaLocation="../../../../../../../cpr_dk/xml/schemas/core/2005/05/19/CompletePostalLabelText.xsd"/>
+	<xs:include schemaLocation="AlternativAdressePrioritetIdentifikator.xsd"/>
+	<xs:include schemaLocation="AlternativAdresseAnvendelseKode.xsd"/>
+	<xs:include schemaLocation="AlternativAdresseGyldigPeriode.xsd"/>
+	<xs:element name="AlternativAdresseAdresseLinie1" type="cpr:CompletePostalLabelTextType"/>
+	<xs:element name="AlternativAdresseAdresseLinie2" type="cpr:CompletePostalLabelTextType"/>
+	<xs:element name="AlternativAdresseAdresseLinie3" type="cpr:CompletePostalLabelTextType"/>
+	<xs:element name="AlternativAdresseAdresseLinie4" type="cpr:CompletePostalLabelTextType"/>
+	<xs:element name="AlternativAdresseAdresseLinie5" type="cpr:CompletePostalLabelTextType"/>
+	<xs:element name="AlternativAdresseAdresseLinie6" type="cpr:CompletePostalLabelTextType"/>
+	<xs:element name="AlternativAdresseAdresseLinie7" type="cpr:CompletePostalLabelTextType"/>
+</xs:schema>

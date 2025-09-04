@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ModtagMomsAngivelse" targetNamespace="urn:oio:skat:tse:1.0.3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tse2011="urn:oio:skat:tse:1.0.3" xmlns:tse2009="urn:oio:skat:tse:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>
+		</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema targetNamespace="urn:oio:skat:tse:1.0.3">
+			<xsd:include schemaLocation="http://85.81.229.78/services/test/ModtagMomsAngivelse3/urn/oio/skat/tse/1.0.3/MomsAngivelseInputStruktur.xsd"/>
+		</xsd:schema>
+		<xsd:schema targetNamespace="urn:oio:skat:tse:1.0.1">
+			<xsd:include schemaLocation="http://85.81.229.78/services/test/ModtagMomsAngivelse3/urn/oio/skat/tse/1.0.1/MomsAngivelseOutputStruktur.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ModtagMomsAngivelseServiceRequest">
+		<wsdl:part element="tse2011:MomsAngivelseInputStruktur" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="ModtagMomsAngivelseServiceResponse">
+		<wsdl:part element="tse2009:MomsAngivelseOutputStruktur" name="Response"/>
+	</wsdl:message>
+	<wsdl:portType name="ModtagMomsAngivelseServicePortType">
+		<wsdl:operation name="getModtagMomsAngivelse">
+			<wsdl:input message="tse2011:ModtagMomsAngivelseServiceRequest"/>
+			<wsdl:output message="tse2011:ModtagMomsAngivelseServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ModtagMomsAngivelseServiceBinding" type="tse2011:ModtagMomsAngivelseServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getModtagMomsAngivelse">
+			<soap:operation soapAction="getModtagMomsAngivelse"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ModtagMomsAngivelseService">
+		<wsdl:port binding="tse2011:ModtagMomsAngivelseServiceBinding" name="ModtagMomsAngivelseService">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/ModtagMomsAngivelseServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

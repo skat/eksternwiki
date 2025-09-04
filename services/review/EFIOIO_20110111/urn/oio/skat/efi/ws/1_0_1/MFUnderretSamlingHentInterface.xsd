@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Hent underretnings meddelelser der ligger klar til fordringshaveren, </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="MFUnderretSamlingHent_I.xsd"/>
+	<xs:include schemaLocation="MFUnderretSamlingHent_O.xsd"/>
+	<xs:element name="MFUnderretSamlingHentInterface" type="efiws:MFUnderretSamlingHentInterfaceType"/>
+	<xs:complexType name="MFUnderretSamlingHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="efiws:MFUnderretSamlingHent_I"/>
+			<xs:element ref="efiws:MFUnderretSamlingHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

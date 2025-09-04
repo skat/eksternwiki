@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/SoegeDatoTidFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/SoegeDatoTidTil.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AbonnentType.xsd"/>
+         <xs:include schemaLocation="../operational/NyoprettetVirksomhedMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OphoertVirksomhedMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirksomhedNavnAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/PrimaerAdresseAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/PrimaerTelefonSamlingAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/PrimaerEmailSamlingAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AdresseSamlingAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DriftFormAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirksomhedStatusAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RegistreringForholdAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/PligtAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RegnskabsperiodeAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BeskatningParagrafAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EjerForholdAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BevillingForholdMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/InkluderProduktionEnhedMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/InkluderAEndringOplysningMarkering.xsd"/>
+				     
+         <xs:element name="VirksomhedHændelseSamlingHent_FejlId"
+                     type="skat2012:VirksomhedHændelseSamlingHent_FejlIdType"/>
+         <xs:complexType name="VirksomhedHændelseSamlingHent_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:SøgeDatoTidFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SøgeDatoTidTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AbonnentTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:NyoprettetVirksomhedMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:OphørtVirksomhedMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedNavnÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PrimærAdresseÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PrimærTelefonSamlingÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PrimærEmailSamlingÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AdresseSamlingÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:DriftFormÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:VirksomhedStatusÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:RegistreringForholdÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:PligtÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:RegnskabsperiodeÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BeskatningParagrafÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EjerForholdÆndringMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:BevillingForholdMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:InkluderProduktionEnhedMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:InkluderÆndringOplysningMarkering" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

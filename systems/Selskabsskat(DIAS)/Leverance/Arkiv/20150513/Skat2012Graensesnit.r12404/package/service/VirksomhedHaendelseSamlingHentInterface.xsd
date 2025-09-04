@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>At man kan forespørge på virksomhedshændelser i SKATs Erhvervssystem (ES). En virksomhedshændelse kan fx være en nyoprettet eller en ophørt virksomhed. Man kan således spørge om der er nyoprettede virksomheder i ES eller om der nogle, der er ophørte. En virksomhedshændelse kan desuden være en ændring virksomheds forhold, dvs. en ændring i de oplysninger, som er tilknyttet virksomheden i ES. Man kan således spørge om en virksomheds adresse er ændret. Eller om der er ændringer i dens registreringsforhold.</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/VirksomhedHaendelseSamlingHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/VirksomhedHaendelseSamlingHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/VirksomhedHaendelseSamlingHent_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="VirksomhedHændelseSamlingHentInterface"
+                     type="skat2012:VirksomhedHændelseSamlingHentInterfaceType"/>
+         <xs:complexType name="VirksomhedHændelseSamlingHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:VirksomhedHændelseSamlingHent_I"/>
+               <xs:element ref="skat2012:VirksomhedHændelseSamlingHent_O"/>
+               <xs:element ref="skat2012:VirksomhedHændelseSamlingHent_FejlId"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

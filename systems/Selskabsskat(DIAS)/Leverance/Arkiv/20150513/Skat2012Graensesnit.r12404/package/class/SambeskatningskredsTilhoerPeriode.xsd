@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Anvendes for at kunne angive ændringer i sambeskatningskredse. Perioden er lig med regnskabsåret, hvis der ikke har været ændringer i kredsen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="SambeskatningskredsTilhørPeriodeStart" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Første dag i en periode, hvor selskabet tilhører en given sambeskatningskreds. (Der kan være flere perioder med samme tilhørsforhold.)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SambeskatningskredsTilhørPeriodeSlut" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste dag i en periode, hvor selskabet tilhører en given sambeskatningskreds. (Der kan være flere perioder med samme tilhørsforhold.)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

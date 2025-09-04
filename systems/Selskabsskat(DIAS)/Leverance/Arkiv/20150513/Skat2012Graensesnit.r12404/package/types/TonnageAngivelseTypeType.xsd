@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="TonnageAngivelseTypeType">
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af det tonnagebeskattede selskab.  Værdisæt: O: Operatør R: Rederi B: Både Operatør og Rederi</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+                  <xs:enumeration value="B"/>
+                  <xs:enumeration value="R"/>
+                  <xs:enumeration value="O"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/KodeToCifreStartNulType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:element name="VirksomhedLederTypeKode" type="skat2012:KodeToCifreStartNulType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for den ledelse, der omfatter virksomheden  [VirkomhedLederKode - VirkomhedLederTekst] 01 - Direktion 02 - Bestyrelse 03 - Revisor 04 - Direktør 05 - Formand 06 - Filialbestyrer 07 - Administrator 08 - Kontaktperson 09 - Bobestyrer 10 - Daglig leder 11 - Stifter 12 - Tilsynsråd 13 - Rekonstruktør</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedLederTypeTekst" type="skat2012:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Betegnelse for den ledelse, der omfatter virksomheden  [VirkomhedLederKode - VirkomhedLederTekst] 01 - Direktion 02 - Bestyrelse 03 - Revisor 04 - Direktør 05 - Formand 06 - Filialbestyrer 07 - Administrator 08 - Kontaktperson 09 - Bobestyrer 10 - Daglig leder 11 - Stifter 12 - Tilsynsråd 13 - Rekonstruktør</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedLederTypeEngelskTekst" type="skat2012:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Engelsk betegnelse for den ledelse, der omfatter virksomheden  [VirkomhedLederKode - VirkomhedLederEngelskTekst] 01 - Board of executives 02 - Board of management 03 - Accountant 04 - CEO 05 - Chairman of the board 06 - Branch manager 07 - Administrator 08 - Contact 09 - Official receiver 10 - General manager 11 - Founder 12 - Supervisory board 13 - Reorganiser</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

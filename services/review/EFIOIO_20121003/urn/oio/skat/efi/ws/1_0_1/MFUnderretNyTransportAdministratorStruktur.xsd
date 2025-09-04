@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingNemKontoAftaleIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TransportUdlaegUbegraensetIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/TransportUdlaegAcceptDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringModtagelseDatoTid.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="KundeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="MyndighedUdbetalingPeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="TransportRettighedshaverElementIndStruktur.xsd"/>
+	<xs:element name="MFUnderretNyTransportAdministratorStruktur" type="efiws:MFUnderretNyTransportAdministratorStrukturType"/>
+	<xs:complexType name="MFUnderretNyTransportAdministratorStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringFordringArtKode"/>
+			<xs:element ref="efi:FordringTypeKode"/>
+			<xs:element ref="efiws:KundeStruktur"/>
+			<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+			<xs:element ref="efi:FordringModtagelseDatoTid"/>
+			<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+			<xs:element ref="efiws:FordringBeloebStruktur" minOccurs="0"/>
+			<xs:element ref="efi:TransportUdlaegUbegraensetIndikator"/>
+			<xs:element ref="efi:MyndighedUdbetalingNemKontoAftaleIdentifikator"/>
+			<xs:element ref="efi:MyndighedUdbetalingTypeKode"/>
+			<xs:element ref="efiws:MyndighedUdbetalingPeriodeStruktur"/>
+			<xs:element ref="efi:TransportUdlaegAcceptDato"/>
+			<xs:element name="TransportRettighedshaverListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TransportRettighedHaver" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efiws:TransportRettighedshaverElementIndStruktur"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GammelTransportAdministrator" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:FordringHaverIdentifikator"/>
+						<xs:element ref="efiws:KundeStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

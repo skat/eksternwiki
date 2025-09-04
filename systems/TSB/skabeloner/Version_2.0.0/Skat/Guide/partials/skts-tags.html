@@ -1,0 +1,115 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Typografi</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a data-ng-click="scrollTo('overskrifter')" href="">Overskrifter</a></li>
+      <li><a href="" data-ng-click="scrollTo('links')">Links</a></li>
+      <li><a href="" data-ng-click="scrollTo('generelle-tags')">Generelle tags</a></li>
+      <li><a href="" data-ng-click="scrollTo('adresser')">Adresser</a></li>
+      <li><a href="" data-ng-click="scrollTo('lister')">Lister</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="skts-indhold-guide">
+  <h2 id="overskrifter">Overskrifter</h2>
+  <p class="skts-broedtekst">Der er seks overskriftniveauer til r&aring;dighed <code>h1-h6</code>, der alle er med skriftypen Helvetica.</p>
+  <div class="bs-docs-example" data-pretty>
+    <h1>Overskrift h1</h1>
+    <h2>Overskrift h2</h2>
+    <h3>Overskrift h3</h3>
+    <h4>Overskrift h4</h4>
+    <h5>Overskrift h5</h5>
+    <h6>Overskrift h6</h6>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="links">Links</h2>
+  <div class="bs-docs-example" data-pretty>
+    <a href="#">Linktekst</a>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="generelle-tags">Generelle tags</h2>
+
+  <h3>Paragraf</h3>
+  <p class="skts-broedtekst">Paragraf bruges til at indramme en tekst eller nogle elementer p&aring; siden. S&aring; vidt muligt skal <code>&lt;p&gt;</code> bruges til dette i stedet for <code>div</code>. Bem&aelig;rk p&aring; skat.dk skal man i de fleste tilf&aelig;lde ogs&aring; inkludere klassen <code>skts-broedtekst</code> s&aring;dan at paragraffen f&aring;r den rette skriftst&oslash;rrelse.
+    <div class="bs-docs-example" data-pretty>
+      <p>Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <h3>fieldset</h3>
+    <div class="bs-docs-example" data-pretty>
+      <fieldset><legend>Lorem</legend>Lorem ipsum dolor sit amet</fieldset>
+    </div>
+
+    <h3>form</h3>
+
+    <p class="skts-broedtekst">Her vises ogs&aring; brugen af <code>label</code>. Under <a href="#{{menues[6].href}}">Felter</a> vises en korrekt m&aring;de at vise form elementer p&aring; siden.
+      <div class="bs-docs-example" data-pretty>
+        <form action="">
+          <label for="tekstboks1">Label</label><input type="text" name="tekstboks1" value="tekstboks1" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+      <h3>select</h3>
+      <div class="bs-docs-example" data-pretty>
+        <select name="selektion"> 
+          <option value="op1" >Option 1</option>
+          <option value="op2" >Option 2</option>
+          <option value="op3" >Option 3</option>
+        </select>
+      </div>
+
+      <h3>img</h3>
+      <div class="bs-docs-example" data-pretty>
+        <img src="../sktscommon/Images/print.png" title="Udskriv" alt="Udskriv til printer" />
+      </div>
+
+      <h3>textarea</h3>
+      <div class="bs-docs-example" data-pretty>
+        <textarea>Lorem ipsum dolor sit amet</textarea>
+      </div>
+
+      <hr class="skts-hr" />
+
+      <h2 id="adresser">Adresser</h2>
+      <h3>address</h3>
+      <div class="bs-docs-example" data-pretty>
+        <address>
+          <strong>Skat</strong></br>
+          Sluseholmen</br>
+          2450 K&oslash;benhavn N</br>
+          <abbr title="Telefon">T:</abbr> 77 77 30 30
+        </address>
+      </div>
+
+      <hr class="skts-hr" />
+
+      <h2 id="lister">Lister</h2>
+
+      <p class="skts-broedtekst">Lister benyttes til at repr&aelig;sentere indhold i listeform. Lister kan v&aelig;re uordnede, ul, eller ordnede, ol. Derudover kan benyttes definitionslister dl, der kendetegnet ved at indeholde en definitionsterm og en definitionsbeskrivelse.</p>
+
+      <h3>Ikke ordnede</h3>
+      <div class="bs-docs-example" data-pretty>
+        <ul>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Integer molestie lorem at massa</li>
+          <li>Facilisis in pretium nisl aliquet</li>
+        </ul>
+      </div>
+
+      <h3>Ordnede</h3>
+      <div class="bs-docs-example" data-pretty>
+        <ol>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Consectetur adipiscing elit</li>
+          <li>Integer molestie lorem at massa</li>
+          <li>Facilisis in pretium nisl aliquet</li>
+        </ol>
+      </div>
+    </div>

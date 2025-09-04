@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:driftform="http://rep.oio.dk/skat.dk/motor/class/driftform/xml/schemas/20080401/" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/KundeNavn.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeTypeKode.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/driftform/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/driftform/xml/schemas/20080401/DriftFormKode.xsd"/><xs:element name="KundeStruktur" type="efiws:KundeStrukturType"/>
+	<xs:complexType name="KundeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmi:SkatKundeIdentifikator"/>
+			<xs:element ref="dmi:SkatKundeTypeKode"/>
+			<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+			<xs:element ref="dmi:KundeNavn" minOccurs="0"/>
+			<xs:element ref="driftform:DriftFormKode" minOccurs="0"/>
+			<xs:element name="EnkeltmandVirksomhedEjer" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

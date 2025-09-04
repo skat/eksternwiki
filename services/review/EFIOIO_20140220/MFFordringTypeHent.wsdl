@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:efi:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsp="http://www.w3.org/ns/ws-policy"	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+	name="MFFordringTypeHentService">
+
+	<xs:include schemaLocation="policy/skat-b2b-x509-policy.xml" />
+	
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Hent fordringstyper der kan indberettes på. Enten alle fordringstyper eller dem som kan benyttes af en specifik fordringshaver.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1">
+			<xsd:include schemaLocation="urn/oio/skat/efi/ws/1_0_1/MFFordringTypeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MFFordringTypeHentServiceRequest">
+		<wsdl:part name="Request" element="efiws:MFFordringTypeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="MFFordringTypeHentServiceResponse">
+		<wsdl:part name="Response" element="efiws:MFFordringTypeHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="MFFordringTypeHentServicePortType">
+		<wsdl:operation name="getMFFordringTypeHent">
+			<wsdl:input message="efiws:MFFordringTypeHentServiceRequest"/>
+			<wsdl:output message="efiws:MFFordringTypeHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MFFordringTypeHentServiceBinding" type="efiws:MFFordringTypeHentServicePortType">	
+		<wsp:PolicyReference URI="policy/skat-b2b-x509-policy.xml#skat-b2b-x509-policy"/>
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />		
+		<wsdl:operation name="getMFFordringTypeHent">
+			<soap12:operation soapAction="getMFFordringTypeHent"/>
+			<wsdl:input>			
+				<soap12:body use="literal"/>
+				<wsp:PolicyReference URI="policy/skat-b2b-x509-policy.xml#skat-b2b-x509-policy"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MFFordringTypeHentServiceBindingQSService">
+		<wsdl:port name="MFFordringTypeHentHentServiceBindingQSPort" binding="efiws:MFFordringTypeHentServiceBinding">
+			<soap12:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

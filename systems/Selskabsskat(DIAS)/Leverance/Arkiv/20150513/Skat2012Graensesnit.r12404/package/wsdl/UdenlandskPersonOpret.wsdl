@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                        name="UdenlandskPersonOpretService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Formålet med servicen er at oprette en udenlandsk personlig ejer på en virksomhed, der registreres med udenlandsk personnummer. </xs:documentation>
+            <xs:documentation>1.2</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/">
+               <xsd:include schemaLocation="../service/UdenlandskPersonOpretInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="UdenlandskPersonOpretServiceRequest">
+            <wsdl:part name="Request" element="skat2012:UdenlandskPersonOpret_I"/>
+         </wsdl:message>
+         <wsdl:message name="UdenlandskPersonOpretServiceResponse">
+            <wsdl:part name="Response" element="skat2012:UdenlandskPersonOpret_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="skat2012:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="skat2012:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="UdenlandskPersonOpretServicePortType">
+            <wsdl:operation name="getUdenlandskPersonOpret">
+               <wsdl:input message="skat2012:UdenlandskPersonOpretServiceRequest"/>
+               <wsdl:output message="skat2012:UdenlandskPersonOpretServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="skat2012:KompenserTransRequest"/>
+               <wsdl:output message="skat2012:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/UdenlandskVirksomhed.xsd"/>
+         <xs:include schemaLocation="../operational/UdenlandskVirksomhedOplysningBehandlingKode.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+				     
+         <xs:element name="UdenlandskJuridiskEjerOpdater_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:UdenlandskJuridiskEjerOpdater_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="UdenlandskJuridiskEjerOpdater_IType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="skat2012:UdenlandskVirksomhedNummer"/>
+                  
+                     <xs:element ref="skat2012:UdenlandskVirksomhedOplysningBehandlingKode"/>
+
+                     <xs:element ref="skat2012:VirksomhedNavnFirmaNavnKort" minOccurs="0"/>
+
+
+
+                     <xs:element ref="skat2012:UdenlandskVirksomhedOphørDato" minOccurs="0"/>
+
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="AlternativAdresse" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2012:LandKode" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="UdlandFastnet" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="skat2012:TelefonLandeKode" minOccurs="0"/>
+
+                                 <xs:element ref="skat2012:TelefonUdenlandskNummer"/>
+                  
+                                 <xs:element ref="skat2012:UdenlandskVirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="UdlandMobil" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="skat2012:TelefonLandeKode" minOccurs="0"/>
+
+                                 <xs:element ref="skat2012:TelefonUdenlandskNummer"/>
+                  
+                                 <xs:element ref="skat2012:UdenlandskVirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="Email" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:EmailAdresseEmail"/>
+                  
+                                 <xs:element ref="skat2012:UdenlandskVirksomhedOplysningBehandlingKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

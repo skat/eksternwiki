@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Hent fordringstyper der kan indberettes på. Enten alle fordringstyper eller dem som kan benyttes af en specifik fordringshaver.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="MFFordringTypeHent_I.xsd"/>
+	<xs:include schemaLocation="MFFordringTypeHent_O.xsd"/>
+	<xs:element name="MFFordringTypeHentInterface" type="efiws:MFFordringTypeHentInterfaceType"/>
+	<xs:complexType name="MFFordringTypeHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="efiws:MFFordringTypeHent_I"/>
+			<xs:element ref="efiws:MFFordringTypeHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

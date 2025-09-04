@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:ntse="urn:oio:skat:ntse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringTypeKategoriKode.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1310858/artefact/ValutaKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/RenteAarTilDatoDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/RenteAarTilDatoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/RentePeriodeTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/RentePeriode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/RentePeriodeDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/RentePeriodeBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringProduktionEnhedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseFordringIdentifikator.xsd"/><xs:element name="MFUnderretRenteTilskrivningStruktur" type="efiws:MFUnderretRenteTilskrivningStrukturType"/>
+	<xs:complexType name="MFUnderretRenteTilskrivningStrukturType">
+		<xs:sequence>
+			<xs:element name="FordringListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Fordring" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efi:FordringFordringArtKode"/>
+									<xs:element ref="efi:FordringTypeKode"/>
+									<xs:element ref="efi:FordringTypeKategoriKode"/>
+									<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+									<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator"/>
+									<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+									<xs:element ref="efi:FordringProduktionEnhedIdentifikator" minOccurs="0"/>
+									<xs:element ref="efi:RentePeriodeTypeKode"/>
+									<xs:element ref="efi:RentePeriode"/>
+									<xs:element ref="ntse:ValutaKode"/>
+									<xs:element ref="efi:RentePeriodeBeloeb"/>
+									<xs:element ref="efi:RentePeriodeDKKBeloeb"/>
+									<xs:element ref="efi:RenteAarTilDatoBeloeb"/>
+									<xs:element ref="efi:RenteAarTilDatoDKKBeloeb"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

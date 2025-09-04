@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:emcs="urn:oio:skat:emcs:1.0.1">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/708762/artefact/AfgiftOperatoerPunktAfgiftIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/569212/artefact/LedsagedokumentARCIdentifikator.xsd"/><xs:include schemaLocation="../view/AdresseEUStrukturType.xsd"/>
+	<xs:element name="EksportAfvisningStruktur" type="struct:EksportAfvisningStrukturType"/>
+	<xs:complexType name="EksportAfvisningStrukturType">
+		<xs:sequence>
+			<xs:element ref="struct:AfvisGennemførtDatoTid"/>
+			<xs:element name="Modtager" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="emcs:AfgiftOperatoerPunktAfgiftIdentifikator" minOccurs="0"/>
+						<xs:element ref="struct:EUOperatørNavn"/>
+						<xs:element ref="struct:AdresseEUStruktur"/>
+						<xs:element ref="struct:SprogKode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EksportToldSted" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:ToldstedReferenceNummer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EksportKrydsCheck" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:EksportLokalReferenceNummer" minOccurs="0"/>
+						<xs:element ref="struct:AcceptMRN" minOccurs="0"/>
+						<xs:element name="ÅrsagSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Årsag" minOccurs="1" maxOccurs="999">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="emcs:LedsagedokumentARCIdentifikator"/>
+												<xs:element ref="struct:EMCSVarePostLøbeNummer"/>
+												<xs:element ref="struct:AfvisDiagnoseKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AnnulleretStatus">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:AnnulleretStatusValideretDato"/>
+						<xs:element ref="struct:AnnulleretStatusKode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Afvisning">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EksportAfvisningSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="EksportAfvisning" minOccurs="0" maxOccurs="99">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="emcs:LedsagedokumentARCIdentifikator"/>
+												<xs:element ref="struct:LedsageDokumentSekvensNummer"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ImportAfvisning" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:LedsageDokumentLokalReferenceNummer"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

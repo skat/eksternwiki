@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="KontrolleredeTransaktionerStatHjemmehørendeKodeType">
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilke(n) stat(er) de enheder, der har været kontrollerede transaktioner med, er hjemmehørende - for den pågældende art transaktion.  Værdisæt: A: Kun i Danmark B: Kun i EU/EØS, d.v.s. evt. også i Danmark C: Også i stater uden for EU/EØS, som Danmark har en TP-relevant DBO med D: Også i stater uden for EU/EØS, som Danmark ikke har en TP-relevant DBO med</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="B"/>
+                  <xs:enumeration value="C"/>
+                  <xs:enumeration value="D"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

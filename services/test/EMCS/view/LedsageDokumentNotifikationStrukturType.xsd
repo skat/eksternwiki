@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:emcs="urn:oio:skat:emcs:1.0.1">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/708762/artefact/AfgiftOperatoerPunktAfgiftIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/569212/artefact/LedsagedokumentARCIdentifikator.xsd"/><xs:include schemaLocation="../view/AdresseEUStrukturType.xsd"/>
+	<xs:element name="LedsageDokumentNotifikationStruktur" type="struct:LedsageDokumentNotifikationStrukturType"/>
+	<xs:complexType name="LedsageDokumentNotifikationStrukturType">
+		<xs:sequence>
+			<xs:element name="LedsageDokumentNotifikation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="struct:NotifikationValideretDato" minOccurs="0"/>
+						<xs:element ref="emcs:LedsagedokumentARCIdentifikator"/>
+						<xs:element ref="struct:LedsageDokumentSekvensNummer"/>
+						<xs:element name="Modtager">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ØkonomiskOperatørIdentifikation" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="emcs:AfgiftOperatoerPunktAfgiftIdentifikator"/>
+												<xs:element ref="struct:ModtagerMomsNummer"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="struct:EUOperatørNavn"/>
+									<xs:element ref="struct:AdresseEUStruktur"/>
+									<xs:element ref="struct:SprogKode"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="DestinationToldSted">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:ToldstedReferenceNummer"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Notfikation">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:NotifikationModtagetDato"/>
+									<xs:element ref="struct:NotifikationAfvistMarkering"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="NotifikationBegrundelseKodeSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="NotifikationBegrundelseKode" minOccurs="0" maxOccurs="9">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="struct:NotifikationBegrundelseKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

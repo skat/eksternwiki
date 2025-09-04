@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:efi:ws:1.0.1" name="MFKvitteringHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At hente resultater (kvitteringer) fra den asynkrone behandling af fordringsaktioner indberettet med MFFordringIndberet.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1">
+			<xsd:include schemaLocation="../service/MFKvitteringHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MFKvitteringHentServiceRequest">
+		<wsdl:part name="Request" element="efiws:MFKvitteringHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="MFKvitteringHentServiceResponse">
+		<wsdl:part name="Response" element="efiws:MFKvitteringHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="MFKvitteringHentServicePortType">
+		<wsdl:operation name="getMFKvitteringHent">
+			<wsdl:input message="efiws:MFKvitteringHentServiceRequest"/>
+			<wsdl:output message="efiws:MFKvitteringHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

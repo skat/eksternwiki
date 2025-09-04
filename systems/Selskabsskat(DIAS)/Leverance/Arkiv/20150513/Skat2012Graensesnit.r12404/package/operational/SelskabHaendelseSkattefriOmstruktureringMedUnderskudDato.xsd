@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         
+         <xs:element name="SelskabHændelseSkattefriOmstruktureringMedUnderskudDato"
+                     type="skat2012:DatoType">
+            <xs:annotation>
+               <xs:documentation>Dato for omstrukturering, hvor selskabet har deltaget i en skattefri omstrukturering, og der er underskud i perioden fra omstruktureringsdatoen og til den dag, hvor omstruktureringen er vedtaget i alle de deltagende selskaber (mellemperioden), jf. fusionsskattelovens § 8, stk. 7. Felt 161-07-a</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

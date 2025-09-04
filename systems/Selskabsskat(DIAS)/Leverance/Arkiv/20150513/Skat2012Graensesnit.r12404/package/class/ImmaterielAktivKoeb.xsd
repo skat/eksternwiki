@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Køb af immaterielle aktiver.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/KontrolleredeTransaktionerStatHjemmehoerendeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="ImmaterielAktivKøbOver25ProcentMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om de kontrollerede transaktioner af denne art overstiger 25 % af virksomhedens totale transaktioner af denne art. Felt 525c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImmaterielAktivKøbStatHjemmehørendeKode"
+                     type="skat2012:KontrolleredeTransaktionerStatHjemmehørendeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilke(n) stat(er) de enheder, der har været kontrollerede transaktioner med, er hjemmehørende - for den pågældende art transaktion. Felt 525d</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImmaterielAktivKøbBrutto" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen (beløb) af kontrollerede transaktioner forkøb af immaterielle aktiver. Felt 525b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImmaterielAktivKøbMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet angiver om der været kontrollerede transaktioner af køb af immaterielle aktiver Felt 525a </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

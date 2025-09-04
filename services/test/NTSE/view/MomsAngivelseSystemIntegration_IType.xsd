@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ntsews="urn:oio:skat:ntse:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:ntse:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:ntse="urn:oio:skat:ntse:1.0.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" xmlns:angivelse1="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:momsangivelse="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" xmlns:tse="urn:oio:skat:tse:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247441/artefact/SKAT_HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:tse:1.0.0" schemaLocation="http://digitaliser.dk/resource/443543/artefact/MomsAngivelseEUSalgYdelserBeloeb.xsd"/><xs:import namespace="urn:oio:skat:tse:1.0.0" schemaLocation="http://digitaliser.dk/resource/443533/artefact/MomsAngivelseEUKoebYdelserBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/5617/artefact/SKAT_MomsAngivelseVandAfgiftBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/4462/artefact/SKAT_MomsAngivelseSalgsMomsBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/4755/artefact/SKAT_MomsAngivelseOlieAfgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:tse:1.0.0" schemaLocation="http://digitaliser.dk/resource/379854/artefact/MomsAngivelseMomsEUYdelserBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/898/artefact/SKAT_MomsAngivelseEUkoebMomsBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/6244/artefact/SKAT_MomsAngivelseKulAfgiftBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/256/artefact/SKAT_MomsAngivelseKoebsMomsBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/5828/artefact/SKAT_MomsAngivelseGasAfgiftBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/4256/artefact/SKAT_MomsAngivelseEksportOmsBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/2563/artefact/SKAT_MomsAngivelseElAfgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1311162/artefact/MomsAngivelseIkkeEUSalgVarerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1311105/artefact/MomsAngivelseEUSalgVarerBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/6942/artefact/SKAT_MomsAngivelseEUkoebBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/1620/artefact/SKAT_MomsAngivelseCOtoAfgiftBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/3669/artefact/SKAT_MomsAngivelseAfgiftTilSvarBeloeb.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1310858/artefact/ValutaKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/6587/artefact/SKAT_AngivelseDatoTid.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/6307/artefact/SKAT_AngivelseValgtIndberetningFormKode.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1311086/artefact/BetalingBeloeb.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1311067/artefact/BetalingDato.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="http://digitaliser.dk/resource/1310940/artefact/BetalingFormidlerKode.xsd"/><xs:include schemaLocation="../view/AngiverVirksomhedSENummerType.xsd"/>
+	<xs:include schemaLocation="../view/IndberetterVirksomhedSENummerType.xsd"/>
+	<xs:include schemaLocation="../view/AngivelseValgtPeriodeType.xsd"/>
+	<xs:element name="MomsAngivelseSystemIntegration_I" type="ntsews:MomsAngivelseSystemIntegration_IType">
+	</xs:element>
+	<xs:complexType name="MomsAngivelseSystemIntegration_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="Angivelsesliste">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EnkeltAngivelse" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="ntsews:AngiverVirksomhedSENummer"/>
+									<xs:element ref="ntsews:IndberetterVirksomhedSENummer"/>
+									<xs:element name="Betalingsoplysninger">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="ntse:BetalingFormidlerKode" minOccurs="0"/>
+												<xs:element ref="ntse:BetalingDato" minOccurs="0"/>
+												<xs:element ref="ntse:BetalingBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Angivelsesoplysninger">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="angivelse:AngivelseValgtIndberetningFormKode" minOccurs="0"/>
+												<xs:element ref="angivelse1:AngivelseDatoTid"/>
+												<xs:element ref="ntsews:AngivelseValgtPeriode"/>
+												<xs:element ref="ntse:ValutaKode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Angivelsesafgifter">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="momsangivelse:MomsAngivelseAfgiftTilSvarBeloeb"/>
+												<xs:element ref="momsangivelse:MomsAngivelseCOtoAfgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseEUkoebBeloeb" minOccurs="0"/>
+												<xs:element ref="ntse:MomsAngivelseEUSalgVarerBeloeb" minOccurs="0"/>
+												<xs:element ref="ntse:MomsAngivelseIkkeEUSalgVarerBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseElAfgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseEksportOmsBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseGasAfgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseKoebsMomsBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseKulAfgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseEUkoebMomsBeloeb" minOccurs="0"/>
+												<xs:element ref="tse:MomsAngivelseMomsEUYdelserBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseOlieAfgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseSalgsMomsBeloeb" minOccurs="0"/>
+												<xs:element ref="momsangivelse:MomsAngivelseVandAfgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="tse:MomsAngivelseEUKoebYdelserBeloeb" minOccurs="0"/>
+												<xs:element ref="tse:MomsAngivelseEUSalgYdelserBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:abonnementtype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" xmlns:abonnentbestillingidentifikator="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" xmlns:abonnenttype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" xmlns:adgangformaaltype="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" schemaLocation="class/abonnentbestillingidentifikator/xml/schemas/20071202/AbonnentBestillingIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" schemaLocation="class/abonnenttype/xml/schemas/20071202/AbonnentTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" schemaLocation="class/abonnementtype/xml/schemas/20071202/AbonnementTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" schemaLocation="class/adgangformaaltype/xml/schemas/20071202/AdgangFormaalTypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="IndkomstOplysningPersonTidAbonnentBestilAfslut_I" type="fase2:IndkomstOplysningPersonTidAbonnentBestilAfslut_IType"/>
+         <xs:complexType name="IndkomstOplysningPersonTidAbonnentBestilAfslut_IType">
+            <xs:sequence>
+               <xs:element ref="kontekst:HovedOplysninger"/>
+                     <xs:element ref="abonnentbestillingidentifikator:AbonnentBestillingIdentifikator"/>
+                     <xs:element ref="abonnenttype:AbonnentTypeKode"/>
+                     <xs:element ref="abonnementtype:AbonnementTypeKode"/>
+                     <xs:element ref="adgangformaaltype:AdgangFormaalTypeKode"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

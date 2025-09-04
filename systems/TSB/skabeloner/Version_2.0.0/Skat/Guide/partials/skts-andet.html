@@ -1,0 +1,71 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Andet</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a href="#" data-ng-click="scrollTo('fejl')">Fejlh&aring;ndtering</a></li>
+      <li><a href="#" data-ng-click="scrollTo('kolonner')">Kolonner</a></li>
+      <li><a href="#" data-ng-click="scrollTo('browser')">Browser specifikt</a></li>
+      <li><a href="#" data-ng-click="scrollTo('media')">Medie specifikt</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="skts-indhold-guide">
+
+  <h2 id="fejl">Fejlh&aring;ndtering</h2>
+  <div class="bs-docs-example" data-pretty>
+    <div id="skts-indhold-aarsopgoerelse-ret-kontaktoplysninger-fejl" class="skts-indhold-smal">  
+      <div class="skts-fejl-meddelelse-boks"> 
+        <div style="width:1px;"> <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til n&aelig;rmest for&aelig;ldre som har et layout -->
+          <a id="skts-skip-link-target-fejl" class="skts-link-target-skjul">Fejl</a>
+        </div>
+        <ol class="skts-broedtekst">
+          <li><a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-email')); return false;">Du mangler at indtaste en e-mail-adresse.<span class="skts-tooltip"> G&aring; til feltet</span></a></li>
+          <li><a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-repeat-email')); return false;">Du mangler at gentage e-mail-adressen.<span class="skts-tooltip"> G&aring; til feltet</span></a></li>
+          <!--Nedenst&aring;ende er en anden mulig feltype som skal bruges hvis brugeren ikke taster ens email adresser. Denne skal hoppe ned til repeat email felter -->
+          <!--<li><a class="skts-fejltekst skts-tooltip-holder" href="#" onclick="fokusRubrik(document.getElementById('skts-repeat-email')); return false;">Du skal taste det samme i "E-mail-adresse" og "Gentag e-mail-adresse".<span class="skts-tooltip"> G&aring; til feltet</span></a></li>-->
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="bs-docs-example" data-pretty>
+    <fieldset id="skts-aarsopgoerelse-email-fieldset" class="skts-input-liste skts-broedtekst">
+      <div class="skts-field-nede">
+        <label class="skts-ledetekst" for="skts-email">E-mail-adresse: </label>
+        <input type="text" class="skts-layout2-text skts-felter-fejl" onblur="validerEmailInput(this);" id="skts-email"/>
+        <div class="skts-slut-float"></div>
+      </div>
+      <div class="skts-field-nede">
+        <label class="skts-ledetekst" for="skts-repeat-email">Gentag e-mail-adresse: </label>
+        <input type="text" class="skts-layout2-text skts-felter-fejl" onblur="validerEmailInput(this);" id="skts-repeat-email"/>
+        <div class="skts-slut-float"></div>
+      </div>
+      <div class="skts-knapper-placering1">
+        <input type="submit" class="skts-knap-primaer" value="Gem"/><input type="button" class="skts-knap-sekundaer" value="Sp&oslash;rg mig senere"/>
+      </div>
+    </fieldset>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="kolonner">Kolonner</h2>
+
+  <div class="bs-docs-example" data-pretty>
+    <div class="skts-kolonner-to">
+      <div class="skts-kolonne1"><span>Indtast direkte:</span>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+          K&oslash;rsel til og fra arbejde (befordring)<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+          Aktier og v&aelig;rdipapirer<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+      </div>
+      <div class="skts-kolonne2"><span>Orientering fra SKAT:</span> 
+        <a href="#" class="skts-primaer-link skts-tooltip-holder">
+          Om din &aring;rsopg&oslash;relse<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+        <a href="#" class="skts-primaer-link skts-tooltip-holder" title="Viser vindue med orientering fra SKAT" >
+          Om udenlandsk indkomst<span class="skts-tooltip"> &Aring;bner nyt vindue</span></a>
+      </div>
+      <div class="skts-slut-float"></div>
+    </div>
+  </div>
+</div>

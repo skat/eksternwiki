@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueFastEjendomBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SagHandlingTypeTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KonjunkturudligningsskatHenlaeggelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedOrdningKapitalafkastBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedOrdningRentekorrektionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedOrdningIndkomstTilVirksomhedsbeskatningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatVirksomhedsIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSelvstaendigVirksomhedKontingentBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSelvstaendigVirksomhedNettoRenterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSelvstaendigVirksomhedOverskudBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalafkastOrdningKapitalafkastBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/CFCskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/CFCIndkomstBeloeb.xsd"/><xs:element name="UdenlandskVirksomhedStruktur" type="selvangivelsews:UdenlandskVirksomhedStrukturType"/>
+	<xs:complexType name="UdenlandskVirksomhedStrukturType">
+		<xs:sequence>
+			<xs:element name="UdenlandskVirksomhed">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="UdenlandskVirksomhedSletUaendret" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:SagHandlingTypeTekst" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="UdenlandskVirksomhedOpretRet" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:SagHandlingTypeTekst" minOccurs="0"/>
+									<xs:element name="FastDriftssted" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="dkcc:CountryIdentificationCode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="UdenlandskVirksomhedForhold">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:UdenlandskSelvstaendigVirksomhedOverskudBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:UdenlandskSelvstaendigVirksomhedNettoRenterBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:UdenlandskSelvstaendigVirksomhedKontingentBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:CFCIndkomstBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:CFCskatBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:UdenlandskFormueFastEjendomBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:UdenlandskSkatVirksomhedsIndkomstBeloeb" minOccurs="0"/>
+												<xs:element name="KapitalafkastOrdning" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="selvangivelse:KapitalafkastOrdningKapitalafkastBeloeb" minOccurs="0"/>
+															<xs:element ref="selvangivelse:KonjunkturudligningsskatHenlaeggelseBeloeb" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="VirksomhedOrdning" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="selvangivelse:VirksomhedOrdningKapitalafkastBeloeb" minOccurs="0"/>
+															<xs:element ref="selvangivelse:VirksomhedOrdningIndkomstTilVirksomhedsbeskatningBeloeb" minOccurs="0"/>
+															<xs:element ref="selvangivelse:VirksomhedOrdningRentekorrektionBeloeb" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

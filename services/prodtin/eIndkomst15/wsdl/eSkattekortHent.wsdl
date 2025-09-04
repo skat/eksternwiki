@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="eSkattekortHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet er at udstille eSkattekort til offentlige myndigheder, A-kasser o. lign., der har brug for et øjebliks-billede af skattekortoplysninger og, som SKAT har givet tilladelse hertil. Der er udelukkende tale om en udstilling af det/de ønskede skattekortoplysninger.   Det kontrolleres, at SKAT har givet bruger tilladelse til at få udstillet det/de ønskede skattekortoplysninger, herunder om bruger kan få alle oplysninger om eSkattekort med specifikation af trækprocent i A-skat og lønindeholdelse - og andre kun de traditionelle skattekortoplysninger.  Der hentes eSkattekort, som er gyldige på den anførte SøgeDatoFra, hvis eSkattekortAlleMarkering er 'Falsk', dvs. det er angivet, at der alene ønskes eSkattekort, som er gældende på den anførte dato ønskes.  Der hentes eSkattekort, som er gyldige på samt fra og med den anførte SøgeDatoFra, hvis eSkattekortAl-leMarkering er 'Sand', dvs. der er angivet, at der ønskes eSkattekort, som er gældende på den anførte dato samt eventuelle 'nyere' eSkattekort.  En anvender af servicen kan pt. anvende følgende værdier af eSkattekortRekvisitionTypeKode: 01 = hovedkort 02 = bikort 06 = hovedkort uden lønindeholdelse  07 = bikort uden lønindeholdelse  Hvis der er anvendt: eSkattekortRekvisitionTypeKode = 01 (Hovedkort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 0 = Intet skattekort 1 = Bruttokort 2 = Hovedkort 3 = Frikort  eSkattekortRekvisitionTypeKode = 02 (Bikort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 0 = Intet skattekort 1 = Bruttokort 3 = Frikort 4 = Bikort  eSkattekortRekvisitionTypeKode = 06 (Hovedkort uden lønindeholdelse) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 0 = Intet skattekort 3 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortSærskiltForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  5 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortSærskiltForskudTrækProcent vil være udfyldt)  6 = Hovedkort uden lønindeholdelse  eSkattekortRekvisitionTypeKode = 07 (Bikort uden lønindeholdelse) så kan svaret indeholde føl-gende værdier af eSkattekortTypeKode: 0 = Intet skattekort 3 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortSærskiltForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  5 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skattekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortSærskiltForskudTrækProcent vil være udfyldt) 7 = Bikort uden lønindeholdelse</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+			<xsd:include schemaLocation="../service/eSkattekortHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="eSkattekortHentServiceRequest">
+		<wsdl:part name="Request" element="fase2:eSkattekortHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="eSkattekortHentServiceResponse">
+		<wsdl:part name="Response" element="fase2:eSkattekortHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="eSkattekortHentServicePortType">
+		<wsdl:operation name="geteSkattekortHent">
+			<wsdl:input message="fase2:eSkattekortHentServiceRequest"/>
+			<wsdl:output message="fase2:eSkattekortHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="eSkattekortHentServiceBinding" type="fase2:eSkattekortHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="geteSkattekortHent">
+			<soap:operation soapAction="geteSkattekortHent"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="eSkattekortHentServiceBindingQSService">
+		<wsdl:port name="eSkattekortHentServiceBindingQSPort" binding="fase2:eSkattekortHentServiceBinding">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/eSkattekortHentServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:kob="urn:oio:skat:kob:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/IndsatsIdentifikator.xsd"/><xs:element name="KreditoplysningBureauDebitorSlet_I" type="kobws:KreditoplysningBureauDebitorSlet_IType">
+	</xs:element>
+	<xs:complexType name="KreditoplysningBureauDebitorSlet_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="kob:IndsatsIdentifikator"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

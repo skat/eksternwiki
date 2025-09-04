@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ntsews="urn:oio:skat:ntse:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:ntse:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Opret en eller flere momsangivelser via system-til-system integration med Ø90 (Landbrugets regnskabssystem), og returner en kvittering. System-til-system integration kan kun anvendes af autoriseret revisor. Revisor skal anvende OCES/Medarbejdercertifikat. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/MomsAngivelseSystemIntegration_IType.xsd"/>
+	<xs:include schemaLocation="../view/MomsAngivelseSystemIntegration_OType.xsd"/>
+	<xs:element name="MomsAngivelseSystemIntegrationInterface" type="ntsews:MomsAngivelseSystemIntegrationInterfaceType"/>
+	<xs:complexType name="MomsAngivelseSystemIntegrationInterfaceType">
+		<xs:choice>
+			<xs:element ref="ntsews:MomsAngivelseSystemIntegration_I"/>
+			<xs:element ref="ntsews:MomsAngivelseSystemIntegration_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

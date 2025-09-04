@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Information om ændring af sambeskatning for et selskab</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst10Type.xsd"/>
+         <xs:element name="SelskabSambeskatningÆndringKarensPeriodeStartDato"
+                     type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for start af karensperiode ved ændring af sambeskatning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSambeskatningÆndringStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor den ændrede sambeskatning træder i kraft.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSambeskatningÆndringFjernSelskabBegrundelseKode"
+                     type="skat2012:Tekst10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver årsagen til at selskab(er) fjernes fra sambeskatningskredsen.  MISTINF: Mistet bestemmende indflydelse i selskabet. OPHØR: Konkurs, likvidation eller opløsning. OMSTRUK: Skattefri omstrukturering. FUSOPH: Skattepligtig fusion eller ophørsspaltning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSambeskatningÆndringTilføjSelskabBegrundelseKode"
+                     type="skat2012:Tekst10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver årsagen til at selskab(er) tilføjes i sambeskatningskredsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSambeskatningÆndringAnmodningDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor sambeskatningsændringen er bestilt i DIAS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

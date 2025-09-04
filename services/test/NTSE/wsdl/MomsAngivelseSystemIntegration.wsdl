@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:ntsews="urn:oio:skat:ntse:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:ntse:ws:1.0.1" name="MomsAngivelseSystemIntegrationService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Opret en eller flere momsangivelser via system-til-system integration med Ø90 (Landbrugets regnskabssystem), og returner en kvittering. System-til-system integration kan kun anvendes af autoriseret revisor. Revisor skal anvende OCES/Medarbejdercertifikat. </xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:ntse:ws:1.0.1">
+			<xsd:include schemaLocation="../service/MomsAngivelseSystemIntegrationInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MomsAngivelseSystemIntegrationServiceRequest">
+		<wsdl:part name="Request" element="ntsews:MomsAngivelseSystemIntegration_I"/>
+	</wsdl:message>
+	<wsdl:message name="MomsAngivelseSystemIntegrationServiceResponse">
+		<wsdl:part name="Response" element="ntsews:MomsAngivelseSystemIntegration_O"/>
+	</wsdl:message>
+	<wsdl:portType name="MomsAngivelseSystemIntegrationServicePortType">
+		<wsdl:operation name="getMomsAngivelseSystemIntegration">
+			<wsdl:input message="ntsews:MomsAngivelseSystemIntegrationServiceRequest"/>
+			<wsdl:output message="ntsews:MomsAngivelseSystemIntegrationServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver oplysningspligter registreret i henhold til skattelovgivningen for en given virksomhed på et givet tidspunkt, eksempelvis renter, faglige kontingenter, A-indkomst. Der kan være fra et til flere oplysningsforhold til samme registreringsforhold på samme tid.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeTreCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/AarType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="OplysningForholdKode" type="skat2012:KodeTreCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>En vilkårlig kode på 10 tegn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OplysningForholdGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OplysningForholdGyldigTil" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OplysningForholdVirksomhedTypeKode"
+                     type="skat2012:KodeTreCifreStartEtType">
+               
+            </xs:element>
+         <xs:element name="OplysningForholdAnsatÅr" type="skat2012:AarType">
+               
+               <xs:annotation>
+                  <xs:documentation>År for opgørelse af antal ansatte</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OplysningForholdAntalAnsatte" type="skat2012:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Oplysning om antal ansatte.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Tax Identification Number - et nummer som i skatteforhold identificerer en person eller virksomhed i et givent land. Nogle lande har ingen og nogle har flere typer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst25Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="TINNummer" type="skat2012:Tekst25Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikationen Tax Identification Number (TIN).  Retmæssig ejers skattemæssige ID-nr. efter bopælslandets regler.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TINType" type="skat2012:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En vilkårlig kode på 10 tegn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="HenlæggelseBenyttelseOpgørelseAlmenVelgørendeTotal"
+                     type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Benyttet til almenvelgørende/almennyttige formål. Rubrik 37. Felt 219.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenlæggelseBenyttelseOpgørelseAndreFormålTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Benyttet til andre formål i indkomståret, som skal efterbeskattes. Rubrik 38. Felt 221</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

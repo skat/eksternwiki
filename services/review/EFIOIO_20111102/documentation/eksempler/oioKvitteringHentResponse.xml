@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oefiws:MFKvitteringHent_O xmlns:oefiws="urn:oio:skat:efi:ws:1.0.1">
+  <ok:HovedOplysningerSvar xmlns:ok="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/">
+    <ok:TransaktionIdentifikator>eb3c9a27-ad0e-4329-8c48-58f1539143c4</ok:TransaktionIdentifikator>
+    <ok:ServiceIdentifikator>MFKvitteringHent</ok:ServiceIdentifikator>
+    <ok:TransaktionTid>2011-08-05T14:36:57.022+02:00</ok:TransaktionTid>
+    <ok:SvarStruktur/>
+  </ok:HovedOplysningerSvar>
+  <oefiws:FordringhaverSystemIDStruktur>
+    <ov:VirksomhedSENummerIdentifikator xmlns:ov="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/">86754286</ov:VirksomhedSENummerIdentifikator>
+  </oefiws:FordringhaverSystemIDStruktur>
+  <oefi:FordringHaverIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">19</oefi:FordringHaverIdentifikator>
+  <oefiws:KvitteringSamling>
+    <oefiws:Kvittering>
+      <oefiws:MFAktionStruktur>
+        <oefi:FordringInddrivelseFordringIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">5010</oefi:FordringInddrivelseFordringIdentifikator>
+        <oefi:FordringInddrivelseHovedFordringIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">5010</oefi:FordringInddrivelseHovedFordringIdentifikator>
+        <oefi:ModtagFordringAktionIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">8</oefi:ModtagFordringAktionIdentifikator>
+        <oefi:ModtagFordringAktionKode xmlns:oefi="urn:oio:skat:efi:1.0.0">OPSKRIV</oefi:ModtagFordringAktionKode>
+        <oefi:FordringHaverIdentifikator xmlns:oefi="urn:oio:skat:efi:1.0.0">19</oefi:FordringHaverIdentifikator>
+        <oefi:ModtagFordringAktionStatusKode xmlns:oefi="urn:oio:skat:efi:1.0.0">UDFOERT</oefi:ModtagFordringAktionStatusKode>
+        <oefi:ModtagFordringAktionStatusAendretDato xmlns:oefi="urn:oio:skat:efi:1.0.0">2011-08-05T14:36:56.863+02:00</oefi:ModtagFordringAktionStatusAendretDato>
+        <oefiws:AfvistAarsagSamling/>
+      </oefiws:MFAktionStruktur>
+      <oefiws:KundeSamling/>
+    </oefiws:Kvittering>
+  </oefiws:KvitteringSamling>
+</oefiws:MFKvitteringHent_O>

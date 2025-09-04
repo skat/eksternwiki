@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/AuthorityCode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomvaerdiskatBeregnetSumBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomvaerdiskatBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" schemaLocation="../../../../../../bbr_dk/xml/schemas/2005/03/11/MunicipalRealPropertyIdentifier.xsd"/><xs:element name="EjendomsoplysningerStruktur" type="selvangivelsews:EjendomsoplysningerStrukturType"/>
+	<xs:complexType name="EjendomsoplysningerStrukturType">
+		<xs:sequence>
+			<xs:element name="Ejendomme" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EjendomListe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Ejendom" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="core:AuthorityCode" minOccurs="0"/>
+												<xs:element ref="bbr:MunicipalRealPropertyIdentifier"/>
+												<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+												<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+												<xs:element ref="selvangivelse:EjendomvaerdiskatBeloeb"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="selvangivelse:EjendomvaerdiskatBeregnetSumBeloeb"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

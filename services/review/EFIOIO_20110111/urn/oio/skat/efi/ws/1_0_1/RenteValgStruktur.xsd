@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/RenteSatsProcent.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/RenteSatsKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/RenteRegelIdentifikator.xsd"/><xs:element name="RenteValgStruktur" type="efiws:RenteValgStrukturType"/>
+	<xs:complexType name="RenteValgStrukturType">
+		<xs:sequence>
+			<xs:element name="RenteValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="RegelNummerogSatsKode">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="efi:RenteRegelIdentifikator"/>
+										<xs:element ref="efi:RenteSatsKode"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="Sats">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="efi:RenteSatsProcent"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

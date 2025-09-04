@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:es="urn:oio:skat:es:1.0.0" xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:virksomhed1="http://rep.oio.dk/skat.dk/eindkomst/class/virksomhed/xml/schemas/20071202/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/virksomhed/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/virksomhed/xml/schemas/20071202/VirksomhedPeriode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd"/>
+	<xs:import namespace="urn:oio:skat:es:1.0.0" schemaLocation="../../1_0_0/VirksomhedTypeKode.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:element name="OIOAbonnentCVRSENummerRelationHent_O" type="esws:OIOAbonnentCVRSENummerRelationHent_OType"/>
+	<xs:complexType name="OIOAbonnentCVRSENummerRelationHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="AbonnentCVRSENummerRelationUddata" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CVRSENummerRelationSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CVRSENummerRelation" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+												<xs:element name="CVRSENummerSamling">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="CVRSENummer" minOccurs="1" maxOccurs="unbounded">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+																		<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+																		<xs:element ref="virksomhed1:VirksomhedPeriode"/>
+																		<xs:element ref="es:VirksomhedTypeKode"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

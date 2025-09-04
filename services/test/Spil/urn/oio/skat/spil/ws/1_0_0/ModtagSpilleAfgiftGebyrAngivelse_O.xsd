@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:spilws="urn:oio:skat:spil:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:spil:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:ntse="urn:oio:skat:ntse:1.0.0" xmlns:betaling="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/TSE/betaling/xml/schemas/2006/09/01/BetalingsBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/TSE/betaling/xml/schemas/2006/09/01/BetalingsDato.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="../../../ntse/1_0_0/BetalingFormidlerKode.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="../../../ntse/1_0_0/ValutaKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/TSE/angivelse/xml/schemas/2006/09/01/AngivelseKvitteringIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/TSE/angivelse/xml/schemas/2006/09/01/AngivelseDatoTid.xsd"/><xs:include schemaLocation="AngiverVirksomhedSENummer.xsd"/>
+	<xs:include schemaLocation="AngivelseValgtPeriode.xsd"/>
+	<xs:include schemaLocation="OCRLinie.xsd"/>
+	<xs:element name="ModtagSpilleAfgiftGebyrAngivelse_O" type="spilws:ModtagSpilleAfgiftGebyrAngivelse_OType">
+	</xs:element>
+	<xs:complexType name="ModtagSpilleAfgiftGebyrAngivelse_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="OprettelseKvitteringUddataListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OprettelseKvitteringUddata" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:choice>
+									<xs:sequence>
+										<xs:element name="GebyrKvittering">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="spilws:AngiverVirksomhedSENummer"/>
+													<xs:element ref="spilws:AngivelseValgtPeriode"/>
+													<xs:element ref="angivelse:AngivelseKvitteringIdentifikator"/>
+													<xs:element ref="spilws:OCRLinie" minOccurs="0"/>
+													<xs:element ref="angivelse:AngivelseDatoTid"/>
+													<xs:element ref="ntse:ValutaKode"/>
+													<xs:element name="GebyrBetalingUddata">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="ntse:BetalingFormidlerKode" minOccurs="0"/>
+																<xs:element ref="betaling:BetalingsDato" minOccurs="0"/>
+																<xs:element ref="betaling:BetalingsBeloeb" minOccurs="0"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:sequence>
+										<xs:element name="SpilleAfgiftKvittering">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="spilws:AngiverVirksomhedSENummer"/>
+													<xs:element ref="spilws:AngivelseValgtPeriode"/>
+													<xs:element ref="angivelse:AngivelseKvitteringIdentifikator"/>
+													<xs:element ref="spilws:OCRLinie" minOccurs="0"/>
+													<xs:element ref="angivelse:AngivelseDatoTid"/>
+													<xs:element ref="ntse:ValutaKode"/>
+													<xs:element name="SpilleAfgiftBetalingUddata">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="ntse:BetalingFormidlerKode" minOccurs="0"/>
+																<xs:element ref="betaling:BetalingsDato" minOccurs="0"/>
+																<xs:element ref="betaling:BetalingsBeloeb" minOccurs="0"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

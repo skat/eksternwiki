@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="UdenlandskPersonNummerType">
+               <xs:annotation>
+                  <xs:documentation>Nummer der entydigt identificerer de for SKAT relevante udenlandske personer, der ikke er registreret ved et dansk CPR-nummer.  Svarer lige nu til identifikation fundet i Erhvervssystemet.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

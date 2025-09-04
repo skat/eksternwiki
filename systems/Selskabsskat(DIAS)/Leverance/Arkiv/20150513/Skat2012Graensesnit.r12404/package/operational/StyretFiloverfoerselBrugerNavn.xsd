@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         
+         <xs:element name="StyretFiloverførselBrugerNavn" type="skat2012:NavnType">
+            <xs:annotation>
+               <xs:documentation>Generisk navnefelt. Bruges til personnavne og virksomhedsnavne m.m.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

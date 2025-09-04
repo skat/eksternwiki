@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r4177</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SpilFil.xsd"/>
+         <xs:include schemaLocation="../class/Tilladelsesindehaver.xsd"/>
+         <xs:include schemaLocation="../class/SpilCertifikat.xsd"/>
+         <xs:include schemaLocation="../class/EndOfDayRapport.xsd"/>
+         <xs:include schemaLocation="../class/ValutaOplysning.xsd"/>
+         <xs:include schemaLocation="../class/SpilKategori.xsd"/>
+         <xs:element name="EndOfDayRapportStruktur" type="fase2.1:EndOfDayRapportStrukturType"/>
+         <xs:complexType name="EndOfDayRapportStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="EndOfDayRapportStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="FilInformation">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:SpilFilIdentifikation"/>
+
+                                 <xs:element ref="fase2.1:SpilFilErstatningIdentifikation" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Tilladelsesindehaver">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:TilladelsesindehaverNavn"/>
+                  
+                                 <xs:element ref="fase2.1:SpilCertifikatIdentifikation"/>
+                  
+                                 <xs:element ref="fase2.1:SpilCertifikatTilladelsestype"/>
+                  
+                                 <xs:element ref="fase2.1:EndOfDayRapportDato"/>
+                  
+                                 <xs:element ref="fase2.1:ValutaOplysningKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="SpilOpgørelseListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="SpilOpgørelse" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:SpilKategoriNavn"/>
+                  
+                                          <xs:element ref="fase2.1:EndOfDayRapportAntalSpil"/>
+                  
+                                          <xs:element ref="fase2.1:EndOfDayRapportIndskudSpil"/>
+                  
+                                          <xs:element ref="fase2.1:EndOfDayRapportIndskudJackpot"/>
+                  
+                                          <xs:element ref="fase2.1:EndOfDayRapportGevinster"/>
+                  
+                                          <xs:element ref="fase2.1:EndOfDayRapportKommissionRake"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

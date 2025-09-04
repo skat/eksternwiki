@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringStiftelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringProduktionEnhedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringHaverIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="../view/MFNoteStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/MFDokumentStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/RenteValgStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/MFHaeftelseStrukturType.xsd"/>
+	<xs:element name="MFAendrFordringStruktur" type="efiws:MFAendrFordringStrukturType"/>
+	<xs:complexType name="MFAendrFordringStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+			<xs:element ref="efi:FordringFordringArtKode" minOccurs="0"/>
+			<xs:element ref="efi:FordringProduktionEnhedIdentifikator" minOccurs="0"/>
+			<xs:element ref="efi:FordringStiftelseDato" minOccurs="0"/>
+			<xs:element name="NyFordringHaverStruktur" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:FordringHaverIdentifikator"/>
+						<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SagsbemaerkningSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFNoteStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DokumentSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFDokumentStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="efiws:RenteValgStruktur" minOccurs="0"/>
+			<xs:element name="HaeftelseSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFHaeftelseStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

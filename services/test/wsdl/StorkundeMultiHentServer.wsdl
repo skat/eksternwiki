@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="StorkundeMultiHentServiceDefinitions" targetNamespace="http://service" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/tinglysningsafgift/" version="1.0" xml:lang="DA" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:pligt="http://rep.oio.dk/skat.dk/motor/class/pligt/xml/schemas/20080401/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="StorkundeMultiHentInterface" type="fase2:StorkundeMultiHentInterfaceType"/>
+      <xsd:complexType name="StorkundeMultiHentInterfaceType">
+        <xsd:choice>
+          <xsd:element ref="fase2:StorkundeMultiHent_I"/>
+          <xsd:element ref="fase2:StorkundeMultiHent_O"/>
+        </xsd:choice>
+      </xsd:complexType>
+      <xsd:element name="StorkundeMultiHent_I" type="fase2:StorkundeMultiHent_IType"/>
+      <xsd:complexType name="StorkundeMultiHent_IType">
+        <xsd:sequence>
+          <xsd:element ref="kontekst:HovedOplysninger"/>
+          <xsd:element name="TinglysningsafgiftsPligtKode">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="pligt:PligtKode"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="StorkundeMultiHent_O" type="fase2:StorkundeMultiHent_OType"/>
+      <xsd:complexType name="StorkundeMultiHent_OType">
+        <xsd:sequence>
+          <xsd:element ref="kontekst:HovedOplysningerSvar"/>
+          <xsd:element minOccurs="0" name="VirksomhedCVRNummerListe">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="cvr:CVRnumberIdentifier"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" version="1.0" xmlns:fase2="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tsk="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <!-- HovedOplysninger -->
+      <xsd:element name="HovedOplysninger" type="tsk:HovedOplysningerType"/>
+      <xsd:complexType name="HovedOplysningerType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tsk:TransaktionIdentifikator"/>
+          <xsd:element minOccurs="0" ref="tsk:TransaktionTid"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="TransaktionIdentifikator" type="tsk:TransaktionIdentifikatorType"/>
+      <xsd:simpleType name="TransaktionIdentifikatorType">
+        <xsd:restriction base="xs:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="100"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="TransaktionTid" type="xs:dateTime"/>
+      <xsd:element name="ServiceIdentifikator" type="xs:string"/>
+      <!-- HovedOplysningerSvar -->
+      <xsd:element name="HovedOplysningerSvar" type="tsk:HovedOplysningerSvarType"/>
+      <xsd:complexType name="HovedOplysningerSvarType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tsk:TransaktionIdentifikator"/>
+          <xsd:element minOccurs="0" ref="tsk:ServiceIdentifikator"/>
+          <xsd:element minOccurs="0" ref="tsk:TransaktionTid"/>
+          <xsd:element ref="tsk:SvarStruktur"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FejlIdentifikator" type="tsk:FejlIdentifikatorType"/>
+      <xsd:simpleType name="FejlIdentifikatorType">
+        <xsd:restriction base="xs:integer"/>
+      </xsd:simpleType>
+      <xsd:element name="AdvisIdentifikator" type="tsk:FejlIdentifikatorType"/>
+      <xsd:element name="FejlTekst" type="tsk:FejlTekstType"/>
+      <xsd:simpleType name="FejlTekstType">
+        <xsd:restriction base="xs:string">
+          <xsd:minLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="AdvisTekst" type="tsk:FejlTekstType"/>
+      <xsd:element name="AdvisStruktur" type="tsk:AdvisStrukturType"/>
+      <xsd:complexType name="AdvisStrukturType">
+        <xsd:sequence>
+          <xsd:element ref="tsk:AdvisIdentifikator"/>
+          <xsd:element minOccurs="0" ref="tsk:AdvisTekst"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SvarStruktur" type="tsk:SvarStrukturType"/>
+      <xsd:complexType name="SvarStrukturType">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element ref="tsk:AdvisStruktur"/>
+          <xsd:element ref="tsk:FejlStruktur"/>
+        </xsd:choice>
+      </xsd:complexType>
+      <xsd:element name="FejlStruktur" type="tsk:FejlStrukturType"/>
+      <xsd:complexType name="FejlStrukturType">
+        <xsd:sequence>
+          <xsd:element ref="tsk:FejlIdentifikator"/>
+          <xsd:element minOccurs="0" ref="tsk:FejlTekst"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" version="1.1" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="CVRnumberIdentifier" type="cvr:CVRnumberIdentifierType"/>
+      <xsd:simpleType name="CVRnumberIdentifierType">
+        <xsd:restriction base="xs:string">
+          <xsd:length value="8"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/motor/class/pligt/xml/schemas/20080401/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://rep.oio.dk/skat.dk/tinglysningsafgift/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="PligtKode" type="xs:string"/>
+    </xsd:schema>
+  </s0:types>
+  <s0:message name="getStorkundeMultiHent">
+    <s0:part element="s1:StorkundeMultiHent_I" name="Request_arg"/>
+  </s0:message>
+  <s0:message name="getStorkundeMultiHentResponse">
+    <s0:part element="s1:StorkundeMultiHent_O" name="StorkundeMultiHent_O"/>
+  </s0:message>
+  <s0:portType name="StorkundeMultiHent">
+    <s0:operation name="getStorkundeMultiHent" parameterOrder="Request_arg">
+      <s0:input message="s2:getStorkundeMultiHent"/>
+      <s0:output message="s2:getStorkundeMultiHentResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="StorkundeMultiHentServiceSoapBinding" type="s2:StorkundeMultiHent">
+    <s3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="getStorkundeMultiHent">
+      <s3:operation soapAction="urn:#getStorkundeMultiHent" style="document"/>
+      <s0:input>
+        <s3:body parts="Request_arg" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body parts="StorkundeMultiHent_O" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="StorkundeMultiHentService">
+    <s0:port binding="s2:StorkundeMultiHentServiceSoapBinding" name="StorkundeMultiHentSoapPort">
+      <s3:address location="https://194.239.239.106:443/eTl/OIOStorkundeMultiHent/StorkundeMultiHent"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringhaverafregningunderretkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringHaverAfregningUnderretKode" type="fordringhaverafregningunderretkode:FordringHaverAfregningUnderretKodeType">
+		<xs:annotation>
+			<xs:documentation>Kode der oplyser om underretningen er en udligning eller en afregning. 
+Mulige koder:
+UDL: Udligning
+AFR: Afregning </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="FordringHaverAfregningUnderretKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="UDL"/>
+			<xs:enumeration value="AFR"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

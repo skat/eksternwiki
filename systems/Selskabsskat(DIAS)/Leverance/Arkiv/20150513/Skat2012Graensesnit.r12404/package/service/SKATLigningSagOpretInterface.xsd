@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Gør det muligt at oprette en sag til sagsbehandling i SKAT Ligning med tilhørende information.</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/SKATLigningSagOpret_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/SKATLigningSagOpret_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/SKATLigningSagOpret_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagOmlaegRegnskabsperiodeStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagAEndreBeskatningsparagrafStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagTilmeldSkattepligtForholdStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagSelvangivelseUdsaettelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagSelvangivelseGenoptagelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagAEndreMidlertidigSkattepligtStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagAEndreRegnskabValutaStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagSkoensmaessigAnsaettelseSelskabSelvangivelseStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagSkattefriOmstruktureringStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../view/LigningSagTilManuelBehandlingStrukturType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="SKATLigningSagOpretInterface"
+                     type="skat2012:SKATLigningSagOpretInterfaceType"/>
+         <xs:complexType name="SKATLigningSagOpretInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:SKATLigningSagOpret_I"/>
+               <xs:element ref="skat2012:SKATLigningSagOpret_O"/>
+               <xs:element ref="skat2012:SKATLigningSagOpret_FejlId"/>
+               <xs:element ref="skat2012:LigningSagOmlægRegnskabsperiodeStruktur"/>
+               <xs:element ref="skat2012:LigningSagÆndreBeskatningsparagrafStruktur"/>
+               <xs:element ref="skat2012:LigningSagTilmeldSkattepligtForholdStruktur"/>
+               <xs:element ref="skat2012:LigningSagSelvangivelseUdsættelseStruktur"/>
+               <xs:element ref="skat2012:LigningSagSelvangivelseGenoptagelseStruktur"/>
+               <xs:element ref="skat2012:LigningSagÆndreMidlertidigSkattepligtStruktur"/>
+               <xs:element ref="skat2012:LigningSagÆndreRegnskabValutaStruktur"/>
+               <xs:element ref="skat2012:LigningSagSkønsmæssigAnsættelseSelskabSelvangivelseStruktur"/>
+               <xs:element ref="skat2012:LigningSagSkattefriOmstruktureringStruktur"/>
+               <xs:element ref="skat2012:LigningSagTilManuelBehandlingStruktur"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

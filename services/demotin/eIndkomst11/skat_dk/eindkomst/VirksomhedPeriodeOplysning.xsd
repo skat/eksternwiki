@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:angivelse="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" schemaLocation="class/angivelse/xml/schemas/20071202/AngivelseVirksomhedEgenIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AngivelsePeriodeStruktur.xsd"/>
+         <xs:include schemaLocation="AngivelseBlanketIndholdStruktur.xsd"/>
+         <xs:element name="VirksomhedPeriodeOplysning" type="fase2:VirksomhedPeriodeOplysningType"/>
+         <xs:complexType name="VirksomhedPeriodeOplysningType">
+               <xs:sequence>
+                  <xs:element ref="angivelse:AngivelseVirksomhedEgenIdentifikator"/>
+                  <xs:element ref="fase2:AngivelsePeriodeStruktur"/>
+               <xs:element minOccurs="0" ref="fase2:AngivelseBlanketIndholdStruktur"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

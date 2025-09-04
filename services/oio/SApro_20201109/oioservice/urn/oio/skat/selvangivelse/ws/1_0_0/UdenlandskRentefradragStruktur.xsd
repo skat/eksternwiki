@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SagHandlingTypeTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatKapitalIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstAndenKapitalIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstPensionsordningVaerdiStigningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstRenteindtaegtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueGaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueIndestaaendeBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteudgiftUdenlandskGaeldBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/><xs:element name="UdenlandskRentefradragStruktur" type="selvangivelsews:UdenlandskRentefradragStrukturType"/>
+	<xs:complexType name="UdenlandskRentefradragStrukturType">
+		<xs:sequence>
+			<xs:element name="UdenlandskRentefradrag">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="UdenlandskRentefradragSletUaendret" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:SagHandlingTypeTekst" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="UdenlandskRentefradragOpretRet" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:SagHandlingTypeTekst" minOccurs="0"/>
+									<xs:element ref="dkcc:CountryIdentificationCode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskKapitalIndkomstRenteindtaegtBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RenteudgiftUdenlandskGaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskKapitalIndkomstPensionsordningVaerdiStigningBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskKapitalIndkomstAndenKapitalIndkomstBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskFormueIndestaaendeBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskFormueGaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdenlandskSkatKapitalIndkomstBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

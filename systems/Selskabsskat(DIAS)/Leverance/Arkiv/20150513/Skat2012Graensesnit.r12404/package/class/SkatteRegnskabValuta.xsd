@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaKodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst50Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="SkatteRegnskabValutaÆndringUdførtDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen hvor kundens ændring er registreret - detaljer omkring valuta for skatteregnskab. (Er ikke det samme som den dag hvor ændringe træder i kraft).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteRegnskabValutaKode" type="skat2012:ValutaKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Valutakode for den valuta som skatteregnskabet er angivet i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteRegnskabValutaÆndringVirkningDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor anvendelsen af ny valuta (for skatteregnskabet) træder i kraft.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteRegnskabValutaCentralBankNavn" type="skat2012:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på centralbanken som anvendes til kurs-ansættelse af fremmed valuta i skatteregnskabet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteRegnskabValutaDispensationAnsøgning" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er medsendt dispensation for ændring efter begyndelse af indkomståret. (true = ja, false = nej)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteRegnskabValutaGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteRegnskabValutaGyldigTil" type="skat2012:DatoType">
+               
+            </xs:element>
+      </xs:schema>

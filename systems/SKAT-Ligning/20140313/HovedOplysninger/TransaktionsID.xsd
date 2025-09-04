@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tsk="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:element name="TransaktionsID" type="tsk:TransaktionsIDType">
+		<xs:annotation>
+			<xs:documentation source="../meta/TransaktionsID.xsd.meta.xml"/>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="TransaktionsIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

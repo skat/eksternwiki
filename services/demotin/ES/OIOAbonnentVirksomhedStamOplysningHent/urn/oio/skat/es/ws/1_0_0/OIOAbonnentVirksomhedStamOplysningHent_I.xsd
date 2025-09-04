@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:es="urn:oio:skat:es:1.0.0" xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:es:ws:1.0.0" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:es:1.0.0" schemaLocation="../../1_0_0/AleneStamOplysningIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AbonnentAdgangStruktur.xsd"/>
+         <xs:include schemaLocation="AbonnentVirksomhedStruktur.xsd"/>
+         <xs:element name="OIOAbonnentVirksomhedStamOplysningHent_I" type="esws:OIOAbonnentVirksomhedStamOplysningHent_IType"/>
+         <xs:complexType name="OIOAbonnentVirksomhedStamOplysningHent_IType">
+            <xs:sequence>
+               <xs:element ref="kontekst:HovedOplysninger"/>
+                     <xs:element name="AbonnentVirksomhedStamOplysningInddata">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="esws:AbonnentAdgangStruktur"/>
+                              <xs:element ref="esws:AbonnentVirksomhedStruktur"/>
+                              <xs:element ref="es:AleneStamOplysningIndikator"/>
+                              <xs:element name="VirksomhedStamOplysning">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

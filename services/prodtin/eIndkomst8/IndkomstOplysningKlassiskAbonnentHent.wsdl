@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IndkomstOplysningKlassiskAbonnentHentService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+
+<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet er at bestille og hente indkomstoplysninger til myndigheder og andre (abonnenter), som periodisk har behov for oplysninger fra indkomstregistret, hvor indkomstmodtager eller indkomstudbetaler ikke på forhånd er kendt. 
+
+Der overføres oplysninger, som er registreret i eIndkomst siden sidste levering. Oplysningerne leveres uden nogen tolkning.
+
+Servicen stiller oplysninger til rådighed for myndigheder og andre, som iht. eIndkomstlovens § 7 stk. 1, jf. § 15 stk. 1 i eIndkomstbekendtgørelsen, kan anvende oplysninger fra indkomstregistret. 
+
+Anvendelsen af servicen er betinget af, at de pågældende har indgået en abonnementsaftale med told- og skatteforvaltningen herom, jf. § 7 stk. 4 i lov om et indkomstregister. 
+
+Servicen udstilles ikke til enhver og må således alene anvendes af kendte brugere, dvs. af de myndigheder m.fl., som abonnerer på ansættelsesoplysninger.
+
+Servicen kan give adgang til alle oplysninger om ansættelse eller en begrænset mængde af disse oplysninger afhængig af abonnent. De oplysninger, som en abonnent ikke har adgang til, filtreres fra (fjernes før udstilling til abonnenten) på grundlag af oplysning om abonnent, abonnement og anvendelsesformål.
+
+LeveringTilAbonnentStatusStatusNyDatoTid udtrykker det tidspunkt, hvortil der skal hentes nye oplysninger. Der hentes oplysninger fra sidste levering til dato tid for ny levering.
+		
+		Operationerne i denne service udføres i denne rækkefølge:
+			1) getIndkomstOplysningKlassiskAbonnentHent_I
+			2) getIndkomstOplysningKlassiskAbonnentHent_O
+			3)	getIndkomstOplysningKlassiskAbonnentHent_Afslut
+			
+			Mellem trin 1 og 2 kan der polles vha. service nr. 2 eller der kan udføres et callback fra SKAT til en service hos kunden.
+			Callback servicen er specificeret særskilt.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="skat_dk/eindkomst/IndkomstOplysningKlassiskAbonnentHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<!-- Asynchronous I method -->
+	<wsdl:message name="IndkomstOplysningKlassiskAbonnentHentServiceRequest_I">
+		<wsdl:part element="fase2:IndkomstOplysningKlassiskAbonnentHent_I_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningKlassiskAbonnentHentServiceResponse_I">
+		<wsdl:part element="fase2:IndkomstOplysningKlassiskAbonnentHent_I_O" name="Response"/>
+	</wsdl:message>
+	<!-- Asynchronous O method -->
+	<wsdl:message name="IndkomstOplysningKlassiskAbonnentHentServiceRequest_O">
+		<wsdl:part element="fase2:IndkomstOplysningKlassiskAbonnentHent_O_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningKlassiskAbonnentHentServiceResponse_O">
+		<wsdl:part element="fase2:IndkomstOplysningKlassiskAbonnentHent_O_O" name="Response"/>
+	</wsdl:message>
+	<!-- Følgende blok er ikke standard, og følger ikke et normalt løsningsmønster -->
+	<!-- Receipt method -->
+	<wsdl:message name="IndkomstOplysningKlassiskAbonnentHentAfslutServiceRequest_I">
+		<wsdl:part element="fase2:IndkomstOplysningKlassiskAbonnentHentAfslut_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningKlassiskAbonnentHentAfslutServiceResponse_O">
+		<wsdl:part element="fase2:IndkomstOplysningKlassiskAbonnentHentAfslut_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:portType name="IndkomstOplysningKlassiskAbonnentHent_IServicePortType">
+		<wsdl:operation name="getIndkomstOplysningKlassiskAbonnentHent_I">
+			<wsdl:input message="fase2:IndkomstOplysningKlassiskAbonnentHentServiceRequest_I"/>
+			<wsdl:output message="fase2:IndkomstOplysningKlassiskAbonnentHentServiceResponse_I"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="IndkomstOplysningKlassiskAbonnentHent_OServicePortType">
+		<wsdl:operation name="getIndkomstOplysningKlassiskAbonnentHent_O">
+			<wsdl:input message="fase2:IndkomstOplysningKlassiskAbonnentHentServiceRequest_O"/>
+			<wsdl:output message="fase2:IndkomstOplysningKlassiskAbonnentHentServiceResponse_O"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="IndkomstOplysningKlassiskAbonnentHent_AfslutServicePortType">
+		<wsdl:operation name="getIndkomstOplysningKlassiskAbonnentHentAfslut_I">
+			<wsdl:input message="fase2:IndkomstOplysningKlassiskAbonnentHentAfslutServiceRequest_I"/>
+			<wsdl:output message="fase2:IndkomstOplysningKlassiskAbonnentHentAfslutServiceResponse_O"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	
+<wsdl:binding name="NewBinding" type="fase2:IndkomstOplysningKlassiskAbonnentHent_IServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningKlassiskAbonnentHent_I">
+			<soap:operation soapAction="urn:#getIndkomstOplysningKlassiskAbonnentHent_I"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="NewBinding2" type="fase2:IndkomstOplysningKlassiskAbonnentHent_OServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningKlassiskAbonnentHent_O">
+			<soap:operation soapAction="urn:#getIndkomstOplysningKlassiskAbonnentHent_O"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="NewBinding3" type="fase2:IndkomstOplysningKlassiskAbonnentHent_AfslutServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningKlassiskAbonnentHentAfslut_I">
+			<soap:operation soapAction="urn:#getIndkomstOplysningKlassiskAbonnentHentAfslut_I"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="NewService">
+		<wsdl:port name="NewPort" binding="fase2:NewBinding">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/IndkomstOplysningKlassiskAbonnentHentV2ServicePort"/>
+		</wsdl:port>
+		<wsdl:port name="NewPort2" binding="fase2:NewBinding2">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/V2/BestillingHent"/>
+		</wsdl:port>
+		<wsdl:port name="NewPort3" binding="fase2:NewBinding3">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/V2/BestillingModtaget"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

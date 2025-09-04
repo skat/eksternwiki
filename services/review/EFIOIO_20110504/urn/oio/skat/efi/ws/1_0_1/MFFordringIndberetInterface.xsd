@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Benyttes til indberetning af fordringsaktioner fra en fordringshaver. En fordringaktion er enten en ny fordring der skal oprettes eller en ændring til en tidligere indberettet fordring.</xs:documentation>
+		<xs:documentation>r4325</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../../../../../../urn/oio/skat/efi/ws/1_0_1/MFFordringIndberet_I.xsd"/>
+	<xs:include schemaLocation="../../../../../../urn/oio/skat/efi/ws/1_0_1/MFFordringIndberet_O.xsd"/>
+	<xs:element name="MFFordringIndberetInterface" type="efiws:MFFordringIndberetInterfaceType"/>
+	<xs:complexType name="MFFordringIndberetInterfaceType">
+		<xs:choice>
+			<xs:element ref="efiws:MFFordringIndberet_I"/>
+			<xs:element ref="efiws:MFFordringIndberet_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

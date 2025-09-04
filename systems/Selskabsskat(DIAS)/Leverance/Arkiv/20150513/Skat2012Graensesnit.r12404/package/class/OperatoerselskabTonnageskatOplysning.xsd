@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Maks100Procent4DecimalerType.xsd"/>
+         <xs:element name="OperatørselskabTonnageskatOplysningNyIndtrådt"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er nyindtrådt i tonnageskatteordningen med operatørvirksomhed. (True = ja, False = nej) Felt 310</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OperatørselskabTonnageskatOplysningOrdningStartDatoEgen"
+                     type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor operatørselskabet blev omfattet af tonnageskatteordningen (selskabets egen). Felt 311</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OperatørselskabTonnageskatOplysningOrdningStartDatoKonsolideret"
+                     type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor operatørselskabet blev omfattet af tonnageskatteordningen (konsolideret basis). Felt 313</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OperatørselskabTonnageskatOplysningBasisDagEUProcentEgen"
+                     type="skat2012:Maks100Procent4DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Procentandel af opereret bruttotonnage, som på dato for indtræden i tonnageskatteordningen var registreret indenfor EU eller EØS (selskabets egen). Felt 312</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OperatørselskabTonnageskatOplysningBasisDagEUProcentKonsolideret"
+                     type="skat2012:Maks100Procent4DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Procentandel af opereret bruttotonnage, som på dato for indtræden i tonnageskatteordningen var registreret indenfor EU eller EØS (konsolideret basis). Felt 314</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

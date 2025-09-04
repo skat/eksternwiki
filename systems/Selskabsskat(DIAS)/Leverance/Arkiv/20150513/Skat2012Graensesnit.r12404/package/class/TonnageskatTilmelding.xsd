@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Begreber som relaterer til tilmelding i tonnageskatteordningen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="TonnageskatTilmeldingStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Første dato hvor selskabet er tilmeldt tonnageskatteordningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageskatTilmeldingSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste dato hvor selskabet er tilmeldt tonnageskatteordningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageskatTilmeldingFornyelseFristDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Seneste dato hvor det er muligt for selskabet at tilmelde sig tonnageskatteordningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

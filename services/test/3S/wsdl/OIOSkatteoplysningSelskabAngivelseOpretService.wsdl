@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s1:definitions name="OIOSkatteoplysningSelskabAngivelseOpretServiceDefinitions" targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0" xmlns="" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/" xmlns:s2="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="Encrypt.xml">
+    <wssp:Confidentiality xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:KeyWrappingAlgorithm URI="http://www.w3.org/2001/04/xmlenc#rsa-1_5"/>
+      <wssp:Target>
+        <wssp:EncryptionAlgorithm URI="http://www.w3.org/2001/04/xmlenc#tripledes-cbc"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:KeyInfo>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+        <wssp:SecurityTokenReference>
+          <wssp:Embedded>
+            <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">MIIE+DCCBGGgAwIBAgIEQDfv2jANBgkqhkiG9w0BAQUFADA/MQswCQYDVQQGEwJESzEMMAoGA1UEChMDVERDMSIwIAYDVQQDExlUREMgT0NFUyBTeXN0ZW10ZXN0IENBIElJMB4XDTExMDkyMTExMjEzN1oXDTEzMDkyMTExNTEzN1owbjELMAkGA1UEBhMCREsxHTAbBgNVBAoTFFNLQVQgLy8gQ1ZSOjE5NTUyMTAxMUAwFwYDVQQDExBTS0FUIC0gU0tBVCBURVNUMCUGA1UEBRMeQ1ZSOjE5NTUyMTAxLVVJRDoxMzE2NjAxNDgxNjQ1MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCgwuXVhjHLmroyUn/mbWbRpG2QZZ7sD3ZmRWiGbsEb+ek+pBdnREC74+t9JytYJKpegxEyvJbcBbevTqMdJxCOGj65QjHN2DbnwGlU7hzV9tXC8FqVeKbu2qxxi5oo8JZlLh3Q1UNVbYvuwIQvzcGrSB0WlYtjXt/LBhhTwGzIQIDAQABo4IC0DCCAswwDgYDVR0PAQH/BAQDAgO4MCsGA1UdEAQkMCKADzIwMTEwOTIxMTEyMTM3WoEPMjAxMzA5MjExMTUxMzdaMEYGCCsGAQUFBwEBBDowODA2BggrBgEFBQcwAYYqaHR0cDovL3Rlc3Qub2NzcC5jZXJ0aWZpa2F0LmRrL29jc3Avc3RhdHVzMIIBAwYDVR0gBIH7MIH4MIH1BgkpAQEBAQEBAQMwgecwLwYIKwYBBQUHAgEWI2h0dHA6Ly93d3cuY2VydGlmaWthdC5kay9yZXBvc2l0b3J5MIGzBggrBgEFBQcCAjCBpjAKFgNUREMwAwIBARqBl1REQyBUZXN0IENlcnRpZmlrYXRlciBmcmEgZGVubmUgQ0EgdWRzdGVkZXMgdW5kZXIgT0lEIDEuMS4xLjEuMS4xLjEuMS4xLjMuIFREQyBUZXN0IENlcnRpZmljYXRlcyBmcm9tIHRoaXMgQ0EgYXJlIGlzc3VlZCB1bmRlciBPSUQgMS4xLjEuMS4xLjEuMS4xLjEuMy4wHAYJYIZIAYb4QgENBA8WDW9yZ2FuV2ViTm9EaXIwIAYDVR0RBBkwF4EVcGV0ZXIuanVuZ2RhbEBza2F0LmRrMIGXBgNVHR8EgY8wgYwwV6BVoFOkUTBPMQswCQYDVQQGEwJESzEMMAoGA1UEChMDVERDMSIwIAYDVQQDExlUREMgT0NFUyBTeXN0ZW10ZXN0IENBIElJMQ4wDAYDVQQDEwVDUkwyODAxoC+gLYYraHR0cDovL3Rlc3QuY3JsLm9jZXMuY2VydGlmaWthdC5kay9vY2VzLmNybDAfBgNVHSMEGDAWgBQcmAlHGkw4uRDFBClb8fROgGrMfjAdBgNVHQ4EFgQUUvlD9SiLbxRiTRw+LIZ0Lz5pnAMwCQYDVR0TBAIwADAZBgkqhkiG9n0HQQAEDDAKGwRWNy4xAwIDqDANBgkqhkiG9w0BAQUFAAOBgQCkwhsZd/IHcYjytr+okcLcdNkZfjv27xAseUkWWCGpRve+S5PqQP4xRpKIhw57ZJW1etW2DfRAYrEWEre1v4QKR6XZUnEtYOQYFTBFeGje+KQ16AmfiG2K08ZV61RMmY8Ucgm8PX031caU03V1JOCWpSFXuDnfFAwsMhLcwk7REg==</wsse:BinarySecurityToken>
+          </wssp:Embedded>
+        </wssp:SecurityTokenReference>
+      </wssp:KeyInfo>
+    </wssp:Confidentiality>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="SkatEsbAuthentication">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+			</wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+				wsp:Body()
+			</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part">
+				wls:SecurityHeader(wsu:Timestamp)
+			</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="Sign.xml">
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SystemHeaders()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SecurityHeader(wsu:Timestamp)
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+      wsp:Body()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+          <wssp:TokenIssuer>CN=CACERT,OU=FOR TESTING ONLY,O=MyOrganization,L=MyTown,ST=MyState,C=US,1.2.840.113549.1.9.1=#160f737570706f7274406265612e636f6d,CN=Demo Certificate Authority Constraints,OU=Security,O=BEA WebLogic,L=San Francisco,ST=California,C=US,1.2.840.113549.1.9.1=#16107365637572697479406265612e636f6d,CN=Demo Certificate Authority Constraints,OU=Security,O=BEA WebLogic,L=San Francisco,ST=California,C=US,CN=CertGenCAB,OU=FOR TESTING ONLY,O=MyOrganization,L=MyTown,ST=MyState,C=US,CN=Equifax Secure eBusiness CA-1,O=Equifax Secure Inc.,C=US,CN=VeriSign Class 1 Public Primary Certification Authority - G3,OU=(c) 1999 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US,OU=VeriSign Trust Network,OU=(c) 1998 VeriSign\, Inc. - For authorized use only,OU=Class 2 Public Primary Certification Authority - G2,O=VeriSign\, Inc.,C=US,CN=VeriSign Class 3 Public Primary Certification Authority - G3,OU=(c) 1999 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US,CN=Entrust.net Client Certification Authority,OU=(c) 2000 Entrust.net Limited,OU=www.entrust.net/GCCA_CPS incorp. by ref. (limits liab.),O=Entrust.net,OU=Go Daddy Class 2 Certification Authority,O=The Go Daddy Group\, Inc.,C=US,CN=GTE CyberTrust Global Root,OU=GTE CyberTrust Solutions\, Inc.,O=GTE Corporation,C=US,CN=Entrust.net Secure Server Certification Authority,OU=(c) 2000 Entrust.net Limited,OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.),O=Entrust.net,OU=Class 1 Public Primary Certification Authority,O=VeriSign\, Inc.,C=US,1.2.840.113549.1.9.1=#1619706572736f6e616c2d6261736963407468617774652e636f6d,CN=Thawte Personal Basic CA,OU=Certification Services Division,O=Thawte Consulting,L=Cape Town,ST=Western Cape,C=ZA,OU=VeriSign Trust Network,OU=(c) 1998 VeriSign\, Inc. - For authorized use only,OU=Class 1 Public Primary Certification Authority - G2,O=VeriSign\, Inc.,C=US,CN=Entrust.net Secure Server Certification Authority,OU=(c) 1999 Entrust.net Limited,OU=www.entrust.net/CPS incorp. by ref. (limits liab.),O=Entrust.net,C=US,1.2.840.113549.1.9.1=#161c706572736f6e616c2d667265656d61696c407468617774652e636f6d,CN=Thawte Personal Freemail CA,OU=Certification Services Division,O=Thawte Consulting,L=Cape Town,ST=Western Cape,C=ZA,OU=Class 3 Public Primary Certification Authority,O=VeriSign\, Inc.,C=US,CN=GTE CyberTrust Root,O=GTE Corporation,C=US,CN=VeriSign Class 2 Public Primary Certification Authority - G3,OU=(c) 1999 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US,1.2.840.113549.1.9.1=#16177365727665722d6365727473407468617774652e636f6d,CN=Thawte Server CA,OU=Certification Services Division,O=Thawte Consulting cc,L=Cape Town,ST=Western Cape,C=ZA,OU=Equifax Secure Certificate Authority,O=Equifax,C=US,1.2.840.113549.1.9.1=#161b706572736f6e616c2d7072656d69756d407468617774652e636f6d,CN=Thawte Personal Premium CA,OU=Certification Services Division,O=Thawte Consulting,L=Cape Town,ST=Western Cape,C=ZA,1.2.840.113549.1.9.1=#16197072656d69756d2d736572766572407468617774652e636f6d,CN=Thawte Premium Server CA,OU=Certification Services Division,O=Thawte Consulting cc,L=Cape Town,ST=Western Cape,C=ZA,OU=VeriSign Trust Network,OU=(c) 1998 VeriSign\, Inc. - For authorized use only,OU=Class 3 Public Primary Certification Authority - G2,O=VeriSign\, Inc.,C=US,CN=Entrust.net Certification Authority (2048),OU=(c) 1999 Entrust.net Limited,OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.),O=Entrust.net,1.2.840.113549.1.9.1=#1611696e666f4076616c69636572742e636f6d,CN=http://www.valicert.com/,OU=ValiCert Class 2 Policy Validation Authority,O=ValiCert\, Inc.,L=ValiCert Validation Network,CN=Baltimore CyberTrust Root,OU=CyberTrust,O=Baltimore,C=IE,OU=Secure Server Certification Authority,O=RSA Data Security\, Inc.,C=US,CN=Entrust.net Client Certification Authority,OU=(c) 1999 Entrust.net Limited,OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab.,O=Entrust.net,C=US,CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US,CN=GTE CyberTrust Root 5,OU=GTE CyberTrust Solutions\, Inc.,O=GTE Corporation,C=US,OU=Starfield Class 2 Certification Authority,O=Starfield Technologies\, Inc.,C=US,CN=Equifax Secure Global eBusiness CA-1,O=Equifax Secure Inc.,C=US,CN=Baltimore CyberTrust Code Signing Root,OU=CyberTrust,O=Baltimore,C=IE,OU=Class 2 Public Primary Certification Authority,O=VeriSign\, Inc.,C=US,OU=Equifax Secure eBusiness CA-2,O=Equifax Secure,C=US,</wssp:TokenIssuer>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+    <wssp:MessageAge Age="60" xmlns:wssp="http://www.bea.com/wls90/security/policy"/>
+  </wsp:Policy>
+  <s1:types>
+    <xs:schema targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:include schemaLocation="../service/OIOSkatteoplysningSelskabAngivelseOpretInterface.xsd"/>
+	</xs:schema>
+  </s1:types>
+  <s1:message name="getOIOSkatteoplysningSelskabAngivelseOpret">
+    <s1:part element="s2:OIOSkatteoplysningSelskabAngivelseOpret_I" name="request"/>
+  </s1:message>
+  <s1:message name="getOIOSkatteoplysningSelskabAngivelseOpretResponse">
+    <s1:part element="s2:OIOSkatteoplysningSelskabAngivelseOpret_O" name="OIOSkatteoplysningSelskabAngivelseOpret_O"/>
+  </s1:message>
+  <s1:portType name="OIOSkatteoplysningSelskabAngivelseOpretServicePortType" wsp:PolicyURIs="#Sign.xml #Encrypt.xml">
+    <s1:operation name="getOIOSkatteoplysningSelskabAngivelseOpret" parameterOrder="request">
+      <s1:input message="s2:getOIOSkatteoplysningSelskabAngivelseOpret"/>
+      <s1:output message="s2:getOIOSkatteoplysningSelskabAngivelseOpretResponse"/>
+    </s1:operation>
+  </s1:portType>
+  <s1:binding name="OIOSkatteoplysningSelskabAngivelseOpretServiceSoapBinding" type="s2:OIOSkatteoplysningSelskabAngivelseOpretServicePortType">
+    <s3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s1:operation name="getOIOSkatteoplysningSelskabAngivelseOpret">
+      <s3:operation soapAction="getOIOSkatteoplysningSelskabAngivelseOpret" style="document"/>
+      <s1:input>
+        <s3:body parts="request" use="literal"/>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#SkatEsbAuthentication"/>
+        </wsp:Policy>
+      </s1:input>
+      <s1:output>
+        <s3:body parts="OIOSkatteoplysningSelskabAngivelseOpret_O" use="literal"/>
+      </s1:output>
+    </s1:operation>
+  </s1:binding>
+  <s1:service name="OIOSkatteoplysningSelskabAngivelseOpretService">
+    <s1:port binding="s2:OIOSkatteoplysningSelskabAngivelseOpretServiceSoapBinding" name="OIOSkatteoplysningSelskabAngivelseOpretService">
+      <s3:address location="https://skttsit01-b2b.skat.dk/skat-xbrl-b2b-web/OIOSkatteoplysningSelskabAngivelseOpretServicePort"/>
+    </s1:port>
+  </s1:service>
+</s1:definitions>

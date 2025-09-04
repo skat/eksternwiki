@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Information vedrørende omlægning af regnskabsperiode.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/AArstalType.xsd"/>
+         <xs:element name="RegnskabPeriodeOmlægningStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for den nye regnskabsperiode efter omlægning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeOmlægningSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for den nye regnskabsperiode efter omlægning af regnskabsår.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeOmlægningIndkomstÅr" type="skat2012:ÅrstalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det indkomstår som er det aktuelle efter omlægning af regnskabsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeOmlægningOvergangStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Start-dato for overgangsperioden ved omlægning af regnskabsår.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeOmlægningOvergangSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slut-dato for overgangsperioden ved omlægning af regnskabsår.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeOmlægningOvergangIndkomstÅr" type="skat2012:ÅrstalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det indkomstår som er aktuelt i overgangsperioden under omlægning af regnskabsår.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

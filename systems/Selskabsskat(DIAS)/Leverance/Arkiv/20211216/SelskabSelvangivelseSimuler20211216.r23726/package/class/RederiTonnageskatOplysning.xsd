@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Maks100Procent4DecimalerType.xsd"/>
+         <xs:element name="RederiTonnageskatOplysningNyIndtrådt" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er nyindtrådt i tonnageskatteordningen med rederivirksomhed. (True = ja, False = nej) Felt 305</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RederiTonnageskatOplysningPligtigIndkomstMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har haft tonnageskattepligtig indkomst i den periode der selvangives for? (True = Ja) Felt 305a  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RederiTonnageskatOplysningBasisDagDatoEgen" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for basisdag, jf. tonnageskattelovens PGF. 6 a, stk. 1. (selskabets egen). Felt 306</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RederiTonnageskatOplysningBasisDagDatoKonsolideret"
+                     type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for basisdag, jf. tonnageskattelovens PGF. 6 a, stk. 1. (konsolideret basis). Felt 308</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RederiTonnageskatOplysningBasisDagEUProcentEgen"
+                     type="skat2012:Maks100Procent4DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Procentandel af ejet bruttotonnage, som på basisdagen var registreret indenfor EU eller EØS (selskabets egen). Felt 307</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RederiTonnageskatOplysningBasisDagEUProcentKonsolideret"
+                     type="skat2012:Maks100Procent4DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Procentandel af ejet bruttotonnage, som på basisdagen var registreret indenfor EU eller EØS (konsolideret basis). Felt 309</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

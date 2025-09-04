@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Skib.xsd"/>
+         <xs:include schemaLocation="../class/SkibTonnageAngivelse.xsd"/>
+         <xs:include schemaLocation="../class/Flaade.xsd"/>
+         <xs:element name="FlagoplysningerRederiStruktur"
+                     type="skat2012:FlagoplysningerRederiStrukturType"/>
+         <xs:complexType name="FlagoplysningerRederiStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="RederiSkibListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="RederiSkib" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2012:SkibLøbeNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SkibNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SkibIMO" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SkibTonnageAngivelseEjerAndel" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="skat2012:SkibTonnageAngivelseAntalDage" minOccurs="0"/>
+
+
+                                    <xs:element name="ValgEU">
+                                       <xs:complexType>
+                                          <xs:choice>
+                                             <xs:sequence>
+                                                <xs:element name="EU">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+
+                                                         <xs:element ref="skat2012:SkibBruttoTonnage" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:SkibTonnageAngivelseGennemsnitBruttoTonnage" minOccurs="0"/>
+
+
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+				
+				                                         </xs:sequence>
+                                             <xs:sequence>
+				
+                                                <xs:element name="EjEU">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+
+                                                         <xs:element ref="skat2012:SkibBruttoTonnage" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="skat2012:SkibTonnageAngivelseGennemsnitBruttoTonnage" minOccurs="0"/>
+
+
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:choice>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="EUSum" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:FlådeGennemsnitBruttoTonnageTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:FlådeGennemsnitBruttoTonnageEjerAndelPct" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="EjEUSum" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:FlådeGennemsnitBruttoTonnageTotal" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:FlådeGennemsnitBruttoTonnageEjerAndelPct" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

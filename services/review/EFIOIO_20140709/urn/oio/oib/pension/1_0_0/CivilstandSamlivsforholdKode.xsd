@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:pension-100="urn:oio:oib:pension:1.0.0" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/09/19/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:oib:pension:1.0.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="CivilstandSamlivsforholdKode" type="pension-100:CivilstandSamlivsforholdKodeType"/>
+	<simpleType name="CivilstandSamlivsforholdKodeType">
+		<restriction base="string">
+			<!--Gift-->
+			<enumeration value="married"/>
+			<!--Fraskilt-->
+			<enumeration value="divorced"/>
+			<!--Enke/Enkemand-->
+			<enumeration value="widow"/>
+			<!--Registreret partnerskab-->
+			<enumeration value="registered partnership"/>
+			<!--Ophævelse af registreret partnerskab-->
+			<enumeration value="abolition of registrered partnership"/>
+			<!--Længstlevende partner-->
+			<enumeration value="longest living partner"/>
+			<!--Død-->
+			<enumeration value="deceased"/>
+			<!--Ugift-->
+			<enumeration value="unmarried"/>
+			<!--1: Samlevende med ægtefælle-->
+			<enumeration value="1"/>
+			<!--2: Samlevende med anden person-->
+			<enumeration value="2"/>
+			<!--3: Samboende med slægtning som jeg ikke kan indgå ægteskab med-->
+			<enumeration value="3"/>
+			<!--4: Separeret-->
+			<enumeration value="4"/>
+			<!--5: Gift men samliv ophørt pga. uoverensstemmelse-->
+			<enumeration value="5"/>
+			<!--6: Gift, men samliv ophørt pga. institutionsophold under Kriminalforsorgen-->
+			<enumeration value="6"/>
+			<!--7: Enlig-->
+			<enumeration value="7"/>
+			<!--8: Andet-->
+			<enumeration value="8"/>
+			<!--9: Ugift, samliv ophørt-->
+			<enumeration value="9"/>
+		</restriction>
+	</simpleType>
+</schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>De gaver et selskab har modtaget ifm oprettelse af fond, der tillægger bestemte familier fortrinsret.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="ModtagetGaverTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det er kun relevant for fonde, der har modtaget gaver, hvoraf der skal svares afgift i stedet for indkomst-skat, dvs. gaver, der gives til stiftelse af familiefonde. Rubrik 16.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModtagetGaverFamilieFondStiftelse" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien af gaver til oprettelse af fond, der tillægger bestemte familier fortrinsret. Felt 061</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HovedFordringReturAarsagTekst.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HovedFordringReturAarsagKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../class/HovedFordringReturAarsagBegrundelseTekst.xsd"/><xs:element name="HovedFordringReturnerAarsagStruktur" type="efiws:HovedFordringReturnerAarsagStrukturType"/>
+	<xs:complexType name="HovedFordringReturnerAarsagStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:HovedFordringReturAarsagKode"/>
+			<xs:element ref="efi:HovedFordringReturAarsagBegrundelseTekst"/>
+			<xs:element ref="efi:HovedFordringReturAarsagTekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

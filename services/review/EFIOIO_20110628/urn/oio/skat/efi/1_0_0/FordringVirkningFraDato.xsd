@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringvirkningfradato="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringVirkningFraDato" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Når fordringshaver oversender en korrektion (op- eller ned-skrivning) til fordringen, skal de medsende den dato, hvor korrektionen har virkning fra.. Denne dato vil fungere som ny rentevirkningsdato, dvs. ifølge renteberegningsreglen for fordringstypen skal renten tilbagerulles og genberegnes fra virkningsdatoen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

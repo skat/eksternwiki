@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dkal="urn:oio:dkal:1.0.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringDokumentEksternReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/ModtagFordringDokumentArtKode.xsd"/><xs:import namespace="urn:oio:dkal:1.0.0" schemaLocation="../../../../dkal/1_0_0/FilformatNavn.xsd"/><xs:import namespace="urn:oio:dkal:1.0.0" schemaLocation="../../../../dkal/1_0_0/MeddelelseIndholdData.xsd"/><xs:element name="MFDokumentStruktur" type="efiws:MFDokumentStrukturType"/>
+	<xs:complexType name="MFDokumentStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:ModtagFordringDokumentArtKode"/>
+			<xs:element ref="efi:ModtagFordringDokumentEksternReference" minOccurs="0"/>
+			<xs:element name="DokumentFormatValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="DokumentFil">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="dkal:FilformatNavn"/>
+										<xs:element ref="dkal:MeddelelseIndholdData"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

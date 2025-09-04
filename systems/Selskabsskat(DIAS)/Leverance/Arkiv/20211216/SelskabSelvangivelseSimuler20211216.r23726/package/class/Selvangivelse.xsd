@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Klassen selvangivelse dækker over hændelser, situation mv., der kan opstå i et selskabs levetid, som kan have en påvirkning på selskabet eller dennes oplysningsperiode.  Dette kunne herunder være, men ikke begrænset til; start og slutdato for delperioder, ophørsoplysninger for selskabet mv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeEtTegnType.xsd"/>
+         <xs:element name="SelvangivelseDelperiodeStart" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Første dag i selvangivelsens delperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelvangivelseDelperiodeSlut" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste dag i selvangivelsens delperiode (inklusiv).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelvangivelseKladdeStatusKode" type="skat2012:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver, om den aktuelle selvangivelse er en kladde eller afsluttet (=registreret): A: Afsluttet K: Kladde</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelvangivelseOphørDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ophørsdato for et selskabs skattepligt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelvangivelseOphørStatusKode" type="skat2012:KodeEtTegnType">
+               
+               <xs:annotation>
+                  <xs:documentation>1 Godkendelse af ophørsdato (fuld godkendelse) 2 Godkendt på betingelse af efterfølgende sagsbehandling 3 Godkendelse med ændring af ophørsdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelvangivelseGenoptagelseStatusKode" type="skat2012:KodeEtTegnType">
+               
+               <xs:annotation>
+                  <xs:documentation>1: Genoptagelse afvist 2: Teknisk afvisning 3: Efterfølgende ændringer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

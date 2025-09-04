@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/09/01/" xmlns:emailadresse="http://rep.oio.dk/skat.dk/emcs/class/emailadresse/xml/schemas/20080301/" xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:fax="http://rep.oio.dk/skat.dk/emcs/class/fax/xml/schemas/20080301/" xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2005/01/10/" xmlns:telefon="http://rep.oio.dk/skat.dk/emcs/class/telefon/xml/schemas/20080301/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/emailadresse/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/emailadresse/xml/schemas/20080301/EmailAdresseGyldigPeriode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2005/01/10/" schemaLocation="../../../../../../itst_dk/xml/schemas/2005/01/10/FaxNumberIdentifier.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/telefon/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/telefon/xml/schemas/20080301/TelefonGyldigPeriode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/fax/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/fax/xml/schemas/20080301/FaxGyldigPeriode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/09/01/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/09/01/TelephoneSubscriberIdentifier.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/" schemaLocation="../../../../../../xkom_dk/xml/schemas/2005/03/15/EmailAddressIdentifier.xsd"/>
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="VirksomhedAdresseStruktur.xsd"/>
+	<xs:element name="VirksomhedKontaktOplysningStruktur" type="esws:VirksomhedKontaktOplysningStrukturType"/>
+	<xs:complexType name="VirksomhedKontaktOplysningStrukturType">
+		<xs:sequence>
+			<xs:element ref="esws:VirksomhedAdresseStruktur"/>
+			<xs:element name="TelefonListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Telefon" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dkcc:TelephoneSubscriberIdentifier"/>
+									<xs:element ref="telefon:TelefonGyldigPeriode" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EmailAdresseListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EmailAdresse" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="xkom:EmailAddressIdentifier"/>
+									<xs:element ref="emailadresse:EmailAdresseGyldigPeriode" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FaxListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Fax" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="itst:FaxNumberIdentifier"/>
+									<xs:element ref="fax:FaxGyldigPeriode" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

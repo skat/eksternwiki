@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eindkomst="urn:oio:skat:eindkomst:1.0.0" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../class/IndkomstBasisAarMaanedFraKode.xsd"/>
+	<xs:include schemaLocation="../view/AngivelseBlanketIndholdStrukturType.xsd"/>
+	<xs:element name="LoenPeriodeOplysningSumStruktur" type="eindkomstws:LoenPeriodeOplysningSumStrukturType"/>
+	<xs:complexType name="LoenPeriodeOplysningSumStrukturType">
+		<xs:sequence>
+			<xs:element ref="eindkomst:IndkomstBasisAarMaanedFraKode"/>
+			<xs:element ref="eindkomstws:AngivelseBlanketIndholdStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

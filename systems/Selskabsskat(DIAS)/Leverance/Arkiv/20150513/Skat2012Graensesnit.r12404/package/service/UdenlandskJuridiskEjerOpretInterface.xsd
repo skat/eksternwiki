@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Formålet med servicen er at oprette en udenlandsk juridisk ejer, dvs. en ikke personlig ejer, i Erhvervssystemet på en virksomhed, der registreres i Danmark med et dansk CVR- eller SE nr.  Ejeren identificeres med den udenlandske ejers udenlandske registreringsnummer (UdenlandskVirksomhedNummer). Der registreres navn og adresse samt øvrige kontaktoplysninger for ejeren. </xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/UdenlandskJuridiskEjerOpret_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskJuridiskEjerOpret_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskJuridiskEjerOpret_FejlIDType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="UdenlandskJuridiskEjerOpretInterface"
+                     type="skat2012:UdenlandskJuridiskEjerOpretInterfaceType"/>
+         <xs:complexType name="UdenlandskJuridiskEjerOpretInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:UdenlandskJuridiskEjerOpret_I"/>
+               <xs:element ref="skat2012:UdenlandskJuridiskEjerOpret_O"/>
+               <xs:element ref="skat2012:UdenlandskJuridiskEjerOpret_FejlID"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

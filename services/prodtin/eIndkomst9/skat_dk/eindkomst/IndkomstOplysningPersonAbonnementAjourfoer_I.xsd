@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:abonnentadgangomfangtype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentadgangomfangtype/xml/schemas/20071202/" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:xkom1="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentadgangomfangtype/xml/schemas/20071202/" schemaLocation="class/abonnentadgangomfangtype/xml/schemas/20071202/AbonnentAdgangOmfangTypeTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="../../xkom_dk/xml/schemas/2006/09/01/StartDate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="../../xkom_dk/xml/schemas/2007/04/15/EndDate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AbonnentAdgangStruktur.xsd"/>
+         <xs:include schemaLocation="AbonnentVirksomhedStruktur.xsd"/>
+         <xs:element name="IndkomstOplysningPersonAbonnementAjourfoer_I" type="fase2:IndkomstOplysningPersonAbonnementAjourfoer_IType"/>
+         <xs:complexType name="IndkomstOplysningPersonAbonnementAjourfoer_IType">
+            <xs:sequence>
+               <xs:element ref="kontekst:HovedOplysninger"/>
+                     <xs:element name="PersonIndkomstAbonnementInddata">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2:AbonnentAdgangStruktur"/>
+                              <xs:element ref="abonnentadgangomfangtype:AbonnentAdgangOmfangTypeTekst"/>
+                              <xs:element ref="fase2:AbonnentVirksomhedStruktur"/>
+                              <xs:element name="PersonAbonnementSamling">
+                                 <xs:complexType>
+                                    <xs:choice>
+                                       <xs:sequence>
+                                          <xs:element name="PersonStartAbonnementSamling">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element name="PersonStart">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="xkom1:StartDate"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                   <xs:element name="PersonSamling">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element name="Person">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element name="PersonListe">
+                                                                        <xs:complexType>
+                                                                           <xs:sequence>
+                                                                              <xs:element maxOccurs="unbounded" minOccurs="1" ref="core:PersonCivilRegistrationIdentifier"/>
+                                                                           </xs:sequence>
+                                                                        </xs:complexType>
+                                                                     </xs:element>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+				                                   </xs:sequence>
+                                       <xs:sequence>
+                                          <xs:element name="PersonSlutAbonnementSamling">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element name="PersonSlut">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="xkom:EndDate"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                   <xs:element name="PersonSamling">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element name="Person">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element name="PersonListe">
+                                                                        <xs:complexType>
+                                                                           <xs:sequence>
+                                                                              <xs:element maxOccurs="unbounded" minOccurs="1" ref="core:PersonCivilRegistrationIdentifier"/>
+                                                                           </xs:sequence>
+                                                                        </xs:complexType>
+                                                                     </xs:element>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:choice>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

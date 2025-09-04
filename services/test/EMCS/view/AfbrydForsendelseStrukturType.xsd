@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:emcs="urn:oio:skat:emcs:1.0.1">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:emcs:1.0.1" schemaLocation="http://digitaliser.dk/resource/569212/artefact/LedsagedokumentARCIdentifikator.xsd"/><xs:element name="AfbrydForsendelseStruktur" type="struct:AfbrydForsendelseStrukturType"/>
+	<xs:complexType name="AfbrydForsendelseStrukturType">
+		<xs:sequence>
+			<xs:element name="ForsendelseAfbrydelse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="emcs:LedsagedokumentARCIdentifikator"/>
+						<xs:element ref="struct:LedsageDokumentSekvensNummer"/>
+						<xs:element name="SupplerendeOplysning" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:AfbrydForsendelseSupplerendeOplysning"/>
+									<xs:element ref="struct:SprogKode"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="struct:AfbrydelseGennemførtDatoTid"/>
+						<xs:element ref="struct:AfbrydelseKode"/>
+						<xs:element ref="struct:ToldstedReferenceNummer"/>
+						<xs:element ref="struct:ToldstedMedarbejder" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="KontrolRapportSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="KontrolRapport" minOccurs="0" maxOccurs="9">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:KontrolRapportReference"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="HændelseRapportSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="HændelseRapport" minOccurs="0" maxOccurs="9">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="struct:HændelseRapportNummer"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

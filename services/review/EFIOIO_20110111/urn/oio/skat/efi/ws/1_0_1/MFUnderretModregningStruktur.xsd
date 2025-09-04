@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringDaekningDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/InddrivelseRenteDelPeriode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingKontoReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingTypeNoteTekst.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalerNavn.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseHovedFordringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringHaverReference.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringFordringArtKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/KundeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringHaverIdentifikator.xsd"/><xs:include schemaLocation="MyndighedUdbetalingPeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="FordringDaekningBeloebStruktur.xsd"/>
+	<xs:element name="MFUnderretModregningStruktur" type="efiws:MFUnderretModregningStrukturType"/>
+	<xs:complexType name="MFUnderretModregningStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:KundeIdentifikator"/>
+			<xs:element ref="efi:KundeTypeKode"/>
+			<xs:element ref="efi:FordringHaverIdentifikator"/>
+			<xs:element ref="efi:MyndighedUdbetalerNavn"/>
+			<xs:element ref="efi:MyndighedUdbetalingDato"/>
+			<xs:element ref="efi:MyndighedUdbetalingBeloeb"/>
+			<xs:element ref="efiws:MyndighedUdbetalingPeriodeStruktur"/>
+			<xs:element ref="efi:MyndighedUdbetalingTypeKode"/>
+			<xs:element ref="efi:MyndighedUdbetalingTypeNoteTekst"/>
+			<xs:element ref="efi:MyndighedUdbetalingKontoReference"/>
+			<xs:element name="FordringListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Fordring" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+									<xs:element ref="efi:FordringFordringHaverReference" minOccurs="0"/>
+									<xs:element ref="efi:FordringInddrivelseHovedFordringIdentifikator" minOccurs="0"/>
+									<xs:element ref="efi:FordringTypeKode"/>
+									<xs:element ref="efi:FordringFordringArtKode"/>
+									<xs:element name="InddrivelseRenteDelPeriode" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="efi:InddrivelseRenteDelPeriode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ModregningsBeloeb">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="efiws:FordringDaekningBeloebStruktur"/>
+												<xs:element ref="efi:FordringDaekningDato"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

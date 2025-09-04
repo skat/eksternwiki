@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTilbageOmkostningBetalingIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringVirkningFraDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HovedFordringTilbageRelateretKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="HovedFordringTilbagekaldAarsagStruktur.xsd"/>
+	<xs:element name="MFTilbagekaldFordringStruktur" type="efiws:MFTilbagekaldFordringStrukturType"/>
+	<xs:complexType name="MFTilbagekaldFordringStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+			<xs:element ref="efiws:HovedFordringTilbagekaldAarsagStruktur"/>
+			<xs:element name="RelateretFordringKodeListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:HovedFordringTilbageRelateretKode" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="efi:FordringVirkningFraDato" minOccurs="0"/>
+			<xs:element ref="efi:FordringTilbageOmkostningBetalingIndikator"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

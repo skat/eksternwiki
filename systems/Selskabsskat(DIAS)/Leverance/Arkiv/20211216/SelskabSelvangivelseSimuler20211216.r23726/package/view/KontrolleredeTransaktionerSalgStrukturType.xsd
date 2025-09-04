@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/ImmaterielAktivSalg.xsd"/>
+         <xs:include schemaLocation="../class/MaterielAnlaegsaktivSalg.xsd"/>
+         <xs:include schemaLocation="../class/KapitalAndelSalg.xsd"/>
+         <xs:include schemaLocation="../class/FinansielAnlaegsaktivSalg.xsd"/>
+         <xs:include schemaLocation="../class/LaanFraPersoner.xsd"/>
+         <xs:include schemaLocation="../class/AndenModtagetFinansiering.xsd"/>
+         <xs:element name="KontrolleredeTransaktionerSalgStruktur"
+                     type="skat2012:KontrolleredeTransaktionerSalgStrukturType"/>
+         <xs:complexType name="KontrolleredeTransaktionerSalgStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:ImmaterielAktivSalgBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivSalgOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivSalgStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivSalgMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivSalgBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivSalgOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivSalgStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivSalgMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelSalgBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelSalgOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelSalgStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelSalgMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivSalgBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivSalgOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivSalgStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivSalgMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånFraPersonerBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånFraPersonerOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånFraPersonerStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånFraPersonerMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenModtagetFinansieringBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenModtagetFinansieringOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenModtagetFinansieringStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenModtagetFinansieringMarkering" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

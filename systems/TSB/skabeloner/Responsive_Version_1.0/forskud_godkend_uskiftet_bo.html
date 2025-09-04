@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-fejl" href="#skts-skip-link-target-fejl" onclick="document.getElementById('skts-skip-link-target-fejl').focus();">Gå til fejlbesked</a></li>
+			</ul>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a href="forskud_ret.html" class="skts-selected">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="javascript:void(0);">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<form id="mainForm">
+				<div class="skts-grid skts-grid-pad">
+					<div class="skts-col-1 skts-small-text skts-align-right">
+						<p class="skts-user-info">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk (<a target="_blank" class="skts-tooltip-holder skts-link-enhance" href="sider_ikke_med_i_flow/CSC_ret_kontakt.html">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)</p>
+					</div>
+					<div class="skts-print-only"><p>VUR-test-05, cpr-nummer 010389-7750</p></div>
+					<div class="skts-col-1">
+						<div class="skts-module-container">
+							<div class="skts-module-header">
+								<h1>
+									Forskudsopgørelse for 2015
+								</h1>
+							</div>
+							<div class="skts-grid skts-grid-pad">
+								<div class="skts-col-1">
+									<h2>Godkend rettelserne for at få registreret de nye oplysninger</h2>
+									<h3>Dine foreløbige ændringer:</h3>
+									<ul class="skts-bordered-list skts-floated-list skts-print-friendly">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="sec_10Label">Lønindkomst mv.  <span class="skts-section-nr"><span>felt nummer</span>(10)</span>  <a href="http://www.skat.dk/SKAT.aspx?oID=1536745" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li class="skts-indent-text" aria-describedby="sec_10Label">410.000 kr.</li>	
+												<li class="skts-saved-value skts-show" aria-describedby="sec_10Label"><span class="skts-saved-desc-text">Rettet fra: </span>300.000 kr.</li>
+											</ul>	
+										</li>	
+										<li class="skts-section-wrapper skts-odd">
+											<div class="skts-label-text" id="sec_52Label">Bidrag til A-kasse, efterlønsordning og fleksydelse  <span class="skts-section-nr"><span>felt nummer</span>(52)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1536791" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li class="skts-indent-text" aria-describedby="sec_52Label">5.000 kr.</li>
+												<li class="skts-saved-value skts-show" aria-describedby="sec_52Label"><span class="skts-saved-desc-text">Rettet fra: </span>4.544 kr.</li>
+											</ul>	
+										</li>										
+									</ul>
+									<h3>Ægtefællens foreløbige ændringer:</h3>
+									<ul class="skts-bordered-list skts-floated-list skts-print-friendly">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="sec_10Labelb">Lønindkomst mv.  <span class="skts-section-nr"><span>felt nummer</span>(10)</span>  <a href="http://www.skat.dk/SKAT.aspx?oID=1536745" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li class="skts-indent-text" aria-describedby="sec_10Labelb">110.000 kr.</li>	
+												<li class="skts-saved-value skts-show" aria-describedby="sec_10Labelb"><span class="skts-saved-desc-text">Rettet fra: </span>300.000 kr.</li>
+											</ul>	
+										</li>
+									</ul>
+								</div>
+								<div class="skts-col-3-4">
+									<div class="skts-list-header skts-transparent-bg" id="list001"><a href="javascript:void(0);">Se skatteopgørelse</a></div>	
+									<!-- Calculation START -->
+									<ul class="skts-show-hide-list skts-read-only">
+										<li>
+											<table class="skts-standard-table skts-approve-calculation-table">
+												<caption>Skatteopgørelse på grundlag af dine foreløbige ændringer</caption>
+												<thead>
+													<tr>
+														<th><br/></th>
+														<th>Aktuelle opgørelse</th>
+														<th>Foreløbige opgørelse</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td colspan="3" class="skts-table-header">Resultat</td>
+												</tr>
+												<tr>
+													<td>Skattekort gyldigt fra (dag og måned) (f.eks. 1. juli: 0107) <a href="http://www.skat.dk/SKAT.aspx?oID=1536742" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+													<td>01.03</td>
+													<td>01.03</td>
+												</tr>
+												<tr>
+													<td>Trækprocent</td>
+													<td>50</td>
+													<td>50</td>
+												</tr>
+												<tr>
+													<td>Månedsfradrag</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>14-dagsfradrag</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Ugefradrag</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Dagfradrag</td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>B-skat i alt</td>
+													<td>614.650</td>
+													<td>614.650</td>
+												</tr>
+												<tr>
+													<td>Ratebeløb B-skat</td>
+													<td>40.678</td>
+													<td>40.678</td>
+												</tr>
+												<tr>
+													<td>Ratenumre B-skat</td>
+													<td>3-10</td>
+													<td>3-10</td>
+												</tr>
+												<tr>
+													<td>Forfalden B-skat</td>
+													<td>289.226</td>
+													<td>289.226</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="skts-table-header">Indkomst og fradrag</td>
+												</tr>
+												<tr>
+													<td>Lønindkomst mv. <a href="http://www.skat.dk/SKAT.aspx?oID=1536745" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>2.000.000</td>
+													<td>1.999.999</td>
+												</tr>
+												<tr>
+													<td>Søindkomst <a href="http://www.skat.dk/SKAT.aspx?oID=1536886" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>AM-bidrag A-indkomst</td>
+													<td>-160.000</td>
+													<td>-159.999</td>
+												</tr>
+												<tr>
+													<td>Ældrecheck <a href="http://www.skat.dk/SKAT.aspx?oID=1900866" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Pension fra ATP <a href="http://www.skat.dk/SKAT.aspx?oID=1536761" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Sygedagpenge og arbejdsløshedsdagpenge <a href="http://www.skat.dk/SKAT.aspx?oID=1536757" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Social pension <a href="http://www.skat.dk/SKAT.aspx?oID=1536760" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Stipendier fra SU <a href="http://www.skat.dk/SKAT.aspx?oID=1536756" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Statslige pensioner, der udbetales af Økonomistyrelsen <a href="http://www.skat.dk/SKAT.aspx?oID=1536763" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Efterløn, delpension og orlovsydelse <a href="http://www.skat.dk/SKAT.aspx?oID=1536759" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Kontanthjælp <a href="http://www.skat.dk/SKAT.aspx?oID=1536758" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Andre pensioner mv. <a href="http://www.skat.dk/SKAT.aspx?oID=1536764" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Søindkomst, Færøerne og Grønland <a href="http://www.skat.dk/SKAT.aspx?oID=1536887" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Overskud af selvstændig virksomhed før fradrag for medarbejdende ægtefælle, før AM-bidrag, renter og rentekorrektion <a href="http://www.skat.dk/SKAT.aspx?oID=1536839" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>235</td>
+													<td>235</td>
+												</tr>
+												<tr>
+													<td>AM-bidrag virksomhed.</td>
+													<td>-18</td>
+													<td>-18</td>
+												</tr>
+												<tr>
+													<td>Resultat af virksomhed</td>
+													<td>217</td>
+													<td>217</td>
+												</tr>
+												<tr>
+													<td>Honorarer, indkomst ved hushjælp og værdien af nogle personalegoder <a href="http://www.skat.dk/SKAT.aspx?oID=1536748" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Personlig indkomst i alt</td>
+													<td>1.840.217</td>
+													<td>1.840.217</td>
+												</tr>
+												<tr>
+													<td>Beskæftigelsesfradrag</td>
+													<td>-25.000</td>
+													<td>-25.000</td>
+												</tr>
+												<tr>
+													<td>Befordring <a href="http://www.skat.dk/SKAT.aspx?oID=1536790" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>-10.246</td>
+													<td>-10.246</td>
+												</tr>
+												<tr>
+													<td>Ligningsm. fradrag i alt</td>
+													<td>-35.246</td>
+													<td>-35.246</td>
+												</tr>
+												<tr>
+													<td>Skattepligtig indkomst</td>
+													<td>1.804.971</td>
+													<td>1.804.971</td>
+												</tr>
+												<tr>
+													<td>Udbytte af danske aktier optaget til handel på et reguleret marked, i dansk depot, udlodning fra aktiebaserede investeringsbeviser med minimumsbeskatning og fra akkumulerende investeringsforeninger, der ikke er investeringsselskaber (før udbytteskat) <a href="http://www.skat.dk/SKAT.aspx?oID=1536798" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>7.000</td>
+													<td>7.000</td>
+												</tr>
+												<tr>
+													<td>DIS-indkomst, anden fart <a href="http://www.skat.dk/SKAT.aspx?oID=1536884" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>DIS-indkomst, begrænset fart <a href="http://www.skat.dk/SKAT.aspx?oID=1536885" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="skts-table-header">Beregnede skatter</td>
+												</tr>
+												<tr>
+													<td>Ejendomsværdiskat i alt</td>
+													<td>27.200,00</td>
+													<td>27.200,00</td>
+												</tr>
+												<tr>
+													<td>Samlet skat, inkl. AM-bidrag</td>
+													<td>1.065.201,03</td>
+													<td>1.065.200,03</td>
+												</tr>
+												<tr>
+													<td>Forskudsskat der indeholdes som AM-bidrag hos arbejdsgiver</td>
+													<td>-160.000,00</td>
+													<td>-159.999,00</td>
+												</tr>
+												<tr>
+													<td>Forskudsskat til opkrævning som A-skat og B-skat mv.</td>
+													<td>905.201,03</td>
+													<td>905.201,03</td>
+												</tr>
+												<tr>
+													<td>Betalt A-skat</td>
+													<td>-200.000,00</td>
+													<td>-200.000,00</td>
+												</tr>
+												<tr>
+													<td>Betalt B-skat</td>
+													<td>-289.226,00</td>
+													<td>-289.226,00</td>
+												</tr>
+												<tr>
+													<td>Resterende forskudsskat til opkrævning som A-skat og B-skat mv.</td>
+													<td>415.975,03</td>
+													<td>415.975,03</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="skts-table-header">A-indkomst og skat</td>
+												</tr>
+												<tr>
+													<td>Skattekort gyldigt fra (dag og måned) (f.eks. 1. juli: 0107) <a href="http://www.skat.dk/SKAT.aspx?oID=1536742" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>01.03</td>
+													<td>01.03</td>
+												</tr>
+												<tr>
+													<td>Hidt. A-indk. m/AM 360</td>
+													<td>1.800.000</td>
+													<td>1.800.000</td>
+												</tr>
+												<tr>
+													<td>Hidt. A-skat 361</td>
+													<td>200.000</td>
+													<td>200.000</td>
+												</tr>
+											</tbody>
+										</table>
+										<table class="skts-standard-table skts-approve-calculation-table">
+												<caption>Skatteopgørelse på grundlag af ægtefællens foreløbige ændringer</caption>
+												<thead>
+													<tr>
+														<th><br/></th>
+														<th>Aktuelle opgørelse</th>
+														<th>Foreløbige opgørelse</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td colspan="3" class="skts-table-header">Resultat</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="skts-table-header">Indkomst og fradrag</td>
+												</tr>
+												<tr>
+													<td>Lønindkomst mv. <a href="http://www.skat.dk/SKAT.aspx?oID=1536745" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>2.000.000</td>
+													<td>1.999.999</td>
+												</tr>
+												<tr>
+													<td>Søindkomst <a href="http://www.skat.dk/SKAT.aspx?oID=1536886" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>AM-bidrag A-indkomst</td>
+													<td>-160.000</td>
+													<td>-159.999</td>
+												</tr>
+												<tr>
+													<td>Ældrecheck <a href="http://www.skat.dk/SKAT.aspx?oID=1900866" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Pension fra ATP <a href="http://www.skat.dk/SKAT.aspx?oID=1536761" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Sygedagpenge og arbejdsløshedsdagpenge <a href="http://www.skat.dk/SKAT.aspx?oID=1536757" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Social pension <a href="http://www.skat.dk/SKAT.aspx?oID=1536760" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Stipendier fra SU <a href="http://www.skat.dk/SKAT.aspx?oID=1536756" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Statslige pensioner, der udbetales af Økonomistyrelsen <a href="http://www.skat.dk/SKAT.aspx?oID=1536763" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Efterløn, delpension og orlovsydelse <a href="http://www.skat.dk/SKAT.aspx?oID=1536759" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Kontanthjælp <a href="http://www.skat.dk/SKAT.aspx?oID=1536758" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Andre pensioner mv. <a href="http://www.skat.dk/SKAT.aspx?oID=1536764" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Søindkomst, Færøerne og Grønland <a href="http://www.skat.dk/SKAT.aspx?oID=1536887" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Overskud af selvstændig virksomhed før fradrag for medarbejdende ægtefælle, før AM-bidrag, renter og rentekorrektion <a href="http://www.skat.dk/SKAT.aspx?oID=1536839" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>235</td>
+													<td>235</td>
+												</tr>
+												<tr>
+													<td>AM-bidrag virksomhed.</td>
+													<td>-18</td>
+													<td>-18</td>
+												</tr>
+												<tr>
+													<td>Resultat af virksomhed</td>
+													<td>217</td>
+													<td>217</td>
+												</tr>
+												<tr>
+													<td>Honorarer, indkomst ved hushjælp og værdien af nogle personalegoder <a href="http://www.skat.dk/SKAT.aspx?oID=1536748" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>Personlig indkomst i alt</td>
+													<td>1.840.217</td>
+													<td>1.840.217</td>
+												</tr>
+												<tr>
+													<td>Beskæftigelsesfradrag</td>
+													<td>-25.000</td>
+													<td>-25.000</td>
+												</tr>
+												<tr>
+													<td>Befordring <a href="http://www.skat.dk/SKAT.aspx?oID=1536790" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>-10.246</td>
+													<td>-10.246</td>
+												</tr>
+												<tr>
+													<td>Ligningsm. fradrag i alt</td>
+													<td>-35.246</td>
+													<td>-35.246</td>
+												</tr>
+												<tr>
+													<td>Skattepligtig indkomst</td>
+													<td>1.804.971</td>
+													<td>1.804.971</td>
+												</tr>
+												<tr>
+													<td>Udbytte af danske aktier optaget til handel på et reguleret marked, i dansk depot, udlodning fra aktiebaserede investeringsbeviser med minimumsbeskatning og fra akkumulerende investeringsforeninger, der ikke er investeringsselskaber (før udbytteskat) <a href="http://www.skat.dk/SKAT.aspx?oID=1536798" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>7.000</td>
+													<td>7.000</td>
+												</tr>
+												<tr>
+													<td>DIS-indkomst, anden fart <a href="http://www.skat.dk/SKAT.aspx?oID=1536884" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td>DIS-indkomst, begrænset fart <a href="http://www.skat.dk/SKAT.aspx?oID=1536885" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></td>
+													<td>0</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="skts-table-header">Beregnede skatter</td>
+												</tr>
+												<tr>
+													<td>Ejendomsværdiskat i alt</td>
+													<td>27.200,00</td>
+													<td>27.200,00</td>
+												</tr>
+												<tr>
+													<td>Samlet skat, inkl. AM-bidrag</td>
+													<td>1.065.201,03</td>
+													<td>1.065.200,03</td>
+												</tr>
+												<tr>
+													<td>Forskudsskat der indeholdes som AM-bidrag hos arbejdsgiver</td>
+													<td>-160.000,00</td>
+													<td>-159.999,00</td>
+												</tr>
+												<tr>
+													<td>Forskudsskat til opkrævning som A-skat og B-skat mv.</td>
+													<td>905.201,03</td>
+													<td>905.201,03</td>
+												</tr>
+												<tr>
+													<td>Betalt A-skat</td>
+													<td>-200.000,00</td>
+													<td>-200.000,00</td>
+												</tr>
+												<tr>
+													<td>Betalt B-skat</td>
+													<td>-289.226,00</td>
+													<td>-289.226,00</td>
+												</tr>
+												<tr>
+													<td>Resterende forskudsskat til opkrævning som A-skat og B-skat mv.</td>
+													<td>415.975,03</td>
+													<td>415.975,03</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="skts-table-header">A-indkomst og skat</td>
+												</tr>
+												<tr>
+													<td>Hidt. A-indk. m/AM 360</td>
+													<td>1.800.000</td>
+													<td>1.800.000</td>
+												</tr>
+											</tbody>
+										</table>
+										<li>
+									</ul>
+									<!-- Calculation END -->
+								</div>
+								<div class="skts-col-1-2">
+									<h2 class="skts-faded-text">Gældende skattekort</h2>
+									<ul class="skts-card skts-faded-text">
+										<li>
+											<span class="skts-card-label">Trækprocent:</span>
+											<span>39 %</span>
+										</li>
+										<li>
+											<span class="skts-card-label">Fradrag pr. md/14 dg.:</span>
+											<span>5.312 kr./ 2.311 kr.</span>
+										</li>
+										<li>
+											<span class="skts-card-label">Hovedkort bruges af:</span>
+											<span>TruckerKaj Tours</span>
+										</li>
+									</ul>
+								</div>
+								<div class="skts-col-1-2">								
+									<h2>Nyt skattekort<span> (gælder fra 1. september 2014)</span></h2>
+									<ul class="skts-card">
+										<li>
+											<span class="skts-card-label">Trækprocent:</span>
+											<span>39 %</span>
+										</li>
+										<li>
+											<span class="skts-card-label">Fradrag pr. md/14 dg.:</span>
+											<span>5.312 kr./ 2.311 kr.</span>
+										</li>
+										<li>
+											<span class="skts-card-label">Hovedkort bruges af:</span>
+											<span>TruckerKaj Tours</span>
+										</li>
+									</ul>
+								</div>
+								
+								<div class="skts-col-2-3 skts-button-container">
+									<ul class="skts-status-indicator">
+										<li>Fortsæt til ægtefælle</li>
+										<li>Beregn</li>
+										<li class="skts-selected">Godkend</li>
+										<li>Kvittering</li>
+									</ul>
+									<button class="skts-button-primary" onclick="window.location.href= 'forskud_kvittering.html?undivided=3'" id="gemForskud">Godkend</button>
+									<button class="skts-button-secondary" onclick="window.location.href= 'forskud_ret.html?undivided=3'">Tilbage</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+    </body>
+</html>

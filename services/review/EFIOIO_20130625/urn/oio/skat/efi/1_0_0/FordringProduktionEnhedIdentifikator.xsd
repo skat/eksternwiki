@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringproduktionenhedidentifikator="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringProduktionEnhedIdentifikator" type="xs:integer">
+		<xs:annotation>
+			<xs:documentation>P-nummeret er et 10-cifret entydigt nummer.   Da virksomheden tildeles et P-nummer for hver fysisk beliggenhed, hvorfra der drives virksomhed, kan der således være tilknyttet flere P-numre til samme CVR-nummer.   Kun udfyldt hvis fordringshaveren har oplyst P-nummeret . Bruges alene som information. Aldrig som ID. Bruges eksempelvis for opkrævningsrentefordring.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

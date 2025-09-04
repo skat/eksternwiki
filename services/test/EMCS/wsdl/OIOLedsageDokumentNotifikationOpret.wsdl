@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" name="OIOLedsageDokumentNotifikationOpretService">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1">
+			<xsd:include schemaLocation="../service/OIOLedsageDokumentNotifikationOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="OIOLedsageDokumentNotifikationOpretServiceRequest">
+		<wsdl:part name="Request" element="struct:OIOLedsageDokumentNotifikationOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="OIOLedsageDokumentNotifikationOpretServiceResponse">
+		<wsdl:part name="Response" element="struct:OIOLedsageDokumentNotifikationOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="OIOLedsageDokumentNotifikationOpretServicePortType">
+		<wsdl:operation name="getOIOLedsageDokumentNotifikationOpret">
+			<wsdl:input message="struct:OIOLedsageDokumentNotifikationOpretServiceRequest"/>
+			<wsdl:output message="struct:OIOLedsageDokumentNotifikationOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

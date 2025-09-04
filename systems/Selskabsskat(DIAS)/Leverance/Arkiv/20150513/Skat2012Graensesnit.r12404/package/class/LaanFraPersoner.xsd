@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Lån fra juridiske eller fysiske personer (maks. i indkomståret).  (Det samlede maksimale lån opgjort som summen af de maksimale lån pr. enhed, den dag i indkomståret, hvor lånebeløbet i forhold til den enkelte enhed har været størst.)</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/KontrolleredeTransaktionerStatHjemmehoerendeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="LånFraPersonerOver25ProcentMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om de kontrollerede transaktioner af denne art overstiger 25 % af virksomhedens totale transaktioner af denne art. Felt 532c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LånFraPersonerStatHjemmehørendeKode"
+                     type="skat2012:KontrolleredeTransaktionerStatHjemmehørendeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilke(n) stat(er) de enheder, der har været kontrollerede transaktioner med, er hjemmehørende - for den pågældende art transaktion. Felt 532d</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LånFraPersonerBrutto" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen (beløb) af kontrollerede transaktioner for lån fra juridiske eller fysiske personer (max. i indkomståret). Felt 532b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LånFraPersonerMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet angiver om der været kontrollerede transaktioner af lån fra juridiske eller fysiske personer (max. i indkomståret) Felt 532a </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

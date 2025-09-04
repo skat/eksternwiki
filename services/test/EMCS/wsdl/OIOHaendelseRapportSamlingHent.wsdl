@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:struct="urn:oio:skat:emcs:ws:1.0.1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:emcs:ws:1.0.1" name="OIOHaendelseRapportSamlingHentService">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:emcs:ws:1.0.1">
+			<xsd:include schemaLocation="../service/OIOHaendelseRapportSamlingHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="OIOHaendelseRapportSamlingHentServiceRequest">
+		<wsdl:part name="Request" element="struct:OIOHaendelseRapportSamlingHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="OIOHaendelseRapportSamlingHentServiceResponse">
+		<wsdl:part name="Response" element="struct:OIOHaendelseRapportSamlingHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="OIOHaendelseRapportSamlingHentServicePortType">
+		<wsdl:operation name="getOIOHaendelseRapportSamlingHent">
+			<wsdl:input message="struct:OIOHaendelseRapportSamlingHentServiceRequest"/>
+			<wsdl:output message="struct:OIOHaendelseRapportSamlingHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

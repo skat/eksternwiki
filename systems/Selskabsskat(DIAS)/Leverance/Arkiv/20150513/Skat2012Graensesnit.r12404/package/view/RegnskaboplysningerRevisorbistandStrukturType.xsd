@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/RevisorBistand.xsd"/>
+         <xs:include schemaLocation="../class/SkattemaessigRegulering.xsd"/>
+         <xs:include schemaLocation="../class/Resultatopgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/RegnskabBalance.xsd"/>
+         <xs:include schemaLocation="../class/SelskabPengestroem.xsd"/>
+         <xs:include schemaLocation="../class/RegnskabPraksis.xsd"/>
+         <xs:include schemaLocation="../class/RegnskabRegler.xsd"/>
+         <xs:include schemaLocation="../class/AfskrivningDrift.xsd"/>
+         <xs:include schemaLocation="../class/AfskrivningEjendom.xsd"/>
+         <xs:include schemaLocation="../class/AfskrivningImmateriel.xsd"/>
+         <xs:element name="RegnskaboplysningerRevisorbistandStruktur"
+                     type="skat2012:RegnskaboplysningerRevisorbistandStrukturType"/>
+         <xs:complexType name="RegnskaboplysningerRevisorbistandStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="RevisorBistand" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="skat2012:RevisorBistandTypeKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:RevisorBistandErklæringInkluderet" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:RevisorBistandErklæringTypeKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:RevisorBistandErklæringSuppleringOplysningInkluderet"
+                                    minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:RevisorBistandErklæringSuppleringOplysningTypeKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:RevisorBistandSkattePligtigIndkomstOpgjort" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:SkattemæssigReguleringGevinstAktierIndgår" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:SkattemæssigReguleringGevinstSalgEjendomIndgår" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:SkattemæssigReguleringGevinstSalgImmaterielleIndgår"
+                                    minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="Årsrapport" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <!--Sequence removed-->
+
+                              <xs:element name="Resultatopgørelse" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="skat2012:ResultatopgørelseNettoOmsætning" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:ResultatopgørelseVareForbrug" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:ResultatopgørelseRegnskabsmæssigeAfskrivninger" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:ResultatopgørelseOrdinærtResultat" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:ResultatopgørelseResultatFørSkat" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:ResultatopgørelseSkatter" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="Balance" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="skat2012:RegnskabBalanceVarebeholdningTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:RegnskabBalanceAnlægsaktiverTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:RegnskabBalanceEgenkapital" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:RegnskabBalanceSum" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="Pengestrøm" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="skat2012:SelskabPengestrømAnlægsaktiverTilgang" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SelskabPengestrømAnlægsaktiverAfgang" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+
+                           <xs:element ref="skat2012:RegnskabPraksisÆndring" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:RegnskabReglerMindsteKravStørreVirksomheder" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:ResultatopgørelseNettoOmsætningUnderHalvMil" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="SkattemæssigKonvertering" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <!--Sequence removed-->
+
+                              <xs:element name="Afskrivning" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="skat2012:AfskrivningDriftDriftsmidlerTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:AfskrivningDriftSmåAktiverStraksTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:AfskrivningEjendomGenvundneTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:AfskrivningEjendomSkattemæssigTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:AfskrivningEjendomStraksTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:AfskrivningImmaterielTotal" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="Regulering" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringDebitorTabTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringFratrukneHensættelserTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringLånIndfrielseGevinstTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringUkuransNedskrivningTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringTilbageførtIndtægtIkkeSkattePligtigTotal"
+                                             minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringTilbageførtIkkeFradragUdgiftTotal"
+                                             minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringTabImmaterielSalgTotal" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="skat2012:SkattemæssigReguleringGevinstAktierEjendomTotal" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

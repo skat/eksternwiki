@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="MomsAngivelseHentService" targetNamespace="urn:oio:skat:tse:1.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tse="http://rep.oio.dk/skat.dk/TSE/service/momsangivelsemodtag/xml/schemas/2006/09/01/" xmlns:tse2009="urn:oio:skat:tse:1.0.1" xmlns:soap="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>
+   </xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema targetNamespace="urn:oio:skat:tse:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/247616/artefact/MomsAngivelseInputStruktur.xsd"/>
+		</xsd:schema>
+		<xsd:schema targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/momsangivelsemodtag/xml/schemas/2006/09/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/247488/artefact/SKAT_MomsAngivelseOutputStruktur.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="MomsAngivelseHentServiceRequest">
+		<part element="tse2009:MomsAngivelseInputStruktur" name="Request"/>
+	</message>
+	<message name="MomsAngivelseHentServiceResponse">
+		<part element="tse:MomsAngivelseOutputStruktur" name="Response"/>
+	</message>
+	<portType name="MomsAngivelseHentServicePortType">
+		<operation name="getMomsAngivelseHent">
+			<input message="tse2009:MomsAngivelseHentServiceRequest"/>
+			<output message="tse2009:MomsAngivelseHentServiceResponse"/>
+		</operation>
+	</portType>
+	<binding name="MomsAngivelseHentServiceBinding" type="tse2009:MomsAngivelseHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getMomsAngivelseHent">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="MomsAngivelseHentService">
+		<port binding="tse2009:MomsAngivelseHentServiceBinding" name="MomsAngivelseHentService">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/MomsAngivelseHentServicePort"/>
+		</port>
+	</service>
+</definitions>

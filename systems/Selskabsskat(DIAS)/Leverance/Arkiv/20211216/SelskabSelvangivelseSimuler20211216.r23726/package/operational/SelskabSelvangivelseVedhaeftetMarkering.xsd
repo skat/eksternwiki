@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         
+         <xs:element name="SelskabSelvangivelseVedhæftetMarkering" type="skat2012:MarkeringType">
+            <xs:annotation>
+               <xs:documentation>Denne markering angiver at der er vedhæftet dokumenter til den initielle selvangivelse (SelvangivelseVersion=1). Bemærk at det ikke er et felt på selvangivelsen. Der er et link til at vedhæfte dokumentation til selvangivelsen på brugergrænsefladen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

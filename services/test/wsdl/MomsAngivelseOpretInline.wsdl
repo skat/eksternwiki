@@ -1,0 +1,865 @@
+<?xml version="1.0"?>
+<definitions xmlns:tse="http://rep.oio.dk/skat.dk/TSE/service/momsangivelsemodtag/xml/schemas/2006/09/01/" xmlns:tse2009="urn:oio:skat:tse:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://www.w3.org/2001/XMLSchema" name="MomsAngivelseHentService" targetNamespace="urn:oio:skat:tse:1.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation/>
+	</xs:annotation>
+	<types>
+		<soap:schema targetNamespace="urn:oio:skat:tse:1.0.1">
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/"/>
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="urn:oio:skat:tse:1.0.0"/>
+			<soap:element name="MomsAngivelseInputStruktur" type="tse2009:MomsAngivelseInputStrukturType">
+				<soap:annotation>
+					<soap:documentation>Denne inputstruktur kan oprette en eller flere momsangivelser og returnere en kvittering pr. angivelse. Indberetter skal være tilmeldt TastSelv Erhverv vedrørende Moms (ved indberetning for egen virksomhed) eller være autoriseret indberetter for den eller de virksomheder der angives på vegne af. Angiver skal være tilmeldt TastSelv Erhverv vedrørende Moms. Hvis betalingsanmodning  ønskes videregivet til PBS skal angiver tillige være tilmeldt PBS vedrørende Moms i TastSelv Erhverv. Yderligere valideringer oplyses af SKAT..</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="MomsAngivelseInputStrukturType">
+				<soap:sequence>
+					<soap:element xmlns:q1="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" ref="q1:IndberetterSEnummerIdentifikator"/>
+					<soap:element maxOccurs="unbounded" ref="tse2009:MomsAngivelseStruktur"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="MomsAngivelseStruktur" type="tse2009:MomsAngivelseStrukturType">
+				<soap:annotation>
+					<soap:documentation>Samling af felter for en angiver (momspligtig virksomhed) i forbindelse med momsafregning til SKAT.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="MomsAngivelseStrukturType">
+				<soap:sequence>
+					<soap:element ref="tse2009:AngiverSEnummerIdentifikator"/>
+					<soap:element xmlns:q2="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q2:AngivelsePeriodeStruktur"/>
+					<soap:element xmlns:q3="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q3:ValutaKode"/>
+					<soap:element minOccurs="0" xmlns:q4="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" ref="q4:BetalingsFormidlerKode"/>
+					<soap:element minOccurs="0" xmlns:q5="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" ref="q5:BetalingsDato"/>
+					<soap:element minOccurs="0" xmlns:q6="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" ref="q6:BetalingsBeloeb"/>
+					<soap:element xmlns:q7="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q7:MomsAngivelseAfgiftTilSvarBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q8="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q8:MomsAngivelseCOtoAfgiftBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q9="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q9:MomsAngivelseEksportOmsBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q10="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q10:MomsAngivelseElAfgiftBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q11="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q11:MomsAngivelseEUkoebBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q12="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q12:MomsAngivelseEUsalgBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q13="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q13:MomsAngivelseGasAfgiftBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q14="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q14:MomsAngivelseKulAfgiftBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q15="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q15:MomsAngivelseKoebsMomsBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q16="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q16:MomsAngivelseEUkoebMomsBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q17="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q17:MomsAngivelseOlieAfgiftBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q18="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q18:MomsAngivelseSalgsMomsBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q19="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" ref="q19:MomsAngivelseVandAfgiftBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q20="urn:oio:skat:tse:1.0.0" ref="q20:MomsAngivelseMomsEUYdelserBeloeb"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="AngiverSEnummerIdentifikator" xmlns:q21="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" type="q21:CVRnumberIdentifierType">
+				<soap:annotation>
+					<soap:documentation>SE-nummer for den angivende virksomhed. I en angivelse kan der optræde flere virksomheder i forskellige roller. Denne definition markerer at den identificerede virksomhed optræder i rollen som den virksomhed, der angives for.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" version="1.0">
+			<soap:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/"/>
+			<soap:element name="IndberetterSEnummerIdentifikator" xmlns:q22="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" type="q22:CVRnumberType">
+				<soap:annotation>
+					<soap:documentation>CVR-/SE-nummer for den indberettende virksomhed. Virksomheden skal være tilmeldt TastSelv Erhverv enten vedrørende den angivelsestype der indberettes for eller som autoriseret indberetter for den eller de virksomheder der angives på vegne af.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="SEnummerIdentifikator" xmlns:q23="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" type="q23:CVRnumberType">
+				<soap:annotation>
+					<soap:documentation>CVR-/SE-nummer for den angivende virksomhed ved kvittering.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+		</soap:schema>
+		<soap:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" version="1.1">
+			<soap:element name="CVRnumber" xmlns:q24="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" type="q24:CVRnumberType">
+				<soap:annotation>
+					<soap:documentation>Unique and generally usable identifier for all legal units included i CVR.
+			</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="CVRnumberType">
+				<soap:restriction base="soap:string">
+					<soap:length value="8"/>
+				</soap:restriction>
+			</soap:simpleType>
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" version="1.1">
+			<soap:element name="CVRnumberIdentifier" xmlns:q25="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" type="q25:CVRnumberIdentifierType">
+				<soap:annotation>
+					<soap:documentation>Unique and generally usable identifier for all legal units included i CVR.
+			</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="CVRnumberIdentifierType">
+				<soap:restriction base="soap:string">
+					<soap:length value="8"/>
+				</soap:restriction>
+			</soap:simpleType>
+		</soap:schema>
+		<soap:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" version="1.0">
+			<soap:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/"/>
+			<soap:element name="ValutaKode" xmlns:q26="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q26:ValutaKodeType">
+				<soap:annotation>
+					<soap:documentation>Valuta (ISO møntkoden) for angivelsens beløbsfelter. SKAT modtager p.t. kun angivelser i danske kroner (DKK).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="ValutaKodeType">
+				<soap:restriction base="soap:string">
+					<soap:enumeration value="AED"/>
+					<soap:enumeration value="AFA"/>
+					<soap:enumeration value="ALL"/>
+					<soap:enumeration value="AMD"/>
+					<soap:enumeration value="ANG"/>
+					<soap:enumeration value="AOA"/>
+					<soap:enumeration value="ARS"/>
+					<soap:enumeration value="AUD"/>
+					<soap:enumeration value="AWG"/>
+					<soap:enumeration value="AZM"/>
+					<soap:enumeration value="BAM"/>
+					<soap:enumeration value="BBD"/>
+					<soap:enumeration value="BDT"/>
+					<soap:enumeration value="BGL"/>
+					<soap:enumeration value="BHD"/>
+					<soap:enumeration value="BIF"/>
+					<soap:enumeration value="BMD"/>
+					<soap:enumeration value="BND"/>
+					<soap:enumeration value="BOB"/>
+					<soap:enumeration value="BRL"/>
+					<soap:enumeration value="BSD"/>
+					<soap:enumeration value="BTN"/>
+					<soap:enumeration value="BWP"/>
+					<soap:enumeration value="BZD"/>
+					<soap:enumeration value="CAD"/>
+					<soap:enumeration value="CHF"/>
+					<soap:enumeration value="CLP"/>
+					<soap:enumeration value="CNY"/>
+					<soap:enumeration value="COP"/>
+					<soap:enumeration value="CRC"/>
+					<soap:enumeration value="CSD"/>
+					<soap:enumeration value="CUP"/>
+					<soap:enumeration value="CVE"/>
+					<soap:enumeration value="CYP"/>
+					<soap:enumeration value="CZK"/>
+					<soap:enumeration value="DEM"/>
+					<soap:enumeration value="DJF"/>
+					<soap:enumeration value="DKK"/>
+					<soap:enumeration value="DOP"/>
+					<soap:enumeration value="DZD"/>
+					<soap:enumeration value="ECS"/>
+					<soap:enumeration value="EEK"/>
+					<soap:enumeration value="EGP"/>
+					<soap:enumeration value="ETB"/>
+					<soap:enumeration value="EUR"/>
+					<soap:enumeration value="FJD"/>
+					<soap:enumeration value="FKP"/>
+					<soap:enumeration value="GBP"/>
+					<soap:enumeration value="GEK"/>
+					<soap:enumeration value="GHC"/>
+					<soap:enumeration value="GIP"/>
+					<soap:enumeration value="GMD"/>
+					<soap:enumeration value="GNF"/>
+					<soap:enumeration value="GTQ"/>
+					<soap:enumeration value="GWP"/>
+					<soap:enumeration value="GYD"/>
+					<soap:enumeration value="HKD"/>
+					<soap:enumeration value="HNL"/>
+					<soap:enumeration value="HRK"/>
+					<soap:enumeration value="HTG"/>
+					<soap:enumeration value="HUF"/>
+					<soap:enumeration value="IDR"/>
+					<soap:enumeration value="ILS"/>
+					<soap:enumeration value="INR"/>
+					<soap:enumeration value="IQD"/>
+					<soap:enumeration value="IRR"/>
+					<soap:enumeration value="ISK"/>
+					<soap:enumeration value="JMD"/>
+					<soap:enumeration value="JOD"/>
+					<soap:enumeration value="JPY"/>
+					<soap:enumeration value="KES"/>
+					<soap:enumeration value="KGS"/>
+					<soap:enumeration value="KHR"/>
+					<soap:enumeration value="KMF"/>
+					<soap:enumeration value="KPW"/>
+					<soap:enumeration value="KRW"/>
+					<soap:enumeration value="KWD"/>
+					<soap:enumeration value="KYD"/>
+					<soap:enumeration value="KZT"/>
+					<soap:enumeration value="LAK"/>
+					<soap:enumeration value="LBP"/>
+					<soap:enumeration value="LKR"/>
+					<soap:enumeration value="LRD"/>
+					<soap:enumeration value="LSL"/>
+					<soap:enumeration value="LTL"/>
+					<soap:enumeration value="LVL"/>
+					<soap:enumeration value="LYD"/>
+					<soap:enumeration value="MAD"/>
+					<soap:enumeration value="MDL"/>
+					<soap:enumeration value="MGF"/>
+					<soap:enumeration value="MKD"/>
+					<soap:enumeration value="MMK"/>
+					<soap:enumeration value="MNT"/>
+					<soap:enumeration value="MOP"/>
+					<soap:enumeration value="MRO"/>
+					<soap:enumeration value="MTL"/>
+					<soap:enumeration value="MUR"/>
+					<soap:enumeration value="MVR"/>
+					<soap:enumeration value="MWK"/>
+					<soap:enumeration value="MXN"/>
+					<soap:enumeration value="MYR"/>
+					<soap:enumeration value="MZM"/>
+					<soap:enumeration value="NAD"/>
+					<soap:enumeration value="NGN"/>
+					<soap:enumeration value="NIO"/>
+					<soap:enumeration value="NOK"/>
+					<soap:enumeration value="NPR"/>
+					<soap:enumeration value="NZD"/>
+					<soap:enumeration value="OMR"/>
+					<soap:enumeration value="PAB"/>
+					<soap:enumeration value="PEN"/>
+					<soap:enumeration value="PGK"/>
+					<soap:enumeration value="PHP"/>
+					<soap:enumeration value="PKR"/>
+					<soap:enumeration value="PLN"/>
+					<soap:enumeration value="PYG"/>
+					<soap:enumeration value="QAR"/>
+					<soap:enumeration value="ROL"/>
+					<soap:enumeration value="RUR"/>
+					<soap:enumeration value="RWF"/>
+					<soap:enumeration value="SAR"/>
+					<soap:enumeration value="SBD"/>
+					<soap:enumeration value="SCR"/>
+					<soap:enumeration value="SDD"/>
+					<soap:enumeration value="SEK"/>
+					<soap:enumeration value="SGD"/>
+					<soap:enumeration value="SHP"/>
+					<soap:enumeration value="SIT"/>
+					<soap:enumeration value="SKK"/>
+					<soap:enumeration value="SLL"/>
+					<soap:enumeration value="SOS"/>
+					<soap:enumeration value="SRG"/>
+					<soap:enumeration value="STD"/>
+					<soap:enumeration value="SVC"/>
+					<soap:enumeration value="SYP"/>
+					<soap:enumeration value="SZL"/>
+					<soap:enumeration value="THB"/>
+					<soap:enumeration value="TJR"/>
+					<soap:enumeration value="TMM"/>
+					<soap:enumeration value="TND"/>
+					<soap:enumeration value="TOP"/>
+					<soap:enumeration value="TPE"/>
+					<soap:enumeration value="TRL"/>
+					<soap:enumeration value="TTD"/>
+					<soap:enumeration value="TWD"/>
+					<soap:enumeration value="TZS"/>
+					<soap:enumeration value="UAH"/>
+					<soap:enumeration value="UGX"/>
+					<soap:enumeration value="USD"/>
+					<soap:enumeration value="UYU"/>
+					<soap:enumeration value="UZS"/>
+					<soap:enumeration value="VEB"/>
+					<soap:enumeration value="VND"/>
+					<soap:enumeration value="VUV"/>
+					<soap:enumeration value="WST"/>
+					<soap:enumeration value="XAF"/>
+					<soap:enumeration value="XCD"/>
+					<soap:enumeration value="XOF"/>
+					<soap:enumeration value="XPF"/>
+					<soap:enumeration value="YER"/>
+					<soap:enumeration value="YUN"/>
+					<soap:enumeration value="ZAR"/>
+					<soap:enumeration value="ZMK"/>
+					<soap:enumeration value="ZRN"/>
+					<soap:enumeration value="ZWD"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="AngivelsePeriodeStruktur" xmlns:q27="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" type="q27:TimeRangeStructureType">
+				<soap:annotation>
+					<soap:documentation>Periode der angives for. Perioden afhænger af virksomhedens registrering hos SKAT og vil fremgå af det registreringsbevis som virksomheden modtager.
+</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="AngivelseKvitteringStruktur" xmlns:q28="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q28:AngivelseKvitteringStrukturType">
+				<soap:annotation>
+					<soap:documentation>Samling af kvitteringsoplysninger for en angiver (momspligtig virksomhed) ved godkendt angivelse i forbindelse med momsafregning til SKAT.
+</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="AngivelseKvitteringStrukturType">
+				<soap:sequence>
+					<soap:element xmlns:q29="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" ref="q29:SEnummerIdentifikator"/>
+					<soap:element xmlns:q30="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q30:AngivelsePeriodeStruktur"/>
+					<soap:element xmlns:q31="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q31:AngivelseDatoTid"/>
+					<soap:element minOccurs="0" xmlns:q32="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q32:ValutaKode"/>
+					<soap:element minOccurs="0" xmlns:q33="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" ref="q33:BetalingsFormidlerKode"/>
+					<soap:element minOccurs="0" xmlns:q34="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" ref="q34:BetalingsDato"/>
+					<soap:element minOccurs="0" xmlns:q35="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" ref="q35:BetalingsBeloeb"/>
+					<soap:element minOccurs="0" xmlns:q36="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q36:OCRlinieStruktur"/>
+					<soap:element xmlns:q37="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q37:AngivelseKvitteringIdentifikator"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="OCRlinieStruktur" xmlns:q38="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q38:OCRlinieStrukturType">
+				<soap:annotation>
+					<soap:documentation>Samling af OCR oplysninger til brug for indbetaling via HomeBanking.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="OCRlinieStrukturType">
+				<soap:sequence>
+					<soap:element xmlns:q39="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q39:KortTypeIdentifikator"/>
+					<soap:element xmlns:q40="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q40:OCRnummerIdentifikator"/>
+					<soap:element xmlns:q41="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q41:KontoNummerIdentifikator"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="KortTypeIdentifikator" xmlns:q42="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q42:KortTypeIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>Korttype for indbetaling via HomeBanking.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="KortTypeIdentifikatorType">
+				<soap:restriction base="soap:string">
+					<soap:pattern value="[0-9]{2}"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="OCRnummerIdentifikator" xmlns:q43="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q43:OCRnummerIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>SKATs OCR-nummer for indbetaling via HomeBanking.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="OCRnummerIdentifikatorType">
+				<soap:restriction base="soap:string">
+					<soap:pattern value="[0-9]{16}"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="KontoNummerIdentifikator" xmlns:q44="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q44:KontoNummerIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>Kontonummer for indbetaling via HomeBanking.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="KontoNummerIdentifikatorType">
+				<soap:restriction base="soap:string">
+					<soap:pattern value="[0-9]{8}"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="AngivelseDatoTid" type="soap:dateTime">
+				<soap:annotation>
+					<soap:documentation>Entydigt tidspunkt (dato og tidspunkt) - timestamp - for angivelsens modtagelse i SKAT.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="AngivelseKvitteringIdentifikator" xmlns:q45="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q45:AngivelseKvitteringIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>Kvitteringsnummer som det modtagende system tildeler den enkelte angivelse ved godkendelsen.
+</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="AngivelseKvitteringIdentifikatorType">
+				<soap:restriction base="soap:integer">
+					<soap:totalDigits value="26"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<!--soap:element name="ValutaKode" xmlns:q46="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" type="q46:ValutaKodeType">
+				<soap:annotation>
+					<soap:documentation>Valuta (ISO møntkoden) for angivelsens beløbsfelter. SKAT modtager p.t. kun angivelser i danske kroner (DKK).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="ValutaKodeType">
+				<soap:restriction base="soap:string">
+					<soap:enumeration value="AED"/>
+					<soap:enumeration value="AFA"/>
+					<soap:enumeration value="ALL"/>
+					<soap:enumeration value="AMD"/>
+					<soap:enumeration value="ANG"/>
+					<soap:enumeration value="AOA"/>
+					<soap:enumeration value="ARS"/>
+					<soap:enumeration value="AUD"/>
+					<soap:enumeration value="AWG"/>
+					<soap:enumeration value="AZM"/>
+					<soap:enumeration value="BAM"/>
+					<soap:enumeration value="BBD"/>
+					<soap:enumeration value="BDT"/>
+					<soap:enumeration value="BGL"/>
+					<soap:enumeration value="BHD"/>
+					<soap:enumeration value="BIF"/>
+					<soap:enumeration value="BMD"/>
+					<soap:enumeration value="BND"/>
+					<soap:enumeration value="BOB"/>
+					<soap:enumeration value="BRL"/>
+					<soap:enumeration value="BSD"/>
+					<soap:enumeration value="BTN"/>
+					<soap:enumeration value="BWP"/>
+					<soap:enumeration value="BZD"/>
+					<soap:enumeration value="CAD"/>
+					<soap:enumeration value="CHF"/>
+					<soap:enumeration value="CLP"/>
+					<soap:enumeration value="CNY"/>
+					<soap:enumeration value="COP"/>
+					<soap:enumeration value="CRC"/>
+					<soap:enumeration value="CSD"/>
+					<soap:enumeration value="CUP"/>
+					<soap:enumeration value="CVE"/>
+					<soap:enumeration value="CYP"/>
+					<soap:enumeration value="CZK"/>
+					<soap:enumeration value="DEM"/>
+					<soap:enumeration value="DJF"/>
+					<soap:enumeration value="DKK"/>
+					<soap:enumeration value="DOP"/>
+					<soap:enumeration value="DZD"/>
+					<soap:enumeration value="ECS"/>
+					<soap:enumeration value="EEK"/>
+					<soap:enumeration value="EGP"/>
+					<soap:enumeration value="ETB"/>
+					<soap:enumeration value="EUR"/>
+					<soap:enumeration value="FJD"/>
+					<soap:enumeration value="FKP"/>
+					<soap:enumeration value="GBP"/>
+					<soap:enumeration value="GEK"/>
+					<soap:enumeration value="GHC"/>
+					<soap:enumeration value="GIP"/>
+					<soap:enumeration value="GMD"/>
+					<soap:enumeration value="GNF"/>
+					<soap:enumeration value="GTQ"/>
+					<soap:enumeration value="GWP"/>
+					<soap:enumeration value="GYD"/>
+					<soap:enumeration value="HKD"/>
+					<soap:enumeration value="HNL"/>
+					<soap:enumeration value="HRK"/>
+					<soap:enumeration value="HTG"/>
+					<soap:enumeration value="HUF"/>
+					<soap:enumeration value="IDR"/>
+					<soap:enumeration value="ILS"/>
+					<soap:enumeration value="INR"/>
+					<soap:enumeration value="IQD"/>
+					<soap:enumeration value="IRR"/>
+					<soap:enumeration value="ISK"/>
+					<soap:enumeration value="JMD"/>
+					<soap:enumeration value="JOD"/>
+					<soap:enumeration value="JPY"/>
+					<soap:enumeration value="KES"/>
+					<soap:enumeration value="KGS"/>
+					<soap:enumeration value="KHR"/>
+					<soap:enumeration value="KMF"/>
+					<soap:enumeration value="KPW"/>
+					<soap:enumeration value="KRW"/>
+					<soap:enumeration value="KWD"/>
+					<soap:enumeration value="KYD"/>
+					<soap:enumeration value="KZT"/>
+					<soap:enumeration value="LAK"/>
+					<soap:enumeration value="LBP"/>
+					<soap:enumeration value="LKR"/>
+					<soap:enumeration value="LRD"/>
+					<soap:enumeration value="LSL"/>
+					<soap:enumeration value="LTL"/>
+					<soap:enumeration value="LVL"/>
+					<soap:enumeration value="LYD"/>
+					<soap:enumeration value="MAD"/>
+					<soap:enumeration value="MDL"/>
+					<soap:enumeration value="MGF"/>
+					<soap:enumeration value="MKD"/>
+					<soap:enumeration value="MMK"/>
+					<soap:enumeration value="MNT"/>
+					<soap:enumeration value="MOP"/>
+					<soap:enumeration value="MRO"/>
+					<soap:enumeration value="MTL"/>
+					<soap:enumeration value="MUR"/>
+					<soap:enumeration value="MVR"/>
+					<soap:enumeration value="MWK"/>
+					<soap:enumeration value="MXN"/>
+					<soap:enumeration value="MYR"/>
+					<soap:enumeration value="MZM"/>
+					<soap:enumeration value="NAD"/>
+					<soap:enumeration value="NGN"/>
+					<soap:enumeration value="NIO"/>
+					<soap:enumeration value="NOK"/>
+					<soap:enumeration value="NPR"/>
+					<soap:enumeration value="NZD"/>
+					<soap:enumeration value="OMR"/>
+					<soap:enumeration value="PAB"/>
+					<soap:enumeration value="PEN"/>
+					<soap:enumeration value="PGK"/>
+					<soap:enumeration value="PHP"/>
+					<soap:enumeration value="PKR"/>
+					<soap:enumeration value="PLN"/>
+					<soap:enumeration value="PYG"/>
+					<soap:enumeration value="QAR"/>
+					<soap:enumeration value="ROL"/>
+					<soap:enumeration value="RUR"/>
+					<soap:enumeration value="RWF"/>
+					<soap:enumeration value="SAR"/>
+					<soap:enumeration value="SBD"/>
+					<soap:enumeration value="SCR"/>
+					<soap:enumeration value="SDD"/>
+					<soap:enumeration value="SEK"/>
+					<soap:enumeration value="SGD"/>
+					<soap:enumeration value="SHP"/>
+					<soap:enumeration value="SIT"/>
+					<soap:enumeration value="SKK"/>
+					<soap:enumeration value="SLL"/>
+					<soap:enumeration value="SOS"/>
+					<soap:enumeration value="SRG"/>
+					<soap:enumeration value="STD"/>
+					<soap:enumeration value="SVC"/>
+					<soap:enumeration value="SYP"/>
+					<soap:enumeration value="SZL"/>
+					<soap:enumeration value="THB"/>
+					<soap:enumeration value="TJR"/>
+					<soap:enumeration value="TMM"/>
+					<soap:enumeration value="TND"/>
+					<soap:enumeration value="TOP"/>
+					<soap:enumeration value="TPE"/>
+					<soap:enumeration value="TRL"/>
+					<soap:enumeration value="TTD"/>
+					<soap:enumeration value="TWD"/>
+					<soap:enumeration value="TZS"/>
+					<soap:enumeration value="UAH"/>
+					<soap:enumeration value="UGX"/>
+					<soap:enumeration value="USD"/>
+					<soap:enumeration value="UYU"/>
+					<soap:enumeration value="UZS"/>
+					<soap:enumeration value="VEB"/>
+					<soap:enumeration value="VND"/>
+					<soap:enumeration value="VUV"/>
+					<soap:enumeration value="WST"/>
+					<soap:enumeration value="XAF"/>
+					<soap:enumeration value="XCD"/>
+					<soap:enumeration value="XOF"/>
+					<soap:enumeration value="XPF"/>
+					<soap:enumeration value="YER"/>
+					<soap:enumeration value="YUN"/>
+					<soap:enumeration value="ZAR"/>
+					<soap:enumeration value="ZMK"/>
+					<soap:enumeration value="ZRN"/>
+					<soap:enumeration value="ZWD"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="AngivelsePeriodeStruktur" xmlns:q47="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" type="q47:TimeRangeStructureType">
+				<soap:annotation>
+					<soap:documentation>Periode der angives for. Perioden afhænger af virksomhedens registrering hos SKAT og vil fremgå af det registreringsbevis som virksomheden modtager.
+</soap:documentation>
+				</soap:annotation>
+			</soap:element-->
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/">
+			<soap:element name="TimeRangeStructure" xmlns:q48="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" type="q48:TimeRangeStructureType"/>
+			<soap:complexType name="TimeRangeStructureType">
+				<soap:choice>
+					<soap:sequence>
+						<soap:element xmlns:q49="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" ref="q49:StartDateTime"/>
+						<soap:choice minOccurs="0">
+							<soap:element xmlns:q50="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" ref="q50:EndDateTime"/>
+							<soap:element xmlns:q51="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" ref="q51:DurationTime"/>
+						</soap:choice>
+					</soap:sequence>
+					<soap:sequence>
+						<soap:element xmlns:q52="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" ref="q52:EndDateTime"/>
+						<soap:element minOccurs="0" xmlns:q53="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" ref="q53:DurationTime"/>
+					</soap:sequence>
+					<soap:element xmlns:q54="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" ref="q54:DurationTime"/>
+				</soap:choice>
+			</soap:complexType>
+			<soap:element name="StartDateTime" xmlns:q55="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" type="q55:StartDateTimeType"/>
+			<soap:simpleType name="StartDateTimeType">
+				<soap:restriction base="soap:dateTime">
+					<soap:pattern value="[0-9\-:T]+Z"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="EndDateTime" xmlns:q56="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" type="q56:EndDateTimeType"/>
+			<soap:simpleType name="EndDateTimeType">
+				<soap:restriction base="soap:dateTime">
+					<soap:pattern value="[0-9\-:T]+Z"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="DurationTime" xmlns:q57="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" type="q57:DurationTimeType"/>
+			<soap:simpleType name="DurationTimeType">
+				<soap:restriction base="soap:duration">
+					<soap:pattern value="-?P([0-9]+Y)?(([0-9]|1[0-2])M)?(([1-2]?[0-9]|3[0-1])D)?(T((1?[0-9]|2[0-4])H)?(([1-5]?[0-9]|60)M)?((([1-5]?[0-9](\.[0-9]+)?)|60)S)?)?"/>
+				</soap:restriction>
+			</soap:simpleType>
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" version="1.0">
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/"/>
+			<!--soap:element name="BetalingsFormidlerKode" xmlns:q58="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" type="q58:BetalingsFormidlerKodeType">
+				<soap:annotation>
+					<soap:documentation>Betalingsformidling for angivelsen. Ønsker virksomheden betalingsanmodningen videresendt af SKAT, f.eks. i forbindelse med PBS leverandørservice, er betalingsformidler PBS og angivelsen suppleres med betalingsbeløb og -dato. Ønsker virksomheden selv at overføre betalingen, udfyldes betalingsformidler med HomeBanking.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="BetalingsFormidlerKodeType">
+				<soap:restriction base="soap:string">
+					<soap:enumeration value="PBS"/>
+					<soap:enumeration value="HomeBanking"/>
+					<soap:enumeration value="JyskeBank"/>
+					<soap:enumeration value="Anden betalingsform"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="BetalingsDato" type="soap:date">
+				<soap:annotation>
+					<soap:documentation>Betalingsdato for angivelsen. Anvendes sammen med betalingsbeløbet, når virksomheden ønsker betalingsanmodningen videresendt af SKAT, f.eks. i forbindelse med PBS leverandørservice.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="BetalingsBeloeb" xmlns:q59="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q59:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Betalingsbeløb for angivelsen. Anvendes sammen med betalingsdatoen, når virksomheden ønsker betalingsanmodningen videresendt af SKAT, f.eks. i forbindelse med PBS leverandørservice.</soap:documentation>
+				</soap:annotation>
+			</soap:element-->
+			<soap:element name="BetalingsFormidlerKode" xmlns:q60="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" type="q60:BetalingsFormidlerKodeType">
+				<soap:annotation>
+					<soap:documentation>Betalingsformidling for angivelsen. Ønsker virksomheden betalingsanmodningen videresendt af SKAT, f.eks. i forbindelse med PBS leverandørservice, er betalingsformidler PBS og angivelsen suppleres med betalingsbeløb og -dato. Ønsker virksomheden selv at overføre betalingen, udfyldes betalingsformidler med HomeBanking.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="BetalingsFormidlerKodeType">
+				<soap:restriction base="soap:string">
+					<soap:enumeration value="PBS"/>
+					<soap:enumeration value="HomeBanking"/>
+					<soap:enumeration value="JyskeBank"/>
+					<soap:enumeration value="Anden betalingsform"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="BetalingsDato" type="soap:date">
+				<soap:annotation>
+					<soap:documentation>Betalingsdato for angivelsen. Anvendes sammen med betalingsbeløbet, når virksomheden ønsker betalingsanmodningen videresendt af SKAT, f.eks. i forbindelse med PBS leverandørservice.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="BetalingsBeloeb" xmlns:q61="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q61:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Betalingsbeløb for angivelsen. Anvendes sammen med betalingsdatoen, når virksomheden ønsker betalingsanmodningen videresendt af SKAT, f.eks. i forbindelse med PBS leverandørservice.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" version="1.0">
+			<soap:element name="FemtenCifreSeksDecimalerBeloeb" xmlns:q62="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q62:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Beløbstype på 15 cifre inkl. 6 decimaler.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="FemtenCifreSeksDecimalerBeloebType">
+				<soap:restriction base="soap:decimal">
+					<soap:totalDigits value="21"/>
+					<soap:fractionDigits value="6"/>
+				</soap:restriction>
+			</soap:simpleType>
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/momsangivelse/xml/schemas/2006/09/01/" version="1.0">
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/"/>
+			<soap:element name="MomsAngivelseAfgiftTilSvarBeloeb" xmlns:q63="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q63:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Samlet afgiftstilsvar for momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseCOtoAfgiftBeloeb" xmlns:q64="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q64:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>CO2-afgift fratrukket i forbindelse med momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseEksportOmsBeloeb" xmlns:q65="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q65:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Rubrik C: Værdien af varer og ydelser, som sælges momsfrit til udlandet efter lovens § 14-21 og 34, bortset fra varesalg til andre EU-lande, jf. rubrik B.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseElAfgiftBeloeb" xmlns:q66="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q66:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>El-afgift fratrukket i forbindelsen med momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseEUkoebBeloeb" xmlns:q67="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q67:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Rubrik A: Værdien uden moms af varekøb i andre EU-lande (EU-erhvervelser).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseEUsalgBeloeb" xmlns:q68="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q68:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Rubrik B: Værdien af varesalg uden moms til andre EU-lande (EU-leverancer).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseGasAfgiftBeloeb" xmlns:q69="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q69:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Gas-afgift fratrukket i forbindelse med momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseKulAfgiftBeloeb" xmlns:q70="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q70:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Kul-afgift fratrukket i forbindelse med momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseKoebsMomsBeloeb" xmlns:q71="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q71:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Købsmoms (indgående moms).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseEUkoebMomsBeloeb" xmlns:q72="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q72:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Moms af varekøb mv. i udlandet.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseOlieAfgiftBeloeb" xmlns:q73="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q73:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Olie-afgift fratrukket i forbindelse med momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseSalgsMomsBeloeb" xmlns:q74="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q74:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Salgsmoms (udgående moms).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="MomsAngivelseVandAfgiftBeloeb" xmlns:q75="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q75:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Vand-afgift fratrukket i forbindelse med momsangivelsen.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+		</soap:schema>
+		<soap:schema elementFormDefault="qualified" targetNamespace="urn:oio:skat:tse:1.0.0" version="1.0">
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/"/>
+			<soap:element name="MomsAngivelseMomsEUYdelserBeloeb" xmlns:q76="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" type="q76:FemtenCifreSeksDecimalerBeloebType">
+				<soap:annotation>
+					<soap:documentation>Moms af ydelseskøb i udlandet (byggeydelser og arbejdsudleje).</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+		</soap:schema>
+		<soap:schema targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/momsangivelsemodtag/xml/schemas/2006/09/01/">
+			<soap:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/"/>
+			<soap:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/"/>
+			<soap:element name="MomsAngivelseOutputStruktur" type="tse:MomsAngivelseOutputStrukturType">
+				<soap:annotation>
+					<soap:documentation>Denne outputstruktur returnerer en kvittering pr. momsangivelse.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="MomsAngivelseOutputStrukturType">
+				<soap:sequence>
+					<soap:element xmlns:q77="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q77:HovedOplysningerSvar"/>
+					<soap:element minOccurs="0" maxOccurs="unbounded" xmlns:q78="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" ref="q78:AngivelseKvitteringStruktur"/>
+				</soap:sequence>
+			</soap:complexType>
+		</soap:schema>
+		<soap:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" version="1.0">
+			<soap:annotation>
+				<soap:documentation>Strukturen er en generisk svarmekanisme til at udveksle forretningsmæssige fejl og adviser med et modsvarende system. 
+Strukturen forudsætter ikke nogen servicespecifk viden, udover at navnet på den konkrete service skal stå i feltet ServiceIndikator. 
+De fejl og adviser der rapporteres med strukturen skal betragtes som unikt identificeret af ServiceIdentifikator+FejlIdentifikator henholdsvis ServiceIdentifikator+AdvisIdentifikator. Herved kan forskellige services benytte overlappende serier af identifikatorer og stadigvæk være unikt identificeret.</soap:documentation>
+			</soap:annotation>
+			<soap:element name="HovedOplysningerSvar" xmlns:q79="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q79:HovedOplysningerSvarType">
+				<soap:annotation>
+					<soap:documentation>Strukturen er en generisk svarmekanisme til at udveksle forretningsmæssige fejl og adviser med et modsvarende system. 
+Strukturen forudsætter ikke nogen servicespecifk viden, udover at navnet på den konkrete service skal stå i feltet ServiceIndikator. 
+De fejl og adviser der rapporteres med strukturen skal betragtes som unikt identificeret af ServiceIdentifikator+FejlIdentifikator henholdsvis ServiceIdentifikator+AdvisIdentifikator. Herved kan forskellige services benytte overlappende serier af identifikatorer og stadigvæk være unikt identificeret.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="HovedOplysningerSvarType">
+				<soap:sequence>
+					<soap:element minOccurs="0" xmlns:q80="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q80:TransaktionIdentifikator"/>
+					<soap:element minOccurs="0" xmlns:q81="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q81:ServiceIdentifikator"/>
+					<soap:element minOccurs="0" xmlns:q82="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q82:TransaktionTid"/>
+					<soap:element xmlns:q83="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q83:SvarStruktur"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="SvarStruktur" xmlns:q84="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q84:SvarStrukturType">
+				<soap:annotation>
+					<soap:documentation>Valg mellem et antal forretningsmæssige adviser og fejl der kan returneres fra en service. Der kan rapporteres et ubegrænset antal af begge dele i en vilkårlig orden.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="SvarStrukturType">
+				<soap:choice minOccurs="0" maxOccurs="unbounded">
+					<soap:element xmlns:q85="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q85:AdvisStruktur"/>
+					<soap:element xmlns:q86="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q86:FejlStruktur"/>
+				</soap:choice>
+			</soap:complexType>
+			<soap:element name="AdvisStruktur" xmlns:q87="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q87:AdvisStrukturType">
+				<soap:annotation>
+					<soap:documentation>Et dokumentfragment med denne struktur beskriver en enkelt forretningsmæssig advisering i svaret fra en webservice. Adviseringen består i en identifikator for advisen samt en advisbeskrivelse der kan have specifikt forretningsmæssigt indhold. De forventelige værdierne i denne struktur er en del af kontrakten for de enkelte services som AdvisStruktur indgår i.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="AdvisStrukturType">
+				<soap:sequence>
+					<soap:element xmlns:q88="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q88:AdvisIdentifikator"/>
+					<soap:element minOccurs="0" xmlns:q89="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q89:AdvisTekst"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="AdvisIdentifikator" xmlns:q90="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q90:FejlIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>Element til at identificere en forretningsmæssig advis fra et servicekald. Elementet er typisk en kode hvis aktuelle betydning er en del af beskrivelsen af funktionaliteten for den enkelte service.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="FejlIdentifikator" xmlns:q91="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q91:FejlIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>Element til at identificere en forretningsmæssig fejl fra et servicekald. Elementet er typisk en kode hvis aktuelle betydning er en del af beskrivelsen af funktionaliteten for den enkelte service.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="FejlIdentifikatorType">
+				<soap:restriction base="soap:integer"/>
+			</soap:simpleType>
+			<soap:element name="AdvisTekst" xmlns:q92="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q92:FejlTekstType">
+				<soap:annotation>
+					<soap:documentation>Element til at beskrive en forretningsmæssig advis fra et servicekald. Indholdet er typisk en tekst der beskriver en advarsel fra en service.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="FejlTekst" xmlns:q93="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q93:FejlTekstType">
+				<soap:annotation>
+					<soap:documentation>Element til at beskrive en forretningsmæssig fejl fra et servicekald. Indholdet er typisk en tekst der beskriver en forretningsmæssig fejl opstået i en service.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="FejlTekstType">
+				<soap:restriction base="soap:string">
+					<soap:minLength value="1"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="FejlStruktur" xmlns:q94="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q94:FejlStrukturType">
+				<soap:annotation>
+					<soap:documentation>Et dokumentfragment med denne struktur beskriver en enkelt forretningsmæssig fejl i svaret fra en webservice. Fejlen består i en identifikator for fejlen samt en fejlbeskrivelse der kan have specifikt forretningsmæssigt indhold. De forventelige værdierne i denne struktur er en del af kontrakten for de enkelte services som FejlStruktur indgår i.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:complexType name="FejlStrukturType">
+				<soap:sequence>
+					<soap:element xmlns:q95="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q95:FejlIdentifikator"/>
+					<soap:element minOccurs="0" xmlns:q96="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" ref="q96:FejlTekst"/>
+				</soap:sequence>
+			</soap:complexType>
+			<soap:element name="TransaktionIdentifikator" xmlns:q97="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" type="q97:TransaktionIdentifikatorType">
+				<soap:annotation>
+					<soap:documentation>Felt der giver kalder af service mulighed for at binde sit eget transaktionsspor sammen med den kaldte webservice. Når brug af dette felt understøttes af en service, så vil værdier af en TransaktionIdentifikator der gives ved et kald af service blive returneret ved svar fra samme service. Der er ikke nogen bindinger på hvordan TransaktionsIdentifikatoren skal udformes, men det er hensigten at det kaldende system selv skal administrere anvendelsen af unikke identifikationer af sine kald, så svar kan matches til kald.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:simpleType name="TransaktionIdentifikatorType">
+				<soap:restriction base="soap:string">
+					<soap:minLength value="1"/>
+					<soap:maxLength value="100"/>
+				</soap:restriction>
+			</soap:simpleType>
+			<soap:element name="TransaktionTid" type="soap:dateTime">
+				<soap:annotation>
+					<soap:documentation>Felt der giver kalder af service mulighed for at tidsstemple sit eget transaktionsspor uafhængigt af kaldte systems interne tid. Når brug af dette felt understøttes af en service, så vil værdier af en TransaktionTid der gives ved et kald af service blive returneret ved svar fra samme service. Der er ikke nogen bindinger på hvordan TransaktionTid skal udformes, udover at det er et xs:dateTime, men det er hensigten at det kaldende system kan anvende tidsstempel til hurtigt at kunne udsøge servicekald i egne loggingmekanismer.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+			<soap:element name="ServiceIdentifikator" type="soap:string">
+				<soap:annotation>
+					<soap:documentation>Element til at identificere den service der svarer. Dens værdi skal antage navnet på den service der svarer.</soap:documentation>
+				</soap:annotation>
+			</soap:element>
+		</soap:schema>
+	</types>
+	<message name="MomsAngivelseHentServiceRequest">
+		<part name="Request" element="tse2009:MomsAngivelseInputStruktur"/>
+	</message>
+	<message name="MomsAngivelseHentServiceResponse">
+		<part name="Response" element="tse:MomsAngivelseOutputStruktur"/>
+	</message>
+	<portType name="MomsAngivelseHentServicePortType">
+		<operation name="getMomsAngivelseHent">
+			<input message="tse2009:MomsAngivelseHentServiceRequest"/>
+			<output message="tse2009:MomsAngivelseHentServiceResponse"/>
+		</operation>
+	</portType>
+	<binding name="MomsAngivelseHentServiceBinding" type="tse2009:MomsAngivelseHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getMomsAngivelseHent">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="MomsAngivelseHentService">
+		<port name="MomsAngivelseHentService" binding="tse2009:MomsAngivelseHentServiceBinding">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/MomsAngivelseHentServicePort"/>
+		</port>
+	</service>
+</definitions>

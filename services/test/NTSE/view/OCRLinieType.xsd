@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ntsews="urn:oio:skat:ntse:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:ntse:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/3242/artefact/SKAT_KontoNummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/5193/artefact/SKAT_OCRnummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/4487/artefact/SKAT_KortTypeIdentifikator.xsd"/><xs:element name="OCRLinie" type="ntsews:OCRLinieType"/>
+	<xs:complexType name="OCRLinieType">
+		<xs:sequence>
+			<xs:element ref="angivelse:KortTypeIdentifikator"/>
+			<xs:element ref="angivelse:OCRnummerIdentifikator"/>
+			<xs:element ref="angivelse:KontoNummerIdentifikator"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

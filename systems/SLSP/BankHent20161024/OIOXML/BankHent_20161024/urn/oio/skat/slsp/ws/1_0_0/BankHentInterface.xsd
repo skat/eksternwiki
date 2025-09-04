@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:slspws="urn:oio:skat:slsp:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:slsp:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Henter en banks/filials navn og adresse til brug for præsentation i skærmbilleder</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="BankHent_I.xsd"/>
+	<xs:include schemaLocation="BankHent_O.xsd"/>
+	<xs:element name="BankHentInterface" type="slspws:BankHentInterfaceType"/>
+	<xs:complexType name="BankHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="slspws:BankHent_I"/>
+			<xs:element ref="slspws:BankHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

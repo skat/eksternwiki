@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+         <xs:annotation>
+         </xs:annotation>
+         <xs:include schemaLocation="IndkomstOplysningKlassiskAbonnentHent_I_I.xsd"/>
+         <xs:include schemaLocation="IndkomstOplysningKlassiskAbonnentHent_O_O.xsd"/>
+         <xs:include schemaLocation="IndkomstOplysningKlassiskAbonnentHent_I_O.xsd"/>
+         <xs:include schemaLocation="IndkomstOplysningKlassiskAbonnentHent_O_I.xsd"/>
+         <xs:include schemaLocation="IndkomstOplysningKlassiskAbonnentHentAfslut_I.xsd"/>
+         <xs:include schemaLocation="IndkomstOplysningKlassiskAbonnentHentAfslut_O.xsd"/>
+         <xs:element name="IndkomstOplysningKlassiskAbonnentHentInterface" type="fase2:IndkomstOplysningKlassiskAbonnentHentInterfaceType"/>
+         <xs:complexType name="IndkomstOplysningKlassiskAbonnentHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_I_I"/>
+               <xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_O_O"/>
+               <xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_I_O"/>
+               <xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_O_I"/>
+               <xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHentAfslut_I"/>
+               <xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHentAfslut_O"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

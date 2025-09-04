@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/TonnageskatTilmelding.xsd"/>
+         <xs:include schemaLocation="../class/TonnageBindingPeriode.xsd"/>
+         <xs:element name="DIASMeddelelsePåmindTilmeldTonnageStruktur"
+                     type="skat2012:DIASMeddelelsePåmindTilmeldTonnageStrukturType"/>
+         <xs:complexType name="DIASMeddelelsePåmindTilmeldTonnageStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2012:VirksomhedNavnFirmaNavn"/>
+                  
+                  <xs:element ref="skat2012:VirksomhedCVRNummer"/>
+                  
+                  <xs:element ref="skat2012:TonnageskatTilmeldingSlutDato"/>
+                  
+                  <xs:element ref="skat2012:TonnageBindingPeriodeAntalÅr"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

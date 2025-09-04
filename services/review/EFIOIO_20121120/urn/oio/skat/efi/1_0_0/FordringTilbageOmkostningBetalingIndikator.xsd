@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fordringtilbageomkostningbetalingindikator="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="FordringTilbageOmkostningBetalingIndikator" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Markerer om tilskrevne renter og gebyrer skal fastholdes.  Når fordringshaver tilbagekalder en fordring er det muligt at markere om relaterede fordring som tilskrevet renter og gebyr skal fastholdes og derved inddrives.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

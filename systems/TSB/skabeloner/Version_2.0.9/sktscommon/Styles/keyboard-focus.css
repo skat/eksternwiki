@@ -1,0 +1,28 @@
+/*
+	Modify the focussed elements you wish to style here.
+ */
+
+a.skts-tooltip-holder:focus
+{
+    position: relative;
+}
+
+a.keyboard-focus:focus .skts-tooltip,
+input:focus,
+textarea:focus,
+button:focus,
+select:focus,
+.button.keyboard-focus:focus .skts-tooltip {
+    background-color: #FFFFFF;
+    border: 1px solid #AAA1AA;
+    display: block;
+    left: 1em;
+    margin-left:1em;
+    position: absolute;
+    text-align: left;
+    text-decoration:none;
+    top: 1.3em;
+    z-index: 25;
+	white-space: nowrap;
+}
+

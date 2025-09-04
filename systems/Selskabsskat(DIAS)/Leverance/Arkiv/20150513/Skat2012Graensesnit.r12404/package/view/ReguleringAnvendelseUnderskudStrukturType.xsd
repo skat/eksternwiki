@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/SelskabHaendelse.xsd"/>
+         <xs:include schemaLocation="../class/InternationalSambeskatning.xsd"/>
+         <xs:element name="ReguleringAnvendelseUnderskudStruktur"
+                     type="skat2012:ReguleringAnvendelseUnderskudStrukturType"/>
+         <xs:complexType name="ReguleringAnvendelseUnderskudStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:SelskabHændelseUnderskudPåvirkning" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseTvangAkkordMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseGældEftergivelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseFrivilligAkkordMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseKreditorGældKonvertering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseGældNedbringelsePgf12C" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseOverHalvEjerkredsÆndring" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseSkattefriOmstruktureringMedUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseSambeskatningOgUnderskudUdland" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseBortseFremførselUnderskudPgf33H" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabHændelseBortseFremførselUnderskudPgf31Stk9" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:InternationalSambeskatningUdtrådtFastDriftUdlandUnderskud"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:InternationalSambeskatningFastDriftFastEjendomUdlandRestunderskud"
+                           minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et selskabs balance er en del af virksomhedens regnskab. Balancen består af aktiver og passiver. Passiv-siden angiver hvordan aktiverne er finansieret: med gæld (finansieret) eller egenkapital. Aktiverne og passiverne er pr. definition lige store.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="RegnskabBalanceSum" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af årets balance. Felt 124</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabBalanceVarebeholdningTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den totale værdi af selskabets varebeholdninger. Felt 120</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabBalanceAnlægsaktiverTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den totale værdi af selskabets anlægsaktiver. Felt 121</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabBalanceEgenkapital" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien af selskabets egenkapital. Felt 123</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

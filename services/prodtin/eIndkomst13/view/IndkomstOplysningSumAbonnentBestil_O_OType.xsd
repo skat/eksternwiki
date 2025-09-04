@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eindkomst="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:ws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../class/SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:include schemaLocation="../class/AbonnentStrukturType.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/" schemaLocation="../class/AbonnentAdgangStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonSumStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningVirksomhedSumStrukturType.xsd"/>
+	<xs:element name="IndkomstOplysningSumAbonnentBestil_O_O" type="eindkomstws:IndkomstOplysningSumAbonnentBestil_O_OType"/>
+	<xs:complexType name="IndkomstOplysningSumAbonnentBestil_O_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="IndkomstOplysningSumAbonnentBestilUddata" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="eindkomst:AbonnentAdgangStruktur"/>
+						<xs:element name="AbonnentUddataSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AbonnentUddata" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="ws:AbonnentStruktur"/>
+												<xs:element name="IndkomstOplysningSum">
+													<xs:complexType>
+														<xs:choice>
+															<xs:sequence>
+																<xs:element name="PersonIndkomstSumSamling">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="eindkomstws:IndkomstOplysningPersonSumStruktur" minOccurs="1" maxOccurs="unbounded"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:sequence>
+																<xs:element name="VirksomhedIndkomstSumSamling">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element ref="eindkomstws:IndkomstOplysningVirksomhedSumStruktur" minOccurs="1" maxOccurs="unbounded"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:choice>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

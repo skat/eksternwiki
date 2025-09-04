@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" name="DMIFERVModregningModtagService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>FødevareErhverv kalder denne service for at informere DMI, hvis FødevareErhverv har en transport  i en udbetaling og der er et overskydende beløb til modregning hos til SKAT.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0">
+			<xsd:include schemaLocation="../service/DMIFERVModregningModtagInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="DMIFERVModregningModtagServiceRequest">
+		<wsdl:part name="Request" element="dmiws:DMIFERVModregningModtag_I"/>
+	</wsdl:message>
+	<wsdl:message name="DMIFERVModregningModtagServiceResponse">
+		<wsdl:part name="Response" element="dmiws:DMIFERVModregningModtag_O"/>
+	</wsdl:message>
+	<wsdl:portType name="DMIFERVModregningModtagServicePortType">
+		<wsdl:operation name="getDMIFERVModregningModtag">
+			<wsdl:input message="dmiws:DMIFERVModregningModtagServiceRequest"/>
+			<wsdl:output message="dmiws:DMIFERVModregningModtagServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

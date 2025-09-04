@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1624846/artefact/SamtykkeAarsagKode.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="http://digitaliser.dk/resource/1945/artefact/CVR_CVRnumberIdentifier.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1624919/artefact/VidereanvendelseAftaleIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:element name="HentSelvSendData_F" type="hsws:HentSelvSendData_FType"/>
+	<xs:complexType name="HentSelvSendData_FType">
+		<xs:sequence>
+			<xs:element ref="hentselv:SamtykkeAarsagKode" minOccurs="0"/>
+			<xs:element ref="hentselv:VidereanvendelseAftaleIdentifikator" minOccurs="0"/>
+			<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+			<xs:element ref="core:PersonCivilRegistrationIdentifier" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

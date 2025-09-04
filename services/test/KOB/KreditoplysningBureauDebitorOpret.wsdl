@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:kob:ws:1.0.0" name="KreditoplysningBureauDebitorOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At oprette en kunde hos et kreditoplysningsbureau.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0">
+			<xsd:include schemaLocation="urn/oio/skat/kob/ws/1_0_0/KreditoplysningBureauDebitorOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="KreditoplysningBureauDebitorOpretServiceRequest">
+		<wsdl:part name="Request" element="kobws:KreditoplysningBureauDebitorOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorOpretServiceResponse">
+		<wsdl:part name="Response" element="kobws:KreditoplysningBureauDebitorOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="KreditoplysningBureauDebitorOpretServicePortType">
+		<wsdl:operation name="getKreditoplysningBureauDebitorOpret">
+			<wsdl:input message="kobws:KreditoplysningBureauDebitorOpretServiceRequest"/>
+			<wsdl:output message="kobws:KreditoplysningBureauDebitorOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

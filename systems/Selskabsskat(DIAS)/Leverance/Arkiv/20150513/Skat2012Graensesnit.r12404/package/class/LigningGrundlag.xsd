@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Ligningsgrundlaget kan være en selvangivelse, men det kan også være f.eks. resultatet af en ansættelse foretaget af SKAT.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel10Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst6Type.xsd"/>
+         <xs:element name="LigningGrundlagNummer" type="skat2012:TalHel10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af det aktuelle ligningsgrundlag.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningGrundlagPeriodeStart" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Første dato i selvangivelse-perioden for ligningsgrundlaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningGrundlagPeriodeSlut" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste dato i selvangivelse-perioden for ligningsgrundlaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LigningGrundlagFunktionAdskillelseMedarbejderNummer"
+                     type="skat2012:Tekst6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejdernummer på den medarbejder som har foretaget ligningen. (Anvendes til udvælgelse af den medarbejder som skal foretage funktionsadskillelse i SKAT-Ligning).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

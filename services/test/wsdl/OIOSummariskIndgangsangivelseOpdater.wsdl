@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:oio:skat:tfe:ws:1.0.1" name="OIOSummariskIndgangsangivelseOpdaterService" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Service</xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:tfe:ws:1.0.1">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/540445/artefact/OIOSummariskIndgangsangivelseOpdaterInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="OIOSummariskIndgangsangivelseOpdaterServiceRequest">
+		<part name="Request" element="tfe:OIOSummariskIndgangsangivelseOpdater_I"/>
+	</message>
+	<message name="OIOSummariskIndgangsangivelseOpdaterServiceResponse">
+		<part name="Response" element="tfe:OIOSummariskIndgangsangivelseOpdater_O"/>
+	</message>
+	<portType name="OIOSummariskIndgangsangivelseOpdaterServicePortType">
+		<operation name="getOIOSummariskIndgangsangivelseOpdater">
+			<input message="tfe:OIOSummariskIndgangsangivelseOpdaterServiceRequest"/>
+			<output message="tfe:OIOSummariskIndgangsangivelseOpdaterServiceResponse"/>
+		</operation>
+	</portType>
+	<binding name="OIOSummariskIndgangsangivelseOpdaterServiceBinding" type="tfe:OIOSummariskIndgangsangivelseOpdaterServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getOIOSummariskIndgangsangivelseOpdater">
+			<soap:operation soapAction="getOIOSummariskIndgangsangivelseOpdater"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="OIOSummariskIndgangsangivelseOpdaterServiceBindingQSService">
+		<port name="OIOSummariskIndgangsangivelseOpdaterServiceBindingQSPort" binding="tfe:OIOSummariskIndgangsangivelseOpdaterServiceBinding">
+			<soap:address location="http://sktdics04esb01.csc.dk:7013/SummariskIndgangsangivelseOpdater/SummariskIndgangsangivelseOpdaterService" />
+		</port>
+	</service>
+</definitions>

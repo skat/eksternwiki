@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/ImmaterielAktivKoeb.xsd"/>
+         <xs:include schemaLocation="../class/MaterielAnlaegsaktivKoeb.xsd"/>
+         <xs:include schemaLocation="../class/KapitalAndelKoeb.xsd"/>
+         <xs:include schemaLocation="../class/FinansielAnlaegsaktivKoeb.xsd"/>
+         <xs:include schemaLocation="../class/LaanTilPersoner.xsd"/>
+         <xs:include schemaLocation="../class/AndenYdetFinansiering.xsd"/>
+         <xs:element name="KontrolleredeTransaktionerKøbStruktur"
+                     type="skat2012:KontrolleredeTransaktionerKøbStrukturType"/>
+         <xs:complexType name="KontrolleredeTransaktionerKøbStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:ImmaterielAktivKøbBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivKøbOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivKøbStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivKøbMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivKøbBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivKøbOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivKøbStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:MaterielAnlægsaktivKøbMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelKøbBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelKøbOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelKøbStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KapitalAndelKøbMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivKøbBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivKøbOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivKøbStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansielAnlægsaktivKøbMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånTilPersonerBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånTilPersonerOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånTilPersonerStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LånTilPersonerMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenYdetFinansieringBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenYdetFinansieringOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenYdetFinansieringStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:AndenYdetFinansieringMarkering" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringAfskrivningAarsagTekst.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringAfskrivningAarsagKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringAfskrivningAarsagBegrundelseTekst.xsd"/><xs:element name="AfskrivningAarsagStruktur" type="efiws:AfskrivningAarsagStrukturType"/>
+	<xs:complexType name="AfskrivningAarsagStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringAfskrivningAarsagKode"/>
+			<xs:element ref="efi:FordringAfskrivningAarsagBegrundelseTekst"/>
+			<xs:element ref="efi:FordringAfskrivningAarsagTekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

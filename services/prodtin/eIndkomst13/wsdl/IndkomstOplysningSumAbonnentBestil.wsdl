@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="IndkomstOplysningSumAbonnentBestilService" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet er til senere afhentning at bestille summerede indkomstoplysninger for en eller flere personer eller for en eller flere indberetningspligtige for den angivne periode af basismåneder. En basismåned er den måned, som indkomsten efter gældende skatteregler hører til i. Er basismåned 201101, dvs. januar måned 2011, så hører indkomsten til i indkomstår 2011 og indgår således i årsopgørelsen for 2011.
+</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0">
+			<xsd:include schemaLocation="../service/IndkomstOplysningSumAbonnentBestilInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IndkomstOplysningSumAbonnentBestil_IServiceRequest">
+		<wsdl:part element="eindkomstws:IndkomstOplysningSumAbonnentBestil_I_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningSumAbonnentBestil_IServiceResponse">
+		<wsdl:part element="eindkomstws:IndkomstOplysningSumAbonnentBestil_I_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningSumAbonnentBestil_OServiceRequest">
+		<wsdl:part element="eindkomstws:IndkomstOplysningSumAbonnentBestil_O_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningSumAbonnentBestil_OServiceResponse">
+		<wsdl:part element="eindkomstws:IndkomstOplysningSumAbonnentBestil_O_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningSumAbonnentBestil_OKServiceRequest">
+		<wsdl:part element="eindkomstws:IndkomstOplysningSumAbonnentBestilAfslut_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningSumAbonnentBestil_OKServiceResponse">
+		<wsdl:part element="eindkomstws:IndkomstOplysningSumAbonnentBestilAfslut_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:portType name="IndkomstOplysningSumAbonnentBestil_IServicePortType">
+		<wsdl:operation name="getIndkomstOplysningSumAbonnentBestil_I">
+			<wsdl:input message="eindkomstws:IndkomstOplysningSumAbonnentBestil_IServiceRequest"/>
+			<wsdl:output message="eindkomstws:IndkomstOplysningSumAbonnentBestil_IServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="IndkomstOplysningSumAbonnentBestil_OServicePortType">
+		<wsdl:operation name="getIndkomstOplysningSumAbonnentBestil_O">
+			<wsdl:input message="eindkomstws:IndkomstOplysningSumAbonnentBestil_OServiceRequest"/>
+			<wsdl:output message="eindkomstws:IndkomstOplysningSumAbonnentBestil_OServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="IndkomstOplysningSumAbonnentBestil_OKServicePortType">
+		<wsdl:operation name="getIndkomstOplysningSumAbonnentBestil_OK">
+			<wsdl:input message="eindkomstws:IndkomstOplysningSumAbonnentBestil_OKServiceRequest"/>
+			<wsdl:output message="eindkomstws:IndkomstOplysningSumAbonnentBestil_OKServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Binding1" type="eindkomstws:IndkomstOplysningSumAbonnentBestil_IServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningSumAbonnentBestil_I">
+			<soap:operation soapAction="urn:#getIndkomstOplysningSumAbonnentBestil_I"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Binding2" type="eindkomstws:IndkomstOplysningSumAbonnentBestil_OServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningSumAbonnentBestil_O">
+			<soap:operation soapAction="urn:#getIndkomstOplysningSumAbonnentBestil_O"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Binding3" type="eindkomstws:IndkomstOplysningSumAbonnentBestil_OKServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningSumAbonnentBestil_OK">
+			<soap:operation soapAction="urn:#getIndkomstOplysningSumAbonnentBestil_OK"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="IndkomstOplysningSumAbonnentBestil">
+		<wsdl:port binding="eindkomstws:Binding1" name="Binding1Port">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/IndkomstOplysningSumAbonnentBestilServicePort"/>
+		</wsdl:port>
+		<wsdl:port binding="eindkomstws:Binding2" name="Binding2Port">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/BestillingHent "/>
+		</wsdl:port>
+		<wsdl:port binding="eindkomstws:Binding3" name="Binding3Port">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/BestillingModtaget "/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

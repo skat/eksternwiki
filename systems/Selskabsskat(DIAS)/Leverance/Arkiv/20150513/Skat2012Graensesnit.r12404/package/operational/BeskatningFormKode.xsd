@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst3Type.xsd"/>
+         
+         <xs:element name="BeskatningFormKode" type="skat2012:Tekst3Type">
+            <xs:annotation>
+               <xs:documentation>Feltet angiver om selskabet har status af:   ADM: Administrationsselskab i sambeskatning DAT: Datterselskab i sambeskatning SÆR: Særbeskattet selskab  I praksis anvender DIAS kun koderne ADM og SÆR, da indberetning fra DIAS til 3S sker for Administrationsselskab =  ADM eller Særbeskattet selskab = SÆR</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

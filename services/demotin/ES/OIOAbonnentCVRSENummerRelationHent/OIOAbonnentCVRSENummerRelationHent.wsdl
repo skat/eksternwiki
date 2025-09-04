@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="OIOAbonnentCVRSENummerRelationHentService" targetNamespace="urn:oio:skat:es:ws:1.0.0">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Formålet er at hente alle relationer mellem SE-nummer og eventuelt CVR-nummer og virksomhedstype på grundlag af et SE-nummer med tilhørende start- og eventuel ophørsdato for virksomhed.  Hvis det angivne SE-nummer er et CVR-nummer hentes alle tilhørende administrative enheder.   Hvis det angivne SE-nummer er en administrativ enhed, hentes på grundlag af CVR-nummer alle øvrige tilhørende administrative enheder   Servicen udstilles alene til de myndigheder og andre, som har indgået en abonnementsaftale med told- og Skatteforvaltningen herom. </xs:documentation>
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r26495</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0">
+               <xsd:include schemaLocation="urn/oio/skat/es/ws/1_0_0/OIOAbonnentCVRSENummerRelationHentInterface.xsd"/>
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="OIOAbonnentCVRSENummerRelationHentServiceRequest">
+            <wsdl:part element="esws:OIOAbonnentCVRSENummerRelationHent_I" name="Request"/>
+         </wsdl:message>
+         <wsdl:message name="OIOAbonnentCVRSENummerRelationHentServiceResponse">
+            <wsdl:part element="esws:OIOAbonnentCVRSENummerRelationHent_O" name="Response"/>
+         </wsdl:message>
+         <wsdl:portType name="OIOAbonnentCVRSENummerRelationHentServicePortType">
+            <wsdl:operation name="getOIOAbonnentCVRSENummerRelationHent">
+               <wsdl:input message="esws:OIOAbonnentCVRSENummerRelationHentServiceRequest"/>
+               <wsdl:output message="esws:OIOAbonnentCVRSENummerRelationHentServiceResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         <wsdl:binding name="OIOAbonnentCVRSENummerRelationHentServiceBinding" type="esws:OIOAbonnentCVRSENummerRelationHentServicePortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsdl:operation name="getOIOAbonnentCVRSENummerRelationHent">
+<soap:operation soapAction="getOIOAbonnentCVRSENummerRelationHent" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsdl:input>
+<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+	<wsdl:service name="OIOAbonnentCVRSENummerRelationHentServiceBindingQSService">
+		<wsdl:port name="OIOAbonnentCVRSENummerRelationHentServiceBindingQSPort" binding="esws:OIOAbonnentCVRSENummerRelationHentServiceBinding">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/OIOAbonnentCVRSENummerRelationHentServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

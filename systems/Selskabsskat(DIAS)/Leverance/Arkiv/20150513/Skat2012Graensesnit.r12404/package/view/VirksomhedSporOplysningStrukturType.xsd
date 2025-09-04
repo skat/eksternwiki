@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/VirksomhedOplysning.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:element name="VirksomhedSporOplysningStruktur"
+                     type="skat2012:VirksomhedSporOplysningStrukturType"/>
+         <xs:complexType name="VirksomhedSporOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2012:VirksomhedOplysningStatusTekst"/>
+               <xs:element name="BrugerIdent">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2012:MyndighedNummer"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2012:VirksomhedOplysningHandlingÅrstal"/>
+                  
+                  <xs:element ref="skat2012:VirksomhedOplysningHandlingIdent"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

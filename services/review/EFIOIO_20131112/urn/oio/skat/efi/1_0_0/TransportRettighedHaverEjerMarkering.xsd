@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:transportrettighedhaverejermarkering="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="TransportRettighedHaverEjerMarkering" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Markering af den transportrettighedshaver i en liste, som har indberettet transporten eller som efterfølgende har fået overdraget ejerskab ved en ændring. Kun denne rettighedshaver kan redigere, opkskrive, nedskrive, tilbagekalde transporten. Hvis indberetter er udbetalende myndighed benyttes denne markering ikke.
+
+True=dette er indberetter/ejer.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

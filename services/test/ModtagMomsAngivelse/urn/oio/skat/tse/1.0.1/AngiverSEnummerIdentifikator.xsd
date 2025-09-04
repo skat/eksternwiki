@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tse2009="urn:oio:skat:tse:1.0.1" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" targetNamespace="urn:oio:skat:tse:1.0.1" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../cvr.dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/>
+	<xs:element name="AngiverSEnummerIdentifikator" type="cvr:CVRnumberIdentifierType">
+		<xs:annotation>
+			<xs:documentation>SE-nummer for den angivende virksomhed. I en angivelse kan der optræde flere virksomheder i forskellige roller. Denne definition markerer at den identificerede virksomhed optræder i rollen som den virksomhed, der angives for.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

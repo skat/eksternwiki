@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:kob:ws:1.0.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="KreditoplysningBureauDebitorOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Opretter, sletter eller henter status paa en kunde hos et kreditoplysningsbureau.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0">
+			<xsd:include schemaLocation="urn/oio/skat/kob/ws/1_0_0/KreditoplysningBureauDebitorOpretInterface.xsd"/>
+			<xsd:include schemaLocation="urn/oio/skat/kob/ws/1_0_0/KreditoplysningBureauDebitorSletInterface.xsd"/>
+			<xsd:include schemaLocation="urn/oio/skat/kob/ws/1_0_0/KreditoplysningBureauDebitorStatusHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="KreditoplysningBureauDebitorOpretServiceRequest">
+		<wsdl:part name="Request" element="kobws:KreditoplysningBureauDebitorOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorOpretServiceResponse">
+		<wsdl:part name="Response" element="kobws:KreditoplysningBureauDebitorOpret_O"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorSletServiceRequest">
+		<wsdl:part name="Request" element="kobws:KreditoplysningBureauDebitorSlet_I"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorSletServiceResponse">
+		<wsdl:part name="Response" element="kobws:KreditoplysningBureauDebitorSlet_O"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorStatusHentServiceRequest">
+		<wsdl:part name="Request" element="kobws:KreditoplysningBureauDebitorStatusHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="KreditoplysningBureauDebitorStatusHentServiceResponse">
+		<wsdl:part name="Response" element="kobws:KreditoplysningBureauDebitorStatusHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="KreditoplysningBureauDebitorOpretServicePortType">
+		<wsdl:operation name="getKreditoplysningBureauDebitorOpret">
+			<wsdl:input message="kobws:KreditoplysningBureauDebitorOpretServiceRequest"/>
+			<wsdl:output message="kobws:KreditoplysningBureauDebitorOpretServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKreditoplysningBureauDebitorSlet">
+			<wsdl:input message="kobws:KreditoplysningBureauDebitorSletServiceRequest"/>
+			<wsdl:output message="kobws:KreditoplysningBureauDebitorSletServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKreditoplysningBureauDebitorStatusHent">
+			<wsdl:input message="kobws:KreditoplysningBureauDebitorStatusHentServiceRequest"/>
+			<wsdl:output message="kobws:KreditoplysningBureauDebitorStatusHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="KreditoplysningBureauDebitorOpretServiceBinding" type="kobws:KreditoplysningBureauDebitorOpretServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getKreditoplysningBureauDebitorOpret">
+			<soap:operation soapAction="getKreditoplysningBureauDebitorOpret"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getKreditoplysningBureauDebitorSlet">
+			<soap:operation soapAction="getKreditoplysningBureauDebitorSlet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getKreditoplysningBureauDebitorStatusHent">
+			<soap:operation soapAction="getKreditoplysningBureauDebitorStatusHent"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="KreditoplysningBureauDebitorOpretServiceBindingQSService">
+		<wsdl:port name="KreditoplysningBureauDebitorOpretServiceBindingQSPort" binding="kobws:KreditoplysningBureauDebitorOpretServiceBinding">
+			<soap:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

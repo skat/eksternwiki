@@ -1,0 +1,138 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Felter</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a href="" data-ng-click="scrollTo('input')">Input felter</a></li>
+      <li><a href="" data-ng-click="scrollTo('inputgrupper')">Input grupper</a></li>
+      <li><a href="" data-ng-click="scrollTo('kraevede')">Kr&aelig;vede felter</a></li>
+      <li><a href="" data-ng-click="scrollTo('inputtyper')">Input typer</a></li>
+    </ul>
+  </div>
+</div>
+<div id="skts-indhold-guide">
+  <h2 id="input">Input felter</h2>
+  <p class="skts-broedtekst">Dette input felt bruges til at vise label over input feltet.</p>
+  <div class="bs-docs-example" data-pretty>
+    <fieldset id="skts-aarsopgoerelse-email-fieldset" class="skts-input-liste skts-broedtekst">
+      <div class="skts-field-nede">
+        <label class="skts-ledetekst" for="skts-email">E-mail-adresse: </label>
+        <input type="text" onblur="validerEmailInput(this)" id="skts-email" class="skts-layout2-text">
+        <div class="skts-slut-float"></div>
+      </div>
+      <div class="skts-field-nede">
+        <label class="skts-ledetekst" for="skts-repeat-email">Gentag e-mail-adresse: </label>
+        <input type="text" onblur="validerEmailInput(this)" id="skts-repeat-email" class="skts-layout2-text">
+        <div class="skts-slut-float"></div>
+      </div>
+      <div class="skts-knapper-placering1">
+        <input type="submit" class="skts-knap-primaer" value="Gem"><input type="button" class="skts-knap-sekundaer" value="Sp&oslash;rg mig senere">
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="skts-broedtekst">
+    <div class="bs-docs-example" data-pretty>
+      <label for="skts-cprnr-barn" class="skts-layout2-label">Barnets cpr-nummer</label>
+      <input type="text" maxlength="14" id="skts-cprnr-barn">
+    </div>
+
+    <div class="bs-docs-example" data-pretty>
+      <div class="skts-layout2-input-par">
+        <label for="skts-fornavn" class="skts-layout2-label">Fornavn</label>
+        <input type="text" maxlength="34" id="skts-fornavn">
+      </div>
+      <div class="skts-layout2-input-par">
+        <label for="skts-efternavn" class="skts-layout2-label">Efternavn</label>
+        <input type="text" maxlength="34" id="skts-efternavn">
+      </div>
+      <div class="skts-slut-float"></div>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="inputgrupper">Input grupper</h2>
+  <p class="skts-broedtekst"><code>skts-fold</code> og <code>skts-vis-statisk</code> kan udelades</p>
+  <div class="bs-docs-example" data-pretty>
+    <ul class="skts-layout2-input-gruppe">
+      <li>
+        <input type="radio" name="inputgruppe" class="skts-vis-mere" id="input-1">
+        <label for="input-1">Input 1</label>
+        <div class="skts-fold">
+          <p>Fold til Input 1</p>     
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="inputgruppe" class="skts-vis-mere" id="input-2">
+        <label for="input-2">Input 2</label>
+        <div class="skts-fold">
+          <p>Fold til Input 2</p>     
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="inputgruppe" class="skts-vis-mere" id="input-3">
+        <label for="input-3">Input 3</label>
+        <div class="skts-fold">
+          <p>Fold til Input 3</p>     
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="kraevede">Kr&aelig;vede felter</h2>
+  <h3>Kr&aelig;vede felter</h3>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-layout2-text" value="Tekst" /><abbr class="skts-kraevet">*</abbr>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <h2 id="inputtyper">Input typer</h2>
+  <h3>Tekst</h3>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-layout2-text" value="Tekst" />
+  </div>
+
+  <h3>Bel&oslash;b</h3>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-beloeb" value="1234" />
+  </div>
+
+  <h3>Dato</h3>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-dato" value="01/05/2019" />
+  </div>
+
+  <h3>Nummer</h3>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-nr" value="19" />
+  </div>
+
+  <h3>Antal</h3>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-antal" value="9" />
+  </div>
+
+  <h2>Html5 input typer</h2>
+  <h3>Number input typen</h3>
+  <p class="skts-broedtekst">Denne type kan bruges i moderne browsere for at vise et input felt med pile i h&oslash;jre side, hvor brugeren kan kan trykke op eller ned. Ligeledes kan der ved fokus p&aring; feltet bruges tastaturets piletaster for at &oslash;ge eller s&aelig;nke tallet i input feltet.</p>
+  <div class="bs-docs-example" data-pretty>
+    <input type=number value=1234 min=1230 max=1235>
+  </div>
+  <p class="skts-broedtekst">Hvis en browser ikke underst&oslash;tter ovenst&aring;ende tag, skal der bruges javascript for at emulere denne input type, eksempelvis ved brug af en klasse som kan referes.</p>
+  <div class="bs-docs-example" data-pretty>
+    <input type="text" class="skts-spinner" value="1234">
+  </div>
+</div>
+
+<!-- skabelon
+          <h2>Overskrift</h2>
+          <p class="skts-broedtekst">Forklaring<p>
+          <div class="bs-docs-example" data-pretty>
+            Html code
+          </div>
+-->
+

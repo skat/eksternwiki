@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="InternationalSambeskatningFornyelseStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for ikrafttræden af international sambeskatning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InternationalSambeskatningFornyelseSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for ophør af international sambeskatning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InternationalSambeskatningFornyelseUdførtDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen hvor kunden foretager ændringen - fornyelse af international sambeskatning. (Ikke samme betydning som startdato).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InternationalSambeskatningFornyelseFristDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Seneste dato hvor det er muligt at forny tilmeldingen til international sambeskatning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

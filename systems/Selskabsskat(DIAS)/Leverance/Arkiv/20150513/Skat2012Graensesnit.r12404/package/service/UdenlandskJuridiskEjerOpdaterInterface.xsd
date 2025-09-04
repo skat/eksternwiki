@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Formålet med servicen er at ændre på en i Erhvervssystemet allerede registreret udenlandsk juridisk ejer, dvs. en ikke personlig ejer. Ændringerne kan vedrøre navn, adresse, landekode og kontaktoplysninger.</xs:documentation>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/UdenlandskJuridiskEjerOpdater_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskJuridiskEjerOpdater_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UdenlandskJuridiskEjerOpdater_FejlIDType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="UdenlandskJuridiskEjerOpdaterInterface"
+                     type="skat2012:UdenlandskJuridiskEjerOpdaterInterfaceType"/>
+         <xs:complexType name="UdenlandskJuridiskEjerOpdaterInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2012:UdenlandskJuridiskEjerOpdater_I"/>
+               <xs:element ref="skat2012:UdenlandskJuridiskEjerOpdater_O"/>
+               <xs:element ref="skat2012:UdenlandskJuridiskEjerOpdater_FejlID"/>
+               <xs:element ref="skat2012:KompenserTrans"/>
+               <xs:element ref="skat2012:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

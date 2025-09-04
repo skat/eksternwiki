@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dokument omfatter dels metadata om et dokument, der skal knyttes til en Sag, dels selve dokumentet.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst240Type.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst8Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst32Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2000Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="DokumentNummer" type="skat2012:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt dokument ID allokeret af Captia. (Er begrænset til 12 cifre)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentTitel" type="skat2012:Tekst240Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den titel der angiver dokumentets indhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentProfilNavn" type="skat2012:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ethvert dokument i CAPTIA er beskrevet ved de tre egenskaber: Gruppe, Type og Tilstand. For at gøre det simplere, kan kalderen nøjes med at anvende DokumentProfilNavn, der udpeger værdier for disse tre egenskaber. Således kan kalderen nøjes med at referere til et på forhånd aftalt profilnavn, hvorefter servicen selv sørger for at sætte de tre egenskaber tilsvarende før dokumentet bliver oprettet i CAPTIA.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentType" type="skat2012:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af et dokument - f.eks om det er udgående eller indgående.  Eksempler på værdier (ikke udtømmende): A: Andet I: Indgående IA: Internt Arbejdsdokument OMJ: Omjournaliseret RAPDEF: Rapportdefinition SKAB: Skabelon U: Udgående V: Værdipost</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentKategori" type="skat2012:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Forbehold dok på virk-mapper - ikke relevant her</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentAktuelNote" type="skat2012:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at knytte en gul lap til dokumentet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentGruppe" type="skat2012:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til yderligere gruppering af dokumenter i forhold til eks. DokumentType.  Eksempler på værdier (ikke udtømmende): 1000 (Sagsstart) 1080 (EMR) V (Værdipost)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentIndblik" type="skat2012:Tekst32Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Arver automatisk sagens indblik, men kan ændres manuelt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentTilstand" type="skat2012:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken tilstand dokumentet har.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentBemærkning" type="skat2012:Tekst2000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>tekstfelt til notering af hvad som helst</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentArkiveringForm" type="skat2012:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>angiver dokumentets beskaffenhed. Elektronisk, delvist elektronisk, papir</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentUUID" type="skat2012:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik ekstern dokumentidentifikator - forskelligt fra DokumentID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentOprettetDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for dokumentets oprettelse i Captia-basen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentSvarfristDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for indsættelse af svarfrist.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentBrevDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Brevdato som fremgår af dokumentet (ofte forskellig fra oprettelsesdato)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentOprindelse" type="skat2012:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Dokumentets oprindelse dvs. hvor dokumentet stammer fra f.eks. scanning. (Skal være oprettet i følgetekst-registeret under følgeteksttype AKTOPR.)  Eksempler på værdier (ikke udtømmende): CAP: (Captia) SKAN: (Indskannet dokument) MAIL: (Modtaget e-mail) SKANSAKS: (Skanningscenter Sakskøbing) VEDH: (Vedhæftet mail) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentModtageDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato som dokumentet er modtaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

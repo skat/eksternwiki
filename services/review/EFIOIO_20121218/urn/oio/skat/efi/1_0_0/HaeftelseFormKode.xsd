@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:haeftelseformkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="HaeftelseFormKode" type="haeftelseformkode:HaeftelseFormKodeType">
+		<xs:annotation>
+			<xs:documentation>Hæftelsesformen som indikerer på hvilken måde, at hæfteren hæfter for fordringen. Hæftelsesformer er et udtryk for hvem der skylder, andel af fordringen samt hvilket aktiver/formue kreditorerne kan søge sig fyldestgjort i, f.eks. i forbindelse med en udlægsforretning. Hæftelsesformen kan implicit indikere hæftelsesprocenten (som findes på Hæftelse). Fx. betyder solidarisk hæftelse, at alle kunder hæfter 100% for fordringen.
+Mulige koder:
+PRO: Pro rata
+SOL: Solidarisk
+SUB: Subsidiær
+ALM: Alm. Hæftelse
+AND: Anden </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="HaeftelseFormKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PRO"/>
+			<xs:enumeration value="SOL"/>
+			<xs:enumeration value="SUB"/>
+			<xs:enumeration value="ALM"/>
+			<xs:enumeration value="AND"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

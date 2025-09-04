@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:oio:skat:motor:ws:1.0.1" name="USTypeAttestOpretService" xmlns:fase2_1="urn:oio:skat:motor:ws:1.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At oprette en typeattest med tilhørende varianter.</xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:motor:ws:1.0.1">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/450291/artefact/USTypeAttestOpretInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="USTypeAttestOpretServiceRequest">
+		<part name="Request" element="fase2_1:USTypeAttestOpret_I"/>
+	</message>
+	<message name="USTypeAttestOpretServiceResponse">
+		<part name="Response" element="fase2_1:USTypeAttestOpret_O"/>
+	</message>
+	<portType name="USTypeAttestOpretServicePortType">
+		<operation name="getUSTypeAttestOpret">
+			<input message="fase2_1:USTypeAttestOpretServiceRequest"/>
+			<output message="fase2_1:USTypeAttestOpretServiceResponse"/>
+		</operation>
+	</portType>
+</definitions>

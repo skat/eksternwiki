@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-fejl" href="#skts-skip-link-target-fejl" onclick="document.getElementById('skts-skip-link-target-fejl').focus();">Gå til fejlbesked</a></li>
+			</ul>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a href="forskud_ret.html" class="skts-selected">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="javascript:void(0);">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<form id="mainForm">
+				<div class="skts-grid skts-grid-pad">
+					<div class="skts-col-1 skts-small-text skts-align-right">
+						<p class="skts-user-info">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk</p>
+					</div>
+					<div class="skts-col-1">
+						<div class="skts-module-container">
+							<div class="skts-module-header">
+								<h1>Købt ejendom i 2015</h1>
+							</div>
+							<div class="skts-grid skts-grid-pad">
+								<div class="skts-col-1">	
+									<h2>Indtast adresse eller ejendomsnummer</h2>									
+									<ul class="skts-nomargin-list">
+										<li>
+											<h3 class="skts-list-header skts-expanded" id="list006"><a href="javascript:void(0);">Adresse</a></h3>
+											<ul class="skts-show-hide-list">
+												<li class="skts-section-wrapper">
+													<div class="skts-label-text">
+														<label for="de_test001">Beliggenhedskommune:</label>
+													</div>
+													<ul>
+														<li>
+															<select id="de_test001">
+																<option value="">Vælg kommune</option>
+																<option value="580">Aabenraa Kommune</option>
+																<option value="851">Aalborg Kommune</option>
+																<option value="751">Aarhus Kommune</option>
+																<option value="165">Albertslund Kommune</option>
+																<option value="201">Allerød Kommune</option>
+																<option value="420">Assens Kommune</option>
+																<option value="151">Ballerup Kommune</option>
+																<option value="530">Billund Kommune</option>
+																<option value="400">Bornholms Regionskommune</option>
+																<option value="153">Brøndby Kommune</option>
+																<option value="810">Brønderslev Kommune</option>
+																<option value="411">Christiansø Kommune</option>
+																<option value="155">Dragør Kommune</option>
+																<option value="240">Egedal Kommune</option>
+																<option value="429">Ejby Kommune</option>
+																<option value="561">Esbjerg Kommune</option>
+																<option value="430">Faaborg-Midtfyn Kommune</option>
+																<option value="563">Fanø Kommune</option>
+																<option value="710">Favrskov Kommune</option>
+																<option value="320">Faxe Kommune</option>
+																<option value="210">Fredensborg Kommune</option>
+																<option value="607">Fredericia Kommune</option>
+																<option value="147">Frederiksberg Kommune</option>
+																<option value="813">Frederikshavn Kommune</option>
+																<option value="250">Frederikssund Kommune</option>
+																<option value="190">Furesø Kommune</option>
+																<option value="157">Gentofte Kommune</option>
+																<option value="159">Gladsaxe Kommune</option>
+																<option value="433">Glamsbjerg Kommune</option>
+																<option value="161">Glostrup Kommune</option>
+																<option value="253">Greve Kommune</option>
+																<option value="270">Gribskov Kommune</option>
+																<option value="376">Guldborgsund Kommune</option>
+																<option value="510">Haderslev Kommune</option>
+																<option value="260">Halsnæs Kommune</option>
+																<option value="766">Hedensted Kommune</option>
+																<option value="217">Helsingør Kommune</option>
+																<option value="163">Herlev Kommune</option>
+																<option value="657">Herning Kommune</option>
+																<option value="219">Hillerød Kommune</option>
+																<option value="860">Hjørring Kommune</option>
+																<option value="316">Holbæk Kommune</option>
+																<option value="661">Holstebro Kommune</option>
+																<option value="615">Horsens Kommune</option>
+																<option value="167">Hvidovre Kommune</option>
+																<option value="169">Høje-Taastrup Kommune</option>
+																<option value="223">Hørsholm Kommune</option>
+																<option value="756">Ikast-Brande Kommune</option>
+																<option value="183">Ishøj Kommune</option>
+																<option value="849">Jammerbugt Kommune</option>
+																<option value="326">Kalundborg Kommune</option>
+																<option value="440">Kerteminde Kommune</option>
+																<option value="621">Kolding Kommune</option>
+																<option selected="selected" value="101">Københavns Kommune</option>
+																<option value="259">Køge Kommune</option>
+																<option value="482">Langeland Kommune</option>
+																<option value="350">Lejre Kommune</option>
+																<option value="665">Lemvig Kommune</option>
+																<option value="360">Lolland Kommune</option>
+																<option value="173">Lyngby-Taarbæk Kommune</option>
+																<option value="825">Læsø Kommune</option>
+																<option value="846">Mariagerfjord Kommune</option>
+																<option value="410">Middelfart Kommune</option>
+																<option value="773">Morsø Kommune</option>
+																<option value="707">Norddjurs  Kommune</option>
+																<option value="480">Nordfyns Kommune</option>
+																<option value="450">Nyborg Kommune</option>
+																<option value="370">Næstved</option>
+																<option value="727">Odder Kommune</option>
+																<option value="461">Odense Kommune</option>
+																<option value="306">ODSHERRED KOMMUNE</option>
+																<option value="730">Randers Kommune</option>
+																<option value="840">Rebild Kommune</option>
+																<option value="760">Ringkøbing-Skjern Kommune</option>
+																<option value="329">Ringsted Kommune</option>
+																<option value="265">Roskilde Kommune</option>
+																<option value="230">Rudersdal Kommune</option>
+																<option value="175">Rødovre Kommune</option>
+																<option value="741">Samsø Kommune</option>
+																<option value="740">Silkeborg Kommune</option>
+																<option value="746">Skanderborg Kommune</option>
+																<option value="779">Skive Kommune</option>
+																<option value="330">Slagelse Kommune</option>
+																<option value="269">Solrød Kommune</option>
+																<option value="340">Sorø Kommune</option>
+																<option value="336">Stevns Kommune</option>
+																<option value="671">Struer Kommune</option>
+																<option value="479">Svendborg Kommune</option>
+																<option value="706">Syddjurs Kommune</option>
+																<option value="540">Sønderborg Kommune</option>
+																<option value="787">Thisted Kommune</option>
+																<option value="550">Tønder Kommune</option>
+																<option value="185">Tårnby Kommune</option>
+																<option value="489">Ullerslev Kommune</option>
+																<option value="187">Vallensbæk Kommune</option>
+																<option value="573">Varde Kommune</option>
+																<option value="575">Vejen Kommune</option>
+																<option value="630">Vejle Kommune</option>
+																<option value="820">Vesthimmerlands Kommune</option>
+																<option value="791">Viborg Kommune</option>
+																<option value="390">Vordingborg Kommune</option>
+																<option value="492">Ærø kommune</option>
+															</select>	
+														</li>
+													</ul>
+												</li>
+												<li class="skts-section-wrapper">
+													<div class="skts-label-text">
+														<label for="txtVejnavn">Vej:</label>
+													</div>
+													<ul>
+														<li>
+															<input name="ctl00$skts_body_div$txtVejnavn" type="text" value="" maxlength="40" id="txtVejnavn">
+														</li>
+													</ul>
+												</li>
+												<li class="skts-section-wrapper">
+													<div class="skts-label-text">
+														<label for="txtHusnummer">Husnummer:</label>
+													</div>
+													<ul>
+														<li>
+															<input name="ctl00$skts_body_div$txtHusnummer" type="text" value="" maxlength="10" id="txtHusnummer">
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<h3 class="skts-list-header skts-expanded" id="list006a"><a href="javascript:void(0);">Ejendomsnummer</a></h3>
+											<ul class="skts-show-hide-list">
+												<li class="skts-section-wrapper">
+													<div class="skts-label-text">
+														<label for="txtEjendomsnr">Ejendomsnummer:</label>
+													</div>
+													<ul>
+														<li>
+															<input name="ctl00$skts_body_div$txtEjendomsnr" type="text"  value="104112106" maxlength="9" id="txtEjendomsnr">
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<br/>
+									<div class="skts-button-container">
+										<ul class="skts-status-indicator " id="FLOW-status">
+											<li class="skts-selected">Køb ejendom</li>
+											<li>Beregn</li>
+											<li>Godkend</li>
+											<li>Kvittering</li>
+										</ul>
+										<input type="submit" name="" value="Søg" id="btok" onclick="window.location.href = 'ejendom_dansk_search.html?search=1'" class="skts-button-primary">
+										<input type="submit" name="" value="Ryd" id="btnFortryd" onclick="window.location.href = 'ejendom_dansk_search.html'" class="skts-button-secondary">
+									</div>
+								</div>
+								<div class="skts-col-2-3" id="FLOW-showMe" style="display: none">
+									<table class="skts-standard-table">
+										<caption>Vælg den relevante ejendom på listen herunder:</caption>
+										<thead>
+											<tr>
+												<th><br/></th>
+												<th>Beliggenhed</th>
+												<th>Ejendomsnummer</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input checked name="rdoValg" type="radio" value="0"></td>
+												<td>Dronningevej 10</td>
+												<td>104 112106</td>
+											</tr>
+											<tr>
+												<td><input  name="rdoValg" type="radio" value="0"></td>
+												<td>Spaniensgade 6 2tv </td>
+												<td>104 123456</td>
+											</tr>
+											<tr>
+												<td><input name="rdoValg" type="radio" value="0"></td>
+												<td>Borgervej  100</td>
+												<td>124 112356</td>
+											</tr>
+										</tbody>
+									</table>
+									<br/>
+									<div class="skts-button-container">
+										<div id="FLOW-status-2">
+										</div>
+										<input type="submit" name="" value="Fortsæt" onclick="window.location.href = 'ejendom_dansk.html'" class="skts-button-primary">
+										<input type="submit" name="" value="Annuller" onclick="window.location.href= 'forskud_ret.html'" class="skts-button-secondary">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>        
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:efi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hovedfordringtilbagekaldaarsagkode="urn:oio:skat:efi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="HovedFordringTilbagekaldAarsagKode" type="hovedfordringtilbagekaldaarsagkode:HovedFordringTilbagekaldAarsagKodeType">
+		<xs:annotation>
+			<xs:documentation>Uddybende begrundelse for tilbagekaldelsen.
+Tilladte værdier:
+ANDN: Anden
+BORD: Betalingsordning
+FEJL: Fordring forkert
+FSKI: Fordringhaver skift
+HENS: Henstand
+KLAG: Klage over fordring </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="HovedFordringTilbagekaldAarsagKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ANDN"/>
+			<xs:enumeration value="BORD"/>
+			<xs:enumeration value="FEJL"/>
+			<xs:enumeration value="FSKI"/>
+			<xs:enumeration value="HENS"/>
+			<xs:enumeration value="KLAG"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

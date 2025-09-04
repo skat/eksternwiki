@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-fejl" href="#skts-skip-link-target-fejl" onclick="document.getElementById('skts-skip-link-target-fejl').focus();">Gå til fejlbesked</a></li>
+			</ul>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a href="forskud_ret.html" class="skts-selected">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="javascript:void(0);">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<form id="mainForm">
+				<div class="skts-grid skts-grid-pad">
+					<div class="skts-col-1 skts-small-text skts-align-right">
+						<p class="skts-user-info">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk</p>
+					</div>
+					<div class="skts-col-1">
+						<div class="skts-module-container">
+							<div class="skts-module-header skts-error-explanation">
+								<h1>Ret ejendomsoplysninger i 2015 - Hans Hartvig Seedorffs Stræde 25</h1><span>* skal udfyldes</span>
+							</div>
+							<ul class="skts-nomargin-list">
+								<li>
+									<h2 class="skts-list-header skts-expanded"><a href="javascript:void(0);">Ejendomsoplysninger</a> </h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<span class="skts-label-text">Ejendomsnr. <a href="http://www.skat.dk/SKAT.aspx?oID=1536825" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></span>
+											<span class="skts-value-text skts-collapse-left">101 123456</span>
+										</li>
+										<li class="skts-section-wrapper">Hans Hartvig Seedorffs Stræde 25 1.sal</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded"><a href="javascript:void(0);">Ejendomsværdi</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test008a" id="test008aLabel">Mindste ejendoms-, ejerbolig- eller stuehusværdi pr. 1/1 2001 + 5%, pr. 1/1 2002 eller 1/10 2012 <span class="skts-section-nr"><span>felt nummer</span>(72)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536812" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required skts-placeholder-kr-year">
+													<span><input type="text" class="skts-input-currency" id="test008a" value="1.250.000" aria-required="true" data-validation-type="req" aria-invalid="false" aria-describedby="input_type_number" autocomplete="off"></span>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+												<li class="skts-saved-value" aria-describedby="test008aLabel"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">1.250.000</span> kr.</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="formField2a">Samlet ejendomsværdi for tofamiliehuse vedr. den ejerbolig- eller stuehusværdi, der er oplyst ovenfor <span class="skts-section-nr"><span>felt nummer</span>(88)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536813" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-kr-year">
+													<span><input type="text" id="formField2a" value="" class="skts-input-currency" aria-describedby="input_type_number" autocomplete="off"></span>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList005"><a href="javascript:void(0);">Boligtype, ejerandel mv.</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test007" id="test007Label" >Boligtype <span class="skts-section-nr"><span>felt nummer</span>(73)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536824" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required">
+													<select id="test007"  aria-required="true" data-validation-type="req" aria-invalid="false">
+														<option value="">Vælg ejendomstype</option>
+														<option selected="selected" value="1">Helårsbolig</option>
+														<option value="3">Sommerhus</option>
+														<option value="4">To-familiehus med 2 ejerboligværdier</option>
+														<option value="5">To-familiehus med en ejerboligværdi</option>
+														<option value="7">Ejerlejlighed, helårsbolig</option>
+														<option value="8">Ejerlejlighed, fritidsbolig</option>
+														<option value="9">Øvrige ejendomme</option>
+													</select>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+												<li class="skts-saved-value" aria-describedby="test007Label"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">Helårsbolig</span></li>
+											</ul>
+										</li>										
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test008bc" id="test008bLabel">Ejerandel i % (fx 100,00 eller 50,00) <span class="skts-section-nr"><span>felt nummer</span>(78)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536827" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required skts-placeholder-procent">
+													<span><input type="text" id="test008bc" value="100,00" class="skts-input-procent"  aria-required="true" data-validation-type="req" aria-invalid="false" aria-describedby="input_type_procent" autocomplete="off"></span>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+												<li class="skts-saved-value" aria-describedby="test008bLabel"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">100,00</span>%</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="testPropertyLabel">Er ejendommen  erhvervet før 2/7 1998? <span class="skts-section-nr"><span>felt nummer</span>(80)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1707318" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input type="radio" id="pre98_a" name="pre98" value="0"><label class="skts-radio-label" for="pre98_a" aria-describedby="testPropertyLabel">Ja</label><br/>
+													<input type="radio" id="pre98_b" name="pre98" value="1" checked ><label class="skts-radio-label" for="pre98_b" aria-describedby="testPropertyLabel">Nej</label>
+												</li>
+												<li class="skts-saved-value" aria-describedby="testPropertyLabel"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">Nej</span></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList007"><a href="javascript:void(0);">Personoplysninger</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="testPropertyListLabel_007a">Min ægtefælle eller jeg er fyldt 60 år ved udgangen af 2015 og er enten efterlønsmodtager, førtidspensionist eller modtager flexydelse. <span class="skts-section-nr"><span>felt nummer</span>(79)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1536829" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input checked type="radio" id="is60_a" name="is60" value="0"><label class="skts-radio-label" for="is60_a" aria-describedby="testPropertyListLabel_007a">Ja</label><br/>
+													<input type="radio" id="is60_b" name="is60" value="1" ><label class="skts-radio-label" for="is60_b" aria-describedby="testPropertyListLabel_007a">Nej</label>
+												</li>
+												<li class="skts-saved-value" aria-describedby="testPropertyLabel"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">Ja</span></li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text"  id="testPropertyListLabel_007b">Min ægtefælle eller jeg er fyldt 65 år ved udgangen af 2015 <span class="skts-section-nr"><span>felt nummer</span>(79)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1536829" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input type="radio" id="is65_a" name="is65" value="0"><label class="skts-radio-label" for="is65_a" aria-describedby="testPropertyListLabel_007b">Ja</label><br/>
+													<input type="radio" id="is65_b" name="is65" value="1" ><label class="skts-radio-label" for="is65_b" aria-describedby="testPropertyListLabel_007b">Nej</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded"><a href="javascript:void(0);">Køb</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test003" id="test003Label">Overtagelsesdato (fx <abbr title="to tal dag, to tal måned, fire tal år.">01022015</abbr>) <span class="skts-section-nr"><span>felt nummer</span>(74)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536825" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required">
+													<input type="text" id="test003" value="01.01.2009" class="skts-input-date" aria-required="true" data-validation-type="req" aria-invalid="false" autocomplete="off">
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+												<li class="skts-saved-value" aria-describedby="test003Label"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">01.01.2009</span></li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test004c">Indflytningsdato (fx <abbr title="to tal dag, to tal måned, fire tal år.">15022015</abbr>). Kun helårsbolig <span class="skts-section-nr"><span>felt nummer</span>(75)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536826" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" id="test004c" value=""  class="skts-input-date" autocomplete="off">
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded"><a href="javascript:void(0);">Salg</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test003a">Købers overtagelsesdato (fx <abbr title="to tal dag, to tal måned, fire tal år.">01022015</abbr>) <span class="skts-section-nr"><span>felt nummer</span>(76)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536815" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" id="test003a" value="" class="skts-input-date" autocomplete="off">
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test004a">Egen udflytningsdato (fx <abbr title="to tal dag, to tal måned, fire tal år.">15012015</abbr>). Kun helårsbolig <span class="skts-section-nr"><span>felt nummer</span>(77)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536816" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" id="test004a" value=""  class="skts-input-date" autocomplete="off">
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="propertyTax">Ejendomsværdiskat skal ikke beregnes hvis fx solgt før 2015. Se vejledning. <span class="skts-section-nr"><span>felt nummer</span>(119)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1707322" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input id="propTax" aria-describedby="propertyTax" type="checkbox" name="propTax" /><label for="propTax" class="skts-checkbox-label">Ja</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList008"><a href="javascript:void(0);">Udlejning og erhvervsmæssig anvendelse</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test010">Værelsesudlejning (regnskabsmæssig opgørelse). Procentdel, der udlejes (fx 25,00) <span class="skts-section-nr"><span>felt nummer</span>(82)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536819" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-procent">
+													<span><input type="text" id="test010" class="skts-input-procent" aria-describedby="input_type_procent"/></span>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test011">Udleje af boligen en del af året samt værelsesudlejning (regnskabsmæssig opgørelse), antal dage <span class="skts-section-nr"><span>felt nummer</span>(83)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536818" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" class="skts-input-number" id="test011"  data-v-min="0" data-v-max="360" aria-invalid="false" aria-describedby="input_type_number"/>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Maks 360 dage</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test012">Erhvervsmæssig andel uden vurderingsfordeling i procent (fx 15,00) <span class="skts-section-nr"><span>felt nummer</span>(85)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536821" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-procent">
+													<span><input type="text" class="skts-input-procent" id="test012" aria-describedby="input_type_procent"/></span>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test013">Erhvervsmæssig andel uden vurderingsfordeling, anfør antal dage <span class="skts-section-nr"><span>felt nummer</span>(86)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536820" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" class="skts-input-number" id="test013"  data-v-min="0" data-v-max="360" aria-invalid="false" aria-describedby="input_type_number"/>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Maks 360 dage</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded"><a href="javascript:void(0);">Andet</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test014">Antal dage ejendommen er ubeboelig <span class="skts-section-nr"><span>felt nummer</span>(87)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536810" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text"  class="skts-input-number" data-v-min="0" data-v-max="360" aria-invalid="false" aria-describedby="input_type_number" id="test014" />
+												</li>
+												<li class="skts-error-text" role="alert">(!) Maks 360 dage</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="buildingSavedLabel">Ejendommen er fredet <span class="skts-section-nr"><span>felt nummer</span>(760)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1707315" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input id="buildingSaved" aria-describedby="buildingSavedLabel" type="checkbox" name="buildingSaved"/><label for="buildingSaved" class="skts-checkbox-label">Ja</label>													
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded"><a href="javascript:void(0);">Beregningsoplysninger</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<span class="skts-label-text">Fastfrosset nedslag fra 2002 <span class="skts-section-nr"><span>felt nummer</span>(770)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1739210" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></span>
+											<span class="skts-value-text skts-collapse-left">1.000 kr.</span>
+										</li>
+										<li class="skts-section-wrapper">
+											<span class="skts-label-text">Helårlig ejendomsværdiskat for 2014 <span class="skts-section-nr"><span>felt nummer</span>(761)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1739209" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></span>
+											<span class="skts-value-text skts-collapse-left">7.500 kr.</span>
+										</li>
+										<li class="skts-section-wrapper">
+											<span class="skts-label-text">Pensionistnedslag for 2014 <span class="skts-section-nr"><span>felt nummer</span>(763)</span></span>
+											<span class="skts-value-text skts-collapse-left">5.000 kr.</span>
+										</li>
+										<li class="skts-section-wrapper">
+											<span class="skts-label-text">Maksimalt pensionistnedslag for 2015 <span class="skts-section-nr"><span>felt nummer</span>(759)</span></span>
+											<span class="skts-value-text skts-collapse-left">6.000 kr.</span>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="workingStatusLabel">Din eller din ægtefælles status i  2013 som efterlønsmodtager, førtidspensionist mv. (A) eller pensionist (B) <span class="skts-section-nr"><span>felt nummer</span>(758)</span></div>
+											<ul>
+												<li>
+													<input type="radio" id="workingStatus_a" name="workingStatus" value="A"><label class="skts-radio-label" for="workingStatus_a" aria-describedby="workingStatusLabel">A</label><br/>
+													<input type="radio" checked id="workingStatus_b" name="workingStatus" value="B" ><label class="skts-radio-label" for="workingStatus_b" aria-describedby="workingStatusLabel">B</label>
+												</li>
+												<li class="skts-saved-value" aria-describedby="workingStatusLabel"><span class="skts-saved-desc-text">Rettet fra: </span><span class="skts-saved-value-text">B</span></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<br/>
+							<div class="skts-grid skts-grid-pad">
+								<div class="skts-col-1 skts-button-container"> 
+									<ul class="skts-status-indicator">
+										<li class="skts-selected">Ret ejendom</li>
+										<li>Beregn</li>
+										<li>Godkend</li>
+										<li>Kvittering</li>
+									</ul>
+									<input type="submit" name="" value="Ret" onclick="window.location.href= 'forskud_ret.html?property=1&propType=update'" id="btok" class="skts-button-primary">
+									<input type="submit" name="" value="Annuller" onclick="window.location.href= 'forskud_ret.html'" id="btnFortryd" class="skts-button-secondary">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>  
+		<div id="input_type_number" class="hidden">I dette felt kan du kun indtaste hele positive eller negative tal.</div>
+		<div id="input_type_procent" class="hidden">I dette felt kan du kun indtaste tal fra 0-100.</div>
+    </body>
+</html>

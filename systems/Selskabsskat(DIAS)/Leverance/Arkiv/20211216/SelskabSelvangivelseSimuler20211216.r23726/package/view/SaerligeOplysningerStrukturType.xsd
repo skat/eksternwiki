@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/TonnageAngivelse.xsd"/>
+         <xs:element name="SærligeOplysningerStruktur"
+                     type="skat2012:SærligeOplysningerStrukturType"/>
+         <xs:complexType name="SærligeOplysningerStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:TonnageAngivelseUdlejningMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseFlagandelRederiMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseEjedeFlagandelFaldRederiMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseFlagandelOpeMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseEjedeFlagandelFaldOpeMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseRådighedRederiMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseOmsætningRederiMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseEnigMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:TonnageAngivelseOvergangssaldoMarkering" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

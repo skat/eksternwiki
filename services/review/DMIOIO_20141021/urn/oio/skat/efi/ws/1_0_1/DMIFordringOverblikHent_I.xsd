@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringSaldoPerDato.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeTypeKode.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/InddrivelseFordringOverblikAnvendelseKode.xsd"/><xs:include schemaLocation="DMIIndberetterOpretStruktur.xsd"/>
+	<xs:element name="DMIFordringOverblikHent_I" type="efiws:DMIFordringOverblikHent_IType">
+	</xs:element>
+	<xs:complexType name="DMIFordringOverblikHent_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="efi:InddrivelseFordringOverblikAnvendelseKode"/>
+			<xs:element ref="efiws:DMIIndberetterOpretStruktur"/>
+			<xs:element name="Kunde">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmi:SkatKundeIdentifikator"/>
+						<xs:element ref="dmi:SkatKundeTypeKode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EkskluderetFordringTypeListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efi:FordringTypeKode" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="efi:FordringSaldoPerDato" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

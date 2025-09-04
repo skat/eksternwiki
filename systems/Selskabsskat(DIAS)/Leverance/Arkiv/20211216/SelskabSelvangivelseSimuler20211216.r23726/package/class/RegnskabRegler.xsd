@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="RegnskabReglerMindsteKravStørreVirksomheder"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet er omfattet af mindstekravsbekendtgørelsen for større virksomheder (bekendtgørelse nr. 593 af 12. juni 2006). (True = ja, False = nej). Felt 089</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

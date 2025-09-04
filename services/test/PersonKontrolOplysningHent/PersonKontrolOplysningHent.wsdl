@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:oio:skat:personskat:ws:1.0.0" name="PersonKontrolOplysningHentService" xmlns:struct="urn:oio:skat:personskat:ws:1.0.0" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Udtrækker oplysninger fra R75 for en personLevere overblik over personlige skatteforhold mhp. kontrol eller sagsbehandling.</xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:personskat:ws:1.0.0">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/2355496/artefact/PersonKontrolOplysningHentInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="PersonKontrolOplysningHentServiceRequest">
+		<part name="Request" element="struct:PersonKontrolOplysningHent_I"/>
+	</message>
+	<message name="PersonKontrolOplysningHentServiceResponse">
+		<part name="Response" element="struct:PersonKontrolOplysningHent_O"/>
+	</message>
+	<portType name="PersonKontrolOplysningHentServicePortType">
+		<operation name="getPersonKontrolOplysningHent">
+			<input message="struct:PersonKontrolOplysningHentServiceRequest"/>
+			<output message="struct:PersonKontrolOplysningHentServiceResponse"/>
+		</operation>
+	</portType>
+</definitions>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge"/>-->
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" content=""/>
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="../css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="../index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-aarsopgoerelse" href="#skts-skip-link-target-aarsopgoerelse">Gå til genveje under Årsopgørelse</a></li>
+				<li><a id="skts-skip-til-forskudsopgoerelse" href="#skts-skip-link-target-forskudsopgoerelse">Gå til genveje under Forskudsopgørelse</a></li>
+			</ul>
+			<a href="#" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a class="skts-selected" href="../forskud_ret.html" >Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-right-float">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="#">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<div class="skts-grid-fixed-height skts-grid-pad">
+				<div class="skts-col-1 skts-small-text skts-align-right">
+						<p class="skts-user-info">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk (<a target="_blank" class="skts-tooltip-holder skts-link-enhance" href="sider_ikke_med_i_flow/CSC_ret_kontakt.html">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)</p>
+				</div>
+				<div class="skts-print-only"><p>VUR-test-05, cpr-nummer 010389-7750</p></div>
+				<br/>	
+				<div class="skts-col-1-4" >
+					<div class="skts-module-container skts-left-nav-container">
+						<div class="skts-module-header">
+							<h2>Forskudsopgørelse</h2>
+						</div>	
+						<nav>
+							<ul class="skts-left-nav">
+								<li><a href="../forskud_ret.html" class="skts-selected">Forskudsopgørelsen</a></li>
+								<li><a href="#" onclick="popupvindue('/borger/r75?vis=r75&amp;windowtype=popup&amp;gruppe=');return false;" class="skts-tooltip-holder">Se personlige skatteoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a></li>
+								<li><a href="#" onclick="popupvindue('/borger/link?appl=SoegIIndkomstoplysninger');return false;" class="skts-tooltip-holder">Søg i indkomstoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="skts-col-3-4">
+					<div class="skts-module-container">
+						<div class="skts-module-header">
+							<h2>Se forskudsopgørelse</h2>
+						</div>
+						<div class="skts-grid-pad">
+							<h3>Testmiljø til brug for SKAT/Kommunens borgerservice</h3>
+							<ul class="skts-styled-list">
+								<li><a href="../forskud_ret.html" title="Forskudsopgørelse (undervisning)">Forskudsopgørelse (undervisning)</a></li>
+							</ul>
+							<h3>Testmiljø - leverandør</h3>
+							<ul class="skts-styled-list">
+								<li><a href="../forskud_ret.html" title="Forskudsopgørelse (systemtest)">Forskudsopgørelse (systemtest)</a></li>
+								<li><a href="../forskud_ret.html" title="Forskudsopgørelsen">Forskudsopgørelsen</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">                
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="../assets/js/TastSelvMain.js"></script>
+		<script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				page.cloneMenu(".skts-left-nav", ".skts-main-nav li:nth-child(3)" ); 
+			});
+		</script>
+    </body>
+</html>

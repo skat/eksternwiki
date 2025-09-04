@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s1:definitions name="SpilServiceDefinitions" targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/spilservice/xml/schemas/2006/09/01/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/" xmlns:s2="http://rep.oio.dk/skat.dk/TSE/service/spilleafgiftgebyrangivelsemodtag/xml/schemas/2006/09/01/" xmlns:s3="http://rep.oio.dk/skat.dk/TSE/service/SpillestederHent/xml/schemas/2006/09/01/" xmlns:s4="http://rep.oio.dk/skat.dk/TSE/service/spilservice/xml/schemas/2006/09/01/" xmlns:s5="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="Encrypt.xml">
+    <wssp:Confidentiality xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:KeyWrappingAlgorithm URI="http://www.w3.org/2001/04/xmlenc#rsa-1_5"/>
+      <wssp:Target>
+        <wssp:EncryptionAlgorithm URI="http://www.w3.org/2001/04/xmlenc#tripledes-cbc"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:KeyInfo>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+        <wssp:SecurityTokenReference>
+          <wssp:Embedded>
+            <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">MIIE1zCCBECgAwIBAgIEQDao2zANBgkqhkiG9w0BAQUFADA/MQswCQYDVQQGEwJESzEMMAoGA1UEChMDVERDMSIwIAYDVQQDExlUREMgT0NFUyBTeXN0ZW10ZXN0IENBIElJMB4XDTA3MDUxNDExMjkzMVoXDTA5MDUxNDExNTkzMVowcDELMAkGA1UEBhMCREsxHTAbBgNVBAoTFFNLQVQgLy8gQ1ZSOjE5NTUyMTAxMUIwGQYDVQQDExJTS0FUIC0gQ1NDIEYxIFRFU1QwJQYDVQQFEx5DVlI6MTk1NTIxMDEtVUlEOjExNzkxNDI2MDU4MDcwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAPjKM4ZcsP5QHEq/xKD5AIf9WK2oUdBzDl+V6n8WWfwj6w6i8nF73U46gSVlcQVFPnF+scg4R1q2EOfCgDLnXaPAIAJU12R9Q5YDxFxNDepGrl90qYxndg/cVpF2Vxt9WDebT/q6iLp29xrXsSkeN96vFrsxmTqsDvcOm/TtEtE5AgMBAAGjggKtMIICqTAOBgNVHQ8BAf8EBAMCA7gwKwYDVR0QBCQwIoAPMjAwNzA1MTQxMTI5MzFagQ8yMDA5MDUxNDExNTkzMVowRgYIKwYBBQUHAQEEOjA4MDYGCCsGAQUFBzABhipodHRwOi8vdGVzdC5vY3NwLmNlcnRpZmlrYXQuZGsvb2NzcC9zdGF0dXMwggEDBgNVHSAEgfswgfgwgfUGCSkBAQEBAQEBAzCB5zAvBggrBgEFBQcCARYjaHR0cDovL3d3dy5jZXJ0aWZpa2F0LmRrL3JlcG9zaXRvcnkwgbMGCCsGAQUFBwICMIGmMAoWA1REQzADAgEBGoGXVERDIFRlc3QgQ2VydGlmaWthdGVyIGZyYSBkZW5uZSBDQSB1ZHN0ZWRlcyB1bmRlciBPSUQgMS4xLjEuMS4xLjEuMS4xLjEuMy4gVERDIFRlc3QgQ2VydGlmaWNhdGVzIGZyb20gdGhpcyBDQSBhcmUgaXNzdWVkIHVuZGVyIE9JRCAxLjEuMS4xLjEuMS4xLjEuMS4zLjAcBglghkgBhvhCAQ0EDxYNb3JnYW5XZWJOb0RpcjCBlgYDVR0fBIGOMIGLMFagVKBSpFAwTjELMAkGA1UEBhMCREsxDDAKBgNVBAoTA1REQzEiMCAGA1UEAxMZVERDIE9DRVMgU3lzdGVtdGVzdCBDQSBJSTENMAsGA1UEAxMEQ1JMNTAxoC+gLYYraHR0cDovL3Rlc3QuY3JsLm9jZXMuY2VydGlmaWthdC5kay9vY2VzLmNybDAfBgNVHSMEGDAWgBQcmAlHGkw4uRDFBClb8fROgGrMfjAdBgNVHQ4EFgQUw5uwUYjove/hWqHTEV/eNyrmAsQwCQYDVR0TBAIwADAZBgkqhkiG9n0HQQAEDDAKGwRWNy4xAwIDqDANBgkqhkiG9w0BAQUFAAOBgQApH874E4r1NHtGpFYvXxdcbg6CXT3fsPFYJfgMSC2HaFYCvsduarkw+ah6j3Ush0R4OAyXBem4wIJxAZCGhn9DyUFw+yltviNVxqDcjXUeL/4HVNSxQdfZuOJy8wRSjjdERRoxMQLKQsuKOr7Kq8RTLbQHXC3iWLC49M6Byr8VKA==</wsse:BinarySecurityToken>
+          </wssp:Embedded>
+        </wssp:SecurityTokenReference>
+      </wssp:KeyInfo>
+    </wssp:Confidentiality>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="SkatEsbAuthentication">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+		</wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part">wls:SecurityHeader(wsu:Timestamp)</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="Sign.xml">
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SystemHeaders()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SecurityHeader(wsu:Timestamp)
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+      wsp:Body()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+          <wssp:TokenIssuer>CN=skttfkt01web01,O=Skat,C=DK,CN=TDC OCES Systemtest CA II,O=TDC,C=DK,</wssp:TokenIssuer>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+    <wssp:MessageAge Age="60" xmlns:wssp="http://www.bea.com/wls90/security/policy"/>
+  </wsp:Policy>
+  <s1:types>
+	<s:schema targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/SpillestederHent/xml/schemas/2006/09/01/">
+			<s:include schemaLocation="http://digitaliser.dk/resource/2470733/artefact/SKAT_SpillestederHentInputStruktur.xsd"/>
+			<s:include schemaLocation="http://digitaliser.dk/resource/2470733/artefact/SKAT_SpillestederHentOutputStruktur.xsd"/>
+	</s:schema>
+  	<s:schema targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/spilleafgiftgebyrangivelsemodtag/xml/schemas/2006/09/01/">
+			<s:include schemaLocation="http://digitaliser.dk/resource/2470824/artefact/SKAT_SpilleAfgiftGebyrInputStruktur.xsd"/>
+			<s:include schemaLocation="http://digitaliser.dk/resource/2470824/artefact/SKAT_SpilleAfgiftGebyrOutputStruktur.xsd"/>
+	</s:schema>
+  </s1:types>
+  <s1:message name="getModtageSpilleAfgiftGebyrService">
+    <s1:part element="s2:SpilleAfgiftGebyrInputStruktur" name="request2"/>
+  </s1:message>
+  <s1:message name="getModtageSpilleAfgiftGebyrServiceResponse">
+    <s1:part element="s2:SpilleAfgiftGebyrOutputStruktur" name="SpilleAfgiftGebyrOutputStruktur"/>
+  </s1:message>
+  <s1:message name="getSpillestederHentService">
+    <s1:part element="s3:SpillestederHentInputStruktur" name="request1"/>
+  </s1:message>
+  <s1:message name="getSpillestederHentServiceResponse">
+    <s1:part element="s3:SpillestederHentOutputStruktur" name="SpillestederHentOutputStruktur"/>
+  </s1:message>
+  <s1:portType name="SpilService" wsp:PolicyURIs="#Sign.xml #Encrypt.xml">
+    <s1:operation name="getModtageSpilleAfgiftGebyrService" parameterOrder="request2">
+      <s1:input message="s4:getModtageSpilleAfgiftGebyrService"/>
+      <s1:output message="s4:getModtageSpilleAfgiftGebyrServiceResponse"/>
+    </s1:operation>
+    <s1:operation name="getSpillestederHentService" parameterOrder="request1">
+      <s1:input message="s4:getSpillestederHentService"/>
+      <s1:output message="s4:getSpillestederHentServiceResponse"/>
+    </s1:operation>
+  </s1:portType>
+  <s1:binding name="SpilServiceSoapBinding" type="s4:SpilService">
+    <s5:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s1:operation name="getModtageSpilleAfgiftGebyrService">
+      <s5:operation soapAction="" style="document"/>
+      <s1:input>
+        <s5:body parts="request2" use="literal"/>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#SkatEsbAuthentication"/>
+        </wsp:Policy>
+      </s1:input>
+      <s1:output>
+        <s5:body parts="SpilleAfgiftGebyrOutputStruktur" use="literal"/>
+      </s1:output>
+    </s1:operation>
+    <s1:operation name="getSpillestederHentService">
+      <s5:operation soapAction="" style="document"/>
+      <s1:input>
+        <s5:body parts="request1" use="literal"/>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#SkatEsbAuthentication"/>
+        </wsp:Policy>
+      </s1:input>
+      <s1:output>
+        <s5:body parts="SpillestederHentOutputStruktur" use="literal"/>
+      </s1:output>
+    </s1:operation>
+  </s1:binding>
+  <s1:service name="SpilService">
+    <s1:port binding="s4:SpilServiceSoapBinding" name="SpilServicePort">
+      <s5:address location="https://b2btest.skat.dk/B2BSpilProxyWEB/SpilService"/>
+    </s1:port>
+  </s1:service>
+</s1:definitions>

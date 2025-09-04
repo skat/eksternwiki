@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseSubsidiaerKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseStartDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseSlutDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseProcent.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseRykkerAndenDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseRykkerFoersteDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseForaeldelseDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseFormKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseForligDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseForligIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseDomDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseDomIndikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/HaeftelseBegraensetProcent.xsd"/><xs:include schemaLocation="MFKundeStruktur.xsd"/>
+	<xs:include schemaLocation="HaeftelseBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="HaeftelseBegraensetBeloebStruktur.xsd"/>
+	<xs:include schemaLocation="MFNoteStruktur.xsd"/>
+	<xs:element name="MFHaeftelseStruktur" type="efiws:MFHaeftelseStrukturType"/>
+	<xs:complexType name="MFHaeftelseStrukturType">
+		<xs:sequence>
+			<xs:element ref="efiws:MFKundeStruktur"/>
+			<xs:element ref="efi:HaeftelseFormKode"/>
+			<xs:element ref="efi:HaeftelseSubsidiaerKode" minOccurs="0"/>
+			<xs:element ref="efi:HaeftelseStartDato"/>
+			<xs:element ref="efi:HaeftelseSlutDato" minOccurs="0"/>
+			<xs:element name="ValgHaeftelse" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="efi:HaeftelseProcent"/>
+						<xs:element ref="efiws:HaeftelseBeloebStruktur"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValgHaeftelseBegraenset" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="efi:HaeftelseBegraensetProcent"/>
+						<xs:element ref="efiws:HaeftelseBegraensetBeloebStruktur"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="efi:HaeftelseForaeldelseDato" minOccurs="0"/>
+			<xs:element ref="efi:HaeftelseRykkerFoersteDato" minOccurs="0"/>
+			<xs:element ref="efi:HaeftelseRykkerAndenDato" minOccurs="0"/>
+			<xs:element name="HaeftelseKommentar" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:MFNoteStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="efi:HaeftelseDomIndikator"/>
+			<xs:element ref="efi:HaeftelseDomDato" minOccurs="0"/>
+			<xs:element ref="efi:HaeftelseForligIndikator"/>
+			<xs:element ref="efi:HaeftelseForligDato" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

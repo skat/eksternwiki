@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:spilws="http://rep.oio.dk/skat.dk/TSE/service/SpillestederHent/xml/schemas/2006/09/01/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/SpillestederHent/xml/schemas/2006/09/01/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="SpillestederHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Henter oplysninger om spillesteder for et specifikt CVR-nummer.
+Hvert spillested, hvor en virksomhed opstiller spilleautomater, skal på forhånd være registreret hos Spillemyndigheden (ToldSkat), hvor der bl.a. tildeles et id.
+		</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/TSE/service/SpillestederHent/xml/schemas/2006/09/01/">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/2470733/artefact/SKAT_SpillestederHentInputStruktur.xsd"/>
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/2470733/artefact/SKAT_SpillestederHentOutputStruktur.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="SpillestederHentServiceRequest">
+		<wsdl:part name="Request" element="spilws:SpillestederHentInputStruktur"/>
+	</wsdl:message>
+	<wsdl:message name="SpillestederHentServiceResponse">
+		<wsdl:part name="Response" element="spilws:SpillestederHentOutputStruktur"/>
+	</wsdl:message>
+	<wsdl:portType name="SpillestederHentServicePortType">
+		<wsdl:operation name="getSpillestederHent">
+			<wsdl:input message="spilws:SpillestederHentServiceRequest"/>
+			<wsdl:output message="spilws:SpillestederHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SpillestederHentServiceBinding" type="spilws:SpillestederHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getSpillestederHent">
+			<soap:operation soapAction="getSpillestederHent"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SpillestederHentServiceBindingQSService">
+		<wsdl:port name="SpillestederHentHentServiceBindingQSPort" binding="spilws:SpillestederHentServiceBinding">
+			<soap:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

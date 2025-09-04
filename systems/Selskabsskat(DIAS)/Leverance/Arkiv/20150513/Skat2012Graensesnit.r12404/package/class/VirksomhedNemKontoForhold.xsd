@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/NemKontoTekstType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="VirksomhedNemKontoForholdStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedNemKontoForholdSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedNemKontoForholdKontoIdent" type="skat2012:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekster på kontoudtog med længden 35. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedNemKontoForholdTidsstempel" type="skat2012:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

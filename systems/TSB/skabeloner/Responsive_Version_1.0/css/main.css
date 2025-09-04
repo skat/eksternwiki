@@ -1,0 +1,2358 @@
+/*****************************************************************************************************************/
+/*
+ * Navn: TastSelvMain.css
+ * Beskrivelse: Hoved stylessheet til TastSelv Nyt Design
+ * Version: 3.0.0
+ */
+/*****************************************************************************************************************/
+/* ==========================================================================
+   Standard styles
+   ========================================================================== */ 
+html {
+    font-size: 1em;
+	line-height: 1.4;	
+	overflow-y: scroll;	/* from TS */
+}
+body {
+	background-color: #fff;
+	font-family: Verdana, Helvetica;
+	margin: 1em auto 1em auto;
+	width: 1200px;
+	text-align: left; 	
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	font-family: Helvetica, Arial, Sans serif;
+	word-wrap: break-word;	
+}
+h1 a, 
+h2 a, 
+h3 a {
+	color: #000;	
+}	
+h1 {
+	font-size: 1.2em;
+}
+h2 {
+	font-size: 1.1em;
+}
+h2 span{
+	font-size: 0.9em;
+	font-weight: normal;
+}
+h3, 
+h4, 
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.9em;
+}
+a {
+	color: #000099;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a:hover {
+	text-decoration: underline;
+}
+a:focus {
+	outline: thin dotted;
+}
+a,
+button,
+input,
+label, 
+select {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+p {
+	font-size: 1em;
+}
+div:focus ,
+span:focus {
+	outline: none;
+}
+address, 
+address a, 
+address a:hover {	
+	color: #fff;	
+	font-style: normal;
+}
+caption {
+	font-weight: bold;
+	text-align: left;
+}
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0.5em;
+}
+form {
+	display: inline;
+}
+img {
+	border: none;
+}
+abbr[title] { 
+	border-bottom: none; 
+}
+hr {
+	background-color: #999;
+	border: none;
+	height: 0.09em;
+	margin: 0;
+}
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+header {        
+	background-color: #ffc31d;
+	background-image: linear-gradient(to right, #ffe8a4, #ffc31d);
+	border-bottom: 0.09em solid white;
+	height: 5em;
+}
+footer {   
+	background-color: #3f6075;
+	background-image: linear-gradient(#4f7593, #4d6d8e, #3f6075);
+	color: #FFFFFF;
+    font-family: Helvetica, Arial, sans-serif;
+	line-height: 2.3em;
+	margin-top: 3em;
+	position: relative;
+	text-align:center;
+}
+footer a, 
+footer a:focus {
+	color: #fff;
+}
+footer .skts-small-text {
+	color: #fff;
+}
+/* ==========================================================================
+   Logo styles
+   ========================================================================== */
+.skts-logo  {
+	background-image: url(../Images/SKAT-logo.svg);
+	background-position: 0.7em 0;
+	background-repeat: no-repeat;
+	background-size: 10em;
+	display: inline-block;
+	height: 5.6em;
+	position: absolute;
+	top: 0.45em;
+	width: 14em;
+}
+.skts-logo a {
+	display: block;
+	height: 6em;
+	margin: auto;
+	width: 11em;
+}
+.no-svg .skts-logo  {
+	background-image: url(../Images/SKAT-logo.png);
+	background-position: 2.8em 0;
+	background-repeat: no-repeat;
+}
+/* ==========================================================================
+   Navigation styles
+   ========================================================================== */
+nav ul {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+}
+.skts-top-nav-container {
+	background-color: #4f7593;
+	background-image: linear-gradient(#3f6075, #4d6d8e, #4f7593);
+	position: relative;
+}
+.skts-top-nav-container li {
+	display: inline-block;
+}
+.skts-top-nav-container a {
+	color: #fff;
+	display: inline-block;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 0.5em 0.7em;	
+}
+.skts-top-nav-container  li a {
+	border-right: 0.09em solid #3A5D74;
+	display: block;	
+}
+.skts-top-nav-container a:focus, 
+.skts-top-nav-container a.skts-selected:focus, 
+.skts-top-nav-container .skts-left-nav a.skts-selected:focus {
+	background: #294b60;
+	outline: 0;
+	text-decoration: none;
+}
+.skts-top-nav-container a:active, 
+.skts-top-nav-container a.skts-selected:active, 
+.skts-top-nav-container .skts-left-nav a.skts-selected:active {
+	background: #123;
+	outline: 0
+}
+a.skts-toggle-menu {	
+	border-color: transparent;
+	border-radius: 0.2em 0.2em 0 0;	
+	border-style: solid;
+	border-width: 0.4em 0.4em 0 0.4em;
+	color: #3b5c71;	
+	display: none;	
+	outline: 0;
+	padding: 0 0.3em 0.4em 0.3em;
+	position: absolute;
+	text-decoration: none;
+	top: 3.7em;
+}
+a.skts-toggle-menu.selected {
+	background: #3f6075;
+	border-color: #3f6075;
+	color: #fff;	
+	width: auto;	
+}
+a.skts-toggle-menu:focus, 
+a.skts-toggle-menu.selected:focus  {
+	background: #294b60;
+	border-color: #3f6075;
+	color: #fff;
+	outline: 0;
+}
+.skts-top-nav-container a.skts-selected {
+	background: #14364C;
+}
+.skts-global-nav {
+	float: left;
+}
+a.skts-login {
+	float: left;
+	position: static;
+	right: 0;
+	top: 0;
+}
+.skts-top-nav-container a.skts-login:active {
+	background: transparent;
+}
+.skts-main-nav   .skts-left-nav { 
+	display: none;
+}
+.skts-left-nav-container h2 {
+	padding-left: 0.6em;
+}
+.skts-left-nav-container  a {
+	border-top: 0.09em solid #DCDFEB;
+	color: #14364C;
+	display: block;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	padding: 0.4em 0.2em 0.4em 1em;
+}
+.skts-left-nav  a.skts-selected {
+	font-weight: bold;
+}
+/* ==========================================================================
+   Module styles
+   ========================================================================== */
+.skts-module-container {
+	background-color: #f7f7f7;
+	border: 0.09em solid #DCDFEB;
+	border-radius: 0.5em;
+	margin-right: 2em;
+	width: 100%;
+}
+.skts-module-header {	
+	background-color: #e9ecf7;
+	background-image: linear-gradient(#dae3e9, #e9ecf7);
+	border-bottom: 0.09em solid #DCDFEB;
+	border-radius: 0.5em 0.5em 0 0;
+	overflow: hidden;
+	padding: 0.7em 0.5em 0.2em 2%;	
+}
+
+.skts-module-header.skts-align-with-tab {	
+	padding-left:0.7em;	
+}
+.skts-module-header h1,
+.skts-module-header h2,
+.skts-content-box h2 {
+	margin-top: 0
+}
+/* ==========================================================================
+   Grid styles
+   ========================================================================== */
+.skts-grid, 
+.skts-grid-fixed-height {
+	margin: 0 0 0.5em 0;
+}
+.skts-grid-fixed-height {
+	min-height: 27em;
+}
+/* Clear the grid */
+.skts-grid:after, 
+.skts-grid-fixed-height:after {
+	content: "";
+	clear: both;
+	display: table;	
+}
+[class*='col-']:last-of-type {
+	padding-right: 0;
+}
+.skts-grid-pad-front {
+	padding: 2% 0 0 8%;	
+}
+.skts-grid-pad-front [class*='col-']{
+	padding-right: 8%;
+}
+.skts-grid-pad {
+	padding: 0 0 0 2%;	
+}
+.skts-grid-pad-footer {
+	padding: 5em 0 0 2%;	
+}
+.skts-grid-pad [class*='col-']{
+	padding-right: 2%;
+}
+[class*='col-'] {
+	clear: none;
+	float: left;
+	margin: 0.5em 0;
+}
+.skts-col-1-8 {
+	width: 12.5%;
+}
+.skts-col-1-4 {
+	width: 25%;
+}
+.skts-col-1-3 {
+	width: 33.33%;
+}
+.skts-col-1-2 {
+	width: 50%;		
+}
+.skts-col-2-3 {
+	width: 66.66%;
+}
+.skts-col-3-4 {
+	width: 75%;
+}
+.skts-col-1 {
+	width: 100%;
+}
+/* ==========================================================================
+   Form field styles 
+   ========================================================================== */
+input[type='password'],
+input[type='text'],
+select,
+textarea {
+	border: 0.09em solid #496a87;
+	border-radius: 0.2em;
+	padding: 0.1em;
+	height: 1.7em;
+	outline-color: transparent;
+}
+select {
+	width: auto;
+}
+textarea  {
+	height: 10em;
+	font-family: monospace;
+	font-size: 1.1em;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 100%;
+}
+input[type='checkbox'], 
+input[type='radio'] {
+	border: 0.09em solid #496a87;
+	border-radius: 1em;
+	height: 1em;
+	margin: 0 0.2em 0.9em 0.2em;
+	width: 1em;
+}
+input:focus,
+select:focus,
+textarea:focus  {
+	outline: thin dotted;
+}
+input[type=text]::-ms-clear { 
+	display: none; 
+	margin: 0;
+	padding: 0;
+}
+button,
+input[type='submit'] {
+	margin-bottom: 0.5em;
+}
+.skts-required:after  {
+	color: #A00000;
+	content: ' * ';
+	display: inline;
+	white-space: nowrap;
+}
+.skts-input-selected input[type='text'] {
+	border-color: #FFC421;
+}
+.skts-input-selected:before {
+	border-top: 1.7em solid #FFC421;
+	border-right: 1.2em solid transparent;
+	position: absolute;
+	content: '';
+	width: 1.7em;
+	top: 0;
+	left: 0.05em;
+}
+.skts-placeholder-kr > span,
+.skts-placeholder-kr-year  > span,
+.skts-placeholder-procent > span {
+	display: inline-block;
+	position: relative;
+}
+.skts-placeholder-kr  > span:after,
+.skts-placeholder-kr-year  > span:after {
+	position: absolute;
+	left: 9em;
+	top: 0.19em;
+}
+.skts-placeholder-kr  > span:after {
+	content: 'kr.';
+}
+.skts-placeholder-kr-year > span:after {
+	content: 'kr. \00a0/år';
+}
+.skts-placeholder-procent > span:after {
+	content: '%';
+	position: absolute;
+	left: 4.7em;
+	top: 0.19em;
+}
+.skts-placeholder-kr input[type='text'],
+.skts-placeholder-kr-year input[type='text'] {
+	padding: 0.1em 1.7em 0.1em 1.7em;
+	text-align: right;
+	width: 10.5em;	
+}
+.skts-placeholder-procent input[type='text'] {
+	padding:0.1em 1.4em 0.1em 0;
+	text-align: right;
+	width: 6em;
+}
+.skts-input-long {
+	width: 18em;
+}
+.skts-input-date {
+	width: 10.5em;
+}
+.skts-input-number {
+	text-align: right;
+	width: 6em;
+}
+/* indent fields in block 3 so they align with the kr./år placeholder */
+.skts-floated-list .skts-section-wrapper select,
+.skts-floated-list .skts-section-wrapper input[type='checkbox'],
+.skts-floated-list .skts-section-wrapper input[type='radio'],
+.skts-floated-list .skts-input-long,
+.skts-floated-list .skts-input-date,
+.skts-floated-list .skts-input-number,
+.skts-floated-list .skts-placeholder-procent input[type='text'],
+.skts-floated-list .skts-indent-text,
+.skts-placeholder-kr input[type='text'],
+.skts-placeholder-kr-year input[type='text']{
+	margin-right: 2.2em;
+}
+/* ==========================================================================
+   Button styles
+   ========================================================================== */
+.skts-button-container {
+	padding-top: 1em;
+}
+.skts-button-container button,
+.skts-button-container input{
+	margin-right: 0.8em;
+}
+.skts-button-action, 
+.skts-button-primary, 
+.skts-button-secondary,
+.skts-button-primary-ext, 
+.skts-button-secondary-ext {
+	border-radius: 0.3em;
+	font-family: Arial;
+	font-size: 1em;
+	line-height: 1.2;
+	min-width: 5em;
+	padding: 0.5em 1.5em;
+}
+.skts-button-primary {	
+	background-color: #14364c;	
+	background-image: linear-gradient(#3f6075, #14364c); 
+	border: 0.09em solid #14364C; 
+	color:#ffffff;
+}
+.skts-button-primary:hover {	
+	background-color: #3f6075;
+	background-image: linear-gradient(#14364c, #3f6075);
+}
+.skts-button-secondary {
+	background-color: #ededed;
+	background-image: linear-gradient(#ededed, #dfdfdf); 
+	border: 0.09em solid #dcdcdc; 
+	color:#4d4d4d;
+}
+.skts-button-secondary:hover {
+	background-color: #dfdfdf;
+	background-image: linear-gradient(#dfdfdf, #ededed); 
+}
+.skts-button-action {
+	background-color: #ffc31d;
+	background-image: linear-gradient(#ffe8a4, #ffc31d);
+	border: solid 0.09em #ffc61e;
+}
+.skts-button-action:hover {
+	background-color: #ffe8a4;
+	background-image: linear-gradient(#ffc31d, #ffe8a4);
+}
+.skts-button-nemid {
+	background-color: #000000;
+	background-image: linear-gradient(#666, #000);
+	border: solid 0.09em #000000;
+	width: 15em;
+}
+.skts-button-nemid:hover {
+	background-color: #000000;
+	background-image: linear-gradient(#000, #666);
+}
+.skts-button-primary :active,
+.skts-button-secondary:active,
+.skts-button-action:active ,
+.skts-button-nemid:active {
+	position: relative;
+	top: 0.1em;
+}
+.skts-button-primary:focus, 
+.skts-button-secondary:focus,
+.skts-button-action:focus,
+.skts-button-nemid:focus {
+	outline: 0.15em dotted #177f7f;  
+}
+#forskudVersionBt {
+	display: none;
+}
+/* ==========================================================================
+   Search styles
+   ========================================================================== */
+.skts-search-container {
+	float: left;
+	margin-top: 0.4em;
+	text-align: right;
+	width: 10em;
+}
+.skts-input-search-text {
+	width: 3.2em;
+}
+.skts-search-bt {
+	padding: 0.25em 0.5em;
+	min-width: 3em;
+	margin: 0;
+}
+.skts-search-result {
+	margin-top: 0.5em;
+}
+.skts-search-result span{
+	font-style: italic;
+}
+/* ==========================================================================
+   Login styles
+   ========================================================================== */
+.skts-login-header {
+	border-bottom: solid 0.09em #000;
+	font-weight: normal;
+}
+/* TODO: remove ? */
+.skts-english-header {
+	background: url('../Images/union-jack-small.svg') no-repeat right;
+	background-size: 1.4em;
+}
+.no-svg .skts-english-header {
+	background: url('../Images/union-jack-small.png') no-repeat right;
+}
+.skts-login-bottom-space {
+	margin-bottom: 1.5em;
+}
+.skts-nemid-pic {
+	margin-bottom: 4em;
+}
+/* ==========================================================================
+   Tooltip styles
+   ========================================================================== */
+
+.skts-tooltip-holder .skts-tooltip, 
+.skts-tooltip-holder .skts-tooltip-long {
+	color: #3F6075;
+	font-family: Arial, "Arial Rounded MT Bold", sans-serif;
+	font-size: 0.8rem;
+	font-weight: normal;
+	left: -9000px;
+	line-height: 1.2em;
+	margin-top: 0.2em;
+	padding: 0.1em 0.2em;
+	position: absolute;
+	top: 0;
+}
+/*
+.skts-tooltip-holder:hover, 
+.skts-tooltip-holder:focus, 
+.keyboard-focus:focus {
+	position: relative;
+}
+.skts-tooltip-holder:hover .skts-tooltip,
+.keyboard-focus:focus .skts-tooltip,
+.skts-tooltip-holder:hover .skts-tooltip-long,
+.keyboard-focus:focus .skts-tooltip-long {    
+	background-color: #FFFFFF;
+	border: 0.09em solid #AAA1AA;
+	display: block;
+	left: 1em;
+	margin-left: 1em;
+	position: absolute;
+	text-align: left;
+	text-decoration: none;
+	top: 1.3em;
+	z-index: 25;
+}
+a.skts-tooltip-holder .skts-tooltip-long,
+a.keyboard-focus .skts-tooltip-long {
+	max-width: 20em;
+	min-width: 10em;
+}
+.skts-tooltip-holder .skts-tooltip,
+.keyboard-focus .skts-tooltip {
+	max-width: 20em;
+	min-width: 8em;
+}
+.skts-tooltip-holder:focus:not(:hover) .skts-tooltip {    
+	background-color: #FFFFFF;
+	border: 0.09em solid #AAA1AA;
+	display: block;
+	left: 1em;
+	margin-left: 1em;
+	position: absolute;
+	text-align: left;
+	text-decoration:none;
+	top: 1.3em;
+	z-index: 25;
+}
+a.skts-tooltip-holder:focus:not(:hover) .skts-tooltip {
+	overflow: hidden;
+	white-space: nowrap;
+	z-index: 95;
+}
+*/
+/* ==========================================================================
+   Skip links styles
+   ========================================================================== */
+.skts-link-target-hide {
+	display: block;
+	height: 0.8em;
+	left: -99999px;
+	position: absolute;
+	width: 0.8em;
+}
+#skts-skip-links {
+	left: 0;
+	list-style: outside none;
+	margin-left: 0;
+	padding-left: 0;
+	position: absolute;
+	text-align: center;
+	top: 0.8em;
+	width: 100%;
+}
+#skts-skip-links li { 
+	list-style-type: none;
+}
+#skts-skip-links a {
+	left: -99999px;
+	position: absolute;
+	top: 0;
+}
+#skts-skip-links a:focus, 
+#skts-skip-links a:active {
+	background: #EBF1F4;
+	border: 0.09em dotted #DCDFEB;
+	height: auto;
+	left: 0;
+	margin: 0 auto;
+	padding: 0.4em 0.8em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	width: 75%;
+	z-index:9999;
+}
+/* ==========================================================================
+   User info styles
+   ========================================================================== */
+.skts-user-info {
+	color: #000000;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	font-weight:normal;
+	line-height:200%;
+	margin: 0;
+	text-align:right;
+}
+/* =======================================sh===================================
+   Tab styles
+   ========================================================================== */
+#skts-tabs	{
+	background-color: #e9ecf7;
+	background-image: linear-gradient(#e9ecf7, #dae3e9);
+	float: left;
+	font-weight: normal;
+	margin: 0 0 1em 0; 
+	padding-left: 0;
+	width: 100%;
+}
+#skts-tabs li {
+	border-right: 0.09em solid #DCDFEB;
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 0;
+	text-align: center;
+}
+#skts-tabs li a {
+	color: #000000;
+	display: block;
+	font-size: 0.9em;
+	padding: 0.5em 0.8em;
+}
+.skts-tab-selected {
+	background-color: #F7F7F7;
+	font-weight: bold;
+}
+/* ==========================================================================
+   Table styles
+   ========================================================================== */
+.skts-standard-table {
+	width: 100%;
+}
+.skts-standard-table caption {
+	padding-bottom: 1em;
+}
+.skts-standard-table th ,
+.skts-standard-table td {
+	border-bottom: solid 0.09em #000;
+	padding: 0.5em;
+	vertical-align: top;
+}
+.skts-standard-table th:first-child ,
+.skts-standard-table td:first-child {
+	padding-left: 0;
+}
+.skts-standard-table th:last-child ,
+.skts-standard-table td:last-child {
+	padding-right: 0;
+}
+/* Pdf table has unbolded headers, blue text, hover effect and the last col is right aligned*/
+.skts-pdf-table th ,
+.skts-pdf-table td {
+	border-color: #CCDAEB;
+	padding: 0.5em 1.5em;
+	vertical-align: top;
+}
+.skts-pdf-table th {
+	font-weight: normal
+}
+.skts-pdf-table td {
+	cursor: pointer;
+	white-space: nowrap;
+}
+.skts-pdf-table tbody tr:hover{
+	background-color: #14364c;
+	color: #fff;
+}
+.skts-pdf-table th:nth-child(2),
+.skts-pdf-table td:nth-child(2)  {
+	text-align: right;
+	
+}
+.skts-pdf-table td:nth-child(2)  {
+	color: #000099;
+}
+.skts-pdf-table tbody tr:hover td ,
+.skts-pdf-table tbody tr:hover td a{
+	color: #fff;
+	text-decoration: none;
+}
+/* Min table has no borders, hidden caption, normal headers and right aligned text (except for the first col)*/
+.skts-min-table {
+	font-size: 1em;
+	margin-left:0;
+	padding-bottom: 1em;
+	width: 100%;
+}
+.skts-min-table caption {
+	left: -9000px; 
+	position: absolute;
+}
+.skts-min-table  td, 
+.skts-min-table  th {
+	border: none;
+	font-weight: normal;
+	padding: 0.3em 0.5em;
+	text-align: right;
+	white-space: nowrap;
+}
+.skts-min-table  td:first-child {
+	padding-left: 0;
+	text-align: left;
+}
+.skts-min-table  td:last-child {
+	padding-right: 0;
+}
+.skts-approve-calculation-table caption {
+	padding: 0.5em;
+}
+.skts-approve-calculation-table td, 
+.skts-approve-calculation-table th {
+	border: none;
+}
+.skts-approve-calculation-table td:first-child, 
+.skts-approve-calculation-table th:first-child  {
+	min-width: 50%;
+}
+.skts-approve-calculation-table td:nth-child(2), 
+.skts-approve-calculation-table td:nth-child(3),
+.skts-approve-calculation-table th:nth-child(2), 
+.skts-approve-calculation-table th:nth-child(3){
+	text-align: right;
+}
+.skts-approve-calculation-table td:nth-child(2), 
+.skts-approve-calculation-table td:nth-child(3) {
+	white-space: nowrap;
+}
+.skts-approve-calculation-table td.skts-table-header {
+	border-top: solid 0.09em #999;
+	font-weight: bold;
+}
+.skts-row-underline {
+	border-bottom: 0.09em solid #999;
+}
+.skts-row-result {
+	border-bottom: double #999;
+}
+/* ==========================================================================
+   Box styles
+   ========================================================================== */
+.skts-action-box,
+.skts-error-box,
+.skts-info-box,
+.skts-warning-box {
+	background: #fff;
+	border-radius: 0.5em;
+	clear: both;
+	margin: 0.5em;
+	word-wrap: break-word;
+}
+.skts-action-box {	
+	border: solid 0.09em yellow;
+}
+.skts-warning-box {
+	border: solid 0.09em #3f6075;
+}
+.skts-info-box {
+	background: #E9ECF7;
+}
+.skts-info-box h3 {
+	padding-left: 0.8em;
+}
+/* ==========================================================================
+   Error styles
+   ========================================================================== */
+.skts-field-error input[type='text'],
+.skts-field-error input[type='password'],
+.skts-field-error select,
+.skts-field-error textarea,
+.skts-field-server-error input[type='text'],
+.skts-field-server-error input[type='password'],
+.skts-field-server-error select,
+.skts-field-server-error textarea {
+	border: 0.09em solid #A00000;
+}
+.skts-field-error input[type='checkbox'],
+.skts-field-error input[type='radio'],
+.skts-field-server-error input[type='checkbox'],
+.skts-field-server-error input[type='radio'] {
+	outline: 0.09em solid #A00000;
+}
+.skts-field-error input[type='checkbox']:focus,
+.skts-field-error input[type='radio']:focus,
+.skts-field-server-error input[type='checkbox']:focus,
+.skts-field-server-error input[type='radio']:focus {
+	outline: 0.09em dotted #A00000;
+}
+.skts-error-text {
+	color: #A00000;
+	display: none;
+	font-size: 0.8em;
+}
+.skts-error-description {
+  color:#A00000;
+  text-decoration:underline;
+}
+.skts-error-box {
+	border: 0.09em solid #A00000;
+	border-radius: 0.5em;
+	margin-bottom: 0.5em;
+}
+.skts-error-box ol {
+	margin: 0;
+	padding: 0 0 0.8em 0.8em;
+}
+.skts-error-box li {
+	list-style:none;
+}
+.skts-error-box h2 {
+	font-size: 1em;
+}
+.skts-module-header.skts-error-explanation {
+	padding-left: 0.5em;
+}
+.skts-error-explanation h1 {
+	display: inline-block;
+}
+.skts-error-explanation span {
+	color: #A00000;
+	font-size: 0.8em;
+	float: right;
+}
+.skts-section-wrapper .skts-field-error  {
+	border: none;
+}
+/* ==========================================================================
+   Icon fonts
+   ========================================================================== */
+@font-face {
+  font-family: 'fontelloGHA';
+  src: url('../fonts/fontelloGHA.eot?58541352');
+  src: url('../fonts/fontelloGHA.eot?58541352#iefix') format('embedded-opentype'),
+       url('../fonts/fontelloGHA.woff?58541352') format('woff'),
+       url('../fonts/fontelloGHA.ttf?58541352') format('truetype'),
+       url('../fonts/fontelloGHA.svg?58541352#fontelloGHA') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="skts-icon-"]:before, 
+[class*=" skts-icon-"]:before {
+	font-family: "fontelloGHA";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	
+	margin-right: 0.5em;
+	text-align: center;
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+	 
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+} 
+[class^="skts-icon-"]:focus:before ,
+[class*=" skts-icon-"]:focus:before ,
+[class^="skts-icon-"]:hover:before ,
+[class*=" skts-icon-"]:hover:before {
+	text-decoration: none;
+} 
+.skts-icon-lock-open:before { content: '\e801'; } /* open lock icon from Font Awesome*/
+.skts-icon-right-open-big:before { content: '\e800'; } /* right link icon from Entypo*/
+/* ==========================================================================
+   Fix for jquery.keyboard-focus.js
+   ========================================================================== */
+header .keyboard-focus:focus, 
+.skts-login.keyboard-focus:focus{
+  position: absolute;
+}
+.skts-input-selected  .keyboard-focus:focus{
+  position: static;
+}
+/* ==========================================================================
+   Label and text wrapper styles
+   ========================================================================== */
+.skts-section-wrapper.skts-odd {
+	background: #e9ecf7;
+}
+.skts-section-wrapper {
+	background: #fff;
+	padding: 0.5em;
+	position: relative;
+}
+.skts-clear-background .skts-section-wrapper{
+	background: transparent;
+}
+.skts-section-wrapper.skts-no-pad-left {
+	padding-left: 0;
+}
+.skts-section-wrapper ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+	vertical-align: top;
+}
+.skts-section-wrapper li {
+	padding-bottom: 0.3em;
+}
+.skts-label-text {
+	display: block;
+	padding: 0 0 0.5em 0;
+	text-align: left;
+	width: 70%;
+}
+.skts-section-wrapper .skts-radio-label, 
+.skts-section-wrapper .skts-checkbox-label {
+	display: inline-block;
+	margin-bottom: 0.9em;
+}
+.skts-info-value,
+.skts-saved-value, 
+.skts-suggested-value  {
+	color: #444;
+	display: none;
+	font-size: 0.8em;
+}
+.skts-floated-list .skts-error-text,
+.skts-floated-list .skts-info-value,
+.skts-floated-list .skts-saved-value, 
+.skts-floated-list .skts-suggested-value {
+	margin-right: 2.8em;
+}
+.skts-error-text.skts-show, 
+.skts-info-value.skts-show,
+.skts-saved-value.skts-show, 
+.skts-suggested-value.skts-show {
+	display: block;	
+}
+/* ==========================================================================
+   Help icon
+   ========================================================================== */
+.skts-help {
+	border: solid 0.09em #3f6075;
+	border-radius: 50%;
+	color: #3f6075;
+	display: inline-block;
+	font-size: 0.8em;
+	font-weight: bold;
+	line-height: 1.2em;
+	padding:  0em 0.3em;
+}
+.skts-help:active,
+.skts-help:focus,
+.skts-help:hover  {
+	text-decoration: none;
+}
+.skts-help:before {
+	content: '?'
+}
+/* ==========================================================================
+   Error icon
+   ========================================================================== */
+.skts-floated-list .skts-field-server-error:before, 
+.skts-field-server-error:after {
+	border: solid 0.09em #A00000;
+	border-radius: 50%;
+	color: #A00000;
+	content: '!';
+	display: inline;
+	font-size: 0.8em;
+	font-weight: bold;
+	line-height: 1.2em;
+	margin-right: 0.5em;
+	padding: 0em 0.4em 0 0.4em;
+}
+.skts-floated-list .skts-field-server-error:before {
+	display: none;
+}
+/* ==========================================================================
+   Expandable lists
+   ========================================================================== */
+.skts-list-header, 
+h2.skts-list-header, 
+h3.skts-list-header {
+	background-color: #e9ecf7;
+	background-image: linear-gradient(#e9ecf7, #ffffff);
+	color: #000;
+	display: block;
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0;
+	padding: 0.3em 0.2em 0.5em 0.5em;	
+	word-wrap: break-word;
+}
+.skts-show-hide-list  ul {
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+.skts-show-hide-list > li,
+.skts-hide-all > li {
+	display: none;	
+}
+.skts-show-hide-list h5,
+.skts-show-hide-list h6 {
+	background: #fff;
+	margin: 0;
+	padding: 0.5em;
+}
+.skts-show-hide-list .skts-small-text {
+	padding-top: 0.8em;
+}
+.skts-list-header  a {
+	background-image:url(../Images/collapsed.svg);
+	background-position: 0 0.3em;
+	background-repeat: no-repeat;	
+	background-size: 0.9em;
+	color: #000;
+	display: block;
+	padding-left: 1.2em;
+}
+.skts-list-header  span{
+	float: right;
+}
+.skts-list-header.skts-expanded a {
+	background-image :url(../Images/expanded.svg);
+}
+.no-svg .skts-list-header  a  {
+	background-image:url(../Images/collapsed.png);
+}
+.no-svg .skts-list-header.skts-expanded a {
+	background-image:url(../Images/expanded.png);
+}
+/*=============================================================== 
+    Breadcrumb styles
+===============================================================*/  
+.skts-status-indicator {
+	margin: 0;
+	padding: 0 0 1.5em 0;
+	list-style-type: none;
+}
+.skts-status-indicator li {
+	color: #666;
+	display: inline-block;
+	font-size: 0.9em;
+	margin: 0 1em 0.5em 0;
+	padding-right: 1em;
+	position: relative;
+}
+.skts-status-indicator li.skts-selected {
+	color: #222;
+	font-weight: bold;
+}
+.skts-status-indicator li:after {
+
+	content: '\e800'; /* right link icon from Entypo*/
+	font-family: "fontelloGHA";
+	font-size: 1.1em;
+	font-weight: normal;
+	left: 99%;
+	position: absolute;
+	top: 0em;	
+}
+.skts-status-indicator li:last-child:after {
+	content: ''; 
+	
+}
+.skts-status-indicator li.skts-selected:after {
+	font-weight: bold;
+}
+
+/*=============================================================== 
+    Cookie warning styles
+===============================================================*/  
+div.skts-cookieouter {	
+	background-color:#7991A3; 
+	bottom: 0;
+	display: none;
+	font-size: 0.85em;
+	left: 0;
+	min-width: 100%;
+	opacity: 0.95;
+	position: fixed;
+	width: 100%;
+	z-index: 100;	
+}
+div.skts-cookieinner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+div.skts-cookieinner-box1 {
+    float: right;
+    text-align: right;
+}
+div.skts-cookieinner-box2 p {
+    color:#ffffff;
+}
+div.skts-cookieouter a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: normal;
+    text-decoration: underline;
+}
+div.skts-cookieouter .skts-cookie-link {
+    font-size: 0.9em;
+    margin-left: 0.5em;
+}
+/*-----IE laver underline p塦ontfaces,
+    dette l𳥲 problemet------*/
+#skts-fontface-link {
+    text-decoration:none;
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?58897946');
+  src: url('../fonts/fontello.eot?58897946#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?58897946') format('woff'),
+       url('../fonts/fontello.ttf?58897946') format('truetype'),
+       url('../fonts/fontello.svg?58897946#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="skts-cookie-icon-"]:before, [class*=" skts-cookie-icon-"]:before {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-decoration:none;
+	display: inline-block;
+	width: 1em;
+	text-align: center;
+	/* opacity: .8; */
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;	 
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1.4em;
+}
+.skts-cookie-icon-cancel-circled:before { content: '\e800'; font-size: 1.2em; text-decoration: none;} /* 'ELUSIVE - icon-cancel-circled' */
+/* ==========================================================================
+   Front page styles
+   ========================================================================== */ 
+#skts-css-table { 
+	background: transparent;
+	display: table; 
+	position: relative;	
+	width: 100%;
+}
+.skts-t-col { 
+	background-color: #f7f7f7;
+	border: 0.09em solid #DCDFEB;
+	border-radius: 0.5em;
+	display: table-cell; 
+	margin-bottom: 1em;
+	width: 46%;  
+}
+.skts-t-col h1 {
+	font-size: 1.1em;
+	margin: 0 0 0.5em 0;
+}
+.skts-t-col.skts-spacing-col {
+	background-color: transparent;
+	border-width: 0;
+	width: 8%;	
+}
+.skts-t-col .skts-align-right {
+	bottom: 0;
+	padding-right: 1em;
+	position: absolute;
+	text-align: right;
+	width: 42%;
+}
+#skts-css-table .skts-link-list {
+	border-top: solid 0.09em #fff;
+}
+#skts-css-table .skts-link-list li {
+	border-top: 0.09em solid #DCDFEB;
+	color: #000099;
+}/*
+#skts-css-table .skts-link-list li:last-child{
+	border-bottom: solid 0.09em #DCDFEB;
+}
+*/
+#skts-css-table .skts-link-list a {
+	padding: 0.8em;
+}
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+.skts-content-container {
+	border: solid 0.09em #3A5D74;
+	border-top-width: 0;
+}
+a.skts-link-enhance {
+	text-decoration: underline;
+}
+.skts-align-right-absolute {
+	position: absolute;
+	right: 2%;
+	top: 0;
+}
+.skts-small-text {
+	font-size: 0.8em;
+	font-weight: normal;  
+}
+.skts-align-right {
+	text-align: right;
+}
+.skts-float-left {
+	float: left;
+}
+.skts-float-right {
+	float: right;
+}
+.skts-bottom-tekst {
+	text-align: right;
+}
+.skts-nomargin-list, 
+.skts-nostyle-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.skts-nostyle-list  li.skts-section-wrapper {
+	background: transparent;
+	padding: 0.5em 0;
+}
+.skts-nostyle-list .skts-section-wrapper  li {
+	text-align: left;
+}
+.skts-no-border {
+	border-width: 0 !important;
+}
+.skts-no-pad {
+	padding: 0 !important;
+}
+.skts-print-only {
+	display: none;
+}
+.skts-min-header {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0;
+}
+.skts-link-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.skts-link-list  a {
+	display: block;
+	padding: 0.3em 0; 
+}
+.skts-styled-list {
+	list-style: none;
+	padding:0;
+}
+.skts-styled-list li:before {
+	color: #FFC31D;
+	/* For a round bullet */
+	content:'\2022 \0000a0';
+	/* For a square bullet */
+	/*content:'\25A0 \0000a0';*/
+}
+/* ==========================================================================
+   Top icon styles (print and pdf)
+   ========================================================================== */
+.skts-top-icons {
+	float: right;
+	padding-top: 1em;
+}
+.skts-top-icons a {
+	cursor: pointer;
+	display: block;
+	font-size: 0.8em;
+	margin: 0 1em 0 0.5em;
+}
+/* ==========================================================================
+   Print icon styles (Block 2)
+   ========================================================================== */
+.skts-print-icon {
+	background:url(../Images/print.svg) 0 0.2em no-repeat;
+	background-size: 1em;
+	padding-left: 1.3em;
+}
+.skts-pdf-icon {
+	background:url(../Images/pdf.svg) 0 0.2em no-repeat;
+	background-size: 1em;
+	padding-left: 1.3em;
+}
+.no-svg .skts-print-icon {
+	background:url(../Images/print.png) 0 0.2em no-repeat;
+	padding-left: 1.3em;
+}
+.no-svg .skts-pdf-icon {
+	background:url(../Images/pdf.png) 0 0.2em no-repeat;
+	padding-left: 1.3em;
+}
+/* ==========================================================================
+   Tax card styles (Block 2)
+   ========================================================================== */
+.skts-card li {
+	padding-bottom: 0.5em;
+}
+.skts-card span {
+	font-weight: bold;
+	display: inline-block;
+}
+.skts-card  .skts-card-label {
+	display: inline-block;
+	font-weight: normal;
+	min-width: 40%;
+}
+.skts-faded-text {
+	color: #6a6a6a
+}
+/* ==========================================================================
+   Calculation styles (Se beregning - Block 2) and Property (ejendom) list (Block 3)
+   ========================================================================== */
+.skts-value-text {
+	float: right;
+}
+.skts-value-text.skts-collapse-left {
+	float: none;
+	text-align: left;
+}
+.skts-list-header.skts-transparent-bg,
+.skts-property  .skts-list-header { 
+	background: transparent;
+	padding: 0.5em 0 0.5em 0;
+}
+.skts-property .skts-read-only > li {	
+	padding: 0.2em;
+}
+.skts-read-only .skts-label-text,
+.skts-floated-list .skts-read-only .skts-label-text{
+	float: left;
+}
+.skts-read-only .skts-label-text {
+	width: 50%;
+}
+.skts-property.skts-section-wrapper .skts-read-only > li {	
+	background: #E9ECF7;
+}
+.skts-odd.skts-property.skts-section-wrapper .skts-read-only > li {	
+	background: #fff;
+}
+.skts-read-only > li,
+.skts-section-wrapper .skts-read-only > li  {	
+	clear: both;
+	background: #fff;
+	text-align: left;
+}
+.skts-padded-list  > li {
+	padding: 0.2em 0.4em;
+}
+.skts-standard-link, 
+.skts-list-header a.skts-standard-link {
+	color: #009;
+	text-decoration: underline;
+}
+.skts-list-header a.skts-standard-link,
+.skts-standard-link-text {	
+	display: inline-block;
+	padding: 0;
+	width: 3.5em;
+}
+/* ==========================================================================
+   Icon header styles (Block 3, 4 & 5)
+   ========================================================================== */
+.skts-expected-header,
+.skts-add-header,
+.skts-all-sections-header,
+.skts-search-header {
+	padding-left: 1.5em;
+}
+.skts-expected-header {
+	background:url(../Images/forventet.svg) 0 0.2em no-repeat;
+	background-size: 1em;
+}
+.skts-add-header {
+	background-image:url(../Images/tilfoj.svg);
+	background-position: 0;
+	background-repeat: no-repeat;
+	background-size: 1em;
+}
+.skts-all-sections-header {
+	background:url(../Images/alle-rubrikker.svg) 0 0.2em no-repeat;
+	background-size: 1em;
+}
+.skts-search-header {
+	background:url(../Images/search.svg) 0 0.2em no-repeat;
+	background-size: 1em;
+	float: left;
+}
+.no-svg .skts-expected-header {
+	background:url(../Images/forventet.png) 0 0.2em no-repeat;
+}
+.no-svg .skts-add-header {
+	background:url(../Images/tilfoj.png) 0 0.2em no-repeat;
+}
+.no-svg .skts-all-sections-header {
+	background:url(../Images/alle-rubrikker.png) 0 0.2em no-repeat;
+}
+.no-svg .skts-search-header {
+	background:url(../Images/search.png) 0 0.2em no-repeat;
+}
+/* ==========================================================================
+   Calculator styles (Block 3 & 4)
+   ========================================================================== */
+.skts-calculator-icon {
+	background-image: url(../Images/calculator.png);
+	background-repeat: no-repeat;
+	background-size: 1em;
+	display: inline;
+	height: 1.4em;
+	position: absolute;
+}
+.skts-calculator-icon a {
+	display: inline-block;
+	position: relative;
+	top: 0.2em;
+	height: 1.2em;
+	width: 1.5em;
+}
+.no-svg .skts-calculator-icon {
+	background-image: url(../Images/calculator.png);
+}
+/* ==========================================================================
+   Block 3 styles 
+   ========================================================================== */
+.skts-floated-list .skts-label-text {
+	float: left;
+}
+.skts-floated-list .skts-section-wrapper ul{
+	text-align: right;
+}
+/* ==========================================================================
+   General Block styles (3, 4 & 5)
+   ========================================================================== */
+.skts-bordered-list {
+	border-color: #dcdcdc;
+	border-style: solid;
+	border-width: 0.09em 0;
+}
+.skts-section-nr {
+	color: #6a6a6a;
+	font-size: 0.8em;
+ }
+.skts-content-box {
+	border: solid 0.09em #dcdfeb;
+	border-radius: 0.5em;
+	padding-bottom: 2em;
+}
+.skts-bordered-list,
+.skts-bordered-list ul,
+.skts-content-box ul,
+.skts-card,
+.skts-hide-all,
+.skts-show-hide-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.skts-content-box h3 {
+	margin-left: 0.5em;
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/*
+	Enlarge fonts,
+	Decrease padding on header and logo,
+	Hide left menu,
+	Collapse top menu (display menu link instead),
+	Collapse grid (no floats and 100% width),
+	Remove main content container border
+*/
+@media only screen and (min-width: 120px) {
+	/* fixes keyboard-focus error from TastSelvMain.css */
+	header .keyboard-focus:focus, 
+	.skts-login.keyboard-focus:focus {
+	  position: absolute;
+	}
+	body {
+		margin: 0.7em 0 0 0;
+		width: 100%;
+	}
+	/* Header styles */
+	header { 
+		height: 3.5em;
+	}
+	.skts-logo  {	
+		background-position: 50% 0;
+		background-size: 6.7em;		
+		height: 3.7em;
+		top: 0.25em;
+		width: 100%;
+	}
+	.skts-logo a {
+		height: 4em;
+		width: 9em;
+	}
+	a.skts-login {	
+		color: #3B5C71;
+		position: absolute;
+		right: 0.5em;
+		top: -1.9em;		
+	}
+	a.skts-login:focus {
+		background: #FFC31E;		
+		border: solid 0.2em #fff;
+		border-radius: 0.2em;
+		color: #000;
+		padding: 0.35em 0.55em 0.1em 0.3em;
+	}
+	#skts-skip-links {	
+		top: 1em;		
+	}
+	/* Grid styles */
+	.skts-grid, 
+	.skts-grid-fixed-height {	
+		min-height: 0;
+	}
+	[class*='col-'] {
+		clear: both;
+		width: 100%;
+	}
+	/* Menu styles */
+	a.skts-toggle-menu {
+		display: inline-block;
+		top: 1.95em;
+	}
+	.skts-icon-lock-open:before { 
+		content: '';
+	}
+	.skts-top-icons {
+		float: none;
+	}
+	.skts-top-icons {
+		float: none;
+	}
+	.skts-top-icons  a {
+		display: inline-block;
+	}
+	.skts-left-nav-container { 
+		display: none;	
+	}	
+	.skts-top-nav-container {
+		padding-top: 0.5em;
+	}
+	.skts-top-nav-container a, 
+	a.skts-toggle-menu {
+		font-size: 1.1rem;
+	}
+	.skts-top-nav-container .skts-left-nav  { 
+		padding-left: 2em;
+	}
+	.skts-top-nav-container .skts-left-nav a.skts-selected  { 
+		background:transparent;
+	}
+	.skts-main-nav .skts-left-nav  {
+		display: block;			
+		float: none;
+	}
+	.skts-main-nav, 
+	.skts-global-nav { 		
+		display: none;
+		float: none;
+	}
+	.skts-main-nav li, 
+	.skts-global-nav li {
+		display: block;
+	}
+	.skts-top-nav-container  li a {
+		border: 0;	
+	}
+	.skts-top-nav-container  .skts-float-right {
+		float: none;
+	}
+	/* Alter fonts and padding */
+	#skts-css-table .skts-link-list a {
+		padding: 0.8em 0.1em 0.8em 0.5em;
+	}
+	.skts-grid-pad-front {
+		padding: 2% 0 0 2%;	
+	}
+	.skts-grid-pad-front [class*='col-'] {
+		padding-right: 2%;
+	}
+	#skts-tabs li  a{
+		font-size:1em;
+	}
+	/* Forskud front */
+	.skts-t-col { 
+		display: block; 
+		width: 100%;
+	}
+	.skts-t-col.spacing-col { 
+		display: none;
+	}
+	.skts-t-col .skts-align-right {
+		position: static;
+		width: 100%;
+	}
+	.skts-t-col .clearfix {
+		display: none;
+	}
+	/* No border on the main container */
+	.skts-content-container { 
+		border-width: 0;
+	}
+	/* Ret forskud */
+	.skts-card span {
+		display: block;
+	}
+	.skts-read-only .skts-label-text {
+		width: 50%;
+	}
+	.skts-floated-list .skts-label-text {
+		float: none;
+	}
+	.skts-floated-list .skts-section-wrapper ul {
+		text-align: left;
+	}
+	.skts-label-text {
+		width: 100%;
+	}
+	.skts-content-box {
+		border: none;
+		padding-bottom: 1em;
+	}
+	.skts-content-box h3 {
+		margin-left: 0
+	}
+	.skts-floated-list .skts-field-server-error:before {
+		display: none;
+	}
+	.skts-floated-list .skts-field-server-error:after {
+		display: inline;
+	}
+	.skts-floated-list .skts-info-value,
+	.skts-floated-list .skts-saved-value, 
+	.skts-floated-list .skts-suggested-value  {
+		text-align: left;
+	}
+	.skts-standard-table {
+		display: block;
+		overflow: auto;
+	}
+	.skts-grid-pad-footer {
+		padding-top: 0;	
+	}
+	/* Enlarge bottom text or the select will zoom in on IOS */
+	.skts-grid-pad-footer.skts-small-text {
+		font-size: 1em;	
+	}
+	select{
+		width: 94%;
+	}	
+	.skts-section-wrapper select,
+	.skts-input-long,
+	.skts-input-date,
+	.skts-input-number,	
+	.skts-placeholder-procent input[type='text'],
+	.skts-placeholder-kr input[type='text']{
+		margin-right: 0;
+	}
+	div.skts-cookieinner {
+		width: 90%;
+	}
+	.skts-nemid-pic {
+		display: none;
+	}
+	.skts-bottom-tekst {
+		text-align: left;
+	}
+	
+	.skts-calculator-icon, 
+	.skts-calculator-icon:hover  {
+		position: absolute;
+		top: 2.6em;
+	}
+	.skts-placeholder-kr .skts-calculator-icon, 
+	.skts-placeholder-kr .skts-calculator-icon:hover  {
+		left: 11.5em;
+	}
+	.skts-placeholder-kr-year .skts-calculator-icon, 
+	.skts-placeholder-kr-year .skts-calculator-icon:hover  {
+		left: 13.5em;
+	}
+	.skts-placeholder-kr.skts-field-server-error .skts-calculator-icon, 
+	.skts-placeholder-kr.skts-field-server-error .skts-calculator-icon:hover  {
+		left: 13.5em;
+	}
+	.skts-placeholder-kr-year.skts-field-server-error .skts-calculator-icon, 
+	.skts-placeholder-kr-year.skts-field-server-error .skts-calculator-icon:hover  {
+		left: 15em;
+	}
+	.skts-help {
+		font-size: 1em;
+	}
+	.skts-search-container {
+		float: right;
+	}
+}
+/* 
+	Decrease fonts,
+	Increase padding header and logo,
+	Define grid (with floats and variable widths)
+*/
+@media only screen and (min-width: 760px) {
+	/* Medium screen, non-retina */
+	body {
+		margin: 1.2em 0 0 0;
+	}
+	/* Header styles */
+	header { 
+		height: 5em;
+	}
+	.skts-logo  {	
+		background-size: 10em;		
+		height: 5.6em;
+		top: 0.45em;
+	}
+	.skts-logo a {
+		height: 6em;
+		width: 11em;
+	}
+	a.skts-toggle-menu {
+		top: 4.2em;
+	}
+	.skts-top-nav-container a, 
+	a.skts-toggle-menu {
+		font-size: 1em;
+	}
+	a.skts-login, 
+	a.skts-login:active {	
+		top: -2.2em;
+	}
+	#skts-skip-links {	
+		top: 3em;		
+	}
+	.skts-top-icons {
+		float: right;
+	}
+	.skts-top-icons  a {
+		display: block;
+	}
+	/* Grid styles */
+	[class*='col-'] {
+		clear: none;
+		float: left;
+	}
+	.skts-grid-fixed-height {	
+		min-height: 27em;
+	}
+	.skts-col-1-8 {
+		width: 12.5%;
+	}
+	.skts-col-1-4 {
+		width: 25%;
+	}
+	.skts-col-1-3 {
+		width: 33.33%;
+	}
+	.skts-col-1-2 {
+		width: 50%;		
+	}
+	.skts-col-2-3 {
+		width: 66.66%;
+	}
+	.skts-col-3-4 {
+		width: 100%;
+	}
+	.skts-col-1 {
+		width: 100%;
+	}
+	/* Alter fonts and padding */
+	#skts-css-table .skts-link-list a {
+		padding: 0.8em;
+	}	
+	#skts-tabs li a {
+		font-size: 0.9em;
+	}
+	/* Forskud front */
+	.skts-t-col { 
+		display: table-cell; 
+		width: 48%;
+	}
+	.skts-t-col .clearfix {
+		display: block;
+	}
+	.skts-t-col.skts-spacing-col { 
+		display: table-cell;
+		width: 2%;
+	}
+	/* Ret forskud */
+	.skts-card span {
+		display: inline-block;
+	}
+	.skts-read-only .skts-label-text {
+		width: 70%;
+	}
+	.skts-floated-list .skts-label-text {
+		float: left;
+		width: 60%;
+	}
+	.skts-floated-list .skts-section-wrapper ul {
+		text-align: right;
+	}
+	.skts-content-box {
+		border: solid 0.09em #dcdfeb;
+		padding-bottom: 2em;
+	}
+	.skts-content-box h3 {
+		margin-left: 0.5em;
+	}
+	.skts-error-box.skts-minus-margin-left {		
+		margin-left: -1.2em;
+	}
+	.skts-floated-list  .skts-field-server-error:before {
+		display: inline;
+	}
+	.skts-floated-list  .skts-field-server-error:after {
+		display: none;
+	}
+	.skts-floated-list .skts-info-value,
+	.skts-floated-list .skts-saved-value, 
+	.skts-floated-list .skts-suggested-value  {
+		text-align: right;
+	}
+	.skts-grid-pad-footer {
+		padding-top: 6em;
+	}
+	.skts-grid-pad-footer.skts-small-text {
+		font-size: 0.8em;	
+	}
+	select {
+		width: auto;
+	}
+	.skts-floated-list .skts-placeholder-procent input[type='text'],
+	.skts-placeholder-kr input[type='text'] {
+		margin-right: 2.2em;
+	}
+	.skts-nemid-pic {
+		display: block;
+	}
+	.skts-bottom-tekst {
+		text-align: right;
+	}
+	.skts-calculator-icon, 
+	.skts-calculator-icon:hover,
+	.skts-placeholder-kr .skts-calculator-icon, 
+	.skts-placeholder-kr .skts-calculator-icon:hover,
+	.skts-placeholder-kr-year .skts-calculator-icon, 
+	.skts-placeholder-kr-year .skts-calculator-icon:hover,
+	.skts-placeholder-kr.skts-field-server-error .skts-calculator-icon, 
+	.skts-placeholder-kr.skts-field-server-error .skts-calculator-icon:hover,
+	.skts-placeholder-kr-year.skts-field-server-error .skts-calculator-icon, 
+	.skts-placeholder-kr-year.skts-field-server-error .skts-calculator-icon:hover  {
+		left: auto;
+		position: relative;
+		top: auto;
+	}
+	.skts-search-container {
+		float: left;
+	}
+}
+/* 
+	Decrease fonts,
+	Increase padding header and logo,
+	Show left menu,
+	Show top menu (hide menu link)
+*/
+@media only screen and (min-width: 960px) {
+	/* fixes keyboard-focus error from jquery.keyboard-focus.js */
+	header .keyboard-focus:focus, 
+	.skts-login.keyboard-focus:focus {
+		position: relative;
+	}
+	/* Header styles */
+	.skts-logo  {	
+		background-position: 0.7em 0;		
+		width: 14em;
+	}
+	/* Menu styles */
+	.skts-top-nav-container {	
+		display: block;	
+		padding-top: 0;
+	}
+	.skts-icon-lock-open:before { 
+		content: '\e801'; 
+	} 
+	a.skts-login, 
+	a.skts-login:active {	
+		color: #fff;
+		position: static;
+		right: 0;
+		top: 0;
+	}
+	a.skts-login:focus {
+		background: #294B60;		
+		border-radius: 0;
+		border-width:0;
+		color: #fff;
+		padding: 0.5em 0.7em;
+	}
+	a.skts-toggle-menu {
+		display: none;
+	}
+	.skts-main-nav .skts-left-nav {
+		display: none;
+	}	
+	.skts-main-nav, 
+	.skts-global-nav { 
+		background: transparent;
+		display: inline-block !important;
+	}
+	.skts-main-nav { 
+		float: left;
+	}
+	.skts-global-nav { 
+		float: left;
+	}
+	.skts-top-nav-container  li a {
+		border-right: 0.09em solid #3A5D74;
+	}
+	.skts-main-nav.active, 
+	.skts-global-nav.active {
+		background:transparent;	
+	}
+	.skts-main-nav li, .skts-global-nav li { 
+		display: inline-block;
+	}
+	.skts-left-nav-container { 
+		display: block;
+	}
+	.skts-top-nav-container  .skts-float-right {
+		float: right;
+	}
+	/* Set the 3/4 grid to 75% instead of 100% */
+	.skts-col-3-4 {
+		width: 75%;
+	}
+	/* Ret forskud */ 
+	.skts-label-text,
+	.skts-floated-list .skts-label-text	{
+		width: 70%;
+	}
+	.skts-standard-table {
+		display: table;
+	}
+	.skts-help {
+		font-size: 0.8em;
+	}
+}
+/* 
+	Max padding and auto margin,
+	Set border for larger screens,
+	Set main content container border
+*/
+@media only screen and (min-width: 1200px){
+	body {
+		margin: 1.2em auto 0 auto;
+		width: 1200px;
+	}	
+	.skts-grid-pad-front {
+		padding: 2% 0 0 8%;	
+	}
+	.skts-grid-pad-front [class*='col-'] {
+		padding-right: 8%;
+	}
+	.skts-content-container {
+		border-width: 0 0.09em 0.09em 0.09em;
+	}
+	.skts-t-col {
+		width: 46%;
+	}
+	.skts-t-col.skts-spacing-col { 
+		width: 8%;
+	}
+	div.skts-cookieinner {
+		width: 1000px;
+	}
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.skts-truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+ /*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+    display: none !important;
+	visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden,
+.skts-section-nr span{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus ,
+#skts-skip-links a:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+    visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after,
+.skts-section-wrapper:before,
+.skts-section-wrapper:after,
+.skts-read-only:before ,
+.skts-read-only:after,
+.skts-read-only > li:before,
+.skts-read-only > li:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after,
+.skts-section-wrapper:after,
+.skts-section-wrapper:after,
+.skts-read-only:after,
+.skts-read-only > li:after {
+    clear: both;
+}
+.hide-overrule {
+	display: none !important;
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+    * {
+        background: transparent !important;
+		background-color: transparent !important;
+		border-color: #000 !important;
+		box-shadow: none !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        text-shadow: none !important;
+	}
+	html, body {
+		width: 100% !important;
+	}
+    a,
+    a:visited {
+        text-decoration: none;
+    }
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+ 
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+	.skts-list-header,
+	button,
+	footer,
+	input,
+	nav,	
+	select,
+	#skts-block-5,
+	#skts-tabs,
+	.skts-action-box,
+	.skts-add-header,
+	.skts-user-info,
+	.skts-checkbox-label,	
+	.skts-error-box,
+	.skts-help,
+	.skts-input-selected,
+	.skts-placeholder-kr span,
+	.skts-placeholder-kr-year span,	
+	.skts-placeholder-procent span,
+	.skts-info-box,
+	.skts-left-nav-container,
+	.skts-list-header,
+	.skts-pdf-icon,
+	.skts-print-icon,
+	.skts-radio-label,
+	.skts-required,
+	.skts-saved-desc-text,
+	.skts-search-container,
+	.skts-search-header,
+	.skts-suggested-value ,
+	.skts-status-indicator,
+	.skts-top-nav-container,
+	.skts-warning-box {
+		display: none !important;
+	}
+	.skts-calculation,
+	.skts-print-only,
+	.skts-read-only li,
+	.skts-section-wrapper .skts-list-header,
+	.skts-saved-value,
+	.skts-print-friendly .skts-suggested-value {
+		display: block !important;
+		margin-right: 0;
+		font-size: 1em;
+	}
+	
+	.skts-print-friendly .skts-saved-desc-text,
+	.skts-saved-value-text {
+		display: inline-block !important;
+	}
+	.skts-logo:before  {
+		content:url(../Images/SKAT-logo.svg);
+	}
+	header,
+	.skts-content-container,
+	.skts-module-container,
+	.skts-module-container .skts-module-header {
+		border: 0;
+	}
+	.skts-grid,
+	.skts-grid-fixed-height,
+	.skts-grid-pad-front,
+	.skts-grid.skts-grid-pad-front {
+		padding:10pt 0 0 0 !important;
+		margin: 0;
+	}
+	.skts-content-box h3 {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	#skts-css-table {
+		padding: 10pt 0 0 0;
+	}
+	.skts-t-col {
+		width: 48%;
+	}
+	.skts-t-col.spacing-col {
+		width: 4%;
+		border: 0 !important;
+		border-color: transparent !important;
+	}
+	[class*='col-'],
+	h1,
+	h2,
+	.skts-module-header {
+		float: none;
+		clear:  both;
+		width: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.skts-module-header {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+	.skts-content-box {
+		border: none !important;
+	} 
+	.skts-list-header a {
+		padding-left: 0;
+	}
+	.skts-section-wrapper, 
+	.skts-hide-all li,
+	.skts-section-wrapper .skts-hide-all li {
+		overflow: visible;
+	}
+	.skts-label-text {
+		width: 70% !important;
+	}
+	.skts-row-result {
+		padding: 0;
+	}
+	.skts-truncate {
+		white-space: normal !important;
+		overflow: visible !important;
+		text-overflow: clip !important;
+	}
+	.skts-bottom-tekst {
+		text-align: left;
+	}
+	.skts-indent-text,
+	.skts-saved-value,
+	.skts-suggested-value {
+		margin-right: 0 !important;
+	}
+}

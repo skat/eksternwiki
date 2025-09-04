@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst3Type.xsd"/>
+         <xs:element name="LigningArtKode" type="skat2012:Tekst3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver typen af selskab/fond/forening som bliver lignet. Felt 013  Værdisæt: 1A:  Større virksomhed (omsætning over kr. 500.000) 2B:  Mindre virksomhed (omsætning under kr. 500.000) 3C:  Andre virksomheder (forpagtnings- og udlejningsvirksomhed, der ikke er omfattet af personskattelovens anpartsregler) 4D:  Nystartede virksomheder 5E:  Hovedaktionærer 6F:  Kommanditister 7G:  Særlige skatteydere (Begrænset skattepligtige, fraflyttede m.fl.)  8H:  Brugsforeninger 9I:  Akkumulerende investeringsforening 10J: Gensidig forsikringsforening 11K: Danske foreninger 12L: Filial af udenlandsk A/S 13M: Filial af udenlandsk ApS 14N: Filial af udenlandsk forening 15O: Filial af udenlandske øvrige foreninger 16P: Produktions- og salgsforeninger 17Q: Indkøbsforeninger 18R: Andelsforeninger 19S: Øvr. andelsforeninger 20T: Fonde omfattet af FBL § 1, 1 21V: Foreninger omf. af FBL § 1, 2 22W: Arbejdsg.forening mv, FBL § 1, 3 23X: El-selskaber</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

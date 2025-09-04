@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by SKAT, Hovedcentret (SKAT, Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:felter="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" xmlns:tse2009="urn:oio:skat:tse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:tse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/felter/xml/schemas/2006/09/01/" schemaLocation="../../../../../group/rep_oio_dk_skat_dk_TSE_felter_xml_schemas_2006_09_01.xsd"/>
+	<xs:element name="MomsAngivelseMomsEUYdelserBeloeb" type="felter:FemtenCifreSeksDecimalerBeloebType">
+		<xs:annotation>
+			<xs:documentation>Moms af ydelseskøb i udlandet (byggeydelser og arbejdsudleje).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

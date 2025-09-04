@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:oio:skat:intrastat:ws:1.0.1" name="ListeAngivelseFilOpretService" xmlns:fase2_1="urn:oio:skat:intrastat:ws:1.0.1" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Opret listeangivelser via filoverførsel, og returner en kvittering.</xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:intrastat:ws:1.0.1">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/432670/artefact/ListeAngivelseFilOpretInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="ListeAngivelseFilOpretServiceRequest">
+		<part name="Request" element="fase2_1:ListeAngivelseFilOpret_I"/>
+	</message>
+	<message name="ListeAngivelseFilOpretServiceResponse">
+		<part name="Response" element="fase2_1:ListeAngivelseFilOpret_O"/>
+	</message>
+	<portType name="ListeAngivelseFilOpretServicePortType">
+		<operation name="getListeAngivelseFilOpret">
+			<input message="fase2_1:ListeAngivelseFilOpretServiceRequest"/>
+			<output message="fase2_1:ListeAngivelseFilOpretServiceResponse"/>
+		</operation>
+	</portType>
+	
+	<binding name="ListeAngivelseFilOpretServiceBinding" type="fase2_1:ListeAngivelseFilOpretServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getListeAngivelseFilOpret">
+			<soap:operation soapAction="getListeAngivelseFilOpret"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ListeAngivelseFilOpretServiceBindingQSService">
+		<port name="ListeAngivelseFilOpretServiceBindingQSPort" binding="fase2_1:ListeAngivelseFilOpretServiceBinding">
+			<soap:address location="http://85.81.229.78:8080/ListeAngivelseFilOpret"/>
+		</port>
+	</service>
+
+</definitions>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         
+         <xs:element name="XMLElementAntal" type="skat2012:TalHelType">
+            <xs:annotation>
+               <xs:documentation>Antal forekomster af XML-elementet. Antallet af elementer skal svare til det totale antal der er givet under data indholdet.   </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

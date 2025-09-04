@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/PositivTalHel13Decimaler2Type.xsd"/>
+         <xs:include schemaLocation="../types/Maks100Procent4DecimalerType.xsd"/>
+         <xs:element name="FlådeRederiKunIndlejedeSkibeMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet i indkomståret udelukkende har drevet rederivirksomhed med indlejede skibe? (True = Ja) Felt 399</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FlådeGennemsnitBruttoTonnageTotal"
+                     type="skat2012:PositivTalHel13Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sumtotal for den gennemsnitlige ejede bruttotonnage registret.  Rederi:  Indefor EU Felt 400RfSum  Underfor EU Felt 400RhSum  Operatør:  Indefor EU Felt 411OfSum  Underfor EU Felt 411OhSum</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FlådeGennemsnitBruttoTonnageEjerAndelPct"
+                     type="skat2012:Maks100Procent4DecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Procentandel for den gennemsnitlige ejede bruttotonnage registret Rederi:  Indenfor EU Felt 400RfPct  Underfor EU Felt 400RhPct  Operatør:  Indenfor EU Felt 411OfPct  Underfor EU Felt 411OhPct</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

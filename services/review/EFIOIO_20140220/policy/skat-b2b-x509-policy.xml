@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<wsp:Policy 
+	xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"	
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	wsu:Id="skat-b2b-x509-policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding>
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                  </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+                  <wsp:Policy>
+                  	<sp:RequireThumbprintReference />
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDes/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>            
+            <sp:OnlySignEntireHeadersAndBody/>
+            <sp:SignBeforeEncrypting/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+ 		 <sp:SignedParts>
+          	<sp:Body/>
+        </sp:SignedParts>
+        <sp:EncryptedParts>
+          <sp:Body/>
+        </sp:EncryptedParts>	        
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>

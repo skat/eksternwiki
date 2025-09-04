@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15UdenDecimalerType.xsd"/>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AktieKapitalBeløb" type="skat2012:BeløbPositivNegativ15UdenDecimalerType">
+               
+               <xs:annotation>
+                  <xs:documentation>AktieKapitalBeløb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktieKapitalÆndreKode" type="skat2012:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>01 Nedskrivning 02 Indbetaling/nytegning 03 Fondsaktier 04 Indbetaling + Fondsaktier 05 Sammenlægning med uændret sum 06 Opdeling med uændret sum 08 Konverteret kapital </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktieKapitalGyldigFra" type="skat2012:DatoType">
+               
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r23726</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KoebAfVarerOgAndreOmsaetningsaktiver.xsd"/>
+         <xs:include schemaLocation="../class/ServiceYdelseUdgift.xsd"/>
+         <xs:include schemaLocation="../class/LejeOgLeasingUdgift.xsd"/>
+         <xs:include schemaLocation="../class/ImmaterielAktivUdgift.xsd"/>
+         <xs:include schemaLocation="../class/FinansieringUdgift.xsd"/>
+         <xs:include schemaLocation="../class/SelskabYdetTilskud.xsd"/>
+         <xs:include schemaLocation="../class/SelskabAndenUdgift.xsd"/>
+         <xs:include schemaLocation="../class/KoncerninternForsikringSalg.xsd"/>
+         <xs:element name="KontrolleredeTransaktionerUdgifterStruktur"
+                     type="skat2012:KontrolleredeTransaktionerUdgifterStrukturType"/>
+         <xs:complexType name="KontrolleredeTransaktionerUdgifterStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="skat2012:KøbAfVarerOgAndreOmsætningsaktiverBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KøbAfVarerOgAndreOmsætningsaktiverOver25ProcentMarkering"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KøbAfVarerOgAndreOmsætningsaktiverStatHjemmehørendeKode"
+                           minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KøbAfVarerOgAndreOmsætningsaktiverMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ServiceYdelseUdgiftBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ServiceYdelseUdgiftOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ServiceYdelseUdgiftStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ServiceYdelseUdgiftMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LejeOgLeasingUdgiftBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LejeOgLeasingUdgiftOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LejeOgLeasingUdgiftStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:LejeOgLeasingUdgiftMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivUdgiftBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivUdgiftOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivUdgiftStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:ImmaterielAktivUdgiftMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansieringUdgiftBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansieringUdgiftOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansieringUdgiftStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:FinansieringUdgiftMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabYdetTilskudBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabYdetTilskudOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabYdetTilskudStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabYdetTilskudMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabAndenUdgiftBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabAndenUdgiftOver25ProcentMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabAndenUdgiftStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:SelskabAndenUdgiftMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KoncerninternForsikringSalgStatHjemmehørendeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KoncerninternForsikringSalgBrutto" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:KoncerninternForsikringSalgMarkering" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

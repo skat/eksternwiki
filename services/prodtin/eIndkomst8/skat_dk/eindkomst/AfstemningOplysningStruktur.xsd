@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:blanket="http://rep.oio.dk/skat.dk/eindkomst/class/blanket/xml/schemas/20071202/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanket/xml/schemas/20071202/" schemaLocation="class/blanket/xml/schemas/20071202/BlanketNummerIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:include schemaLocation="AngivelseFeltIndholdStruktur.xsd"/>
+         <xs:element name="AfstemningOplysningStruktur" type="fase2:AfstemningOplysningStrukturType"/>
+         <xs:complexType name="AfstemningOplysningStrukturType">
+            <xs:sequence>
+                  <xs:element ref="blanket:BlanketNummerIdentifikator"/>
+                  <xs:element name="AngivelseFeltSamling">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element maxOccurs="unbounded" minOccurs="1" ref="fase2:AngivelseFeltIndholdStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

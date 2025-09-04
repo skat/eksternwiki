@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/PersonAdresseOplysningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TelefonOplysningStrukturType.xsd"/>
+				     
+         <xs:element name="UdenlandskPersonHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2012:UdenlandskPersonHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12404"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="UdenlandskPersonHent_OType">
+            <xs:sequence>
+               <xs:element ref="skat2012:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+                  
+
+                     <xs:element name="UdenlandskPerson" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="skat2012:PersonNavnNavn"/>
+
+                              <xs:element ref="skat2012:PersonFødselDato" minOccurs="0"/>
+
+
+                              <xs:element name="UdenlandskPersonKontaktOplysning">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="skat2012:PersonAdresseOplysningStruktur"/>
+
+                                       <xs:element ref="skat2012:TelefonOplysningStruktur" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

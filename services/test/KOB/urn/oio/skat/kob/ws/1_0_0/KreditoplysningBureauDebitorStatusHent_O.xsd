@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:kob="urn:oio:skat:kob:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/KreditoplysningDebitorStatusTekst.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/KreditoplysningDebitorStatusKode.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/IndsatsIdentifikator.xsd"/><xs:element name="KreditoplysningBureauDebitorStatusHent_O" type="kobws:KreditoplysningBureauDebitorStatusHent_OType">
+	</xs:element>
+	<xs:complexType name="KreditoplysningBureauDebitorStatusHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="SagStatusListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SagStatus" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="kob:IndsatsIdentifikator"/>
+									<xs:element ref="kob:KreditoplysningDebitorStatusKode"/>
+									<xs:element ref="kob:KreditoplysningDebitorStatusTekst" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

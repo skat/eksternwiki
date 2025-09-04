@@ -1,0 +1,15 @@
+Ændringslog for OIO-service, version 1.3
+=============================================================================
+1) Tilføjet valgfrit felt XbrlDokumentKladdeIndikator til input
+2) Tilføjet valgfri liste af PDF-dokumenter i input i form af en sequence
+   af MeddelelseIndholdData-elementer med tilhørende kode 
+   SelskabAngivelseDokumentFilTypeKode
+
+I forhold til den eksisterende service er der rettet i:
+OIOSkatteoplysningSelskabAngivelseOpret_I.xsd
+
+Og tilføjet:
+XbrlDokumentKladdeIndikator.xsd
+SelskabAngivelseDokumentFilTypeKode.xsd
+   
+Servicen er bagudkompatibel, da der er tale om valgfrie elementer i input.

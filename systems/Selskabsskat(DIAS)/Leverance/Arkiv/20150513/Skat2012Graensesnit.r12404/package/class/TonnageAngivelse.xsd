@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angivelse af tonnage i forbindelse med selvangivelse</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TonnageAngivelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="TonnageAngivelseAktivitetType" type="skat2012:TonnageAngivelseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver type af tonnagebeskattet aktivitet selskabet driver: 1: Rederivirksomhed, jf. tonnageskattelovens § 6 2: Operatørvirksomhed, jf. tonnageskattelovens § 21 a 3: Både rederi- og operatørvirksomhed  Felt 302</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseTonnageskattePligtigIndkomstMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selskabet har haft tonnageskattepligtig indkomst i den periode der selvangives for? (True = Ja) Felt 315</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageAngivelseBeskatningTilvalgt" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om indkomsten fra rederi- og/eller operatørvirksomheden skal beskattes efter reglerne i tonnageskatteloven. (True = tilvalgt, False = fravalgt) Felt 301</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:virksomhednavn="http://rep.oio.dk/skat.dk/motor/class/virksomhednavn/xml/schemas/20080401/" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/VirksomhedNavnFirmaNavn.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhednavn/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhednavn/xml/schemas/20080401/VirksomhedNavnFirmaKortNavn.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd"/><xs:element name="LoenudbetalerStruktur" type="hsws:LoenudbetalerStrukturType"/>
+	<xs:complexType name="LoenudbetalerStrukturType">
+		<xs:sequence>
+			<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+			<xs:element ref="cvr:CVRnumberIdentifier"/>
+			<xs:element ref="virksomhednavn:VirksomhedNavnFirmaKortNavn"/>
+			<xs:element ref="hentselv:VirksomhedNavnFirmaNavn"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

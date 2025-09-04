@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="KursTabBeregningTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Resultat af kurstabsberegningen. Beløbet er det mindste af beløbene i rubrik 42, 47 eller 48. Rubrik 49 Felt 049</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KursTabBeregningIndkomstFørNettotab" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indkomst før nettotab. Rubrik 42 Felt 42</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KursTabBeregningFradragMinusSkattefriIndtægt" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fradrag minus skattefri indtægter. Rubrik 45 Felt 045</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KursTabBeregningYderligereFradrag" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Yderligere fradrag for uddelinger og hensættelser. Rubrik 47 Felt 047</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KursTabBeregningIndkomstNettotab" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nettotab efter kursgevinstloven og aktieavancebeskatningsloven Felt 041</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KursTabBeregningIndkomstNettotabOverført" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nettotab efter kursgevinstloven og aktieavancebeskatningsloven Felt 048</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

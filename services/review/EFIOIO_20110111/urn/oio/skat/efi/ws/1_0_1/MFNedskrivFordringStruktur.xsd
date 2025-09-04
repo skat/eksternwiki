@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringNedskrivningVirkningFraDato.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../1_0_0/FordringInddrivelseFordringIdentifikator.xsd"/><xs:include schemaLocation="MFKundeStruktur.xsd"/>
+	<xs:include schemaLocation="NedskrivningAarsagStruktur.xsd"/>
+	<xs:include schemaLocation="NedskrivningBeloebStruktur.xsd"/>
+	<xs:element name="MFNedskrivFordringStruktur" type="efiws:MFNedskrivFordringStrukturType"/>
+	<xs:complexType name="MFNedskrivFordringStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:FordringInddrivelseFordringIdentifikator"/>
+			<xs:element ref="efiws:MFKundeStruktur" minOccurs="0"/>
+			<xs:element ref="efi:FordringNedskrivningVirkningFraDato" minOccurs="0"/>
+			<xs:element ref="efiws:NedskrivningAarsagStruktur"/>
+			<xs:element ref="efiws:NedskrivningBeloebStruktur"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

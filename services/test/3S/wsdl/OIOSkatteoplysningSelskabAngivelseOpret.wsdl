@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:ssws="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0" name="OIOSkatteoplysningSelskabAngivelseOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At modtage skatteoplysninger i XBRL-format fra Erhvervs- og Selskabsstyrelsen.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0">
+			<xsd:include schemaLocation="../service/OIOSkatteoplysningSelskabAngivelseOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="OIOSkatteoplysningSelskabAngivelseOpretServiceRequest">
+		<wsdl:part name="Request" element="ssws:OIOSkatteoplysningSelskabAngivelseOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="OIOSkatteoplysningSelskabAngivelseOpretServiceResponse">
+		<wsdl:part name="Response" element="ssws:OIOSkatteoplysningSelskabAngivelseOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="OIOSkatteoplysningSelskabAngivelseOpretServicePortType">
+		<wsdl:operation name="getOIOSkatteoplysningSelskabAngivelseOpret">
+			<wsdl:input message="ssws:OIOSkatteoplysningSelskabAngivelseOpretServiceRequest"/>
+			<wsdl:output message="ssws:OIOSkatteoplysningSelskabAngivelseOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

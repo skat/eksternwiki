@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:element name="PrimærTelefonSamlingÆndringStruktur"
+                     type="skat2012:PrimærTelefonSamlingÆndringStrukturType"/>
+         <xs:complexType name="PrimærTelefonSamlingÆndringStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="FørVærdiListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="FørVærdi" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:TelefonNummer"/>
+                  
+                                 <xs:element ref="skat2012:TelefonGyldigFra"/>
+
+                                 <xs:element ref="skat2012:TelefonGyldigTil" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="EfterVærdiListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="EfterVærdi" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2012:TelefonNummer"/>
+                  
+                                 <xs:element ref="skat2012:TelefonGyldigFra"/>
+
+                                 <xs:element ref="skat2012:TelefonGyldigTil" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

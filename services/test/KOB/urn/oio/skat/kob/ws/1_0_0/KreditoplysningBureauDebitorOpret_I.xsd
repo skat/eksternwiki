@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:kobws="urn:oio:skat:kob:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:kob:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xmlns:kob="urn:oio:skat:kob:1.0.0" xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:itst1="http://rep.oio.dk/itst.dk/xml/schemas/2005/06/24/" xmlns:vandindvinding="urn:oio:skat:vandindvinding:1.0.0" xmlns:core1="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/11/24/" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/KreditoplysningAeldsteFundamentEtableringTypeKode.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/KreditoplysningAeldsteFundamentDato.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/IndsatsOmfattetFordringSaldoBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/LegalUnitName.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/11/24/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/11/24/PersonInformationProtectionIndicator.xsd"/><xs:import namespace="urn:oio:skat:vandindvinding:1.0.0" schemaLocation="../../../vandindvinding/1_0_0/AdresseByNavn.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/DistrictName.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/PostCodeIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2005/06/24/" schemaLocation="../../../../../../itst_dk/xml/schemas/2005/06/24/CareOfName.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/SuiteIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/FloorIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/StreetBuildingIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/StreetName.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/BirthDate.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" schemaLocation="../../../../../../itst_dk/xml/schemas/2006/01/17/PersonName.xsd"/><xs:import namespace="urn:oio:skat:kob:1.0.0" schemaLocation="../../1_0_0/IndsatsIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../../dmi/1_0_0/SkatKundeTypeKode.xsd"/><xs:element name="KreditoplysningBureauDebitorOpret_I" type="kobws:KreditoplysningBureauDebitorOpret_IType">
+	</xs:element>
+	<xs:complexType name="KreditoplysningBureauDebitorOpret_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="dmi:SkatKundeTypeKode"/>
+			<xs:element ref="kob:IndsatsIdentifikator"/>
+			<xs:element name="KundeOplysningerValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="PersonOplysninger">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="itst:PersonName"/>
+										<xs:element ref="core:PersonCivilRegistrationIdentifier" minOccurs="0"/>
+										<xs:element ref="dkcc:BirthDate" minOccurs="0"/>
+										<xs:element name="PersonAdresseOplysninger" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="dkcc:StreetName" minOccurs="0"/>
+													<xs:element ref="dkcc1:StreetBuildingIdentifier" minOccurs="0"/>
+													<xs:element ref="dkcc1:FloorIdentifier" minOccurs="0"/>
+													<xs:element ref="dkcc1:SuiteIdentifier" minOccurs="0"/>
+													<xs:element ref="itst1:CareOfName" minOccurs="0"/>
+													<xs:element ref="dkcc:PostCodeIdentifier" minOccurs="0"/>
+													<xs:element ref="dkcc:DistrictName" minOccurs="0"/>
+													<xs:element ref="vandindvinding:AdresseByNavn" minOccurs="0"/>
+													<xs:element ref="core1:PersonInformationProtectionIndicator"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="VirksomhedOplysninger">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="cvr:LegalUnitName"/>
+										<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+										<xs:element name="VirksomhedAdresseOplysninger" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="dkcc:StreetName" minOccurs="0"/>
+													<xs:element ref="dkcc1:StreetBuildingIdentifier" minOccurs="0"/>
+													<xs:element ref="dkcc1:FloorIdentifier" minOccurs="0"/>
+													<xs:element ref="dkcc1:SuiteIdentifier" minOccurs="0"/>
+													<xs:element ref="itst1:CareOfName" minOccurs="0"/>
+													<xs:element ref="dkcc:PostCodeIdentifier" minOccurs="0"/>
+													<xs:element ref="dkcc:DistrictName" minOccurs="0"/>
+													<xs:element ref="vandindvinding:AdresseByNavn" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SaldoOplysninger">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="kob:IndsatsOmfattetFordringSaldoBeloeb"/>
+						<xs:element ref="kob:KreditoplysningAeldsteFundamentDato"/>
+						<xs:element ref="kob:KreditoplysningAeldsteFundamentEtableringTypeKode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

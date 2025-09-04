@@ -1,0 +1,235 @@
+/*****************************************************************************************************************/
+/*
+*
+* Styles på HTML elementer
+*
+*/
+body
+{
+	background:#ffffff;
+	color:#000000;
+	font-family:Arial, "Arial Rounded MT Bold", sans-serif;
+	font-size:10pt;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+
+a
+{
+	color:#000000;
+	text-decoration:none;
+}
+
+input[type=submit],
+input[type=reset],
+input[type=button]
+{
+	display:none;
+}
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Generelle klasser
+*
+*/
+
+.skts-ramme-overskrift {
+	font-size:12pt;
+	font-weight:bold;
+	font-style:normal;
+}
+
+.skts-ramme-overskrift-container, .skts-ramme-overskrift-container-foer-login
+{
+	background:none;
+	border-bottom:1px solid #000000;
+	filter:none; /* Proprietær i IE - giver fejl ved validering af stylesheet */
+}
+
+#skts-midter-container-med-brugeroplysninger .skts-ramme-overskrift-container
+{
+	border-bottom:none;
+	padding-left:0px;
+}
+
+.skts-miljoe
+{
+	display:none;
+}
+.skts-tastselv-menu-ramme-element .skts-tastselv-menu-ramme-element-submenu
+{
+    border:none;
+}
+div.skts-foldet-ind
+{
+    border:none;
+    display:block;
+}
+
+.skts-broedtekst
+{
+	font-size:10pt;
+}
+
+.skts-lille-tekst
+{
+	font-size:8pt;
+}
+
+.skts-lille-tekst a
+{
+	text-decoration:none;
+}
+
+.skts-tastselv-menu-ramme-element
+{
+	border-top:1px solid #000000;
+}
+
+.skts-tastselv-menu-ramme-element a
+{
+	font-size:10pt;
+}
+
+
+.skts-tastselv-menu-ramme-element-sidste-element-hoejre
+{
+	border-top:1px solid #000000;
+	font-size:8pt;
+}
+
+.skts-tastselv-menu-ramme-element-sidste-element-venstre
+{
+	font-size:8pt;
+}
+
+#skts-tastselv-menu-ramme-hoejde-justering
+{
+	border-top:1px solid #000000;
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Logiske inddelinger mv.
+*
+*/
+
+#skts-body
+{
+	max-width:100%;
+	min-width:100%;
+	width:100%;
+}
+
+#skts-logo-ned
+{
+	background:none;
+	filter:none;
+	zoom:none;
+}
+
+#skts-hoved-container
+{
+	border-style:none;
+}
+
+#skts-globalmenu-container
+{
+	display:none;
+}
+
+#skts-brugeroplysninger
+{
+	font-size:8pt;
+	padding-right:0;
+}
+
+@media print
+{
+    div.skts-brugeroplysninger-skaerm
+    {
+        display:none;    
+    }
+}
+
+
+#skts-tastselv-menu-indhold-container
+{
+	margin:3% 0 3% 0%;
+}
+
+#skts-tastselv-menu-overskrift
+{
+	font-size:12pt;
+}
+
+#skts-tastselv-menu-aarsopgoerelse-ramme, #skts-tastselv-menu-forskudsopgoerelse-ramme
+{
+	border:1px solid #000000;
+}
+
+#skts-midter-container-med-brugeroplysninger
+{
+	margin:0;
+}
+
+#skts-venstre-menu-container
+{
+	display:none;
+}
+
+#skts-indhold-container-hoejre
+{
+	background-color:#ffffff;
+	border:none;
+	float:none;
+	width:100%;
+}
+
+#skts-faneblade
+{
+	background:none;
+	filter:none; /* Proprietær i IE - giver fejl ved validering af stylesheet */
+	float:none;
+	width:100%;
+}
+
+#skts-faneblade li
+{
+	border-right:none;
+	text-align:left;
+	width:auto;
+}
+
+#skts-faneblade li a
+{
+	display:block;
+	display:none;
+}
+
+#skts-faneblade li a.skts-faneblad-markeret
+{
+	background-color:#ffffff;
+	display:inline;
+	text-decoration:none;
+}
+
+#skts-indhold
+{
+	background-color:#ffffff;
+	border:none;
+	font-size:10pt;
+	padding:0;
+}
+#skts-indhold-container-hele-bredden
+{
+    border:none;
+}
+#skts-footer
+{
+	display:none;
+}

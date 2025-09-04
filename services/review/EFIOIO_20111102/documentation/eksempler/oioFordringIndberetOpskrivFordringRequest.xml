@@ -1,0 +1,39 @@
+<urn:MFFordringIndberet_I xmlns:urn="urn:oio:skat:efi:ws:1.0.1" xmlns:ns="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" 
+      xmlns:ns5="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"  xmlns:urn2="urn:oio:skat:ntse:1.0.0" 
+      xmlns:ns1="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:urn1="urn:oio:skat:efi:1.0.0">
+         <ns:HovedOplysninger>
+            <ns:TransaktionIdentifikator>20110715-0900000</ns:TransaktionIdentifikator>
+            <ns:TransaktionTid>2011-08-10T00:00:00.000+02:00</ns:TransaktionTid>
+         </ns:HovedOplysninger>
+         <urn:FordringhaverSystemIDStruktur>
+            <ns1:VirksomhedSENummerIdentifikator>87654542</ns1:VirksomhedSENummerIdentifikator>
+         </urn:FordringhaverSystemIDStruktur>
+         <urn1:ModtagFordringLeveranceIdentifikator>9</urn1:ModtagFordringLeveranceIdentifikator>
+         <urn:FordringAktionSamling>
+            <urn:FordringAktion>
+               <urn1:ModtagFordringAktionKode>OPSKRIV</urn1:ModtagFordringAktionKode>
+               <urn1:FordringHaverIdentifikator>201</urn1:FordringHaverIdentifikator>
+               <urn:AktionValg>
+                  <urn:MFOpskrivFordringStruktur>
+                     <urn1:FordringInddrivelseFordringIdentifikator>1</urn1:FordringInddrivelseFordringIdentifikator>
+                     <urn:EFIKundeIdentStruktur>
+                        <urn:IdentValg>
+                           <ns5:PersonCivilRegistrationIdentifier>0103800607</ns5:PersonCivilRegistrationIdentifier>
+                        </urn:IdentValg>
+                     </urn:EFIKundeIdentStruktur>
+                     <urn1:FordringOpskrivningVirkningFraDato>2011-08-10+02:00</urn1:FordringOpskrivningVirkningFraDato>
+                     <urn:OpskrivningAarsagStruktur>
+                        <urn1:FordringOpskrivningAarsagKode>FEJL</urn1:FordringOpskrivningAarsagKode>
+                        <urn1:FordringOpskrivningAarsagBegrundelseTekst>Indtastningsfejl</urn1:FordringOpskrivningAarsagBegrundelseTekst>
+                        <urn1:FordringOpskrivningAarsagTekst>Indtastning</urn1:FordringOpskrivningAarsagTekst>
+                     </urn:OpskrivningAarsagStruktur>
+                     <urn:OpskrivningBeloebStruktur>
+                        <urn2:ValutaKode>DKK</urn2:ValutaKode>
+                        <urn1:FordringOpskrivningBeloeb>1002</urn1:FordringOpskrivningBeloeb>
+                        <urn1:FordringOpskrivningDKKBeloeb>1002</urn1:FordringOpskrivningDKKBeloeb>
+                     </urn:OpskrivningBeloebStruktur>
+                  </urn:MFOpskrivFordringStruktur>
+               </urn:AktionValg>
+            </urn:FordringAktion>
+         </urn:FordringAktionSamling>
+      </urn:MFFordringIndberet_I>

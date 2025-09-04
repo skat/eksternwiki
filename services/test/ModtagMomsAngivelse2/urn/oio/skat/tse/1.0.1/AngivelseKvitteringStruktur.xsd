@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:betaling="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" xmlns:nemkonto="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/" xmlns:tse2009="urn:oio:skat:tse:1.0.1" elementFormDefault="qualified" targetNamespace="urn:oio:skat:tse:1.0.1" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/oes.dk/nemkonto/xml/schemas/2007/10/01/" schemaLocation="../../../../../group/rep_oio_dk_oes_dk_nemkonto_xml_schemas_2007_10_01.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/betaling/xml/schemas/2006/09/01/" schemaLocation="../../../../../group/rep_oio_dk_skat_dk_TSE_betaling_xml_schemas_2006_09_01.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="../../../../../group/rep_oio_dk_skat_dk_TSE_angivelse_xml_schemas_2006_09_01.xsd"/>
+	<xs:element name="AngivelseKvitteringStruktur" type="tse2009:AngivelseKvitteringStrukturType">
+		<xs:annotation>
+			<xs:documentation>Samling af kvitteringsoplysninger for en angiver (momspligtig virksomhed) ved godkendt angivelse i forbindelse med momsafregning til SKAT.
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="AngivelseKvitteringStrukturType">
+		<xs:sequence>
+			<xs:element ref="nemkonto:SEnumberIdentifier"/>
+			<xs:element ref="angivelse:AngivelsePeriodeStruktur"/>
+			<xs:element ref="angivelse:AngivelseDatoTid"/>
+			<xs:element minOccurs="0" ref="angivelse:ValutaKode"/>
+			<xs:element minOccurs="0" ref="betaling:BetalingsFormidlerKode"/>
+			<xs:element minOccurs="0" ref="betaling:BetalingsDato"/>
+			<xs:element minOccurs="0" ref="betaling:BetalingsBeloeb"/>
+			<xs:element minOccurs="0" ref="angivelse:OCRlinieStruktur"/>
+			<xs:element ref="angivelse:AngivelseKvitteringIdentifikator"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

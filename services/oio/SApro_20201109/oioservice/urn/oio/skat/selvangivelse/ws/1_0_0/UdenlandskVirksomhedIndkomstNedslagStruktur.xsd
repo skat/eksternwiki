@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskIndkomstVirksomhedsbeskatningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskVirksomhedCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskKapitalIndkomstVirksomhedCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskKapitalIndkomstVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskIndkomstVirksomhedsbeskatningCreditBeloeb.xsd"/><xs:element name="UdenlandskVirksomhedIndkomstNedslagStruktur" type="selvangivelsews:UdenlandskVirksomhedIndkomstNedslagStrukturType"/>
+	<xs:complexType name="UdenlandskVirksomhedIndkomstNedslagStrukturType">
+		<xs:sequence>
+			<xs:element name="VirksomhedIndkomst">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="VirksomhedCredit" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BeskatningRegler" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:NedslagUdenlandskVirksomhedCreditBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:NedslagUdenlandskIndkomstVirksomhedsbeskatningCreditBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="selvangivelse:NedslagUdenlandskKapitalIndkomstVirksomhedCreditBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="VirksomhedExemption" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BeskatningRegler" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:NedslagUdenlandskVirksomhedBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:NedslagUdenlandskIndkomstVirksomhedsbeskatningBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="selvangivelse:NedslagUdenlandskKapitalIndkomstVirksomhedBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

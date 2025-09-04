@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:schema="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../class/AarligSkatteOplysningFagligtKontingentBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../class/AarligSkatteOplysningOevrigeLoenmodtagerudgifterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../class/AarligSkatteOplysningFradragIPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625604/artefact/AarligSkatteOplysningOverskydendeSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625802/artefact/AarligSkatteOplysningRestskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625248/artefact/AarligSkatteOplysningEndeligtResultatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625849/artefact/AarligSkatteOplysningSaerligPensionsbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625084/artefact/AarligSkatteOplysningArbejdsmarkedsbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625285/artefact/AarligSkatteOplysningForskerindkomstUdenArbejdsmarkedbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625270/artefact/AarligSkatteOplysningForskerindkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625920/artefact/AarligSkatteOplysningUdenlandskAktieindkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625458/artefact/AarligSkatteOplysningIndenlandskAktieindkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625857/artefact/AarligSkatteOplysningSamletAktieindkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625293/artefact/AarligSkatteOplysningForskerskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625540/artefact/AarligSkatteOplysningKommunalIndkomstskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625896/artefact/AarligSkatteOplysningSundhedsbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625875/artefact/AarligSkatteOplysningSkattetillaegBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625214/artefact/AarligSkatteOplysningEjendomsvaerdiskatAfdoedAegtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625222/artefact/AarligSkatteOplysningEjendomsvaerdiskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625548/artefact/AarligSkatteOplysningKommuneKirkeskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625904/artefact/AarligSkatteOplysningTopskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625572/artefact/AarligSkatteOplysningMellemskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625180/artefact/AarligSkatteOplysningBundskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625148/artefact/AarligSkatteOplysningBeregnetSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625912/artefact/AarligSkatteOplysningUdenlandskAktiebevisKursvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625944/artefact/AarligSkatteOplysningUdenlandskGaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625936/artefact/AarligSkatteOplysningUdenlandskFormuevaerdiFastEjendomBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625952/artefact/AarligSkatteOplysningUdenlandskIndestaaendePengeinstitutBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625305/artefact/AarligSkatteOplysningIndenlandskAktiebevisKursvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625482/artefact/AarligSkatteOplysningIndenlandskGaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625466/artefact/AarligSkatteOplysningIndenlandskEjendomsvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625490/artefact/AarligSkatteOplysningIndenlandskIndestaaendePengeinstitutBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625474/artefact/AarligSkatteOplysningIndenlandskFormueBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625928/artefact/AarligSkatteOplysningUdenlandskFormueBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625065/artefact/AarligSkatteOplysningArbejdsloeshedsforsikringBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625134/artefact/AarligSkatteOplysningBefordringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625556/artefact/AarligSkatteOplysningLigningsmaessigtFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625728/artefact/AarligSkatteOplysningPengeinstitutRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625760/artefact/AarligSkatteOplysningRealkreditinstitutRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625593/artefact/AarligSkatteOplysningNettolejeindtaegtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625768/artefact/AarligSkatteOplysningRenteindtaegtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625498/artefact/AarligSkatteOplysningKapitalindkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625977/artefact/AarligSkatteOplysningUdenlandskPersonligIndkomstHalvLempelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625969/artefact/AarligSkatteOplysningUdenlandskPersonligIndkomstGammelLempelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625961/artefact/AarligSkatteOplysningUdenlandskPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625985/artefact/AarligSkatteOplysningVirksomhedResultatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625519/artefact/AarligSkatteOplysningKapitalpensionBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625744/artefact/AarligSkatteOplysningPensionLoebendeUdbetalingBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625736/artefact/AarligSkatteOplysningPensionDagpengeStipendieBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625564/artefact/AarligSkatteOplysningLoenIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625752/artefact/AarligSkatteOplysningPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625866/artefact/AarligSkatteOplysningSkattepligtigIndkomstBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" schemaLocation="http://digitaliser.dk/resource/7439/artefact/AarIdentifikator_20080901.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:element name="AarligSkatteOplysningStruktur" type="hsws:AarligSkatteOplysningStrukturType"/>
+	<xs:complexType name="AarligSkatteOplysningStrukturType">
+		<xs:sequence>
+			<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+			<xs:element ref="schema:AarIdentifikator"/>
+			<xs:element name="Skat">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningSkattepligtigIndkomstBeloeb" minOccurs="0"/>
+						<xs:element name="IndkomstGruppe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningPersonligIndkomstBeloeb" minOccurs="0"/>
+									<xs:element name="IndkomstDetaljer">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="hentselv:AarligSkatteOplysningLoenIndkomstBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningPensionDagpengeStipendieBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningPensionLoebendeUdbetalingBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningKapitalpensionBidragBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningVirksomhedResultatBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskPersonligIndkomstBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskPersonligIndkomstGammelLempelseBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskPersonligIndkomstHalvLempelseBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningFradragIPersonligIndkomstBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="KapitalIndkomstGruppe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningKapitalindkomstBeloeb" minOccurs="0"/>
+									<xs:element name="KapitalIndkomstDetaljer">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="hentselv:AarligSkatteOplysningRenteindtaegtBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningNettolejeindtaegtBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningRealkreditinstitutRenteudgiftBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningPengeinstitutRenteudgiftBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="LigningsmaessigtFradragGruppe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningLigningsmaessigtFradragBeloeb" minOccurs="0"/>
+									<xs:element name="LigningsmaessigtFradragDetaljer">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="hentselv:AarligSkatteOplysningBefordringBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningArbejdsloeshedsforsikringBidragBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningOevrigeLoenmodtagerudgifterBeloeb" minOccurs="0"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningFagligtKontingentBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Formue">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FormueGruppe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskFormueBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningIndenlandskFormueBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="IndenlandskFormueDetaljer">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningIndenlandskIndestaaendePengeinstitutBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningIndenlandskEjendomsvaerdiBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningIndenlandskGaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningIndenlandskAktiebevisKursvaerdiBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="UdenlandskFormueDetaljer">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskIndestaaendePengeinstitutBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskFormuevaerdiFastEjendomBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskGaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskAktiebevisKursvaerdiBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BeregnetSkat">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningBeregnetSkatBeloeb" minOccurs="0"/>
+						<xs:element name="BeregnetSkatDetaljer">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningBundskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningMellemskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningTopskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningKommuneKirkeskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningEjendomsvaerdiskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningEjendomsvaerdiskatAfdoedAegtefaelleBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningSkattetillaegBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningSundhedsbidragBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningKommunalIndkomstskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningForskerskatBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AktieIndkomst">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningSamletAktieindkomstBeloeb" minOccurs="0"/>
+						<xs:element name="AktieIndkomstDetaljer">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningIndenlandskAktieindkomstBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningUdenlandskAktieindkomstBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ForskerIndkomst">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningForskerindkomstBeloeb" minOccurs="0"/>
+						<xs:element ref="hentselv:AarligSkatteOplysningForskerindkomstUdenArbejdsmarkedbidragBeloeb" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ArbejdsmarkedsBidrag">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningArbejdsmarkedsbidragBeloeb" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SaerligPensionsBidrag">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningSaerligPensionsbidragBeloeb" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EndeligtResultat">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:AarligSkatteOplysningEndeligtResultatBeloeb" minOccurs="0"/>
+						<xs:element name="EndeligtResultatDetaljer">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hentselv:AarligSkatteOplysningRestskatBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:AarligSkatteOplysningOverskydendeSkatBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

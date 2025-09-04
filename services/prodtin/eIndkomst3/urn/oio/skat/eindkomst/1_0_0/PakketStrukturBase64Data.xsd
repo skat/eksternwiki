@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:pakketstrukturbase64data="urn:oio:skat:eindkomst:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:eindkomst:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="PakketStrukturBase64Data" type="xs:base64Binary">
+		<xs:annotation>
+			<xs:documentation>Feltet har til formål at kunne indeholde en pakket og base64 encoded XML Struktur, fra servicen. Den specifikke struktur der pakkes og det valgte komprimeringsformat skal defineres i service beskrivelsen. Modtager kan så udpakke strukturen og placere den i en alternativ placering. Det giver mulighed for at en service kan understøtte pakket indhold, og kunne valideres i både pakket og udpakket. Hvordan feltet bruges i en service kan også ses i AG25 (databooster).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

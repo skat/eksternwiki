@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeingType.xsd"/>
+         
+         <xs:element name="PrimærAdresseÆndringMarkering" type="skat2012:MarkeingType">
+            <xs:annotation>
+               <xs:documentation>Markering af hvorvidt man ønsker at fremsøge virksomheder, der har ændret den primære adresse (også kaldt virksomhedsadressen).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

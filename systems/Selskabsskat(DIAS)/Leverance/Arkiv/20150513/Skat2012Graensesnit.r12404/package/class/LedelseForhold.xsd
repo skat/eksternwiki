@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Virksomheds ledelsesforhold 01 Direktion 02 Bestyrelse 03 Revisor 04 Direktør 05 Formand 06 Filialbestyrer 07 Administrator 08 Kontaktperson 09 Bobestyrer 10 Daglig leder 11 Stifter </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/EjerNummerType.xsd"/>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/LedelseForholdTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="LedelseForholdEjerNummer" type="skat2012:EjerNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ejernummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LedelseForholdEjerType" type="skat2012:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ejertype</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LedelseForholdTypeKode" type="skat2012:LedelseForholdTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation> </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LedelseForholdGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra ledelsesforholdet trådte i kraft.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LedelseForholdGyldigTil" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvortil ledelsesforholdet trådte i kraft.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

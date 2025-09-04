@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Køb af finansielle anlægsaktiver i øvrigt.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/HjemmehoerendeRegionType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="FinansielAnlægsaktivKøbOver25ProcentMarkering"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om de kontrollerede transaktioner af denne art overstiger 25 % af virksomhedens totale transaktioner af denne art. Felt 531c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansielAnlægsaktivKøbStatHjemmehørendeKode"
+                     type="skat2012:HjemmehørendeRegionType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilke(n) stat(er) de enheder, der har været kontrollerede transaktioner med, er hjemmehørende - for den pågældende art transaktion.  Vælg en af følgende værdier (A-D):  A = i Danmark. B = i EU/EØS C = i stater uden for EU/EØS, som Danmark har en TP-relevant DBO med D = i stater uden for EU/EØS, som Danmark ikke har en TP-relevant DBO med  Felt 531d</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansielAnlægsaktivKøbBrutto" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af kontrollerede transaktioner for køb af finansielle anlægsaktiver i øvrigt.  Vælg en af følgende værdier (1-8) for at angive beløbets størrelse:  1 = 0 kr. - 1 mio kr. 2 = stoerre end1 mio kr. - 5 mio. kr. 3 = stoerre end5 mio kr. - 25 mio. kr. 4 = stoerre end25 mio kr. - 100 mio. kr. 5= stoerre end100 mio kr. - 250 mio. kr. 6 = stoerre end250 mio kr. - 500 mio. kr. 7 = stoerre end500 mio kr. - 1 mia. kr. 8 = stoerre end1 mia kr.  Felt 531b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansielAnlægsaktivKøbMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet angiver om der været kontrollerede transaktioner af køb af finansielle anlægsaktiver i øvrig Felt 531a </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

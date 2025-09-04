@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dækker en opgørelse over uddelinger, typisk fra en fond.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="UddelingOpgørelseAlmenVelgørendeTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det sammlede beløb for et givent indkomstår for uddelinger til almenvelgørende / almennyttige formål, hvis de ikke er baseret på tidligere års hensættelser / henlæggelser. Rubrik 20.  Felt 201</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UddelingOpgørelseSkattepligtigTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det sammlede beløb for et givent indkomstår for uddelinger til ikke-almenvelgørende / ikke-almennyttige formål, når modtageren er skattepligtig heraf. Rubrik 21. Felt 203</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UddelingOpgørelseBeløb" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Heraf uddelinger mv. efter fondsbeskatningslovens § 4 indeholdt i felt 007 Felt 046</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UddelingOpgørelseTotal" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sum af årets uddelinger Felt 207</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

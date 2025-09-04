@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:kob:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indsatsomfattetfordringsaldobeloeb="urn:oio:skat:kob:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="IndsatsOmfattetFordringSaldoBeloeb" type="xs:integer">
+		<xs:annotation>
+			<xs:documentation>Samlet saldo for de fordringer som indgår i igangsat indsats:  Eksempel: En eller flere fordringer er udvalgt til at indgå i indsatsen KreditoplysningBureau. Løsningen beregner summen at de fordringer, som indgår i indsatsen, og gemmer dem under denne attribut</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

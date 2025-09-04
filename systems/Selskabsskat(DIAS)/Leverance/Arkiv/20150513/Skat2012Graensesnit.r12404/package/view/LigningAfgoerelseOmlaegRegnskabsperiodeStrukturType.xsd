@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12404</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/VirksomhedRegnskabPeriodeIndkomstAAr.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedRegnskabPeriode.xsd"/>
+         <xs:include schemaLocation="../class/RegnskabPeriodeOmlaegning.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DokumentNummerListeStrukturType.xsd"/>
+				     
+         <xs:element name="LigningAfgørelseOmlægRegnskabsperiodeStruktur"
+                     type="skat2012:LigningAfgørelseOmlægRegnskabsperiodeStrukturType"/>
+         <xs:complexType name="LigningAfgørelseOmlægRegnskabsperiodeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2012:VirksomhedRegnskabPeriodeIndkomstÅr"/>
+                  
+                  <xs:element ref="skat2012:VirksomhedRegnskabPeriodeStartDato"/>
+                  
+                  <xs:element ref="skat2012:VirksomhedRegnskabPeriodeSlutDato"/>
+                  
+                  <xs:element ref="skat2012:RegnskabPeriodeOmlægningOvergangIndkomstÅr"/>
+                  
+                  <xs:element ref="skat2012:RegnskabPeriodeOmlægningOvergangStartDato"/>
+                  
+                  <xs:element ref="skat2012:RegnskabPeriodeOmlægningOvergangSlutDato"/>
+
+               <xs:element ref="skat2012:DokumentNummerListeStruktur" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

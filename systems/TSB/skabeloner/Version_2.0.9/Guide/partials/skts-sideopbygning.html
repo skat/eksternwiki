@@ -1,0 +1,133 @@
+<div id="skts-venstre-menu-container">
+  <div id="skts-venstre-menu-ramme">
+    <div class="skts-ramme-overskrift skts-ramme-overskrift-container">Side opbygning</div>
+    <ul class="skts-venstre-menu-elementer">
+      <li><a href="" data-ng-click="scrollTo('reset')">Reset</a></li>
+      <li><a href="" data-ng-click="scrollTo('layout')">Layout</a></li>
+      <li><a href="" data-ng-click="scrollTo('logo')">Logo</a></li>
+      <li><a href="" data-ng-click="scrollTo('hovedcontainers')">Hovedcontainer</a></li>
+      <li><a href="" data-ng-click="scrollTo('sekundaere')">Sekund&aelig;re vinduer</a></li>
+      <li><a href="" data-ng-click="scrollTo('footer')">Footer</a></li>
+    </ul>
+  </div>
+</div>
+<div id="skts-indhold-guide">
+
+  <h2 id="reset">Reset</h2>
+  <p class="skts-broedtekst">For at g&oslash;re renderingen af elementer p&aring; siden mere konsistent bruges et s&aring;kaldt reset stylesheet. Der er valgt et reset stylesheet som kaldes Normalize. Dette stylesheet g&oslash;r at alle elementer p&aring; siden nulstilles til en standard v&aelig;rdi uafh&aelig;ngigt af hvilken browser der bruges. Derudover kan man i mange tilf&aelig;lde undg&aring; at lave specielle styles til specifikke browsere.</p>
+
+  <hr class="skts-hr" />
+
+  <h2 id="layout">Layout</h2>
+
+  <div data-pretty>
+    <div id="skts-body" class="skts-guide-frame skts-guide-fitme">
+      <div id="skts-logo" class="skts-guide-frame">
+        <div id="skts-logo-op">
+          <img src="../sktscommon/Images/toplogo.jpg" alt="">
+        </div>
+        <div id="skts-logo-ned">
+          <a href="#" title="Til forside"><img src="../sktscommon/Images/logo.gif" alt="Til forside"></a>
+        </div>
+      </div>
+      <div id="skts-hoved-container" class="skts-guide-frame">
+        <div id="skts-globalmenu-container" class="skts-guide-frame">
+          <ul id="skts-globalmenu-venstre">
+            <li>
+              &nbsp;
+            </li>
+          </ul>
+          <div class="skts-slut-float"></div>
+        </div>
+        <div id="skts-midter-container-med-brugeroplysninger" class="skts-guide-frame">
+        </div>
+        <div id="skts-footer" class="skts-guide-frame">
+          <address>
+            &nbsp;
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="skts-hr" />
+
+  <div data-pretty>
+    <div id="skts-body" class="skts-guide-fitme">
+      <div id="skts-logo">
+        <div id="skts-logo-op">
+          <img src="../sktscommon/Images/toplogo.jpg" alt="">
+        </div>
+        <div id="skts-logo-ned">
+          <a href="#" title="Til forside"><img src="../sktscommon/Images/logo.gif" alt="Til forside"></a>
+        </div>
+      </div>
+      <div id="skts-hoved-container">
+        <div id="skts-globalmenu-container">
+          <ul id="skts-globalmenu-venstre">
+            <li>
+            </li>
+          </ul>
+          <div class="skts-slut-float"></div>
+        </div>
+        <div id="skts-midter-container-med-brugeroplysninger">
+          <div id="skts-venstre-menu-container" class="skts-guide-frame">
+            <div id="skts-venstre-menu-ramme" class="skts-guide-frame">
+            </div>
+          </div>
+          <div id="skts-indhold-container-hoejre" class="skts-guide-frame"></div>
+        </div>
+        <div id="skts-footer" class="skts-guide-frame">
+          <address>
+            &nbsp;
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="sekundaere">Sekund&aelig;re vinduer</h3>
+
+  <div data-pretty>
+    <div id="skts-body-sekundaer-vindue">
+      <div id="skts-logo-op">
+        <img src="..\assets\img\toplogo.jpg" alt="" />
+      </div>
+      <div id="skts-logo-ned">
+        <img src="..\assets\img\logo.gif" alt="SKATs logo" />
+        <ul id="skts-skip-links">
+          <li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">G&aring; til indhold</a></li>
+        </ul>
+      </div>
+      <div id="skts-globalmenu-container">
+        <ul id="skts-globalmenu-venstre">
+          <li><a href="#" class="skts-globalmenu-venstre-link skts-globalmenu-flugter skts-globalmenu-venstre-link-yderst">Luk vindue</a></li>
+        </ul>
+        <div class="skts-slut-float"></div>
+      </div>
+      <div id="skts-midter-container-uden-brugeroplysninger">
+        <div id="skts-indhold-container-hele-bredden">
+          <h1 class="skts-ramme-overskrift skts-ramme-overskrift-container">
+            Overskrift</h1>
+          <div style="width: 1px;">
+            <!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til n&aelig;rmest for&aelig;ldre som har et layout -->
+            <a id="skts-skip-link-target-indhold" class="skts-link-target-skjul">Indhold</a>
+          </div>
+          <div id="skts-indhold-skabelon7" class="skts-indhold-smal">
+            <p class="skts-broedtekst">
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- skabelon
+    <h2>Overskrift</h2>
+    <p>Forklaring</p>
+    <div class="bs-docs-example" data-pretty>
+      Html code
+    </div>
+  -->
+
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="KundeStruktur.xsd"/>
+	<xs:element name="OpretAendrKvitteringStruktur" type="efiws:OpretAendrKvitteringStrukturType"/>
+	<xs:complexType name="OpretAendrKvitteringStrukturType">
+		<xs:sequence>
+			<xs:element name="KundeSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="efiws:KundeStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

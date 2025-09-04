@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:spilws="urn:oio:skat:spil:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:spil:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:xkom1="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="../../../../../../xkom_dk/xml/schemas/2007/04/15/EndDate.xsd"/><xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="../../../../../../xkom_dk/xml/schemas/2006/09/01/StartDate.xsd"/><xs:element name="AngivelseValgtPeriode" type="spilws:AngivelseValgtPeriodeType"/>
+	<xs:complexType name="AngivelseValgtPeriodeType">
+		<xs:sequence>
+			<xs:element ref="xkom:StartDate" minOccurs="0"/>
+			<xs:element ref="xkom1:EndDate"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

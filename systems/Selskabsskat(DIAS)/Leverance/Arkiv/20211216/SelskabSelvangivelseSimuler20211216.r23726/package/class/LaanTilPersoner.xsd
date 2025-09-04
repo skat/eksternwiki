@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Lån til juridiske eller fysiske personer (maks. i indkomståret).  (Det samlede maksimale lån opgjort som summen af de maksimale lån pr. enhed, den dag i indkomståret, hvor lånebeløbet i forhold til den enkelte enhed har været størst.)</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/HjemmehoerendeRegionType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="LånTilPersonerOver25ProcentMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om de kontrollerede transaktioner af denne art overstiger 25 % af virksomhedens totale transaktioner af denne art. Felt 533c</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LånTilPersonerStatHjemmehørendeKode"
+                     type="skat2012:HjemmehørendeRegionType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilke(n) stat(er) de enheder, der har været kontrollerede transaktioner med, er hjemmehørende - for den pågældende art transaktion.  Vælg en af følgende værdier (A-D):  A = i Danmark. B = i EU/EØS C = i stater uden for EU/EØS, som Danmark har en TP-relevant DBO med D = i stater uden for EU/EØS, som Danmark ikke har en TP-relevant DBO med  Felt 533d</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LånTilPersonerBrutto" type="skat2012:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af kontrollerede transaktioner for lån til juridiske eller fysiske personer (max. i indkomståret).  Vælg en af følgende værdier (1-8) for at angive beløbets størrelse:  1 = 0 kr. - 1 mio kr. 2 = stoerre end1 mio kr. - 5 mio. kr. 3 = stoerre end5 mio kr. - 25 mio. kr. 4 = stoerre end25 mio kr. - 100 mio. kr. 5= stoerre end100 mio kr. - 250 mio. kr. 6 = stoerre end250 mio kr. - 500 mio. kr. 7 = stoerre end500 mio kr. - 1 mia. kr. 8 = stoerre end1 mia kr.  Felt 533b</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LånTilPersonerMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet angiver om der været kontrollerede transaktioner af lån til juridiske eller fysiske personer (max. i indkomståret) Felt 533a </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

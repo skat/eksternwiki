@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+		<div class="skts-cookieouter" id="CookieBox">
+			<div class="skts-cookieinner" id="InnerCookieBox">
+				<div class="skts-cookieinner-box1">
+					<a class="skts-tooltip-holder skts-cookie-link" id="skts-cookie-lang" lang="en" onclick="javascript:changeLanguage();" href="javascript:void(0);"><span class="skts-tooltip"> Cookie information in English</span> English</a>
+					<a class="skts-tooltip-holder skts-cookie-link skts-cookie-icon-cancel-circled" id="skts-fontface-link" lang="da" onclick="javascript:$('.skts-cookieouter').hide()" href="javascript:void(0);"><span class="skts-tooltip"> Luk cookie besked</span></a>
+				</div>
+				<div class="skts-cookieinner-box2">
+					 <p id="skts-cookie-text" lang="da">På skat.dk bruger vi cookies til at samle statistik og til at forbedre vores informationskampagner. Vi begynder, når du klikker dig videre eller lukker denne boks. Du kan sige <a class="skts-tooltip-holder" onclick="javascript:cookieReply('ok4u=no','');" href="javascript:void(0);">nej tak til cookies her<span class="skts-tooltip"> Luk cookie information</span></a>. Læs mere om <a class="skts-tooltip-holder" onclick="javascript:OpenDialog('http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121', 'aboutCookies', 975, 700, 'yes', 'yes', 'no', 'yes', 'no', false, true, aabneVinduer); return false;" href="javascript:void(0);">cookies på skat.dk<span class="skts-tooltip"> Åbner nyt vindue</span></a>.</p> 
+				</div>
+			</div>
+		</div>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-fejl" href="#skts-skip-link-target-fejl" onclick="document.getElementById('skts-skip-link-target-fejl').focus();">Gå til fejlbesked</a></li>
+			</ul>
+			<!-- add class icon-menu for icon -->
+			<a href="javascript:void(0);" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a href="forskud_ret.html" class="skts-selected">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-float-right">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="javascript:void(0);">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>
+				</div>
+			</nav>
+			<form id="mainForm">				
+				<div class="skts-grid skts-grid-pad">
+					<div class="skts-col-1 skts-small-text skts-align-right">
+						<p class="skts-user-info">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk</p>
+					</div>
+					<div class="skts-col-1">
+						<div class="skts-module-container">
+							<div class="skts-module-header skts-error-explanation">
+								<h1>Købt udenlandsk ejendom i 2015</h1><span>* skal udfyldes</span>
+							</div>
+							<ul class="skts-nomargin-list" role="tablist">
+								<!-- ARIA enabled tabpanel and label/input example START -->
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList001"><a id="tab1" aria-controls="panel1" href="javascript:void(0);">Fradrag i kapitalindkomst</a></h2>
+									<ul class="skts-show-hide-list" id="panel1" role="tabpanel" aria-labelledby="tab1"> 
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="formField1" id="formLabel1">Renteudgifter af gæld til pengeinstitutter mv. <span class="skts-section-nr"><span>felt nummer</span>(41)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536785" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-kr-year">
+													<span><input type="text" id="formField1" value="" class="skts-input-currency" autocomplete="off"></span>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="formField2" id="formLabel2">Renteudgifter af gæld til realkreditinstitutter <span class="skts-section-nr"><span>felt nummer</span>(42)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536786" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-kr-year">
+													<span><input type="text" id="formField2" value="" class="skts-input-currency" autocomplete="off"></span>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="formField3" id="formLabel3">Renteudgifter af anden gæld <span class="skts-section-nr"><span>felt nummer</span>(43)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536787" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-kr-year">
+													<span><input type="text" id="formField3" value="" class="skts-input-currency" autocomplete="off"></span>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>	
+								<!-- ARIA enabled tabpanel and label/input example END -->
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList002"><a href="javascript:void(0);">Ejendom</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test001">Ejendommens adresse <span class="skts-section-nr"><span>felt nummer</span>(703)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1707335" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required">
+													<input type="text" id="test001" class="skts-input-long" value="" aria-required="true" data-validation-type="req" aria-invalid="true" autocomplete="off">
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test002" id="test002Label">Landet ejendommen er beliggende i <span class="skts-section-nr"><span>felt nummer</span>(105)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1707336" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required">
+													<select id="test002" aria-required="true" data-validation-type="req" aria-invalid="true">
+														<option value="">Vælg land</option>
+														<option value="AF">Afghanistan</option>
+														<option value="AL">Albanien</option>
+														<option value="DZ">Algeriet</option>
+														<option value="AS">Amerikansk Samoa</option>
+														<option value="AD">Andorra</option>
+														<option value="AO">Angola</option>
+														<option value="AI">Anguilla</option>
+														<option value="AG">Antigua og Barbuda</option>
+														<option value="AR">Argentina</option>
+														<option value="AM">Armenien</option>
+														<option value="AW">Aruba</option>
+														<option value="AU">Australien</option>
+														<option value="AZ">Azerbajdjan</option>
+														<option value="BS">Bahama-Øerne</option>
+														<option value="BH">Bahrain</option>
+														<option value="BD">Bangladesh</option>
+														<option value="BB">Barbados</option>
+														<option value="BY">Belarus</option>
+														<option value="BE">Belgien</option>
+														<option value="BZ">Belize</option>
+														<option value="BJ">Benin</option>
+														<option value="BT">Bhutan</option>
+														<option value="BO">Bolivia</option>
+														<option value="BA">Bosnien-Herzegovina</option>
+														<option value="BW">Botswana</option>
+														<option value="BR">Brasilien</option>
+														<option value="IO">British Indian Ocean Territory</option>
+														<option value="VG">Britiske Jomfruøer</option>
+														<option value="BN">Brunei Darussalem</option>
+														<option value="BG">Bulgarien</option>
+														<option value="BF">Burkina Faso</option>
+														<option value="BI">Burundi</option>
+														<option value="KH">Cambodia</option>
+														<option value="CM">Cameroun</option>
+														<option value="CA">Canada</option>
+														<option value="CV">Cap Verde</option>
+														<option value="KY">Caymanøerne</option>
+														<option value="CL">Chile</option>
+														<option value="CO">Colombia</option>
+														<option value="KM">Comorerne</option>
+														<option value="CK">Cook Islands</option>
+														<option value="CR">Costa Rica</option>
+														<option value="CU">Cuba</option>
+														<option value="CY">Cypern</option>
+														<option value="CD">Den Demo.Rep.Congo</option>
+														<option value="PS">Det palæstinensiske selvstyreområde</option>
+														<option value="DJ">Djibouti</option>
+														<option value="DM">Dominica</option>
+														<option value="DO">Dominikanske Rep</option>
+														<option value="EC">Ecuador</option>
+														<option value="EG">Egypten</option>
+														<option value="SV">El Salvador</option>
+														<option value="CI">Elfenbenskysten</option>
+														<option value="ER">Eritrea</option>
+														<option value="EE">Estland</option>
+														<option value="ET">Etiopien</option>
+														<option value="FK">Falklandsøerne</option>
+														<option value="FJ">Fiji</option>
+														<option value="PH">Filippinerne</option>
+														<option value="FI">Finland</option>
+														<option value="AE">Foren.Arab.Emirater</option>
+														<option value="F2">Frankrig ejendom købt efter 28/11 2007</option>
+														<option value="F1">Frankrig ejendom købt før 29/11 2007</option>
+														<option value="FO">Færøerne</option>
+														<option value="GA">Gabon</option>
+														<option value="GM">Gambia</option>
+														<option value="GE">Georgien</option>
+														<option value="GH">Ghana</option>
+														<option value="GI">Gibraltar</option>
+														<option value="GL">Grønland</option>
+														<option value="GD">Grenada</option>
+														<option value="GR">Grækenland</option>
+														<option value="GP">Guadeloupe</option>
+														<option value="GU">Guam</option>
+														<option value="GT">Guatemala</option>
+														<option value="GG">Guernsey</option>
+														<option value="GN">Guinea</option>
+														<option value="GW">Guinea Bissau</option>
+														<option value="GY">Guyana</option>
+														<option value="HT">Haiti</option>
+														<option value="HM">Heard- og McDonald-øerne</option>
+														<option value="AN">Hollandske Antiller</option>
+														<option value="HN">Honduras</option>
+														<option value="HK">Hong Kong</option>
+														<option value="IN">Indien</option>
+														<option value="ID">Indonesien</option>
+														<option value="IQ">Irak</option>
+														<option value="IR">Iran</option>
+														<option value="IE">Irland</option>
+														<option value="IS">Island</option>
+														<option value="IM">Isle of Man</option>
+														<option value="IL">Israel</option>
+														<option value="IT">Italien</option>
+														<option value="JM">Jamaica</option>
+														<option value="JP">Japan</option>
+														<option value="JE">Jersey</option>
+														<option value="JO">Jordan</option>
+														<option value="CX">Juleøen</option>
+														<option value="KZ">Kazakhstan</option>
+														<option value="KE">Kenya</option>
+														<option value="CN">Kina</option>
+														<option value="KG">Kirgizstan</option>
+														<option value="KI">Kiribati</option>
+														<option value="CC">Kokos-øerne</option>
+														<option value="KP">Korea,Demo.Folkerep</option>
+														<option value="KR">Korea,Rep</option>
+														<option value="HR">Kroatien</option>
+														<option value="KW">Kuwait</option>
+														<option value="LA">Laos</option>
+														<option value="LS">Lesotho</option>
+														<option value="LV">Letland</option>
+														<option value="LB">Libanon</option>
+														<option value="LR">Liberia</option>
+														<option value="LY">Libyen</option>
+														<option value="LI">Liechtenstein</option>
+														<option value="LT">Litauen</option>
+														<option value="LU">Luxembourg</option>
+														<option value="MO">Macao</option>
+														<option value="MG">Madagascar</option>
+														<option value="MK">Makedonien</option>
+														<option value="MW">Malawi</option>
+														<option value="MY">Malaysia</option>
+														<option value="MV">Maldiverne</option>
+														<option value="ML">Mali</option>
+														<option value="MT">Malta</option>
+														<option value="MA">Marokko</option>
+														<option value="MH">Marshall-Øerne</option>
+														<option value="MR">Mauretanien</option>
+														<option value="MU">Mauritius</option>
+														<option value="MX">Mexico</option>
+														<option value="FM">Mikronesien</option>
+														<option value="MD">Moldova</option>
+														<option value="MC">Monaco</option>
+														<option value="MN">Mongoliet</option>
+														<option value="ME">Montenegro</option>
+														<option value="MZ">Mozambique</option>
+														<option value="MM">Myanmar (Burma)</option>
+														<option value="NA">Namibia</option>
+														<option value="NR">Nauru</option>
+														<option value="NL">Nederlandene</option>
+														<option value="NP">Nepal</option>
+														<option value="NZ">New Zealand</option>
+														<option value="NI">Nicaragua</option>
+														<option value="NE">Niger</option>
+														<option value="NG">Nigeria</option>
+														<option value="NU">Niue</option>
+														<option value="NF">Norfolk Island</option>
+														<option value="NO">Norge</option>
+														<option value="OM">Oman</option>
+														<option value="PK">Pakistan</option>
+														<option value="PW">Palau</option>
+														<option value="PA">Panama</option>
+														<option value="PG">Papua New Guinea</option>
+														<option value="PY">Paraguay</option>
+														<option value="PE">Peru</option>
+														<option value="PL">Polen</option>
+														<option value="PT">Portugal</option>
+														<option value="PR">Puerto Rico</option>
+														<option value="QA">Qatar</option>
+														<option value="CG">Republik Congo</option>
+														<option value="RO">Rumænien</option>
+														<option value="RU">Rusland</option>
+														<option value="RW">Rwanda</option>
+														<option value="SB">Salomon-Øerne</option>
+														<option value="WS">Samoa</option>
+														<option value="SM">San Marino</option>
+														<option value="ST">Sao Tome og Principe</option>
+														<option value="SA">Saudi Arabien</option>
+														<option value="CH">Schweiz</option>
+														<option value="SN">Senegal</option>
+														<option value="RS">Serbien</option>
+														<option value="SC">Seychellerne</option>
+														<option value="SL">Sierra Leone</option>
+														<option value="SG">Singapore</option>
+														<option value="SK">Slovakiet</option>
+														<option value="SI">Slovenien</option>
+														<option value="SO">Somalia</option>
+														<option value="ES">Spanien</option>
+														<option value="LK">Sri Lanka</option>
+														<option value="VC">St Vincent og Grenad</option>
+														<option value="KN">St.Christop.og Nevis</option>
+														<option value="LC">St.Lucia</option>
+														<option value="GB">Storbritannien</option>
+														<option value="SD">Sudan</option>
+														<option value="SR">Suriname</option>
+														<option value="SE">Sverige</option>
+														<option value="SZ">Swaziland</option>
+														<option value="ZA">Sydafrikanske Rep</option>
+														<option value="GS">Sydgeorgien og Sydsandwichøerne</option>
+														<option value="SY">Syrien</option>
+														<option value="TJ">Tadzhikistan</option>
+														<option value="TW">Taiwan</option>
+														<option value="TZ">Tanzania</option>
+														<option value="TD">Tchad</option>
+														<option value="TH">Thailand</option>
+														<option value="CZ">Tjekkiet</option>
+														<option value="TG">Togo</option>
+														<option value="TO">Tonga</option>
+														<option value="TT">Trinidad og Tobago</option>
+														<option value="TN">Tunesien</option>
+														<option value="TM">Turkmenistan</option>
+														<option value="TV">Tuvalu</option>
+														<option value="TR">Tyrkiet</option>
+														<option value="DE">Tyskland</option>
+														<option value="UG">Uganda</option>
+														<option value="UA">Ukraine</option>
+														<option value="HU">Ungarn</option>
+														<option value="UY">Uruguay</option>
+														<option value="UZ">Uzbekistan</option>
+														<option value="US">USA</option>
+														<option value="VU">Vanuatu</option>
+														<option value="VA">Vatikanstaten</option>
+														<option value="VE">Venezuela</option>
+														<option value="EH">Vestsahara</option>
+														<option value="VN">Vietnam</option>
+														<option value="YE">Yemen,Demo.Folkerep</option>
+														<option value="ZM">Zambia</option>
+														<option value="ZW">Zimbabwe</option>
+														<option value="GQ">Ækvatorial Guinea</option>
+														<option value="AT">Østrig</option>
+														<option value="TL">Østtimor</option>
+														<option value="AX">Åland</option>
+													</select>
+												</li>	
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList003"><a href="javascript:void(0);">Køb</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test003">Overtagelsesdato (fx 01022015) <span class="skts-section-nr"><span>felt nummer</span>(74)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536825" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required">
+													<input type="text" id="test003" value="" class="skts-input-date" aria-required="true" data-validation-type="req" aria-invalid="true"  autocomplete="off">
+												</li>
+												<li class="skts-error-text"  role="alert">(!) Feltet er påkrævet</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test004">Indflytningsdato (fx <abbr title="to tal dag, to tal måned, fire tal år.">15022015</abbr>). Kun helårsbolig <span class="skts-section-nr"><span>felt nummer</span>(75)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536826" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" id="test004" value=""  class="skts-input-date" autocomplete="off">
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>	
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList004"><a href="javascript:void(0);">Handelsværdi</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test005" id="test005Label">Mindste værdi af handelsværdien på købstidspunktet eller pr. 1/1 2015 <span class="skts-section-nr"><span>felt nummer</span>(72)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536812" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required skts-placeholder-kr-year">
+													<span><input type="text" id="test005" value="" class="skts-input-currency" aria-required="true" data-validation-type="req" aria-invalid="true" aria-describedby="input_type_number" autocomplete="off"></span>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test006" id="test006Label">Samlet handelsværdi på købstidspunktet eller pr. 1/1 2015. Kun tofamiliehuse. <span class="skts-section-nr"><span>felt nummer</span>(88)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536813" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-kr-year">
+													<span><input type="text" id="test006" value="" class="skts-input-currency" autocomplete="off"></span>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>	
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList005"><a href="javascript:void(0);">Boligtype, ejerandel mv.</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test007">Boligtype <span class="skts-section-nr"><span>felt nummer</span>(73)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536824" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required">
+													<select id="test007"  aria-required="true" data-validation-type="req" aria-invalid="true">
+														<option selected="selected" value="">Vælg ejendomstype</option>
+														<option value="1">Helårsbolig</option>
+														<option value="3">Sommerhus</option>
+														<option value="4">To-familiehus med 2 ejerboligværdier</option>
+														<option value="5">To-familiehus med en ejerboligværdi</option>
+														<option value="7">Ejerlejlighed, helårsbolig</option>
+														<option value="8">Ejerlejlighed, fritidsbolig</option>
+														<option value="9">Øvrige ejendomme</option>
+													</select>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test008b">Ejerandel i % (fx 100,00 eller 50,00) <span class="skts-section-nr"><span>felt nummer</span>(78)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536827" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-required skts-placeholder-procent">
+													<span><input type="text" id="test008b" value="" class="skts-input-procent" aria-required="true" data-validation-type="req" aria-invalid="true" aria-describedby="input_type_procent" autocomplete="off"></span>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Feltet er påkrævet</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="testPropertyLabel">Er ejendommen erhvervet før 2/7 1998? <span class="skts-section-nr"><span>felt nummer</span>(80)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1707318" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input type="radio" id="pre98_a" name="pre98" value="0"><label class="skts-radio-label" for="pre98_a" aria-describedby="testPropertyLabel">Ja</label><br/>
+													<input type="radio" id="pre98_b" name="pre98" value="1" ><label class="skts-radio-label" for="pre98_b" aria-describedby="testPropertyLabel">Nej</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList006"><a href="javascript:void(0);">Betalt udenlandsk ejendomsværdiskat</a></h2>	
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test009" id="test009Label">Betalt udenlandsk ejendomsskat, der efter sin art svarer til ejendomsværdiskatten for hele ejendommen <span class="skts-section-nr"><span>felt nummer</span>(89)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1707354" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-kr-year">
+													<span><input type="text" id="test009" value="" class="skts-input-currency" autocomplete="off"></span>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList007"><a href="javascript:void(0);">Personoplysninger</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="testPropertyListLabel_007a">Min ægtefælle eller jeg er fyldt 60 år ved udgangen af 2015 og er enten efterlønsmodtager, førtidspensionist eller modtager flexydelse. <span class="skts-section-nr"><span>felt nummer</span>(79)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1536829" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input type="radio" id="is60_a" name="is60" value="0"><label class="skts-radio-label" for="is60_a" aria-describedby="testPropertyListLabel_007a">Ja</label><br/>
+													<input type="radio" id="is60_b" name="is60" value="1" ><label class="skts-radio-label" for="is60_b" aria-describedby="testPropertyListLabel_007a">Nej</label>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="testPropertyListLabel_007b">Min ægtefælle eller jeg er fyldt 65 år ved udgangen af 2015 <span class="skts-section-nr"><span>felt nummer</span>(79)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1536829" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input type="radio" id="is65_a" name="is65" value="0"><label class="skts-radio-label" for="is65_a" aria-describedby="testPropertyListLabel_007b">Ja</label><br/>
+													<input type="radio" id="is65_b" name="is65" value="1" ><label class="skts-radio-label" for="is65_b" aria-describedby="testPropertyListLabel_007b">Nej</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList008"><a href="javascript:void(0);">Udlejning og erhvervsmæssig anvendelse</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test010">Værelsesudlejning (regnskabsmæssig opgørelse). Procentdel, der udlejes (fx 25,00) <span class="skts-section-nr"><span>felt nummer</span>(82)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536819" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-procent">
+													<span><input type="text" id="test010" class="skts-input-procent"/></span>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test011">Udleje af boligen en del af året samt værelsesudlejning (regnskabsmæssig opgørelse), antal dage <span class="skts-section-nr"><span>felt nummer</span>(83)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536818" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" class="skts-input-number" id="test011"  data-validation-type="max" data-validation-value="360" aria-invalid="false" aria-describedby="input_type_number"/>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Maks 360 dage</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test012">Erhvervsmæssig andel uden vurderingsfordeling i procent (fx 15,00) <span class="skts-section-nr"><span>felt nummer</span>(85)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536821" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li class="skts-placeholder-procent">
+													<span><input type="text" class="skts-input-procent" id="test012" /></span>
+												</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test013">Erhvervsmæssig andel uden vurderingsfordeling, anfør antal dage <span class="skts-section-nr"><span>felt nummer</span>(86)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536820" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text" class="skts-input-number" id="test013"  data-validation-type="max" data-validation-value="360" aria-invalid="false" aria-describedby="input_type_number"/>
+												</li>
+												<li class="skts-error-text" role="alert">(!) Maks 360 dage</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h2 class="skts-list-header skts-expanded" id="propertyList009"><a href="javascript:void(0);">Andet</a></h2>
+									<ul class="skts-show-hide-list">
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text">
+												<label for="test014">Antal dage ejendommen er ubeboelig <span class="skts-section-nr"><span>felt nummer</span>(87)</span></label>
+												<a href="http://www.skat.dk/SKAT.aspx?oID=1536810" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a>
+											</div>
+											<ul>
+												<li>
+													<input type="text"  class="skts-input-number"  data-validation-type="max" data-validation-value="360" aria-invalid="false" aria-describedby="input_type_number" id="test014" />
+												</li>
+												<li class="skts-error-text" role="alert">(!) Maks 360 dage</li>
+											</ul>
+										</li>
+										<li class="skts-section-wrapper">
+											<div class="skts-label-text" id="buildingSavedLabel">Ejendommen er fredet <span class="skts-section-nr"><span>felt nummer</span>(760)</span> <a href="http://www.skat.dk/SKAT.aspx?oID=1707315" target="_blank" class="skts-help skts-tooltip-holder"><br/><span class="skts-tooltip">Viser vindue med hjælp</span></a></div>
+											<ul>
+												<li>
+													<input id="buildingSaved" aria-describedby="buildingSavedLabel" type="checkbox" name="buildingSaved" /><label for="buildingSaved" class="skts-checkbox-label">Ja</label>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<br/>
+							<div class="skts-grid skts-grid-pad">
+								<div class="skts-col-1 skts-button-container"> 
+									<ul class="skts-status-indicator">
+										<li class="skts-selected">Køb ejendom</li>
+										<li>Beregn</li>
+										<li>Godkend</li>
+										<li>Kvittering</li>
+									</ul>
+									<input type="submit" name="" value="Registrer" onclick="window.location.href= 'forskud_ret.html?property=1&propType=buy_f'" id="btok" class="skts-button-primary">
+									<input type="submit" name="" value="Annuller" onclick="window.location.href= 'forskud_ret.html'" id="btnFortryd" class="skts-button-secondary">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<footer>
+				<address>SKAT: <a href="tel:72221818">72 22 18 18</a></address>
+				<div class="skts-align-right-absolute">
+					<a class="skts-small-text skts-tooltip-holder" target="_blank" href="http://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="skts-tooltip"> Åbner nyt vindue</span></a>
+				</div>
+			</footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="assets/js/TastSelvMain.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>   
+		<div id="input_type_number" class="hidden">I dette felt kan du kun indtaste hele positive eller negative tal.</div>
+		<div id="input_type_number_positive" class="hidden">I dette felt kan du kun indtaste hele positive tal.</div>
+		<div id="input_type_procent" class="hidden">I dette felt kan du kun indtaste tal fra 0-100.</div>
+    </body>
+</html>

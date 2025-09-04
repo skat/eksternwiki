@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:efiws="urn:oio:skat:efi:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:efi:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r4325</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../../../../urn/oio/skat/efi/1_0_0/ValutaKode.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../../../../urn/oio/skat/efi/1_0_0/HaeftelseBegraensetDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../../../../urn/oio/skat/efi/1_0_0/HaeftelseBegraensetBeloeb.xsd"/><xs:element name="HaeftelseBegraensetBeloebStruktur" type="efiws:HaeftelseBegraensetBeloebStrukturType"/>
+	<xs:complexType name="HaeftelseBegraensetBeloebStrukturType">
+		<xs:sequence>
+			<xs:element ref="efi:HaeftelseBegraensetBeloeb"/>
+			<xs:element ref="efi:ValutaKode"/>
+			<xs:element ref="efi:HaeftelseBegraensetDKKBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

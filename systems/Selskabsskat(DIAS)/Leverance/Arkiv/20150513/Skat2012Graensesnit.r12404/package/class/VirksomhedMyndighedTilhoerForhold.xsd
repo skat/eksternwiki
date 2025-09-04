@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver oplysninger om relationen mellem virksomheden og en myndighed.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="VirksomhedMyndighedTilhørForholdKode"
+                     type="skat2012:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kode for relationen mellem virksomheden og en myndighed.  Kode = Tekst 01 = Hjemstedskommune  02 = Myndighedskommune  03 = Skattecenter 04 = Selskabsligningskommune 05 = Toldcenter 08 = Servicemyndighed  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedMyndighedTilhørForholdTekst" type="skat2012:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver teksten for relationen mellem virksomheden og en myndighed.   Kode = Tekst  01 = Hjemstedskommune  02 = Myndighedskommune  03 = Skattecenter  04 = Selskabsligningskommune  05 = Toldcenter  08 = Servicemyndighed</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedMyndighedTilhørForholdGyldigFra" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedMyndighedTilhørForholdGyldigTil" type="skat2012:DatoType">
+               
+            </xs:element>
+      </xs:schema>

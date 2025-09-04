@@ -1,0 +1,1461 @@
+﻿/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+* Navn: TastSelvMain.css
+* Beskrivelse: Hoved stylessheet til TastSelv Nyt Design
+* Version: 1.3.3
+*/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+
+
+
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Styles på HTML elementer
+*
+*/
+/*****************************************************************************************************************/
+
+body
+{
+	background-color:white;
+	font-family:Verdana, Helvetica;
+	font-size:100%;
+	margin:0 0 2px 0;
+	padding:0;
+	text-align:center;
+}
+
+a
+{
+	color:#000099;
+	text-decoration:none;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+address
+{
+	/*font-size:80%;*/
+	font-style:normal;
+	/*line-height:209%; *//* Så får den samme højde som top navigationen */
+}
+
+caption
+{
+	font-weight:bold;
+	text-align:left;
+}
+
+fieldset
+{
+	border:none;
+}
+
+form
+{
+	display:inline;
+}
+
+img
+{
+	border:none;
+}
+
+label
+{
+	font-size:inherit;
+}
+
+select
+{
+	font-size:inherit;
+}
+
+
+textarea
+{
+	font-size:inherit;
+	font-family:"Courier New", monospace; /* Der er et problem med firefox og monospace skriftstørrelser. Derfor specificeres font-family her */
+	overflow:auto;
+	resize:none;
+}
+
+
+div.centrer
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+}
+
+input[type=button],
+input[type=password],
+input[type=reset],
+input[type=submit],
+input[type=text]
+{
+	font-size:inherit;
+	font-family: inherit;
+}
+
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Generelle Klasser
+*
+*/
+/*****************************************************************************************************************/
+
+.skts-slut-float
+{
+	clear:both;
+}
+
+.skts-ramme-overskrift
+{
+    color: #000000;
+    font-family: Helvetica,  Arial, sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+	/* color:#000000; */
+	/*line-height:200%;*/
+    padding: 0 0 8px 0;
+    margin-right: 0px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.skts-ramme-overskrift a
+{
+    color: #000000;
+}
+
+.skts-ramme-overskrift-container
+{
+	border-bottom:1px solid #DCDFEB;
+	border-radius: 4px 4px 0 0;
+	padding: 8px 12px 8px 12px;
+	zoom:1;
+
+	/* Gradient */
+	background: #dae3e9; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RhZTNlOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOWVjZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #dae3e9 0%, #e9ecf7 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dae3e9), color-stop(100%,#e9ecf7)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dae3e9 0%,#e9ecf7 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dae3e9 0%,#e9ecf7 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dae3e9 0%,#e9ecf7 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dae3e9 0%,#e9ecf7 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dae3e9', endColorstr='#e9ecf7',GradientType=0 ); /* IE6-8 */   
+}
+
+.skts-ramme-overskrift-container-foer-login
+{
+	padding: 8px 12px 8px 12px; 
+}
+
+.skts-indhold-undertitel
+{
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+   	font-size:90%;
+    font-weight: bold;
+}
+
+.skts-lille-tekst
+{
+    font-size: 66%;
+    color: #000000;
+}
+
+.skts-broedtekst .skts-lille-tekst /* relativt til broedtekst */
+{
+    font-size: 82.5%; /* svarer til 66% af body */
+}
+
+.skts-wrap-folde-ud-tekst {
+    border: 1px solid;
+    border-color:#CCDAEB;
+    border-radius:4px;
+    margin-top:10px;
+    padding: 2px 5px 2px 5px;
+    width:75%;
+}
+
+p.skts-nulstil-margin-padding
+{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.skts-broedtekst
+{
+    color: #000000;
+    font-size:80%;
+    font-weight: normal;
+}
+
+.skts-skillelinie-top
+{
+    border-top: 2px solid #999999;
+}
+
+a.skts-nounderline
+{
+    text-decoration: none;
+}
+
+a.skts-link-fremhaevning
+{
+    text-decoration:underline;
+}
+
+.skts-miljoe
+{
+	color:red;
+	float:right;
+	font-size:80%;
+	font-weight:bold;
+	height:auto;
+	padding-right:10px;
+	position:relative;
+	right:0;
+	top:20px;
+	white-space:nowrap;
+	width:auto;
+}
+
+/* IE kan ikke finde ud af at body bestemmer bredden. Derfor skal denne
+    defineres og den modvirker body'ens align center. */
+#skts-body
+{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+	width:960px; 
+}
+
+#skts-body-sekundaer-vindue
+{
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 960px;
+	text-align:left;
+	width:100%; 
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Fold in/ud funktionalitet
+*
+*/
+
+div.skts-foldet-ind
+{
+   display:none; 
+}
+
+div.skts-foldet-ud
+{
+    /* her kan man definere det man ønsker af styles til det som foldes ud */
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Tilgængelig tooltip attribut som kan bruges på <a>
+*
+*/
+
+a.skts-tooltip-holder:hover, a.skts-tooltip-holder:focus, a.skts-tooltip-holder:active
+{
+    position: relative;
+}
+
+a.skts-tooltip-holder .skts-tooltip
+{
+    color:#3F6075;
+    font-family:Arial, "Arial Rounded MT Bold", sans-serif;
+    font-size:inherit;
+    font-weight:normal;
+    left: -9000px;
+    top: 0;
+    margin-top:4px;
+    padding: 1px 2px 1px 2px;
+    position: absolute;
+    width: 0;
+}
+ 
+a.skts-tooltip-holder:hover .skts-tooltip, a.skts-tooltip-holder:focus .skts-tooltip, a.skts-tooltip-holder:active .skts-tooltip
+{    
+    background-color: #FFFFFF;
+    border: 1px solid #AAA1AA;
+    display: block;
+    left: 1em;
+    margin-left:1em;
+    position: absolute;
+    text-align: left;
+    text-decoration:none;
+    top: 1.3em;
+    width: 12em;
+    z-index: 25;
+}
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Skip Links
+*
+*/
+.skts-link-target-skjul
+{
+	display: block;
+	height: 10px;
+	left: -99999px;
+	position: absolute;
+	width: 10px;
+}
+
+#skts-skip-links
+{
+	left: 0;
+	list-style: outside none;
+    margin-left: 0;
+    padding-left: 0;
+    position: absolute;
+	text-align: center;
+	top: 10px;
+	width: 100%;
+}
+
+#skts-skip-links li
+{ 
+    list-style-type: none;
+}
+
+#skts-skip-links a
+{
+	left: -99999px;
+	position: absolute;
+	top: 0px;
+}
+
+#skts-skip-links a:focus, #skts-skip-links a:active
+{
+	background: #EBF1F4;
+	border: 1px dotted #DCDFEB;
+	height: auto;
+    left: 0;
+	margin: 0 auto;
+	padding: 5px 10px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	width: 75%;
+	z-index:9999;
+}
+
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Top logo
+*
+*/
+/*****************************************************************************************************************/
+
+#skts-logo-ned
+{
+    border-bottom: 1px solid white;
+    
+    background: #ffe8a4; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZThhNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmMzMWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left,  #ffe8a4 0%, #ffc31d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffe8a4), color-stop(100%,#ffc31d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #ffe8a4 0%,#ffc31d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #ffe8a4 0%,#ffc31d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #ffe8a4 0%,#ffc31d 100%); /* IE10+ */
+    background: linear-gradient(to right,  #ffe8a4 0%,#ffc31d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe8a4', endColorstr='#ffc31d',GradientType=1 ); /* IE6-8 */
+    
+    zoom:1;
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Hovedcontainer
+*
+*/
+/*****************************************************************************************************************/
+
+/* Container for alt undtagen logo */
+#skts-hoved-container
+{
+	border-left:1px solid #3f6075;
+	border-right:1px solid #3f6075;
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Global menu
+*
+*/
+/*****************************************************************************************************************/
+#skts-globalmenu-container
+{
+	/* Reset */
+	border:0;
+	border-top:1px solid #3f6075; /* Justering for margen visningen af content DIV'en i Firefox */
+	font-size:83%; /* Svarer til 10pt */
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+	zoom:1;
+
+	/* Gradient */
+	background:#3f6075; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNmNjA3NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzRkNmQ4ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0Zjc1OTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background:-moz-linear-gradient(top, #3f6075 0%, #4d6d8e 51%, #4f7593 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f6075), color-stop(51%,#4d6d8e), color-stop(100%,#4f7593)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* Opera 11.10+ */
+	background:-ms-linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* IE10+ */
+	background:linear-gradient(top, #3f6075 0%,#4d6d8e 51%,#4f7593 100%); /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f6075', endColorstr='#4f7593',GradientType=0 ); /* IE6-8 */
+}
+
+#skts-globalmenu-venstre
+{
+	float:left;
+	width:auto;
+}
+
+#skts-globalmenu-hoejre 
+{
+	float:right;
+	margin-right:0;
+	padding-right:0;
+	text-align:right;
+	width:auto;
+}
+
+#skts-globalmenu-venstre, #skts-globalmenu-hoejre
+{
+	font-size:100%;
+	margin:0; /* Override the built in top and bottom margin of a <ul> */
+	padding-left:0; /* Override the built in padding of a <ul> */
+}
+
+#skts-globalmenu-venstre li, #skts-globalmenu-hoejre li
+{
+	display:inline;
+    float:left; 
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+a.skts-globalmenu-hoejre-link
+{
+    border-right:1px solid #3A5D74;
+    color:#FFFFFF;
+	float:left;
+    font-family:Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    font-weight: normal;
+	padding:6px 10px 6px 10px;
+}
+
+a.skts-globalmenu-hoejre-link-yderst
+{
+    border-right:none;
+}
+
+a.skts-globalmenu-venstre-link
+{
+    border-left:1px solid #3A5D74;
+    color:#FFFFFF;
+	float:left;
+    font-family:Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    font-weight: normal;
+	padding:6px 10px 6px 10px;
+}
+
+a.skts-globalmenu-link-inaktiv
+{  
+    color: #ada8c2;
+    cursor:default;
+    text-decoration:none;
+}
+ 
+a.skts-globalmenu-venstre-link-yderst
+{
+    border-left:none;
+}
+
+.skts-globalmenu-link-markeret
+{
+	background-color:#14364C;
+}
+
+a.skts-globalmenu-link-logaf
+{
+	background:url("../Images/logaf.gif");
+	background-position:10% 50%;
+	background-repeat:no-repeat;
+	padding-left:20px;
+}
+
+a.skts-globalmenu-link-logpaa
+{
+	background:url("../Images/logpaa.gif");
+	background-position:15% 50%;
+	background-repeat:no-repeat;
+	padding-left:20px;
+}
+
+a.skts-globalmenu-flugter
+{
+	padding-left:40px;
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Bruger oplysninger
+*
+*/
+/*****************************************************************************************************************/
+#skts-brugeroplysninger
+{
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 65%;
+    font-weight:normal;
+    line-height:200%;
+    margin:0 2% 0 0;
+	text-align:right;
+}
+
+@media screen
+{
+    div.skts-brugeroplysninger-print
+    {
+        display:none;
+    }
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Midter container -- Den container som ligger mellem brugeroplysninger og footer (begge ekslusiv)
+*
+*/
+/*****************************************************************************************************************/
+#skts-midter-container-med-brugeroplysninger
+{
+	margin:2% 2% 4% 2%;
+}
+
+#skts-midter-container-uden-brugeroplysninger
+{
+	margin:2% 2% 2% 2%;
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Venstre navigation
+*
+*/
+/*****************************************************************************************************************/
+#skts-venstre-menu-container
+{
+	float:left;
+	width:25%;
+    word-wrap:break-word; 
+}
+
+#skts-venstre-menu-ramme
+{
+	background-color:#F7F7F7;
+	border:1px solid #DCDFEB;
+    border-radius: 5px;
+	margin:0 5% 0 0;
+}
+
+ul.skts-venstre-menu-elementer
+{
+	margin:0;
+	padding:0;
+}
+
+ul.skts-venstre-menu-elementer li
+{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 75%;
+    font-weight: normal;
+	list-style:none;
+}
+
+
+ul.skts-venstre-menu-elementer a
+{
+    border-top:1px solid #DCDFEB;
+	color: #14364C;
+    display: block; 
+    padding:2% 12px 2% 12px;
+}
+
+ul.skts-venstre-menu-elementer a.skts-venstre-menu-element-link-markeret 
+{
+    font-weight:bold;
+}
+
+ul.skts-venstre-menu-elementer a.skts-venstre-menu-element-yderst
+{
+    border-top:0px;
+}
+
+ul.skts-venstre-menu-elementer a.skts-venstre-menu-element-link-inaktiv
+{
+    color: #A6A6A6;
+    cursor: default;
+    text-decoration:none;
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Content med applikation
+*
+*/
+/*****************************************************************************************************************/
+#skts-indhold-container-hoejre
+{
+	background-color:#F7F7F7;
+	border:1px solid #DCDFEB;
+	border-radius: 5px;
+	float:right;
+	width:74%;
+}
+
+#skts-indhold-container-hele-bredden
+{
+	background-color:#F7F7F7;
+	border:1px solid #DCDFEB;
+	border-radius: 5px;
+	width:100%;
+}
+
+#skts-indhold-container-hele-bredden-foer-login
+{
+	width:100%;    
+}
+
+#skts-faneblade
+{
+	float:left;
+	font-size:100%;
+	font-weight: normal;
+	margin:0; /* Override the built in top and bottom margin of a <ul> */
+	padding-left:0; /* Override the built in padding of a <ul> */
+	width:100%;
+	zoom:1;
+	
+	/* Gradient */
+    background: #e9ecf7; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U5ZWNmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYWUzZTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #e9ecf7 0%, #dae3e9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e9ecf7), color-stop(100%,#dae3e9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e9ecf7 0%,#dae3e9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e9ecf7 0%,#dae3e9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e9ecf7 0%,#dae3e9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e9ecf7 0%,#dae3e9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9ecf7', endColorstr='#dae3e9',GradientType=0 ); /* IE6-8 */
+}
+
+#skts-faneblade li
+{
+	border-right:1px solid #DCDFEB;
+	display:block;
+	float:left;
+	list-style:none;
+	margin:0;
+	text-align:center;
+}
+
+#skts-faneblade li a
+{
+    color: #000000;
+    display:block;
+	font-size:90%;
+    padding:7px 10px 7px 10px;
+}
+
+.skts-faneblad-markeret
+{
+    background-color:#F7F7F7;
+	font-weight:bold;
+}
+
+.skts-indhold-smal, .skts-indhold-bred
+{
+	border-top:1px solid transparent; /* Top border med usynlig kant for at modvirke DivMargin issuet */
+}
+
+.skts-indhold-smal
+{
+	padding:3% 20% 3% 3%;
+}
+
+.skts-indhold-bred
+{
+	padding:3% 3% 3% 3%;
+}
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Forside elementer (Tastselv Menu)
+*
+*/
+#skts-tastselv-menu-rammer-container
+{
+    margin-top: 3.7%; /* Skal være samme højde som fra skts-tastselv-menu-overskrift til top navigation. */
+}
+
+/* Bruges til at lave dobbelt streg i det blå felt i rammerne. 2 identiske streger med 1 px mellemrum */
+.skts-tastselv-ramme-overskrift-seperator
+{
+    background: #FFFFFF;
+    height: 1px;  
+}
+
+#skts-tastselv-menu-indhold-container
+{
+	margin:3% 7% 11.5% 7%;
+}
+
+#skts-tastselv-menu-ramme-hoejde-justering
+{
+    border-top: 1px solid #DCDFEB;
+}
+
+#skts-tastselv-menu-overskrift
+{
+    font-size: 90%;
+    font-weight: normal;
+}
+
+#skts-tastselv-menu-aarsopgoerelse-ramme, #skts-tastselv-menu-forskudsopgoerelse-ramme
+{
+	background-color:#f7f7f7 ;
+	border:1px solid #DCDFEB;
+	border-radius: 5px;
+	width:47%;
+}
+
+#skts-tastselv-menu-aarsopgoerelse-ramme
+{
+	float:left;
+}
+
+#skts-tastselv-menu-forskudsopgoerelse-ramme
+{
+	float:right;
+}
+
+.skts-tastselv-menu-ramme-elementer
+{
+	margin:0;
+	padding:0;
+}
+
+.skts-tastselv-menu-ramme-element
+{
+    border-top:1px solid #DCDFEB;
+    color: #000099;
+	font-size:60%;
+	font-weight:normal;
+	list-style:none;
+	padding:3% 0 3% 12px;
+}
+
+.skts-tastselv-menu-ramme-element-submenu
+{	
+    border:none;
+    font-size:90%;
+	padding: 3% 0 0 0;
+}
+
+.skts-tastselv-menu-ramme-element-inaktiv
+{
+    /* Kan bruges til at ændre ikon og andre features */
+}
+
+.skts-tastselv-menu-ramme-element-inaktiv-gaatillinks
+{
+    /* Kan bruges til at ændre ikon og andre features */
+}
+
+.skts-tastselv-menu-ramme-element-sidste-element-hoejre
+{
+	border-top:1px solid #DCDFEB;
+	font-size:65%;
+	/*line-height:300%;*/
+	list-style:none;
+	padding:3% 3% 1% 0;
+	text-align:right;
+}
+
+.skts-tastselv-menu-ramme-element-sidste-element-venstre
+{
+	font-size:65%;
+	/*line-height:300%;*/
+	list-style:none;
+	padding:3% 3% 1% 0;
+	text-align:right;
+}
+
+.skts-tastselv-menu-ramme-element-sidste-element-hoejre a, .skts-tastselv-menu-ramme-element-sidste-element-venstre a
+{
+	background-position: left center;
+    background-image: url('../Images/gaa-til-link.png');
+    background-repeat: no-repeat;
+    padding-left:12px;
+}
+
+.skts-tastselv-menu-ramme-element a
+{
+	background-position: left center;
+	background-image: url('../Images/forside-link.png');
+    background-repeat: no-repeat;
+    font-size: 125%;
+    padding-bottom: 1px;
+    padding-left: 20px;
+}
+
+.skts-tastselv-menu-ramme-element-foldet-ud a
+{
+    /* Kan bruges til at ændre ikonet på link pilen */
+}
+
+.skts-tastselv-menu-ramme-element-submenu a
+{
+	background-position: left center;
+    background-image: url('../Images/link-content-primaer.png');
+    background-repeat: no-repeat;
+    font-size: 125%;
+    padding-bottom: 1px;
+    padding-left: 20px;
+}
+
+.skts-tastselv-menu-ramme-element-inaktiv a
+{
+    background-position: left center;
+    background-image: url('../Images/forside-link_graa.png');
+    background-repeat: no-repeat;
+    color: #A6A6A6;
+    cursor: default;
+    text-decoration:none;
+}
+
+.skts-tastselv-menu-ramme-element-inaktiv-gaatillinks a
+{   background-image: url('../Images/gaa-til-link_graa.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #A6A6A6;
+    cursor: default;
+    text-decoration: none;
+}
+
+
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Indholds elementer
+*
+*/
+/*****************************************************************************************************************/
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Tabeller
+*
+*/
+.skts-indholds-tabel1 .skts-link-fokus
+{
+	background:#14364C;
+	color:White;
+    cursor:pointer;
+	/*font-weight:bold;*/
+}
+
+.skts-indholds-tabel1 .skts-link-fokus a
+{
+	color:White;
+    text-decoration:none;
+}
+
+
+
+/*Tabel til skattekort*/
+.skts-indrykket-tabel1
+{
+	border:none;
+    border-collapse:collapse;
+	margin-top:15px;
+	width:100%;
+	margin-left: 10%;
+}
+
+.skts-indrykket-tabel1 caption
+{
+	/*padding-left:55px;*/
+}
+
+.skts-indrykket-tabel1 th
+{
+	font-weight:normal;
+	/*padding-left:55px;*/
+	text-align:left;
+	width:40%;
+    white-space:nowrap;
+}
+
+.skts-indrykket-tabel1 td
+{
+	font-weight:bold;
+	text-align:left;
+	width:60%;
+    white-space:nowrap;
+}
+
+/*Tabel til meddelelser*/
+.skts-indholds-tabel1
+{
+    border:none;
+	border-collapse:collapse;
+    color:#000000;
+	margin-bottom:30px;
+	margin-top:30px;
+	width:100%;
+}
+
+.skts-indholds-tabel1 tr
+{
+    color:#000099;
+
+}
+
+.skts-indholds-tabel1 th
+{
+	border-bottom:1px solid #CCDAEB;
+	color:#000000;
+    padding: 4px 0 4px 0;
+    font-weight:normal;
+	text-align:left;
+	width:85%;
+}
+
+.skts-indholds-tabel1 td
+{
+	border-bottom:1px solid #CCDAEB;
+    padding: 4px 0 4px 0;
+}
+
+/*Tabel 2 til meddelelser*/
+.skts-indholds-tabel2
+{
+    border-bottom: 1px solid #4F81BD;
+	border-collapse:collapse;
+	margin-top:30px;
+	width:100%;
+}
+
+.skts-indholds-tabel2 th
+{
+   border-bottom: 1px solid #4F81BD;
+   border-top: 1px solid #4F81BD;
+   font-weight:normal;
+   height:20px;
+   text-align:left;
+   padding: 4px 10px 4px 10px;
+}
+
+.skts-indholds-tabel2 td
+{
+   padding: 4px 10px 4px 10px;
+}
+td.skts-kolonne-placering1, th.skts-kolonne-placering1
+{
+    text-align: left;
+}
+
+td.skts-kolonne-placering2, th.skts-kolonne-placering2
+{
+    text-align: center;
+}
+
+td.skts-kolonne-placering3, th.skts-kolonne-placering3
+{
+    text-align: right;
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Tabel kolonne bredder 
+*
+*/
+
+/* Betalings dato - Betalings linje - Beløb */
+th.skts-tabel-betalingsdato{ width:30%; }
+th.skts-tabel-betalingslinje{ width:50%; }
+th.skts-tabel-beloeb{ width:20%; }
+
+/* PDF Dokumenter - Dato*/
+th.skts-tabel-pdf-dokumenter{ width:90%; }
+th.skts-tabel-dato{ width:10%; }
+
+
+/*nowrap for tables*/
+td.skts-indholds-tabel-nowrap
+{
+    white-space: nowrap;
+}
+
+tr.skts-indholds-tabel2-ulige
+{
+    background-color:#DAE3E9;
+}
+
+tr.skts-indholds-tabel2-lige
+{
+    /*bruges hvis nr 2 baggrundsfarve ikke skal være ens med baggrunden*/
+}
+
+/*Aktuelt link*/
+.skts-indholds-tabel1 tr.skts-link-aktuelt
+{
+    font-weight: bold;
+}
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Links
+*
+*/
+#skts-genveje li
+{
+	list-style:none;
+}
+
+#skts-genveje li a 
+{
+	padding:0 5px;
+}
+
+/*Sekundære links*/
+a.skts-sekundaer-link
+{
+	background-image:url(../Images/link-content-sekundaer.png);
+	background-position:3px 8px;
+    background-repeat:no-repeat;
+    display: block;
+	padding: 5px 0px 5px 15px;
+}
+
+a.skts-sekundaer-link
+{
+    font-size:70%;
+}
+
+/*Primære links*/
+a.skts-primaer-link
+{
+	background-image:url(../Images/link-content-primaer.png);
+	background-position:3px 8px;
+    background-repeat:no-repeat;
+    display: block;
+    font-size:80%;
+	padding: 5px 0px 5px 15px;
+}
+
+.skts-broedtekst a.skts-primaer-link /* Relativt til broedtekst skal den være 100% */
+{
+    font-size:100%;
+}
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Input felter
+*
+*/
+fieldset.skts-input-liste
+{
+    padding:0%;
+    margin: 30px 0 0 0;
+}
+
+div.skts-field 
+{
+    margin:2% 0 2% 0;
+}
+
+/*Til input felter hvor input skal være under label*/
+div.skts-field-nede {
+    width: 100%;
+    clear: both;
+    margin:2% 0 2% 0;
+}
+
+div.skts-field input {
+    width: 250px;
+    float:right;
+}
+
+div.skts-field-nede input {
+    width: 250px;
+    clear: both;
+    display:block;
+}
+
+input.skts-text
+{
+    text-align: left;
+}
+
+input.skts-beloeb
+{
+    text-align: right;
+}
+
+input.skts-dato
+{
+    text-align: left;
+}
+
+input.skts-nr
+{
+    text-align: right;
+}
+
+input.skts-nr
+{
+    text-align: right;
+}
+
+input.skts-antal
+{
+    text-align: left;
+}
+
+div.skts-field-nede .skts-ledetekst
+{
+/*    font-size:80%;*/
+    margin-bottom: 2px;
+	text-align:left;
+	display:block;
+	width:100%;
+}
+
+div.skts-field .skts-ledetekst
+{
+    font-size:80%;
+    margin-bottom: 2px;
+	float:left;
+	text-align:left;
+	display:block;
+	width:34%;
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* krævede felter
+*
+*/
+abbr.skts-kraevet 
+{
+    color:red;
+    font-size: 100%;
+    font-weight: bold;
+    border-bottom-width: 0;/*for firefox*/
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Knapper
+*
+*/
+.skts-knap-primaer, .skts-knap-sekundaer
+{
+     border: none;
+     border-color:#CCDAEB;
+     border-radius:4px;
+     margin-right:2%;
+     padding: 4px 2% 4px 2%;
+     min-width:80px;
+ }
+
+.skts-knap-primaer
+{
+     background-color:#14364C;
+     color:#FFFFFF;
+}
+
+.skts-knap-sekundaer
+{
+     background-color:#B2B5B7;
+     color:#14364C;
+}
+ 
+.skts-knap-primaer:focus, .skts-knap-sekundaer:focus
+{
+   outline: #177f7f dotted 2px;  
+}
+
+
+div.skts-knapper-placering1
+{
+    padding-top: 4px;
+	text-align:left;
+}
+
+div.skts-knapper-placering2
+{
+    padding-top: 4px;
+	text-align:center;
+}
+
+div.skts-knapper-placering3
+{
+    padding-top: 4px;
+	text-align:right;
+}
+
+div.skts-knapper-ramme
+{
+    padding-top: 4%;
+    padding-bottom:4%;
+    border-top: 2px solid #999999;
+}
+
+
+.skts-knap-nulstil-margin
+{
+     margin-right:0;
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Kolonner
+*
+*/
+div.skts-kolonner-to /* Div med plads til to kolonner */
+{
+    padding:0%;
+    margin: 30px 0 0 0;
+}
+
+.skts-kolonner-to .skts-kolonne1
+{
+    float:left;
+    width: 50%;
+}
+
+.skts-kolonner-to .skts-kolonne2
+{
+    float:right;
+    width: 45%;
+}
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Lister
+*
+*/
+
+ul.skts-liste1
+{
+}
+
+ul.skts-liste1 li
+{
+    padding-bottom:2px;
+}
+/*****************************************************************************************************************/
+/*
+*
+* Fejlhåndtering
+*
+*/
+.skts-overskrift-link 
+{
+    font-size:90%;
+}
+
+.skts-fejl-meddelelse-boks 
+{
+   	background-color: #FFFFFF;
+	border: 1px solid #A00000;
+    border-radius:4px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+.skts-fejl-meddelelse-boks li 
+{
+   list-style:none;
+}
+
+.skts-fejltekst
+{
+    color:#A00000;
+    text-decoration:underline;
+}
+
+.skts-felter-fejl
+{
+    border:1px solid #A00000;
+}
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Footer
+*
+*/
+#skts-footer
+{
+    color:#FFFFFF;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal;
+	margin-top:10px;
+	text-align:center;
+	zoom:1;
+   
+	font-size:80%;
+	line-height:209%; /* Så får den samme højde som top navigationen */
+ /* Gradient */
+	background:#4f7593; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRmNzU5MyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzRkNmQ4ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzZjYwNzUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background:-moz-linear-gradient(top, #4f7593 0%, #4d6d8e 49%, #3f6075 100%); /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f7593), color-stop(49%,#4d6d8e), color-stop(100%,#3f6075)); /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top, #4f7593 0%,#4d6d8e 49%,#3f6075 100%); /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top, #4f7593 0%,#4d6d8e 49%,#3f6075 100%); /* Opera 11.10+ */
+	background:-ms-linear-gradient(top, #4f7593 0%,#4d6d8e 49%,#3f6075 100%); /* IE10+ */
+	background:linear-gradient(top, #4f7593 0%,#4d6d8e 49%,#3f6075 100%); /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f7593', endColorstr='#3f6075',GradientType=0 ); /* IE6-8 */
+}
+
+
+
+
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/*
+*
+* Browser specifikke styles
+*
+*/
+/*****************************************************************************************************************/
+
+
+/*****************************************************************************************************************/
+/*
+*
+* Internet Explorer 9
+*
+*/
+.ie9 .skts-ramme-overskrift-container, .ie9 #skts-logo-ned, .ie9 #skts-globalmenu-container, .ie9 #skts-faneblade, .ie9 #skts-footer
+{
+    filter: none; /* filter i gradient definitionen virker kun i ie7 og ie8, og det den ødeligger rundehjørner på en gradient i ie9, hvis ikke der er  en border omkring */
+}
+
+/*****************************************************************************************************************/
+/*
+*
+* Internet Explorer 7
+*
+*/
+/* ie7 inherit virker ikke. */
+.ie7 textarea
+{
+	font-size: 100%;
+}
+
+/* ie7 inherit virker ikke. */
+.ie7 input[type=button],
+.ie7 input[type=password],
+.ie7 input[type=reset],
+.ie7 input[type=submit],
+.ie7 input[type=text]
+{
+	font-size:100%;
+	font-family: Verdana, Helvetica;
+}
+
+/* Knapper i IE7 højre justerer tekst hvis min-width er sat. */
+.ie7 .skts-knap-primaer, .ie7 .skts-knap-sekundaer
+{
+     min-width:0;
+}

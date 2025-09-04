@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="FondForeningErklæringBegrundelseKode" type="skat2012:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fonde, der tilhører én af disse tre kategorier, kan efter fondsbeskatningslovens § 15, stk. 3, afgive erklæring i stedet for at selvangive, hvis de:  1 -  Fonden har ikke indkomst ved erhvervsmæssig virksomhed, og hvis indkomsten inklusive skattefrie udbytter ikke overstiger 25.000 kr. når fradrag af renteudgifter og administrationsomkostninger er trukket fra, men før fradrag af uddelinger,  2 - Fonden driver offentligt tilgængelige museer, og som efter § 4, stk. 8, i fondsbeskatningsloven har opnået tilladelse til uden begrænsninger at hensætte til almenvelgørende eller på anden måde almennyttige kulturelle formål, og hvis overskud i indkomståret udelukkende anvendes til museets formål.  3 - Fonden anvender udelukkende overskuddet til formålet og har fået tilladelse til at afgive erklæring i stedet for selvangivelse. Felt 232a </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FondForeningErklæringTilvalgt" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om fonden/foreningen har valgt at afgive erklæring i stedet for at selvangive. (True = ja, False = nej) Felt 39</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FondForeningErklæringForeningMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet angiver om foreningen øånsker, såfremt den opfylder betingelserne i § 15, stk. 2, i fondsbeskatningsloven, i stedet for at selvangive, at afgive en erklæring Felt 132</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FondForeningErklæringFondMarkering" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ønsker fonden, såfremt den opfylder betingelserne i § 15, stk. 3 i fondsbeskatningsloven, i stedet for at selvangive, at afgive en erklæring? Felt 232 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

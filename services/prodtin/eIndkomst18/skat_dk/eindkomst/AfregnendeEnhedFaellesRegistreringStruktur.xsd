@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" version="1.0" xml:lang="DA">
+<xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="AfregnendeEnhedFaellesRegistreringStruktur" type="fase2:AfregnendeEnhedFaellesRegistreringStrukturType"/>
+         <xs:complexType name="AfregnendeEnhedFaellesRegistreringStrukturType">
+               <xs:sequence>
+               <xs:element name="AfregnendeEnhedFaellesRegistrering">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="cvr:CVRnumberIdentifier"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

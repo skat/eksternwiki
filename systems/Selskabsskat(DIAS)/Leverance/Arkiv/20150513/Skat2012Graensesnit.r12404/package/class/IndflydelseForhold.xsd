@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="IndflydelseForholdBestemmendeIndflydelse" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den skattepligtige udøver bestemmende indflydelse over juridiske personer eller har et fast driftssted i udlandet. (True = ja). Felt 500</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndflydelseForholdUnderlagtBestemmendeIndflydelse"
+                     type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den skattepligtige er underlagt bestemmende indflydelse fra fysiske eller juridiske personer eller er en udenlandsk fysisk eller juridisk person med et fast driftssted i Danmark. (True = ja). Felt 501</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndflydelseForholdKoncernForbundet" type="skat2012:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den skattepligtige på anden måde er koncernforbundet med en juridisk person. (True = ja). Felt 502</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

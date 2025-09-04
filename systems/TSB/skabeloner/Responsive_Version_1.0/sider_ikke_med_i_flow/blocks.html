@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="da"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+		<!-- SHOULD BE ADDED TO  <system.webServer> <httpProtocol> <customHeaders> <add name="X-UA-Compatible" value="IE=edge"/> if not used as meta-->
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge"/>-->
+        <title>Skat.dk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" content=""/>
+         <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/TastSelvMain.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="../css/main.css" />
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+		<header>
+			<div class="skts-logo"><a class="skts-tooltip-holder" href="../index.html"><br/><span class="skts-tooltip">Gå til forsiden</span></a></div>	
+			<ul id="skts-skip-links">
+				<li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+				<li><a id="skts-skip-til-aarsopgoerelse" href="#skts-skip-link-target-aarsopgoerelse">Gå til genveje under Årsopgørelse</a></li>
+				<li><a id="skts-skip-til-forskudsopgoerelse" href="#skts-skip-link-target-forskudsopgoerelse">Gå til genveje under Forskudsopgørelse</a></li>
+			</ul>	
+			<a href="#" class="skts-toggle-menu">Menu</a>
+		</header>
+		<div class="skts-content-container">
+			<nav class="skts-top-nav-container clearfix">
+				<ul class="skts-main-nav">
+					<li><a href="forside.html">Forside</a></li><li><a href="/borger/link?appl=seaaarsopgoerelsen">Årsopgørelse</a></li><li><a class="skts-selected" href="forskud.html" >Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+				</ul>
+				<div class="skts-right-float">
+					<ul class="skts-global-nav">
+						<li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a class="skts-tooltip-holder" href="#">Hjælp<span class="skts-tooltip"> åbner nyt vindue</span></a></li>
+					</ul>
+					<a class="skts-login skts-icon-lock-open" href="/borger/logout">Log af</a>	
+				</div>
+			</nav>
+			<div class="skts-grid skts-grid-pad">
+				<div class="skts-col-1 skts-lille-tekst skts-right-align skts-brugeroplysninger-skaerm">
+					<p id="skts-brugeroplysninger" class="skts-no-pad">Logget på:  VUR-test-05, e-mail-adresse: test@gmail.dk (<a target="_blank" class="skts-tooltip-holder skts-link-fremhaevning" href="CSC_ret_kontakt.html">ret kontaktoplysninger<span class="skts-tooltip"> Åbner nyt vindue</span></a>)</p>
+				</div>
+				<div class="skts-brugeroplysninger-print"><p>VUR-test-05, cpr-nummer 010389-7750</p></div>
+				<br/>
+			
+				<div class="skts-col-1">
+					<div class="skts-module-container">
+						<div class="skts-module-header">
+							<h1 class="skts-ramme-overskrift">Se forskudsopgørelse</h1>
+						</div>						
+						<div style="width: 1px;">
+							<!--Skal have en bredde (layout), ellers vil IE ikke give fokus til skiplink target'en, men til nærmest forældre som har et layout -->
+							<a id="skts-skip-link-target-indhold" class="skts-link-target-skjul" href="#skts-skip-link-target-indhold" tabindex="-1">Start af indhold</a>
+						</div>							
+						<ul id="skts-faneblade">
+							<li class="skts-onclick-checkAendringer skts-faneblad-markeret"><a href="Forskudsopgoerelsen.aspx?indkomstaar=2014" class="skts-tooltip-holder">2014<span class="skts-tooltip">Se forskudsopgørelsen for 2014 </span></a></li><li class="skts-onclick-checkAendringer "><a href="Forskudsopgoerelsen.aspx?indkomstaar=2013" class="skts-tooltip-holder">2013<span class="skts-tooltip">Se forskudsopgørelsen for 2013 </span></a></li><li class="skts-onclick-checkAendringer "><a href="Forskudsopgoerelsen.aspx?showmore=1" class="skts-tooltip-holder">Tidligere<span class="skts-tooltip">Se forskudsopgørelsen for tidligere år </span></a></li>
+						</ul>
+						<br/>
+						<br/>					
+						<!-- SKAT demo start -->
+											
+						<div class="skts-grid-no-height skts-grid-pad">
+							<div class="skts-col-1">
+								blok 2
+							</div>
+						</div>
+						<div class="skts-grid-no-height skts-grid-pad">
+							<div class="skts-col-1">
+								blok 1
+							</div>
+						</div>	
+						<div class="skts-grid-no-height skts-grid-pad"> 
+							<div class="skts-col-2-3">
+								<div class="skts-content-box">
+									blok 3
+								</div>
+							</div> 
+							<div class="skts-col-1-3 skts-no-push-col">
+								<div class="skts-content-box">
+									blok 4
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+								</div>								
+							</div>
+							<div class="skts-col-2-3">
+								<div class="skts-content-box">
+									blok 5
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+									<p><br/></p>
+								</div>
+							</div>
+						</div>
+						<div class="skts-grid-no-height skts-grid-pad">
+							<div class="skts-col-1">
+								blok 6
+							</div>
+						</div>
+						<!-- SKAT demo end -->					
+					</div>
+				</div>
+			</div>									
+			<footer><address>SKAT: <a href="tel:72221818">72 22 18 18</a></address></footer>
+		</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="../assets/js/TastSelvMain.js"></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/main.js"></script>
+    </body>
+</html>

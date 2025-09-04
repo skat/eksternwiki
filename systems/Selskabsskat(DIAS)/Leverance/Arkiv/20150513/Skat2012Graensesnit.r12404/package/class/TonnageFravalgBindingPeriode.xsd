@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder begreber som relaterer til fravalgsbevilling for tonnageskatteordningen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel3Type.xsd"/>
+         <xs:element name="TonnageFravalgBindingPeriodeStartDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Første dag i den aktuelle fravalgsperiode (fravalg af tonnageskatteordningen ifm. fravalgsbevilling).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageFravalgBindingPeriodeSlutDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste dato i den aktuelle fravalgsperiode (fravalg af tonnageskatteordningen ifm. fravalgsbevilling).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageFravalgBindingPeriodeAntalÅr" type="skat2012:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Parameter som angiver bindingsperioden i antal år (for fravalgsbevilling til tonnageordningen).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TonnageFravalgBindingPeriodeRegistreringDato" type="skat2012:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen hvor selskabet har foretaget fravalg/fornyelse af fravalg af tonnageskatteordningen. (Ikke det samme som den valgte startdato.)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>
