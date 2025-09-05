@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En forventet indbetaling er indbetaling med en ForventetIndbetalingNøgle (OCR-linie), som etablerer en sammenhæng mellem en forventet betaling og en eller flere af fordringer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID14Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/OCRLinjeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/ForventetIndbetalingKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/ForventetIndbetalingAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="ForventetIndbetalingID" type="fase2.1:ID14Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af den enkelte forventede indbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingUdløbsDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor modtagelsen af en forventet indbetaling ikke længere er gældende. Modtages den forventede indbetaling efter udløbsdatoen behandles den som en indbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingVenter" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: hvis betaling ikke er modtaget Ændres til Nej når betalingen er modtaget </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingBetalt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nej: hvis betalingen ikke er modtaget. Ændres til Ja når betalingen er modtaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingUdløbet" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nej: hvis udløbsdato ikke passeret Ændres til Ja når udløbsdato er passeret</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingOCRLinie" type="fase2.1:OCRLinjeType">
+               
+               <xs:annotation>
+                  <xs:documentation>OCR linien incl klammer, kontonummer og alt nødvendigt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingSiRente" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den Simulerede rente frem til sidste rettidig indbetalingsdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingSiRenteDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Simuleretrentebeløb omregnet til danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingSRBDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste Rettidige Betaling (SRB) = Den dato hvor den forventede indbetaling senest skal være betalt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingEFIIndsats" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af instansen af en indsats, dvs. eksempelvis betalingsordningen for kunden Hans Hansen, der starter 1.1.2007.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingHændelse" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvorvidt EFI skal have besked via hændelsesfunktionen når der modtages indbetalinger.  Ja:  EFI ønsker at modtage besked via hændelse om   indbetaling Nej:  EFI ønsker IKKE at modtage besked via hændelse   om indbetaling </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingKode"
+                     type="fase2.1:ForventetIndbetalingKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til at udsøge list af forventede indbetalinger.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingÅrsagKode"
+                     type="fase2.1:ForventetIndbetalingÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Årsagskode for status for forventet indbetaling  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at uddybe valg af Årsagskode. Begrundelsen kan evt. anvendes til begrundelse i meddelelse til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Fritekst</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingUdbAltIndb" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om et overskydende beløb skal udbetales til den alternative indbetaler.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

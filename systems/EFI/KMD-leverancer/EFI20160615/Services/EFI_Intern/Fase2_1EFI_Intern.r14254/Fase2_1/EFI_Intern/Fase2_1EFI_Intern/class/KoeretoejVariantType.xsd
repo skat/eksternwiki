@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Variant er en angivelse af et mærke og models variant. Som eksempel: 1.8, V6 2.5, 1.1, 3.2 automat osv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="KøretøjVariantTypeNummer" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et unikt nummer, som er nedarvet fra KøretøjBetegnelseHierarki</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KøretøjVariantTypeNavn" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En kort sætning (navn), som beskriver den enkelte type på en simpel og let identificerende måde.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BeløbPositiv13UdenDecimalerType">
+               <xs:annotation>
+                  <xs:documentation>Et positivt beløb som ingen decimaler har. Værdierne ligger indenfor følgende område: 0 - 9.999.999.999.999</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="9999999999999"/>
+                  <xs:minInclusive value="0"/>
+                  <xs:totalDigits value="13"/>
+                  <xs:fractionDigits value="0"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

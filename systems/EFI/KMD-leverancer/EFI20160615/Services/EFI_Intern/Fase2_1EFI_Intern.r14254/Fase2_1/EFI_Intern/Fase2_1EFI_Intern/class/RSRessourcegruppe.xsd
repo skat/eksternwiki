@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En ressourcegruppe i Ressourcestyring kan være en gruppe af medarbejdere, lokaler, køretøjer eller andet udstyr.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="RSRessourcegruppeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcegruppens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcegruppens navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af ressourcegruppen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeMedarbejderGruppe" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om ressourcegruppen er en gruppe af medarbejdere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet ressourcegruppen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ressourcegruppen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret ressourcegruppen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ressourcegruppe er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet ressourcegruppen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ressourcegruppen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourcegruppeTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til ressourcegruppen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

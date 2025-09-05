@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>En registrering af relevante miljø oplysninger.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalFlydendeType.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/JaNejType.xsd"/>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:element name="KoeretoejMiljoeOplysningCO2Udslip" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>En registrering af CO2 udslippet fra køretøjet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningEmissionCO" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>En registrering af CO udledningen fra køretøjet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningEmissionHCPlusNOX" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>En registrering af HC+NOX udledningen fra køretøjet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningEmissionNOX" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>En registrering af NOX udledningen fra køretøjet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningPartikler" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>En registrering af partikel udledningen fra køretøjet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningPartikelFilter" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>En registrering af, hvorvidt der er et partikelfilter monteret eller ej.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningRoegtaethed" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>En registrering af røgtætheden udledningen fra køretøjet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningRoegtaethedOmdrejningstal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Angiver omdrejningstallet, der har været anvendt ved måling af røgtæthed, for køretøjet målt i antal omdrejninger per minut.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningEftermonteretPartikelfilter" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver hvorvidt et partikelfilter er eftermonteret på køretøjet. Oplysningen angives i forbindelse med syn af køretøjet.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningSpecifikCO2Emission" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>Begrebet dækker over den specifikke CO2-emission, som er fastsat for den enkelte lastbil. Den specifikke CO2-emission fastsættes af køretøjsproducenten, som angiver tallet på kundeinformationsfilen, der udleveres til lastbilens køber.  1. Når drivkrafttype = El eller Brint, vil værdien være 0 (nul) 2. Når drivkrafttype er andet end El eller Brint, vil værdien i dette  felt være større end 0 (nul) og mindre end 1.000.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningNyttelastvaerdi" type="dmr:TalFlydendeType">
+		<xs:annotation>
+			<xs:documentation>Begrebet dækker over den gennemsnitlige nyttelastværdi for en lastbil. Den gennemsnitlige nyttelastværdi fastsættes af køretøjsproducenten og skal registreres i Motorregistret efter ønske fra Færdselsstyrelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningTungtNulEmissionKoeretoej" type="dmr:JaNejType">
+		<xs:annotation>
+			<xs:documentation>Begrebet dækker over om en lastbil er et tungt nul-emission køretøj. Oplysningen har betydning for om lastbilen skal indplaceres i CO2-emissionsklasse 5 eller ej. Det er synsvirksomheden eller importørens ansvar, at angive om lastbilen er et tungt nul-emissionskøretøj. Det er påkrævet at kunne udveksle feltets data via Eucaris systemet.  Feltværdierne er Ja eller Nej.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningCO2EmissionKlasseOmklassificeringDato" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Begrebet dækker over den dato, hvor der er foretaget en omklassificering af en lastbils CO2-emissionsklasse. For at sikre mere miljøvenlige lastbiler, sker der løbende en skærpelse af de grænseværdier, der er gældende for hvornår en lastbil tilhører en given CO2-emissionsklasse. Det er et krav, at for lastbiler der er indplaceret i emissionsklasse 2 og 3, skal lastbilens CO2-emissionsklasse revurderes 6 år efter første registreringsdato (når lastbilen er registreret første gang efter d. 1. juli 2019). Feltet vil således først blive udfyldt med data, når der er foretaget en maskinel omklassificering af CO2-emissiionsklassen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejMiljoeOplysningCO2EmissionKlasseOprindelig" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Køretøjets indplacering ved oprettelse som nyt</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

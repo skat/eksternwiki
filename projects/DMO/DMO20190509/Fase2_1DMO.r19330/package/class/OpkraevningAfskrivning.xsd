@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+         <xs:element name="OpkrævningAfskrivningType" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskriver om en afskrivning er skal reducere en indtægt, eller udgiftføres på en udgiftskonto.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår afskrivning har virkning fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb der afskrives.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningLagtTilGodkendelseDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningÅrsag" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Årsagen til hvorfor en afskrivning er foretaget, anvendes typisk til at bestemme om en afskrivning kræver en godkendelse. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningID" type="fase2.1:IdentifikationNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt ID for ikke godkendt afskrivning, der er lagt til godkendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for bogføring af afskrivningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningAfskrivningÅrsagKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der indentificerer årsagen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

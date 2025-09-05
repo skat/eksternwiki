@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation/>
+   
+   
+   </xs:annotation>
+            
+      
+   
+   <xs:include schemaLocation="../class/VirksomhedAdresseType.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/AdresseType.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/Adresse.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/Land.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   <xs:element name="VirksomhedAdresseStruktur" type="fase2:VirksomhedAdresseStrukturType"/>
+   
+   
+   <xs:complexType name="VirksomhedAdresseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         <xs:element ref="fase2:VirksomhedAdresseTypeKode"/>
+                  
+                  
+         
+         
+         <xs:element ref="fase2:AdresseTypeKode"/>
+
+         
+         
+         <xs:element name="AdresseValg">
+            
+            
+            <xs:complexType>
+               
+               
+               <xs:choice>
+                  
+                  
+                  <xs:sequence>
+
+                     
+                     
+                     <xs:element name="Adresse">
+                        
+                        
+                        <xs:complexType>
+                           
+                           
+                           <xs:sequence>
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseVejNavn" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseFraHusBogstav" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseTilHusNummer" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseTilHusBogstav" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseEtageTekst" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseSideDørTekst" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseCONavn" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseByNavn" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdressePostNummer" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdressePostDistrikt" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseVejKode" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdressePostBox" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseGyldigFra" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AdresseGyldigTil" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:LandKode" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:MyndighedNummer" minOccurs="0"/>
+
+
+
+                           
+                           
+                           </xs:sequence>
+                        
+                        
+                        </xs:complexType>
+                     
+                     
+                     </xs:element>
+				
+				
+                  
+                  
+                  </xs:sequence>
+                  
+                  
+                  <xs:sequence>
+				
+
+                     
+                     
+                     <xs:element name="AlternativAdresse">
+                        
+                        
+                        <xs:complexType>
+                           
+                           
+                           <xs:sequence>
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAnvendelseKode" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseGyldigFra" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:AlternativAdresseGyldigTil" minOccurs="0"/>
+
+
+
+
+                              
+                              
+                              <xs:element ref="fase2:LandKode" minOccurs="0"/>
+
+
+
+                           
+                           
+                           </xs:sequence>
+                        
+                        
+                        </xs:complexType>
+                     
+                     
+                     </xs:element>
+
+                  
+                  
+                  </xs:sequence>
+               
+               
+               </xs:choice>
+            
+            
+            </xs:complexType>
+         
+         
+         </xs:element>
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   </xs:complexType>
+
+
+</xs:schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:opgoerelsesambeskatningkode="urn:oio:skat:hentselv:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="OpgoerelseSambeskatningKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Dette er en kode i forskuds- og årsopgørelsessystemet. Kodeværdierne dækker over skattemæssige sambeskatningsforhold. Koden har følgende værdier (numerisk):  Værdi Betydning 1 Enlig, ikke gift. Beskattes som enlig.                  Værdien opsættes eller indberettes for skatteydere, der ikke er gift (henvisningsnummer                        000000 - 0000 i CSR-P ved indkomstårets udgang). 2 Gift. Sambeskattes.  3 Nygift. Sambeskattes.   4 Gift, separeret. Beskattes som enlig (hentes automatisk fra CSR-P).   5 Gift, ikke sambeskattet for indeværende (herunder plejehjemsanbringelse).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

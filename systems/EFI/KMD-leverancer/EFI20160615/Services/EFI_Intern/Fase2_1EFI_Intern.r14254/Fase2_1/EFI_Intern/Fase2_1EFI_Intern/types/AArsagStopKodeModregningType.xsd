@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="ÅrsagStopKodeModregningType">
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers mulighed for valg af  årsager til at stop er iværksat.  Liste af faste værdier (enumeration)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="10"/>
+                  <xs:enumeration value="KLAG"/>
+                  <xs:enumeration value="KLFH"/>
+                  <xs:enumeration value="HENS"/>
+                  <xs:enumeration value="BOMU"/>
+                  <xs:enumeration value="BOIU"/>
+                  <xs:enumeration value="ANDN"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

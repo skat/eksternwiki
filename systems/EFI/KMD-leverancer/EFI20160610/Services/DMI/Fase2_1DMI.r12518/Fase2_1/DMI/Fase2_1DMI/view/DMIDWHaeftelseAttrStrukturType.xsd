@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/CRUDFunktionType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../class/DMIIndberetter.xsd"/>
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+         <xs:element name="DMIDWHæftelseAttrStruktur" type="fase2.1:DMIDWHæftelseAttrStrukturType"/>
+         <xs:complexType name="DMIDWHæftelseAttrStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="DMIDWHæftelse">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:CRUDFunktionType"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                           <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                           <xs:element ref="fase2.1:KundeType"/>
+                           <xs:element name="DMIIndberetterHentStruktur">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:DMIIndberetterDatoTid"/>
+                  
+                                    <xs:element ref="fase2.1:DMIIndberetterID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIIndberetterRolle"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element ref="fase2.1:HæftelseForm"/>
+
+                           <xs:element ref="fase2.1:HæftelseSubsidiær" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseSubsiAutoAfskriv" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseSubsiAutoAfskrivUdløb" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseSubsiStartDato" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:HæftelseBegrænsetProcent"/>
+
+                           <xs:element ref="fase2.1:HæftelseUnderBobehandling" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseForældelseDato" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:HæftelseMåAfskrives"/>
+
+                           <xs:element ref="fase2.1:HæftelseMåAfskrivesEfterDato" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseMåAfskrivesEfterDatoNote" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:HæftelseMåForælde"/>
+
+                           <xs:element ref="fase2.1:HæftelseOpkMyndRykkerDato1" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseOpkMyndRykkerDato2" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseKommentar" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:HæftelseModtagelseDato"/>
+                  
+                           <xs:element ref="fase2.1:HæftelseDom"/>
+
+                           <xs:element ref="fase2.1:HæftelseDomDato" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:HæftelseForlig"/>
+
+                           <xs:element ref="fase2.1:HæftelseForligDato" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14933</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../class/AdresseType.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:element name="AdresseStruktur" type="fase2.1:AdresseStrukturType"/>
+         <xs:complexType name="AdresseStrukturType">
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Adresse">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="fase2.1:AdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseAnvendelseKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseVejNavn" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseVejKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTilHusNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseFraHusBogstav" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTilHusBogstav" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseLigeUlige" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseEtageTekst" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseSideDørTekst" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseCONavn" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdressePostNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdressePostDistrikt" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseByNavn" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdressePostBox" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseGyldigFra" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseGyldigTil" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeTekst" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeGyldigFra" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeGyldigTil" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:LandKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:LandNavn" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

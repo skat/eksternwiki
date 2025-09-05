@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="FordringHaverReturÅrsagKodeType">
+               <xs:annotation>
+                  <xs:documentation>Årsager til tilbagebetalingen.  Liste af faste værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="6"/>
+                  <xs:enumeration value="TBNEDS"/>
+                  <xs:enumeration value="TBTILB"/>
+                  <xs:enumeration value="TBLOEN"/>
+                  <xs:enumeration value="ANDEN"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

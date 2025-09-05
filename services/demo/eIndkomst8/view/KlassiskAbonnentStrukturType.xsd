@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:leveringabonnentstatusnydatotid="http://rep.oio.dk/skat.dk/eindkomst/class/leveringabonnentstatusnydatotid/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/leveringabonnentstatusnydatotid/xml/schemas/20071202/" schemaLocation="../class/leveringabonnentstatusnydatotid/xml/schemas/20071202/SKAT_LeveringAbonnentStatusNyDatoTid.xsd"/><xs:include schemaLocation="../view/AbonnentAdgangStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/AbonnentVirksomhedStrukturType.xsd"/>
+	<xs:element name="KlassiskAbonnentStruktur" type="fase2:KlassiskAbonnentStrukturType"/>
+	<xs:complexType name="KlassiskAbonnentStrukturType">
+		<xs:sequence>
+			<xs:element ref="fase2:AbonnentAdgangStruktur"/>
+			<xs:element ref="fase2:AbonnentVirksomhedStruktur"/>
+			<xs:element ref="leveringabonnentstatusnydatotid:LeveringAbonnentStatusNyDatoTid"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

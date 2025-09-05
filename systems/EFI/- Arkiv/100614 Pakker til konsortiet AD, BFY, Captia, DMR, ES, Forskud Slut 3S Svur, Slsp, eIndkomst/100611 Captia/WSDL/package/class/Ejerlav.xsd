@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Ejerlav er en betegnelse for en del af en ejendoms eller et jordstykkes matrikelnummer.  Et typisk matrikelnummer kunne være 5 b Tindbæk By, Skjern. Her er Tindbæk By, Skjern navnet på det ejerlav, som ejendommen tilhører. Ejerlavsbetegnelsen består af to led. Dels navnet på den landsby (område), som ejendommen tilhører, her Tindbæk. Dels navnet på det sogn, som ejendommen tilhører, her Skjern Sogn.  Kilde: Wikipedia</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/KodeType.xsd"/>
+      
+   
+   
+   <xs:element name="EjerlavNavn" type="fase2.1:Tekst45Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>EjerlavNavn er dels navnet på den landsby (område), som ejendommen tilhører, dels navnet på det sogn, som ejendommen tilhører. Kaldes også ejerlavsbetegnelse.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="EjerlavKode" type="fase2.1:KodeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Unik kode for ejerlav i Danmark.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>En efterlysning af et køretøj (dansk) vil både forefindes i Politiets system, i DMR (denne begrebsmodel) samt i Schengen systemet. Køretøjet behøver ikke nødvendigvis at være oprettet på forhånd i køretøjsregisteret, hvorfor stelnummeret fremgår af selve efterlysningen. Dette kan forekomme, hvis køretøjet stjæles før det er oprettet af importøren. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/StelNummerType.xsd"/>
+	<xs:element name="EfterlysningKoeretoejStelNummer" type="dmr:StelNummerType">
+		<xs:annotation>
+			<xs:documentation>Stelnummeret på det efterlyste køretøj.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

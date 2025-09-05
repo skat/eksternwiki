@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/FordringOpskrivningAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="FordringOpskrivningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dags dato, ,  (samme som registreringsdato i DMI)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningVirkningFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra opskrivningen skal træde i kraft. Løsningen skal automatisk indsætte dags dato, men sagsbehandleren skal have mulighed for at ændre den.  Kan være en dato i fortiden, har betydning for evt. korrektion af renter </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring ønskes eller er opskrevet med i den indrapporterede valuta.  Forudsætning for 0 er at FordringOpskrivningÅrsagKode = Endelig Fastsættelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring er opskrevet med indrapporteret eller omregnet til i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningÅrsagKode"
+                     type="fase2.1:FordringOpskrivningÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at vælge en årsag til opskrivning af fordring ud fra en fast liste. Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for, hvorfor en opskrivning er foretaget. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringOpskrivningBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

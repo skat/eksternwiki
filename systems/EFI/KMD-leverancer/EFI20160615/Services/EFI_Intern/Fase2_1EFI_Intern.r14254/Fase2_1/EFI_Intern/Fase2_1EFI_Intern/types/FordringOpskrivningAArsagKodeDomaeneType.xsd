@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="FordringOpskrivningÅrsagKodeDomæneType">
+               <xs:annotation>
+                  <xs:documentation>Liste med årsagsværdier for opskrivning  Fast liste af værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="10"/>
+                  <xs:enumeration value="ANDN"/>
+                  <xs:enumeration value="FAST"/>
+                  <xs:enumeration value="FEJL"/>
+                  <xs:enumeration value="ODIFF"/>
+                  <xs:enumeration value="TIND"/>
+                  <xs:enumeration value="TRVE"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

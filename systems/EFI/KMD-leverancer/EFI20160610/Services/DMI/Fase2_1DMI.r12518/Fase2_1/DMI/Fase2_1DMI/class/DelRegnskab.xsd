@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et delregnskab samler en række finanskonti. Delregnskaber indgår som en del af et samlet regnskab. F.x. indgår delregnskaberne for henholdsvis DMO og DMI i § 38 regnskabet.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/StartdatoType.xsd"/>
+         <xs:include schemaLocation="../types/SlutdatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:element name="DelRegnskabID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>En organisatorisk enhed f.eks DMO (Opkrævningsmyndighed) eller DMI (Inddrivelsesmyndighed)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DelRegnskabPeriodeStart" type="fase2.1:StartdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdatoen for delregnskabet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DelRegnskabPeriodeSlut" type="fase2.1:SlutdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdatoen for delregnskabet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DelRegnskabPrimosaldo" type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver saldo på Finanskontoen dagen før regnskabsperiodens start. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DelRegnskabBevægelse" type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver regnskabsperiodens samlede poststeringer specificeret som debetbevægelser og kreditbevægelser. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DelRegnskabUltimosaldo"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver summen af primosaldo + bevægelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

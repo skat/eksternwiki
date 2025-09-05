@@ -1,0 +1,46 @@
+﻿ØvrigeOplysningerStruktur (03-02-2022)
+	PersonligVirksomhedOplysning deles i to:
+		(
+			*PersonligVirksomhedOplysning*
+			[
+				(SelvstændigVirksomhedOverskud)
+				(SelvstændigVirksomhedUnderskud)
+				(VirksomhedTypeLigningArtKode)
+				(VirksomhedTypeFremtidigLigningArtKode)
+				(VirksomhedOplysningSamledeHævningerBeløb)
+			]
+		)
+		*RegnskabOplysningListe*
+		0{
+			*RegnskabOplysning*
+			[
+				(
+					*RegnskabsoplysningValg*
+					[
+						VirksomhedCVRNummer
+						|
+						PersonCPRNummer
+					]
+				)
+			(RegnskabOplysningNettoomsætning)
+			(RegnskabOplysningOrdinærtResultatBeløb)
+			]
+		}
+
+	Parantesen af indholdet er fjernet for listerne og de nye lister er vist her:
+		*RenteudgifterFraÆgtefælleBeløbListe*
+		0{
+			PersonKontrolOplysningRenteudgifterFraÆgtefælleBeløb
+		}
+		*RenteudgifterTilÆgtefælleBeløbListe*
+		0{
+			PersonKontrolOplysningRenteudgifterTilÆgtefælleBeløb
+		}
+		*UdenlandskIndkomstOverførtBeløbListe*
+		0{
+			PersonKontrolOplysningUdenlandskIndkomstOverførtBeløb
+		}
+		*VirksomhedIndkomstOverførtBeløbListe*
+		0{
+			PersonKontrolOplysningVirksomhedIndkomstOverførtBeløb
+		}

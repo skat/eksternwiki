@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation>Formålet er at udstille eSkattekort til offentlige myndigheder, A-kasser o. lign., der har brug for et øjebliks-billede af skattekortoplysninger og, som SKAT har givet tilladelse hertil. Der er udelukkende tale om en udstilling af det/de ønskede skattekortoplysninger.   Formålet er også at udstille skattekortoplysninger til brug ved opsplitning af indeholdt A-skat i reel A-skat og i lønindeholdelse.  Det kontrolleres, at SKAT har givet bruger tilladelse til at få udstillet det/de ønskede skattekortoplysninger, herunder om bruger kan få alle oplysninger om eSkattekort med specifikation af trækprocent i A-skat og lønindeholdelse - og andre kun de traditionelle skattekortoplysninger.  Der hentes eSkattekort, som er gyldige på den anførte SøgeDatoFra, hvis eSkattekortAlleMarkering er 'Falsk', dvs. det er angivet, at der alene ønskes eSkattekort, som er gældende på den anførte dato ønskes.  Der hentes eSkattekort, som er gyldige på samt fra og med den anførte SøgeDatoFra, hvis eSkattekortAl-leMarkering er 'Sand', dvs. der er angivet, at der ønskes eSkattekort, som er gældende på den anførte dato samt eventuelle 'nyere' eSkattekort.  En anvender af servicen kan pt. anvende følgende værdier af eSkattekortRekvisitionTypeKode:  01 = hovedkort 02 = bikort 06 = hovedkort uden lønindeholdelse  07 = bikort uden lønindeholdelse  Hvis der er anvendt: eSkattekortRekvisitionTypeKode = 01 (Hovedkort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 01 = Bruttokort 02 = Hovedkort 03 = Frikort  eSkattekortRekvisitionTypeKode = 02 (Bikort) så kan svaret indeholde følgende værdier af eSkatte-kortTypeKode: 00 = Intet skattekort 01 = Bruttokort 03 = Frikort 04 = Bikort  eSkattekortRekvisitionTypeKode = 06 (Hovedkort uden lønindeholdelse) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 03 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Bå-de eSkattekortTrækProcent, eSkattekortForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  05 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortForskudTrækProcent vil være udfyldt)  06 = Hovedkort uden lønindeholdelse  eSkattekortRekvisitionTypeKode = 07 (Bikort uden lønindeholdelse) så kan svaret indeholde føl-gende værdier af eSkattekortTypeKode: 00 = Intet skattekort 03 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  05 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortForskudTrækProcent vil være udfyldt) 07 = Bikort uden lønindeholdelse</xs:documentation>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../view/eSkattekortHent_IType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/eSkattekortHent_OType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/eSkattekortHent_FejlIdType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+   
+   
+   
+   <xs:element name="eSkattekortHentInterface" type="fase2.1:eSkattekortHentInterfaceType"/>
+   
+   
+   
+   <xs:complexType name="eSkattekortHentInterfaceType">
+      
+      
+      
+      <xs:choice>
+         
+         
+         
+         <xs:element ref="fase2.1:eSkattekortHent_I"/>
+         
+         
+         
+         <xs:element ref="fase2.1:eSkattekortHent_O"/>
+         
+         
+         
+         <xs:element ref="fase2.1:eSkattekortHent_FejlId"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTrans"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTransSvar"/>
+      
+      
+      
+      </xs:choice>
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

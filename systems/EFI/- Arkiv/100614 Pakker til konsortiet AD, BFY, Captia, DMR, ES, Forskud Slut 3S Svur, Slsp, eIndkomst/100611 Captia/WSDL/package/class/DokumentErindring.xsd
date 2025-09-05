@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Information om en erindring på et dokument. Eksempel: Ønsker en sagsbehandler at modtage en erindring om en tidsfrist, så skal vedkommende tilknytte en erindring på dokumentet med en beskrivelse og dato.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst255Type.xsd"/>
+      
+   
+   
+   <xs:element name="DokumentErindringDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Dato for erindring på et dokument.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="DokumentErindringBeskrivelse" type="fase2.1:Tekst255Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Beskrivelse af erindring på et dokument..</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

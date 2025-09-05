@@ -1,0 +1,26 @@
+VirksomhedHændelseSamlingHent:
+
+1) Følgende tekst er fjernet i "Overordnet Funktionalitet:
+
+”Begrænsning: Outputtet er omfattet af en begrænsning på antallet af virksomhedshændelser, der returneres.
+
+- Ved søgning på dato og tid uden yderligere filtrering, returneres op til 1000 hændelser
+- Ved søgning på dato og-tid kombineret med en filtreringsmarkering returneres op til 100 hændelser”
+
+2) * HændelseValg * gjort obligatorisk
+
+3) Tre nye "hændelsesstrukturer" i output:
+
+En for hver af følgende markeringer i input:
+- PrimærAdresseÆndringMarkering
+- PrimærTelefonSamlingÆndringMarkering
+- PrimærEmailSamlingÆndringMarkering
+
+4) Overordnet Funktionalitet er opdateret med følgende:
+
+- ændring i primæradresse (+ evt. oplysning om hændelsen)
+- ændring i telefon (+ evt. oplysning om hændelsen)
+- ændring i email (+ evt. oplysning om hændelsen)
+- ændring i øvrige adresser
+
+...erstatter - ændring adresse (+ evt. oplysning om hændelsen)

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+				     
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+         <xs:include schemaLocation="../class/Dokument.xsd"/>
+         <xs:include schemaLocation="../operational/DPNoteID.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/DPNote.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/EFIHenvendelsesDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DPIndgaaendePostMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DPIndgaaendePostIdentifikationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DPOpretDokumentIdentifikationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DokumentFilStrukturType.xsd"/>
+				     
+         <xs:element name="DPDokumentOpret_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DPDokumentOpret_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DPDokumentOpret_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="DPDokumentIdentifikationValg">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:element ref="fase2.1:DPIndgaaendePostIdentifikationStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:DPOpretDokumentIdentifikationStruktur"/>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element ref="fase2.1:DPDokumentPrioritet" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:DokumentTitel"/>
+
+                     <xs:element ref="fase2.1:DPNoteID" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIIndberetterOpretStruktur" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DPDokumentOprettetDato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:DPNoteTekst"/>
+
+                     <xs:element ref="fase2.1:DokumentFilStruktur" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DPDokumentArt" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFIHenvendelsesDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DPDokumentEksternReference" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DokumentNummer" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DPIndgåendePostMarkering" minOccurs="0"/>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

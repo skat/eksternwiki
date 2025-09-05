@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:element name="EFIETILAndelIdentifikatorStruktur"
+                     type="fase2.1:EFIETILAndelIdentifikatorStrukturType"/>
+         <xs:complexType name="EFIETILAndelIdentifikatorStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:MyndighedNummer"/>
+                  
+                  <xs:element ref="fase2.1:AdresseVejKode"/>
+                  
+                  <xs:element ref="fase2.1:AdresseFraHusNummer"/>
+
+               <xs:element ref="fase2.1:AdresseFraHusBogstav" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AdresseEtageTekst" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AdresseSideDørTekst" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

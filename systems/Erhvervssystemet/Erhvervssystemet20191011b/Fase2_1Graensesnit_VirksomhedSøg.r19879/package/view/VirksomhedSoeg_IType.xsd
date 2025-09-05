@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19879</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../operational/SoegeDatoTidFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/SoegeDatoTidTil.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/InkluderProduktionEnhedMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/NyoprettetVirksomhedMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OphoertVirksomhedMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirksomhedNavnAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AdresseAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DriftFormAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirksomhedStatusAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RegistreringForholdAEndringMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EjerForholdAEndringMarkering.xsd"/>
+				     
+         <xs:element name="VirksomhedSøg_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:VirksomhedSøg_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r19879"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="VirksomhedSøg_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <!--Sequence removed-->
+
+                        <xs:element name="Søgekriterier" minOccurs="0">
+                           <xs:complexType>
+                              <xs:choice>
+                                 <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+				
+				                             <xs:sequence>
+				
+                                    <xs:element name="VirksomhedOplysningerInd">
+                                       <xs:complexType>
+                                          <xs:sequence>
+
+                                             <xs:element ref="fase2.1:VirksomhedNavnFirmaNavnKort" minOccurs="0"/>
+
+
+
+                                             <xs:element ref="fase2.1:AdresseVejNavn" minOccurs="0"/>
+
+
+
+                                             <xs:element ref="fase2.1:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+                                             <xs:element ref="fase2.1:AdressePostNummer" minOccurs="0"/>
+
+
+
+                                             <xs:element ref="fase2.1:AdressePostDistrikt" minOccurs="0"/>
+
+
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:choice>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="ÆndretVirksomhed" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:SøgeDatoTidFra"/>
+
+                                 <xs:element ref="fase2.1:SøgeDatoTidTil" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:InkluderProduktionEnhedMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:NyoprettetVirksomhedMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:OphørtVirksomhedMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:VirksomhedNavnÆndringMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:AdresseÆndringMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:DriftFormÆndringMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:VirksomhedStatusÆndringMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:RegistreringForholdÆndringMarkering" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:EjerForholdÆndringMarkering" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

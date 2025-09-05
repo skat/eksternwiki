@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="KøretøjRegistreringStatusType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Status på et køretøjs registrering. Hvert element starter med et tal, som medtages af hensyn til sortingen i brugergrænsefladen  </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:maxLength value="100"/>
+            
+         
+         
+         <xs:enumeration value="UnderUdarbejdelse"/>
+            
+         
+         
+         <xs:enumeration value="Registreret"/>
+            
+         
+         
+         <xs:enumeration value="Afmeldt"/>
+            
+         
+         
+         <xs:whiteSpace value="preserve"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

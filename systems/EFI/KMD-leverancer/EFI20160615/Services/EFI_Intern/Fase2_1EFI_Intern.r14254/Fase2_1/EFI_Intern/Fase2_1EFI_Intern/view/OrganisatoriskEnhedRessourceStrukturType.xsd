@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OrganisatoriskEnhedRessource.xsd"/>
+         <xs:element name="OrganisatoriskEnhedRessourceStruktur"
+                     type="fase2.1:OrganisatoriskEnhedRessourceStrukturType"/>
+         <xs:complexType name="OrganisatoriskEnhedRessourceStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceID"/>
+                  
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceRessourceID"/>
+                  
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceOrganisatoriskEnhedID"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceGyldigTil" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceOprettetTid"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

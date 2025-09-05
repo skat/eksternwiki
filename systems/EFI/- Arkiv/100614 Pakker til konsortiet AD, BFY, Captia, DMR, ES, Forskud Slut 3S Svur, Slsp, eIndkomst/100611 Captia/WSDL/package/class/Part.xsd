@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Part beskriver i SKAT en sammenhørighed.  F.eks noget er part i en sag.  En part kan f.eks. være en juridisk enhed (vi kunde), en myndighed eller en genstand (ting) f.eks. en ejendom eller et køretøj.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+      
+   
+   
+   <xs:element name="PartAlternativID" type="fase2.1:Tekst30Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Alternativ identifikation af en part, som ikke kan identificeres ved CVR-nummer, SE-nummer eller CPR-nummer. Det gælder fx udenlandske virksomheder.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="PartAlternativIDType" type="fase2.1:Tekst11Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>I tilfælde hvor en part ikke skal identificeres ved et alternativt id, skal man angive hvilke type det alternative id er. Captia skal kende disse typer på forhånd.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

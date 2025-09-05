@@ -1,0 +1,17 @@
+1) M1SSVirksomhedInformationHændelseSamlingHent
+-  Overordnet beskrivelse af funktionalitet nederst: Kaskader: Slutdato frem skal ikke med, det er kun Slutdato tilbage
+SVAR: OK, det er tilføjet
+-  Detaljeret beskrivelse af funktionalitet: 5. pind: "I fht. IkkeEtableretAfgiftRegistreringGodkendtDato og  IkkeEtableretAfgiftPligtigAfmeldingAfgjortDato svarer det til timestamp (dagsdato) ES registrerer, når en pligt henholdsvis åbnes (tilmeldes) og lukkes (afmeldes)." Sætningen skal udgå, jeg tror det var noget vi talte om for lang tid siden, men data er i input til M1SSVirksomhedInformationHændelseOpdater
+SVAR: OK, det er slettet
+
+2) M1SSVirksomhedInformationHændelseOpdater
+- I FejlIdType mangler VoeSVirksomhedNationaltNummer
+SVAR: OK, det er tilføjet
+- (RegistreringForholdHenvisningKode) skal ikke med i input, den finder vi selv
+SVAR: OK, det er slettet
+
+3) M1SSVirksomhedInformationHent
+- I Formål skal Es ikke længere hente de relevante oplysninger i UVIR. UVIR- og M1SS-oplysninger hentes begge dele hos M1SS
+SVAR: OK, det er slettet
+- Hvis data hentes på de temporære tabeller og det er en Afmelding, ligger de øvrige M1SS-virksomhed-oplysninger ikke på de temporære tabeller. Er det korrekt forstået, at disse data så hentes fra M1SS, således at der både hentes på de temporære tabeller og i M1SS-systemet?
+SVAR: Afventer afklaring hos M1SS

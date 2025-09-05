@@ -1,0 +1,33 @@
+1) UDKAST til specifikation af M1SSVirksomhedInformationHent:
+
+	Formål: At kunne hente oplysninger om virksomheder, der er registreret for pligterne M1SS og VoeS, herunder evt udenlandske virksomhedsoplysninger, i Erhvervssystemet (ES). 
+	Når service kaldes skal ES hente de relevante oplysninger henholdsvis: 
+
+	- M1SS 
+	- UVIR 
+	- ES temp tabel for M1SS (for de virksomheder, hvis oplysninger endnu ikke overført til M1SS) 
+
+	Servicen vil primært blive anvendt af Erhvervssysterelsen (ERST). Service skal derfor udstilles eksternt på CSCs B2B-gateway.
+
+2) UDKAST til specifikation af M1SSVirksomhedInformationHændelseOpdater:
+
+	Formål: At kunne opdatere Erhvervssystemet (ES) med oplysninger om virksomheder, der er registreret for pligterne M1SS og VoeS, herunder evt udenlandske virksomhedsoplysninger. 
+
+	Servicen vil primært blive anvendt af Erhvervssysterelsen (ERST). Service skal derfor udstilles eksternt på CSCs B2B-gateway.
+
+3) Rettelser til VirksomhedOpret:
+
+	Indsat i input:
+
+	(
+		* RegnskabValuta *
+		[
+			SkatteRegnskabValutaKode
+			SkatteRegnskabValutaCentralBankNavn
+		]
+	)
+
+	Indsat i FejlId:
+
+	(SkatteRegnskabValutaKode)
+	(SkatteRegnskabValutaCentralBankNavn)

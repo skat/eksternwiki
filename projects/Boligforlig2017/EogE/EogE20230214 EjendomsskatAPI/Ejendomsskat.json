@@ -1,0 +1,1029 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "0.1",
+    "x-svnRevision": 25502,
+    "x-namespace": "Skat2022",
+    "x-source": "Ejendomme",
+    "title": "Ejendomsskat",
+    "x-system": "Ejendomsskat \u0026 Ejendomsbidrag  (EogE)",
+    "x-functionality": "Servicen er baseret på REST og modtager et GET Request med query parameters til at specificere output. Data er repræsenteret som JSON og til servicen findes der en OpenAPI-specifikation.\r\n\r\nKomplethed\r\nDer udstilles alle felter vedr. ejendomsskat.\r\nDer udstilles data med historik for de enkelte indkomstår og der udstilles data gældende fra 1. januar 2024.\r\n\r\nKorrekthed\r\nDer udstilles beregnet ejendomsskat, men en gyldig beregning kan på et senere tidspunkt erstattes af en ny, hvilket betyder, at den tidligere beregning ikke længere er gyldig.\r\n\r\nAktualitet\r\nEjendomsskatter beregnes årligt for det kommende indkomstår for alle ejendomme i september. Derefter genberegnes der løbende i beregningen for individuelle ejendomme ved ændringer i de relevante data der ligger til grund for beregningerne som f.eks. ejerforhold. Da disse data hentes dagligt fra eksterne registre, kan der gå op til en dag fra en ændring er registreret i det eksterne register, til den ændrede beregning bliver tilgængelig via denne service.\r\n",
+    "contact": {
+      "name": "Udviklings- og forenklingsstyrelsen",
+      "url": "https://ufst.dk",
+      "email": "arkitektur-strategi@ufst.dk"
+    },
+    "license": {
+      "name": "Skatteforvaltningen"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dataudstilling.skat.dk",
+      "description": "Produktionsversionen af denne service"
+    },
+    {
+      "url": "https://dataudstilling.tfe.skat.dk",
+      "description": "Test versionen med syntetisk og anonymiseret data"
+    }
+  ],
+  "security": [
+    {
+      "jwtBillet": []
+    }
+  ],
+  "paths": {
+    "/ejendomsskathent/": {
+      "parameters": [
+        {
+          "name": "x-transaktions-id",
+          "in": "header",
+          "required": true,
+          "description": "Transaktions id er en universelt transaktionidentifikator der bruges til at spore en samlet handling på tværs af flere kald og systemer. Hvis en handling resultere i flere kald skal Transaktions id genbruges og hvis et kald finder sted grundet en handling i et andet system skal transaktions id fra den oprindelige handling bruges til videre kald. Transaktions id skal være en UUID version 4, jf. ietf RFC 4122 og skal kunne korreleres med logfiler fra det kaldende system for altid at kunne svare på hvem der er ansvarlig for den handling der har resulteret i kaldet.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-request-id",
+          "in": "header",
+          "required": true,
+          "description": "Request id er et requestidentifikator der bruges til at spore et kald og tilhørende svar. Request id må modsat transaktions id ikke genbruges. Request id skal være en UUID version 4, jf. ietf RFC 4122.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-major-version",
+          "in": "header",
+          "required": false,
+          "description": "Servicen versioneres med Semantisk versionering (Major, Minor, patch), hvor kun Major versioner indeholder breaking changes til snitfladen. Som udgangspunkt er der kun adgang til den nyeste version af services på en et miljø og det er kunderne såvel som service udstillers opgave at finde fejl på de lavere miljøer før en ny release løftes til produktion. Specifikt for nye Major releases kan der aftales en paralleldrift hvor den gamle version kan tilgås ved at specificere x-major-version. Hvis der kaldes med en x-major-version som ikke er tilgængelig modtages en fejl. Når x-major-version ikke er udfyldt kaldes den nyeste version automatisk.",
+          "schema": {
+            "type": "integer",
+            "pattern": "([0-9])*"
+          }
+        }
+      ],
+      "get": {
+        "summary": "EjendomsskatHent",
+        "description": "Servicen kræver et IndkomstÅr som input og returnerer de i dataudvekslingsaftalen specificerede data fra den beregnede ejendomsskat fordelt på ejendomme i det udvalgte IndkomstÅr, evt. yderligere begrænset med andre søgeparametre.\r\nSøgningen kan begrænses til en eller flere kommuner ved at angive en liste af KommuneNummer, til en eller flere ejendomme ved angivelse af en liste af BestemtFastEjendomBFENummer, eller til en eller flere ejere ved angivelse af liste(r) af PersonCPRNummer, VirksomhedCVRNummer eller VirksomhedSENummer.\r\nDer kan defineres en periode ved at bruge GyldighedTidspunktFra og/eller GyldighedTidspunktTil, som vil resultere i, at der kun leveres ejendomsskatteberegninger der i den periode er registreret som systemgodkendt og dermed gjort tilgængelig for serviceanvenderne. Dette kan fx bruges til at hente beregninger, der er blevet tilgængelige siden der sidst blev forespurgt, ved at udfylde GyldighedTidspunktFra med tidspunktet der sidst blev forespurgt.\r\n",
+        "operationId": "c257ab08-0143-48ba-9a1e-c12ed2183f77",
+        "parameters": [
+          {
+            "name": "IndkomstÅr",
+            "in": "query",
+            "required": true,
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "schema": {
+              "type": "integer",
+              "description": "Alle gyldige årstal i den danske kalender."
+            }
+          },
+          {
+            "name": "KommuneNummer",
+            "in": "query",
+            "required": false,
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+                "minimum": 100,
+                "exclusiveMinimum": false,
+                "maximum": 999,
+                "exclusiveMaximum": false
+              }
+            }
+          },
+          {
+            "name": "BestemtFastEjendomBFENummer",
+            "in": "query",
+            "required": false,
+            "description": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.\r\n\r\nOBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.\r\n\r\nOBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side."
+              }
+            }
+          },
+          {
+            "name": "PersonCPRNummer",
+            "in": "query",
+            "required": false,
+            "description": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "((((0[1-9]|1[0-9]|2[0-9]|3[0-1])(01|03|05|07|08|10|12))|((0[1-9]|1[0-9]|2[0-9]|30)(04|06|09|11))|((0[1-9]|1[0-9]|2[0-9])(02)))[0-9]{6})|0000000000",
+                "description": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person."
+              }
+            }
+          },
+          {
+            "name": "VirksomhedCVRNummer",
+            "in": "query",
+            "required": false,
+            "description": "Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "[0-9]{8}",
+                "description": "Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR)."
+              }
+            }
+          },
+          {
+            "name": "VirksomhedSENummer",
+            "in": "query",
+            "required": false,
+            "description": "8-cifret nummer,  der entydigt identificerer en registreret virksomhed i SKAT.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "pattern": "[0-9]{8}",
+                "description": "8-cifret nummer,  der entydigt identificerer en registreret virksomhed i SKAT."
+              }
+            }
+          },
+          {
+            "name": "GyldighedTidspunktFra",
+            "in": "query",
+            "required": false,
+            "description": "Angiver det tidspunkt, hvorfra data er forretningsmæssigt gyldige.",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+            }
+          },
+          {
+            "name": "GyldighedTidspunktTil",
+            "in": "query",
+            "required": false,
+            "description": "Angiver det tidspunkt, hvortil data er forretningsmæssigt gyldige.",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+            }
+          },
+          {
+            "name": "Side",
+            "in": "query",
+            "required": false,
+            "description": "Side anvendes i forbindelse med paginering og er her en angivelse af hvilken side der ønskes returneret i servicekaldet.\r\nHvis ikke udfyldt returneres side 1.",
+            "schema": {
+              "type": "integer",
+              "description": "Et positivt heltal, som kan være op til 9 cifre langt startende fra 1 til 999999999"
+            }
+          },
+          {
+            "name": "Sidestørrelse",
+            "in": "query",
+            "required": false,
+            "description": "Anvendes i forbindelse med paginering og er her en angivelse af antallet af elementer i en side (Side) i servicekaldet.",
+            "schema": {
+              "type": "integer",
+              "description": "Et positivt heltal, som kan være op til 9 cifre langt startende fra 0 til 999999999"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Forventet svar ved korrekt forespørgsel",
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "400": {
+            "description": "Fejl i forspørgsel\\n Mulige fejlkoder\\n - 400.1 Manglende transaktion og/eller request id (håndteret i gateway).\\n - 400.9 Major version specificeret i x-major-version er ikke tilgængelig.\\n - 400.12 JWT ikke angivet (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "401": {
+            "description": "Identifikation fejlede\\n Mulige fejlkoder\\n - 401.1 Identifikation fejlede (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "403": {
+            "description": "Autorisation fejlede\\n Mulige fejlkoder\\n - 403.1 Der er ikke de nødvendige rettigheder til den givne handling (håndteret i gateway).\\n - 403.12 JWT er ikke valid (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "404": {
+            "description": "Stien findes ikke\\n Mulige fejlkoder\\n - 404.1 Der findes ingen service for den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "405": {
+            "description": "Operationen er ikke tilladt\\n Mulige fejlkoder\\n - 405.1 Operationen kan ikke udføres på den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "422": {
+            "description": "Fejlkoder:\\n - 422.1 IndkomstÅr i input er angivet i forkert format.\\n - 422.2 IndkomstÅr mangler i input.\\n - 422.3 IndkomstÅr i input overstiger det maksimalt tilladte.\\n - 422.4 KommuneNummer i input er angivet i forkert format.\\n - 422.5 KommuneNummer i input overstiger det maksimalt tilladte.\\n - 422.6 BestemtFastEjendomBFENummer er angivet i forkert format.\\n - 422.7 BestemtFastEjendomBFENummer i input overstiger det maksimalt tilladte.\\n - 422.8 PersonCPRNummer er angivet i forkert format.\\n - 422.9 PersonCPRNummer i input overstiger det maksimalt tilladte.\\n - 422.10 VirksomhedCVRNummer er angivet i forkert format.\\n - 422.11 VirksomhedCVRNummer i input overstiger det maksimalt tilladte.\\n - 422.12 VirksomhedSENummer er angivet i forkert format.\\n - 422.13 VirksomhedSENummer i input overstiger det maksimalt tilladte.\\n - 422.15 Side i input er angivet i forkert format.\\n - 422.16 Side i input eksisterer ikke i registret.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "500": {
+            "description": "Ukendt server fejl\\n Mulige fejlkoder\\n - 500.1 Ukendt fejl.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "503": {
+            "description": "Service utilgængelig\\n Mulige fejlkoder\\n - 503.1 Der er i øjeblikket ikke kontakt til datakilden.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout\\n Mulige fejlkoder\\n - 504.1 Forespørgslen blev ikke færdig inden for det tilladte interval.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ejendomsskattesatserhent/": {
+      "parameters": [
+        {
+          "name": "x-transaktions-id",
+          "in": "header",
+          "required": true,
+          "description": "Transaktions id er en universelt transaktionidentifikator der bruges til at spore en samlet handling på tværs af flere kald og systemer. Hvis en handling resultere i flere kald skal Transaktions id genbruges og hvis et kald finder sted grundet en handling i et andet system skal transaktions id fra den oprindelige handling bruges til videre kald. Transaktions id skal være en UUID version 4, jf. ietf RFC 4122 og skal kunne korreleres med logfiler fra det kaldende system for altid at kunne svare på hvem der er ansvarlig for den handling der har resulteret i kaldet.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-request-id",
+          "in": "header",
+          "required": true,
+          "description": "Request id er et requestidentifikator der bruges til at spore et kald og tilhørende svar. Request id må modsat transaktions id ikke genbruges. Request id skal være en UUID version 4, jf. ietf RFC 4122.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-major-version",
+          "in": "header",
+          "required": false,
+          "description": "Servicen versioneres med Semantisk versionering (Major, Minor, patch), hvor kun Major versioner indeholder breaking changes til snitfladen. Som udgangspunkt er der kun adgang til den nyeste version af services på en et miljø og det er kunderne såvel som service udstillers opgave at finde fejl på de lavere miljøer før en ny release løftes til produktion. Specifikt for nye Major releases kan der aftales en paralleldrift hvor den gamle version kan tilgås ved at specificere x-major-version. Hvis der kaldes med en x-major-version som ikke er tilgængelig modtages en fejl. Når x-major-version ikke er udfyldt kaldes den nyeste version automatisk.",
+          "schema": {
+            "type": "integer",
+            "pattern": "([0-9])*"
+          }
+        }
+      ],
+      "get": {
+        "summary": "EjendomsskattesatserHent",
+        "description": "Servicen tager imod en liste af IndkomstÅr og/eller KommuneNummer og returnerer de gældende ejendomsskattesatser (promiller) for de udvalgte IndkomstÅr og/eller kommuner.",
+        "operationId": "4b690457-1cec-413c-84a0-d0a7484d7238",
+        "parameters": [
+          {
+            "name": "IndkomstÅr",
+            "in": "query",
+            "required": false,
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Alle gyldige årstal i den danske kalender."
+              }
+            }
+          },
+          {
+            "name": "KommuneNummer",
+            "in": "query",
+            "required": false,
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+                "minimum": 100,
+                "exclusiveMinimum": false,
+                "maximum": 999,
+                "exclusiveMaximum": false
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Forventet svar ved korrekt forespørgsel",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/EjendomsskattesatserHentResponse"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/Meta"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/Links"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "400": {
+            "description": "Fejl i forspørgsel\\n Mulige fejlkoder\\n - 400.1 Manglende transaktion og/eller request id (håndteret i gateway).\\n - 400.9 Major version specificeret i x-major-version er ikke tilgængelig.\\n - 400.12 JWT ikke angivet (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "401": {
+            "description": "Identifikation fejlede\\n Mulige fejlkoder\\n - 401.1 Identifikation fejlede (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "403": {
+            "description": "Autorisation fejlede\\n Mulige fejlkoder\\n - 403.1 Der er ikke de nødvendige rettigheder til den givne handling (håndteret i gateway).\\n - 403.12 JWT er ikke valid (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "404": {
+            "description": "Stien findes ikke\\n Mulige fejlkoder\\n - 404.1 Der findes ingen service for den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "405": {
+            "description": "Operationen er ikke tilladt\\n Mulige fejlkoder\\n - 405.1 Operationen kan ikke udføres på den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "422": {
+            "description": "Fejlkoder:\\n - 422.1 IndkomstÅr i input er angivet i forkert format.\\n - 422.2 IndkomstÅr mangler i input.\\n - 422.3 IndkomstÅr i input overstiger det maksimalt tilladte.\\n - 422.4 KommuneNummer i input er angivet i forkert format.\\n - 422.5 KommuneNummer i input overstiger det maksimalt tilladte.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "500": {
+            "description": "Ukendt server fejl\\n Mulige fejlkoder\\n - 500.1 Ukendt fejl.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "503": {
+            "description": "Service utilgængelig\\n Mulige fejlkoder\\n - 503.1 Der er i øjeblikket ikke kontakt til datakilden.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout\\n Mulige fejlkoder\\n - 504.1 Forespørgslen blev ikke færdig inden for det tilladte interval.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "jwtBillet": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "headers": {
+      "x-transaktions-id": {
+        "description": "Transaktions id er en universelt transaktionidentifikator der bruges til at spore en samlet handling på tværs af flere kald og systemer. Hvis en handling resultere i flere kald skal Transaktions id genbruges og hvis et kald finder sted grundet en handling i et andet system skal transaktions id fra den oprindelige handling bruges til videre kald. Transaktions id skal være en UUID version 4, jf. ietf RFC 4122 og skal kunne korreleres med logfiler fra det kaldende system for altid at kunne svare på hvem der er ansvarlig for den handling der har resulteret i kaldet.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+        }
+      },
+      "x-request-id": {
+        "description": "Request id er et requestidentifikator der bruges til at spore et kald og tilhørende svar. Request id må modsat transaktions id ikke genbruges. Request id skal være en UUID version 4, jf. ietf RFC 4122.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+        }
+      },
+      "x-major-version": {
+        "description": "Servicen versioneres med Semantisk versionering (Major, Minor, patch), hvor kun Major versioner indeholder breaking changes til snitfladen. Som udgangspunkt er der kun adgang til den nyeste version af services på en et miljø og det er kunderne såvel som service udstillers opgave at finde fejl på de lavere miljøer før en ny release løftes til produktion. Specifikt for nye Major releases kan der aftales en paralleldrift hvor den gamle version kan tilgås ved at specificere x-major-version. Hvis der kaldes med en x-major-version som ikke er tilgængelig modtages en fejl. Når x-major-version ikke er udfyldt kaldes den nyeste version automatisk.",
+        "schema": {
+          "type": "integer",
+          "pattern": "([0-9])*"
+        }
+      }
+    },
+    "schemas": {
+      "EjendomsskattesatserHentResponse": {
+        "x-entityname": "EjendomsskattesatserHentResponse",
+        "required": [
+          "type",
+          "id",
+          "attributes"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "id": {
+            "description": "Id skal være et unikt id for et specifik resource objekt, men være stabil på tværs af flere versioner af samme resource object.",
+            "type": "string"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/Ejendomsskattesatser"
+          }
+        }
+      },
+      "Ejendomsskattesatser": {
+        "x-entityname": "Ejendomsskattesatser",
+        "x-ui-selectable": true,
+        "required": [
+          "IndkomstÅr",
+          "KommuneListe"
+        ],
+        "properties": {
+          "IndkomstÅr": {
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "type": "integer",
+            "x-typeDescription": "Alle gyldige årstal i den danske kalender."
+          },
+          "Forsigtighedsprincip": {
+            "$ref": "#/components/schemas/Forsigtighedsprincip"
+          },
+          "KommuneListe": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/Kommune"
+            }
+          }
+        }
+      },
+      "Forsigtighedsprincip": {
+        "x-entityname": "Forsigtighedsprincip",
+        "x-ui-selectable": true,
+        "required": [
+          "ForsigtighedsprincipProcentsats"
+        ],
+        "properties": {
+          "ForsigtighedsprincipProcentsats": {
+            "description": "Procentsats som angiver den andel af vurderingens grundværdi, som der beregnes ejendomsskat af.\r\nEr i 2022 80%.",
+            "type": "integer",
+            "x-typeDescription": "Vilkårligt heltal på 1-2 cifre."
+          },
+          "DobbelthistorikBruger": {
+            "$ref": "#/components/schemas/DobbelthistorikBruger"
+          }
+        }
+      },
+      "DobbelthistorikBruger": {
+        "x-entityname": "DobbelthistorikBruger",
+        "x-ui-selectable": true,
+        "required": [
+          "RegistreringTidspunkt",
+          "RessourceNummer"
+        ],
+        "properties": {
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          },
+          "GyldighedTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data er forretningsmæssigt gyldige i et it-system.\r\nAnvendes typisk som søgeparameter i web-services, hvor der udstilles forretningsobjekt(er) med bi-temporalitet.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          },
+          "RessourceNummer": {
+            "description": "Unik identifikation af en SKAT-ressource.\r\n\r\nSKAT-ressourcer omfatter både SKATs medarbejdere (identificeret w-nummer), tjenestebiler (køretøjets nummer), mødelokaler mv.",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 11 karakterer."
+          }
+        }
+      },
+      "Kommune": {
+        "x-entityname": "Kommune",
+        "x-ui-selectable": true,
+        "required": [
+          "KommuneNummer"
+        ],
+        "properties": {
+          "KommuneNummer": {
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "type": "integer",
+            "x-typeDescription": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+            "maximum": 999,
+            "exclusiveMaximum": false,
+            "minimum": 100,
+            "exclusiveMinimum": false
+          },
+          "BoligGrundskyld": {
+            "$ref": "#/components/schemas/BoligGrundskyld"
+          },
+          "ProduktionsjordGrundskyld": {
+            "$ref": "#/components/schemas/ProduktionsjordGrundskyld"
+          },
+          "DækningsafgiftErhverv": {
+            "$ref": "#/components/schemas/DaekningsafgiftErhverv"
+          },
+          "DækningsafgiftOffentligMyndighed": {
+            "$ref": "#/components/schemas/DaekningsafgiftOffentligMyndighed"
+          }
+        }
+      },
+      "BoligGrundskyld": {
+        "x-entityname": "BoligGrundskyld",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleGrundskyld"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyld": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for ikke-produktionsjord",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "DobbelthistorikBruger": {
+            "$ref": "#/components/schemas/DobbelthistorikBruger"
+          }
+        }
+      },
+      "ProduktionsjordGrundskyld": {
+        "x-entityname": "ProduktionsjordGrundskyld",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleGrundskyldProduktionsjord"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyldProduktionsjord": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for produktionsjord.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "DobbelthistorikBruger": {
+            "$ref": "#/components/schemas/DobbelthistorikBruger"
+          }
+        }
+      },
+      "DaekningsafgiftErhverv": {
+        "x-entityname": "DækningsafgiftErhverv",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleDækningsafgiftErhverv"
+        ],
+        "properties": {
+          "KommunepromilleDækningsafgiftErhverv": {
+            "description": "Den promille hvormed der beregnes dækningsafgift af erhvervsejendomme i en given kommune.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "DobbelthistorikBruger": {
+            "$ref": "#/components/schemas/DobbelthistorikBruger"
+          }
+        }
+      },
+      "DaekningsafgiftOffentligMyndighed": {
+        "x-entityname": "DækningsafgiftOffentligMyndighed",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleDækningsafgiftOffentligMyndighed"
+        ],
+        "properties": {
+          "KommunepromilleDækningsafgiftOffentligMyndighed": {
+            "description": "Den promille hvormed der beregnes dækningsafgift af ejendomme ejet af offentlige myndigheder i en given kommune.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "DobbelthistorikBruger": {
+            "$ref": "#/components/schemas/DobbelthistorikBruger"
+          }
+        }
+      },
+      "Fejlsvar": {
+        "required": [
+          "errors",
+          "meta",
+          "links"
+        ],
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fejl"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "Fejl": {
+        "required": [
+          "kode",
+          "besked"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type af returkode - advis eller fejl"
+          },
+          "kode": {
+            "type": "string",
+            "description": "Fejlkode"
+          },
+          "besked": {
+            "type": "string",
+            "description": "Fejlbeskrivelse"
+          },
+          "data": {
+            "type": "string",
+            "description": "Data der indeholder fejl"
+          },
+          "status": {
+            "type": "string",
+            "description": "HTTP status kode"
+          }
+        }
+      },
+      "Meta": {
+        "type": "object",
+        "description": "Meta data for forespørgslen",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tidspunkt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Tidspunktet forespørgslen blev foretaget"
+          },
+          "klassifikation": {
+            "type": "string",
+            "description": "klassifikation af data i niveauerne Følsomme personoplysninger, Personoplysninger, Fortrolige data, Interne data eller Offentlige data. Vær opmærksom på at Fortrolige data også dækker over Følsomme personoplysninger og personoplysninger men klassifikationen Fortrolige data har ikke tilstrækkelig præcision for data med personoplysninger. Hvis klassifikation ikke er udfyldt, så skal anvender forholde sig til x-klassifikation i den tilhørende Open API specifikation. klassifikationen danner grundlagt for de sikkerhedsforanstaltninger der skal tages i forhold til data i transmission såvel som ved lagring. Hvis der er tvivl om hvordan man skal forholde sig til de enkelte klassifikationer skal der tages kontakt til kontoret for Persondatabeskyttelse."
+          }
+        }
+      },
+      "Links": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string",
+            "format": "url",
+            "description": "Linket der genererede denne forespørgsel"
+          },
+          "first": {
+            "type": "string",
+            "format": "url",
+            "description": "Den første side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "prev": {
+            "type": "string",
+            "format": "url",
+            "description": "Den forrige side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "next": {
+            "type": "string",
+            "format": "url",
+            "description": "Den næste side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "last": {
+            "type": "string",
+            "format": "url",
+            "description": "Den sidste side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "spec": {
+            "type": "string",
+            "format": "url",
+            "description": "Linkt til den udstillede Open API Spec"
+          }
+        }
+      }
+    }
+  }
+}

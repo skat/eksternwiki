@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En medabrjder kan have en lang liste af kompetencer opdelt på kategorier. Kompetencekategorier og kompetencer kan variere fra domæne til domæne. Kompetencekategorierne i EFI inkluderer bl.a. sporttype, kundetype, fordringstyper og samlet gæld. Kompetencerne i sportype kategorien vil så være de sportyper efi opererer med. Medarbejderen har selv mulighed for at opsætte kompetencer i deres medarbejderprofil</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/KompetenceKategoriType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="KompetenceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kompetencens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceKompetenceKategori" type="fase2.1:KompetenceKategoriType">
+               
+               <xs:annotation>
+                  <xs:documentation>KompetenceKategorien som kompetencen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kompetencens navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceNøgle" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kompetencens nøgle. Hvis kompetencen f.eks. er en sportype, vil nøglen være sportypens unikke ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceFra" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kompetencens startværdi. Anvendes f.eks. ved samlede fordringer hvor startværdien og slutværdien bruges til at angive intervaller, f.eks. 0-1000000, 1000001-5000000 osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceTil" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kompetencens sluttværdi. Anvendes f.eks. ved samlede fordringer hvor startværdien og slutværdien bruges til at angive intervaller, f.eks. 0-1000000, 1000001-5000000 osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceScore" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hver kompetence har en score. Summen af en medarbejders samlede kompetencers scorer giver medarbejderens samlede kompetencescore. Der er en bookingregel der anvender medarbejderens samlede score, så det er muligt at konfigurere en opgavekø så det er medarbejderen med den laveste kompetencescore der skal løse opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet kompetencen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kompetencen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret kompetencen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kompetencen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet kompetencen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kompetencen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KompetenceTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til kompetencen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

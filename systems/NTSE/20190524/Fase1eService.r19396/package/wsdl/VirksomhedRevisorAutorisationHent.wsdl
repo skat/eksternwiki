@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                        name="VirksomhedRevisorAutorisationHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Henter angivelsestyper og tilhørende revisor SE-nr for en specifik virksomheds tilmelding.</xs:documentation>
+            <xs:documentation>1.1</xs:documentation>
+            <xs:documentation>r19396</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/">
+               <xsd:include schemaLocation="../service/VirksomhedRevisorAutorisationHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="VirksomhedRevisorAutorisationHentServiceRequest">
+            <wsdl:part name="Request" element="fase1:VirksomhedRevisorAutorisationHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="VirksomhedRevisorAutorisationHentServiceResponse">
+            <wsdl:part name="Response" element="fase1:VirksomhedRevisorAutorisationHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="VirksomhedRevisorAutorisationHentServicePortType">
+            <wsdl:operation name="getVirksomhedRevisorAutorisationHent">
+               <wsdl:input message="fase1:VirksomhedRevisorAutorisationHentServiceRequest"/>
+               <wsdl:output message="fase1:VirksomhedRevisorAutorisationHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase1:KompenserTransRequest"/>
+               <wsdl:output message="fase1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Kan være en virksomhed, en person eller begge dele (kun ved selvstændige erhvervsdrivende).  Begrebet dækker både over kunder til opkrævning og til inddrivelse.   Specifikt Restanceinddrivelsesmyndigheden: RIM benævner i daglig tale kunden som restanten, når det drejer sig om specifikt restancer. En restant er en som har en restance, hvilket betyder, at fordringen er overgivet til RIM og sidste rettidig betalingsdato er overskredet. Kunde er synonym med debitor, restant og skyldner.  I en transportsituation hos Restanceinddrivelsesmyndigheden vil kunden altid være transportgiver.  Specifikt for Opkrævningsmyndigheden: I en transportsituation for Opkrævningsmyndigheden vil kunden altid være transporthaver.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/JournalNummerType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TypeType.xsd"/>
+      
+   
+   
+   <xs:element name="KundeNummer" type="fase2.1:KundeNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Identifikationen af kunden i form af CVR/SE nr. for virksomheder, CPR for personer og journalnr. for dem, som ikke har et af de 2 andre typer.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KundeJournalNummer" type="fase2.1:JournalNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Journalnummeret fra SKAT Captia (ESDH systemet) Specifikt RestanceInddrivelsesmyndigheden: Nummeret på Inddrivelsessagen i SKAT Captia. RIM arbejder med én sag pr. kunde, som internt kan identificeres vha. kundens CPR eller CVR nummer. Journalnummeret kan RIM påføre alle udgående meddelelser, således at eksterne parter kan anvende dette til at kommunikere med RIM omkring den pågældende kunde. Det er dog RIM’s ønske, at eksterne parter primært anvender kundens identifikationsnummer som CPR eller CVR nummer. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KundeNote" type="fase2.1:TekstLangType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Dette er til noter omkring kunden. Hver note skal kunne føres ind som en logbog, en ad gangen, med angivelse af dato.   Specifikt Restanceinddrivelsesmyndigheden: Fordringshaver skal også kunne sende en note omkring kunden sammen med en fordring. Dette kunne være, at kunden var voldelig eller andre personligt relaterede noter. Disse noter skal findes sammen med kunden og ikke de indsatser, som kunden er relateret til. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KundeType" type="fase2.1:TypeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Identificere hvilken type kunde der er tale om, dvs. hvad KundeNummer dækker over. Eksempelvis et CVR-nr. (virksomhed) eller CPR-nr. (person).</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/AfregningsfrekvensType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/XMLType.xsd"/>
+         <xs:include schemaLocation="../types/SprogType.xsd"/>
+         <xs:element name="AfregningskontoFrekvens" type="fase2.1:AfregningsfrekvensType">
+               
+               <xs:annotation>
+                  <xs:documentation>er en oplysning om, hvornår en fordringshaver ønsker at få foretaget afregning. Det kan eksempelvis være dagligt, ugentligt eller månedligt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningskontoValutapræference" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kunden kan angive, hvilken valuta man ønsker at se saldoen på kontoen i. For nuværende kan kun Danske Kroner vælges.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningskontoBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den enkelte instans af beløb, som er afregnet til fordringshaver. Hænger sammen med hvilken fordring, der er afregnet og på hvilken dato. Attributten Sum vil derfor bestå af Antal kr. for FordringID afregnet pr. hvilken Dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningskontoRegnskab" type="fase2.1:XMLType">
+               
+               <xs:annotation>
+                  <xs:documentation>En aftalepart kan indgå aftale om, at SKAT specificerer et regnskab over, hvad parten har fået opkrævet/inddrevet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningskontoKommunikationSprog" type="fase2.1:SprogType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sprogpræferencer i forbindelse med mundtlig kommunikation og udsendelse af meddelelser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

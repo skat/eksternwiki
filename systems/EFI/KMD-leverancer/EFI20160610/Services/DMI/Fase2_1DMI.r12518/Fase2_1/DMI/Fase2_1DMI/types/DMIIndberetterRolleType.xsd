@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="DMIIndberetterRolleType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+                  <xs:enumeration value="Borger"/>
+                  <xs:enumeration value="Virksomhed"/>
+                  <xs:enumeration value="System"/>
+                  <xs:enumeration value="Medarbejder"/>
+                  <xs:enumeration value="Fordringshaver"/>
+                  <xs:enumeration value="Rettighedshaver"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

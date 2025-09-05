@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>At få beregnet en liste over kunders betalingsevne i kroner per måned efter reglerne for myndighedsudbetalingstype. Den samme kunde kan forekomme flere gange med forskellige myndighedsudbetalingstyper i kundelisten. Givet en liste af kundenumre og myndighedsudbetalingstyper returnerer EFI ved hjælp af servicen DMIBetalingEvneHentet kundernes betalingsevne beregnet ud fra reglerne for den pågældende myndighedudbetalingstype.  </xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/EFIBetalingEvneAsynkronHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/EFIBetalingEvneAsynkronHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="EFIBetalingEvneAsynkronHentInterface"
+                     type="fase2.1:EFIBetalingEvneAsynkronHentInterfaceType"/>
+         <xs:complexType name="EFIBetalingEvneAsynkronHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:EFIBetalingEvneAsynkronHent_I"/>
+               <xs:element ref="fase2.1:EFIBetalingEvneAsynkronHent_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

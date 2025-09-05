@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/DMIIndberetterIDType.xsd"/>
+         <xs:include schemaLocation="../types/DMIIndberetterRolleType.xsd"/>
+         <xs:element name="DMIIndberetterDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tid hvor indberetningen er foretaget</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndberetterID" type="fase2.1:DMIIndberetterIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et nummer eller et antal karakterer der identificerer indberetteren (borger, virksomhed,system, medarbejder, fordringshaver eller rettighedshaver) i form af: CPRNummer SE/CVRNummer KundeNummer EFI, DMI, MF, DMO, SLUT, SAP38 (karakterer) WNummer  Specifikt for indberettelse af hæftelse kan følgende værdier anvendes:  KundeNummer (FH): Fordringshaver angiver selv via selvbetjeningsløsning et hæftelsesforhold.  MF: Anvendes hvis systemet Modtag Fordring beriger med hæftelsesoplysningen, når fordring oprettes.  EFI: Når systemet EFI har påsat en hæfter f.eks. I forbindelse med en udlægsforretning hvor en ægtefælle går fra at være en potentiel hæfter til reel hæfter. Kunne også være en ændring som er opstået som følge af en ændring i CSR-P vedr. civilstand f.eks. skilsmisse.  WNummer: Sagsbehandler opdaterer manuelt en hæftelse f.eks. hvis kunden viser at pgl. er udtrådt af et I/S og som følge heraf ikke hæfter længere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndberetterRolle" type="fase2.1:DMIIndberetterRolleType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indberetterens rolle.  Rollen anvendes i sammenhæng med IndberettetID, efter følgende mønster, men der foretages ingen validering:  IndberetterID       IndberetterRolle ----------------------------------------- CPRNummer                     Borger SE/CVRNummer               Virksomhed KundeNummer                  Fordringshaver KundeNummer                  Rettighedshaver EFI                                    System DMI                                   System MF                                     System DMO                                  System SLUT                                 System SAP38                               System WNr                                   Medarbejder  Ved indberetning af hæftelse anvendes følgende mønster, men der foretages ligeledes ingen validering:   IndberetterID       IndberetterRolle ----------------------------------------- KundeNummer                  Fordringshaver EFI                                     System MF                                     System WNr                                   Medarbejder</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

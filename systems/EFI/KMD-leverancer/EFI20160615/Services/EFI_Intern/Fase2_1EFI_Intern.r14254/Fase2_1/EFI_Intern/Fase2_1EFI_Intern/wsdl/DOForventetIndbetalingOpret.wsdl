@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="DOForventetIndbetalingOpretService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Servicen orkestrerer kald til DMIForventetIndbetalingOpret og oprettelse af en kundenote.   Nedenstående beskrivelser er  fra DMIForventetIndbetalingOpret:  Servicen genererer en nøgle (ForventetIndbetalingNøgle) der etablerer en sammenhæng mellem en forventet betaling og en mængde af fordringer . Nøglen benyttes ved den aktuelle indbetaling til at definere de fordringer der er indbefattet af indbetalingen. Det skal være muligt at angive en specifik dækningsrækkefølge for den forventede indbetaling, når den anvendes i forbindelse med skadesløs transport. Ved udsendelse af girokort påhæftes  girokortet en nøgle i form af en OCR linje.</xs:documentation>
+            <xs:documentation>1.3</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/DOForventetIndbetalingOpretInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="DOForventetIndbetalingOpretServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:DOForventetIndbetalingOpret_I"/>
+         </wsdl:message>
+         <wsdl:message name="DOForventetIndbetalingOpretServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:DOForventetIndbetalingOpret_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="DOForventetIndbetalingOpretServicePortType">
+            <wsdl:operation name="getDOForventetIndbetalingOpret">
+               <wsdl:input message="fase2.1:DOForventetIndbetalingOpretServiceRequest"/>
+               <wsdl:output message="fase2.1:DOForventetIndbetalingOpretServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

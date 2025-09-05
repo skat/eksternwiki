@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Det kan strategisk vælges, at man gerne vil have en godkendelse inden en bestemt aktivitet gennemføres. Det kunne eksempelvis være godkendelse af en indsats, fx. Afskrivning, eller godkendelse af en indbetalings dækning af kundens fordringer.  En indsats kan derfor blive sendt til godkendelse hos Godkendelsesenheden (Organisatorisk enhed i SKAT) eller en ressource (medarbejder) med rollen Godkender.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/RegelSaetType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="GodkendelseResultat" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Resultatet af godkendelsen i form af ja eller nej.  Ja = Godkendt Nej = Ikke godkendt (afvist)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GodkendelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for godkendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GodkendelseÅrsag" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Årsag for godkendelsen, fx hvorfor den er godkendt eller hvorfor den ikke er godkendt, dvs. afvist.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GodkendelseRegelsæt" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvad der kræver godkendelse, fx indsatser, negative angivelser eller en indbetalings dækning af fordring(er).  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GodkendelseID" type="fase2.1:IDType">
+               
+            </xs:element>
+      </xs:schema>

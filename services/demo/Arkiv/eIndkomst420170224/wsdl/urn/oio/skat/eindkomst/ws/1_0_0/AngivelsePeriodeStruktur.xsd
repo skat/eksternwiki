@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/angivelse/xml/schemas/20071202/AngivelsePeriode.xsd"/><xs:element name="AngivelsePeriodeStruktur" type="hsws:AngivelsePeriodeStrukturType"/>
+	<xs:complexType name="AngivelsePeriodeStrukturType">
+		<xs:sequence>
+			<xs:element ref="angivelse:AngivelsePeriode"/>
+			<xs:element ref="angivelse:AngivelsePeriode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

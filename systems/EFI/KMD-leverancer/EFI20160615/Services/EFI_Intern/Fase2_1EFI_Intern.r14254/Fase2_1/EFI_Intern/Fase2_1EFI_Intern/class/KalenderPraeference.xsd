@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En kalenderpræference er en enhed der kan indsættes i en kalender, så tiden kalenderpræferencen dækker i kalenderen er reservert til de opgavetyper der er tilknyttet kalenderpræferencen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/KalenderPraeferenceTypeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="KalenderPræferenceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>KalenderPræferencens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceOrganisatoriskEnhedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den organisatoriske enhed kalenderpræference tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>KalenderPræferencens navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceMinimumBlok" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Minimumblokken er det antal minutter en KalenderPræference mindst skal vare. Hvis minimumblokken f.eks. er 120 minutter, vil det ikke være muligt at indsætte en præference som varer en time.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceType" type="fase2.1:KalenderPræferenceTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kalender præferencens type</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceKanUdskiftes" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om systemet har lov til at udskifte præferencen med en anden hvis det er nødvendigt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet kalenderpræferencen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kalenderpræferencen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret kalenderpræferencen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kalenderpræferencen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet kalenderpræferencen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kalenderpræferencen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderPræferenceTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til kalenderpræferencen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

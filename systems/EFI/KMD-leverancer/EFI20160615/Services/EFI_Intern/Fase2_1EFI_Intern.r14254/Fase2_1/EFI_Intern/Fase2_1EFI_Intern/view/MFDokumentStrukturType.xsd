@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+         <xs:include schemaLocation="../class/DokumentFil.xsd"/>
+         <xs:include schemaLocation="../class/Dokument.xsd"/>
+         <xs:element name="MFDokumentStruktur" type="fase2.1:MFDokumentStrukturType"/>
+         <xs:complexType name="MFDokumentStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:DPDokumentArt"/>
+
+                  <xs:element ref="fase2.1:DPDokumentEksternReference" minOccurs="0"/>
+
+
+                  <xs:element name="DokumentFormatValg">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:sequence>
+                              <xs:element name="DokumentFil">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DokumentFilType"/>
+                  
+                                       <xs:element ref="fase2.1:DokumentFilIndhold"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+				
+				                       </xs:sequence>
+				                       <xs:element ref="fase2.1:DokumentNummer"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               
+            
+         
+         
+         
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

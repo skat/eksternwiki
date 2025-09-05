@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         
+         <xs:element name="AkkumuleretGebyrRestBeløb" type="fase2.1:BeløbType">
+            <xs:annotation>
+               <xs:documentation>AkkumuleretGebyrRestBeløb er en sum af udestående beløb på Inddrivelsesgebyrer for en fordring. Inddrivelsesgebyr er det samme som oprettelsesgebyret og tilskrives, hvis påkrævet, når DMI modtager fordringen fra MF.  Den del af det akkumulerede gebyrbeløb, der skyldes. Det betyder at den del af gebyrerne der faktisk er betalt er fratrukket dette beløb. Beregnet beløb</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

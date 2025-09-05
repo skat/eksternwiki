@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel9Type.xsd"/>
+         
+         <xs:element name="KalenderDagSøgAntalDage" type="fase2.1:TalHel9Type">
+            <xs:annotation>
+               <xs:documentation>Antallet af dage der skal lægges til fra-datoen for at beregne den nye dato.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

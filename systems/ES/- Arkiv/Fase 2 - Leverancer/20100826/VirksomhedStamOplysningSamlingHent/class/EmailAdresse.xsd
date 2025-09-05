@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation>En specialisering af KontaktOplysning som indeholder en email.</xs:documentation>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../types/MailAdresseType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+   
+   
+   <xs:element name="EmailAdresseEmail" type="fase2:MailAdresseType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>En generisk email adresse, som kan være indeholde en vilkårlig emailadresse, fx. en.person@skat.dk</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="EmailAdresseGyldigFra" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Dato hvorfra emailadressen er gyldig</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="EmailAdresseGyldigTil" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Dato hvortil emailadressen er gyldig</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="EmailAdresseSkjult" type="fase2:MarkeringType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Når sagsbehandlere registrerer en emailadresse for en kunde eller juridisk enhed, skal man samtidig angive, hvorvidt emailen skal være skjult for kunden.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

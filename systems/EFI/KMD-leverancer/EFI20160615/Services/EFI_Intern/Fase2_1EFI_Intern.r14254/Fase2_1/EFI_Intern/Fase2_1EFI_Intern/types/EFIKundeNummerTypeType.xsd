@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="EFIKundeNummerTypeType">
+               <xs:annotation>
+                  <xs:documentation>Typen af kundenummer - anvendes til nettoindkomst-beregner.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="AKR"/>
+                  <xs:enumeration value="CPR"/>
+                  <xs:enumeration value="SE"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

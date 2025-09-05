@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="SynTypeType">
+		<xs:annotation>
+			<xs:documentation>Synstyperne angiver hvilken form for syn der er tale om.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+			<xs:enumeration value="PeriodiskSyn"/>
+			<xs:enumeration value="KontrolSyn"/>
+			<xs:enumeration value="MOT"/>
+			<xs:enumeration value="RegistreringsSyn"/>
+			<xs:enumeration value="RegistreringssynToldsyn"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

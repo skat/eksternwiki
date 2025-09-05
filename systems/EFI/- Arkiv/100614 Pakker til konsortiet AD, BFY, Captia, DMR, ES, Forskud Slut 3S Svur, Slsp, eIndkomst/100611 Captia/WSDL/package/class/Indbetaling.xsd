@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En indbetaling til dækning af diverse fordringer. Det er den samlede indbetaling, som vedrører en specifik konto. </xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst32Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/BeloebType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/IndsatsTypeType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+      
+   
+   
+   <xs:element name="IndbetalingID" type="fase2.1:Tekst32Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Den unikke identifikation af den enkelte indbetaling, som skal anvendes til at kunne spore indbetalingen fx ifm med 2 identiske betalinger foretaget samme dag. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndbetalingDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Dato er det forretningsmæssige begreb, dvs datoen for, hvornår fordringen tilgår kontoen og bliver rentebærende, dvs. den dato hvor renten skal beregnes.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndbetalingBeløb" type="fase2.1:BeløbType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Det indbetalte beløb.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndbetalingKilde" type="fase2.1:IndsatsTypeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Reference til den specifikke indsats der indbetales i forbindelse med. Eksempelvis kan det være et beløb indbetalt i forbindelse med lønindeholdelse, dvs. et lønindeholdt beløb der skal dække fordringerne under indsatsen Lønindeholdelse. Hvis der kommer en betaling ind uden henvisning til indsatsen, skal den bruges til at dække kundens fordringer i henhold til dækningsrækkefølgen.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndbetalingBogføringDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Bogføringsdato er den regbskabsmæssige dato dvs. dato for bogføring.  Bogføringsdato er også dato for SKATs faktiske modtagelse af indbetalingen. Anvendes især til at forklare hændelser (fx. rykkere), som krydser indbetalinger fra kunden.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndbetalingReference" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Henvisning til det som betalingen vedrører. Her kan sagsbehandleren/bogholderen indsætte supplerende oplysninger (tekst) som er med til at identificere indbetalingen f.eks.:  - et checknummer eller navn og adresse på en indbetaling, hvor banken ikke kan oplyse andet - ifm kortartkode 01 kan betaler have givet en information, som er relevant for den videre sagsbehandling - et OCR-nummer eller henvisning til alt muligt andet.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsSag.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="DPOpretDokumentIdentifikationStruktur"
+                     type="fase2.1:DPOpretDokumentIdentifikationStrukturType"/>
+         <xs:complexType name="DPOpretDokumentIdentifikationStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element name="KundeValg">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element ref="fase2.1:KundeStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+				
+				                       <xs:sequence>
+				
+                              <xs:element name="KundeIdentSamling">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:EFIKundeIdentStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                           </xs:sequence>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element ref="fase2.1:DPDokumentType"/>
+                  <!--Sequence removed-->
+
+                     <xs:element name="NoteRelationValg" minOccurs="0">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+				
+				
+				                          <xs:element ref="fase2.1:IndsatsID"/>
+				
+				
+				                          <xs:element ref="fase2.1:IndsatsSagAlias"/>
+				
+				
+				                          <xs:element ref="fase2.1:DMIFordringHaverID"/>
+				
+				                          <xs:sequence>
+				
+                                 <xs:element name="FordringIDSamling">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0" maxOccurs="unbounded"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

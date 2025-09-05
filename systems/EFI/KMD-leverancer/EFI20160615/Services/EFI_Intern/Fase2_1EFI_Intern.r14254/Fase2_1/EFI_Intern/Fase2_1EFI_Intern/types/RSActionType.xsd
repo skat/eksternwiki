@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="RSActionType">
+               <xs:annotation>
+                  <xs:documentation>Angiver opdateringstype: C - create  U - update  D - Delete Angiver opdateringstype: C - create  U - update  D - Delete  Grundlæggende værdiset: C: Create U: Update D: Delete N: null, ingen aktion  </xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+                  <xs:enumeration value="C"/>
+                  <xs:enumeration value="U"/>
+                  <xs:enumeration value="D"/>
+                  <xs:enumeration value="N"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/TekstKortType.xsd"/>
+	<xs:include schemaLocation="../types/TekstLangType.xsd"/>
+	<xs:include schemaLocation="../types/BeregningReguleringVedroererType.xsd"/>
+	<xs:include schemaLocation="../types/BeregningReguleringArtType.xsd"/>
+	<xs:element name="BeregningReguleringTypeNummer" type="dmr:TalHelType">
+	</xs:element>
+	<xs:element name="BeregningReguleringTypeNavn" type="dmr:TekstKortType">
+	</xs:element>
+	<xs:element name="BeregningReguleringTypeBeskrivelse" type="dmr:TekstLangType">
+	</xs:element>
+	<xs:element name="BeregningReguleringTypeVedroerer" type="dmr:BeregningReguleringVedroererType">
+		<xs:annotation>
+			<xs:documentation>Indeholder de konkrete fradrag og tillæg der er til en værdifastsættelse.  Eksempel på værdisæt: 01 - Handelspris 02 - AfgiftspligtigVærdi 03 - RegistreringsAfgift</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BeregningReguleringTypeArt" type="dmr:BeregningReguleringArtType">
+		<xs:annotation>
+			<xs:documentation>Angiver arten af en regulering til en afgiftsberegning. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

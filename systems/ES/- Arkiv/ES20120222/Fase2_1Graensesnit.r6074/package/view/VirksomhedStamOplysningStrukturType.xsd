@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r6074</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedAdresseType.xsd"/>
+				     
+         <xs:element name="VirksomhedStamOplysningStruktur"
+                     type="fase2.1:VirksomhedStamOplysningStrukturType"/>
+         <xs:complexType name="VirksomhedStamOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+               <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:VirksomhedStartDato"/>
+
+               <xs:element ref="fase2.1:VirksomhedOphørDato" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="VirksomhedNavn" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                  
+                           <xs:element ref="fase2.1:VirksomhedNavnFirmaNavnKort"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:VirksomhedAdresse" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

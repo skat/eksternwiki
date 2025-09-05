@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="DMIIndbetalingKildeType">
+               <xs:annotation>
+                  <xs:documentation>Reference til det specifikke system der indbetales fra.  Liste med faste værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="DMO"/>
+                  <xs:enumeration value="EFI"/>
+                  <xs:enumeration value="NEMKONT"/>
+                  <xs:enumeration value="NETS"/>
+                  <xs:enumeration value="SAP38"/>
+                  <xs:enumeration value="SKB"/>
+                  <xs:enumeration value="SLUT"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

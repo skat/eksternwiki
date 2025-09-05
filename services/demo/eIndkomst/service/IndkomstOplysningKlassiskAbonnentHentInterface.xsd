@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Formålet er at hente indkomstoplysninger til abonnenter, eksempelvis SKAT, DataWareHouse og Danmarks Statistik, som periodisk uopfordret får overført oplysninger fra eIndkomst. Der kan efter behov ske datafiltrering for indkomst- og ansættelsesoplysninger.  Servicen initieres af tid i henhold til aftalt driftsplan.  Der overføres oplysninger, som er registreret i eIndkomst siden sidste levering. Oplysningerne leveres uden nogen tolkning.  LeveringTilAbonnentStatusStatusNyDatoTid udtrykker det tidspunkt, hvortil der skal hentes nye oplysninger. Der hentes oplysninger fra sidste levering til dato tid for ny levering.  </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/IndkomstOplysningKlassiskAbonnentHent_I_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningKlassiskAbonnentHent_I_OType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningKlassiskAbonnentHent_O_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningKlassiskAbonnentHent_O_OType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningKlassiskAbonnentHent_OK_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningKlassiskAbonnentHent_OK_OType.xsd"/>
+	<xs:element name="IndkomstOplysningKlassiskAbonnentHentInterface" type="fase2:IndkomstOplysningKlassiskAbonnentHentInterfaceType"/>
+	<xs:complexType name="IndkomstOplysningKlassiskAbonnentHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_I_I"/>
+			<xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_I_O"/>
+			<xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_O_I"/>
+			<xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_O_O"/>
+			<xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_OK_I"/>
+			<xs:element ref="fase2:IndkomstOplysningKlassiskAbonnentHent_OK_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

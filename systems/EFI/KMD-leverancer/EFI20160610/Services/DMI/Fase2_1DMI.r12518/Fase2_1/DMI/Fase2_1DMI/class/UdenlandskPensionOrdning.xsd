@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/PensionOrdningNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="UdenlandskPensionOrdningNummer" type="fase2.1:PensionOrdningNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskPensionOrdningStartDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="UdenlandskPensionOrdningSlutDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="UdenlandskPensionOrdningUgyldigDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+      </xs:schema>

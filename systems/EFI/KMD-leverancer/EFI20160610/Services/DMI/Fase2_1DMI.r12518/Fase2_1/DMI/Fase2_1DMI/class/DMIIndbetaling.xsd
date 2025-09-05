@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indbetalinger modtages via de almindelige indbetalingsformer som check, giro og bankoverførsler fra ind- og udland. Endvidere kan indbetaling ske via SKAT´s PC-kasse  skrankeindbetalingssystem (baseret på SAP).  Ud over de almindelig indbetalingsformer betragtes afregninger fra eIndkomst (lønindeholdelse), rentegodtgørelser i DMI og information om modregning fra diverse interne og eksterne systemer også som indbetalinger. Disse indbetalinger er alle forsynet med en myndighedsudbetalingstype.  Indbetalinger sker typisk i DKK, men DMI skal også kunne håndtere indbetalinger i andre valutaer, f.eks. euro. DMI skal kunne omregne indbetalinger i udenlandsk valuta til danske kroner.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DMIIndbetalingArtType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/OCRLinjeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/IndbetalingFordelingAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/IndbetalingAnvendtTildaekningType.xsd"/>
+         <xs:include schemaLocation="../types/DMIIndbetalingKildeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst256Type.xsd"/>
+         <xs:include schemaLocation="../types/DMIIndbetalingKorrektionTypeType.xsd"/>
+         <xs:element name="DMIIndbetalingID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af den enkelte indbetaling, som skal anvendes til at kunne spore indbetalingen fx ifm med 2 identiske betalinger foretaget samme dag. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingArt" type="fase2.1:DMIIndbetalingArtType">
+               
+               <xs:annotation>
+                  <xs:documentation>En underopdeling af indbetaling  Koderne valideres i sammenhæng med DMIIndbetalingKilde, hvor følgende kombinationer er gyldige:  DMIIndbetalingKilde   DMIIndbetalingArt ----------------------------------------- SAP38  KONTA SAP38  CHECK SAP38  DANKO SAP38  OMPOST SAP38  MODRE SKB  OCRLI SKB  BANKO SKB  ULAND SKB  TRMAND EFI  LONIN EFI  LONKO EFI  RENTG EFI  DANKO NETS  BANKO SLUT  MODRE NEMKONT MODRE DMO  MODRE  DMIIndbetalingArt LONKO kan ikke anvendes ved oprettelse af indbetalinger. Den sættes automatisk af DMI ved korrektion af lønindeholdelser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingEFIIndsatsID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af instansen af en indsats, dvs. eksempelvis betalingsordningen for kunden Hans Hansen, der starter 1.1.2007.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det indbetalte beløb den angivne valuta</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det indbetalte beløb omregnet til danske kr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingDækket" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: indbetalingen er dækket på en inddrivelseskonto. Nej: indbetalingen er ikke uddækket på en inddrivelseskonto. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAfventer" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Indbetalingen afventer en dækning på en inddrivelseskonto. Nej: Indbetalingen er uddækket på en inddrivelseskonto </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato indbetalingen er foretaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingPlaceret" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: indbetalingen er placeret på en inddrivelseskonto. Nej: indbetalingen er ikke placeret på en inddrivelseskonto. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingOCRLinie" type="fase2.1:OCRLinjeType">
+               
+               <xs:annotation>
+                  <xs:documentation>OCR linien incl klammer, kontonummer og alt nødvendigt. Kan stamme fra betalingsordning eller forventet indbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAfsender" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på indbetaler</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingPåVegneAf" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver navn på evt. 3 mand som indbetaler for kunde</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingFraKundeNummer" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kundenummer (cpr.nr.,senr, AKRNummer) på 3. mand.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingValutaKode" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver valuta enheden (ISO-møntkoden) for et beløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAdvisTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Advistekst som er knyttet til indbetalingen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingKorrektionMark" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes kun ved servicekald vedrørende lønindeholdelse til markering af om det er korrektion af tidligere indbetaling. Ja: DMIIndbetalingKorrektionType skal udfyldes med X eller R. Nej eller blank: DMI ignorerer DMIIndbetalingKorrektionType som derfor ikke skal udfyldes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingEFIIndbetalingID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Indbetalingsid hos EFI. Unik reference til eIndkomst-angivelsen per kunde og per dispositionsdato. Skal anvendes til korrektion af tidl. modtaget angivelse ifm. lønindeholdelse i EFI. ID'et dannes i EFI (dette er ikke samme reference som modtages fra eIndkomst).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingVirkningFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor indbetalingen skal have effekt fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingFordelÅrsagKode"
+                     type="fase2.1:IndbetalingFordelingÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers mulighed for at vælge en årsag til fordeling af indbetalingen ud fra en fast liste. Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingFordelÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for, hvorfor en fordelingen er foretaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingFordelÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAnvendtTilDækn"
+                     type="fase2.1:IndbetalingAnvendtTildækningType">
+               
+               <xs:annotation>
+                  <xs:documentation>Søgekriterie.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingReferenceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan være en tidligere indbetalingsID (f.eks. ved omregistrering af hvem kunden er for en indbetaling), eller anden ID, som kobler omposteringer sammen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingKilde" type="fase2.1:DMIIndbetalingKildeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Reference til det specifikke system der indbetales fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAktivitetTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til generel beskrivelse den type aktivitet, som knytter sig til indbetalingen. Eksempler på værdier kunne være: Dækning ved indbetaling Ophævelse af dækning ved indbetaling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAfstemningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato kalderen vil anvende til at foretage dem datomæssige afgrænsning i den senere afstemning.   Ønsker kalderen at foretage afstemning mod DMI må dette datofelt betragtes som obligatorisk. Dvs. er DMIIndbetalingAfstemningNøgle 1 og/eller 2 er dette felt logisk obligatorisk.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAfstemningNøgle1" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette felt anvendes sammen med DMIIndbetalingAfstemningNøgle2 til identifikation af det enkelte indbetalingsindivid.  Feltet anvendes alene til afstemningsformål mod DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAfstemningNøgle2" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette felt anvendes sammen med DMIIndbetalingAfstemningNøgle1 til identifikation af det enkelte indbetalingsindivid. Dette felt kan ses både som en underopdeling til felt DMIIndbetalingAfstemningNøgle1 eller som en alternativ afstemningsdimension i forhold til feltet DMIIndbetalingAfstemningNøgle1.  Feltet anvendes alene til afstemningsformål mod DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAngivelseID" type="fase2.1:Tekst256Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ekstern reference modtaget fra eIndkomst.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingKorrektionType"
+                     type="fase2.1:DMIIndbetalingKorrektionTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af korrektion, når indbetalingen er en korrektion til lønindeholdelse. X = Korrektion med reference R = Korrektion uden reference</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingDispositionDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indbetalingens dispositionsdato som angivet i e-indkomst. Anvendes kun i forbindelse med lønindeholdelse fra EFI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingIndberetningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indbetalingens modtagelsesdato som angivet i e-indkomst. Anvendes kun i forbindelse med lønindeholdelse fra EFI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIIndbetalingAngivelseKorrektionID" type="fase2.1:Tekst256Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ekstern eIndkomst reference for den angivelse som denne post korrigere. Skal kun udfyldes når DMIIndbetalingKorrektionMark er Ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

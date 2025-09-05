@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En medarbejder har i sin profil mulighed for angive postnumre som medarbejderen ikke ønsker at arbejde i. F.eks. kan medarbejderen fravælge at arbejde i sit eget postnummer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/PostNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="FravalgtPostNummerID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på fravalgtpostnummer objektet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerMedarbejderprofilID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på profilen for den medarbejder der ikke ønsker at arbejde i postnummeret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerPostNummer" type="fase2.1:PostNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det postnummer medarbejderen ikke ønsker at arbejde i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet fravalgtpostnummer objektet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt fravalgtpostnummer objektet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet fravalgtpostnummer objektet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt fravalgtpostnummer objektet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FravalgtPostNummerTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til fravalgtpostnummer objektet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

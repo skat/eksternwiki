@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>- SKAT definerer JuridiskEnhed, som et fælles begreb for alle de enheder, som (potentielt set) skal afregne told, skatter og afgifter: Alle typer af Virksomhed (identificeret ved SE-nummer), Person (identificeret ved CVR), UdenlandskVirksomhed og UdenlandskPerson. - CVR definerer juridisk enhed, som en virksomhed, identificeret ved CVR-nummer. DISSE TO DEFINITIONER MÅ IKKE FORVEKSLES.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JuridiskEnhedIDType.xsd"/>
+         <xs:include schemaLocation="../types/JuridiskEndhedStatusKodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="JuridiskEnhedNummer" type="fase2.1:JuridiskEnhedIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>JuridiskEnhedNummer bærer generisk identifikationen for de forskellige typer af identifikation der er knyttet til subklassernemn til henholdsvis: Virksomhed, Person, UdenlanskVirksomhed og UdenlandskPerson. Det vil sige:  1) Når den JuridiskeEnhed er en Person, så er: JuridiskenhedNummer = PersonCPRNummer  2) Når den JuridiskeEnhed er en Virksomhed, så er: JuridiskEnhedNummer = CVRNummer (i visse tilfælde SENummer, hvis CVRNummer ikke eksisterer eller er forskellig fra CVRNummer - se under CVRNummer og SENummer)  3)  Når den JuridiskeEnhed er UdenlandskPerson, så er værdien af JuridiskEnhedNummer lig med den identifier der dannes i det nye stamregister for UdenlandskePersoner  4) Når den JuridiskeEnhed er UdenlandskVirksomhed, så er værdien af JuridiskEnhedNummer lig med den identifier for virksomheden som benytter som identifier i Erhvervssystemet.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="JuridiskEnhedStatus" type="fase2.1:JuridiskEndhedStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Denne anvendes kun er Motor-projektet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="JuridiskEnhedGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>En registrering af, hvornår interessenten er blevet oprettet (eventuel fremdateret gyldighedsdato og tid).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="JuridiskEnhedGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>En markering af, hvornår interessenten ikke længere er gyldig - f.eks. som led i generel oprydning, dødsfald, virksomhedsophør m.v.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

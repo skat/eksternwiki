@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Opgavetype.xsd"/>
+         <xs:element name="OpgavetypeStruktur" type="fase2.1:OpgavetypeStrukturType"/>
+         <xs:complexType name="OpgavetypeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OpgavetypeID"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeDomæne"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeNavn"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeOpgaveKategori"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeBeskrivelse"/>
+
+               <xs:element ref="fase2.1:OpgavetypeLinkTilSag" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgavetypeGennemførselstid"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeGennemførselsfrist"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypePrioritet"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeSandsynlighed"/>
+
+               <xs:element ref="fase2.1:OpgavetypePoint" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgavetypeVentedage"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeKundeAfhængig"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeUdgående"/>
+
+               <xs:element ref="fase2.1:OpgavetypeGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeGyldigTil" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeHentYderligereInfo" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgavetypeOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:OpgavetypeOprettetTid"/>
+
+               <xs:element ref="fase2.1:OpgavetypeÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgavetypeTimestampVersion"/>
+
+               <xs:element ref="fase2.1:OpgavetypeBookingInterval" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeBookingSvarDage" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

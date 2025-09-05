@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r15159</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/AcontoskatRate.xsd"/>
+         <xs:element name="ÅrsopgørelseAcontoskatStruktur"
+                     type="skat2016:ÅrsopgørelseAcontoskatStrukturType"/>
+         <xs:complexType name="ÅrsopgørelseAcontoskatStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AcontoSkatSpecifikationListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="AcontoSkatSpecifikation" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="skat2016:VirksomhedSENummer" minOccurs="0"/>
+
+
+                                 <xs:element name="Rate1">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element ref="skat2016:AcontoskatRateOrdinærRate1Beløb" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2016:AcontoskatRateFrivilligIndbetalingRate1Beløb" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2016:AcontoskatRateTillægFraStatenBeløb" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                                 <xs:element name="Rate2">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element ref="skat2016:AcontoskatRateOrdinærRate2Beløb" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2016:AcontoskatRateFrivilligIndbetalingRate2Beløb" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2016:AcontoskatRateTillægTilStatenBeløb" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                                 <xs:element name="AfslutningAnsættelse">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element ref="skat2016:AcontoskatRateFrivilligIndbetalingVedAfslagAnsættelseBeløb"
+                                                      minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="AcontoDelTotal">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:AcontoskatRateOrdinærRate1DelTotalBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:AcontoskatRateFrivilligIndbetalingRate1DelTotalBeløb"
+                                    minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:AcontoskatRateTillægFraStatenDelTotalBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:AcontoskatRateOrdinærRate2DelTotalBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:AcontoskatRateFrivilligIndbetalingRate2DelTotalBeløb"
+                                    minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:AcontoskatRateTillægTilStatenDelTotalBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:AcontoskatRateFrivilligIndbetalingVedAfslagAnsættelseDelTotalBeløb"
+                                    minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="AcontoSammentælling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:AcontoskatRateIAltBeløb" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

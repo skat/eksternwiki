@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/VaerdiFastsaettelseGrundlag.xsd"/>
+	<xs:element name="VaerdiFastsaettelseGrundlagStruktur" type="dmr:VaerdiFastsaettelseGrundlagStrukturType"/>
+	<xs:complexType name="VaerdiFastsaettelseGrundlagStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagAnnoncePris" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagAnnoncePrisNedreBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagAnnoncePrisOevreBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagDafKatalog" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagDafKatalogBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagEkstraUdstyr" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagHandelspris" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagHandelsprisBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagKoeretoejFremvist" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagKoerteKm" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagNypris" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagNyprisBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagSalgsprisAndreMedier" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagSalgsprisAndreMedierNedreBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagSalgsprisAndreMedierOevreBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagStand" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagSaerligAnvendelse" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagTidligereVurderingTilsvarende" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagTidligereVurderingTilsvarendeBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagKoerteKmBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagStandBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagEkstraUdstyrBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagSaerligAnvendelseBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagNiveau" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagNiveauBeloeb" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagNiveauKm" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagOffentlig" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagJournalNummer" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagNoter" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

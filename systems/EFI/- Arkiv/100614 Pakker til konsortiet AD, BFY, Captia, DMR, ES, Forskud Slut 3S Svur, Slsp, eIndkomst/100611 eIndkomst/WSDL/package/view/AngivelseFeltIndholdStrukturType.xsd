@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/AngivelseFelt.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/BlanketFeltEnhedStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="AngivelseFeltIndholdStruktur" type="fase2.1:AngivelseFeltIndholdStrukturType"/>
+   
+   
+   
+   <xs:complexType name="AngivelseFeltIndholdStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:BlanketFeltEnhedStruktur"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:AngivelseFeltIndhold"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

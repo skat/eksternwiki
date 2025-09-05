@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingEvneRes.xsd"/>
+         <xs:include schemaLocation="../class/BetalingEvne.xsd"/>
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneResBeloebStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="BetalingEvneResStruktur" type="fase2.1:BetalingEvneResStrukturType"/>
+         <xs:complexType name="BetalingEvneResStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="ReservationValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="DMI">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResBeløbStruktur"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResNummer"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResUdnyttet"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResStartDato"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="Indsats">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:IndsatsID"/>
+                  
+                                    <xs:element ref="fase2.1:IndsatsTypeKode"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResBeløbStruktur"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResNummer"/>
+                  
+                                    <xs:element ref="fase2.1:BetalingEvneResStartDato"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

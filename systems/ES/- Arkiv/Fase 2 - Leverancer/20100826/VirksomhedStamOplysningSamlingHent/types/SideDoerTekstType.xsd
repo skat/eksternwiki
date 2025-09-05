@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:simpleType name="SideDørTekstType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver side/dør tilknyttet husnummer/husbogstav</xs:documentation>
+      
+      
+      </xs:annotation>
+      
+      
+      <xs:restriction base="xs:string">
+         
+         
+         <xs:maxLength value="4"/>
+      
+      
+      </xs:restriction>
+   
+   
+   </xs:simpleType>
+
+
+</xs:schema>

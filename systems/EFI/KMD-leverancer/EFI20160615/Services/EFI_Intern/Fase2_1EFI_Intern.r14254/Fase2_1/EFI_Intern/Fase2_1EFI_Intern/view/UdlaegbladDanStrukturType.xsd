@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Udlaeg.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Udlaegsblad.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../operational/EFIEnkeltIndbetalingBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIFordring.xsd"/>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/EFIHenvendelsesDato.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="UdlægbladDanStruktur" type="fase2.1:UdlægbladDanStrukturType"/>
+         <xs:complexType name="UdlægbladDanStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:UdlægForetagetHosSKAT"/>
+                  
+                  <xs:element ref="fase2.1:UdlægGenoptagetHosSKAT"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="ForetagetPåAdresse" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:KFIAdresseStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+               <xs:element ref="fase2.1:UdlægsbladForetagetDatoTid"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="GenoptagPåAdresse" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:KFIAdresseStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:UdlægsbladGenoptagDatoTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:UdlægsbladNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:UdlægsbladØvrigeTilStede" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:UdlægsbladVidner" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:UdlægsbladUndtagelsesbestemmelser"/>
+
+               <xs:element ref="fase2.1:UdlægsbladUndtagelsesbestemmelserBegrundelse" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:UdlægsbladLåsesmed"/>
+
+               <xs:element ref="fase2.1:UdlægsbladLåsesmedBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:UdlægsbladBetalingBeløb" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:UdlægsbladKaldVarselFrasagt"/>
+               <xs:element name="FordringSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Fordring" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:EFIEnkeltIndbetalingBeløb" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:EFIFordringFratrukketBeløb" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+
+               <xs:element ref="fase2.1:UdlægsbladSærligeBemærkninger" minOccurs="0"/>
+
+
+               <xs:element name="AktivSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Aktiv" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:AktivID"/>
+
+                                 <xs:element ref="fase2.1:UdlægBeløb" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+                  <xs:element ref="fase2.1:UdlægsbladKundeHarKlaget"/>
+
+               <xs:element ref="fase2.1:UdlægsbladKlageBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelsesDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:UdlægsbladResultat" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

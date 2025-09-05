@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder renteregler.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/LoebeNummerType.xsd"/>
+         <xs:element name="RenteRegelNummer" type="fase2.1:LøbeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer på en renteregel. Reglen beskriver hvorledes renten skal beregnes f.eks. dag til dag.  Værdisæt: 001 = Dag til dag rente uden renters rente. 002 = Pr. påbegyndt måned uden renters rente. (Blank = Ingen RenteRegel nr)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

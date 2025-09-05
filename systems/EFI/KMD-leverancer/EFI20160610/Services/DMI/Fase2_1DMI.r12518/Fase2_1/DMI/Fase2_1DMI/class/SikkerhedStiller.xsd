@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En sikkerhedsstiller er en person eller en virksomhed som skal sikkerhed for:  - Et bestemt bevillingsforhold f.eks en type af punktafgift  - Hele registreringsforholdet generelt  (SKAT’s Trip-Trap ordning)  - I forbindelse med import  - For RIM som et led i inddrivelsesproceduren</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="SikkerhedStillerID" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det nummer som for SKAT identificerer en person eller virksomhed. En virksomhed er identificeret ved et CVR nr. eller SE nr. (eller begge), mens en person er identificeret af CPR nr. Udenlandske personer uden CVR, SE eller CPR nr skal identificeres af et andet unikt nummer som SKAT journalnr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillerNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Her angives navn på enten person eller virksomhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillerType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typer er karakteriseret af lister, hvorfra kan vælges vedtagne værdier.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

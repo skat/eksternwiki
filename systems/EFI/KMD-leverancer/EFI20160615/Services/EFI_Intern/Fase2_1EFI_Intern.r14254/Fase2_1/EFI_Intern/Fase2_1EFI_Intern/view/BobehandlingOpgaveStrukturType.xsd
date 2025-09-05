@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Opgave.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIOpgaveDatoFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIOpgaveDatoTil.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+         <xs:element name="BobehandlingOpgaveStruktur" type="fase2.1:BobehandlingOpgaveStrukturType"/>
+         <xs:complexType name="BobehandlingOpgaveStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="BobehandlingOpgaveSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="OpgaveStruktur" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:OpgaveOpgavetypeID"/>
+
+                                 <xs:element ref="fase2.1:OpgaveID" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:OpgaveTekst" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:KFIAdresseStruktur" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:EFIOpgaveDatoFra"/>
+                  
+                                 <xs:element ref="fase2.1:EFIOpgaveDatoTil"/>
+
+                                 <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:EFIHenvendelseDato" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

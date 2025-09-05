@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19879</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:element name="VirksomhedSøg_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:VirksomhedSøg_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r19879"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="VirksomhedSøg_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="VirksomhedOplysningerUd" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="EnkeltVirksomhed" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+                                       <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     
+
+                        <xs:element name="VirksomhedMedProduktionEnhedÆndringerListe" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="VirksomhedMedProduktionEnhedÆndringer" minOccurs="1"
+                                    maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+                  
+                                          <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

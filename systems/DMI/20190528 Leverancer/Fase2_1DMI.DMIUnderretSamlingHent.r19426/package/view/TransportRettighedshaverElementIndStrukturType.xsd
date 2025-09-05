@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19425</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+         <xs:include schemaLocation="../class/TransportRettighedHaver.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransportUdlaegRettighedStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransportRettighedHaverBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="TransportRettighedshaverElementIndStruktur"
+                     type="fase2.1:TransportRettighedshaverElementIndStrukturType"/>
+         <xs:complexType name="TransportRettighedshaverElementIndStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KundeStruktur"/>
+
+               <xs:element ref="fase2.1:DMIFordringHaverID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:TransportUdlægRettighedStruktur" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:TransportRettighedHaverBesked"/>
+                  
+                  <xs:element ref="fase2.1:TransportRettighedHaverEjer"/>
+                  
+                  <xs:element ref="fase2.1:TransportRettighedHaverModtPen"/>
+                  
+                  <xs:element ref="fase2.1:TransportRettighedHaverForPrio"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="TransportRettighedhaverUdbetalingFordeling" minOccurs="0">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element ref="fase2.1:TransportRettighedHaverProcent"/>
+				
+				
+				                       <xs:element ref="fase2.1:TransportRettighedHaverBeløbStruktur"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

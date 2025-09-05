@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En meddelelse skal formateres i forbindelse med at den skal sendes af en kanal. Den formaterede meddelelse er repræsenteret i modellen ved FormateretMeddelelse.  En meddelelse kan blive formateret flere gange, f.eks. hvis den skal sendes af flere kanaler.  Det er formaterede meddelelser, der vises i kommunikationsmappen. </xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/XMLType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/URLType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/JaNejType.xsd"/>
+      
+   
+   
+   <xs:element name="FormateretMeddelelseID" type="fase2.1:IdentifikationNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Unik ID for den formaterede meddelelse. Tildeles autoamatisk af A&amp;D i forbindelse med oprettelse. Kan ikke ændres efterfølgende.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="FormateretMeddelelseFormat" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Format for meddelelsen (f.eks. PDF, TIFF, Word, HTML, XML osv.)</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="FormateretMeddelelseIndhold" type="fase2.1:XMLType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Indholdet i en formateret meddelelse medsendes som XML indholdeldende header med indledende oplysninger, og en body med selve meddelelsens tekst eller indhold.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="FormateretMeddelelseEksternID" type="fase2.1:URLType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Hvis meddelelsen er eksporteret til eller importeret fra et andet system, angiver denne ID en entydig reference til meddelelsens repræsentation i dette andet system.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="FormateretMeddelelseAdvisMarkering" type="fase2.1:JaNejType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En markering af at her er tale om en advis som ikke er den egentlige meddelelse.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

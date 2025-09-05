@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:es:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elforbrugsstedaftagenummertext="urn:oio:skat:es:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ElForbrugsstedAftageNummerText" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Et aftagenummer er et unikt nummer som bruges til at identificere elmålere i Danmark. Nummeret er opbygget af 18 cifre og valideres med modulus 10.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

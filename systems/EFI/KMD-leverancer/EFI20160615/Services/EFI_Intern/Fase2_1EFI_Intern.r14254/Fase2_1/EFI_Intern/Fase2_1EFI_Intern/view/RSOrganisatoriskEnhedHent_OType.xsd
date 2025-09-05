@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/RSKommuneNummerPostNummer.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/RSOrganisatoriskEnhedStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ArbejdsstedStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OrganisatoriskEnhedProdLederStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RSRessourceStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MedarbejderprofilStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RSRessourcegruppeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OrganisatoriskEnhedAlarmtypeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlarmTypeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KoerselstidStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OrganisatoriskEnhedOpgavekoeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpgavekoeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KalenderPraeferenceStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpgavetypeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OrganisatoriskEnhedRessourceStrukturType.xsd"/>
+				     
+				     
+				     
+         <xs:element name="RSOrganisatoriskEnhedHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:RSOrganisatoriskEnhedHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="RSOrganisatoriskEnhedHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="OrganisatoriskEnhed" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:RSOrganisatoriskEnhedStruktur"/>
+
+                              <xs:element ref="fase2.1:ArbejdsstedStruktur" minOccurs="0"/>
+
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="ProduktionslederSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="ProduktionslederListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="ProduktionsLeder" minOccurs="1" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OrganisatoriskEnhedProdLederStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:RSRessourceStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:MedarbejderprofilStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:RSRessourcegruppeStruktur"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="OrganisatoriskEnhedAlarmtypeSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="OrganisatoriskEnhedAlarmtypeListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="OrganisatoriskEnhedAlarmtype" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OrganisatoriskEnhedAlarmtypeStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:AlarmTypeStruktur"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="KørselstidSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="KørselstidListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="Kørselstid" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:KørselstidStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:RSKommuneNummerPostNummerByNavn"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="OrganisatoriskEnhedOpgavekøSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="OrganisatoriskEnhedOpgavekøListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="OrganisatoriskEnhedOpgavekø" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:OpgavekøStruktur"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="KalenderPræferenceSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="KalenderPræferenceListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="KalenderPræference" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:KalenderPræferenceStruktur"/>
+                                                            <xs:element name="KalenderPræferenceOpgavetypeListe">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element ref="fase2.1:OpgavetypeStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="OrganisatoriskEnhedRessourceSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="OrganisatoriskEnhedRessourceListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="OrganisatoriskEnhedRessource" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OrganisatoriskEnhedRessourceStruktur"/>
+                  
+                                                            <xs:element ref="fase2.1:RSRessourceStruktur"/>
+
+                                                            <xs:element ref="fase2.1:MedarbejderprofilStruktur" minOccurs="0"/>
+
+
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

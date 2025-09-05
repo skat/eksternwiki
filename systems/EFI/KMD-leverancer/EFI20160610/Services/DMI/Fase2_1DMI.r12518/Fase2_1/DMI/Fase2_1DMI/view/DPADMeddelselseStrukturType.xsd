@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Meddelelse.xsd"/>
+         <xs:include schemaLocation="../class/MeddelelseType.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/SendTilSagskundeMarkering.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/DPKanalTypeNummer.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/MeddelelseTypeVersion.xsd"/>
+         <xs:include schemaLocation="../class/DokumentFil.xsd"/>
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KanalAdresseStrukturType.xsd"/>
+				     
+         <xs:element name="DPADMeddelselseStruktur" type="fase2.1:DPADMeddelselseStrukturType"/>
+         <xs:complexType name="DPADMeddelselseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:MeddelelseIndhold"/>
+                  
+                  <xs:element ref="fase2.1:MeddelelseTypeNummer"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="AlternativModtager" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:KundeNavn"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="ForsendelseKundeListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="ForsendelsesKundeStruktur" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="KundeValg">
+                                       <xs:complexType>
+                                          <xs:choice>
+                                             <xs:element ref="fase2.1:KundeStruktur"/>
+				
+				
+				                                         <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+                                          </xs:choice>
+                                       </xs:complexType>
+                                    </xs:element>
+
+                                    <xs:element ref="fase2.1:SendTilSagskundeMarkering" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:KundeNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:KFIAdresseStruktur" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+
+               <xs:element ref="fase2.1:DPKanalTypeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KanalAdresseStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MeddelelseTypeVersionSkalIKommunikationMappeMarkering"
+                           minOccurs="0"/>
+
+
+               <xs:element name="DokumentFilSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="DokumentFil" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:DokumentFilType"/>
+                  
+                                 <xs:element ref="fase2.1:DokumentFilIndhold"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247432/artefact/SKAT_HovedOplysningerSvar.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:include schemaLocation="../view/BasisAArMaanedAAbenStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/AngivelseBlanketIndholdStrukturType.xsd"/>
+	<xs:element name="IndkomstOplysningPersonAdvisBestil_O_O" type="eindkomstws:IndkomstOplysningPersonAdvisBestil_O_OType">
+	</xs:element>
+	<xs:complexType name="IndkomstOplysningPersonAdvisBestil_O_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="IndkomstPersonAdvisBestilUddata" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PersonIndkomstAdvisSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="IndkomstAdvisSamling" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+												<xs:element name="AdvisSamling">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="Advis" minOccurs="1" maxOccurs="unbounded">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="eindkomstws:BasisAarMaanedAabenStruktur"/>
+																		<xs:element ref="eindkomstws:AngivelseBlanketIndholdStruktur"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

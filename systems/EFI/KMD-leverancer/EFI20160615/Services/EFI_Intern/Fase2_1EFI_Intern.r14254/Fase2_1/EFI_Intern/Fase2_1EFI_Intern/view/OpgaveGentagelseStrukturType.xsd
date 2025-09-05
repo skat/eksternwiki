@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OpgaveGentagelse.xsd"/>
+         <xs:element name="OpgaveGentagelseStruktur" type="fase2.1:OpgaveGentagelseStrukturType"/>
+         <xs:complexType name="OpgaveGentagelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OpgaveGentagelseID"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveGentagelseSlotID"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveGentagelseGentagelseType"/>
+
+               <xs:element ref="fase2.1:OpgaveGentagelseSlutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseGentagNGange" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverNDag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverNUge" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverNMåned" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverNÅr" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseAlleHverdage" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverFørste" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverAnden" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverTredje" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverFjerde" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseHverSidste" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseMandag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseTirsdag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseOnsdag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseTorsdag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseFredag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseLørdag" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseSøndag" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveGentagelseOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveGentagelseOprettetTid"/>
+
+               <xs:element ref="fase2.1:OpgaveGentagelseÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveGentagelseSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveGentagelseTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

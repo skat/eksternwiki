@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/ETLJuridiskDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLKorrelationId.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLAnmeldelseId.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLEkspeditionsType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLAnmeldelseSvarType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLAbonnementStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLAnmaerkninger.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLBemaerkninger.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLFristDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLFristTekst.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLDokumentIdentifikator.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLDokumentRevisionIdentifikator.xsd"/>
+				     
+         <xs:element name="ETLAnmeldelseSvarStruktur" type="fase2.1:ETLAnmeldelseSvarStrukturType"/>
+         <xs:complexType name="ETLAnmeldelseSvarStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:ETLJuridiskDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ETLKorrelationId"/>
+                  
+                  <xs:element ref="fase2.1:ETLAnmeldelseId"/>
+
+               <xs:element ref="fase2.1:ETLEkspeditionsType" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ETLAnmeldelseSvarType"/>
+                  
+                  <xs:element ref="fase2.1:ETLStatus"/>
+
+               <xs:element ref="fase2.1:ETLAbonnementStatus" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLAnmaerkninger" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLBemaerkninger" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLFristDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLFristTekst" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLDokumentIdentifikator" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLDokumentRevisionIdentifikator" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

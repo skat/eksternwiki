@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En ressourcestyring opgave. En opgave er et centralt element i ressourcestyring, det er ud fra de attributter der er på opgaven og dens type der bliver booket ressourcer. En opgave ligger på en opgavekø.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/RSDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst3900Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="OpgaveID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveOpgavetypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på opgavens opgavetype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den opgavekø opgaven ligger på.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveDomæne" type="fase2.1:RSDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det domæne opgaven tilhører. F.eks. EFI</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveBookingreference" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Bookingreference indeholder et ID som det domæne der har oprettet opgaven har specificeret. Giver det kaldende domæne mulighed for at tildele opgaven sin egen identifikation.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveKundeid" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens id. Id'et vil blive anvendt når der skal fremskaffes ekstra informationer til opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveTekst" type="fase2.1:Tekst3900Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fri tekst om opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveLinkParametre" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Linkparametre der bliver sat i enden af linket der er angivet i opgavetypen, så det samlede link peger hen på det sted i portalen opgaven skal løses.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveSandsynlighed" type="fase2.1:ProcentHeltTalPositivtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sandsynligheden for at opgaven bliver til noget. Sandsynligheden påvirker gennemførselstiden på opgaven. Hvis opgavens gennemførselstid er 30 minutter og sandsynligheden er 50%, vil der blive booket 15 minutter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavePrioritet" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavens prioritet kan bruges til at sortere opgavelisten så de vigtigste vises først.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveVentedage" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det antal dage der mindst skal gå før opgaven må påbegyndes. Opgaven må godt bookes, men bookingtidspunktet skal være efter ventedage. Hvis opgaven er en del af et forløb, og ikke første opgave i forløbet, er ventedage de dage der mindst skal gå imellem opgaven og den foregående opgave.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGennemførselsfrist" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage til opgaven skal være løst.  Opgaven skal være løst før datoen for opgavens oprettelse + gennemførselsfrist.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGennemførselstid" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavens varighed i minutter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveForløbID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaveforløbets unikke ID, hvis opgaven er en del af et forløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveForløbOpgavenummer" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavens rækkefølge i forløbet. Hvis opgavenummeret er 1, er opgaven første opgave i forløbet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavePoint" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det antal point opgaven vil give den medarbejder der løser opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveOverbooking" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om ressourcestyring må overbooke når opgaven bookes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveBookingInterval" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal minutter der minimum skal gå mellem hvert bookingforsøg.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveBookingForsøgTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet for sidste gang opgaven blev forsøgt booket.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveBooketAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har booket opgaven. Vil kun være udfyldt ved manuelt booket opgave.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveBooketTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er booket.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveBookingsvarDage" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage før aftaledagen som bookingsvaret skal sendes</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveSvarAfsendtTid" type="fase2.1:DatoTidType">
+               
+            </xs:element>
+         <xs:element name="OpgaveValgtAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har valgt opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveValgtTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er valgt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfsluttetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har afsluttet opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfsluttetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er afsluttet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet opgaven. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret opgaven. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet opgaven. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til opgaven, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

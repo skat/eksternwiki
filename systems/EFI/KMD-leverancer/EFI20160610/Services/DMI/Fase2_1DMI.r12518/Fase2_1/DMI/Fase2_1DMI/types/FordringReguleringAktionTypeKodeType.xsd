@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="FordringReguleringAktionTypeKodeType">
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver typen af aktion.  NEDFOR: Nedskrivning af fordring NEDTRP: Nedskrivning af transport OPSFOR: Opskrivning af fordring OPSTRP: Opskrivning af transport TBKFOR: Tilbagekaldning af fordring TBKTRP: Tilbagekaldning af transport</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="NEDFOR:"/>
+                  <xs:enumeration value="Nedskrivning"/>
+                  <xs:enumeration value="af"/>
+                  <xs:enumeration value="fordring"/>
+                  <xs:enumeration value="NEDTRP"/>
+                  <xs:enumeration value="OPSFOR"/>
+                  <xs:enumeration value="OPSTRP"/>
+                  <xs:enumeration value="TBKFOR"/>
+                  <xs:enumeration value="TBKTRP"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/FordringReguleringAktion.xsd"/>
+         <xs:element name="FordringReguleringAktionAfvistStruktur"
+                     type="fase2.1:FordringReguleringAktionAfvistStrukturType"/>
+         <xs:complexType name="FordringReguleringAktionAfvistStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:FordringReguleringAktionAfvistNummer"/>
+                  
+                  <xs:element ref="fase2.1:FordringReguleringAktionAfvistTekst"/>
+               <xs:element name="FordringReguleringAktionAfvistParamSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:FordringReguleringAktionAfvistParam" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

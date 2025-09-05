@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIFordring.xsd"/>
+         <xs:element name="EFIFordringFundamentStruktur"
+                     type="fase2.1:EFIFordringFundamentStrukturType"/>
+         <xs:complexType name="EFIFordringFundamentStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:EFIFordringFundamentDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:EFIFordringFundamentEtableringType"/>
+                  
+                  <xs:element ref="fase2.1:EFIFordringFundamentEtableringMetode"/>
+                  
+                  <xs:element ref="fase2.1:EFIFordringFundamentMangelStatus"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

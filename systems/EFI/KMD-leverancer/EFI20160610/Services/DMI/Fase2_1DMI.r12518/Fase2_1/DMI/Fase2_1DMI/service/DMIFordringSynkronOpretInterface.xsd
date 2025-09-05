@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen DMIFordingSynkronOpret har ansvaret for at oprette alle arter og typer af fordringer inklusiv hæftelsesinformation i Debitormotor.  Svaret sendes retur så snart Fordringen og evt. Hæftelse er oprettet i DMI.  Input strukturen er den samme som i DMIFordringAsynkronOpret og output strukturen er den samme som input strukturen i MFFordringAsynkronOprettet. </xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DMIFordringSynkronOpret_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DMIFordringSynkronOpret_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DMIFordringSynkronOpretInterface"
+                     type="fase2.1:DMIFordringSynkronOpretInterfaceType"/>
+         <xs:complexType name="DMIFordringSynkronOpretInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DMIFordringSynkronOpret_I"/>
+               <xs:element ref="fase2.1:DMIFordringSynkronOpret_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

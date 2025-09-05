@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+         <xs:include schemaLocation="../class/AktivFastEjendom.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Bygning.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:include schemaLocation="../class/Ejendom.xsd"/>
+         <xs:include schemaLocation="../operational/eTLIdentifikatorMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Ejerlav.xsd"/>
+         <xs:include schemaLocation="../class/Matrikel.xsd"/>
+         <xs:include schemaLocation="../class/eTLEjendomType.xsd"/>
+         <xs:include schemaLocation="../class/Ejerlejlighed.xsd"/>
+         <xs:include schemaLocation="../class/EjendomAnpart.xsd"/>
+         <xs:include schemaLocation="../operational/eTLEjendomIdentifikator.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+         <xs:element name="KFIAktivFastEjendomStruktur"
+                     type="fase2.1:KFIAktivFastEjendomStrukturType"/>
+         <xs:complexType name="KFIAktivFastEjendomStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+
+                  <xs:element ref="fase2.1:AktivTinglysningBeløb" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivSkønnetFriværdi" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivSkønnetFriværdiBegrundelse" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivFastEjendomPrioritetRestgæld" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivNavnAdresseTredjemand" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:KFIAdresseStruktur" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:BygningeTLNummer" minOccurs="0"/>
+
+
+                  <xs:element name="Kommune">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MyndighedNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element ref="fase2.1:EjendomNummer"/>
+
+                  <xs:element ref="fase2.1:eTLIdentifikatorMarkering" minOccurs="0"/>
+
+
+                  <!--Sequence removed-->
+
+                     <xs:element name="MatrikelSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Matrikel" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:EjerlavKode"/>
+
+                                       <xs:element ref="fase2.1:EjerlavNavn" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:MatrikelNummer"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+
+
+                  <xs:element ref="fase2.1:eTLEjendomTypeKode" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:EjerlejlighedNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:EjendomAnpartNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivFastEjendomOffentligVurdering" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivFastEjendomBenyttelse" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivFastEjendomEjerAndel" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivFastEjendomMedejer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivDenunciationStatusKode" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:eTLEjendomIdentifikator" minOccurs="0"/>
+
+               
+            
+         
+         
+         
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation>Formålet er at hente oplysninger om hvilke ejere og/eller ledere en virksomhed har.  JaNej markering anvendelse: hvis Ja hentes oplysninger, hvis Nej hentes oplysninger ikke.  Er søgedato udfyldt hentes oplysninger, som er gældende fra og med den anførte søgedato eller i den angivne søgeperiode.  Er søgedato ikke udfyldt hentes alle oplysninger. Er EjerTypeRolleValg udfyldt hentes alene ejerforhold for virksomheder, der opfylder Valg. Er LedelsesTypeValg udfyldt hentes alene ledelsesforhold for virksomheder, der opfylder Valg. Er EjerTypeRolleValg og LedelsesTypeValg udfyldt hentes ejerforhold og ledelsesforhold, der opfylder Valg.  Vedr EjerTypeValg: Er driftsform udfyldt hentes alene ejerforhold for virksomheder, som har den anførte driftsform.  Er både driftsform, ejerrolle og ejertype udfyldt hentes ejerforhold, som gælder for den anførte kombinati-on af ejerrolle, ejertype og driftsform.  Der hentes uanset søgedato altid aktuelt gældende kort navn for virksomhed samt adresse af typen virk-somhedsadresse for SENummer og eventuelt CVRNummer. </xs:documentation>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedAlleEjerLederRelationSamlingHent_IType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedAlleEjerLederRelationSamlingHent_OType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedAlleEjerLederRelationSamlingHent_FejlIdType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+   
+   
+   
+   <xs:element name="VirksomhedAlleEjerLederRelationSamlingHentInterface" type="fase2.1:VirksomhedAlleEjerLederRelationSamlingHentInterfaceType"/>
+   
+   
+   
+   <xs:complexType name="VirksomhedAlleEjerLederRelationSamlingHentInterfaceType">
+      
+      
+      
+      <xs:choice>
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedAlleEjerLederRelationSamlingHent_I"/>
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedAlleEjerLederRelationSamlingHent_O"/>
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedAlleEjerLederRelationSamlingHent_FejlId"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTrans"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTransSvar"/>
+      
+      
+      
+      </xs:choice>
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+         <xs:include schemaLocation="../operational/DMIIndbetalingBeloebFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIIndbetalingBeloebTil.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIIndbetalingDatoFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIIndbetalingDatoTil.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:element name="DMIIndbetalingList_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIIndbetalingList_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIIndbetalingList_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="SøgekriterierValg">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:sequence>
+                                 <xs:element name="Nr1SpecifiktIDSøgning">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:DMIIndbetalingID"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				
+				                          </xs:sequence>
+                              <xs:sequence>
+				
+                                 <xs:element name="Nr2BeløbPeriode">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:DMIIndbetalingBeløbFra"/>
+                  
+                                          <xs:element ref="fase2.1:DMIIndbetalingBeløbTil"/>
+                  
+                                          <xs:element ref="fase2.1:DMIIndbetalingDatoFra"/>
+                  
+                                          <xs:element ref="fase2.1:DMIIndbetalingDatoTil"/>
+
+                                          <xs:element ref="fase2.1:DMIIndbetalingArt" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:DMIIndbetalingKilde" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:DMIIndbetalingReferenceID" minOccurs="0"/>
+
+                                          <xs:element ref="fase2.1:DMIIndbetalingAnvendtTilDækn"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				
+				                          </xs:sequence>
+                              <xs:sequence>
+				
+                                 <xs:element name="Nr3KundePeriode">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                                          <xs:element ref="fase2.1:DMIIndbetalingDatoFra"/>
+                  
+                                          <xs:element ref="fase2.1:DMIIndbetalingDatoTil"/>
+                  
+                                          <xs:element ref="fase2.1:DMIIndbetalingAnvendtTilDækn"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

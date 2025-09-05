@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="DMIHæftelsesforholdTilAfskrivningModtagService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Servicen har til formål at meddele hvilke hæftelsesforhold på fordringer, der må afskrives. Der er tale om fordringer, der er overdraget til RIM</xs:documentation>
+            <xs:documentation>1.7</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/DMIHaeftelsesforholdTilAfskrivningModtagInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="DMIHæftelsesforholdTilAfskrivningModtagServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:DMIHæftelsesforholdTilAfskrivningModtag_I"/>
+         </wsdl:message>
+         <wsdl:message name="DMIHæftelsesforholdTilAfskrivningModtagServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:DMIHæftelsesforholdTilAfskrivningModtag_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="DMIHæftelsesforholdTilAfskrivningModtagServicePortType">
+            <wsdl:operation name="getDMIHæftelsesforholdTilAfskrivningModtag">
+               <wsdl:input message="fase2.1:DMIHæftelsesforholdTilAfskrivningModtagServiceRequest"/>
+               <wsdl:output message="fase2.1:DMIHæftelsesforholdTilAfskrivningModtagServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

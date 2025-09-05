@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/FilType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst25Type.xsd"/>
+         <xs:element name="DokumentFilIndhold" type="fase2.1:FilType">
+               
+               <xs:annotation>
+                  <xs:documentation>En elektronisk fil. Kan være modtaget elektronisk eller indskannet fra papirdokument.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentFilType" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Dokuments filtype, f.eks. TIFF, doc, pdf, txt mv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentFilStørrelse" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver størrelse på en dokumentfil.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentFilEncoding" type="fase2.1:Tekst25Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken encoding type dokumentfilen foreligger i, fx UTF8 eller UTF16.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>En medarbejder hos Færdselsstyrelsen skal have mulighed for at planlægge synsudtræk indeholdende køretøjer skal til syn inden for en given tidshorisont. Planlægningen af synsudtrækkene sker om dagen, hvor selve udtræksjobet forventes gennemført om natten. Der vil være tale om flere synsudtræk per nat, da et udtræksjob typisk vil dække over mindst en køretøjsart. For at dække samtlige køretøjsarter vil der i de fleste situationer være tale om flere udtræksjobs per udtræksdag. Et planlagt udtræksningsjob kan selvfølgelig ændres eller slettes, indtil det er gennemført.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/BaggrundJobStatusType.xsd"/>
+	<xs:include schemaLocation="../types/SynUdtraekPlanlaegningTypeType.xsd"/>
+	<xs:element name="SynUdtraekPlanlaegningFaktiskAktiveringsDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>En registrering af, hvornår det aktuelle job rent faktisk blev udført.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningFaktiskFundneAntal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>En registrering af det faktisk fundne antal køretøjer, som i teorien skulle være indkaldt til syn, hvis der ikke var en øvre begrænsning på antallet af køretøjer, som skal indkaldes til syn (planlagt antal). </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningFaktiskIndkaldtAntal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>En registrering af, hvor mange køretøjer, som rent faktisk blev indkaldt til syn. Tallet kan aldrig være større end det planlagte antal køretøjer, som ønskes udtrukket. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Et nummer som unikt angiver et givet synsudtræksplanlægningsjob </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningPlanlagtAktiveringsDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Den planlagte tid for aktivering af dette job. Der er tale om det tidligste tidspunkt, hvorefter systemet selv (inden for en ikke nærmere bestemt ramme) kan bestemme, hvornår jobbet i praksis skal udføres (typisk om natten).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningPlanlagtAntal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Antallet af køretøjer af den specificerede art, som ønskes udtrukket til syn. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningStatus" type="dmr:BaggrundJobStatusType">
+		<xs:annotation>
+			<xs:documentation>En status for et givet planlagt baggrundsjob. Se listen over valgmuligheder under domainet.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SynUdtraekPlanlaegningType" type="dmr:SynUdtraekPlanlaegningTypeType">
+		<xs:annotation>
+			<xs:documentation>Der er to typer af udtræksjobs. Enten er der tale om et egentligt synsudtræk eller også er der tale om en errindringsliste.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

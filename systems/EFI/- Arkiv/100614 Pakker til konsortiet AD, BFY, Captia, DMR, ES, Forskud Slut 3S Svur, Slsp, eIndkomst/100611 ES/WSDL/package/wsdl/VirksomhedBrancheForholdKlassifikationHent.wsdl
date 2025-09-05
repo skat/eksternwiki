@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="VirksomhedBrancheForholdKlassifikationHentService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Formål er at hente en virksomheds brancheoplysninger, dvs  oplysning om den 6-cifrede branchekode og 4-cifrede brancheundergruppe for hovedbranche og op til 3 bibrancher Henter gældende (d.d.) brancheforhold for en virksomhed til brug for præsentation i billede, bl.a. i forbindelse med angivelse af Skatteoplysninger for selskaber m.fl.</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="../service/VirksomhedBrancheForholdKlassifikationHentInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="VirksomhedBrancheForholdKlassifikationHentServiceRequest">
+      
+      <part name="Request" element="fase2.1:VirksomhedBrancheForholdKlassifikationHent_I"/>
+   
+   </message>
+   
+   <message name="VirksomhedBrancheForholdKlassifikationHentServiceResponse">
+      
+      <part name="Response" element="fase2.1:VirksomhedBrancheForholdKlassifikationHent_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2.1:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2.1:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="VirksomhedBrancheForholdKlassifikationHentServicePortType">
+      
+      <operation name="getVirksomhedBrancheForholdKlassifikationHent">
+         
+         <input message="fase2.1:VirksomhedBrancheForholdKlassifikationHentServiceRequest"/>
+         
+         <output message="fase2.1:VirksomhedBrancheForholdKlassifikationHentServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2.1:KompenserTransRequest"/>
+         
+         <output message="fase2.1:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+</definitions>

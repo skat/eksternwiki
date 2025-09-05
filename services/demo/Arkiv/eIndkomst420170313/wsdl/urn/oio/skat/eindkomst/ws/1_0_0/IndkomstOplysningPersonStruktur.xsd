@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:indkomstoplysningadgangreferencenummer="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" xmlns:eindkomst="urn:oio:skat:eindkomst:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../../1_0_0/NySoegeDatoTidFraDatoTid.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/IndkomstOplysningAdgangReferenceNummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/><xs:include schemaLocation="IndberetningPligtigVirksomhedStruktur.xsd"/>
+	<xs:include schemaLocation="SupplerendePersonOplysningStruktur.xsd"/>
+	<xs:include schemaLocation="LoenPeriodeOplysningStruktur.xsd"/>
+	<xs:element name="IndkomstOplysningPersonStruktur" type="hsws:IndkomstOplysningPersonStrukturType"/>
+	<xs:complexType name="IndkomstOplysningPersonStrukturType">
+		<xs:sequence>
+			<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+			<xs:element ref="indkomstoplysningadgangreferencenummer:IndkomstOplysningAdgangReferenceNummerIdentifikator" minOccurs="0"/>
+			<xs:element ref="eindkomst:NySoegeDatoTidFraDatoTid" minOccurs="0"/>
+			<xs:element name="IndkomstOplysningSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IndberetningPligtigVirksomhed" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="hsws:IndberetningPligtigVirksomhedStruktur"/>
+									<xs:element ref="hsws:SupplerendePersonOplysningStruktur" minOccurs="0"/>
+									<xs:element name="IndkomstLoenPeriodeSamling">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="hsws:LoenPeriodeOplysningStruktur" minOccurs="1" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

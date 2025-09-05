@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Fortæller hvilke roller en enkelt virksomhed må spille i forbindelse med henvisninger til samme virksomhed og til andre virksomheder. Reglen fortæller hvilke henvisninger/roller en virksomhed må få (Henv_kod_2 &amp; Henv_rolle_kod_2) i forhold til hvilke henvisninger/roller virksomheden allerede har (Henv_kod_1 &amp; Henv_rolle_kod_1) Reglen gælder både de maskinelt og manuelt opsatte henvisninger. Reglen omfatter alle de mulige forekomster (positivliste), dvs hvis en henvisning er mulig begge veje skal der opsættes 2 forekomster. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="HenvisningRegelGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag en given regel gælder </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningRegelGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag en given regel gælder </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

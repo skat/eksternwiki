@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Indeholder oplysning om alle de felter, der er indberettet for en given blanket for en given lønningsperiode for en given virksomhed. Der kan være fra 1 til mange forekomster af blanketfelt til en blanket.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/IndholdType.xsd"/>
+      
+   
+   
+   <xs:element name="AngivelseFeltIndhold" type="fase2.1:IndholdType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Indhold i angivelsesfeltet.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

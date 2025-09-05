@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en opgavekø og en tilknyttet bookingregel. Den tilknyttede bookingregel vil have en prioritet på opgavekøen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/BookingRegelType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OpgavekøBookingRegelID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>OpgavekøBookingregel objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelBookingRegel" type="fase2.1:BookingRegelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Booking reglen der er tilknyttet opgavekøen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelPrioritet" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Booking reglens prioritet på opgavekøen. Bookingreglerne prioriteres fortløbende, startende med 1 som første prioritet, 2 som anden prioritet osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet opgavekøbookingregel objektet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavekøbookingregel objektet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret opgavekøbookingregel objektet. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavekøbookingregel objektet er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet opgavekøbookingregel objektet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavekøbookingregel objektet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBookingRegelTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til opgavekøbokingregel objektet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

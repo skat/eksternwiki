@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Formålet er at hente stamoplysninger for en virksomhed. Der hentes oplysninger, som er gældende pr. dags dato.  Der hentes oplysninger om: Virksomhedens start- og eventuelle ophørsdato i relation til told-, skatte- og afgiftslovgivningen, virksomhedens korte og lange navn, virksomhedens adresse samt eventuel tele-fonnummer og EmailAdresse.  Servicen udstilles alene til de myndigheder og andre, som har indgået en abonnementsaftale med told- og Skatteforvaltningen herom. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="OIOAbonnentVirksomhedStamOplysningHent_I.xsd"/>
+	<xs:include schemaLocation="OIOAbonnentVirksomhedStamOplysningHent_O.xsd"/>
+	<xs:element name="OIOAbonnentVirksomhedStamOplysningHentInterface" type="esws:OIOAbonnentVirksomhedStamOplysningHentInterfaceType"/>
+	<xs:complexType name="OIOAbonnentVirksomhedStamOplysningHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="esws:OIOAbonnentVirksomhedStamOplysningHent_I"/>
+			<xs:element ref="esws:OIOAbonnentVirksomhedStamOplysningHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../operational/KundeUkendtOpholdSted.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KundeUkendtOpholdStedDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIKunde.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/ModregningGraense.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeUkendtOpholdAArsagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativUdbetalingKanalStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeModregningStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OmposteringStopStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ModregningGraenseAArsagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ModregningGraenseBFYPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/InddrivelseKontoStopListeStrukturType.xsd"/>
+				     
+         <xs:element name="DMIInddrivelseKontoStruktur"
+                     type="fase2.1:DMIInddrivelseKontoStrukturType"/>
+         <xs:complexType name="DMIInddrivelseKontoStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:KundeUkendtOpholdSted"/>
+
+               <xs:element ref="fase2.1:KundeUkendtOpholdStedDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:KundeUnderBobehandling"/>
+
+               <xs:element ref="fase2.1:KundeUkendtOpholdÅrsagStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativUdbetalingKanalStruktur" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:KundeModregningStopListeStruktur"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="OmposteringStopStrukturListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:OmposteringStopStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+               <xs:element name="KundeModregningGrænseBFYListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="KundeModregningGrænseBYF" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                 <xs:element ref="fase2.1:KundeType"/>
+                  
+                                 <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode"/>
+                  
+                                 <xs:element ref="fase2.1:ModregningGrænseÅrsagStruktur"/>
+                  
+                                 <xs:element ref="fase2.1:ModregningGrænseBFYPeriodeStruktur"/>
+                  
+                                 <xs:element ref="fase2.1:ModregningGrænseBFYProcent"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+                  <xs:element ref="fase2.1:InddrivelseKontoStopListeStruktur"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

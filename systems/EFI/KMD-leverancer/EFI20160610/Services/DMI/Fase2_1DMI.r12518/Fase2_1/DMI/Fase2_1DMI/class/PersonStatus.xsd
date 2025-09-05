@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Oplysning om en persons status i enten skattemæssig forstand eller vedrørende liv/død og årsag til en eventuel omplacering af CPR-nummeret. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/PersonStatusKodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/OmplaceringKodeType.xsd"/>
+         <xs:element name="PersonStatusKode" type="fase2.1:PersonStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af personens skattemæssige status - fx om personen er aktiv, forsvundet, kongelig el. lign. En person med status 2 = Omplaceret har fået nyt CPR-nr. Denne status vil blive sat på det gamle CPR-nr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonStatusDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår en personstatuskode træder i kraft - det vil sige, hvornår en person får tildelt en given skattemæssig status.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonStatusDødsfaldDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for, hvornår personen er død</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonStatusBobehandlingKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for typen af behandlingen af et dødsbo  A = Boudlægsbo.  B = Uskiftet bo, ægtefælleudlæg eller forenklet privat skifte § 34.   C = Privat skifte, forenklet privat skifte § 33 eller bobestyrerbo.   D = Uskiftet bo + skifte såvel privat som ved bobestyrer.    E = Ingen bobehandling her i landet.    </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonStatusGenoplivetDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for, hvornår en person er registreret som genoplivet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonStatusOmplaceringKode" type="fase2.1:OmplaceringKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode, der viser den reelle årsag for ændring af en personstatus til omplaceret. Kan have værdierne: S = sletning, D = dobbeltregistrering og O = omplacering.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

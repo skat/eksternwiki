@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder oplysning om det beløb der afregnes vedørende en fordring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="FordringAfregningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb der afregnes på fordringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfregningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb der afregnes på fordringen i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfregningReturBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som fordringhaver skal tilbagebetale for den enkelte fordring ved fejlagtig afregning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfregningReturBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som fordringhaver skal tilbagebetale for den enkelte fordring ved fejlagtig afregning - i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

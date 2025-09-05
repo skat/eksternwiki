@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>I særlige tilfælde sker en udbetaling kontant via SAP PC-kasse og ikke via NemKonto, selvom denne findes. Dvs. at en kunden kan efter aftale med en sagsbehandler få udbetalt pengene kontant.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/AArsagType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="KontantudbetalingÅrsag" type="fase2.1:ÅrsagType">
+               
+               <xs:annotation>
+                  <xs:documentation>en oplysning om hvad udbetalingen vedrører og hvorfor der er foretaget kontant udbetaling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontantUdbetalingPeriodeFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>angiver hvilken periode (periode fra) den kontante udbetaling vedrører</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontantudbetalingPeriodeTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>angiver hvilken periode (periode til) den kontante udbetaling vedrører</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

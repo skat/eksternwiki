@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="MånedType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angivelses måned (til brug for identifikation af, hvilken indberetningsperiode, der er tale om). Her indberettes angivelsesmåneden, til brug for identifikation af, hvilken indberetningsperiode, der er tale om. F.eks. skal der for en person, der fylder 59½ år i december 2000, ske indberetning senest i januar 2001. I dette tilfælde indberetts måned som 01. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:integer">
+            
+         
+         
+         <xs:totalDigits value="2"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

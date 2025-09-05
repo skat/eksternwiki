@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r15159</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/AArsopgoerelseSelskab.xsd"/>
+         <xs:element name="ÅrsopgørelseUdbytteskatStruktur"
+                     type="skat2016:ÅrsopgørelseUdbytteskatStrukturType"/>
+         <xs:complexType name="ÅrsopgørelseUdbytteskatStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="UdbytteSkatSpecifikationListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="UdbytteSkatSpecifikation" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element name="UdbytteSkat">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element ref="skat2016:ÅrsopgørelseSelskabUdbytteProcentSats" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2016:ÅrsopgørelseSelskabUdbytteBeløb" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="skat2016:ÅrsopgørelseSelskabUdbytteskatBeløb" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="ForlodsUdbetaltUdbytte">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabForlodsUdbetaltUdbytteBeløb" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="TillægTilStaten">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabTillægTilStatenProcent" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabTillægTilStatenBeløb" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="UdbytteSkatIAlt">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabUdbytteIAltBeløb" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="UdbytteSkatDelTotal">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabUdbytteDelTotalBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabUdbytteskatDelTotalBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabForlodsUdbetaltUdbytteDelTotalBeløb"
+                                    minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="AcontoSkatRate1OgRate2OgUdbytteSkatIAlt">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabAcontoOgUdbytteskatIAltBeløb" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

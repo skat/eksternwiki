@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AktivRettighedType.xsd"/>
+         <xs:include schemaLocation="../class/AktivKoeretoej.xsd"/>
+         <xs:include schemaLocation="../view/KFIAktivPlaceringStrukturType.xsd"/>
+				     
+         <xs:element name="KFIAktivKøretøjStruktur" type="fase2.1:KFIAktivKøretøjStrukturType"/>
+         <xs:complexType name="KFIAktivKøretøjStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:AktivTinglysningBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KFIAktivPlaceringStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivSkønnetFriværdi" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivSkønnetFriværdiBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivNavnAdresseTredjemand" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivDenunciationStatusKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivRettighedTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjForsikringOplysning" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjRegistreringNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjRegistreringGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjStelNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjStelLøbeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjMærke" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjTilgangDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjAfgangDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjErEjer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjErBruger" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivKøretøjBehæftelseType" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

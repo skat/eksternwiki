@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Hvis aktøren vælger at redigere på dækningsrækkefølgen, gøres dette ved at alle fordringerne, der er omfattet af betalingsordningen, tilknyttes et rangnummer. Herefter vil DMI foretage dækning af indbetalinger på betalingsordningen efter denne rangordning (der således kan være anderledes end den almindelige dækningsrækkefølge).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel5Start1Type.xsd"/>
+         <xs:include schemaLocation="../types/PositivTalHel3Decimaler7Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="BetalingOrdningDækPriorit" type="fase2.1:TalHel5Start1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den rækkefølge en indbetaling skal dække fordringer .</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningDækProcent" type="fase2.1:PositivTalHel3Decimaler7Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Andel i procent af indbetalingen (raten), der skal anvendes på den pågældende fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningDækBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Andel i udenlandsk valuta af indbetalingen (raten), der skal anvendes på den pågældende fordring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningDækBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Andel i danske kroner af indbetalingen (raten), der skal anvendes på den pågældende fordring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

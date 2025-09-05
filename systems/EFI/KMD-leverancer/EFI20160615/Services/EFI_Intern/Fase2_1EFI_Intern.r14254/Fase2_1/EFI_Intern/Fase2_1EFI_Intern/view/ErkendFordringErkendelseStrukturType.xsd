@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/ErkendFordringDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ErkendFordringBegrundelse.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/skalKvitteringSendes.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Medarbejderprofil.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/AlternativKontakt.xsd"/>
+         <xs:include schemaLocation="../view/FordringOprettetStrukturType.xsd"/>
+				     
+         <xs:element name="ErkendFordringErkendelseStruktur"
+                     type="fase2.1:ErkendFordringErkendelseStrukturType"/>
+         <xs:complexType name="ErkendFordringErkendelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:EFIHenvendelseForm"/>
+                  
+                  <xs:element ref="fase2.1:EFIHenvendelseDato"/>
+                  
+                  <xs:element ref="fase2.1:ErkendFordringDato"/>
+                  
+                  <xs:element ref="fase2.1:ErkendFordringBegrundelse"/>
+                  
+                  <xs:element ref="fase2.1:FordringOprettetStruktur"/>
+
+               <xs:element ref="fase2.1:skalKvitteringSendes" minOccurs="0"/>
+
+
+               <xs:element name="ErkendtAf">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element ref="fase2.1:MedarbejderprofilWNummer"/>
+				
+				
+				                    <xs:element ref="fase2.1:PersonCPRNummer"/>
+				
+				
+				                    <xs:element ref="fase2.1:VirksomhedSENummer"/>
+				
+				
+				                    <xs:element ref="fase2.1:AlternativKontaktID"/>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst240Type.xsd"/>
+         
+         <xs:element name="EFICelleNøgle" type="fase2.1:Tekst240Type">
+            <xs:annotation>
+               <xs:documentation>CelleNøgle er en af koderne eller data elementerne fra den tilsvarende dimension.  En celle har en sammensat nøgle bestående af 2 til 3 cellenøgler.  CelleNøgle værdien * har en special betydning som wilcard, og må kun bruges i en dimension hvor EFIWildcardMulig er markeret  </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

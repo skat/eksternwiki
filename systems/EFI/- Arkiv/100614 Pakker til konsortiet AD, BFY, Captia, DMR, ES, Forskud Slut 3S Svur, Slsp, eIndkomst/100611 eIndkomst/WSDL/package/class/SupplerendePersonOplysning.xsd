@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Angiver supplerede oplysninger om personer, hvor der er indberettet indkomstoplysninger til eIndkomst. Supplerende oplysninger om personer skal indberettes, hvis personen ikke har dansk CPR-nummer eller hvis en person med dansk CPR-nummer er bosiddende i udlandet.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/FoedselDatoType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/KoenType.xsd"/>
+      
+   
+   
+   <xs:element name="SupplerendePersonOplysningNavn" type="fase2.1:Tekst300Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver navn (for- og efternavn) på en fysisk person</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SupplerendePersonOplysningFødselDato" type="fase2.1:FødselDatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver fødselsdato for en person. Fødselsdato kan være 0 (nul), hvis CPR-nummer er validt. Fødselsdato overholder endvidere ikke et bestemt datoformat.  Hvis år ikke kendes indsættes '0000' ex.: 00001225</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SupplerendePersonOplysningKøn" type="fase2.1:KønType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver persons køn. Værdisæt: 1 = mand 2 = kvinde 3 = ukendt</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

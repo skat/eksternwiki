@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/UdlaegAEndring.xsd"/>
+         <xs:include schemaLocation="../operational/UdlaegUdsatMarkering.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RessourceBookInfoSamlingStrukturType.xsd"/>
+				     
+         <xs:element name="UdlægMødeÆndrStruktur" type="fase2.1:UdlægMødeÆndrStrukturType"/>
+         <xs:complexType name="UdlægMødeÆndrStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:UdlægÆndringSendMeddelelseTilKunde"/>
+                  
+                  <xs:element ref="fase2.1:UdlægUdsatMarkering"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="MødeAdresse" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:KFIAdresseStruktur"/>
+
+                           <xs:element ref="fase2.1:AdressePostNummer" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:UdlægÆndringBegrundelse" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:RessourceBookInfoSamlingStruktur"/>
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelseDato" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="KvitteringNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Kvitteringsnummer som tildeles angivelsen ved godkendt indberetning.  Kvitteringsnummer er unikt for hver angivelsestype. For enkelte angivelsestyper, f.eks. Udbytteskat, findes dog 2 sekvenser for kvitteringsnummer (et for udbytteskatten og et for udbyttemodtagerne).  Længden af feltet kan være forskelligt fra angivelsestype til angivelsestype, og nogle anvender timestmp.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:integer">
+            
+         
+         
+         <xs:totalDigits value="26"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

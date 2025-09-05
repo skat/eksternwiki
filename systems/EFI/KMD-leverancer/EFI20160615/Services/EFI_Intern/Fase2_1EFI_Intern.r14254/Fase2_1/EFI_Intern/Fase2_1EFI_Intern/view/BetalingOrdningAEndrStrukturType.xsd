@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/EFIHenvendelsesDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BetalingOrdningAEndrBegrundelse.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdning.xsd"/>
+         <xs:include schemaLocation="../operational/BetalingOrdningRykRateGebyr.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BetalingOrdningBSAccept.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/BetalingOrdningRate.xsd"/>
+         <xs:include schemaLocation="../operational/BetalingOrdningOpretRateIndeks.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BetalingOrdningGiroFremsendt.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BetalingOrdningBSFremsendt.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdningDaek.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningRateBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningRateAArsStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringRestBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DaekningRaekkefoelgeBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="BetalingOrdningÆndrStruktur"
+                     type="fase2.1:BetalingOrdningÆndrStrukturType"/>
+         <xs:complexType name="BetalingOrdningÆndrStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelsesDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingOrdningÆndrBegrundelse" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:BetalingOrdningRykRate"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningRykRateGebyr"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningPåmind"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningBSAccept"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningSendMeddelelse"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningBSMarkering"/>
+
+               <xs:element ref="fase2.1:BetalingOrdningKundeBankRegNr" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingOrdningKundeBankKonto" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="AlternativIndbetaler" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:EFIKundeStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:AlternativAdresseStruktur" minOccurs="0"/>
+
+
+               <xs:element name="RateListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Rate" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="fase2.1:BetalingOrdningRateID" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:BetalingOrdningOpretRateIndeks" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:BetalingOrdningGiroFremsendt" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:BetalingOrdningBSFremsendt" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:BetalingOrdningRateBeløbStruktur"/>
+                  
+                                 <xs:element ref="fase2.1:BetalingOrdningRateSRBDato"/>
+                                 <xs:element name="BetalingOrdningRateStatusOplysninger">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:BetalingOrdningRateStatusKode"/>
+                  
+                                          <xs:element ref="fase2.1:BetalingOrdningRateÅrsStruktur"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                                 <xs:element ref="fase2.1:BetalingOrdningRateIndbetalt" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="FordringOmfattetAfBetalingordningListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="FordringOmfattetAfBetalingordning" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+                  
+                                 <xs:element ref="fase2.1:FordringRestBeløbStruktur"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringTypeFradragsret"/>
+
+                                 <xs:element ref="fase2.1:BetalingOrdningDækPriorit" minOccurs="0"/>
+
+
+                                 <xs:element name="BetalingOrdningAndelValg">
+                                    <xs:complexType>
+                                       <xs:choice>
+                                          <xs:sequence>
+                                             <xs:element name="ProcentAndel">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element ref="fase2.1:BetalingOrdningDækProcent"/>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+				
+				                                      </xs:sequence>
+				                                      <xs:element ref="fase2.1:DækningRækkefølgeBeløbStruktur"/>
+                                       </xs:choice>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

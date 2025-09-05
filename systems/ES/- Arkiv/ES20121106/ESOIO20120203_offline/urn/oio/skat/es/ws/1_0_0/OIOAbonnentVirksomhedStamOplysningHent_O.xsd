@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:virksomhed1="http://rep.oio.dk/skat.dk/eindkomst/class/virksomhed/xml/schemas/20071202/" xmlns:virksomhednavn="http://rep.oio.dk/skat.dk/motor/class/virksomhednavn/xml/schemas/20080401/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhednavn/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhednavn/xml/schemas/20080401/VirksomhedNavnGyldigPeriode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhednavn/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhednavn/xml/schemas/20080401/VirksomhedNavnFirmaKortNavn.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/LegalUnitName.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/virksomhed/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/virksomhed/xml/schemas/20071202/VirksomhedPeriode.xsd"/><xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" schemaLocation="../../../../../../cvr_dk/xml/schemas/2005/03/22/CVRnumberIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd"/><xs:include schemaLocation="VirksomhedKontaktOplysningStruktur.xsd"/>
+	<xs:element name="OIOAbonnentVirksomhedStamOplysningHent_O" type="esws:OIOAbonnentVirksomhedStamOplysningHent_OType">
+	</xs:element>
+	<xs:complexType name="OIOAbonnentVirksomhedStamOplysningHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="AbonnentVirksomhedStamOplysningUddata" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="VirksomhedStamOplysning">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+									<xs:element ref="cvr:CVRnumberIdentifier" minOccurs="0"/>
+									<xs:element ref="virksomhed1:VirksomhedPeriode"/>
+									<xs:element name="VirksomhedNavn">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="cvr:LegalUnitName"/>
+												<xs:element ref="virksomhednavn:VirksomhedNavnFirmaKortNavn"/>
+												<xs:element ref="virksomhednavn:VirksomhedNavnGyldigPeriode"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="PrimaerAdresse">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="esws:VirksomhedKontaktOplysningStruktur"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

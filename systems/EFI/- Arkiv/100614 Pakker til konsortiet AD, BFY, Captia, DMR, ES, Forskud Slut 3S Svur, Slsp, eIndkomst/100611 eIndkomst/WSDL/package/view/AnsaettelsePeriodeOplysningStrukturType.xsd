@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../operational/AnsaettelseForholdMedarbejderNummer.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/AnsaettelsePeriodeStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/AngivelseBlanketIndholdStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="AnsættelsePeriodeOplysningStruktur" type="fase2.1:AnsættelsePeriodeOplysningStrukturType"/>
+   
+   
+   
+   <xs:complexType name="AnsættelsePeriodeOplysningStrukturType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               
+         
+         <!--Sequence removed-->
+                  
+         
+            
+            
+         <xs:element ref="fase2.1:AnsættelsePeriodeStruktur"/>
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:AnsættelseForholdMedarbejderNummer" minOccurs="0"/>
+
+
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:AngivelseBlanketIndholdStruktur" minOccurs="0"/>
+
+
+      
+         
+         
+            
+         
+         
+         
+         
+         
+         
+         
+         
+      
+					
+      
+      
+      </xs:sequence>
+							
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

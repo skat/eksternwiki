@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="MFFordringOpretService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Servicen MFFordringOpret har ansvaret for at oprette alle arter og typer af fordringer inklusiv hæftelsesinformation i EFI og DMI.  Svaret sendes normalt retur så snart fordringen og evt. hæftelser er oprettet. Undtagelsen herfra er hvis der kaldes fra selvbetjenings portalen og fordringen skal behandles manuelt af en sagsbehandler. I dette tilfælde vil svaret have markeringen MFFordringSagsbehandles sat.  Der returneres liste af hæftelser . Denne liste vil også indeholde hæftelsesforhold som MF har beriget fordringen med. - Hvis en kunde ejer enkeltmandsvirksomheder vil virksomhederne være påført ved SE nummer - Hvis en kunde er en enkeltmandsvirksomhed ved ejeren være påført ved CPR nummer. - Hvis en kunde er et interessentskab kan interessenter være påført hvis fordringhaveraftale tillader det.  Der er optionelle felter som det er specificeret i fordringhaveraftale om de skal udfyldes og hvis de ikke er udfyldt hvordan de beregnes/beriges. Den beregnede værdi returneres i svaret.  Berigelses felter:  - DMIFordringStiftelseTidspunkt</xs:documentation>
+            <xs:documentation>1.22</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/MFFordringOpretInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="MFFordringOpretServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:MFFordringOpret_I"/>
+         </wsdl:message>
+         <wsdl:message name="MFFordringOpretServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:MFFordringOpret_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="MFFordringOpretServicePortType">
+            <wsdl:operation name="getMFFordringOpret">
+               <wsdl:input message="fase2.1:MFFordringOpretServiceRequest"/>
+               <wsdl:output message="fase2.1:MFFordringOpretServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" xmlns:supplerendepersonoplysning="http://rep.oio.dk/skat.dk/eindkomst/class/supplerendepersonoplysning/xml/schemas/20071202/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2006/01/23/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2006/01/23/" schemaLocation="http://eksternwiki.skat.dk/oioxml/ebxml/DKCC_PersonGenderCode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/supplerendepersonoplysning/xml/schemas/20071202/" schemaLocation="../class/supplerendepersonoplysning/xml/schemas/20071202/SKAT_SupplerendePersonOplysningFoedselTekst.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" schemaLocation="http://eksternwiki.skat.dk/oioxml/ebxml/ITST_PersonName.xsd"/>
+	<xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+	<xs:element name="SupplerendePersonOplysningStruktur" type="fase2:SupplerendePersonOplysningStrukturType"/>
+	<xs:complexType name="SupplerendePersonOplysningStrukturType">
+		<xs:sequence>
+			<xs:element ref="itst:PersonName"/>
+			<xs:element ref="supplerendepersonoplysning:SupplerendePersonOplysningFoedselTekst" minOccurs="0"/>
+			<xs:element ref="dkcc:PersonGenderCode"/>
+			<xs:element ref="fase2:AlternativAdresseStruktur"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

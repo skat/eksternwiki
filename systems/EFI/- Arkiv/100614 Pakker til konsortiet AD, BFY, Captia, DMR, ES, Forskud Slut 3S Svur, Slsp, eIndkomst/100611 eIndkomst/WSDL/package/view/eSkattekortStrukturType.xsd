@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortKoerselDato.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortLoebeNummer.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortIkraftDato.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortFradragMaaned.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortFradrag14Dage.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortFradragUge.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortFradragDag.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortForskudTraekProcent.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortTraekProcent.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/eSkatteFrikort.xsd"/>
+         
+   
+   
+   
+   <xs:element name="eSkattekortStruktur" type="fase2.1:eSkattekortStrukturType"/>
+   
+   
+   
+   <xs:complexType name="eSkattekortStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+         
+         
+         
+         <xs:element name="eSkattekortStruktur">
+            
+            
+            
+            <xs:complexType>
+               
+               
+               
+               <xs:sequence>
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortKørselDato"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortLøbeNummer"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortIkraftDato"/>
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortFradragMåned" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortFradrag14Dage" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortFradragUge" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortFradragDag" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortForskudTrækProcent" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortTrækProcent" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkatteFrikortSaldo" minOccurs="0"/>
+
+
+
+               
+               
+               
+               </xs:sequence>
+            
+            
+            
+            </xs:complexType>
+         
+         
+         
+         </xs:element>
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

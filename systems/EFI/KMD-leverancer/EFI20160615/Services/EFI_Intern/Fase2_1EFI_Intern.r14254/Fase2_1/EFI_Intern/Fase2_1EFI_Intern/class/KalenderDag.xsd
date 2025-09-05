@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder datoer med speciel betydning, det kan være faste bankdage eller SKAT lukkedage, som også inkluderer helligdage.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/KalenderDagTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="KalenderDagID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kalenderdagens unikke ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kalenderdagens dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagType" type="fase2.1:KalenderDagTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dagens type. 0=Åben 1=Lukkedag 2=Bankdag</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagNavn" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kalenderdagens navn. F.eks. Skærtorsdag</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer den der har oprettet kalenderdagen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for oprettelse af kalenderdagen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer den der senest har ændret kalenderdagen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for seneste ændring af kalenderdagen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer den der har slettet kalenderdagen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for sletningen af kalenderdagen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDagTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for seneste operation på kalenderdagen, det kan være oprettelse, ændring eller sletning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

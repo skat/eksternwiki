@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/EFIVersionNummer.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/MFAftaleOprettet.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/MFAftaleSlettet.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+         <xs:include schemaLocation="../class/MFAftale.xsd"/>
+         <xs:include schemaLocation="../class/Sprog.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+         <xs:include schemaLocation="../class/FordringHaverAftale.xsd"/>
+         <xs:include schemaLocation="../class/AfregningKonto.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../class/MFFordring.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/FordHaverFordType.xsd"/>
+         <xs:include schemaLocation="../view/DMIIndberetterHentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringhaverSystemIDStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransportUdlaegGyldigPeriodeStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/RenteValgStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="MFAftaleStruktur" type="fase2.1:MFAftaleStrukturType"/>
+         <xs:complexType name="MFAftaleStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:EFIVersionNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MFAftaleOprettet" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MFAftaleSlettet" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DMIIndberetterHentStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DMIFordringHaverID" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringHaverArt"/>
+                  
+                  <xs:element ref="fase2.1:MFAftaleUdbetalendeMyndighed"/>
+                  
+                  <xs:element ref="fase2.1:MFAftaleKontaktPerson"/>
+
+               <xs:element ref="fase2.1:SprogKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseStruktur" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:MFAftaleDeaktiveret"/>
+                  
+                  <xs:element ref="fase2.1:MFAftaleSystemIntegration"/>
+
+               <xs:element ref="fase2.1:MFAftaleSenesteIndberetning" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:FordringhaverSystemIDStruktur" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:DMIFordringHaverAftaleType"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringHaverAftaleStart"/>
+
+               <xs:element ref="fase2.1:DMIFordringHaverAftaleSlut" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:TransportUdlægGyldigPeriodeStruktur" minOccurs="0"/>
+
+
+               <xs:element name="FordringOplysninger">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="TilladtValutaListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ValutaKode" minOccurs="1" maxOccurs="unbounded"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element ref="fase2.1:MFAftaleInteressentBerig"/>
+                        <xs:element name="FordringArtListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:DMIFordringFordringArtKode" minOccurs="1" maxOccurs="4"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <!--Sequence removed-->
+
+                           <xs:element name="MyndighedUdbetalingTypeListe" minOccurs="0">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="1" maxOccurs="unbounded"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+
+                        
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Modregningoplysninger">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:FordringHaverAftaleInternModr"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoOpdModregning"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoNKSNrModregning"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoRIMSendUnderret"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoOplOmModregning"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Afregningoplysninger">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:AfregningKontoFrekvens"/>
+                  
+                        <xs:element ref="fase2.1:ValutaKode"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoMetode"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoIRMetode"/>
+                        <!--Sequence removed-->
+
+                           <xs:element name="CheckAdresse" minOccurs="0">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        
+
+
+                        <xs:element ref="fase2.1:AfregningKontoIBANNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AfregningKontoSWIFTKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AfregningKontoAltDkKonto" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:AfregningKontoMinimumBeløb"/>
+                  
+                        <xs:element ref="fase2.1:AfregningKontoKursDifference"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="FordringTypeListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="FordringType" minOccurs="1" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+                                 <xs:element name="BerigelseValideringFeltListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="BerigelseValideringFelt" minOccurs="0" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:MFFordringFeltKode"/>
+                                                   <!--Sequence removed-->
+
+                                                      <xs:element name="DefaultKanSkalEjKode" minOccurs="0">
+                                                         <xs:complexType>
+                                                            <xs:sequence>
+                                                               <xs:element ref="fase2.1:MFAftaleKanSkalEjKode"/>
+                                                            </xs:sequence>
+                                                         </xs:complexType>
+                                                      </xs:element>
+                                                   
+
+
+                                                   <xs:element ref="fase2.1:MFAftaleKanSkalEjKode" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:MFAftaleBerigelseKode" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                                 <!--Sequence removed-->
+
+                                    <xs:element name="InddrivelseFordringArtRenteSats" minOccurs="0">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:RenteValgStruktur"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 
+
+
+                                 <xs:element ref="fase2.1:RenteValgStruktur" minOccurs="0"/>
+
+
+                                 <xs:element name="FordringHaverFordringType">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:FordHaverFordTypeAfrSpecØnskes"/>
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeAfrMetode" minOccurs="0"/>
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeAfrIR"/>
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeIBANNr" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeSWIFTKode" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeAltDkKontoNr" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeSENrNemKonto" minOccurs="0"/>
+
+                                          <xs:element ref="fase2.1:FordHaverFordTypeAfrHeleKroner"/>
+                                          <xs:element name="OplysningerOmModregningPerFordringstype">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="fase2.1:FordHaverFordTypeIntModrMeddJa" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:FordHaverFordTypeAfrModrFrekv" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:FordHaverFordTypeAfrOplIntModr" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

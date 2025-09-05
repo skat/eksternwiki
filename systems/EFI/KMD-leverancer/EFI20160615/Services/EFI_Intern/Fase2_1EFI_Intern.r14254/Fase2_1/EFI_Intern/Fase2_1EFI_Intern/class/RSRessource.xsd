@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En ressource i ressourcestyringen, kan være en medarbejder, et køretøj, et lokale eller andet udstyr. Alle ressourcer tilhører en ressourcegruppe og har en kalender. Medarbejder ressourcer har desuden en medarbejderprofil.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="RSRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceRessourcegruppeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressourcegruppe medarbejderen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcens navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af ressourcen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdatoen på ressourcens gyldighedsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen på ressourcens gyldighedsperiode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet ressourcen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ressourcen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret ressourcen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ressourcen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet ressourcen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ressourcen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSRessourceTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til ressourcen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

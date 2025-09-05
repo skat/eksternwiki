@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/supplerendepersonoplysning/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="SupplerendePersonOplysningFoedselTekst" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Angiver fødselsdato for en person. Fødselsdato kan være 0 (nul), hvis CPR-nummer er validt. Fødselsdato overholder endvidere ikke et bestemt datoformat. 
+
+Hvis år ikke kendes indsættes '0000' ex.: 00001225
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

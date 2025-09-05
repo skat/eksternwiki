@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/LaesDatoTid.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseUnderBobehandlingStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseModregningStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseRenteFritagListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseAfgiftBeregningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIFordringFundamentStrukturType.xsd"/>
+				     
+         <xs:element name="DMIHæftelsesforholdÆndr_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIHæftelsesforholdÆndr_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIHæftelsesforholdÆndr_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="FordringListe">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Fordring" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="Fordringidentifikation">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element name="FordringHæftelseListe">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="FordringHæftelse" minOccurs="1" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:DMIIndberetterOpretStruktur"/>
+                  
+                                                         <xs:element ref="fase2.1:KundeStruktur"/>
+
+                                                         <xs:element ref="fase2.1:LæsDatoTid" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseForm" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseSubsidiær" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseSubsiAutoAfskriv" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseSubsiAutoAfskrivUdløb" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseUnderBobehandlingStruktur" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseSubsiStartDato" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseBegrænsetProcent" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseForældelseDato" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseMåAfskrivesEfterDato" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseMåAfskrivesEfterDatoNote" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseOpkMyndRykkerDato1" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseOpkMyndRykkerDato2" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseKommentar" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:HæftelseModtagelseDato" minOccurs="0"/>
+
+                                                         <xs:element ref="fase2.1:HæftelseDom"/>
+
+                                                         <xs:element ref="fase2.1:HæftelseDomDato" minOccurs="0"/>
+
+                                                         <xs:element ref="fase2.1:HæftelseForlig"/>
+
+                                                         <xs:element ref="fase2.1:HæftelseForligDato" minOccurs="0"/>
+
+                                                         <xs:element ref="fase2.1:HæftelseModregningStopListeStruktur"/>
+                  
+                                                         <xs:element ref="fase2.1:HæftelseStopListeStruktur"/>
+                  
+                                                         <xs:element ref="fase2.1:HæftelseRenteFritagListeStruktur"/>
+
+                                                         <xs:element ref="fase2.1:HæftelseAfgiftBeregningStruktur" minOccurs="0"/>
+
+
+
+                                                         <xs:element ref="fase2.1:EFIFordringFundamentStruktur" minOccurs="0"/>
+
+
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

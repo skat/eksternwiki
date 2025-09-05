@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="FrekvensType">
+               <xs:annotation>
+                  <xs:documentation>Frekvens er et mål for, hvor hurtigt regelmæssige gentagelser af et givet fænomen forekommer. Fænomenet kan være betaling, angivelse m.m.  Liste af faste værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+                  <xs:enumeration value="DAG"/>
+                  <xs:enumeration value="UGE"/>
+                  <xs:enumeration value="DAG3"/>
+                  <xs:enumeration value="UGE2"/>
+                  <xs:enumeration value="MND"/>
+                  <xs:enumeration value="KVT"/>
+                  <xs:enumeration value="KVT2"/>
+                  <xs:enumeration value="ÅRL"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

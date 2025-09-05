@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/RSRessource.xsd"/>
+         <xs:element name="RSRessourceStruktur" type="fase2.1:RSRessourceStrukturType"/>
+         <xs:complexType name="RSRessourceStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:RSRessourceID"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourceRessourcegruppeID"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourceNavn"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourceBeskrivelse"/>
+
+               <xs:element ref="fase2.1:RSRessourceGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourceGyldigTil" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:RSRessourceOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourceOprettetTid"/>
+
+               <xs:element ref="fase2.1:RSRessourceÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourceÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourceSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourceSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:RSRessourceTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

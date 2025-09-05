@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../operational/MFHaeftelseStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/MFHaeftelseBeriget.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/Civilstand.xsd"/>
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFNoteStrukturType.xsd"/>
+				     
+         <xs:element name="KFIHæftelseStruktur" type="fase2.1:KFIHæftelseStrukturType"/>
+         <xs:complexType name="KFIHæftelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:DMIIndberetterOpretStruktur"/>
+                  
+                  <xs:element ref="fase2.1:MFHæftelseStatus"/>
+                  
+                  <xs:element ref="fase2.1:MFHæftelseBeriget"/>
+                  
+                  <xs:element ref="fase2.1:KundeStruktur"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="Civilstand" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:CivilstandKode"/>
+
+                           <xs:element ref="fase2.1:CivilstandStatusDato" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:HæftelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HæftelseSubsidiær" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HæftelseUnderBobehandling" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HæftelseBegrænsetProcent" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HæftelseForældelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HæftelseOpkMyndRykkerDato1" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HæftelseOpkMyndRykkerDato2" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="HæftelseKommentar" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MFNoteStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:HæftelseModtagelseDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:HæftelseDom"/>
+
+               <xs:element ref="fase2.1:HæftelseDomDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:HæftelseForlig"/>
+
+               <xs:element ref="fase2.1:HæftelseForligDato" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

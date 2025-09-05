@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="EFIBetalingEvneHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Servicen henter  en kundes aktuelle betalingsevne samt en række tilhørende værdier, der primært anvendes af indsatser i EFI, DMI og SKAT's sagsbehandlere. Servicen returnerer endvidere oplysninger om særskilt inddrivelse for kunden. Beregning af oplysningerne om særskilt inddrivelse påvirker ikke beregningen af kundens betalingsevne eller reservation af betalingsevne. Oplysningerne om særskilt inddrivelse anvendes af indsatser i EFI og SKAT's sagsbehandlere.  En kundes betalingsevne kan påvirkes af en række hændelser, f.eks ændringer i kundens nettoindkomst eller udgifter. Kundens betalingsevne genberegnes derfor løbende. Kundens betalingsevne er aktuel i den forstand, at betalingsevnen altid genberegnes, når beregningsgrundlaget ændrer sig.   Der kan altid udføres en betalingseveneberegning for personkunder, herunder ejere af enkeltmandsvirksomheder. Der kan udføres betalingsevneberegning for danske virksomheder og øvrige kundetyper i EFI, når sagsbehandleren har oprettet budgetoplysninger.   En kundes betalingsevne måles i kroner per periode, og kalderen kan specificere den ønskede periode, f.eks kroner pr. kvartal</xs:documentation>
+            <xs:documentation>1.17</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/EFIBetalingEvneHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="EFIBetalingEvneHentServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:EFIBetalingEvneHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="EFIBetalingEvneHentServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:EFIBetalingEvneHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="EFIBetalingEvneHentServicePortType">
+            <wsdl:operation name="getEFIBetalingEvneHent">
+               <wsdl:input message="fase2.1:EFIBetalingEvneHentServiceRequest"/>
+               <wsdl:output message="fase2.1:EFIBetalingEvneHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

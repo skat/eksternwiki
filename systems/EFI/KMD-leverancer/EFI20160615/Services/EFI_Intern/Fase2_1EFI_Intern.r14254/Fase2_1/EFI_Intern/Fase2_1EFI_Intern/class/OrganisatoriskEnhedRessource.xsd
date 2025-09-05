@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en organisatorisk enhed og en ressource der er tilknyttet den organisatoriske enhed. Selve relationen mellem enheden og ressourcen har en gyldighedsperiode, dvs. en ressource kan være tilknyttet en organisatorisk enhed i en begrænset periode, f.eks. i forbindelse med ressourcens deltagelse i en task force.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="OrganisatoriskEnhedRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>OrganisatoriskEnhedRessource objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceOrganisatoriskEnhedID"
+                     type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den organisatoriske enhed unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato på gyldighedsperioden for tilknytningen mellem ressourcen og den organisatoriske enhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato på gyldighedsperioden for tilknytningen mellem ressourcen og den organisatoriske enhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet tilknytningen mellem ressourcen og den organisatoriske enhed. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem ressourcen og den organisatoriske enhed er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret tilknytningen mellem ressourcen og den organisatoriske enhed. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem ressourcen og den organisatoriske enhed er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet tilknytningen mellem ressourcen og den organisatoriske enhed. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem ressourcen og den organisatoriske enhed er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedRessourceTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til tilknytningen mellem ressourcen og den organisatoriske enhed, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

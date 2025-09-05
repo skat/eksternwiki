@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:eindkomst="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:ws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247441/artefact/SKAT_HovedOplysninger.xsd"/><xs:include schemaLocation="http://digitaliser.dk/resource/1981777/artefact/AbonnentStrukturType.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/" schemaLocation="http://digitaliser.dk/resource/375841/artefact/AbonnentAdgangStrukturType.xsd"/><xs:include schemaLocation="../view/PersonIndkomstSumSoegeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/VirksomhedIndkomstSumSoegeStrukturType.xsd"/>
+	<xs:element name="IndkomstOplysningSumHent_I" type="eindkomstws:IndkomstOplysningSumHent_IType">
+	</xs:element>
+	<xs:complexType name="IndkomstOplysningSumHent_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="IndkomstOplysningSumInddata">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="eindkomst:AbonnentAdgangStruktur"/>
+						<xs:element ref="ws:AbonnentStruktur"/>
+						<xs:element name="IndkomstOplysningValg">
+							<xs:complexType>
+								<xs:choice>
+									<xs:sequence>
+										<xs:element name="IndkomstPersonSamling">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="eindkomstws:PersonIndkomstSumSoegeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:sequence>
+										<xs:element name="IndberetningPligtigVirksomhedIndkomstSumSamling">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="eindkomstws:VirksomhedIndkomstSumSoegeStruktur"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

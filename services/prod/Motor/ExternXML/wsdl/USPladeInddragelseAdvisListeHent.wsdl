@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USPladeInddragelseAdvisListeHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At oplyse Politiet omkring en eller flere plade inddragelses opgaver med tilhørende informationer omkring registreringsnummer, bruger adresse med videre. Bemærk, at der er tale om batch baseret synkronisering af Politiets register. </xs:documentation>
+		<xs:documentation>r3110</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USPladeInddragelseAdvisListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USPladeInddragelseAdvisListeHentServiceRequest">
+		<wsdl:part name="Request" element="dmr:USPladeInddragelseAdvisListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="USPladeInddragelseAdvisListeHentServiceResponse">
+		<wsdl:part name="Response" element="dmr:USPladeInddragelseAdvisListeHent_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USPladeInddragelseAdvisListeHentServicePortType">
+		<wsdl:operation name="getUSPladeInddragelseAdvisListeHent">
+			<wsdl:input message="dmr:USPladeInddragelseAdvisListeHentServiceRequest"/>
+			<wsdl:output message="dmr:USPladeInddragelseAdvisListeHentServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Selve den meddelelse som fagsystemet sammen med skabelonen danner.  Specifikt Restanceinddrivelsesmyndigheden: Forretningsreglen ved udsendelse af meddelelser, hvor der skal indsættes et CPR nr. er:  - Til kunden selv indsættes det fulde CPR nr. - Til andre end kunden som er offentlig myndighed indsættes det fulde CPR nr. - Til andre end kunden som IKKE er offentlig myndighed indsættes kun fødselsdato.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/IDType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/XMLType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/JaNejType.xsd"/>
+      
+   
+   
+   <xs:element name="MeddelelseID" type="fase2.1:IDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Unik identifikation af meddelelsen</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MeddelelseIndhold" type="fase2.1:XMLType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Indholdet i en meddelelse medsendes som XML indholdeldende header med indledende oplysninger, og en body med selve meddelelsens tekst eller indhold.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MeddelelseAfsenderReference" type="fase2.1:IDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En af afsenderen tildelt ident til brug for reference</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MeddelelseOprettetAfFagsystem" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Hvilket fagsystem, der har oprettet meddelelsen. Optionel.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MeddelelseOprettetAfMedarbejder" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Hvilken medarbejder, der har oprettet meddelelsen. Optionel </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MeddelelseOprettetDatoTid" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Tidstempel for oprettelse.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MeddelelseSkalBehandlesHurtigt" type="fase2.1:JaNejType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Hvis Ja: Højhastigheds kø Hvis Nej: Lavhastigheds Kø</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

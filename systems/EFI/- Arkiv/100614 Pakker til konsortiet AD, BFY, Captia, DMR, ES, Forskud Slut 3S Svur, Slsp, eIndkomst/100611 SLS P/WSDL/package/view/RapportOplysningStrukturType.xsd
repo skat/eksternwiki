@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RapportOplysning.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningIdentifikationStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningReferenceStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningMarkeringStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningBeloebStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningKvantumStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningProcentStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningPeriodeStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="RapportOplysningStruktur" type="fase2.1:RapportOplysningStrukturType"/>
+   
+   
+   
+   <xs:complexType name="RapportOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningNavn" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningNummer" minOccurs="0"/>
+
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="IdentifikationListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningIdentifikationStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="ReferenceListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningReferenceStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="MarkeringListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningMarkeringStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="BeløbListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningBeløbStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="KvantumListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningKvantumStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="ProcentListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningProcentStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+
+         
+         
+         <!--Sequence removed-->
+
+
+            
+            
+            
+         <xs:element name="DatoListe" minOccurs="0">
+               
+               
+               
+            <xs:complexType>
+                  
+                  
+                  
+               <xs:sequence>
+
+                     
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningPeriodeStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                  
+                  
+                  
+               </xs:sequence>
+               
+               
+               
+            </xs:complexType>
+            
+            
+            
+         </xs:element>
+
+
+         
+         
+         
+
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

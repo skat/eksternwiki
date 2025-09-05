@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:ntse="urn:oio:skat:ntse:1.0.0" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingDKKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="../../../efi/1_0_0/MyndighedUdbetalingBeloeb.xsd"/><xs:import namespace="urn:oio:skat:ntse:1.0.0" schemaLocation="../../../ntse/1_0_0/ValutaKode.xsd"/><xs:element name="MyndighedUdbetalingBeloebStruktur" type="dmiws:MyndighedUdbetalingBeloebStrukturType"/>
+	<xs:complexType name="MyndighedUdbetalingBeloebStrukturType">
+		<xs:sequence>
+			<xs:element ref="ntse:ValutaKode"/>
+			<xs:element ref="efi:MyndighedUdbetalingBeloeb"/>
+			<xs:element ref="dmi:MyndighedUdbetalingDKKBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

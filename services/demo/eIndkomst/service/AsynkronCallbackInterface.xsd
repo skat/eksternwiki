@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Formålet er at give en abonnent besked om at bestilling af data er udført og klar til afhentning. Input er et bestillings-id.  </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/AsynkronCallback_IType.xsd"/>
+	<xs:include schemaLocation="../view/AsynkronCallback_OType.xsd"/>
+	<xs:element name="AsynkronCallbackInterface" type="fase2:AsynkronCallbackInterfaceType"/>
+	<xs:complexType name="AsynkronCallbackInterfaceType">
+		<xs:choice>
+			<xs:element ref="fase2:AsynkronCallback_I"/>
+			<xs:element ref="fase2:AsynkronCallback_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

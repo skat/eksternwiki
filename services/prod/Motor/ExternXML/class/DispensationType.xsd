@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Er en række supplerende oplysninger, som kan være tilknyttet det enkelte køretøj.  36 - DISPENSATION 37 - DISPENSATION STØJ 38 - DISP. LUFTFORURENING 39 - DISP. KOLLISIONSSIKKERHED 44 - KONSTRUKTIVE ÆNDRINGER </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/TekstKortType.xsd"/>
+	<xs:element name="DispensationTypeNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Er en række supplerende oplysninger, som kan være tilknyttet det enkelte køretøj.  36 - DISPENSATION 37 - DISPENSATION STØJ 38 - DISP. LUFTFORURENING 39 - DISP. KOLLISIONSSIKKERHED 44 - KONSTRUKTIVE ÆNDRINGER</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DispensationTypeNavn" type="dmr:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Er en række supplerende oplysninger, som kan være tilknyttet det enkelte køretøj.  36 - DISPENSATION 37 - DISPENSATION STØJ 38 - DISP. LUFTFORURENING 39 - DISP. KOLLISIONSSIKKERHED 44 - KONSTRUKTIVE ÆNDRINGER</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DispensationTypeSynlighedNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Beskriver typen af visning som dispensationen skal have. Værdisæt:  1 = Normal visning 2 = Ingen visning 3 = KonstruktivÆndringAnonym </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" name="VirksomhedStamOplysningSamlingHentService" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://www.w3.org/2001/XMLSchema">
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/">
+         
+         <xsd:include schemaLocation="../service/VirksomhedStamOplysningSamlingHentInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="VirksomhedStamOplysningSamlingHentServiceRequest">
+      
+      <part name="Request" element="fase2:VirksomhedStamOplysningSamlingHent_I"/>
+   
+   </message>
+   
+   <message name="VirksomhedStamOplysningSamlingHentServiceResponse">
+      
+      <part name="Response" element="fase2:VirksomhedStamOplysningSamlingHent_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="VirksomhedStamOplysningSamlingHentServicePortType">
+      
+      <operation name="getVirksomhedStamOplysningSamlingHent">
+         
+         <input message="fase2:VirksomhedStamOplysningSamlingHentServiceRequest"/>
+         
+         <output message="fase2:VirksomhedStamOplysningSamlingHentServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2:KompenserTransRequest"/>
+         
+         <output message="fase2:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+</definitions>

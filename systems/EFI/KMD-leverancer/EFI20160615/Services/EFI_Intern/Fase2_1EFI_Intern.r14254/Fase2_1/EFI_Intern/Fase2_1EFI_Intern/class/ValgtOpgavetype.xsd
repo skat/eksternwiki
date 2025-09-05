@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>De opgavetyper medarbejderen har konfigureret på sin medarbejderprofil. De valgte opgavetyper er dem medarbejderen kan arbejde med.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="ValgtOpgavetypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeMedarbejderprofilID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke id på den medarbejderprofil der har valgt opgavetypen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeOpgavetypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke id på den opgavetype der er valgt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeEgentidMinutter" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens egen gennemførselstid for opgavetypen i minutter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har oprettet elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt elementet er oprettet. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har ændret elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for sidste ændring af elementet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har slettet elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt elementet er slettet. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValgtOpgavetypeTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for sidste ændring af elementet, det kan være oprettelse, ændring eller sletning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

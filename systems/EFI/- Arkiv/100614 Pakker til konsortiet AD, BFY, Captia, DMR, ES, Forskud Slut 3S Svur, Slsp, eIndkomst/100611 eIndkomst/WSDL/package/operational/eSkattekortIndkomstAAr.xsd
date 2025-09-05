@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/KodeFireCifreStartEtType.xsd"/>
+      
+   
+   
+   <xs:element name="eSkattekortIndkomstÅr" type="fase2.1:KodeFireCifreStartEtType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Det kalenderår (indkomstår) som et eSkattekort vedrører.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:element name="BødeforvandlingStrafVarselFrist" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandler angiver ny varselsfrist.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BødeforvandlingStrafBegrundelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Standard begrundelse for ændring af varselsfristen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BødeforvandlingStrafYderligereBegrundelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandler skriver begrundelse for ændring af varselsfristen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

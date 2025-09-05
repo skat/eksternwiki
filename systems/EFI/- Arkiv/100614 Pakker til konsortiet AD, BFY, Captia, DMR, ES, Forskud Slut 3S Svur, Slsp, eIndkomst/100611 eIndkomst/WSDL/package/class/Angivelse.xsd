@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Indeholder oplysning om de angivelser, som en virksomhed indberetter til SKAT med udgangspunkt i det eller de specificerede aftaler (AngivelseFrekvensForhold), som virksomheden har med SKAT.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/IDType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/KvitteringNummerType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TidspunktType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/IndberetningFormKodeType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TilladtAktionType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/ValutaType.xsd"/>
+      
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/BeloebType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/VirksomhedEgenIDType.xsd"/>
+      
+   
+   
+   <xs:element name="AngivelseID" type="fase2.1:IDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Unikt ID på en angivelse</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelsePeriodeFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver første dag i en periode. AngivelsePeriodeFra udtrykker sammen med AngivelsePeriodeTil en kalenderperiode, eksempelvis en lønperiode.  En eller flere kalenderperioder udtrykt med AngivelsePeriodeFra og AngivelsePeriodeTil kan specificere de oplysninger, som indgår i den kalenderperiode, som er udtrykt med AngivelseGyldigFra og AngivelseGyldigTil. AngivelsePeriodeFra indberettes kun indenfor en begrænset del af told-, skatte- og afgiftslovgivningen.  Eksempelvis udtrykker to indberetninger af indkomstoplysninger med lønperioden 2007.12.14 - 2008.02.15 og 2008.01.14 - 2008.02.15 (AngivelsePeriodeFra og AngivelsePeriodeTil) en specifikation af indeholdt A-skat og AM-bidrag for februar måned 2008 (AngivelseGyldigFra og AngivelseGyldigTil).</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelsePeriodeTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver sidste dag i en periode. AngivelsePeriodeTil udtrykker sammen med AngivelsePeriodeFra en kalenderperiode, eksempelvis en lønperiode.  En eller flere kalenderperioder udtrykt med AngivelsePeriodeFra og AngivelsePeriodeTil kan specificere de oplysninger, som indgår i den kalenderperiode, som er udtrykt med AngivelseGyldigFra og AngivelseGyldigTil. AngivelsePeriodeTil indberettes kun indenfor en begrænset del af told-, skatte- og afgiftslovgivningen.  Eksempelvis udtrykker to indberetninger af indkomstoplysninger med lønperioden 2007.12.14 - 2008.02.15 og 2008.01.14 - 2008.02.15 (AngivelsePeriodeFra og AngivelsePeriodeTil) en specifikation af indeholdt A-skat og AM-bidrag for februar måned 2008 (AngivelseGyldigFra og AngivelseGyldigTil).  </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseKvitteringNummer" type="fase2.1:KvitteringNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Kvitteringsnummer som tildeles angivelsen ved godkendt indberetning.  Kvitteringsnummer er unikt for hver angivelsestype. For enkelte angivelsestyper, f.eks. Udbytteskat, findes dog 2 sekvenser for kvitteringsnummer (et for udbytteskatten og et for udbyttemodtagerne).  Længden af feltet kan være forskelligt fra angivelsestype til angivelsestype, og nogle anvender timestmp.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseAngivelseTid" type="fase2.1:TidspunktType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angivelsestidspunktet - denne skal anvendes både som: a) Det tekniske registreringstidspunkt, når en kunde foretager indrapportering og b) Manuelt indsat modtagelsesdato, når en medarbejder fra SKAT indrapporterer</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseValgtIndberetningFormKode" type="fase2.1:IndberetningFormKodeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver angivelsestypens mulige indberetningsformer.   For angivelsestypen MIA findes f.eks. Ingen udbetaling af A-indkomst, Ingen ændringer i forhold til forrige periode, Ændringer i forhold til forrige periode, Ændringer i forhold til forrige periode inklusive visning af CPR-numre,  Totalindberetning af alle A-indkomstmodtagere og Filoverførsel.  Nogle indberetningsformer er kun forbeholdt revisor, mens andre indberetningsformer både er tilladt for virksomheden og revisor.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseTilladtAktion" type="fase2.1:TilladtAktionType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver hvilken aktion som er tilladt på den enkelte angivelse</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseValuta" type="fase2.1:ValutaType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver den valuta (ISO-møntkoden) som angivelsen er indberettet i, hvis der er tale om en angivelsestype med beløb.  På nuværende tidspunkt kan ToldSkat kun modtage angivelser i danske kroner.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver første dag i den periode der angives og afregnes for. AngivelseGyldigFra skal ses i sammenhæng med AngivelseGyldigTil.  Den samlede kalenderperiode udtrykt ved AngivelseGyldigFra og AngivelseGyldigTil udtrykker det tidsrum, der angives og afregnes for, eksempelvis 2007.01.01 - 2007.03.31 for en momsangivelse for januar kvartal 2007.  Det samlede tidsrum, som der angives og afregnes for, afhænger af, hvordan indberetter er registreret i henhold til told-, skatte- og afgiftslovgivningen. Tidsrummet kan have en længde fra 1 dag til et år med den gældende lovgivning.  Hvis angivelsesperiode f.eks. er 1. kvartal 2005 vil startdato være 2005-01-01.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver sidste dag i den periode der angives og afregnes for. AngivelseGyldigTil skal ses i sammenhæng med AngivelseGyldigFra.  Den samlede kalenderperiode udtrykt ved AngivelseGyldigFra og AngivelseGyldigTil udtrykker det tidsrum, der angives og afregnes for, eksempelvis 2007.01.01 -  2007.03.31 for en momsangivelse for januar kvartal 2007.  Det samlede tidsrum, som der angives og afregnes for, afhænger af, hvordan indberetter er registreret i henhold til told-, skatte- og afgiftslovgivningen. Tidsrummet kan have en længde fra 1 dag til et år med den gældende lovgivning. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseUdbetalingStopMarkering" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Anvendes til markering/visning af at angivelsen er under behandling og endnu ikke frigivet til udbetaling.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseBemærkning" type="fase2.1:TekstLangType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Bemærkning til en angivelse.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseTilsvar" type="fase2.1:BeløbType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angivelsens samlede beløb, som der dannes en fordring på til opkrævning/udbetaling.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseStatus" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Viser hvilken status en angivelse kan være i.    </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseVirksomhedEgenID" type="fase2.1:VirksomhedEgenIDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver en unik indberetningidentifikation for en virksomhed for en given indberetning. Dette er IKKE det samme som AngivelseID.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dækker over forskellige afdelinger, grupper og kontorer. Fx: - Administration - Inddrivelse 1 - Inddrivelse 2 - Kontrol 1 - Kundeservice</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="OrganisatoriskUnderEnhedNavn" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på den organisatoriske enhed enkelte afdelinger, grupper og kontorer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

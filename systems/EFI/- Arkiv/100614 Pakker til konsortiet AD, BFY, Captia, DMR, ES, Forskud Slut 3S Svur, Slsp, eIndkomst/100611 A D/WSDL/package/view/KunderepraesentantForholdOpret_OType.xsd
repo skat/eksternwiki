@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+   
+   
+   
+   <xs:include schemaLocation="../operational/KommunikationAftaleTransitivID.xsd"/>
+   
+   
+   
+   
+   <xs:include schemaLocation="../operational/KommunikationMappeTransitivID.xsd"/>
+   
+   
+   
+   <xs:element name="KunderepræsentantForholdOpret_O">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:KunderepræsentantForholdOpret_OType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2315"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="KunderepræsentantForholdOpret_OType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+										
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               
+            
+
+         
+               
+            
+         <xs:element name="Kunde" minOccurs="0">
+            
+                  
+               
+            <xs:complexType>
+               
+                     
+                  
+               <xs:sequence>
+                  
+                        
+                     
+                  <xs:element ref="fase2.1:KommunikationAftaleTransitivID"/>
+
+               
+                     
+                  
+               </xs:sequence>
+            
+                  
+               
+            </xs:complexType>
+         
+               
+            
+         </xs:element>
+
+         
+               
+            
+         <xs:element name="Kunderepræsentant" minOccurs="0">
+            
+                  
+               
+            <xs:complexType>
+               
+                     
+                  
+               <xs:sequence>
+                  
+                        
+                     
+                  <xs:element ref="fase2.1:KommunikationAftaleTransitivID"/>
+
+               
+                     
+                  
+               </xs:sequence>
+            
+                  
+               
+            </xs:complexType>
+         
+               
+            
+         </xs:element>
+         
+               
+            
+         <xs:element ref="fase2.1:KommunikationMappeTransitivID" minOccurs="0"/>
+               
+      
+            
+            
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

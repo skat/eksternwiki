@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="UdlægTilsigelseFormType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+                  <xs:enumeration value="FOBF"/>
+                  <xs:enumeration value="FOPF"/>
+                  <xs:enumeration value="FOPO"/>
+                  <xs:enumeration value="FOSF"/>
+                  <xs:enumeration value="FOUF"/>
+                  <xs:enumeration value="FOFF"/>
+                  <xs:enumeration value="KUUF"/>
+                  <xs:enumeration value="KUBF"/>
+                  <xs:enumeration value="KUPF"/>
+                  <xs:enumeration value="KUPO"/>
+                  <xs:enumeration value="KUSF"/>
+                  <xs:enumeration value="KOUD"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

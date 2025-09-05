@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specificerer en kundeudbetaling som går via NemKonto.   Selvom NemKonto understøtter udsendelse af checks, bruges denne funktionalitet ikke. Det sker i stedet via SKB vha. servicen CheckUdbetalingListeSend.    Nemkonto håndterer udbetalinger fra det offentlige. Alle i Danmark skal have en NemKonto, både virksomheder, borgere og foreninger.   En NemKonto er en helt almindelig bankkonto, som en kunde (virksomhed eller kunde) har angivet, at det offentlige skal bruge til at udbetale penge til.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/NemKontoTekstType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/ValutaKodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="NemKontoUdbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>BEMÆRK: NemKonto skal have beløbet i milli-kroner, dvs. 75,50 kr i dette element bliver til 75500 i NemKonto-formatet. Der skal altså ske en konvertering.   Indeholder det beløb der skal udbetales til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingBankdagDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan være ned til minus 5 bankdage i forhold til dags dato i forbindelse med genfremsendelse eller forsinkelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingDebiteringstekst" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekst på egen konto dvs. på SKB-kontoen hvorfra der udbetales.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingKundeNummer" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Information om kunde ifm. Nemkonto udbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingID" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt ID for en udbetaling. Skal gøre det muligt at identificere betalingen i det asynkrone retursvar.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingModtagerPosteringTekst"
+                     type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekst på modtagers bankkontoudtog.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingValutaKode" type="fase2.1:ValutaKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken valuta der udbetales i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingBankKonto" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Komplet kontoidentifikation - såkaldt BBAN. Beregnet felt: For danske bankkonti sammensat af BankKontoRegistreringsnummer og BankKontoNummer. For udenlandske bankkonti: Kun BankKontoNummer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingBankFilialID" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Filial-identifikation som i SWIFT kaldes Clearing System Member ID. Anvendes hvis BICKode kun er hovedbanken og ikke filialen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingBankFilialKode" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En kode af variabel længde afhængig af nationale regler. Den er defineret som en string med forskelligt indhold afhængigt af typen (ClearingSystemMemberIdentificationChoice) i schemaet SWIFT_Common.xsd.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingOCRLinje" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet felt ud fra OCR-oplysninger. Sammensat af  OCRKortartkode, plustegn, OCRBetalingsidentifikation</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingYdelseKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode (6-cifret) for hvad udbetalingen dækker over. Der er generelle koder (fx betyder koden NKSOST overskydende skat) og specifikke SKAT-koder. Se mere på http://www.nemkonto.dk/wo/1025703.asp Der er dog muligvis flere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingKompletMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sættes false hvis det er en NKS-komplet betaling (dvs. med alle detaljer om udbetaling), true hvis ikke-komplet (kun SE/CVR/CPR/P-nr er leveret). Ikke-komplet er typiske.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingFakturaNummer" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fakturanummer for det udbetalingen vedrører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingOmkostningFordeling" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Omkostningsfordeling for komplette udenlandske betalinger. Koder: SHA for delte omkostninger, BEN modtager betaler, OUR afsender betaler. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingDebiteringReference" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Betalings-id som er debitors betalingsreference. Ifølge specifikationen svarer det til DEB-feltet i Edifact.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingGiroFINummer" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>FI-kreditnummer eller girokontonummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingModtagerID" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>KundeNummer hvis det er CVR (8 cifre), ProduktionEnhedNummer hvis det er en produktionsenhed (10 cifre). Hvilken af de to det drejer sig om angives i NemKontoUdbetalingModtagerIDType.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingModtagerIDType" type="fase2.1:NemKontoTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>ID-type for indhold i NemKontoUdbetalingModtagerID. Kan være CVR eller PNR (produktionsenhedsnummer)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingModtagerValutaKode" type="fase2.1:ValutaKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det ekvivalente beløbs valutakode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingUdenlandskMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvorvidt der er tale om en betaling til udenlandet (true=ja). </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingForm" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Måden udbetalingen udføres. Koder: CHK=check, TRF=overførsel. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingOverførselValutaKode" type="fase2.1:ValutaType">
+               
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingBogføringInstruktion" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afsenders instruktion til bogføringscentralen om at udføre en særlig service. Indholder en kode som er aftalt mellem bogføringscentral og afsender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NemKontoUdbetalingModtagerBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det udbetalte beløb i modtagerens egen valuta. Valutaen er angivet i NemKontoUdbetalingModtagerValutaKode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="RegistreringsBevisType">
+               <xs:annotation>
+                  <xs:documentation>WEB-blanketten Registreringsbevis dannes i Erhvervssystemet ud fra et rekvisitionsindivid (5001), som omformes til en svar XML struktur, og endelig opsættes som en WEB-blanket under TastSelv Erhverv.  Et registreringsbevis er virksomhedens dokumentation for, hvordan den er registreret i ToldSkats erhvervssystem. Registreringsbeviset udsendes fra Erhvervssystemet ved virksomhedens oprettelse og når oplysningerne ændres, og ved virksomhedens ophør udsendes ophørsbevis.  TastSelv Erhverv viser dog ikke p.t. ophørsbeviser.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+         </xs:schema>

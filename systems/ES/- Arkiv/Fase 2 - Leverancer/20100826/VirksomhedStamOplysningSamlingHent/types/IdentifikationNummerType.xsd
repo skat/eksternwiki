@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:simpleType name="IdentifikationNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Det nummer som for SKAT identificerer en person eller virksomhed. En virksomhed er identificeret ved et CVR nr. eller SE nr. (eller begge), mens en person er identificeret af CPR nr. Udenlandske personer uden CVR, SE eller CPR nr skal identificeres af et andet unikt nummer som SKAT journalnr.</xs:documentation>
+      
+      
+      </xs:annotation>
+      
+      
+      <xs:restriction base="xs:integer">
+         
+         
+         <xs:totalDigits value="13"/>
+      
+      
+      </xs:restriction>
+   
+   
+   </xs:simpleType>
+
+
+</xs:schema>

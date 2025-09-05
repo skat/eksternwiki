@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../operational/HenstandMeddelelseOphoerSendt.xsd"/>
+				     
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:include schemaLocation="../class/SporSkabelon.xsd"/>
+         <xs:include schemaLocation="../operational/HenstandSenesteSendDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../class/Henstand.xsd"/>
+         <xs:include schemaLocation="../operational/HenstandOpdaterForaeldelse.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenstandBookSagsbehandlerVedUdloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenstandSenesteMeddelelsestype.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenstandSkaeringsdato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHaendelse.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../operational/HenstandFordringSenesteBrevDato.xsd"/>
+				     
+         <xs:element name="IAIndsatsHenstandHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:IAIndsatsHenstandHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="IAIndsatsHenstandHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:IndsatsStartdato" minOccurs="0"/>
+                     <xs:element name="IndsatsOprettetAf" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:RessourceNummer"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element ref="fase2.1:IndsatsSlutdato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenstandMeddelelseOphørSendt" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:IndsatsUnderTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandNavn" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandType" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:SporSkabelonIndsatsSkabelonID" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenstandSenesteSendDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFIHenvendelseDato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:HenstandBegrundelseKode" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:HenstandBegrundelseTekst" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:HenstandUdløbDato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:HenstandOpdaterForældelse" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenstandBookSagsbehandlerVedUdløb" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenstandSenesteMeddelelsestype" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenstandSkæringsdato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenstandSenestÆndret" minOccurs="0"/>
+
+
+                     
+
+                        <xs:element name="HenstandUdløbFremtidigHændelse" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:EFIHændelseID"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <xs:element name="FordringOmfattetSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="FordringOmfattet" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+
+                                       <xs:element ref="fase2.1:HenstandFordringSenesteBrevDato" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

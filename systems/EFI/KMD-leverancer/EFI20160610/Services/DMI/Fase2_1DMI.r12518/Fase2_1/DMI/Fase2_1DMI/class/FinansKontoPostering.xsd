@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En postering for en enkelt bevægelse (bogføring) på en finanskonto, som indgår i et regnskab. En finanspostering kan være en sum af posteringer fra underliggende konti (fx opkrævningskonti fra DMO), men kan ligeså godt være en enkelt posteringer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="FinansKontoPosteringBilagNummer" type="fase2.1:IdentifikationNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik nummerisk identifikation af en finanspostering.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoPosteringBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det bruttobeløb, der er posteret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoPosteringRegnskabPeriode" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato for hvilken regnskabsperiode finansposteringen placeres i. [Anders&amp;Jesper: Fx...???]</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoPosteringBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bestemmer dato for den regnskabsperiode finansposteringen default placeres i og dermed periodeafgrænses til. [Anders&amp;Jesper: Fx...???]</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoPosteringRegisteringDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoklokkeslæt for registrering af finansposteringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHelType.xsd"/>
+      
+   
+   
+   <xs:element name="DokumentIndex" type="fase2.1:TalHelType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Transient element, der sættes af kalderen i forbindelse med oprettelse af nye dokumenter. Hver dokument får en nummer (index), som servicen så kan referere til i svaret på oprettelsen. På den måde kan kalderen mappe servicens dokumentID med index.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

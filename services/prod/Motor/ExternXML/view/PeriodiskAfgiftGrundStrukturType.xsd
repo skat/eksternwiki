@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/OpgjortAfgift.xsd"/>
+	<xs:include schemaLocation="../class/PeriodiskAfgift.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejRegistrering.xsd"/>
+	<xs:include schemaLocation="../class/PeriodiskAfgiftOpkraev.xsd"/>
+	<xs:include schemaLocation="../class/PeriodiskAfgiftSats.xsd"/>
+	<xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+	<xs:element name="PeriodiskAfgiftGrundStruktur" type="dmr:PeriodiskAfgiftGrundStrukturType"/>
+	<xs:complexType name="PeriodiskAfgiftGrundStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:OpgjortAfgiftFordringId" minOccurs="0"/>
+			<xs:element ref="dmr:OpgjortAfgiftDatoTid"/>
+			<xs:element ref="dmr:OpgjortAfgiftBeloeb"/>
+			<xs:element ref="dmr:OpgjortAfgiftStatus" minOccurs="0"/>
+			<xs:element ref="dmr:PeriodiskAfgiftDaekkerFraDato"/>
+			<xs:element ref="dmr:PeriodiskAfgiftDaekkerTilDato"/>
+			<xs:element ref="dmr:PeriodiskAfgiftPeriodeHyppighed" minOccurs="0"/>
+			<xs:element ref="dmr:OpgjortAfgiftSidsteBetalingDato" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerNummer" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerIdent" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejRegistreringNummer" minOccurs="0"/>
+			<xs:element ref="dmr:JuridiskEnhedIdentifikatorStruktur" minOccurs="0"/>
+			<xs:element name="PeriodiskAfgiftOpkraevListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PeriodiskAfgiftOpkraev" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:PeriodiskAfgiftOpkraevBeloeb"/>
+									<xs:element ref="dmr:PeriodiskAfgiftOpkraevGruppeNummer"/>
+									<xs:element ref="dmr:PeriodiskAfgiftSatsNummer"/>
+									<xs:element ref="dmr:PeriodiskAfgiftOpkraevFaktor" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

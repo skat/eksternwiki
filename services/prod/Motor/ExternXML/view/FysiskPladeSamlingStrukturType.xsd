@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/FysiskPlade.xsd"/>
+	<xs:include schemaLocation="../view/FysiskPladeStrukturType.xsd"/>
+	<xs:element name="FysiskPladeSamlingStruktur" type="dmr:FysiskPladeSamlingStrukturType"/>
+	<xs:complexType name="FysiskPladeSamlingStrukturType">
+		<xs:sequence>
+			<xs:element name="FysiskPladeSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FysiskPlade" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:FysiskPladeIdent"/>
+									<xs:element ref="dmr:FysiskPladeStruktur"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

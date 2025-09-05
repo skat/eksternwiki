@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="KalenderPræferenceTypeType">
+               <xs:annotation>
+                  <xs:documentation>Der er to typer præferencer: 1 Default og 2 Vidne. Default præferencen er den almindelige præference som har tilknyttede opgavetyper, og hvor opgaverne skal have den rigtige type for at blive placeret i præferencen. Hvis en præference er en vidne-præference, må der kun bookes vidne-tider i præferencen, dvs. ressourcen kun kan bookes til at være vidne i perioden. Det er ikke nødvendigt at tilknytte opgavetyper til en vidnepræference.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="2"/>
+                  <xs:minInclusive value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

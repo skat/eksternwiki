@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation>Angiver de mulige typer af beskatningsparagraf, der kan registreres for pligter af typen skat jf. lovene om beskatning af selskaber og fonde.</xs:documentation>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../types/BeskatningParagrafForholdBeskatningParagrafKodeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+   
+   
+   <xs:element name="BeskatningParagrafTypeKode" type="fase2:BeskatningParagrafForholdBeskatningParagrafKodeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Kode der entydigt identificerer de mulige typer af beskatningsparagraf.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="BeskatningParagrafTypeTekst" type="fase2:TekstKortType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb. I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

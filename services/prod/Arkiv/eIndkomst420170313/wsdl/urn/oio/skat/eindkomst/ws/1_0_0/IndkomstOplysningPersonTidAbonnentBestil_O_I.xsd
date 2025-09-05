@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:abonnementtype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" xmlns:abonnenttype="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" xmlns:adgangformaaltype="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" xmlns:abonnentbestillingidentifikator="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/AbonnentBestillingIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/AdgangFormaalTypeKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/abonnenttype/xml/schemas/20071202/AbonnentTypeKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/abonnementtype/xml/schemas/20071202/AbonnementTypeKode.xsd"/><xs:element name="IndkomstOplysningPersonTidAbonnentBestil_O_I" type="hsws:IndkomstOplysningPersonTidAbonnentBestil_O_IType">
+	</xs:element>
+	<xs:complexType name="IndkomstOplysningPersonTidAbonnentBestil_O_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="abonnentbestillingidentifikator:AbonnentBestillingIdentifikator"/>
+			<xs:element ref="abonnenttype:AbonnentTypeKode"/>
+			<xs:element ref="abonnementtype:AbonnementTypeKode"/>
+			<xs:element ref="adgangformaaltype:AdgangFormaalTypeKode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

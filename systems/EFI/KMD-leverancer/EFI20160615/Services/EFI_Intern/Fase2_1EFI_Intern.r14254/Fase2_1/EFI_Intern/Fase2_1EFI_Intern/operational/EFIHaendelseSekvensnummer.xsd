@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         
+         <xs:element name="EFIHændelseSekvensnummer" type="fase2.1:ID18Type">
+            <xs:annotation>
+               <xs:documentation>Et indeks som angiver rækkefølgen hvorefter hændelsen skal behandles og benyttes også til at rapportere fejl. (Transient element)</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

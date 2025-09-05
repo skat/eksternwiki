@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Transport er en specialisering af fordring og dække over transporter modtaget fra eksterne transporthavere. Transport betyder overdragelse af fordringer. Den, som har et krav på en anden, træffer således aftale om, at dette krav helt eller delvist overdrages til en transporthaver (rettighedshaver). En transport på en fordring fra én kreditor til en anden kan ske til sikkerhed eller for at udligne et mellemværende mellem de to parter. Det sker på baggrund af en frivillig aftale.  Det kan fx være transport af en negativ fordring (fx. negativ moms).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/FilType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="TransportErklæring" type="fase2.1:FilType">
+               
+               <xs:annotation>
+                  <xs:documentation>Transportgiver skal indsende en erklæring i form af en skriftlig transportaftale. Denne kan være elektronisk eller i papir (skannes ind).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportMaxBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det maksimale beløb, der skal transporteres.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportAnmeldelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato, hvor anmeldelsen er anmeldt og indsendt af transportgiver.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdløbDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor Transporten udløber.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

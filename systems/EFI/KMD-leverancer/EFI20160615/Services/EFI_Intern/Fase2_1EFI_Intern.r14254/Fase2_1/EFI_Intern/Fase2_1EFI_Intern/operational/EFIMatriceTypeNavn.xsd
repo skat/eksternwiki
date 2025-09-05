@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst100Type.xsd"/>
+         
+         <xs:element name="EFIMatriceTypeNavn" type="fase2.1:Tekst100Type">
+            <xs:annotation>
+               <xs:documentation>Navn på EFIMatrixTypeDefintion. Har Ingen betydning for celle typer. Det er x nøgle for kolonne typer og navnet på kodesamlingen for dimensioner.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

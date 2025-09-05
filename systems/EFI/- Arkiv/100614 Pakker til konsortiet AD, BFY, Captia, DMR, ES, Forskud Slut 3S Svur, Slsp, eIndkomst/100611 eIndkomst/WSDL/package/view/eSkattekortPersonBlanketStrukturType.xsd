@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortIndkomstAAr.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortAlleMarkering.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/eSkattekortType.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/BlanketStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="eSkattekortPersonBlanketStruktur" type="fase2.1:eSkattekortPersonBlanketStrukturType"/>
+   
+   
+   
+   <xs:complexType name="eSkattekortPersonBlanketStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+         
+         
+         
+         <xs:element name="eSkattekortPersonBlanketStruktur">
+            
+            
+            
+            <xs:complexType>
+               
+               
+               
+               <xs:sequence>
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:PersonCPRNummer"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortIndkomstÅr"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:SøgeDatoFra"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortAlleMarkering"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:BlanketStruktur"/>
+                  
+                  
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortTypeKode"/>
+
+               
+               
+               
+               </xs:sequence>
+            
+            
+            
+            </xs:complexType>
+         
+         
+         
+         </xs:element>
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

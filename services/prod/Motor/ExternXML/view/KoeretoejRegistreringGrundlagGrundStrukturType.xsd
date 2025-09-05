@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejRegistreringGrundlag.xsd"/>
+	<xs:element name="KoeretoejRegistreringGrundlagGrundStruktur" type="dmr:KoeretoejRegistreringGrundlagGrundStrukturType"/>
+	<xs:complexType name="KoeretoejRegistreringGrundlagGrundStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagStatus"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagStatusDato"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagGyldigFra"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagGyldigTil" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagKode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

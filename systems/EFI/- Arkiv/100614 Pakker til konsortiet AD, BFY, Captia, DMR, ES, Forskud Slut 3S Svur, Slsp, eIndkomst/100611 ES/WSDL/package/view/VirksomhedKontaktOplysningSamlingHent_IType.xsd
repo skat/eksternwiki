@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/VirksomhedAdresse.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/VirksomhedAdresseType.xsd"/>
+         
+   
+   
+   
+   <xs:element name="VirksomhedKontaktOplysningSamlingHent_I">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:VirksomhedKontaktOplysningSamlingHent_IType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2311"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="VirksomhedKontaktOplysningSamlingHent_IType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+									
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               
+            
+            <!--Sequence removed-->
+
+         
+               
+               
+         <xs:element name="VirksomhedInddata">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:VirksomhedAdresseLøbeNummer" minOccurs="0"/>
+
+
+
+                  
+                        
+                        
+                  <xs:element name="Filtrering">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:VirksomhedAdresseTypeKode" minOccurs="0" maxOccurs="unbounded"/>
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+      
+            
+            
+            
+         
+         
+         
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

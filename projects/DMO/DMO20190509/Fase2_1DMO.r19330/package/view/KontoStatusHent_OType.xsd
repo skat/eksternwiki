@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19330</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/OptimistiskLaasningDatoTid.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OpkraevningKontoSumBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OpkraevningKontoSumTilInddrivelseBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OpkraevningKontoStartSaldoBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../class/OpkraevningFordring.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringType.xsd"/>
+         <xs:include schemaLocation="../operational/HovedOpkraevningFordringID.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HovedOpkraevningFordringTypeID.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HovedOpkraevningFordringPeriodeFraDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HovedOpkraevningFordringPeriodeTilDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HovedOpkraevningFordringSidsteRettidigBetalingDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/NegativFordring.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningIndbetaling.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningKontoIndbetaling.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningUdbetaling.xsd"/>
+         <xs:include schemaLocation="../operational/OpkraevningUdbetalingMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/OpkraevningAfskrivning.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningKonto.xsd"/>
+         <xs:element name="KontoStatusHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:KontoStatusHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r19330"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="KontoStatusHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="KontostatusHentOutput" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:OptimistiskLåsningDatoTid"/>
+                              <xs:element name="SummeretSaldobeløb">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoSumBeløb" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoSumTilInddrivelseBeløb" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element ref="fase2.1:OpkrævningKontoStartSaldoBeløb"/>
+                              <xs:element name="PosteringstypeValgListe">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element name="PosteringstypeValg" minOccurs="0" maxOccurs="unbounded">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:sequence>
+                                                   <xs:element name="Fordring">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OpkrævningFordringID"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningFordringTypeID"/>
+
+                                                            <xs:element ref="fase2.1:OpkrævningFordringPeriodeFraDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:OpkrævningFordringPeriodeTilDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:HovedOpkrævningFordringID" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:HovedOpkrævningFordringTypeID" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:HovedOpkrævningFordringPeriodeFraDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:HovedOpkrævningFordringPeriodeTilDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:HovedOpkrævningFordringSidsteRettidigBetalingDato" minOccurs="0"/>
+
+                                                            <xs:element ref="fase2.1:OpkrævningFordringOprindeligtBeløb"/>
+
+                                                            <xs:element ref="fase2.1:OpkrævningFordringOverdragelseStatus" minOccurs="0"/>
+
+                                                            <xs:element ref="fase2.1:OpkrævningFordringBetalingOrdningMarkering"/>
+
+                                                            <xs:element ref="fase2.1:NegativFordringFrigivetMarkering" minOccurs="0"/>
+
+
+                                                            <xs:element name="DatoValg">
+                                                               <xs:complexType>
+                                                                  <xs:choice>
+                                                                     <xs:sequence>
+                                                                        <xs:element name="PositivFordring">
+                                                                           <xs:complexType>
+                                                                              <xs:sequence>
+                                                                                 <xs:element ref="fase2.1:OpkrævningFordringSidsteRettidigBetalingDato"/>
+
+                                                                                 <xs:element ref="fase2.1:OpkrævningFordringOprindeligSidsteRettidigBetalingDato"
+                                                                                       minOccurs="0"/>
+
+
+                                                                              </xs:sequence>
+                                                                           </xs:complexType>
+                                                                        </xs:element>
+				
+				                                                                 </xs:sequence>
+                                                                     <xs:sequence>
+				
+                                                                        <xs:element name="NegativFordring">
+                                                                           <xs:complexType>
+                                                                              <xs:sequence>
+                                                                                 <xs:element ref="fase2.1:OpkrævningFordringFrigivelseDato"/>
+                                                                              </xs:sequence>
+                                                                           </xs:complexType>
+                                                                        </xs:element>
+                                                                     </xs:sequence>
+                                                                  </xs:choice>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+				
+				                                            </xs:sequence>
+                                                <xs:sequence>
+				
+                                                   <xs:element name="Indbetaling">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OpkrævningIndbetalingID"/>
+
+                                                            <xs:element ref="fase2.1:OpkrævningIndbetalingSystem" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:OpkrævningKontoIndbetalingForm" minOccurs="0"/>
+
+                                                            <xs:element ref="fase2.1:OpkrævningIndbetalingDato"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningIndbetalingBeløb"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+				
+				                                            </xs:sequence>
+                                                <xs:sequence>
+				
+                                                   <xs:element name="Udbetaling">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OpkrævningUdbetalingID"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningUdbetalingType"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningUdbetalingDato"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningUdbetalingBeløb"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningUdbetalingMarkering"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+				
+				                                            </xs:sequence>
+                                                <xs:sequence>
+				
+                                                   <xs:element name="Afskrivning">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:OpkrævningAfskrivningType"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningAfskrivningDato"/>
+                  
+                                                            <xs:element ref="fase2.1:OpkrævningAfskrivningBeløb"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element name="YderligereOplysninger">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoPosteringerTilGodkendelseMarkering" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoSikkerhedstillelseMarkering"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoAdministrativTiltagMarkering" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoBetalingOrdningMarkering"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="ModregningMeddelelse">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:OpkrævningKontoNyModregningMarkering"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningKontoModregningerAntal" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

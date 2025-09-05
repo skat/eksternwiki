@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation>Søg på CVR-nr ELLER Firmanavn, Gade/Vej, Husnr., Postnr. eller Postdistrikt. Hvis der søges med CVR-nr modtages SE-numre og navne på de administrative enheder under den juridiske enhed. Denne søgning anvendes bl.a. i forbindelse med login med digital signatur (OCES), hvor der kun angives et CVR-nr. Hvis der søges med navne- og adresseoplysninger modtages SE-numre og navne på både juridiske og administrative enheder. Regler for hvilke søgefelter der kan udfyldes, samt hvor der kan søges med wild card (*) ses under Input og Fejl. Der søges i virksomhedens officielle adresse (virksomhedsadressen). </xs:documentation>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedSoeg_IType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedSoeg_OType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+   
+   
+   
+   <xs:element name="VirksomhedSøgInterface" type="fase2.1:VirksomhedSøgInterfaceType"/>
+   
+   
+   
+   <xs:complexType name="VirksomhedSøgInterfaceType">
+      
+      
+      
+      <xs:choice>
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedSøg_I"/>
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedSøg_O"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTrans"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTransSvar"/>
+      
+      
+      
+      </xs:choice>
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

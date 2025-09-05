@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Den samlede udbetaling vedr. en kundes (virksomhed eller borger) konto. Udbetaling sker, når en kunden har indbetalt for meget, og saldoen er større en den opsatte udbetalingsgrænse.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingFormType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/AArsagType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="OpkrævningUdbetalingID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af den enkelte udbetaling, som skal anvendes til at kunne spore udbetalingen fx ifm med 2 identiske betalinger foretaget samme dag.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for udbetaling af beløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornpår udbetalingen er blevet bogført.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbet der skal udbetales.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingForm" type="fase2.1:BetalingFormType">
+               
+               <xs:annotation>
+                  <xs:documentation>Som udgangspunkt udbetales alt via Nemkonto. Kunder herunder udenlandske virksomheder og borgere, der ikke har en Nemkonto, kan få udbetalt via andre medier, fx. ved check eller bankoverførsel.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Her angives hvad udbetalingen sker på baggrund af. Det kan f.eks. være et overskydent beløb fra indbetalingen Nemkonto udbetaling eller den oplyste udbetalingstype fra Nemkonto, som oplyses ved udbetalingen (en fast tekst der automatisk indsættes).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingModregn" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>For udbetalinger skal det angives, om de må modregnes eller ej. Som standard er værdien Ja. Hvis værdien er Nej, når udbetalingen sendes til udbetaling via Nemkonto, må beløbet ikke blive sendt til modregning efterfølgende.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingÅrsag" type="fase2.1:ÅrsagType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandleren skal have mulighed for at angive årsagen for udbetaling af beløbet (fritekst).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingStatus" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En status på udbetalingsforløbet fx om en udbetaling: check udstedt, check indløst eller sendt til NemKonto.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingLagtTilGodkendelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår en udbetaling er lagt til godkendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingMeddelelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekst felt der skal overgives til A&amp;D hvis alternativ modtager.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingTilInddrivelseMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en udbetaling er sendt til inddrivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingFraIndbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>En del af en indbetaling der skal udbetales.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningUdbetalingFraFordringBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Del af en negativ fordring der skal udbetales.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

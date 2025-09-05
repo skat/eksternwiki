@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="HæftelsesformType">
+               <xs:annotation>
+                  <xs:documentation>En kunde kan hæfte for en fordring i følgende med forskillig retsvirkning.  Enum: fast liste af værdier </xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="3"/>
+                  <xs:enumeration value="PRO"/>
+                  <xs:enumeration value="SOL"/>
+                  <xs:enumeration value="SUB"/>
+                  <xs:enumeration value="ALM"/>
+                  <xs:enumeration value="AND"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

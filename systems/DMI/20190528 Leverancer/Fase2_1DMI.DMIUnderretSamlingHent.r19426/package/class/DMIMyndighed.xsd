@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Den udbetalende myndighed</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MyndighedNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:element name="DMIMyndighedNKS-nummer" type="fase2.1:MyndighedNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den udbetalende myndhedsnummer i Nemkonto</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIMyndighedUdbetalerNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navner på den udbetalende myndighed.   Fritekstangivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

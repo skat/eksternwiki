@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/basis/SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:element name="IndkomstOplysningPersonAbonnementAjourfør_O" type="fase2:IndkomstOplysningPersonAbonnementAjourfør_OType"/>
+	<xs:complexType name="IndkomstOplysningPersonAbonnementAjourfør_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+         <xs:include schemaLocation="../class/AktivVaerdipapir.xsd"/>
+         <xs:include schemaLocation="../operational/AktivAntal.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AktivVaerdipapirTypeKode.xsd"/>
+				     
+         <xs:element name="KFIAktivVærdipapirStruktur" type="fase2.1:KFIAktivVærdipapirStrukturType"/>
+         <xs:complexType name="KFIAktivVærdipapirStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:AktivNavnAdresseTredjemand" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivVærdipapirKursBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivAntal" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivVærdipapirBehæftelseType" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivVærdipapirRegNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivVærdipapirKontoNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivDenunciationStatusKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivVærdipapirTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivBeskrivelse" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

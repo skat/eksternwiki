@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Denne portal orkestrerings (PO) service opretter synkront en manuel aftaleopgave eller en plugopgave på en kø i resourcesystemet  og sender en hændelse til den angivne indsats.  En manuel opgave er en aftaleopgave, der bookes fra sagsbehandlerportalen. En manuel aftaleopgave er enten en telefonopgave eller aftaleopgave, f.eks. et kundemøde. En plugopgave er en opgave, som sagsbehandleren tager fra en pulje af opgaver.</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/EFIOpgaveOpretHaendelseModtag_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/EFIOpgaveOpretHaendelseModtag_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="EFIOpgaveOpretHændelseModtagInterface"
+                     type="fase2.1:EFIOpgaveOpretHændelseModtagInterfaceType"/>
+         <xs:complexType name="EFIOpgaveOpretHændelseModtagInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:EFIOpgaveOpretHændelseModtag_I"/>
+               <xs:element ref="fase2.1:EFIOpgaveOpretHændelseModtag_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

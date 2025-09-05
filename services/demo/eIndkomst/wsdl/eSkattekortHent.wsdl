@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="eSkattekortHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet er at udstille eSkattekort til offentlige myndigheder, A-kasser o. lign., der har brug for et øjebliks-billede af skattekortoplysninger og, som SKAT har givet tilladelse hertil. Der er udelukkende tale om en udstilling af det/de ønskede skattekortoplysninger. </xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+			<xsd:include schemaLocation="../service/eSkattekortHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="eSkattekortHentServiceRequest">
+		<wsdl:part name="Request" element="fase2:eSkattekortHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="eSkattekortHentServiceResponse">
+		<wsdl:part name="Response" element="fase2:eSkattekortHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="eSkattekortHentServicePortType">
+		<wsdl:operation name="geteSkattekortHent">
+			<wsdl:input message="fase2:eSkattekortHentServiceRequest"/>
+			<wsdl:output message="fase2:eSkattekortHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="eSkattekortHentServiceBinding" type="fase2:eSkattekortHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="geteSkattekortHent">
+			<soap:operation soapAction="geteSkattekortHent"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="eSkattekortHentServiceBindingQSService">
+		<wsdl:port name="eSkattekortHentServiceBindingQSPort" binding="fase2:eSkattekortHentServiceBinding">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/eSkattekortHentServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Angiver frikort beløb fra FORSKUD, anvendte frikort beløb samt restsaldo.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHel15Type.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+   
+   
+   <xs:element name="eSkatteFrikortSaldo" type="fase2.1:TalHel15Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver den saldo (beløb), der er tilrådighed, hvoraf der ikke skal indeholdes A-skat ved udbetalingen (frikort saldo). Saldoen ændres ved ændring af forskudsregistreringen i forskudssystemet eller ved anvendelse hos lønudbetaler.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkatteFrikortAnvendtBeløb" type="fase2.1:TalHel15Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Indeholder de beløb, som en eller flere arbejdsgivere har indberettet, som A-indkomst (felt 13 - A-indkomst, hvoraf der skal betales AM-bidrag og felt 14 - A-indkomst, hvoraf der ikke skal betales AM-bidrag) til eIndkomst vedrørende indkomstår 2008 og senere.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkatteFrikortAnvendtDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver dato for en virksomheds anvendelse af frikort</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

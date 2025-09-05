@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:include schemaLocation="../view/SupplerendePersonOplysningStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/LoenPeriodeOplysningStrukturType.xsd"/>
+	<xs:element name="IndkomstPersonStruktur" type="fase2:IndkomstPersonStrukturType"/>
+	<xs:complexType name="IndkomstPersonStrukturType">
+		<xs:sequence>
+			<!--Sequence removed-->
+			<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+			<xs:element ref="fase2:SupplerendePersonOplysningStruktur" minOccurs="0"/>
+			<xs:element name="IndkomstLønPeriodeSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="fase2:LønPeriodeOplysningStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

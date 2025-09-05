@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation/>
+   
+   
+   </xs:annotation>
+            
+      
+   
+   <xs:include schemaLocation="../class/Telefon.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/Fax.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedAdresseStrukturType.xsd"/>
+   
+   
+   <xs:element name="VirksomhedKontaktOplysningStruktur" type="fase2:VirksomhedKontaktOplysningStrukturType"/>
+   
+   
+   <xs:complexType name="VirksomhedKontaktOplysningStrukturType">
+					
+      
+      <xs:sequence>
+							
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+         
+         <xs:sequence>
+                  
+         
+            
+            <xs:element ref="fase2:VirksomhedAdresseStruktur"/>
+
+         
+            
+            <xs:element name="TelefonListe">
+            
+               
+               <xs:complexType>
+               
+                  
+                  <xs:sequence>
+
+
+                  
+                     
+                     <xs:element name="Telefon" minOccurs="0" maxOccurs="unbounded">
+                     
+                        
+                        <xs:complexType>
+                        
+                           
+                           <xs:sequence>
+                           
+                              
+                              <xs:element ref="fase2:TelefonNummer"/>
+
+
+                           
+                              
+                              <xs:element ref="fase2:TelefonGyldigFra" minOccurs="0"/>
+
+
+
+
+                           
+                              
+                              <xs:element ref="fase2:TelefonGyldigTil" minOccurs="0"/>
+
+
+
+                        
+                           
+                           </xs:sequence>
+                     
+                        
+                        </xs:complexType>
+                  
+                     
+                     </xs:element>
+
+               
+                  
+                  </xs:sequence>
+            
+               
+               </xs:complexType>
+         
+            
+            </xs:element>
+
+
+         
+            
+            <xs:element name="EmailAdresseListe">
+            
+               
+               <xs:complexType>
+               
+                  
+                  <xs:sequence>
+
+
+                  
+                     
+                     <xs:element name="EmailAdresse" minOccurs="0" maxOccurs="unbounded">
+                     
+                        
+                        <xs:complexType>
+                        
+                           
+                           <xs:sequence>
+                           
+                              
+                              <xs:element ref="fase2:EmailAdresseEmail"/>
+
+
+                           
+                              
+                              <xs:element ref="fase2:EmailAdresseGyldigFra" minOccurs="0"/>
+
+
+
+
+                           
+                              
+                              <xs:element ref="fase2:EmailAdresseGyldigTil" minOccurs="0"/>
+
+
+
+                        
+                           
+                           </xs:sequence>
+                     
+                        
+                        </xs:complexType>
+                  
+                     
+                     </xs:element>
+
+               
+                  
+                  </xs:sequence>
+            
+               
+               </xs:complexType>
+         
+            
+            </xs:element>
+
+
+         
+            
+            <xs:element name="FaxListe">
+            
+               
+               <xs:complexType>
+               
+                  
+                  <xs:sequence>
+
+
+                  
+                     
+                     <xs:element name="Fax" minOccurs="0" maxOccurs="unbounded">
+                     
+                        
+                        <xs:complexType>
+                        
+                           
+                           <xs:sequence>
+                           
+                              
+                              <xs:element ref="fase2:FaxNummer"/>
+
+
+                           
+                              
+                              <xs:element ref="fase2:FaxGyldigFra" minOccurs="0"/>
+
+
+
+
+                           
+                              
+                              <xs:element ref="fase2:FaxGyldigTil" minOccurs="0"/>
+
+
+
+                        
+                           
+                           </xs:sequence>
+                     
+                        
+                        </xs:complexType>
+                  
+                     
+                     </xs:element>
+
+               
+                  
+                  </xs:sequence>
+            
+               
+               </xs:complexType>
+         
+            
+            </xs:element>
+
+               
+      
+         
+         </xs:sequence>
+            
+         
+         
+         
+         
+      
+					
+      
+      </xs:sequence>
+							
+   
+   </xs:complexType>
+
+
+</xs:schema>

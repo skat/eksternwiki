@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:blanket="http://rep.oio.dk/skat.dk/eindkomst/class/blanket/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanket/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/blanket/xml/schemas/20071202/BlanketNummerIdentifikator.xsd"/><xs:include schemaLocation="AngivelseFeltIndholdStruktur.xsd"/>
+	<xs:include schemaLocation="AngivelseNiveau4.xsd"/>
+	<xs:element name="AngivelseNiveau3" type="hsws:AngivelseNiveau3Type"/>
+	<xs:complexType name="AngivelseNiveau3Type">
+		<xs:sequence>
+			<xs:element ref="blanket:BlanketNummerIdentifikator"/>
+			<xs:element name="AngivelseFeltSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hsws:AngivelseFeltIndholdStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UnderAngivelseSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hsws:AngivelseNiveau4" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

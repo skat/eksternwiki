@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En indeholdelsespligtig virksomheds abonnement på skattekort.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:element name="eSkattekortAbonnementReserveretMarkering" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Formålet er i år 2008 at kunne vise reservation af hovedkort. Dette er nødvendigt for at der i en overgangsperiode ikke skal gå panik i udbetalingen af eksempelvis folkepensioner, hvis almindelige pensionsselskaber eller private arbejdsgivere, hvor en pensionist arbejder få timer om ugen, ønsker at hugge hovedkortet fra det offentlige.   Hvis et hovedkort er reserveret vil det ikke være muligt for andre indkomstudbetalere at 'hugge' hovedkortet fra den som har reserveret det.  Ordningen ophører pr. 1. januar 2009.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkattekortAbonnementGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Skatteabonnementets startdato</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkattekortAbonnementGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Skatteabonnementets slutdato</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/RegelSaetType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentAndelType.xsd"/>
+         <xs:element name="DækningRækkefølgeType" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet omkring hvilke fordringer der skal dækkes før andre. Synonym med prioritetsrækkefølge og konkursorden (som dog er omfattet af et andet regelsæt, og derfor er opstillet individuelt som attribut). </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DækningRækkefølgeSagBehandlerFordelingForm" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis den valgte type af dækningsrækkefølge er Sagsbehandlerfordeling skal formen for fordeling manuelt vælges for de valgte fordringer, fx fordringer under en bestemt indsats.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DækningRækkefølgeSagBehandlerProcentfordeling"
+                     type="fase2.1:ProcentAndelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis den valgte SagBehandlerFordelingForm er Forholdsmæssig fordeling, skal man her kunne angive, hvordan indbetalinger (nutidige og fremtidige) på de valgte fordringer skal fordeles med procenter.   Eksempel:   Kunden indbetaler hver måned et beløb til nogle fordringer, f.eks. bidrag, restskat og arbejdsmarkedsbidrag. Kunden ønsker, at beløbet fordeles med:   50 % til bidrag 30 % til restskatten 20 % til arbejdsmarkedsbidrag.   Det skal også være muligt at angive et beløb til hver fordring, og løsningen skal herefter selv udregne den procentuelle fordeling. Eller en forholdsmæssig lige andel til hver fordring, hvor det er forholdet mellem fordringerne som styrer den procentuelle fordeling af afdraget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

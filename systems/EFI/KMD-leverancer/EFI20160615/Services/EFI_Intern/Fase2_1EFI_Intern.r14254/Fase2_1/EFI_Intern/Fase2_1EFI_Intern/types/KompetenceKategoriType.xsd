@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="KompetenceKategoriType">
+               <xs:annotation>
+                  <xs:documentation>En kompetencekategori er en gruppe af kompetencer. Kompetencekategorien er domænespecifik, i EFI findes der følgende kategorier:       1000 Sportype      1001 Indkomsttype      1002 Driftformtype      1003 Kundetype      1004 Samlede fordringer      1005 Fordringstype      1006 Postnummer      1007 Kommunenummer</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="1007"/>
+                  <xs:minInclusive value="1000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

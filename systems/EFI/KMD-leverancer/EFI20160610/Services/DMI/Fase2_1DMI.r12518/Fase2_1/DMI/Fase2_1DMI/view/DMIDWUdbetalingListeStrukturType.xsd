@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/CRUDFunktionType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+         <xs:include schemaLocation="../operational/DMITransaktionIDType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIUdbetaling.xsd"/>
+				     
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+         <xs:include schemaLocation="../operational/DMIUdbetalingKontoNummer.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIUdbetalingKontoType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterHentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIUdbetalingAArsagStrukturType.xsd"/>
+				     
+         <xs:element name="DMIDWUdbetalingListeStruktur"
+                     type="fase2.1:DMIDWUdbetalingListeStrukturType"/>
+         <xs:complexType name="DMIDWUdbetalingListeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="Udbetaling">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:CRUDFunktionType"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionID"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionIDType"/>
+                  
+                           <xs:element ref="fase2.1:DMIUdbetalingID"/>
+                  
+                           <xs:element ref="fase2.1:DMIIndberetterHentStruktur"/>
+                  
+                           <xs:element ref="fase2.1:DMIUdbetalingDato"/>
+
+                           <xs:element ref="fase2.1:DMIUdbetalingBogførtDen" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode"/>
+                  
+                           <xs:element ref="fase2.1:DMIUdbetalingNote"/>
+                  
+                           <xs:element ref="fase2.1:DMIUdbetalingNoteDato"/>
+                  
+                           <xs:element ref="fase2.1:DMIUdbetalingStatus"/>
+
+                           <xs:element ref="fase2.1:DMIUdbetalingEFIIndsatsID" minOccurs="0"/>
+
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="AlternativUdbetalingKanal" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DMIUdbetalingKontoNummer"/>
+                  
+                                       <xs:element ref="fase2.1:DMIUdbetalingKontoType"/>
+                  
+                                       <xs:element ref="fase2.1:DMIUdbetalingForm"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="AlternativtKundenummer" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:KundeStruktur"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="AdresseOplysning" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="fase2.1:KundeNavn" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:AlternativAdresseStruktur" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+                           <xs:element ref="fase2.1:DMIUdbetalingÅrsagStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

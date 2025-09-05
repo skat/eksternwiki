@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen henter  en kundes aktuelle betalingsevne samt en række tilhørende værdier, der primært anvendes af indsatser i EFI, DMI og SKAT's sagsbehandlere. Servicen returnerer endvidere oplysninger om særskilt inddrivelse for kunden. Beregning af oplysningerne om særskilt inddrivelse påvirker ikke beregningen af kundens betalingsevne eller reservation af betalingsevne. Oplysningerne om særskilt inddrivelse anvendes af indsatser i EFI og SKAT's sagsbehandlere.  En kundes betalingsevne kan påvirkes af en række hændelser, f.eks ændringer i kundens nettoindkomst eller udgifter. Kundens betalingsevne genberegnes derfor løbende. Kundens betalingsevne er aktuel i den forstand, at betalingsevnen altid genberegnes, når beregningsgrundlaget ændrer sig.   Der kan altid udføres en betalingseveneberegning for personkunder, herunder ejere af enkeltmandsvirksomheder. Der kan udføres betalingsevneberegning for danske virksomheder og øvrige kundetyper i EFI, når sagsbehandleren har oprettet budgetoplysninger.   En kundes betalingsevne måles i kroner per periode, og kalderen kan specificere den ønskede periode, f.eks kroner pr. kvartal</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/EFIBetalingEvneHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/EFIBetalingEvneHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="EFIBetalingEvneHentInterface"
+                     type="fase2.1:EFIBetalingEvneHentInterfaceType"/>
+         <xs:complexType name="EFIBetalingEvneHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:EFIBetalingEvneHent_I"/>
+               <xs:element ref="fase2.1:EFIBetalingEvneHent_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

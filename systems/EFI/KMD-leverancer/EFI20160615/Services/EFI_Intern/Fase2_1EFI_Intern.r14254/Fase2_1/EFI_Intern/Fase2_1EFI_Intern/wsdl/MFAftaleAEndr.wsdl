@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="MFAftaleÆndrService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Opret eller opdater en aftale for en fordringhaver og/eller rettighedshaver. Der eksisterer kun en aftale per haver. Det fremgår af feltet DMIFordringHaverAftaleType om aftalen er for en fordringhaver, en rettighedshaver eller en kombinations aftale.  Alle fordringhavere skal have en aftale og rettighedshavere kan have en aftale.  Fordringhavere identificeres unikt ved et DMIFordringHaverID, men har også altid en tilknyttet KundeStruktur. Ved oprettelse er det kun KundeNummer og KundeType delen af KundeStruktur der benyttes. De øvrige felter i KundeStruktur beriges fra KFI.   Hvis de optionelle felter EFIVersionNummer og DMIFordringHaverID i MFAftaleStruktur ikke er udfyldt betragtes kaldet som en aftale oprettelse, og ellers som en aftale opdatering. </xs:documentation>
+            <xs:documentation>1.17</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/MFAftaleAEndrInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="MFAftaleÆndrServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:MFAftaleÆndr_I"/>
+         </wsdl:message>
+         <wsdl:message name="MFAftaleÆndrServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:MFAftaleÆndr_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="MFAftaleÆndrServicePortType">
+            <wsdl:operation name="getMFAftaleÆndr">
+               <wsdl:input message="fase2.1:MFAftaleÆndrServiceRequest"/>
+               <wsdl:output message="fase2.1:MFAftaleÆndrServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

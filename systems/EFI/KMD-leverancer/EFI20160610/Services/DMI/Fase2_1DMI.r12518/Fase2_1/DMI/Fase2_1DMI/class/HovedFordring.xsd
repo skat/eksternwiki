@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Returnering af fordringer opstår når RIM sender en fordring tilbage til fordringshaver, f.eks. hvis fordringshaver ikke har reageret på RIM henvendelse om at få oplysninger om klagesag på fordring.   Tilbagekaldelse af en fordring opstår når fordringshaver/rettighedshaver ønsker at få hele fordringen retur, f.eks. en fordring som fordringshaver har kommet til at indsende til RIM ved en fejl. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/HovedFordringTilbagekaldAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/HovedFordringTilbagekaldRelateredeFordringerKodeType.xsd"/>
+         <xs:include schemaLocation="../types/HovedFordringReturAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/HovedFordringReturnerRelateredeFordringerKodeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/HovedFordringAfskirvRelateredeFordringerKodeType.xsd"/>
+         <xs:element name="HovedFordringTilbageDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor en fordringshaver tilbagekalder en fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringTilbageÅrsagKode"
+                     type="fase2.1:HovedFordringTilbagekaldÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at vælge en årsag til tillbagekaldelse af fordring ud fra en fast liste.  Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringTilbageÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for tilbagekaldelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringTilbageÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringTilbageRelateret"
+                     type="fase2.1:HovedFordringTilbagekaldRelateredeFordringerKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af kode for hvilke relaterede fordringer der tilbagekaldes sammen med hovedfordringen  Inddrivelsesgebyr kan ikke tilbagekaldes. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringTilbageBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI ved tilbagekaldelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringReturDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor RIM returnerer en fordring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringReturÅrsagKode"
+                     type="fase2.1:HovedFordringReturÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at vælge en årsag til returnering af fordring ud fra en fast liste.  Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringReturÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for returneringen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringReturÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringReturRelateret"
+                     type="fase2.1:HovedFordringReturnerRelateredeFordringerKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af kode for hvilke relaterede fordringer der returneres sammen med hovedfordringen </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringReturBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI ved returnering..</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringJaTilModregning" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: fordringen er sendt til modregning. Nej: fordringen er ikke sendt til modregning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HovedFordringAfskrivRelateret"
+                     type="fase2.1:HovedFordringAfskirvRelateredeFordringerKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af kode for hvilke relaterede fordringer der skal afskrives sammen med hovedfordringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MFFordringFeltKodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="MFFordringFeltKode" type="fase2.1:MFFordringFeltKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordring felter der kan konfigureres I fordringhaver aftale per fordringtypekode.  Enumeration med værdierne:  STIFTL:       Stiftelsettidspunkt HÆFTLS:    Hæftelsesforhold   RNTSTS:    Rentesats</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFFordringEksternReference" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshavers (eksterne) reference, der  kan indeholde UUID eller anden ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFFordringSagsbehandles" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordring oprettelse er gået til manuelt sagsbehandling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFFordringPåklaget" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt fordringen er påklaget eller ej.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFFordringModtagelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for, hvornår Modtag Fodring-modulet har modtaget fordringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

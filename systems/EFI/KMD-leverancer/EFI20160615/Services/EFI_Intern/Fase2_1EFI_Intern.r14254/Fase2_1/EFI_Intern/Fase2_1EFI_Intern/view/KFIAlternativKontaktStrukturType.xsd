@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/AlternativKontakt.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Civilstand.xsd"/>
+         <xs:include schemaLocation="../class/AlternativKontaktPerson.xsd"/>
+         <xs:include schemaLocation="../class/PersonStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:include schemaLocation="../class/AlternativEmailForhold.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/AlternativTelefonForhold.xsd"/>
+         <xs:include schemaLocation="../class/Fax.xsd"/>
+         <xs:include schemaLocation="../class/AlternativFaxForhold.xsd"/>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../view/AlternativKontaktErstatningNummerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativKontaktReferenceStrukturType.xsd"/>
+				     
+         <xs:element name="KFIAlternativKontaktStruktur"
+                     type="fase2.1:KFIAlternativKontaktStrukturType"/>
+         <xs:complexType name="KFIAlternativKontaktStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:AlternativKontaktID"/>
+                  
+                  <xs:element ref="fase2.1:AlternativKontaktNavn"/>
+                  
+                  <xs:element ref="fase2.1:AlternativKontaktGyldigFra"/>
+
+               <xs:element ref="fase2.1:AlternativKontaktGyldigTil" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:AlternativKontaktType"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="Nationalitet" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:LandKode"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+               <xs:element ref="fase2.1:AlternativKontaktOprettetAfFagsystem"/>
+
+               <xs:element ref="fase2.1:AlternativKontaktBemærkning" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativKontaktErstatningNummerStruktur" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="AlternativKontaktHenvisningNummer" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:AlternativKontaktID"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="PersonOplysninger" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="fase2.1:CivilstandKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:AlternativKontaktPersonFødselDato" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:AlternativKontaktPersonKøn"/>
+                  
+                           <xs:element ref="fase2.1:AlternativKontaktPersonNavnAdresseBeskyttelseMarkering"/>
+
+                           <xs:element ref="fase2.1:PersonStatusDødsfaldDato" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <xs:element name="AlternativKontaktReferenceStrukturListe">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:AlternativKontaktReferenceStruktur" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="EmailListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Email" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:EmailAdresseEmail"/>
+                  
+                                 <xs:element ref="fase2.1:AlternativEmailForholdPrimærMarkering"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="TelefonListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Telefon" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:TelefonUdenlandskNummer"/>
+                  
+                                 <xs:element ref="fase2.1:AlternativTelefonForholdPrimærMarkering"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="FaxListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Fax" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:FaxUdlandNummer"/>
+                  
+                                 <xs:element ref="fase2.1:AlternativFaxForholdPrimærMarkering"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <!--Sequence removed-->
+
+                  <xs:element name="Adresse" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie1"/>
+
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:LandKode" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

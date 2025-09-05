@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../operational/EjerAfEnkeltmandsvirksomhed.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+         <xs:include schemaLocation="../operational/HaeftelsePrimaer.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIHaeftelseRestBeloebMin.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIHaeftelseRestBeloebMax.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/DMIFordringForfaldDatoFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIFordringForfaldDatoTil.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIFordringSRBDatoFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIFordringSRBDatoTil.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RenterTilDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/SaldoPerDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+         <xs:include schemaLocation="../operational/DMIFordringModtagelseDatoFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIFordringModtagelseDatoTil.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HentDiverseKundeKontoStop.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HentTransportEllerUdlaegsfordringListe.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/UdeladHaeftelseStop.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/UdeladTransaktionDaekningElementListe.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/UdeladTransaktionListe.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/UdeladRelateredeFordringer.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirkningDatoSoegFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirkningDatoSoegTil.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+         <xs:element name="DMIFordringList_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIFordringList_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIFordringList_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                     <xs:element ref="fase2.1:KundeType"/>
+                  
+                     <xs:element ref="fase2.1:EjerAfEnkeltmandsvirksomhed"/>
+
+                     <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringFordringArtKode" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HæftelseForm" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HæftelseSubsidiær" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HæftelsePrimær" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIHæftelseRestBeløbMin" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIHæftelseRestBeløbMax" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:ValutaKode" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringForfaldDatoFra" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringForfaldDatoTil" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringSRBDatoFra" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringSRBDatoTil" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:RenterTilDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:SaldoPerDato" minOccurs="0"/>
+
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="SøgningPåFordringshaverEllerRettighedshaver" minOccurs="0">
+                           <xs:complexType>
+                              <xs:choice>
+                                 <xs:sequence>
+                                    <xs:element name="FordringsHaver">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+				
+				                             </xs:sequence>
+                                 <xs:sequence>
+				
+                                    <xs:element name="RettighedsHaver">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                             <xs:element ref="fase2.1:KundeType"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:choice>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+
+                     <xs:element ref="fase2.1:DMIFordringModtagelseDatoFra" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringModtagelseDatoTil" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringTypeFradragsret" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMIFordringForeløbigFastsat" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HentDiverseKundeKontoStop" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HentTransportEllerUdlægsfordringListe" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:UdeladHæftelseStop" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:UdeladTransaktionDækningElementListe" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:UdeladTransaktionListe" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:UdeladRelateredeFordringer" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:VirkningDatoSøgFra" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:VirkningDatoSøgTil" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:DMITransaktionType" minOccurs="0"/>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

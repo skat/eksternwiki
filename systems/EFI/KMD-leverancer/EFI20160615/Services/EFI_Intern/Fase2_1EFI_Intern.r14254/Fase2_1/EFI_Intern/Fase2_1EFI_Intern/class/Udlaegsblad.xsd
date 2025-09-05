@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Fogedblad af typen udlæg.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1024Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1000Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2000Type.xsd"/>
+         <xs:include schemaLocation="../types/UdlaegsbladResultatType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:element name="UdlægsbladForetagetDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tid hvornår udlægget fandt sted.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladGenoptagDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tid hvornår udlægget skal genoptages.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladNavn" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladØvrigeTilStede" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Andre som var til stede ved udlægget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladVidner" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladUndtagelsesbestemmelser" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Om undtagelsesbestemmelser blev anvendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladUndtagelsesbestemmelserBegrundelse"
+                     type="fase2.1:Tekst1024Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Grunden til at undtagelsesbestemmelser blev anvendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladLåsesmed" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Om låsesmed blev anvendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladLåsesmedBegrundelse" type="fase2.1:Tekst1000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Grunden til at låsesmed blev anvendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladBetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbet som kunden har betalt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladKaldVarselFrasagt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikation af hvorvidt kunden har frasagt sig kald og varsel, hvilket bruges som indikation af om der skal returneres en sum med retsafgift beregnet eller ej</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladSærligeBemærkninger" type="fase2.1:Tekst2000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Særlige bemærkninger til udlægget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladKundeHarKlaget" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Om kunden har klaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladKlageBegrundelse" type="fase2.1:Tekst1024Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Grunden til at kunden har klaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladResultat" type="fase2.1:UdlægsbladResultatType">
+               
+               <xs:annotation>
+                  <xs:documentation>Foreslået: Gennemført forgæves Gennemført delvis forgæves Gennemført fuld dækning  [Anders: Skal justeres som andre enums af leverandør, dvs uden mellem etc.]</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladUdsættelseBegrundelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Grunden til udsættelsen af udlægsforretningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægsbladJournalNummer" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke journalnummer til identifikation af et udlægsblad</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

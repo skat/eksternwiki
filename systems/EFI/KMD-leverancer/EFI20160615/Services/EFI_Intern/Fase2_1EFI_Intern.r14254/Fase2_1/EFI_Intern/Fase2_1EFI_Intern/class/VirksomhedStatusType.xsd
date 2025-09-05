@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Grunddatatype som angiver de mulige typer af virksomhedsstatus, eksempelvis betalingsstandsning, konkurs, likvidation, skifteretsopløsning. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="VirksomhedStatusTypeKode" type="fase2.1:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver koden for virksomhedsstatustypen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedStatusTypeTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver navnet på virksomhedstatustypen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedStatusTypeHjælpeTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Formålet med hjælpeteksten er at give brugeren en supplerende og/eller forklarende bemærkning til en konkret forekomst af et grunddataværdisæt. Hjælpeteksten anvendes som hjælp til brugeren, hvor denne eksempelvis bliver i tvivl om indholdet af en konkret forekomst af et grunddataværdisæt.  Hjælpeteksten kan, når det er relevant, indeholder reference til lovgivningens paragraffer og faglige vejledninger, hvor brugeren kan finde yderligere hjælp. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedStatusTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den første dag en virksomhedsstatustype er gyldig. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedStatusTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den sidste dag en virksomhedsstatustype er gyldig. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

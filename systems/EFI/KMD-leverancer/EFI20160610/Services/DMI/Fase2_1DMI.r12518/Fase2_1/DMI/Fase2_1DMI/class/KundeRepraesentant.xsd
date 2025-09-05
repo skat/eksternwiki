@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Kunderepræsentant repræsenter kunden både hvad angår modtagelse af meddelelser og indberetning af oplysninger, inden for de meddelelsestyper, kunden ønsker dennes repræsentation. Synonym med rådgiver og repræsentant for kunde.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="KundeRepræsentantID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeRepræsentantStartdato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for tilknytning af kunderepræsentanten til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeRepræsentantSlutdato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for tilknytning af kunderepræsentanten til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeRepræsentantAdvarselDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Denne dato anvendes til at advare om snarligt udløb for aftalen. Den opsættes som Slutdato minus antal dage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeRepræsentantRolle" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af kunderepræsentantens rolle i forhold til kunden. Det kunne f.eks. være værge, som oplyses fra CPR/CSRP. Øvrige roller vil blive oplyst fra kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

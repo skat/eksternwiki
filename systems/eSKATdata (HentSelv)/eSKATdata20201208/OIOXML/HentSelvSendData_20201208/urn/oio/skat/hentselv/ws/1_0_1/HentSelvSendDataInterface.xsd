@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Web servicen HentSelvSendData returnerer en række oplysninger af værdi for pengeinstitutters kreditevaluering af private låntagere. En bank kan tilgå servicen såfremt der foreligger et samtykke fra den enkelte borger, samt en videreanvendelsesaftale med Skatteforvaltningen.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="HentSelvSendData_I.xsd"/>
+	<xs:include schemaLocation="HentSelvSendData_O.xsd"/>
+	<xs:element name="HentSelvSendDataInterface" type="hsws:HentSelvSendDataInterfaceType"/>
+	<xs:complexType name="HentSelvSendDataInterfaceType">
+		<xs:choice>
+			<xs:element ref="hsws:HentSelvSendData_I"/>
+			<xs:element ref="hsws:HentSelvSendData_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

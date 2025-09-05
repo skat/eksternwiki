@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst500Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:element name="EFILønIndeholdelseUdvidetBegrTekst" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Standard begrundelse for ændring af henvendelsesfristen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønIndeholdelseBegrTekst" type="fase2.1:Tekst500Type">
+               
+               <xs:annotation>
+                  <xs:documentation>begrundelse for ændring af henvendelsesfristen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønIndeholdelseBerostilStartDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="EFILønIndeholdelseBerostilSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender. Indeholder slutdato for berostillingen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønIndeholdelseNyProcent" type="fase2.1:ProcentType">
+               
+            </xs:element>
+      </xs:schema>

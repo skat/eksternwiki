@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RapportOplysningProcent.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:element name="RapportOplysningProcentStruktur" type="fase2.1:RapportOplysningProcentStrukturType"/>
+   
+   
+   
+   <xs:complexType name="RapportOplysningProcentStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningProcentKvalifikator"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningProcentKvalifikatorTekst" minOccurs="0"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningProcentProcenttal"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

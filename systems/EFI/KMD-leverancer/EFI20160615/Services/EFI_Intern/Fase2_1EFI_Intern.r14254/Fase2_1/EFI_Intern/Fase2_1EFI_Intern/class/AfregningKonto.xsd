@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Afregningskontoen indeholder oplysninger om, hvor tit fordringshaveren ønsker afregning og/eller med hvilket minimumsbeløb. Endvidere indeholder kontoen oplysning om den valuta beløb ønskes afregnet i og med hvilken udbetalingskilde afregningen ønskes foretaget.   DMI skal kunne omregne fra danske kroner til den udenlandske valuta, fordringshaveren ønsker modtage afregningen i.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/FrekvensType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/AfregningMetodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/AfregningKontoIBANNummerDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/AfregningKontoSWIFTKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/KontoNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NKSNummerType.xsd"/>
+         <xs:element name="AfregningKontoFrekvens" type="fase2.1:FrekvensType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvor tit en fordringhaver ønsker afregning, straks, daglig, ugentlig etc</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoMinimumBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det minimumsbeløb som fordringshaver ønsker afregning for.  Er minimumsbeløbet f.eks. 1000 kr.,  afregnes der først til fordringshaver når dækninger - som endnu ikke er afregnet - andrager 1000kr. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoMetode" type="fase2.1:AfregningMetodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den udbetalingskilde en fordringshaver ønsker afregningen foretaget med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoValuta" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver valuta enheden (ISO-møntkoden) som fordringshaver ønsker at modtage afregningsbeløb i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoKursDifference" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja = Fordringshaver bærer Indtægt/udgift ved difference (kode) Nej = Fordringshaver bærer ikke Indtægt/udgift ved difference (kode)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoModregning" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja = Modregning ved næste afregning Nej = Ikke Modregning ved næste afregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoIBANNummer"
+                     type="fase2.1:AfregningKontoIBANNummerDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>IBANNummer der kan indeholde maksimalt 34 karakterer baseret på IBAN standarden (ISO 13616)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoSWIFTKode" type="fase2.1:AfregningKontoSWIFTKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>En SWIFT kode der maksimalt kan tage 11karakterer jf. SWIFT standarden (ISO 9362)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoAltDkKonto" type="fase2.1:KontoNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dansk KontoNummer som Fordringshaver kan henvise sin afregning til.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoUnderretFrekv" type="fase2.1:FrekvensType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvor tit en fordringshaver ønsker underretning straks, daglig, ugentlig etc.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoNKSNrModregning" type="fase2.1:NKSNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nem konto identifikation af fordringshaver, som udbetalende myndig til brug for modregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoRIMSendUnderret" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skal RIM udsende modregningsmeddelelser på vegne af fordringshaver (kun modregningsfordringer) Ja = RIM skal udsende Nej = RIM skal ikke udsende</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoOpdModregning" type="fase2.1:FrekvensType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvor tit en fordringshaver ønsker opdatering i forbindelse modregning straks, daglig, ugentlig etc.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoOplOmModregning" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja = Afregning ved oplysning om modregning Nej = Ingen afregning ved oplysning om modregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningKontoIRMetode" type="fase2.1:AfregningMetodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afregningsmetode for inddrivelsesrenter.  Liste med faste værdier (enum)  Værdisæt: NK: Nemkonto CH: Check BO: Bankoverførsel SR: Statsregnskab</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

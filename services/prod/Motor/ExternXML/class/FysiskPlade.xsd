@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Dette er en registrering af den fysiske plade. Et almindeligt pladesæt vil derfor bestå af to plader (to forekomster - hvor hver vil være identificeret ved at de er en del af et pladesæt).</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/FysiskPladeStatusType.xsd"/>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:include schemaLocation="../types/TekstLangType.xsd"/>
+	<xs:include schemaLocation="../types/ErstatningspladeTypeType.xsd"/>
+	<xs:element name="FysiskPladeDelAfPladeSaet" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Hvis dette flag er sandt, så er den fysiske plade en del af et pladesæt, hvilket er en kontrolmæssig mulighed for at imødekomme fejl i antallet af forekomester.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FysiskPladeIdent" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>En unik identifikation af den fysiske plade. Dette er et internt nummer, som ikke kan tilknyttes direkte til den fysiske plade med mindre, at der er tale om et givet registreringsnummer, hvor der kun er netop en forekomst af en given pladetype.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FysiskPladeStatus" type="dmr:FysiskPladeStatusType">
+		<xs:annotation>
+			<xs:documentation>Den aktuelle status for en fysisk plade. Grundet det generelle krav omkring historik, vil der her være en fuld liste over alle status, som den fysiske plade har haft og de tidspunkter, hvor status er skiftet. (Tilstande samt tilstandsskift).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FysiskPladeStatusDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Er datoen for statusmarkeringen. Bemærk, at der her grundet det generelle krav om historik er et fuld overblik over alle statusskift på den fysiske plade.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FysiskPladeErstatningspladeBegrundelse" type="dmr:TekstLangType">
+		<xs:annotation>
+			<xs:documentation>Begrundelse for bestilling af erstatningsplade, som kun udfyldes ved bestilling af erstatningsplade.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FysiskPladeErstatningspladeType" type="dmr:ErstatningspladeTypeType">
+		<xs:annotation>
+			<xs:documentation>Typen der fastlægger årsagen til bestilling af en erstatningsplade. Erstatningplade kan normalt bestilles en gang per registreringsnummer. Men dette gælder ikke hvis typen er en ombytter. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

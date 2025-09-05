@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         
+         <xs:element name="ReturnerSlotDetaljerMarkering" type="fase2.1:JaNejType">
+            <xs:annotation>
+               <xs:documentation>Markeringen angiver om det kun er selve slottet der skal returneres, eller om der også skal informeres en masse tilknyttede oplysninger. F.eks. opgave, opgavetype, præference osv.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="ESForsikringAnmodningOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At fremsende en anmodning til et forsikringsselskab om ansvarsforsikring og evt. kaskoforsikring på et køretøj.</xs:documentation>
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/ESForsikringAnmodningOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ESForsikringAnmodningOpretServiceRequest">
+		<wsdl:part name="Request" element="dmr:ESForsikringAnmodningOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="ESForsikringAnmodningOpretServiceResponse">
+		<wsdl:part name="Response" element="dmr:ESForsikringAnmodningOpret_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="ESForsikringAnmodningOpretServicePortType">
+		<wsdl:operation name="getESForsikringAnmodningOpret">
+			<wsdl:input message="dmr:ESForsikringAnmodningOpretServiceRequest"/>
+			<wsdl:output message="dmr:ESForsikringAnmodningOpretServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

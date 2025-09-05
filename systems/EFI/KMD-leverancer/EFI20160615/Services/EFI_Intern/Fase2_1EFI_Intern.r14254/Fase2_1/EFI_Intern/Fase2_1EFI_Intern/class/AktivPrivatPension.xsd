@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/AktivPrivatPensionTypeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst64Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst50Type.xsd"/>
+         <xs:element name="AktivPrivatPensionType" type="fase2.1:AktivPrivatPensionTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enum omfatter:  Kapitalpension, Ratepension </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivPrivatPensionPræmieBidrag" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver præmie/bidrag.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivPrivatPensionFinansInstitut" type="fase2.1:Tekst64Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver navn på finansinstitut</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivPrivatPensionRegNummer" type="fase2.1:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Registreringsnummer på en privat pension</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivPrivatPensionKontoNummer" type="fase2.1:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kontonummer på en privat pensionskonto</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

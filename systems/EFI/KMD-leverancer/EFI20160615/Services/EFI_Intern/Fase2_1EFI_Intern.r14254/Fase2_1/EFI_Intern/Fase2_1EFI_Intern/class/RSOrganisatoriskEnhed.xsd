@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Repræsenterer en organisatorisk enhed i Ressourcestyring. De organisatoriske enheder i Ressourcestyring er kopier af dem der findes i Active Directory, samt task forces som der er mulighed for at oprette i Ressourcestyring. Alle ændringer der laves i Active Directory skal derfor også implementeres i Ressourcestyring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="RSOrganisatoriskEnhedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt ID på en organisatorisk enhed</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedDomæneReference" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Domænereferencen er det ID som den organisatoriske enhed har i Active Directory.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på en organisatorisk enhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedRegion" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på den region den organisatoriske enhed tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedLandsdækkendeEnhed" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på den landsdækkende enhed den organisatoriske enhed tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedTaskForce" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Taskforce angiver om den organisatoriske er en taskforce. En taskforce er en midlertidig enhed som løser en specifik opgave.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdatoen på den organisatoriske enheds gyldighedsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen på den organisatoriske enheds gyldighedsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedArbejdsstedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den organisatoriske enheds arbejdssted.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet den organisatoriske enhed. Hvis ID er -1, er det systemet der har oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt den organisatoriske enhed er oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret den organisatoriske enhed. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt den organisatoriske enhed sidst er blevet ændret. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet den organisatoriske enhed. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt den organisatoriske enhed er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RSOrganisatoriskEnhedTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til den organisatoriske enhed, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

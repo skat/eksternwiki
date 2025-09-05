@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder oplysninger om eventuel lønindeholdelse. Oplysningerne modtages fra enten DFLS eller på sigt EFI</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel3Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="LønIndeholdelseTrækProcent" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den procent som der lønindeholdes med ved udbetaling af indkomstskattepligtigt beløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LønIndeholdelseSupplerendeTrækProcent" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den procent som der som følge af reglerne om supplerende lønindeholdelse lønindeholdes med ved udbetaling af indkomstskattepligtigt beløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LønIndeholdelseGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den dato hvormed en lønindeholdelse gælder fra og med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LønIndeholdelseGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den dato hvormed en lønindeholdelse gælder til og med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LønIndeholdelseSærskiltTrækProcent" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den procent, der som følge af reglerne om særskilt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LønIndeholdelseBasisPeriodeFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for perioden, som lønindeholdelsen vedrører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LønIndeholdelseBasisPeriodeTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for perioden, som lønindeholdelsen vedrører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

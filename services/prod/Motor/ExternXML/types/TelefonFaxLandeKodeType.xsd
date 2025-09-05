@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="TelefonFaxLandeKodeType">
+		<xs:annotation>
+			<xs:documentation>Telefon- og faxnummer landekode. Fx +45 eller 0045. Selve telefonnummeret indgår ikke.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+			<xs:pattern value="[+][0-9]{2}|[+][0-9]{3}|[0][0][0-9]{2}|[0][0][0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

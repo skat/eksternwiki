@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:ansaettelseforhold="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" schemaLocation="../class/ansaettelseforhold/xml/schemas/20071202/SKAT_AnsaettelseforholdPeriode.xsd"/><xs:element name="AnsættelsePeriodeStruktur" type="fase2:AnsættelsePeriodeStrukturType"/>
+	<xs:complexType name="AnsættelsePeriodeStrukturType">
+		<xs:sequence>
+			<!--Sequence removed-->
+			<xs:element ref="ansaettelseforhold:AnsaettelseforholdPeriode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

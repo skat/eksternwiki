@@ -1,0 +1,34 @@
+ReleaseNote 20140520:
+
+1) Datadomænet ”NationaltSkatteNummer” har fået fjernet whitespace fra enden af Pattern Value.
+Datadomænet HenvisningKode er blevet til char i stedet for number.
+Begge elementer er brugt i følgende services som har fået opdateret versionsnummer:
+- M1SSVirksomhedInformationHændelseSamlingHent 
+- M1SSVirksomhedSamlingHent
+- M1SSVirksomhedInformationHent 
+- M1SSVirksomhedInformationHændelseOpdater
+
+2) M1SSVirksomhedInformationHent:
+Felter gjort felter under * M1SSVirksomhed * gjort optionelle. 
+- M1SSVirksomhedInformationHændelseRealTidspunkt føjet til output.
+- Beskrivelse opdateret.
+
+3) M1SSVirksomhedInformationHændelseSamlingHent
+- Rettet overordnet beskrivelse, efter aftale med Inger.
+- Schemaer ikke ændret.
+
+4) VirksomhedHændelseSamlingHent
+Der er indført en kommentar om, at hændelserne VirksomhedOprettelseHændelseStruktur og VirksomhedOphørHændelseStruktur endnu ikke er implementeret.
+- Schemaer ikke ændret.
+
+5) UdenlandskPersonHent
+- Der er indført en kommentar om, at PersonFødselDato ikke er implementeret. Versionsnummer ikke ændret.
+- Schemaer ikke ændret.
+
+6) UdenlandskPersonOpdater
+- Der er indført en kommentar om, at PersonFødselDato ikke er implementeret. Versionsnummer ikke ændret.
+- Schemaer ikke ændret.
+
+7) UdenlandskPersonOpret
+- Der er indført en kommentar om, at PersonFødselDato ikke er implementeret. Versionsnummer ikke ændret.
+- Schemaer ikke ændret.

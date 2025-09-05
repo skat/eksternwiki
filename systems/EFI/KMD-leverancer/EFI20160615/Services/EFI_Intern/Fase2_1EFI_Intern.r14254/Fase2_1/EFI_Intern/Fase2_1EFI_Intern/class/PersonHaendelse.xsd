@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/PersonHaendelseKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TidspunktType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="PersonHændelseKode" type="fase2.1:PersonHændelseKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der angiver, hvilken personhændelse der returneres fra CSR-P:  01 = OprettelseHændelse 02 = CivilstandHændelse 03 = PersonTilknytningHændelse 04 = FolkeregisterAdresseHændelse 05 = ForsendelseAdresseHændelse 06 = VærgeAdresseHændelse 07 = IndrejseHændelse 08 = GenfindingHændelse 09 = AdresseBeskyttelseHændelse 10 = DødsfaldHændelse 11 = GenoplivningHændelse 12 = NavneændringHændelse 13 = PersonStatusHændelse 14 = PlanlagtPersonSletningHændelse 15 = UmyndighedHændelse </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonHændelseTidspunkt" type="fase2.1:TidspunktType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvornår en personhændelse er registreret (dato og tid). Selve hændelsen fx flytning kan være sket tidligere og være angivet i AdresseGyldigFra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonHændelseIndrejseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorpå en person er indrejst til Danmark.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonHændelseGenfindingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorpå en person er genfundet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PersonHændelseAdresseBeskyttelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorpå adressebeskyttelse trådte i kraft.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

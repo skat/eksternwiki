@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst64Type.xsd"/>
+         
+         <xs:element name="EFIMatriceNavn" type="fase2.1:Tekst64Type">
+            <xs:annotation>
+               <xs:documentation>De aktuelt kendte matrice navne:  FORDRINGSTYPE MEDDELELSESTYPE OPGAVETYPE INDSATSTYPE_INDSATSUNDERTYPE    MYNDIGHEDUDBETALINGTYPE_KATEGORI FORDRINGSTYPE_INDSATSUNDERTYPE FORDRINGSART_INDSATSUNDERTYPE HAEFTELSESFORMER_IVAERKSAETTELSE HAEFTELSESFORMER_IGANGVAERENDE INDSATSUNDERTYPE_LOVHENVISNING INDSATSUNDERTYPE_INDSATSUNDERTYPE INDSATSTYPE_MINIMUMSBELOEB FRISTTYPE GEBYR_OMKOSTNING AKTIVTYPE INDSATSUNDERTYPE_KLAGEHENVISNING SYSTEM_PARAMETER INDKOMSTTYPE_INDSATSUNDERTYPE FJERN_FORDRING_FRA_INDSATS FORDRINGSTYPE_MINIMUMSBELOEB INDSATSUNDERTYPE_FORAELDELSESFRISTER INDSATSUNDERTYPE_OPGAVETYPE BETALINGSEVNE_SKEMATISKMODEL RAADIGHEDSBELOEBBARN FORDRINGSTYPE_RENTEREGEL    INDSATSTYPE_PARAMETER, TEKNISK_PARAMETER </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

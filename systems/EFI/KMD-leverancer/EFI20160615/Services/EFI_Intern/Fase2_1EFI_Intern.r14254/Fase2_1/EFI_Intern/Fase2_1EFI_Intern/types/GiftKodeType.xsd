@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="GiftKodeType">
+               <xs:annotation>
+                  <xs:documentation>Kode for om en person er gift eller lign.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+                  <xs:pattern value="[UGFEPL]"/>
+                  <xs:enumeration value="U"/>
+                  <xs:enumeration value="G"/>
+                  <xs:enumeration value="F"/>
+                  <xs:enumeration value="E"/>
+                  <xs:enumeration value="P"/>
+                  <xs:enumeration value="L"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

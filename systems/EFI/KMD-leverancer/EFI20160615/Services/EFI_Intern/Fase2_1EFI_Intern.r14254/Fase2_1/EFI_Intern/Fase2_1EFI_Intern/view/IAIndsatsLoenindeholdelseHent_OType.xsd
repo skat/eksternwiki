@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:include schemaLocation="../class/EFILoen.xsd"/>
+         <xs:include schemaLocation="../operational/EFILoenBeregnetBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingEvne.xsd"/>
+         <xs:include schemaLocation="../operational/EFILoenIvaerksatBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFILoenIndeholdelse.xsd"/>
+         <xs:include schemaLocation="../operational/EFILoenOprindeligIvaerksatLoenBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFILoenIvaerksatLoenBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFILoenPotentieltNyeFordringer.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHaendelse.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../operational/EFILoenFordringPeriodeFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFILoenFordringPeriodeTil.xsd"/>
+				     
+         <xs:element name="IAIndsatsLønindeholdelseHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:IAIndsatsLønindeholdelseHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="IAIndsatsLønindeholdelseHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:IndsatsStartdato" minOccurs="0"/>
+                     <xs:element name="IndsatsOprettetAf" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:RessourceNummer"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element ref="fase2.1:IndsatsSlutdato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:IndsatsUnderTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandNavn" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandType" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:EFILønBeregnetProcent" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønBeregnetDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønBeregnetBeløbDKK" minOccurs="0"/>
+
+
+                     
+
+                        <xs:element name="BeregnetBetalingEvneBeregningGrundlagStruktur" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:BetalingEvneBeregningGrundlagKode"/>
+                  
+                                 <xs:element ref="fase2.1:BetalingEvneBeregningGrundlag"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+
+                     <xs:element ref="fase2.1:EFILønVarsletProcent" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønVarselDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønVarsletBeløbDKK" minOccurs="0"/>
+
+
+                     
+
+                        <xs:element name="VarsletBetalingEvneBeregningGrundlagStruktur" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:BetalingEvneBeregningGrundlagKode"/>
+                  
+                                 <xs:element ref="fase2.1:BetalingEvneBeregningGrundlag"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+
+                     <xs:element ref="fase2.1:EFILønIværksatProcent" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIværksatDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIværksatBeløbDKK" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIndeholdelseBerostilStartDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIndeholdelseBerostilSlutDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIndeholdelseNyProcent" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIndeholdelseBegrTekst" minOccurs="0"/>
+
+
+                     
+
+                        <xs:element name="IværksatBetalingEvneBeregningGrundlagStruktur" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:BetalingEvneBeregningGrundlagKode"/>
+                  
+                                 <xs:element ref="fase2.1:BetalingEvneBeregningGrundlag"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+
+                     <xs:element ref="fase2.1:EFILønOprindeligIværksatProcent" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønOprindeligIværksatLønBeløb" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønIværksatLønBeløb" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønPotentieltNyeFordringer" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:EFILønBerostillingBegrundelse" minOccurs="0"/>
+
+
+                     <xs:element name="AfgørelseOmfattetSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="AfgørelseOmfattet" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:EFILønAfgørelseType"/>
+                  
+                                       <xs:element ref="fase2.1:EFILønAfgørelseDatoForIgangværende"/>
+                  
+                                       <xs:element ref="fase2.1:EFILønBeregnetProcent"/>
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="Meddelelse" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:EFILønMeddelelseID"/>
+                  
+                                                   <xs:element ref="fase2.1:EFILønMeddelelseTypeID"/>
+                  
+                                                   <xs:element ref="fase2.1:EFILønMeddelelseStatus"/>
+                                                   <!--Sequence removed-->
+
+                                                      <xs:element name="GensendHændelse" minOccurs="0">
+                                                         <xs:complexType>
+                                                            <xs:sequence>
+                                                               <xs:element ref="fase2.1:EFIHændelseType"/>
+                                                            </xs:sequence>
+                                                         </xs:complexType>
+                                                      </xs:element>
+                                                   
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="FordringAfgørelseSamling" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="FordringAfgørelse" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+
+                                                            <xs:element ref="fase2.1:DMIFordringKlasse" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:EFILønVarselDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:EFILønIværksatDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:EFILønBeregnetDato" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:EFILønFordringPeriodeFra" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:EFILønFordringPeriodeTil" minOccurs="0"/>
+
+
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

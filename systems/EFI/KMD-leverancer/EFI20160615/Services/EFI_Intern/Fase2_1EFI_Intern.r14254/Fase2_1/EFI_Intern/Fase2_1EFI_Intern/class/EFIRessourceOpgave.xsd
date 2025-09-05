@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/AntalType.xsd"/>
+         <xs:include schemaLocation="../types/GennemfoertTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/EFIRessourceOpgavePrioritetDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/MedarbejderNummerType.xsd"/>
+         <xs:element name="EFIRessourceOpgaveUdførStraks" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om opgaven, der bliver ressourcebooket til telefonopkald på baggrund af meddelelsen, skal afvente booking af ressourcer i ressourcesystemet eller opgaven skal udføres straks.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveTypeKode" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>En kode, der identificerer opgavens opgavetype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveDomæneNøgle" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavens identifikation i kaldesystemet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveBeskrivelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at tilføje yderligere beskrivelse til opgaven.  Indholdet af dette felt appendes til opgavetypebeskrivelsen når sagsbehandler ser opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveVenteDage" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at overskrive antallet af ventedage som er defineret på opgavetypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveGennemførFri" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at overskrive gennemførselsfristen som er defineret på opgavetypen. Er defineret som antal dage fra dags dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveGennemførTid" type="fase2.1:GennemførtTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at overskrive gennemførselstiden som er defineret på opgavetypen. Gennemførselstiden defineres i antal minutter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveLinkParam" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Linkparametre der bliver sat i enden af linket der er angivet i opgavetypen, så det samlede link peger hen på det sted i portalen opgaven skal løses.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgavePrioritet"
+                     type="fase2.1:EFIRessourceOpgavePrioritetDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at overskrive prioriteten som er defineret på opgavetypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgavePoint" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at overskrive det antal point som er defineret på opgavetypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveRessourcTræk" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver de konkrete og ledige ressourcer som skal anvendes til at opfylde ressourcekravet på opgavetypen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveOverbookTil" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering på om overbooking er tilladt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIRessourceOpgaveOprettetAf" type="fase2.1:MedarbejderNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af den medarbejder der har oprettet opgaven. Medarbejderens W-nr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

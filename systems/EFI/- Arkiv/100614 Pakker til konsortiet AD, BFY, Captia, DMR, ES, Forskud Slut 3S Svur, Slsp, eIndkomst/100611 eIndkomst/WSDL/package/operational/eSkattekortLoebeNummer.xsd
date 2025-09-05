@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/LoebeNummer7Type.xsd"/>
+      
+   
+   
+   <xs:element name="eSkattekortLøbeNummer" type="fase2.1:LøbeNummer7Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Fortløbende nr. pr. dannet eSkattekort pr. Indkomstår pr CPR-nr. Hovedudskrivning fra Forskud, vil altid resultere i løbenr. ÅÅÅÅ001, hvor ÅÅÅÅ er indkomståret. Løbenummeret har til formål at lette eSkattekortbrugernes administration - valg af aktuel skattekort - samtidig med, at det vil være enklere at henvise til et løbenr. i vejledninger og beskrivelser, frem for en kørselsdato.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

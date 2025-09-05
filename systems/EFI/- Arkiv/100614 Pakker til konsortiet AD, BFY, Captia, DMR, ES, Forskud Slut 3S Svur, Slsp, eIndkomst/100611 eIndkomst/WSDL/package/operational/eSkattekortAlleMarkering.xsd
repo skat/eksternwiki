@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+      
+   
+   
+   <xs:element name="eSkattekortAlleMarkering" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Element der ikke tilhører nogen klasse og kun lever under servicens levetid. Angiver om bruger ønsker oplysninger om eSkattekort, som er gældende på den anførte dato samt eventuelle 'nyere' eSkattekort.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

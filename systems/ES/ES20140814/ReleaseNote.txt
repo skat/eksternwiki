@@ -1,0 +1,193 @@
+ReleaseNote 20140814:
+NB: Efter aftale med Charlotte: WS-beskrivelse til VirksomhedRegistreringOphørBevisPDFHent skal ikke ændres. Derfor er den ikke med.
+
+Berørte service i denne leverance:
+ES:
+- M1SSVirksomhedInformationHent
+- M1SSVirksomhedInformationHændelseOpdater
+- M1SSVirksomhedInformationHændelseSamlingHent
+- VirksomhedRegistreringOphørBevisHent
+- VirksomhedStamOplysningHistorikSamlingHent
+- VirksomhedSøg
+M1SS:
+- M1SSVirksomhedSamlingHent
+UVIR:
+- UViRVirksomhedSøg
+- UViRVirksomhedSamlingHent
+- UViRVirksomhedOpret
+- UViRVirksomhedOpdater
+- UViRVirksomhedHistoriskSamlingHent
+
+1) IkkeEtableretAfgiftspligtigAfmeldingÅrsagKode skal kunne modtage værdien 8. Men det er IKKE indført i XSD'en. Tværtimod er enums helt fjernet efter aftale med M1SS, Bjarne og Jørn.
+Påvirkede services:
+- M1SSVirksomhedInformationHændelseSamlingHent 
+- M1SSVirksomhedSamlingHent
+- M1SSVirksomhedInformationHen
+- M1SSVirksomhedInformationHændelseOpdater
+- VirksomhedRegistreringOphørBevisHent
+
+2) Datadomænet(typen) VATNummer ajourført, så den kan tage op til 12 alfanumeriske tegn.
+Påvirkede services:
+- M1SSVirksomhedInformationHændelseSamlingHent
+- UViRVirksomhedSøg
+- UViRVirksomhedSamlingHent
+- UViRVirksomhedOpret
+- UViRVirksomhedOpdater
+- UViRVirksomhedHistoriskSamlingHent
+- M1SSVirksomhedSamlingHent
+- M1SSVirksomhedInformationHent
+- M1SSVirksomhedInformationHændelseOpdater
+- VirksomhedRegistreringOphørBevisHent
+
+3) Ny WS beskrivelse til VirksomhedRegistreringOphørBevisHent (namespace = skat2012) baseret på den vedhæftede løsningsbeskrivelse i mail fra Susanne Lange 4. august 2014:
+
+Følgende grupper udgår:
+* VirksomhedStatus *
+* MyndighedTilhørForholdListe *                              
+
+Omdøbte dataelementer i namespace skat2012:
+- BrancheForholdBrancheKode => BrancheTypeKode
+- BrancheForholdBrancheNummer => BrancheNummer
+- HæftelseStartDato => DriftFormHæftelseForholdGyldigFra
+- HæftelseSlutDato => DriftFormHæftelseForholdGyldigTil
+
+Følgende er tilføjet (se nedenfor):
+
+Kommentarer: I skriver i løsningsforslag at Land både skal repræsenteres ved kode og tekst. M1SSVirksomhedSamlingHent returnerer kun LandKode. Lad mig vide, hvis LandNavn skal tilføjes (dvs. fra ES selv) 
+
+(
+	* M1SSVirksomhedInformationValg *
+	[
+		* RegistreringOplysninger *
+		[
+			IkkeEtableretAfgiftPligtigRegistreringAnmodetDato
+			IkkeEtableretAfgiftPligtigRegistreringGodkendtDato
+			IkkeEtableretAfgiftPligtigKontaktperson
+			(RegistreringForholdHenvisningKode)
+			(ForretningsStedUdenforEULand)
+			VoeSVirksomhedNationaltNummer
+			(
+				* VoeSHjemlandOplysninger *
+				[
+					VoeSVirksomhedNationaltNummer
+					LandKode
+				]
+			)
+			(
+				* WebSideURLListe *
+				1{
+					WebSideURL
+				}
+			)
+		]
+		(
+			* AfmeldingOplysninger *
+			[
+				IkkeEtableretAfgiftPligtigAfmeldingÅrsagKode
+				IkkeEtableretAfgiftPligtigAfmeldingAfgjortDato
+				(
+					* Flytning *
+					[
+						LandKode
+						* NytNummerValg *
+						[
+							UdenlandskEUVirksomhedIdentifikationMomsNummer
+							|
+							VoeSVirksomhedNummer
+						]
+					]
+				)
+			]
+		)
+		(
+			* TidligereRegistreringListe *
+			1{
+				* TidligereRegistrering *
+				[
+					* MomsVoeSValg *
+					[
+						IkkeEtableretAfgiftPligtigTidligereRegistreringMomsNummer
+						|
+						IkkeEtableretAfgiftPligtigTidligereRegistreringVoeSNummer
+					]
+					* UdstedtAf *
+					[
+						LandKode
+					]
+				]
+			}
+		)
+		(
+			* UViRInformation *
+			[
+				(LandKode)
+				(
+					* VirksomhedNavn *
+					[
+						VirksomhedNavnFirmaNavnKort
+						VirksomhedNavnFirmaNavn
+						* VirksomhedKaldeNavnListe *
+						0{
+							VirksomhedKaldeNavnNavn
+						}
+					]
+				)
+				(
+					* UdenlandskAdresse *
+					[
+						LandKode
+						UdenlandskAdresseStruktur
+					]
+				)
+				(
+					* FastEtableringListe *
+					1{
+						* FastEtablering *
+						[
+							UdenlandskVirksomhedIdentifikationType
+							UdenlandskVirksomhedIdentifikationNummer
+							VirksomhedNavnFirmaNavnKort
+							VirksomhedNavnFirmaNavn
+							LandKode
+							UdenlandskAdresseStruktur
+						]
+					}
+				)
+				(
+					* KontaktOplysninger *
+					[
+						KontaktOplysningKontaktPerson
+						(EmailAdresseEmail)
+						(TelefonLandeKode)
+						(TelefonNummer)
+						(TelefonUdenlandskNummer)
+					]
+				)
+				(BankKontoStruktur)
+				(
+					* MomsnummerAndenMedlemStatListe *
+					1{
+						* MomsnummerAndenMedlemStat *
+						[
+							UdenlandskVirksomhedIdentifikationMomsNummer
+							LandKode
+						]
+					}
+				)	
+			]
+		)
+	]
+)
+
+4) Følgende services har fået tilføjede beskrivelse potentielle fejl i henhold til fremsendte regneark af Inger Koreska 2. juli 2014:
+- M1SSVirksomhedInformationHent
+- M1SSVirksomhedInformationHændelseOpdater
+- M1SSVirksomhedInformationHændelseSamlingHent
+- VirksomhedStamOplysningHistorikSamlingHent
+- VirksomhedSøg
+
+
+
+
+
+

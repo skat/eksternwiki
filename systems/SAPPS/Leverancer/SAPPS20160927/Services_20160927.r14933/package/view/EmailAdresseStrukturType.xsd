@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14933</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:element name="EmailAdresseStruktur" type="fase2.1:EmailAdresseStrukturType"/>
+         <xs:complexType name="EmailAdresseStrukturType">
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="EmailAdresse">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="fase2.1:EmailAdresseEmail" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:EmailAdresseGyldigFra" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:EmailAdresseGyldigTil" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

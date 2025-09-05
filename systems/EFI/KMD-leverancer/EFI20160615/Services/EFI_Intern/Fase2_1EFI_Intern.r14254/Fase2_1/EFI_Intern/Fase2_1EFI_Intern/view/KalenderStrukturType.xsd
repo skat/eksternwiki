@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Kalender.xsd"/>
+         <xs:element name="KalenderStruktur" type="fase2.1:KalenderStrukturType"/>
+         <xs:complexType name="KalenderStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="KalenderStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:KalenderID"/>
+                  
+                        <xs:element ref="fase2.1:KalenderRessourceID"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDefaultMødetidStart"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDefaultMødetidSlut"/>
+                  
+                        <xs:element ref="fase2.1:KalenderOprettetAf"/>
+                  
+                        <xs:element ref="fase2.1:KalenderOprettetTid"/>
+
+                        <xs:element ref="fase2.1:KalenderÆndretAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KalenderÆndretTid" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KalenderSlettetAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KalenderSlettetTid" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:KalenderTimestampVersion"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

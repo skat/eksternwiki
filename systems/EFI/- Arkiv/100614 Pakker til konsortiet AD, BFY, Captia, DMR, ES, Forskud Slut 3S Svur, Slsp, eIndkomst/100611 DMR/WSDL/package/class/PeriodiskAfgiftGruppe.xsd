@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En periodisk afgiftsgruppe er en gruppering af forskellige satser's grupper. En gruppe definerer nogle overordnede betingelser, som skal være gældende for alle de køretøjer, som skal svare afgift inden for denne afgiftsgruppe. Eksempler på grupper kunne f.eks. være vægtafgift, vejbenyttelsesafgift, brændstofsforbrugsafgift for benzin drevne køretøjer, brændstofsforbrugsafgift for diesel drevne køretøjer m.v.  PeriodiskAfgitGrupper:  VægtAfgift UdligningsAfgift VejbenyttelsesAfgift GrønEjerAfgift GrønUdligningAfgift TillægsAfgift partikelUdledningsAfgift</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHelType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+      
+   
+   
+   <xs:element name="PeriodiskAfgiftGruppeNummer" type="fase2.1:TalHelType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Et nummer, som unikt beskrive den enkelte værdi for en given periode.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="PeriodiskAfgiftGruppeNavn" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

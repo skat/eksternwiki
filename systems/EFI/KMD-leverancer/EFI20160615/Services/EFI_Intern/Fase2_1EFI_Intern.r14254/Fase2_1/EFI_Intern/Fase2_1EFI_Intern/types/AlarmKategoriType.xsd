@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="AlarmKategoriType">
+               <xs:annotation>
+                  <xs:documentation>Alarmer er opdelt i fem kategorier:      1000 Organisatorisk enhed     1001 Opgavekø     1002 Opgave     1003 Ressource     1004 Administration  Hver kategori har tilhørende opgavetyper.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="1004"/>
+                  <xs:minInclusive value="1000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

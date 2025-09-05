@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/SamarbejdPart.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ErKontaktKunderepraesentant.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KFIPersonStamoplysningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIVirksomhedStamoplysningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAlternativKontaktStamoplysningStrukturType.xsd"/>
+				     
+         <xs:element name="KFISamarbejdPartList_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:KFISamarbejdPartList_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="KFISamarbejdPartList_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+                  
+
+                     <xs:element name="KFIKundeStamoplysningerSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <!--Sequence removed-->
+
+                                 <xs:element name="PersonSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="PersonSamarbejdPartStruktur" minOccurs="1" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="fase2.1:SamarbejdPartType" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:SamarbejdPartNavn" minOccurs="0"/>
+
+                                                   <xs:element ref="fase2.1:KFIPersonStamoplysningStruktur"/>
+                  
+                                                   <xs:element ref="fase2.1:ErKontaktKunderepræsentant"/>
+
+                                                   <xs:element ref="fase2.1:IndsatsID" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="VirksomhedSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="VirksomhedSamarbejdPartStruktur" minOccurs="1" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="fase2.1:SamarbejdPartType" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:SamarbejdPartNavn" minOccurs="0"/>
+
+                                                   <xs:element ref="fase2.1:KFIVirksomhedStamoplysningStruktur"/>
+                  
+                                                   <xs:element ref="fase2.1:ErKontaktKunderepræsentant"/>
+
+                                                   <xs:element ref="fase2.1:IndsatsID" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="AlternativKontaktSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="AKRSamarbejdPartStruktur" minOccurs="1" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="fase2.1:SamarbejdPartType" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:SamarbejdPartNavn" minOccurs="0"/>
+
+                                                   <xs:element ref="fase2.1:KFIAlternativKontaktStamoplysningStruktur"/>
+                  
+                                                   <xs:element ref="fase2.1:ErKontaktKunderepræsentant"/>
+
+                                                   <xs:element ref="fase2.1:IndsatsID" minOccurs="0"/>
+
+
+
+                                                   <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

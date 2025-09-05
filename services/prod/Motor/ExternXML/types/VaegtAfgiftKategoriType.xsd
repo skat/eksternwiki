@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="VaegtAfgiftKategoriType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+			<xs:enumeration value="Personbiler"/>
+			<xs:enumeration value="Motorcykler"/>
+			<xs:enumeration value="Busser"/>
+			<xs:enumeration value="HyrevogneOgSygetransportbiler"/>
+			<xs:enumeration value="MotorcykelMedVaresidevogn"/>
+			<xs:enumeration value="VarebilOgLastbil"/>
+			<xs:enumeration value="Traktorer"/>
+			<xs:enumeration value="Campingvogn"/>
+			<xs:enumeration value="VarebilLastvognPåhængsvogn"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

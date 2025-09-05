@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:element name="SLønIndeholdelseBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens beregnede S-lønindeholdelsesbeløb periodiseret</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SLønIndeholdelseBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens beregnede S-lønindeholdelsesbeløb periodiseret</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SLønIndeholdelseIkkeUdnyttetBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den del af S-lønindeholdelsesbeløbet, der ikke er reserveret af en indsats</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SLønIndeholdelseIkkeUdnyttetBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den del af S-lønindeholdelsesbeløbet, der ikke er reserveret af en indsats</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SLønIndeholdelseProcent" type="fase2.1:ProcentHeltTalPositivtType">
+               
+            </xs:element>
+      </xs:schema>

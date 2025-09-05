@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En medarbejder som er ansat ved SKAT og har fået tildelt medarbejdernummer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeToCifreStartNulType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TelefonNummerType.xsd"/>
+         <xs:element name="SkatMedarbejderStillingsbetegnelseForkortelse" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Stillingsbetegnelse forkortelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderStillingsbetegnelseTekst" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Stillingsbetegnelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderOrlovKode" type="fase2.1:KodeToCifreStartNulType">
+               
+               <xs:annotation>
+                  <xs:documentation>Orlovskode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderFotoSti" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Link til medarbejder (Hvis fravalgt link til ?Intet foto?)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderSekretærNummer" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sekretærnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderArbejdsopgaver" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejders arbejdsopgaver</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderAlternativTelefonNummer" type="fase2.1:TelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Evt indtastet alternativt nummer (erstatter telefonnummer)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderKontorPlacering" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kontor placering</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderKaldeNavn" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Evt indtastet kaldenavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderTidligereArbejdssted" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Evt tidligere arbejdssted</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderKmdSkatNummer" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Evt KMD-skat nummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

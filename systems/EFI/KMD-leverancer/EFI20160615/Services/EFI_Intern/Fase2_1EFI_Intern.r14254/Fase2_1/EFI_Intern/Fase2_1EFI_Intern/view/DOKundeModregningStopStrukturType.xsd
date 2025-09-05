@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/StopAEndrAktion.xsd"/>
+				     
+         <xs:include schemaLocation="../class/KundeModregningStop.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeModregningStopAArsagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MyndighedUdbetalingPeriodeStrukturType.xsd"/>
+				     
+         <xs:element name="DOKundeModregningStopStruktur"
+                     type="fase2.1:DOKundeModregningStopStrukturType"/>
+         <xs:complexType name="DOKundeModregningStopStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:StopÆndrAktion"/>
+                  
+                  <xs:element ref="fase2.1:KundeModregningStopType"/>
+                  
+                  <xs:element ref="fase2.1:KundeModregningStopStart"/>
+                  
+                  <xs:element ref="fase2.1:KundeModregningStopSlut"/>
+                  
+                  <xs:element ref="fase2.1:KundeModregningStopÅrsagStruktur"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="PlaceringValg" minOccurs="0">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+				
+				                       <xs:sequence>
+				
+                              <xs:element name="MyndighedUdbetaling">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:MyndighedUdbetalingPeriodeStruktur"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

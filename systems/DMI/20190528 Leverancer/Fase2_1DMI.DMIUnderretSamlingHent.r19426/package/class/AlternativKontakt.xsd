@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel9Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/AlternativKontaktTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst25Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="AlternativKontaktID" type="fase2.1:TalHel9Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en alternativ kontakt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktNavn" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på den alternativ kontakt, kan fx være et person-, organisations eller et virksomhedsnavn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktType" type="fase2.1:AlternativKontaktTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Type af alternativ kontakt. Kan enten være virksomhed, person, udenlandsk myndighed eller ukendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for, hvornår den alternative kontakt er gyldig fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for, hvornår den alternative kontakt er gyldig til.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktOprettetAfFagsystem" type="fase2.1:Tekst25Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af, hvilket fagsystem i SKAT, som har oprettet den alternativ kontakt. Fx DMR eller EFI eller på sigt et tredje system.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktOprettetDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for, hvornår den alternative kontakt er oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktÆndretDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for, hvornår den alternative kontakt er sidst er ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlternativKontaktBemærkning" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bemærkning som vedrører en alternativ kontakt, fx hvorfor den er blevet oprettet eller lign.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

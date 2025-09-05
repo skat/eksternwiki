@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:angivelsefelt="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/AngivelseFeltIndholdTekst.xsd"/><xs:include schemaLocation="BlanketFeltEnhedStruktur.xsd"/>
+	<xs:element name="AngivelseFeltIndholdStruktur" type="hsws:AngivelseFeltIndholdStrukturType"/>
+	<xs:complexType name="AngivelseFeltIndholdStrukturType">
+		<xs:sequence>
+			<xs:element ref="hsws:BlanketFeltEnhedStruktur"/>
+			<xs:element ref="angivelsefelt:AngivelseFeltIndholdTekst"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

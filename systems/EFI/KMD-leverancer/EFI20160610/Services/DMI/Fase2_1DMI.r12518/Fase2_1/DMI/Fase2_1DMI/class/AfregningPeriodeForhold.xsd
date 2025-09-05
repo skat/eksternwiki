@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder oplysning om de angivelser for konkrete afregningsperioder (angivelsesperioder) som SKAT forventer at modtage fra virksomhederne.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/UnderkontoArtKodeType.xsd"/>
+         <xs:include schemaLocation="../types/PeriodeAAbenKodeType.xsd"/>
+         <xs:element name="AfregningPeriodeForholdPeriodeStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdato for en periode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningPeriodeForholdPeriodeSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdato for en periode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningPeriodeForholdUnderkontoArtKode"
+                     type="fase2.1:UnderkontoArtKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af afregning, f.eks. månedlig, kvartal osv  Første ciffer angiver angivelsestypen, f.eks. er 9 = Moms, 7 = Lønsum og 2 = A-skat</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningPeriodeForholdBetalingFristDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kaldes også Sidste Rettidige Betalingsdato (SRB). Angiver den betalingsfrist som knytter sig til den enkelte periode og angivelsestype, f.eks. 10 dage efter periodens slutdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningPeriodeForholdAngivelseFristDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kaldes også Sidste Rettidige Angivelse (SRA). Angiver den angivelsesfrist som knytter sig til den enkelte periode og angivelsestype, f.eks. 10 dage efter periodens slutdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfregningPeriodeForholdPeriodeÅbenKode"
+                     type="fase2.1:PeriodeÅbenKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en periode er  - åben for angivelse og betaling, eller  - åben for betaling (angivelse er tidligere modtaget).  Anvendes i forbindelse med punktafgifter vedrørende cigarer og chokolade, hvor der kan betales på et senere tidspunkt end der angives.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

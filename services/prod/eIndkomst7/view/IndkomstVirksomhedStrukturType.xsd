@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/IndberetningForVirksomhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/LoenPeriodeOplysningStrukturType.xsd"/>
+	<xs:element name="IndkomstVirksomhedStruktur" type="fase2:IndkomstVirksomhedStrukturType"/>
+	<xs:complexType name="IndkomstVirksomhedStrukturType">
+		<xs:sequence>
+			<!--Sequence removed-->
+			<xs:element ref="fase2:IndberetningForVirksomhedStruktur"/>
+			<xs:element name="IndkomstLønPeriodeSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="fase2:LønPeriodeOplysningStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

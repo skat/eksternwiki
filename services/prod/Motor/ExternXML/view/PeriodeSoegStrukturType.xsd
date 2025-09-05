@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../operational/DatoTidSoegFra.xsd"/>
+	<xs:include schemaLocation="../operational/DatoTidSoegTil.xsd"/>
+	<xs:element name="PeriodeSoegStruktur" type="dmr:PeriodeSoegStrukturType"/>
+	<xs:complexType name="PeriodeSoegStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:DatoTidSoegFra"/>
+			<xs:element ref="dmr:DatoTidSoegTil"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

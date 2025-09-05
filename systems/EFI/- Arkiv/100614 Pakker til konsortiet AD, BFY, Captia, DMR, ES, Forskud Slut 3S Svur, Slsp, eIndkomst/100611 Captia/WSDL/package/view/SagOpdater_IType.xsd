@@ -1,0 +1,3405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Sag.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/ProcesKonto.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/OrganisatoriskEnhed.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SletSagTitelMarkering.xsd"/>
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SletSagPlanlagtAfslutningDatoMarkering.xsd"/>
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SletSagAfsluttetDatoMarkering.xsd"/>
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SletSagBemaerkningMarkering.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/PartRolle.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Part.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Ressource.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/SagErindring.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/SagFriDato.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/SagFriOplysning.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SletSagsbehandlerMarkering.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Indbetaling.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/BetalingType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/ValidBetaling.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SletSagBetalingMarkering.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Ejendom.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Matrikel.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Ejerlav.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/KoeretoejIdent.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/RegistreringNummerNummer.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/KoeretoejOplysningStelNummer.xsd"/>
+   
+   
+   
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/SagForhold.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Dokument.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/DokumentRolle.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/Aktering.xsd"/>
+   
+   
+   
+   <xs:element name="SagOpdater_I">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:SagOpdater_IType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2311"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="SagOpdater_IType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+									
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            
+            <!--Sequence removed-->
+
+         
+               
+               
+         <xs:element name="Sag">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+                  
+                        
+                        
+                  <xs:element name="SagIdentifikationValg">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:choice>
+                           
+                                 
+                                 
+                           <xs:sequence>
+
+                              
+                                    
+                                    
+                              <xs:element name="EnhedsagIdentifikation">
+                                 
+                                       
+                                       
+                                 <xs:complexType>
+                                    
+                                          
+                                          
+                                    <xs:sequence>
+                                       
+                                             
+                                             
+                                       <xs:element ref="fase2.1:SagNummer"/>
+
+                                    
+                                          
+                                          
+                                    </xs:sequence>
+                                 
+                                       
+                                       
+                                 </xs:complexType>
+                              
+                                    
+                                    
+                              </xs:element>
+				
+				
+                           
+                                 
+                                 
+                           </xs:sequence>
+                           
+                                 
+                                 
+                           <xs:sequence>
+				
+
+                              
+                                    
+                                    
+                              <xs:element name="DossiersagIdentifikationValg">
+                                 
+                                       
+                                       
+                                 <xs:complexType>
+                                    
+                                          
+                                          
+                                    <xs:choice>
+                                       
+                                             
+                                             
+                                       <xs:sequence>
+
+                                          
+                                                
+                                                
+                                          <xs:element name="Virksomhed">
+                                             
+                                                   
+                                                   
+                                             <xs:complexType>
+                                                
+                                                      
+                                                      
+                                                <xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                   <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+                                                
+                                                      
+                                                      
+                                                </xs:sequence>
+                                             
+                                                   
+                                                   
+                                             </xs:complexType>
+                                          
+                                                
+                                                
+                                          </xs:element>
+				
+				
+                                       
+                                             
+                                             
+                                       </xs:sequence>
+                                       
+                                             
+                                             
+                                       <xs:sequence>
+				
+
+                                          
+                                                
+                                                
+                                          <xs:element name="Person">
+                                             
+                                                   
+                                                   
+                                             <xs:complexType>
+                                                
+                                                      
+                                                      
+                                                <xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                   <xs:element ref="fase2.1:PersonCPRNummer"/>
+
+                                                
+                                                      
+                                                      
+                                                </xs:sequence>
+                                             
+                                                   
+                                                   
+                                             </xs:complexType>
+                                          
+                                                
+                                                
+                                          </xs:element>
+
+                                       
+                                             
+                                             
+                                       </xs:sequence>
+                                    
+                                          
+                                          
+                                    </xs:choice>
+                                 
+                                       
+                                       
+                                 </xs:complexType>
+                              
+                                    
+                                    
+                              </xs:element>
+
+                           
+                                 
+                                 
+                           </xs:sequence>
+                        
+                              
+                              
+                        </xs:choice>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+                  
+                        
+                        
+                  <xs:element name="SagOplysninger">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+
+                           
+                                 
+                                 <!--Sequence removed-->
+
+
+                              
+                                    
+                                    
+                           <xs:element name="SagProfilValg" minOccurs="0">
+                                 
+                                       
+                                       
+                              <xs:complexType>
+                                    
+                                          
+                                          
+                                 <xs:choice>
+                                       
+                                             
+                                             
+                                    <xs:element ref="fase2.1:SagProfilNavn"/>
+				
+				
+                                       
+                                             
+                                             
+                                    <xs:sequence>
+				
+
+                                          
+                                                
+                                                
+                                       <xs:element name="SagProfilOplysninger">
+                                             
+                                                   
+                                                   
+                                          <xs:complexType>
+                                                
+                                                      
+                                                      
+                                             <xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                <xs:element ref="fase2.1:SagMyndighed"/>
+                  
+                  
+                                                   
+                                                         
+                                                         
+                                                <xs:element ref="fase2.1:SagGruppe"/>
+
+
+                                                   
+                                                         
+                                                         
+                                                <xs:element ref="fase2.1:SagIndblik" minOccurs="0"/>
+
+
+                                                   
+                                                         
+                                                         
+                                                <xs:element ref="fase2.1:ProcesKontoKode"/>
+
+                                                   
+                                                         
+                                                         <!--Sequence removed-->
+
+
+                                                      
+                                                            
+                                                            
+                                                <xs:element name="OrganisatoriskEnhedNiveauEt" minOccurs="0">
+                                                         
+                                                               
+                                                               
+                                                   <xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:element ref="fase2.1:OrganisatoriskEnhedNummer"/>
+
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                   </xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                </xs:element>
+
+                                                   
+                                                         
+                                                         
+
+
+                                                   
+                                                         
+                                                         <!--Sequence removed-->
+
+
+                                                      
+                                                            
+                                                            
+                                                <xs:element name="OrganisatoriskEnhedNiveauTo" minOccurs="0">
+                                                         
+                                                               
+                                                               
+                                                   <xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:element ref="fase2.1:OrganisatoriskEnhedNummer"/>
+
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                   </xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                </xs:element>
+
+                                                   
+                                                         
+                                                         
+
+
+                                                   
+                                                         
+                                                         <!--Sequence removed-->
+
+
+                                                      
+                                                            
+                                                            
+                                                <xs:element name="OrganisatoriskEnhedNiveauTre" minOccurs="0">
+                                                         
+                                                               
+                                                               
+                                                   <xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:element ref="fase2.1:OrganisatoriskEnhedNummer"/>
+
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                   </xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                </xs:element>
+
+                                                   
+                                                         
+                                                         
+
+
+                                                
+                                                      
+                                                      
+                                             </xs:sequence>
+                                             
+                                                   
+                                                   
+                                          </xs:complexType>
+                                          
+                                                
+                                                
+                                       </xs:element>
+
+                                       
+                                             
+                                             
+                                    </xs:sequence>
+                                    
+                                          
+                                          
+                                 </xs:choice>
+                                 
+                                       
+                                       
+                              </xs:complexType>
+                              
+                                    
+                                    
+                           </xs:element>
+
+                           
+                                 
+                                 
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SagTitel">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Opdater" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:SagTitel"/>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SletSagTitelMarkering"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="SagPlanlagtAfslutningDato">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Opdater" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:SagPlanlagtAfslutningDato"/>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SletSagPlanlagtAfslutningDatoMarkering"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="SagAfsluttetDato">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Opdater" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:SagAfsluttetDato"/>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SletSagAfsluttetDatoMarkering"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="SagBemærkning">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Tilføj" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:SagBemærkning"/>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Erstat" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:SagBemærkning"/>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SletSagBemærkningMarkering"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="SagPartValgListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="SagPart" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:PartRolleBetegnelse"/>
+
+                                                         
+                                                               
+                                                               
+                                                      <xs:element name="SagPartIDValg">
+                                                            
+                                                                  
+                                                                  
+                                                         <xs:complexType>
+                                                               
+                                                                     
+                                                                     
+                                                            <xs:choice>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="CPRIdentifikation">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:PersonCPRNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="SEIdentifikation">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="CVRIdentifikation">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="PartAlternativID">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:PartAlternativID"/>
+                  
+                  
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:PartAlternativIDType"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                            </xs:choice>
+                                                            
+                                                                  
+                                                                  
+                                                         </xs:complexType>
+                                                         
+                                                               
+                                                               
+                                                      </xs:element>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:PartRolleBetegnelse"/>
+
+                                                         
+                                                               
+                                                               
+                                                      <xs:element name="SagPartIDValg">
+                                                            
+                                                                  
+                                                                  
+                                                         <xs:complexType>
+                                                               
+                                                                     
+                                                                     
+                                                            <xs:choice>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="CPRIdentifikation">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:PersonCPRNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="SEIdentifikation">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="CVRIdentifikation">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="PartAlternativID">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:PartAlternativID"/>
+                  
+                  
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:PartAlternativIDType"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                            </xs:choice>
+                                                            
+                                                                  
+                                                                  
+                                                         </xs:complexType>
+                                                         
+                                                               
+                                                               
+                                                      </xs:element>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SagEmneordListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="SagEmneord" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagEmneord"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagEmneord"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SagErindringListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="SagErindring" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+
+                                                         
+                                                               
+                                                               
+                                                      <xs:element name="IdentifikationValg">
+                                                            
+                                                                  
+                                                                  
+                                                         <xs:complexType>
+                                                               
+                                                                     
+                                                                     
+                                                            <xs:choice>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="Sagsbehandler">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:RessourceNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="OrganisatoriskEnhed">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:OrganisatoriskEnhedNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                            </xs:choice>
+                                                            
+                                                                  
+                                                                  
+                                                         </xs:complexType>
+                                                         
+                                                               
+                                                               
+                                                      </xs:element>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagErindringDato"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagErindringBeskrivelse"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+
+                                                         
+                                                               
+                                                               
+                                                      <xs:element name="IdentifikationValg">
+                                                            
+                                                                  
+                                                                  
+                                                         <xs:complexType>
+                                                               
+                                                                     
+                                                                     
+                                                            <xs:choice>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="Sagsbehandler">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:RessourceNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+				
+				
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                                  
+                                                                        
+                                                                        
+                                                               <xs:sequence>
+				
+
+                                                                     
+                                                                           
+                                                                           
+                                                                  <xs:element name="OrganisatoriskEnhed">
+                                                                        
+                                                                              
+                                                                              
+                                                                     <xs:complexType>
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        <xs:sequence>
+                                                                              
+                                                                                    
+                                                                                    
+                                                                           <xs:element ref="fase2.1:OrganisatoriskEnhedNummer"/>
+
+                                                                           
+                                                                                 
+                                                                                 
+                                                                        </xs:sequence>
+                                                                        
+                                                                              
+                                                                              
+                                                                     </xs:complexType>
+                                                                     
+                                                                           
+                                                                           
+                                                                  </xs:element>
+
+                                                                  
+                                                                        
+                                                                        
+                                                               </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                            </xs:choice>
+                                                            
+                                                                  
+                                                                  
+                                                         </xs:complexType>
+                                                         
+                                                               
+                                                               
+                                                      </xs:element>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagErindringDato"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagErindringBeskrivelse"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SagFriDatoListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="SagFriDato" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriDatoLedetekst"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriDatoDato"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriDatoLedetekst"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriDatoDato"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SagFriOplysningListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="SagFriOplysning" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriOplysningLedetekst"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriOplysningIndhold"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriOplysningLedetekst"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagFriOplysningIndhold"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="Sagsbehandler">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Opdater" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:RessourceNummer"/>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SletSagsbehandlerMarkering"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="SagBetaling">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+                                    
+                                          
+                                          <!--Sequence removed-->
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="Opdater" minOccurs="0">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:IndbetalingID" minOccurs="0"/>
+
+
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:IndbetalingBeløb" minOccurs="0"/>
+
+
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:BetalingType" minOccurs="0"/>
+
+
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element ref="fase2.1:ValidBetaling" minOccurs="0"/>
+
+
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+                                    
+                                          
+                                          
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SletSagBetalingMarkering"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 <!--Sequence removed-->
+
+
+                              
+                                    
+                                    
+                           <xs:element name="SagGenstand" minOccurs="0">
+                                 
+                                       
+                                       
+                              <xs:complexType>
+                                    
+                                          
+                                          
+                                 <xs:sequence>
+
+                                       
+                                             
+                                             
+                                    <xs:element name="EjendomListe">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Ejendom" minOccurs="0" maxOccurs="unbounded">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+
+                                                         
+                                                               
+                                                               <!--Sequence removed-->
+
+
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:element name="Slet" minOccurs="0">
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:complexType>
+                                                                  
+                                                                        
+                                                                        
+                                                            <xs:sequence>
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:EjendomNummer"/>
+                  
+                  
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:MatrikelNummer"/>
+                  
+                  
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:EjerlavNavn"/>
+
+                                                                  
+                                                                        
+                                                                        
+                                                            </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         </xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:element>
+
+                                                         
+                                                               
+                                                               
+
+
+                                                         
+                                                               
+                                                               <!--Sequence removed-->
+
+
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:element name="Opret" minOccurs="0">
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:complexType>
+                                                                  
+                                                                        
+                                                                        
+                                                            <xs:sequence>
+
+
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:EjendomNummer" minOccurs="0"/>
+
+
+
+
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:MatrikelNummer" minOccurs="0"/>
+
+
+
+
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:EjerlavNavn" minOccurs="0"/>
+
+
+
+                                                                  
+                                                                        
+                                                                        
+                                                            </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         </xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:element>
+
+                                                         
+                                                               
+                                                               
+
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+
+                                       
+                                             
+                                             
+                                    <xs:element name="KøretøjListe">
+                                          
+                                                
+                                                
+                                       <xs:complexType>
+                                             
+                                                   
+                                                   
+                                          <xs:sequence>
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Køretøj" minOccurs="0" maxOccurs="unbounded">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+
+                                                         
+                                                               
+                                                               <!--Sequence removed-->
+
+
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:element name="Slet" minOccurs="0">
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:complexType>
+                                                                  
+                                                                        
+                                                                        
+                                                            <xs:sequence>
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:KøretøjIdent"/>
+                  
+                  
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:RegistreringNummerNummer"/>
+                  
+                  
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:KøretøjOplysningStelNummer"/>
+
+                                                                  
+                                                                        
+                                                                        
+                                                            </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         </xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:element>
+
+                                                         
+                                                               
+                                                               
+
+
+                                                         
+                                                               
+                                                               <!--Sequence removed-->
+
+
+                                                            
+                                                                  
+                                                                  
+                                                      <xs:element name="Opret" minOccurs="0">
+                                                               
+                                                                     
+                                                                     
+                                                         <xs:complexType>
+                                                                  
+                                                                        
+                                                                        
+                                                            <xs:sequence>
+
+
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:KøretøjIdent" minOccurs="0"/>
+
+
+
+
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:RegistreringNummerNummer" minOccurs="0"/>
+
+
+
+
+                                                                     
+                                                                           
+                                                                           
+                                                               <xs:element ref="fase2.1:KøretøjOplysningStelNummer" minOccurs="0"/>
+
+
+
+                                                                  
+                                                                        
+                                                                        
+                                                            </xs:sequence>
+                                                               
+                                                                     
+                                                                     
+                                                         </xs:complexType>
+                                                            
+                                                                  
+                                                                  
+                                                      </xs:element>
+
+                                                         
+                                                               
+                                                               
+
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+                                          </xs:sequence>
+                                          
+                                                
+                                                
+                                       </xs:complexType>
+                                       
+                                             
+                                             
+                                    </xs:element>
+
+
+                                    
+                                          
+                                          
+                                 </xs:sequence>
+                                 
+                                       
+                                       
+                              </xs:complexType>
+                              
+                                    
+                                    
+                           </xs:element>
+
+                           
+                                 
+                                 
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SagRelationListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="SagRelation" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagNummer"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagForholdBeskrivelse"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagNummer"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:SagForholdBeskrivelse"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="DokumentTilknytningListe">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="DokumentTilknytning" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Slet" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:DokumentNummer"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                             
+                                                   
+                                                   <!--Sequence removed-->
+
+
+                                                
+                                                      
+                                                      
+                                             <xs:element name="Opret" minOccurs="0">
+                                                   
+                                                         
+                                                         
+                                                <xs:complexType>
+                                                      
+                                                            
+                                                            
+                                                   <xs:sequence>
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:DokumentNummer"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:DokumentRolleBetegnelse"/>
+                  
+                  
+                                                         
+                                                               
+                                                               
+                                                      <xs:element ref="fase2.1:Aktering"/>
+
+                                                      
+                                                            
+                                                            
+                                                   </xs:sequence>
+                                                   
+                                                         
+                                                         
+                                                </xs:complexType>
+                                                
+                                                      
+                                                      
+                                             </xs:element>
+
+                                             
+                                                   
+                                                   
+
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+      
+            
+            
+            
+         
+         
+         
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

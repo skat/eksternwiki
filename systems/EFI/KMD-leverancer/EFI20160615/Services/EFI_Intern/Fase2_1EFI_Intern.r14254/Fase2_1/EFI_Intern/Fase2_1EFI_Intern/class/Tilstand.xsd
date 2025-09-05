@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/TilstandTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:element name="TilstandID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en tilstand.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TilstandType" type="fase2.1:TilstandTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af den pågældende indsatstilstand.  Enumeration omfatter:  START ALMINDELIG STOP UDGANG</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TilstandNavn" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på den pågældende indsatstilstand</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TilstandBeskrivelse" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af den pågældende indsatstilstand</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

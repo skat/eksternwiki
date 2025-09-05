@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KalenderDag.xsd"/>
+         <xs:element name="KalenderDagStruktur" type="fase2.1:KalenderDagStrukturType"/>
+         <xs:complexType name="KalenderDagStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="KalenderDagStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:KalenderDagID"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDagDato"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDagType"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDagNavn"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDagOprettetAf"/>
+                  
+                        <xs:element ref="fase2.1:KalenderDagOprettetTid"/>
+
+                        <xs:element ref="fase2.1:KalenderDagÆndretAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KalenderDagÆndretTid" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KalenderDagSlettetAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KalenderDagSlettetTid" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:KalenderDagTimestampVersion"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

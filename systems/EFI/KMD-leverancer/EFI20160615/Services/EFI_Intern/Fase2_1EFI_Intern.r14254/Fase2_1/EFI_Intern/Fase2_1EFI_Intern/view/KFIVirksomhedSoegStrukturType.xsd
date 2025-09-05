@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../operational/KFIDelAfVirksomhedCVRNummer.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KFIDelAfVirksomhedSENummer.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:element name="KFIVirksomhedSøgStruktur" type="fase2.1:KFIVirksomhedSøgStrukturType"/>
+         <xs:complexType name="KFIVirksomhedSøgStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            <xs:sequence>
+
+               <xs:element name="Søgekriterier" minOccurs="0">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+				
+				                    <xs:sequence>
+				
+                           <xs:element name="VirksomhedOplysninger">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="fase2.1:KFIDelAfVirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:KFIDelAfVirksomhedSENummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:VirksomhedNavnFirmaNavnKort" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:AdresseVejNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:AdressePostNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:AdressePostDistrikt" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:TelefonNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:EmailAdresseEmail" minOccurs="0"/>
+
+
+                                    <!--Sequence removed-->
+
+                                       <xs:element name="Ejer" minOccurs="0">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:PersonCPRNummer"/>
+				
+				
+				                                            <xs:element ref="fase2.1:VirksomhedSENummer"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    
+
+
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

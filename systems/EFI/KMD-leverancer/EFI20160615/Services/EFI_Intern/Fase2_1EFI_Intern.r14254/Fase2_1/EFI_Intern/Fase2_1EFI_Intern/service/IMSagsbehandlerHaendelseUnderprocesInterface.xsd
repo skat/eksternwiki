@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Hvis servicen kaldes med  en tom kundeliste,.hentes alle hændelser der er i kø til at blive processeret som er initieret af en sagsbehandler. Hvis servicen kaldes med en KundeListe hentes kun hændelser for de angivne kunder.</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/IMSagsbehandlerHaendelseUnderproces_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/IMSagsbehandlerHaendelseUnderproces_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="IMSagsbehandlerHændelseUnderprocesInterface"
+                     type="fase2.1:IMSagsbehandlerHændelseUnderprocesInterfaceType"/>
+         <xs:complexType name="IMSagsbehandlerHændelseUnderprocesInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:IMSagsbehandlerHændelseUnderproces_I"/>
+               <xs:element ref="fase2.1:IMSagsbehandlerHændelseUnderproces_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

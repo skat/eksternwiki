@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Servicen skal ud fra registreringsnummeret og et eventuelt angivet tidspunkt finde CO2emissionsioninformationerne på det angivne køretøj. Hvis et tidspunkt angives, så hentes CO2emissionsinformationerne, som de så ud på det tidspunkt, på det køretøj som havde registreringsnummeret på dette tidspunkt. Hvis ikke et tidspunkt angives så hentes det aktuelle information. At give Sund &amp; Bælt mulighed for at hente CO2-emissionsinformation vedrørende lastbiler og påhængsvogne. Dette bruges til at beregne km-baseret vejafgifter.</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/USCO2EmissionKlasseOplysningHent_IType.xsd"/>
+	<xs:include schemaLocation="../view/USCO2EmissionKlasseOplysningHent_OType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+	<xs:element name="USCO2EmissionKlasseOplysningHentInterface" type="dmr:USCO2EmissionKlasseOplysningHentInterfaceType"/>
+	<xs:complexType name="USCO2EmissionKlasseOplysningHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmr:USCO2EmissionKlasseOplysningHent_I"/>
+			<xs:element ref="dmr:USCO2EmissionKlasseOplysningHent_O"/>
+			<xs:element ref="dmr:KompenserTrans"/>
+			<xs:element ref="dmr:KompenserTransSvar"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="AcontoskatRateOrdinærRate1Beløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets ordinær rate 1.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateOrdinærRate1DelTotalBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af alle selskabets ordinær rate 1.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateFrivilligIndbetalingRate1Beløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets frivillig indbetaling for rate 1.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateFrivilligIndbetalingRate1DelTotalBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af alle selskabets frivillig indbetaling for rate 1.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateTillægFraStatenBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets tillæg fra staten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateTillægFraStatenDelTotalBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af selskabets tillæg fra staten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateOrdinærRate2Beløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets ordinær rate 2.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateOrdinærRate2DelTotalBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af alle selskabets ordinær rate 2.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateFrivilligIndbetalingRate2Beløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets frivillig indbetaling for rate 2.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateFrivilligIndbetalingRate2DelTotalBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af alle selskabets frivillig indbetaling for rate 2.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateTillægTilStatenBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets tillæg til staten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateTillægTilStatenDelTotalBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af selskabets tillæg til staten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateFrivilligIndbetalingVedAfslagAnsættelseBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Frivillig indbetaling ved afslutning ansættelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateFrivilligIndbetalingVedAfslagAnsættelseDelTotalBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af frivillig indbetaling ved afslutning ansættelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoskatRateIAltBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af selskabernes acontoskat rate 1 og rate 2.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

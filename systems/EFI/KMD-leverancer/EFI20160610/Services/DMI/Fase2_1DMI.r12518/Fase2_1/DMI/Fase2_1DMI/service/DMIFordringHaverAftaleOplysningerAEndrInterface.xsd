@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen DMIFordringshaverAftaleOplysningÆndr kaldes fra Modtag Fordring når der oprettes en ny fordringshaver eller en ny rettighedshaver. Endvidere når der rettes en eksisterende. Servicen skal oprette en konto til en fordringshaver eller rettighedshaver hos DMI og gemme relevante fordringshaver eller rettighedshaver oplysninger. </xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DMIFordringHaverAftaleOplysningerAEndr_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DMIFordringHaverAftaleOplysningerAEndr_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DMIFordringHaverAftaleOplysningerÆndrInterface"
+                     type="fase2.1:DMIFordringHaverAftaleOplysningerÆndrInterfaceType"/>
+         <xs:complexType name="DMIFordringHaverAftaleOplysningerÆndrInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DMIFordringHaverAftaleOplysningerÆndr_I"/>
+               <xs:element ref="fase2.1:DMIFordringHaverAftaleOplysningerÆndr_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

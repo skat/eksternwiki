@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/AlternativKontakt.xsd"/>
+         <xs:include schemaLocation="../class/AlternativKontaktPerson.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/PersonAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedNavnStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/VirksomhedAdresseStrukturType.xsd"/>
+				     
+				     
+				     
+         <xs:element name="JuridiskEnhedStruktur" type="fase2.1:JuridiskEnhedStrukturType"/>
+         <xs:complexType name="JuridiskEnhedStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="JuridiskEnhedValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="Person">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="fase2.1:PersonNavnAdresseBeskyttelseMarkering" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:PersonCPRNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:PersonFødselDato" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:PersonKøn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:PersonNavnNavn" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:PersonAdresseStruktur" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="Virksomhed">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:ProduktionEnhedNummer" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:VirksomhedNavnStruktur"/>
+                  
+                                    <xs:element ref="fase2.1:VirksomhedAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="UdenlandskPerson">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="fase2.1:AlternativKontaktID" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:AlternativKontaktPersonFødselDato" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:AlternativKontaktPersonKøn" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:AlternativKontaktNavn"/>
+
+                                    <xs:element ref="fase2.1:AlternativKontaktPersonNavnAdresseBeskyttelseMarkering"
+                                                minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:PersonAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="UdenlandskVirksomhed">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="fase2.1:AlternativKontaktID" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:AlternativKontaktNavn"/>
+                  
+                                    <xs:element ref="fase2.1:VirksomhedAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

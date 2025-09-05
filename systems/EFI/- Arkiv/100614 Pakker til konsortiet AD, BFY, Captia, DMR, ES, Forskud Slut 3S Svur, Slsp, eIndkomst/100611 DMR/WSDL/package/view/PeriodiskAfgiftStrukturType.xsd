@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/OpgjortAfgift.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/PeriodiskAfgift.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KoeretoejRegistrering.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/PeriodiskAfgiftOpkraev.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="PeriodiskAfgiftStruktur" type="fase2.1:PeriodiskAfgiftStrukturType"/>
+   
+   
+   
+   <xs:complexType name="PeriodiskAfgiftStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:OpgjortAfgiftDatoTid"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:OpgjortAfgiftBeløb"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:PeriodiskAfgiftDækkerFraDato"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:PeriodiskAfgiftDækkerTilDato"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:OpgjortAfgiftSidsteBetalingDato"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RegistreringNummerNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:KøretøjRegistreringNummer" minOccurs="0"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:JuridiskEnhedIdentifikatorStruktur"/>
+
+         
+         
+         
+         <xs:element name="PeriodiskAfgiftOpkrævListe">
+            
+            
+            
+            <xs:complexType>
+               
+               
+               
+               <xs:sequence>
+
+
+                  
+                  
+                  
+                  <xs:element name="PeriodiskAfgiftOpkræv" minOccurs="0" maxOccurs="unbounded">
+                     
+                     
+                     
+                     <xs:complexType>
+                        
+                        
+                        
+                        <xs:sequence>
+                           
+                           
+                           
+                           <xs:element ref="fase2.1:PeriodiskAfgiftOpkrævBeløb"/>
+                  
+                  
+                           
+                           
+                           
+                           <xs:element ref="fase2.1:PeriodiskAfgiftOpkrævGruppeNavn"/>
+                  
+                  
+                           
+                           
+                           
+                           <xs:element ref="fase2.1:PeriodiskAfgiftOpkrævPeriodeHyppighed"/>
+
+                        
+                        
+                        
+                        </xs:sequence>
+                     
+                     
+                     
+                     </xs:complexType>
+                  
+                  
+                  
+                  </xs:element>
+
+               
+               
+               
+               </xs:sequence>
+            
+            
+            
+            </xs:complexType>
+         
+         
+         
+         </xs:element>
+
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

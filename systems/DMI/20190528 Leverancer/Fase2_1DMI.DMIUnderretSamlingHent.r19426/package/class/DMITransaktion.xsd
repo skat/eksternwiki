@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>DMITransaktion er et overordnet begreb der benyttes oven på de tre hovedtyper af transaktioner i systemet: Fordring, Indbetaling og Udbetaling  Alle disse transaktioner har nogle fælles karakteristika som samles under begrebet DMITransaktion.  Det primære formål er, at kunne producere et transaktionsbaseret kontoudtog hvor de tre hovedtyper af transaktioner kan blandes (i stedet for som det er tilfældet i alle andre services at tilhøre forskellige lister). </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DMITransaktionTypeType.xsd"/>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DMITransaktionAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TesktKortType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel10Type.xsd"/>
+         <xs:element name="DMITransaktionType" type="fase2.1:DMITransaktionTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver transaktionstype  DMITransaktionType  DMITransaktionIDType ------------------------------------------------------------------- DÆKNAFG   OP DÆKNMOD   IP FORDRING   RE FORDRINGAF  RE FORDRINGKO  RE FORDRINGNE  RE FORDRINGOP  RE FORDRINGRE  RE FORDRINGSK  RE FORDRINGTI   RE INDBETAL   IP INDBETALDK   IP RENTE    RE RENTEGODTG  IP TRANSPAFG   OP TRANSPMOD   IP UDBETAL    OP</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver ID for de forskellige transaktiontyper. DMIFordringID DMIIndbetalingID DMIUdbetalingID </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Transaktionsbeløb i den angivne valuta.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Transaktionsbeløb i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionÅrsagKode" type="fase2.1:DMITransaktionÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver transktion årsagkode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for valg af årsagskode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for valg af årsagskode anden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionVirkningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Virkningdatoen kan fortolkes forskelligt afhængig af TransaktionTypen:  Transaktiontype: DMITransaktionVirkningDato ------------------------------------------------------------------------- DÆKNAFG: Tages som hovedregel fra betalingsdato på den bagvedliggende indbetaling. DÆKNMOD: EffektFra/virkningsdato  (Dato hvorefter indbetalingen har en rentemæssig (dækning) effekt) Tages som hovedregel fra betalingsdato på den bagvedliggende indbetaling. FORDRING + FORDRINGAF + FORDRINGKO + FORDRINGNE + FORDRINGOP + FORDRINGRE + FORDRINGSK + FORDRINGTI: Dato for påvirkning af saldo, og dermed hvornår transaktionen har rentemæssig effekt. INDBETAL: EffektFra/virkningsdato (dato hvorefter indbetalingen har en rentemæssig (dækning) effekt). Tages som hovedregel fra betalingsdato. INDBETALDK: EffektFra/virkningsdato (dato hvorefter indbetalingen har en rentemæssig (korrigeret dækning) effekt). Tages som hovedregel fra betalingsdato. RENTE: Registreringsdato. RENTEGODTG: EffektFra/virkningsdato (dato hvorefter 'indbetalingen' har en rentemæssig (dækning) effekt). TRANSPAFG: Registreringsdato TRANSPMOD: EffektFra/virkningsdato (dato hvorefter 'indbetalingen' har en rentemæssig (dækning) effekt). UDBETAL: Registreringsdato </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bogføringsdato.  For alle transaktionstyper (se DMITransaktionType) bruges DMIIndberetterDatoTid, altså Dags dato for bogføringen i DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Transaktionsdato.Hvilken dato der indsættes afhænger af transaktionstypen:  Transaktiontype: DMITransaktionDato ------------------------------------ DÆKNAFG: DMIIndbetalingDato  DÆKNMOD: DMIIndbetalingDato  FORDRING: DMIFordringModtagelseDato FORDRINGAF: FordringAfskrivningDato FORDRINGKO: Sættes lig virkningsdato FORDRINGNE: FordringNedskrivningDato FORDRINGOP: FordringOpskrivningDato FORDRINGRE: HovedFordringReturDato FORDRINGSK: Registreringsdato i DMI FORDRINGTI: HovedFordringTilbageDato INDBETAL: DMIIndbetalingDato INDBETALDK: Registreringsdato RENTE: RENTE Tilskrivningsdato i DMI RENTEGODTG: Registreringsdato i DMI  TRANSPAFG: DMIIndbetalingDato TRANSPMOD: DMIIndbetalingDato UDBETAL: DMIUdbetalingDato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionLøbenummer" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer som identificerer en specifik transaktion i et kald af en service. Det enkelte servicekald kan indeholde flere transaktioner i samme kald, men samme TransaktionLøbenummer må ikke angives mere end en gang i hvert kald, og må heller ikke angives mere end en gang på tværs af kald.  Generelt medfører fremsendelse af samme TransaktionLøbenummer, at den pågældende transaktion afvises som dublet. I enkelte services, f.eks. DMIFordringTilbagekald, er der implementeret teknisk idempotens, ved altid at returnere samme svar, når der kaldes med samme TransaktionLøbenummer.  For eksempel genererer EFI / ModtagFordring et løbenummer pr fordringstransaktion, som sendes sammen med servicen.  Anvendes for at kunne logge historikken, og sikre mod fremsendelse af dubletter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionSpecifikationType" type="fase2.1:TesktKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Definerer baggrunden for en transaktion.  Som eksempler kan nævnes, at oprettelse af en fordring får værdien RECECREA, og en hæftelses specifik korrektion vil få værdien CLIACORR   Værdisæt: CLIACORR Hæftelses specific korrektion CLIALIMI Begrænset hæftelse ved oprettelse COVEGIVE Dækning afgivet til fordringer indbetalende kunde ikke hæfter for COVEPAY Dækning på betalende kunde COVERECI Dækning modtaget fra anden kunde INTECLIA Postering af rente på hæftelse INTECORR Korrektion af rente på fordring INTECOVE Dækning af rente INTEPOST Postering af rente på fordring INTEREVE Tilbageførsel af rente på fordring INTEWROF Afskrivning af rente RECECATCH Fordringart skifte RECECLCH Fordringhaver skifte RECECORR Korrektion på fordring RECECOVE Dækning på fordring RECECREA Oprettelse af fordring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMITransaktionLinjenummer" type="fase2.1:TalHel10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis en transaktion opdeles i DMI tildeles transaktionerne forskellige linjenumre, der sikrer unik  identifikation af hver enkelt linje.  DMITransaktionLøbenummer identificerer transaktionen der eventuelt er opdelt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

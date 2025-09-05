@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indholder rentesatser</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Rentesats85Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:element name="RenteSats" type="fase2.1:Rentesats85Type">
+               
+               <xs:annotation>
+                  <xs:documentation>RenteSats angiver hvilken MerRentesats, som Fordringshaver kan angive v/ oversendelsen af en fordring. RenteSatsen er en yderligere Renteprocent, som skal anvendes ved beregningen af renten på fordringen. MerRenteSatsen skal fortolkes i sammenhæng med RenteSatsKoden jf nedenfor.  Er RenteSatsKoden ikke 02 eller 03 vil den resulterende renteberegning være summen af rentesatskoden(som vedligeholdes i DMI) og den angivne RenteSats  RenteSats = 00 eller blank mindre end=stoerre end ingen MerRentesats</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato rentesatsen gælder fra. Datoen er en incl dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato rentesatsen ophører. Datoen er en incl dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteSatsKode" type="fase2.1:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der anvendes til at fortolke rentesatsen og den bagvedliggende beregningsalgoritme.  X procent = (MerRenteSats), jf ovenfor   Værdisæt 01 Inddrivelsesrenten (= Nationalbankens officielle udlånsrente plus et tillæg) + x procent (MerRenteSats) 02 Ren rentesats per mdr. (MerRenteSats) 03 Ren rentesats p.a. (MerRenteSats) 04 Diskonto + x procent (MerRenteSats) 05 DMO rentesats + x procent (MerRenteSats) 06 KOBRA rentesats + x procent (MerRenteSats) 07 Nationalbankens officielle udlånsrente + x procent (MerRenteSats) 08 Misligholdte studielån, slutlån og statslån (= Diskonto plus et tillæg 2 %)  09 Misligholdte statsgaranterede studielån( = Variabel rente fastsat i bekendtgørelse) 10 Morarente før 1.8.2002 (= Diskonto plus tillæg 5 %) + x procent p.a. (MerRenteSats) 11 Pantebreve på fiskerilån (= Diskonto plus et tillæg 5 %) - dog mindst x procent p.a. (MerRenteSats) 12 Pantebreve på fiskerilån (= Nationalbankens officielle udlånsrente plus et tillæg p.t. 7 %) - dog mindst x procent p.a. (MerRenteSats)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

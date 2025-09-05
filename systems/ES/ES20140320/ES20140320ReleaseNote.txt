@@ -1,0 +1,47 @@
+1) UdenlandskPersonOpret
+- er udvidet med et optionelt felt PersonFødselDato
+
+2) UdenlandskPersonHent
+- er udvidet med et optionelt felt PersonFødselDato
+
+3) UdenlandskPersonOpdater
+- er udvidet med en ny optionel gruppe, som indeholder UdenlandskPersonOplysningBehandlingKode og PersonFødselDato
+
+4) M1SSVirksomhedInformationHændelseSamlingHent (anvendelse: M1SS => ES )
+- WebSideURLListe er gjort optionel.
+- Der er tilføjet en optionel * VoeSHjemlandOplysninger * blok med oplysninger om en VoeS virksomheds skattenummer i deres hjemland, blokken er tilføjet til tre hændelser.
+- Der er tilføjet M1SSVirksomhedInformationHændelseRealTidspunkt
+
+5) M1SSVirksomhedSamlingHent (anvendelse: ES => M1SS)
+- WebSideURLListe er gjort optionel
+- Der er tilføjet en optionel * VoeSHjemlandOplysninger * blok med oplysninger om en VoeS virksomheds skattenummer i deres hjemland.
+- Der er tilføjet afmeldingsoplysninger
+
+6) M1SSVirksomhedInformationHændelseOpdater (anvendelse: ERST => ES)
+- WebSideURLListe er gjort optionel
+
+7) M1SSVirksomhedInformationHent (anvendelse: ERST => ES)
+- WebSideURLListe er gjort optionel
+- Der er tilføjet en optionel * VoeSHjemlandOplysninger * blok med oplysninger om en VoeS virksomheds skattenummer i deres hjemland.
+- Der er tilføjet afmeldingsoplysninger
+
+8) VirksomhedOpdater
+- DriftFormHæftelseForholdGyldigTil er gjort valgfrit
+- DriftFormHæftelseForholdGyldigFra er gjort krævet
+
+9) VirksomhedHændelseSamlingHent
+Input
+	- * HændelseValg * er gjort obligatorisk
+	- InkluderProduktionEnhedMarkering er flyttet under * HændelseValg * 
+Output
+VirksomhedRegnskabsperiodeHændelseStruktur:
+	- Der er indsat VirksomhedRegnskabPeriodeKode i FørVærdi og EfterVærdi
+VirksomhedBeskatningParagrafHændelseStruktur:
+	- Der er indsat PligtKode i FørVærdi og EfterVærdi
+	- BeskatningParagrafForholdStartDato er gjort obligatorisk
+	- BeskatningParagrafForholdSlutDato ændret misvisende beskrivelse
+VirksomhedBevillingForholdHændelseStruktur:
+	- Der er indsat PligtKode, ForretningOmrådeKode, OplysningKode og OplysningVirksomhedTypeKode i FørVærdi og EfterVærdi
+	- BevillingForholdGyldigFra er gjort obligatorisk
+VirksomhedDriftFormHændelseStruktur:
+	- DriftFormForholdStartDato er gjort obligatorisk

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En fordring i relation til Opkrævningsloven (her kaldet opkrævningsfordring) er et krav på betaling af en pengeydelse - beløbet kan være positivt og nega-tivt, ligesom en fordring kan være på 0 kr. Kravet bliver til på baggrund af en angivelse fx en momsangivelse eller en månedsangivelse for motor.   Derudover kan en opkrævningsfordring være et rentekrav eller et rykkergebyr mv.  - En opkrævningsfordring gælder specifikt for en given periode - En opkrævningsfordring ophører, når beløbet betales - En opkrævningsfordring kan almindeligvis betales med frigørende virkning både af kunden og af tredjemand som fx en fordringsde-bitor i en transportsituation. - En opkrævningsfordring kan ophøre i kraft af en modregning, afskrivning og forældelse. Herefter arkiveres opkrævningsfordringen og arkive-ringsdato udfyldes automatisk.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst32Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/FordringArtType.xsd"/>
+         <xs:element name="OpkrævningFordringID" type="skat2016:Tekst32Type">
+               
+               <xs:annotation>
+                  <xs:documentation>ID er den unikke identifikation på den enkelte opkrævningsfordring i DMO.  Identifikationen (ID) skal bl.a. anvendes i tilfælde af tilbagekaldelse, korrektion eller bortfald fra fordringshavers side.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringBeløb"
+                     type="skat2016:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb er det beløb, der skal opkræves for en fordring - beløbet kan være positivt eller negativt, ligesom beløbet kan være på 0 kr. Påløbne renter og påhæftede gebyrer bliver oprettet som deres egne fordringer med reference til den oprindelige fordring. Når fordringen er fuldt betalt, vil beløbet være 0,00 kr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringOprindeligtBeløb"
+                     type="skat2016:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>OprindeligBeløb angiver en fordrings oprindelige beløb, dvs. det beløb, som fordringen er oprettet med</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringPeriodeFraDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeFra er startdatoen for perioden, som en fordring vedrører. (Periode vil typisk være en angivelsesperiode) For fordringer vedr. motor (DMR) vil PeriodeFra være det samme som afgiftsdækningsperioden. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringPeriodeTilDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeTil er slutdatoen for perioden, som en fordring vedrører. (Periode vil typisk være en angivelsesperiode). For fordringer vedr. motor (DMR) vil PeriodeFra være det samme som afgiftsdækningsperioden. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringModtagelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Modtagelsesdato er datoen for, hvornår en fordring er modtaget hos Fordringshaver.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringBogføringDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato til identifikation af opkrævningsfordringens regnskabsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringSidsteRettidigBetalingDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste rettidige betalingsdato er den sidste frist for, hvornår en fordring skal være betalt.  Sidste rettidig betalingsdato - også kaldet SRB - er den rentebærende dato, dvs. den dato, hvorfra der evt. skal beregnes rente.  SidsteRettidigBetalingDato er ikke altid lig med ForfaldDato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringFrigivelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>FrigivelseDato er datoen for, hvornår en negativ fordring skal eller er frigivet til at indgå i kontoens saldo.  Frigivelsesdatoen vil være lig med rentedato, da renten først skal beregnes, når beløbet er frigivet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringForfaldDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forfaldsdato er tidspunktet, hvor en fordring forfalder til betaling. En forfaldsdato er ikke altid lig med sidste rettidig betalingsdato. Eksempelvis kan forfaldsdatoen være den 1. i en kalendermåned, mens sidste rettidig betalingsdato kan være den 10. i forfaldsmåneden.  Forfaldsdato vil være den dato, hvor en fordring kan indgå i kontoens saldo, hvis kunden (virksomhed eller borger) betaler fordringen (f.eks. skatten/afgiften) før SRB.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>RenteDato er datoen for Fordringshavers sidste renteberegningsdato. Dvs. den dato for hvornår der sidst er beregnet renter på en given fordring.  Første gang der skal ske en renteberegning, er ud fra SidsteRettidigBetalingDato (SRB), som er den rentebærende dato. Efterfølgende sker en evt. renteberegning af saldoen fra den dato, hvor der sidst er sket rentetilskrivning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringStiftelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Stiftelsestidspunktet er det tidspunkt, hvor en fordring er stiftet. Tidspunktet kan være forskelligt fra forfaldstidspunkt, periode og sidste rettidige betalingsdato.  Eksempelvis har man for fordringstypen restskat stiftelsestidspunktet 31/12 2006, perioden vil være hele året 2006 og forfaldsdatoen vil være 1/9, 1/10 og 1/11 2007 og endeligt vil sidste rettidige betalingsdato være 20/9, 20/10 og 20/11 2007.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringForældelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forældelsesdatoen er datoen for, hvornår en fordring er forældet og ikke længere kan inddrives eller opkræves.  Når forældelsesdatoen er overskredet, er det udtryk for en afskreven fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringArkiveringDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Arkiveringsdato er datoen for hvornår der skal ske arkivering af en fordring på kontoen. Følgende skal være opfyldt:  1) dækkede eller afskrevne fordringer er ældre end 5 år 2) der har ikke været bevægelser til kontoen inden for de seneste 3 år.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringKorrektionDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Korrektionsdato er den faktiske dato for, hvornår en fordring er korrigeret. Når fordringshaver oversender en korrektion (op- eller nedskrivning) til en fordring, skal korrektionsdatoen medsendes.  Korrektionsdatoen fungerer som ny rentevirkningsdato, dvs. ifølge renteberegningsreglen for fordringstypen skal renten tilbagerulles og genberegnes fra korrektionsdatoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringOverdragelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Overdragelsesdato er datoen for hvornår fordringen er overdraget til inddrivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringOverdragelseStatus" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken status, den pågældende opkrævningsfordring til inddrivelse har, fx Frigivet til inddrivelse eller Fordring er fuldt betalt af kunden. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringTilbagekaldelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tilbagekaldelsesdato er datoen for, hvornår opkrævningsfordring er tilbagekaldt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringKlarTilGodkendelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår opkrævningsfordringen er sendt til godkendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRykkerNiveau" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>RykkerNiveau bestemmer hvilken handling, der skal foretages ved næste rykkerkørsel. Der er tale om flere rykkerniveauer pt. værdierne 1 og 2.  Rykkerniveau anvendes bl.a. til styring af overdragelse til inddrivelsesmyndigheden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRykkerDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår en kunde er blevet rykket - hvornår der er udsendt rykker for manglende betaling af fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringErOpkrævetMarkering" type="skat2016:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en opkrævningsfordring er opkrævet (værdien Ja) eller ej af afsendersystem. SKATs opkrævningssystem, DMO, skal kunne se, hvorvidt der skal dannes opkrævninger til kunden eller ej.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringKommentar" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan anvendes supplerende fri oplysning vedrørende den konkrete fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringArt" type="skat2016:FordringArtType">
+               
+               <xs:annotation>
+                  <xs:documentation>En fordrings overordnede art/kategori:  - Ordinær opkrævningsfordring - Efterangivet opkrævningsfordring (Efterangivelse) - Foreløbig Fastsættelse (FF)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringOpkrævningModtagelseDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår SKATs opkrævningssystem (DMO) har modtaget en fordring til opkrævning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringBetalingOrdningMarkering" type="skat2016:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en fordring er omfattet af en betalingsordning. Sættes til true, hvis ja.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringAdministrativtTiltagMarkering"
+                     type="skat2016:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en fordring er omfattet af et administrativt tiltag. Sættes til true, hvis ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringSaldoDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår en given saldo er opgjort.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

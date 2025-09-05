@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen henter en liste af udbetalinger</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DMIUdbetalingList_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DMIUdbetalingList_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DMIUdbetalingListInterface" type="fase2.1:DMIUdbetalingListInterfaceType"/>
+         <xs:complexType name="DMIUdbetalingListInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DMIUdbetalingList_I"/>
+               <xs:element ref="fase2.1:DMIUdbetalingList_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

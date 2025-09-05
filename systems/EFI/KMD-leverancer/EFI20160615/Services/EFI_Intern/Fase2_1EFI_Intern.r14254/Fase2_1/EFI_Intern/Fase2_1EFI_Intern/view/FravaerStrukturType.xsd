@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Fravaer.xsd"/>
+         <xs:element name="FraværStruktur" type="fase2.1:FraværStrukturType"/>
+         <xs:complexType name="FraværStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="FraværStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:FraværID"/>
+                  
+                        <xs:element ref="fase2.1:FraværKalenderID"/>
+                  
+                        <xs:element ref="fase2.1:FraværDatoFra"/>
+
+                        <xs:element ref="fase2.1:FraværDatoTil" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:FraværÅrsag" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:FraværOprettetAf"/>
+                  
+                        <xs:element ref="fase2.1:FraværOprettetTid"/>
+
+                        <xs:element ref="fase2.1:FraværÆndretAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:FraværÆndretTid" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:FraværSlettetAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:FraværSlettetTid" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:FraværTimestampVersion"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

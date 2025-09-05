@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Imp.spec. består af følgende informationer: - Virksomhedens stamdata - Periode (måned/år) - Navn og adresse på virksomhedens Toldcenter - Betalingsoplysninger - Fortoldningsoplysninger (pr. ekspedition) - Indbetalingsoplysninger (pr. ekspedition) - Opkrævningsoplysninger - Beregningsoplysninger (udvalgte summer for måneden)  Viksomheden kan alene forespørge eller downloade sin månedlige imp.spec. via TastSelv Erhverv.  Imp.spec. dannes månedligt i DR ud fra oplysninger i importørregistret.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TidspunktType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:element name="ImportspecifikationDownloadTid" type="fase2.1:TidspunktType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver tidspunkt for hvornår den enkelte importspecifikation senest har været downloadet af virksomhed/revisor.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationAfmeldelseMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en virksomhed er afmeldt.  Datoen for afmeldelse ses på virksomhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationKørselDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kørselsdatoen for hvornår Importspecifikationen er dannet i DR</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationVirksomhedSikkerhedStillelseTekst"
+                     type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver i tekst virksomhedens sikkerhedsstillelsesordning, f.eks. Toldvæsenets sikkerhedsordning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationFormateretPeriode" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver perioden/måned for Importspecifikationen i klar skrift, f.eks. maj md. 2006</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationForfaldentBeløb"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det forfaldne beløb for månedens Importspecifikation.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationBeløbTilBetaling"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver beløb til betaling for månedens Importspecifikation</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ImportspecifikationPBSMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om månedens betaling for Importspecifikationen foregår via PBS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

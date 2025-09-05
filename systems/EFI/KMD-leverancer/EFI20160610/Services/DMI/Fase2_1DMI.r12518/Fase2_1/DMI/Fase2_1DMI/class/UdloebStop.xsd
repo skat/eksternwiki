@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="UdløbStopDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Stoppets dato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdløbStopType" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af stoptype (pt. er liste ikke defineret)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

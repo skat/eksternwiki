@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/StatstidendeMeddelelse.xsd"/>
+         <xs:include schemaLocation="../view/StatstidendePersonKontekstStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/StatstidendeVirksomhedKontekstStrukturType.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/StatstidendeKontaktPersonStrukturType.xsd"/>
+				     
+         <xs:element name="StatstidendeDødsboMeddelelseStruktur"
+                     type="fase2.1:StatstidendeDødsboMeddelelseStrukturType"/>
+         <xs:complexType name="StatstidendeDødsboMeddelelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Afdød">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:StatstidendePersonKontekstStruktur"/>
+                        <xs:element name="AfdødsVirksomhedListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:StatstidendeVirksomhedKontekstStruktur" minOccurs="0"
+                                             maxOccurs="unbounded"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <!--Sequence removed-->
+
+                  <xs:element name="AfdødÆgtefælle" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="fase2.1:StatstidendePersonKontekstStruktur" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:StatstidendeVirksomhedKontekstStruktur" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <xs:element name="KontaktPersonListe">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:StatstidendeKontaktPersonStruktur" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+
+               <xs:element ref="fase2.1:StatstidendeMeddelelseUdstedelseSted" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:StatstidendeMeddelelseUdstedelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:StatstidendeMeddelelseUnderskriver" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:StatstidendeMeddelelseLov69Markering" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:StatstidendeMeddelelseBemærkning" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

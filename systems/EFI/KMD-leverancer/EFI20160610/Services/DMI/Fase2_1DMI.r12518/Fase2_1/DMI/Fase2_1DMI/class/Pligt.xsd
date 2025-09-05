@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Pligt knytter sig til Lov, hvor lovens overskrift er angivet. Navnet på den enkelte Pligt er det i daglig tale anvendte navn. Pligt underopdeles i 6 grupper: 1) Oplysningspligt, f.eks. Oplysningssedler (COR) 2) Afgiftspligt, f.eks. Moms, visse punktafgifter 3) Harmoniserede punktafgifter, f.eks. punktafgifter under EU-regler 4) Indeholdelse af skat, f.eks. A-skat, AM-bidrag 5) Skattepligt, f.eks. Selskabsskat, Udbytteskat 6) Toldpligt, f.eks. Importør, Eksportør</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/PligtKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="PligtKode" type="fase2.1:PligtKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der entydigt identificerer de mulige typer af pligt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PligtTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Klartekst til en værdi af pligtkode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PligtBeskrivelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Formålet med hjælpeteksten er at give brugeren en supplerende og/eller forklarende bemærkning til en konkret forekomst af et grunddataværdisæt.  Hjælpeteksten anvendes som hjælp til brugeren, hvor denne eksempelvis bliver i tvivl om indholdet af en konkret forekomst af et grunddataværdisæt.  Hjælpeteksten kan, når det er relevant, indeholde reference til lovgivningens paragraffer, faglige vejledninger mm., hvor brugeren kan finde yderligere hjælp.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PligtGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag en pligt gælder </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PligtGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag en pligt gælder </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

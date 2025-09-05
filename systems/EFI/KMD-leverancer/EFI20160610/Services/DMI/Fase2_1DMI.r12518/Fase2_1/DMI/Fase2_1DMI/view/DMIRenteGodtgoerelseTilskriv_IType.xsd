@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+				     
+         <xs:include schemaLocation="../class/RenteGodtgoerelse.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ForetagIkkeAutomatiskDaekning.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RenteGodtgoerelseBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RenteGodtgoerelseAArsagStrukturType.xsd"/>
+				     
+         <xs:element name="DMIRenteGodtgørelseTilskriv_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIRenteGodtgørelseTilskriv_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIRenteGodtgørelseTilskriv_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="Rentegodtgørelse">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:DMIIndberetterOpretStruktur"/>
+                  
+                              <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                              <xs:element ref="fase2.1:KundeType"/>
+                  
+                              <xs:element ref="fase2.1:RenteGodtgørelseBeløbStruktur"/>
+                  
+                              <xs:element ref="fase2.1:RenteGodtgørelsePeriodeFra"/>
+                  
+                              <xs:element ref="fase2.1:RenteGodtgørelsePeriodeTil"/>
+                  
+                              <xs:element ref="fase2.1:RenteGodtgørelseÅrsagStruktur"/>
+                  
+                              <xs:element ref="fase2.1:RenteGodtgørelseType"/>
+
+                              <xs:element ref="fase2.1:ForetagIkkeAutomatiskDækning" minOccurs="0"/>
+
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

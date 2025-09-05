@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19330</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/OptimistiskLaasningDatoTid.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringRente.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordring.xsd"/>
+         <xs:element name="OpkrævningFordringRenteHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:OpkrævningFordringRenteHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r19330"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="OpkrævningFordringRenteHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:OptimistiskLåsningDatoTid" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:RessourceNummer" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:OpkrævningFordringRenteSenestBeregnDato" minOccurs="0"/>
+
+
+                     <xs:element name="OpkrævningFordringRenteListe" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="OpkrævningFordringRente" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:OpkrævningFordringID"/>
+                  
+                                       <xs:element ref="fase2.1:OpkrævningFordringRentePeriodeFraDato"/>
+                  
+                                       <xs:element ref="fase2.1:OpkrævningFordringRentePeriodeTilDato"/>
+                  
+                                       <xs:element ref="fase2.1:OpkrævningFordringRenteGrundlagBeløb"/>
+                  
+                                       <xs:element ref="fase2.1:OpkrævningFordringRenteBeløb"/>
+                  
+                                       <xs:element ref="fase2.1:OpkrævningFordringRenteProcentsats"/>
+                  
+                                       <xs:element ref="fase2.1:OpkrævningFordringRenteDageAntal"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringRenteKorrigeretBeløb" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringRenteReduceretBeløb" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

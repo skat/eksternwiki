@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DMIIndberetter.xsd"/>
+         <xs:element name="DMIIndberetterHentStruktur" type="fase2.1:DMIIndberetterHentStrukturType"/>
+         <xs:complexType name="DMIIndberetterHentStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:DMIIndberetterDatoTid"/>
+                  
+                  <xs:element ref="fase2.1:DMIIndberetterID"/>
+                  
+                  <xs:element ref="fase2.1:DMIIndberetterRolle"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

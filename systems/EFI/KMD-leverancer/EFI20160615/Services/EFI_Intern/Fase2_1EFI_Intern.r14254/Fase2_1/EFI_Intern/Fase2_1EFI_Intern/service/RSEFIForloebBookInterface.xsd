@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Booker to eller flere opgaver som er indbyrdes afhængige af hinanden.</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/RSEFIForloebBook_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/RSEFIForloebBook_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="RSEFIForløbBookInterface" type="fase2.1:RSEFIForløbBookInterfaceType"/>
+         <xs:complexType name="RSEFIForløbBookInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:RSEFIForløbBook_I"/>
+               <xs:element ref="fase2.1:RSEFIForløbBook_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

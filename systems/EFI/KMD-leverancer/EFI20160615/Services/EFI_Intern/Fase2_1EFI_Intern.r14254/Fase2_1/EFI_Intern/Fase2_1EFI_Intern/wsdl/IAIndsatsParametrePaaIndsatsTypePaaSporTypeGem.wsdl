@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="IAIndsatsParametrePåIndsatsTypePåSporTypeGemService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>NEDLAGT: Funktionalitet flyttet til IMSporSkabelonGem Formålet med denne service er, at administrationsportletten skal kunne gemme spor-specifikke indsatsparametre for en given indsatstype placeret på en sportype. Parameterlisten indeholder de værdier, der ønskes ændret.</xs:documentation>
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/IAIndsatsParametrePaaIndsatsTypePaaSporTypeGemInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="IAIndsatsParametrePåIndsatsTypePåSporTypeGemServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:IAIndsatsParametrePåIndsatsTypePåSporTypeGem_I"/>
+         </wsdl:message>
+         <wsdl:message name="IAIndsatsParametrePåIndsatsTypePåSporTypeGemServiceResponse">
+            <wsdl:part name="Response"
+                       element="fase2.1:IAIndsatsParametrePåIndsatsTypePåSporTypeGem_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="IAIndsatsParametrePåIndsatsTypePåSporTypeGemServicePortType">
+            <wsdl:operation name="getIAIndsatsParametrePåIndsatsTypePåSporTypeGem">
+               <wsdl:input message="fase2.1:IAIndsatsParametrePåIndsatsTypePåSporTypeGemServiceRequest"/>
+               <wsdl:output message="fase2.1:IAIndsatsParametrePåIndsatsTypePåSporTypeGemServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

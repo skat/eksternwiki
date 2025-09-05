@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver de abonnementtyper, som der kan oprettes abonnement for, dvs. angiver hvad, der abonneres på. Der kan ikke dynamisk oprettes nye værdier af abonnementtype medmindre denne er omfattet af et standardabonnement</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeFireCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AbonnementTypeKode" type="fase2.1:KodeFireCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver tilladte værdier af abonnement</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnementTypeTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver klartekst til en tilladt værdi af abonnement</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnementTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnementTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

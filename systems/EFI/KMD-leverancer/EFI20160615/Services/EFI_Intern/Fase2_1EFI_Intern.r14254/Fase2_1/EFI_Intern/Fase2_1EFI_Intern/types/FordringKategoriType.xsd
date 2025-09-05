@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="FordringKategoriType">
+               <xs:annotation>
+                  <xs:documentation>Liste med FordringKategoriTyper.  Liste med faste værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="2"/>
+                  <xs:enumeration value="HF"/>
+                  <xs:enumeration value="IR"/>
+                  <xs:enumeration value="OG"/>
+                  <xs:enumeration value="OR"/>
+                  <xs:enumeration value="IG"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

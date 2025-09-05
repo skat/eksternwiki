@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 U (http://www.altova.com) by Sune Cording (CSC Danmark A/S) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:virksomhed="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" targetNamespace="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:import namespace="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" schemaLocation="../../../../../../../../cvr_dk/xml/schemas/2002/06/28/CVRnumber.xsd"/>
+	<xs:element name="SEnummerIdentifikator" type="cvr:CVRnumberType">
+		<xs:annotation>
+			<xs:documentation>CVR-/SE-nummer for den angivende virksomhed ved kvittering.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

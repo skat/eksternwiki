@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/LoebeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentAndelType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="ForventetIndbetalingDækPriorit" type="fase2.1:LøbeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den rækkefølge en indbetaling skal dække fordringer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingDækProcent" type="fase2.1:ProcentAndelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Andel i procent af indbetalingen (raten), der skal anvendes på den pågældende fordring.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingDækBlb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Andel i danske kroner af indbetalingen (raten), der skal anvendes på den pågældende fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForventetIndbetalingDækBlbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dækningrækkefølgebeløb i danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

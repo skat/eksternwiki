@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Der kan stilles sikkerhed ved fx etablering af en bevilling eller et registreringsforhold. Klassen definerer hvilken ordning der er tale om og styres tage klassen SikkerhedsStillelelseType.  Specifikt Opkrævnings- og restanceinddrivelsesmyndigheden: Sikkerhedsstillelse kan man kræve for kundens opkrævnings- og inddrivelseskonto og de fordringer, der måtte komme.   RIM kan i forbindelse med indsatsen Forkortet Afregning bede kunden om at stille sikkerhed for kontoen. Første varsles dette, og man kan se på kontoen, at sikkerhedsstillelse er varslet, men endnu ikke afgjort. Endelig kan man se, at sikkerhedsstillelsen er krævet ifølge afgørelse.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="SikkerhedStillelseID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt identifikationsnummer/ID for en SikkerhedStillelse. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvor sikkerhedsstillelsen er bogført.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseStilletFor" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sikkerhedsstillelse kan stilles for hele kontoen, for en eller flere fordringer eller hele kontoen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseHarOrdning" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et flag som beskriver som en virksomhed/part har en sikkerhedsordning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbet stillet som sikkerhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato der angiver, hvornår den stillede sikkerhed er gyldig fra. Dette er eksempelvis datoen hvorfra en bankgaranti er gældende fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato der angiver, hvornår den stillede sikkerhed er gyldig til. Dette er eksempelvis datoen hvorfra en bankgaranti er gældende til.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseÅrsagKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er en speciel årsagskode, der benyttes for Rykkere i forbindelse med sikkerhedsstillelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

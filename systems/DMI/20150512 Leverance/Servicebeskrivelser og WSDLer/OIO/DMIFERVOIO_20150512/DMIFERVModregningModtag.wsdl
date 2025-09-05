@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" 
+xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsp="http://www.w3.org/ns/ws-policy"	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+name="DMIFERVModregningModtagService">
+<xs:include schemaLocation="skat-b2b-x509-policy.xml" />
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>NaturErhvervstyrelsen (NAER) kalder denne service for at informere DMI, hvis NAER har en transport  i en udbetaling og der er et overskydende beløb til modregning hos til SKAT.  (NAER hed tidligere FERV - Fødevare og Erhverv.Ved  navngivning af service og parametre fastholdes FERV-præfixet, for konsistensens skyld) </xs:documentation>		
+	</xs:annotation>	
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0">
+			<xsd:include schemaLocation="urn/oio/skat/dmi/ws/1_0_0/DMIFERVModregningModtagInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="DMIFERVModregningModtagServiceRequest">
+		<wsdl:part name="Request" element="dmiws:DMIFERVModregningModtag_I"/>
+	</wsdl:message>
+	<wsdl:message name="DMIFERVModregningModtagServiceResponse">
+		<wsdl:part name="Response" element="dmiws:DMIFERVModregningModtag_O"/>
+	</wsdl:message>
+	<wsdl:portType name="DMIFERVModregningModtagServicePortType">
+		<wsdl:operation name="getDMIFERVModregningModtag">
+			<wsdl:input message="dmiws:DMIFERVModregningModtagServiceRequest"/>
+			<wsdl:output message="dmiws:DMIFERVModregningModtagServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>	
+		<wsdl:binding name="DMIFERVModregningModtagServiceBinding" type="dmiws:DMIFERVModregningModtagServicePortType">
+		<wsp:PolicyReference URI="skat-b2b-x509-policy.xml#skat-b2b-x509-policy"/>
+		<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getDMIFERVModregningModtag">
+			<soap12:operation soapAction="getDMIFERVModregningModtag"/>
+			<wsdl:input>
+				<soap12:body use="literal"/>
+				<wsp:PolicyReference URI="skat-b2b-x509-policy.xml#skat-b2b-x509-policy"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DMIFERVModregningModtagServiceBindingQSService">
+		<wsdl:port name="DMIFERVModregningModtagServiceBindingQSPort" binding="dmiws:DMIFERVModregningModtagServiceBinding">
+			<soap12:address location="https://some.url.here"/>
+		</wsdl:port>
+	</wsdl:service>		
+</wsdl:definitions>

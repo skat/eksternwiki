@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="MFFordringTilbagekaldService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Servicen MFFordringTilbagekald har ansvaret for at tilbagekalde en fordring i DMI.</xs:documentation>
+            <xs:documentation>1.8</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/MFFordringTilbagekaldInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="MFFordringTilbagekaldServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:MFFordringTilbagekald_I"/>
+         </wsdl:message>
+         <wsdl:message name="MFFordringTilbagekaldServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:MFFordringTilbagekald_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="MFFordringTilbagekaldServicePortType">
+            <wsdl:operation name="getMFFordringTilbagekald">
+               <wsdl:input message="fase2.1:MFFordringTilbagekaldServiceRequest"/>
+               <wsdl:output message="fase2.1:MFFordringTilbagekaldServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

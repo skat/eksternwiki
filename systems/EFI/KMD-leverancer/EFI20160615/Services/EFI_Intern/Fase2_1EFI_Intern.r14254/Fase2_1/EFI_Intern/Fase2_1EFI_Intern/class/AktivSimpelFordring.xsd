@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/AktivSimpelFordringTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst50Type.xsd"/>
+         <xs:include schemaLocation="../types/AktivBeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="AktivSimpelFordringType" type="fase2.1:AktivSimpelFordringTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enum:  Indestående, Kontanter, Faktura, Tilgodehavende, FaldenArv, Alm_gældsbrev, Andet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringNavn" type="fase2.1:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn (ved indestående er det navn på bank) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringRegNummer" type="fase2.1:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Konto registreringsnummer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringKontoNummer" type="fase2.1:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kontonummer (ekskl. Reg-nr) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringBeløb" type="fase2.1:AktivBeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb på simpel fordring. Hvis type er Indestående er det beløbet på indestående </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringEjerKode" type="fase2.1:Tekst11Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ejerstatuskode </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringRenteIndtægt" type="fase2.1:AktivBeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb der angiver renteindtægter</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSimpelFordringFakturaNummer" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fakturanummer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

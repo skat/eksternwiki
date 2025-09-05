@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="DPDokumentSøgService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Service til at hente en liste af dokumenter ud fra en række søgekriterier. Dokumenterne kan ligge enten som note i EFI databasen, meddelelse i A&amp;D eller dokument i Captia. Listen af dokumenter inkluderer alle dokument-attributter fra EFI-databasen. Hvis der til et dokument/note findes et tilknyttet binært dokument, vil flaget DPDokumentFilMarkering være sat. Selve det binære dokument kan i så fald findes ved kald af DPDokumentHent.  Servicen kan anvendes til at søge efter dokumenter på tværs af kunder.</xs:documentation>
+            <xs:documentation>1.10</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/DPDokumentSoegInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="DPDokumentSøgServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:DPDokumentSøg_I"/>
+         </wsdl:message>
+         <wsdl:message name="DPDokumentSøgServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:DPDokumentSøg_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="DPDokumentSøgServicePortType">
+            <wsdl:operation name="getDPDokumentSøg">
+               <wsdl:input message="fase2.1:DPDokumentSøgServiceRequest"/>
+               <wsdl:output message="fase2.1:DPDokumentSøgServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

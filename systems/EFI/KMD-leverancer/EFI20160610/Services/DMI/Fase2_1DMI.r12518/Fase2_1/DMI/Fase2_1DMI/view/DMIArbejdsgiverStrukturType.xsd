@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:element name="DMIArbejdsgiverStruktur" type="fase2.1:DMIArbejdsgiverStrukturType"/>
+         <xs:complexType name="DMIArbejdsgiverStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                  <xs:element ref="fase2.1:KundeType"/>
+
+               <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KundeNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DriftFormKode" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="EnkeltmandVirksomhedEjer" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:PersonCPRNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

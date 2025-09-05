@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation>En specialisering af klassen KontaktOplysning. Indeholder et telefonnummer til en given person/virksomhed</xs:documentation>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../types/TelefonFaxLandeKodeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/TelefonNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+   
+   
+   <xs:element name="TelefonLandeKode" type="fase2:TelefonFaxLandeKodeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Telefon- og faxnummer landekode. Fx +45 eller 0045. Selve telefonnummeret indgår ikke.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="TelefonNummer" type="fase2:TelefonNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Et telefonnummer svarende til eks: 23232323.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="TelefonGyldigFra" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="TelefonGyldigTil" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="TelefonSkjult" type="fase2:MarkeringType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Når sagsbehandlere registrerer et telefon-nummer for en kunde eller juridisk enhed, skal man samtidig angive, hvorvidt telefon-nummer skal være skjult for kunden.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

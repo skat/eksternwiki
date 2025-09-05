@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BudgetPostTypeKodeDomæneType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+                  <xs:enumeration value="RAADIGHEDBELOEBBARN"/>
+                  <xs:enumeration value="NETTOINDKOMSTAUTOMATISK"/>
+                  <xs:enumeration value="NETTOINDKOMSTSAGBEHINDT"/>
+                  <xs:enumeration value="NETTOUDBETALINGEREJINETTOINDK"/>
+                  <xs:enumeration value="NETTOUDBETALINGERERSTATNINGER"/>
+                  <xs:enumeration value="BOLIGSIKRINGBOLIGYDELSE"/>
+                  <xs:enumeration value="VARMETILSKUDMV"/>
+                  <xs:enumeration value="OEVRIGEINDTAEGTER"/>
+                  <xs:enumeration value="UDGIFTERTILTRANSPORT"/>
+                  <xs:enumeration value="FAGFORENINGAKASSE"/>
+                  <xs:enumeration value="BIDRAGTILTROSSAMFUND"/>
+                  <xs:enumeration value="HUSLEJE"/>
+                  <xs:enumeration value="PRIORITETSYDELSE"/>
+                  <xs:enumeration value="FAELLESUDGIFTERVEDREJENDOM"/>
+                  <xs:enumeration value="RENOVATION"/>
+                  <xs:enumeration value="EJENDOMSSKAT"/>
+                  <xs:enumeration value="EL"/>
+                  <xs:enumeration value="GAS"/>
+                  <xs:enumeration value="VAND"/>
+                  <xs:enumeration value="VARME"/>
+                  <xs:enumeration value="BYGNINGSOGBRANDFORSIKRING"/>
+                  <xs:enumeration value="OEVRIGEUDGIFTERBOLIG"/>
+                  <xs:enumeration value="AEGTEFAELLEBIDRAG"/>
+                  <xs:enumeration value="BOERNEBIDRAGANDREUDGIFTER"/>
+                  <xs:enumeration value="UDGIFTERTILBOERNSSAMVAER"/>
+                  <xs:enumeration value="SAMVAERSUDGIFTERBOERN"/>
+                  <xs:enumeration value="NETTOUDGIFTSAERLIGEBEHOV"/>
+                  <xs:enumeration value="OEVRIGEUDGIFTERANDRE"/>
+                  <xs:enumeration value="YDELSEPAAAEGTEFAELLESGAELD"/>
+                  <xs:enumeration value="YDELSEPAAANDENGAELD"/>
+                  <xs:enumeration value="BOERNEOGUNGEYDELSE"/>
+                  <xs:enumeration value="BOERNETILSKUD"/>
+                  <xs:enumeration value="BOERNEBIDRAG"/>
+                  <xs:enumeration value="PASNING"/>
+                  <xs:enumeration value="UDGIFTERTILSAERLIGEBEHOV"/>
+                  <xs:enumeration value="OEVRIGEUDGIFTERBOERN"/>
+                  <xs:enumeration value="BETALINGSEVNE"/>
+                  <xs:enumeration value="UDGIFTERTILTRANSPORTFRADRAG"/>
+                  <xs:enumeration value="RAADIGHEDBELOEBVOKSEN"/>
+                  <xs:enumeration value="OEVRIGEUDGIFTERBEFORDRING"/>
+                  <xs:enumeration value="YDELSEPAAGAELDREDUKTION"/>
+                  <xs:enumeration value="OEVRIGEINDTAEGTERBOERN"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

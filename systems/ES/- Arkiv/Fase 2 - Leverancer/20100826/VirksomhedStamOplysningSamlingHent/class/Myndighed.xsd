@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation>Indeholder informationer om en given myndighed. I dette tilfælde fungerer myndighed i rollen som myndighed for en given kunde - og ikke som juridisk enhed.   En myndighed kan for SKAT fx være:  Nummer Type 01 Kommune 02 Skattecenter 03 Politikreds 04 Retskreds 05 Skifteret 06 Kommunalt ligningsfællesskab 07 Ligningscenter 08 Skatteankenævnssekretariat 09 Skattesamarbejde 10 Grænsegængercenter 11 Grænsegængersekretariat 12 Offentlig statslig myndighed </xs:documentation>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../types/MyndighedNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/KodeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+   
+   
+   
+   <xs:element name="MyndighedNummer" type="fase2:MyndighedNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Nummer der entydigt identificerer de for SKAT relevante myndigheder. Nummeret er 4-ciftret og tildeles af Indenrigsministeriet.   Eksempel: Københavns Kommune har nummeret 0101.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="MyndighedType" type="fase2:KodeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Typekoden for myndigheder.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="MyndighedGyldigFra" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="MyndighedGyldigTil" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

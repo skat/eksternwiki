@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="SynStatusType">
+		<xs:annotation>
+			<xs:documentation>En angivelse af et syn's status (aktivt, anulleret)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+			<xs:enumeration value="Aktiv"/>
+			<xs:enumeration value="Annulleret"/>
+			<xs:enumeration value="AnnulleretEfterFristForErindringA"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

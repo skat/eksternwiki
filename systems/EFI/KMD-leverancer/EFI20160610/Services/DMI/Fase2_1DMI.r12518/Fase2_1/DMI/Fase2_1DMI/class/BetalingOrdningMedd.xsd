@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Oplysninger der skal medtages i meddelelsen om en betalingsordning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="BetalingOrdningMeddAfgørelse" type="fase2.1:TekstLangType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddAfdragproc" type="fase2.1:ProcentHeltTalPositivtType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddÅrsindkomst" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddBeregngrund" type="fase2.1:TekstLangType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddParthøring" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddSagfremstil" type="fase2.1:TekstLangType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddType" type="fase2.1:IDType">
+               
+            </xs:element>
+         <xs:element name="BetalingOrdningMeddSaldo" type="fase2.1:BeløbType">
+               
+            </xs:element>
+      </xs:schema>

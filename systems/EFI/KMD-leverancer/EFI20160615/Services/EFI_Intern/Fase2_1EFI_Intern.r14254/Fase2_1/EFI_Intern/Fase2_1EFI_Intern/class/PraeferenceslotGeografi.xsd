@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en præference i en medarbejders kalender og de områder medarbejderen ønsker at arbejde i, i det tidsrum præferencen gælder.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/PostNummerType.xsd"/>
+         <xs:include schemaLocation="../types/KommuneNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="PræferenceslotGeografiID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>PræferenceslotGeografi objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiSlotID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Præferenceslottets ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiPostNummer" type="fase2.1:PostNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Postnummeret medarbejderen ønsker at arbejde i, i præferencens periode. Kan være tomt hvis der er angivet kommunenummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiKommuneNummer" type="fase2.1:KommuneNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det kommunenummer medarbejderen ønsker at arbejde i, i præferencens periode. Kan være tomt hvis der er angivet postnummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet  tilknytningen mellem geografien og præferenceslottet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem geografien og præferenceslottet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet tilknytningen mellem geografien og præferenceslottet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem geografien og præferenceslottet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PræferenceslotGeografiTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til tilknytningen mellem geografien og præferenceslottet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

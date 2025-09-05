@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/AbonnentType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/AbonnementType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/AdgangFormaalType.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/IndkomstOplysningAdgangMedarbejderIdentifikation.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/IndkomstOplysningAdgangReferenceNummer.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoTil.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/AbonnentVirksomhedStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/IndberetningPligtigVirksomhedStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="AnsættelseForholdPersonHent_FejlId" type="fase2.1:AnsættelseForholdPersonHent_FejlIdType"/>
+   
+   
+   
+   <xs:complexType name="AnsættelseForholdPersonHent_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:AbonnentTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:AbonnementTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:AdgangFormålTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:AbonnentVirksomhedStruktur" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:IndkomstOplysningAdgangMedarbejderIdentifikation" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:PersonCPRNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:IndkomstOplysningAdgangReferenceNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SøgeDatoFra" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SøgeDatoTil" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:IndberetningPligtigVirksomhedStruktur" minOccurs="0"/>
+
+
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

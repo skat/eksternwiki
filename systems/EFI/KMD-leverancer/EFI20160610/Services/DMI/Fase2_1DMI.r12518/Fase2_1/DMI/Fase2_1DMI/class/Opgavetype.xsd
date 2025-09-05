@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Opgavetypen er en skabelon for opgaver. Opgavetypen indeholder en masse pre-konfigurerede oplysninger som der dog er mulighed for at overskrive når opgaven oprettes.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/RSDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/OpgaveKategoriType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:element name="OpgavetypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavetypens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeDomæne" type="fase2.1:RSDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det domæne opgavetypen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavetypens navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeOpgaveKategori" type="fase2.1:OpgaveKategoriType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekategorien som opgaven tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af opgavetypen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeLinkTilSag" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Link til stedet i portalen hvor opgaven kan løses. Det endelige link, som vises på skærmen, vil være en sammensætning af linket i opgavetypen og linkparametrene i opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeGennemførselstid" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tid i minutter som det tager at gennemføre opgaven. Gennemførselstiden kan overskrives i opgaven. Desuden har medarbejderen, i sin medarbejderprofil,  mulighed for at konfigurere sin egen gennemførselstid for opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeGennemførselsfrist" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antallet af dage der maksimalt må gå før opgaven er gennemført.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypePrioritet" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavetypens prioritet. Anvendes bl.a. på opgavelisten for at få vist de vigtigste opgaver øverst i listen. Kan overskrives på opgaven. Højeste tal er ensbetydende med højeste prioritet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypePoint" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antallet af point medarbejderen vil modtage når opgaven er løst.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeVentedage" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antallet af dage der skal gå fra opgaven er oprettet til den tidligst må løses.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeKundeAfhængig" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver at aftalen involverer et personligt møde med kunden, enten på skattecenteret eller hos kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeUdgående" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver at det er en udgående opgave, dvs. sagsbehandleren skal køre ud til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdatoen på opgavetypens gyldighedsperiode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for opgavetypens gyldighedsperiode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeHentYderligereInfo" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om de domænespecifikke oplysninger skal hentes til opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet opgavetypen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavetypen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret opgavetypen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavetypen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet opgavetypen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavetypen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til opgavetypen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeSandsynlighed" type="fase2.1:ProcentHeltTalPositivtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sandsynligheden for at opgaven bliver til noget. Sandsynligheden påvirker gennemførselstiden på opgaven. Hvis opgavens gennemførselstid er 30 minutter og sandsynligheden er 50%, vil der blive booket 15 minutter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeBookingInterval" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal minutter der minimum skal gå mellem hvert bookingforsøg.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavetypeBookingSvarDage" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage før aftaledagen, bookingsvaret skal sendes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

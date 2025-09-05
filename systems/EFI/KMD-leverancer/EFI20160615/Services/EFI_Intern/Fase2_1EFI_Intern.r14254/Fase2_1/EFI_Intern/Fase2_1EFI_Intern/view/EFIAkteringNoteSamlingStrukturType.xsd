@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/AkteringSkabelonNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkteringSkabelonIndhold.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkteringKommentar.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkteringNoteId.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+         <xs:include schemaLocation="../operational/AkteringNoteTitel.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkteringNoteIndhold.xsd"/>
+				     
+				     
+         <xs:element name="EFIAkteringNoteSamlingStruktur"
+                     type="fase2.1:EFIAkteringNoteSamlingStrukturType"/>
+         <xs:complexType name="EFIAkteringNoteSamlingStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="GenerelSkabelonSamling" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="Skabelon" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:AkteringSkabelonNavn"/>
+                  
+                                    <xs:element ref="fase2.1:AkteringSkabelonIndhold"/>
+
+                                    <xs:element ref="fase2.1:AkteringKommentar" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+               <xs:element name="AkteringNoteSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="AkteringNote" minOccurs="1" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:AkteringNoteId"/>
+                  
+                                 <xs:element ref="fase2.1:DPDokumentType"/>
+
+                                 <xs:element ref="fase2.1:DPDokumentArt" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:DPDokumentPrioritet"/>
+                  
+                                 <xs:element ref="fase2.1:AkteringNoteTitel"/>
+                  
+                                 <xs:element ref="fase2.1:AkteringNoteIndhold"/>
+
+                                 <xs:element ref="fase2.1:AkteringKommentar" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

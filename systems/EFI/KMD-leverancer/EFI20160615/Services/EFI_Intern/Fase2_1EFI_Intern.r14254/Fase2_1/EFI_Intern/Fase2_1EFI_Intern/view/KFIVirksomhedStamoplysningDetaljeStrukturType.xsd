@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../operational/ErEFIKunde.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HarGyldigAdresse.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         <xs:include schemaLocation="../class/DriftFormForhold.xsd"/>
+         <xs:include schemaLocation="../class/Fogedomraade.xsd"/>
+         <xs:include schemaLocation="../class/BeskatningParagrafType.xsd"/>
+         <xs:include schemaLocation="../class/BeskatningParagrafForhold.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedRegnskabPeriode.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedStatusType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedStatusForhold.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedTilhoerForhold.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/Branche.xsd"/>
+         <xs:include schemaLocation="../class/BrancheForhold.xsd"/>
+         <xs:include schemaLocation="../class/BrancheType.xsd"/>
+         <xs:include schemaLocation="../class/BrancheUnderGruppe.xsd"/>
+         <xs:include schemaLocation="../view/VirksomhedKontaktOplysningStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="KFIVirksomhedStamoplysningDetaljeStruktur"
+                     type="fase2.1:KFIVirksomhedStamoplysningDetaljeStrukturType"/>
+         <xs:complexType name="KFIVirksomhedStamoplysningDetaljeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+               <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ErEFIKunde"/>
+                  
+                  <xs:element ref="fase2.1:HarGyldigAdresse"/>
+                  
+                  <xs:element ref="fase2.1:VirksomhedStartDato"/>
+
+               <xs:element ref="fase2.1:VirksomhedOphørDato" minOccurs="0"/>
+
+
+               <xs:element name="VirksomhedNavn">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                  
+                        <xs:element ref="fase2.1:VirksomhedNavnFirmaNavnKort"/>
+                  
+                        <xs:element ref="fase2.1:VirksomhedNavnGyldigFra"/>
+
+                        <xs:element ref="fase2.1:VirksomhedNavnGyldigTil" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="DriftForm">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:DriftFormKode"/>
+                  
+                        <xs:element ref="fase2.1:DriftFormForholdStartDato"/>
+
+                        <xs:element ref="fase2.1:DriftFormForholdSlutDato" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="fase2.1:FogedområdeNummer"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="BeskatningParagraf" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:BeskatningParagrafTypeKode"/>
+                  
+                           <xs:element ref="fase2.1:BeskatningParagrafForholdStartDato"/>
+
+                           <xs:element ref="fase2.1:BeskatningParagrafForholdSlutDato" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="BeregnetRegnskabPeriode" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:VirksomhedRegnskabPeriodeStartDato"/>
+                  
+                           <xs:element ref="fase2.1:VirksomhedRegnskabPeriodeSlutDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="VirksomhedStatus" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:VirksomhedStatusTypeKode"/>
+                  
+                           <xs:element ref="fase2.1:VirksomhedStatusForholdGyldigFra"/>
+
+                           <xs:element ref="fase2.1:VirksomhedStatusForholdGyldigTil" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <xs:element name="Myndighed">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:MyndighedNummer"/>
+                  
+                        <xs:element ref="fase2.1:MyndighedTilhørForholdGyldigFra"/>
+
+                        <xs:element ref="fase2.1:MyndighedTilhørForholdGyldigTil" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="PrimærAdresse">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:VirksomhedKontaktOplysningStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="AdresseListe">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:VirksomhedKontaktOplysningStruktur" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <!--Sequence removed-->
+
+                  <xs:element name="BrancheForholdListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="BrancheForhold" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:BrancheNummer"/>
+                  
+                                    <xs:element ref="fase2.1:BrancheForholdGyldigFra"/>
+
+                                    <xs:element ref="fase2.1:BrancheForholdGyldigTil" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:BrancheTypeKode"/>
+                  
+                                    <xs:element ref="fase2.1:BrancheTekst"/>
+                  
+                                    <xs:element ref="fase2.1:BrancheUnderGruppeNummer"/>
+
+                                    <xs:element ref="fase2.1:BrancheUnderGruppeNavn" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

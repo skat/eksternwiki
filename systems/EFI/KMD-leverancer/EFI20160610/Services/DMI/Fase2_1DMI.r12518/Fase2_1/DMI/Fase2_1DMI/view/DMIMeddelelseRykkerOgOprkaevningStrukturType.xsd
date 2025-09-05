@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/MeddelelseAfsenderDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdning.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdningRate.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BetalingOrdningRykRateGebyr.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/ForventetIndbetaling.xsd"/>
+         <xs:include schemaLocation="../view/BetalingOrdningRateBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningRateRykGebyrBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIMeddelelseRykkerOgOprkævningStruktur"
+                     type="fase2.1:DMIMeddelelseRykkerOgOprkævningStrukturType"/>
+         <xs:complexType name="DMIMeddelelseRykkerOgOprkævningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:MeddelelseAfsenderDato"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningEFIIndsatsID"/>
+
+               <xs:element ref="fase2.1:BetalingOrdningID" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:BetalingOrdningRateBeløbStruktur"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningRateSRBDato"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningBeløbStruktur"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningRykRateGebyr"/>
+
+               <xs:element ref="fase2.1:BetalingOrdningRateRykGebyrBeløbStruktur" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ForventetIndbetalingOCRLinie"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

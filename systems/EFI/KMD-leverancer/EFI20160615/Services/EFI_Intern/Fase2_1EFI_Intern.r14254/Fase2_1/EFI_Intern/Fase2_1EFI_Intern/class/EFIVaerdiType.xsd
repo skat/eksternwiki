@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/EFIVaerdiTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="EFIVærdiTypeKode" type="fase2.1:EFIVærdiTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Repræsenterer typen af en EFIVærdi streng dvs. formatering/parsning der skal anvendes. Enum værdier:  STRING - Vikårlig streng BOOLEAN - TRUE | FALSE DATE - YYYYMMDD TIMESTAMP - YYYYMMDDHHMM KODE - String uden whitespace. Kode fra kodetabel angivet ved EFIMatriceTypeDefinition. LONG -  heltal DECIMAL - Decimal tal med . som seperator LONGINTERVAL - [mindre endlongstoerre end,mindre endlongstoerre end] hvor mindre endlongstoerre end er en long i LONG formatet  Udover [x,y] understøttes åbne intervaller dvs. ]x,y[ </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIVærdiTypeNy" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om parameteret ønskes oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIVærdiTypeSlet" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om parameteren ønskes slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIVærdiTypeFraDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+      </xs:schema>

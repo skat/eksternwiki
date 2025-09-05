@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation/>
+   
+   
+   </xs:annotation>
+            
+      
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/DriftFormForhold.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/BeskatningParagrafForhold.xsd"/>
+         
+   
+   
+   <xs:element name="VirksomhedStamOplysningSamlingHent_FejlId" type="fase2:VirksomhedStamOplysningSamlingHent_FejlIdType"/>
+   
+   
+   <xs:complexType name="VirksomhedStamOplysningSamlingHent_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               
+      
+      
+      <xs:sequence>
+
+
+         
+         
+         <xs:element ref="fase2:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         <xs:element ref="fase2:DriftFormForholdStartDato" minOccurs="0"/>
+
+
+
+
+         
+         
+         <xs:element ref="fase2:BeskatningParagrafForholdStartDato" minOccurs="0"/>
+
+
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   </xs:complexType>
+
+
+</xs:schema>

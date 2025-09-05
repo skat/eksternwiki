@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver hvilken bevilling/hvilke bevillinger der gælder for en given virksomhed og for en given pligt samt i hvilken periode bevillingen er gældende. Hvis der evt. er registreret forretningsområde til pligten skal bevillingen knytte sig hertil. Er der registreret oplysningsvirksomhedsforhold til en pligt skal bevillingen knytte sig til oplysningsvirksomhedsforholdet. Der kan være fra et til flere bevillingsforhold på samme tid til enten registreringsforhold, eller forretningsområdeforhold eller oplysningsforhold.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeTreCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/JournalNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="BevillingForholdKode" type="fase2.1:KodeTreCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>En vilkårlig kode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BevillingForholdJournalNummer" type="fase2.1:JournalNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer den sag i SKAT, som bevillingen er knyttet til. ES understøtter pt. kun en feltlængde på 13 karakterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BevillingForholdGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag et givet bevillingforhold gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BevillingForholdGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag et givet bevillingforhold gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

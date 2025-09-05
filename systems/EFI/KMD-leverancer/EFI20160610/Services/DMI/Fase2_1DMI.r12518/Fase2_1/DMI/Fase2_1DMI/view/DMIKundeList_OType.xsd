@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../class/InddrivelseKonto.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/DMIFordringStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KundeInaktivDage.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseRestBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIKundeList_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIKundeList_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIKundeList_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="KundeListe" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Kunde" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                       <xs:element ref="fase2.1:KundeType"/>
+                  
+                                       <xs:element ref="fase2.1:InddrivelseKontoSaldo"/>
+                                       <xs:element name="FordringStatusListe">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="FordringStatus" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element name="Fordring">
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                                                  <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                  
+                                                                  <xs:element ref="fase2.1:FordringBeløbStruktur"/>
+                  
+                                                                  <xs:element ref="fase2.1:HæftelseRestBeløbStruktur"/>
+                                                               </xs:sequence>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                         <xs:element name="ModregningInddrivelseEllerOpkrævningValg">
+                                                            <xs:complexType>
+                                                               <xs:choice>
+                                                                  <xs:element ref="fase2.1:DMIFordringStatus"/>
+				
+				
+				                                                              <xs:element ref="fase2.1:KundeInaktivDage"/>
+                                                               </xs:choice>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

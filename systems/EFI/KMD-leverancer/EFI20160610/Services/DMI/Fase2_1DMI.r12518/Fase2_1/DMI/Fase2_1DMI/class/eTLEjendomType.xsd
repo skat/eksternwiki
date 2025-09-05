@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Ejendommens type, som angivet af Domstolsstyrelsens  Tinglysningssystem (e-TL). Eksempelvis  Kode HE = hovedejendom opdelt i ejerlejligheder EJ = ejerlejlighed HA = hovedejendom opdelt i anparter AN = anparter ...</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/eTLEjendomTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/UgeType.xsd"/>
+         <xs:element name="eTLEjendomTypeKode" type="fase2.1:eTLEjendomTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som identificerer en ejendomstype (se http://rep.oio.dk/tinglysning.dk/schema/model/1/EjendomType)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="eTLEjendomTypeNummer" type="fase2.1:KodeType">
+               
+            </xs:element>
+         <xs:element name="eTLEjendomTypeUgeNummer" type="fase2.1:UgeType">
+               
+            </xs:element>
+      </xs:schema>

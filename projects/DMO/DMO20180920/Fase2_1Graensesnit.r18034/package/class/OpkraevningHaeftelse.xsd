@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="OpkrævningHæftelseForm" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsesformen som indikerer på hvilken måde, at hæfteren hæfter for fordringen. Hæftelsesformer er et udtryk for hvem der skylder, andel af fordringen samt hvilket aktiver/formue kreditorerne kan søge sig fyldestgjort i, f.eks. i forbindelse med en udlægsforretning.Hæftelsesformen indikerer implicit hæftelsesprocenten (som findes på Hæftelse). Fx. betyder solidarisk hæftelse, at alle kunder hæfter 100% for fordringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningHæftelseProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den procentdel, hvormed kunden hæfter for den enkelte fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningHæftelseStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hæftelse for en fordring gælder fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningHæftelseSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hæftelse for en fordring ophører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningHæftelseForældelseDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="OpkrævningHæftelseSubsidiær" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Subsidiær hæftelse kan antage følgende værdier.  I forbindelse med HæftelsesforholdOpret: Potentiel forhold.  I forbindelse med HæftelsesforholdÆndr: Reel forhold Samlivsophævelse Potentiel forhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

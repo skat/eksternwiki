@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder information om en organisationstype. SKATs organisatoriske enheder (typer) vil fx være Hovedcenter,  Inddrivelsescentret, Intern Revision, IT service, Kundecenter mm.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="OrganisatoriskEnhedTypeNavn" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på typen af organisatorisk enhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

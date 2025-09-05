@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder informationer omkring adgangskode, certifikater m.m.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TastSelvKodeType.xsd"/>
+         <xs:include schemaLocation="../types/AntalType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/OCESCertifikatType.xsd"/>
+         <xs:element name="AdgangKontrolTastSelvKode" type="fase2.1:TastSelvKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver TastSelv-kode som første gang dannes automatisk som Random7.   Virksomheden kan efterfølgende selv bestemme og ændre indholdet af TastSelv koden, såfremt den overholder ToldSkats fastsatte regler for et korrekt password.  TastSelv koder kan anvendes, med mindre virksomheden er overgået til anvendelse af OCES og administrationsmodulet er taget i anvendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdgangKontrolTastSelvKodeFejlforsøgAntal" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal fejlforsøg ved logon med TastSelv kode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdgangKontrolAdgangKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den kode kunden skal bruge for at få adgang til systemet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdgangKontrolOCESCertifikat" type="fase2.1:OCESCertifikatType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver persons eller virksomheds OCES certifikat tildelt af TDC.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

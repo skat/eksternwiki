@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BookingRegelType">
+               <xs:annotation>
+                  <xs:documentation>Bookingreglerne anvendes af ressourcestyring til at finde den mest relevante ressource til at løse en bestemt opgave.      1 OVERHOLD_PREFERENCE  Der må ikke bookes udenfor præferencer     2 IGNORER_PREFERENCE(2) Der må bookes på en præference der ikke indeholder opgavetypen     3 SMALLESTE_KOMPETENCE(3)  Den ressource der har de smalleste kompetencer skal bookes     4 LAVESTE_BELAEGNING(4) Ressourcen med laveste belægning skal bookes     5 IGNORER_BELAEGNING(5)  Der må bookes over ressourcens angivne belægningsprocent     6 INGEN_FORDELING(6) Book opgaven på ressourcen med højeste belægning på preferencen     7 TIDLIGSTE_STARTTID(7)  Book ressourcen der er ledig først     8 LAVESTE_GENNEMFOERSELSTID(8)  Book ressourcen der er hurtigst til at løse opgaven  </xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="8"/>
+                  <xs:minInclusive value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

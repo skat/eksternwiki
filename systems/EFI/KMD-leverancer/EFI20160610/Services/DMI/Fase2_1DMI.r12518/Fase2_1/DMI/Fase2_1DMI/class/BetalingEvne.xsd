@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver en kundes betalingsevne</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/PeriodeUdstraekningType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingEvneBeregningGrundlagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingEvneBeregningTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingEvneInfoStatusType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingEvneVarighedMarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:element name="BetalingEvneBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens aktuelle betalingsevne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens aktuelle betalingsevne - i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneEnhedPeriode" type="fase2.1:PeriodeUdstrækningType">
+               
+               <xs:annotation>
+                  <xs:documentation>Betalingsevnen angives som kroner over et givet tidsrum. Standarværdien er kroner per. måned</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeregLønIndProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Lønindeholdelseprocenten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneRedLønIndProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den reducerede lønindeholdelses procent, der beregnes hvis kundens trækprocent plus lønindeholdelsesprocent er større end 100%.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneAfdragProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den procentdel af nettoindkomsten som kunden kan afdrage sin gæld med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneÅrsindkomstDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens årsindkomst, der stammer fra eIndkomst, lønsedler eller årsopgørelsen. (Angivet i danske kroner)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneÅrsindkomst" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens årsindkomst, der stammer fra eIndkomst, lønsedler eller årsopgørelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeregnetAIndkomstDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Teknisk beregnet A-indkomst som beregnes ud fra kundens nettoindkomst, trækprocent og årlig skattekortfradrag. (I danske kroner).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeregnetAIndkomst" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Teknisk beregnet A-indkomst som beregnes ud fra kundens nettoindkomst, trækprocent og årlig skattekortfradrag.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneNettoIndkomstDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens aktuelle nettoindkomst (i danske kroner) i perioden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneNettoIndkomst" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens aktuelle nettoindkomst (i kroner) i perioden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneNettoIndkPeriode" type="fase2.1:PeriodeUdstrækningType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den periode enhed som kundens nettoindkomst er opgivet for - f.eks per måned.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneNettoIndkPerÅrDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens aktuelle nettoindkomst omregnet til nettoindkomst pr. år. (I danske kroner).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneNettoIndkPerÅr" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kundens aktuelle nettoindkomst omregnet til nettoindkomst pr. år.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeregningGrundlag" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Oplysninger om hvor kundens indkomstoplysninger stammer fra.    Mulige værdier: - eIndkomst (måned og år eller periode, hvis udbetalingen ikke er månedlig)  - årsopgørelse (år og opgørelsenummer) og/eller  - lønseddel (måned og år)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeregningGrundlagKode"
+                     type="fase2.1:BetalingEvneBeregningGrundlagKodeType">
+               
+            </xs:element>
+         <xs:element name="BetalingEvneBegrundelse" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udfyldes ikke af EFI</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneSærligBegrundelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder en særlig begrundelse som sagsbehandleren skal udfylde, hvis SKAT vælger at anvende betalingsevnen beregnet efter budgetmodellen i stedet for beregningen foretaget efter skemamodellen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneBeregningTypeKode"
+                     type="fase2.1:BetalingEvneBeregningTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den anvendte model for beregning af kundens betalingsevne. Når kundens betalingsevne er ukendt returneres detaljerede årsagskoder, der viser hvilket trin beregningen er nået til.  Værdiset: AKP_BG: Efter budget - AKR person (AKP) AKV_BG: Efter budget - AKR virksomhed (AKV) CPR_BG: Efter budget - CPR person CPR_MF: Skematisk model - med forsøgerpligt CPR_UF: Skematisk model - uden forsøgerpligt ES_BG: Efter budget - dansk registreret virksomhed UKENDT: Kundens betalingsevne er ukendt pga manglende datagrundlag for beregningen. Oprettelsen af kunden i betalingsevneberegningen er afsluttet UKNIBB: Kundens betalingsevne er ukendt pga. manglende data fra NIB. Nettoindkomstdata er bestilt i NIB  UKNIBM: Kundens betalingsevne er ukendt pga manglende data til beregning i NIB. Svar er modtaget fra NIB UKOPRE: Kundens betalingsevne er ukendt pga. manglende datagrundlag for beregningen. Kunden er under oprettelse i betalingsevneberegningen UKSKKO: Kundens betalingsevne er ukendt pga. manglende manglende skattekort eller manglende svar fra eIndkomst</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneInfoStatus" type="fase2.1:BetalingEvneInfoStatusType">
+               
+               <xs:annotation>
+                  <xs:documentation>Status som angiver om de nødvendige værdier, til at beregne kundens betalingsevne, er kendte.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneVarighedMarkering"
+                     type="fase2.1:BetalingEvneVarighedMarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om det er en varig betalingsevne. I modsat fald er den midlertidig.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneSpecifikationNøgle" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En kort beskrivelse af indholdet at specifikationsfeltet som ofte er betegnelsen for en post i årsopgørelsen eller eIndkomst.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneSpecifikationVærdi" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien i kroner med fortegn af det specificerede element. Elementet vil ofte indeholde en værdi regnet med fortegn af en post i årsopgørelsen eller eIndkomst. Værdien indgår i beregningen af nettoindkomsten og anvendes til at dokumentere beregningen af denne. Værdien anvendes ikke som beregningsværdi af betalingsevneberegningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneSpecifikationVærdiDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien i danske kroner med fortegn af det specificerede element. Elementet vil ofte indeholde en værdi regnet med fortegn af en post i årsopgørelsen. Værdien indgår i beregningen af nettoindkomsten og anvendes til at dokumentere beregningen af denne. Værdien anvendes ikke som beregningsværdi af betalingsevneberegningen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneLedigTilResBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den del af kundens betalingsevne, der ikke er reseveret. Beløbet beregnes af betalingsevneberegningen som den aktuelle betalingsevne minus summen af reservationer. Der returneres kun 0 eller positiv betalingsevne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneLedigTilResBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den del af kundens betalingsevne i danske kroner, der ikke er reseveret. Beløbet beregnes af betalingsevneberegningen som den aktuelle betalingsevne minus summen af reservationer. Der returneres kun 0 eller positiv betalingsevne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneResUdnyttet" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Flag, der angiver om reservationen er udnyttet i den indeværende måned. Værdisæt Ja, Nej Sættes til Ja i indeværende måned, når DMI kalder EFIBetalingEvneAendr for denne myndighedsudbetalingstype </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneForventLønIndBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb, kunden forventes at kunne lønindeholdes med beregnet ud fra lønindeholdelsesprocenten  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneForventLønIndBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb, kunden forventes at kunne lønindeholdes med beregnet ud fra lønindeholdelsesprocenten  - i danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneForsørgerMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kunden er forsørger.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneForsørgerAutoOpdaterMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kundens forsørgerpligt må opdateres automatisk.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingEvneNettoIndkomstIndtastetSagsbehandlerBegrundelse"
+                     type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlerens begrundelse for den indtastede nettoindkomst og dens periode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

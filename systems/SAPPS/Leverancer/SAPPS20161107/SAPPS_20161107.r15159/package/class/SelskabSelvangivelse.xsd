@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dækker over et selskabs samlede selvangivelse for et givent indkomstår (se klassen Selskab for uddybning af defininition). </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/AArstalType.xsd"/>
+         <xs:include schemaLocation="../types/SelskabSelvangivelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivType.xsd"/>
+         <xs:element name="SelskabSelvangivelseIndkomstÅr" type="skat2016:ÅrstalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det indkomstår selvangivelsen dækker over.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseType" type="skat2016:SelskabSelvangivelseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af selvangivelse (der er 6 forskellige).   Værdisæt (enummeration):   SELSKAB FOND ANDELSFORENING KULBRINTE PARAGRAF3ASELVANGIVELSE  PARAGRAF116SELVANGIVELSE </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseStatusKode" type="skat2016:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver status/tilstand for en selskabsangivelse.  01 - Selvangivelse pågår: En indberetning af selvangivelsen er påbegyndt for indeværende indkomstår.  02 - Selvangivelse sendt til SKAT: Indberetningen af selvangivelsen er endeligt indberettet for indkomståret og Sendt til SKAT.  03 - Kladde: Der eksisterer en selvangivelse/genoptagelse i kladdeform for et specifikt indkomstår.  04 - Skønsmæssig ansættelse foretaget: Indberettes der ikke en selvangivelse af selskabet, vil SKAT foretage en skønsmæssig ansættelse. Der er tale om en form for indberetning af selvangivelsen, men den indeholder ikke alle påkrævede informationer.  05 - Genoptagelse pågår: En genoptagelse er påbegyndt for et valgt indkomstår.  06 - Genoptagelse sendt til godkendelse: Der afventes en godkendelse af SKAT før genoptagelsen kan afsluttes endeligt.  07 - Skatteansættelse foretaget: SKAT har godkendt genoptagelsen og denne afsluttes endeligt.  08 - Genoptagelse afvist: SKAT har afvist en genoptagelse.  09 - Skatteansættelse foretaget: En særlig tilstand, som anvendes, når der gemmes en endelig afsluttet selvangivelses-version i løsningen, lavet af SKAT Ligning. Tilstanden kan kun anvendes, når SKAT ændrer en selvangivelse efter selvangivelsesfristen - og er en slags genoptagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseFristDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste rettidige angivelsesdato for selvangivelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseFristOverskridelseDage" type="skat2016:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage som fristen for selvangivelse er overskredet med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseIndberettetDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor selvangivelsen er indberettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseOpdateretTimestamp" type="skat2016:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Timestamp hvor den aktuelle selvangivelse senest er opdateret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseTaksation" type="skat2016:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om selvangivelsen er sket som taksation. Hvis feltet ikke er udfyldt, er det at betragte som falsk, dvs. det ikke er en taksation (True = ja, False = nej). Felt 011</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSelvangivelseSkatteTillæg" type="skat2016:BeløbPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Størrelsen af skattetillægget. Felt 030</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

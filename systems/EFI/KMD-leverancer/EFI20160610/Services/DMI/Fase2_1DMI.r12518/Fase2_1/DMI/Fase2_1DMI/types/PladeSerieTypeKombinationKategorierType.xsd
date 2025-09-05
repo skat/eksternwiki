@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="PladeSerieTypeKombinationKategorierType">
+               <xs:annotation>
+                  <xs:documentation>Angiver de mulige Pladeserie-Type-Kombinationer der findes.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="50"/>
+                  <xs:enumeration value="FastePrøveskilte"/>
+                  <xs:enumeration value="Standardplader3Cifre"/>
+                  <xs:enumeration value="Standardplader4Cifre"/>
+                  <xs:enumeration value="Standardplader5Cifre"/>
+                  <xs:enumeration value="TredjeNummeplade"/>
+                  <xs:enumeration value="Ønskeplader"/>
+                  <xs:enumeration value="Lufthavnsplader"/>
+                  <xs:enumeration value="Grænseplader"/>
+                  <xs:enumeration value="TaxaOgSygetransporter"/>
+                  <xs:enumeration value="Diplomatplader"/>
+                  <xs:enumeration value="Blokvogne"/>
+                  <xs:enumeration value="HistoriskePlader"/>
+                  <xs:enumeration value="LøsePrøvemærker"/>
+                  <xs:enumeration value="BrandOgBanekøretøjer"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

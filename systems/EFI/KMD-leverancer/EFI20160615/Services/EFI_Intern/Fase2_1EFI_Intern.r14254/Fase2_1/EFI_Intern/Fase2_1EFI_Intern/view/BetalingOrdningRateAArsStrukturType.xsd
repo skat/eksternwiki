@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/BetalingOrdningRate.xsd"/>
+         <xs:element name="BetalingOrdningRateÅrsStruktur"
+                     type="fase2.1:BetalingOrdningRateÅrsStrukturType"/>
+         <xs:complexType name="BetalingOrdningRateÅrsStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:BetalingOrdningRateStatÅrsKode"/>
+                  
+                  <xs:element ref="fase2.1:BetalingOrdningRateStatÅrsBegr"/>
+
+               <xs:element ref="fase2.1:BetalingOrdningRateStatÅrTekst" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

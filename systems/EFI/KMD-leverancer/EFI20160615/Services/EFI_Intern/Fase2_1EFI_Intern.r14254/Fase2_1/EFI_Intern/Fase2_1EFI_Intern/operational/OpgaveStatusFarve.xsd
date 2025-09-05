@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         
+         <xs:element name="OpgaveStatusFarve" type="fase2.1:TalHelType">
+            <xs:annotation>
+               <xs:documentation>Farven angiver opgavens status. Grøn angiver at opgaven har en god status. Gul angiver at opgaven skal være booket/plukket indenfor et bestemt antal dage (angivet i opsætningen). Rød angiver at opgaven har overskredet sin gennemførselsfrist. Bliver kun returneret fra RessourceStyring.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

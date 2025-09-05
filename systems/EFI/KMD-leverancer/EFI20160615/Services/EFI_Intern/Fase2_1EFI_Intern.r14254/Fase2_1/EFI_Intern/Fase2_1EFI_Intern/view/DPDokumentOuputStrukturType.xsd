@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/Dokument.xsd"/>
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DPPost.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/EFIHenvendelsesDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../operational/DPNoteID.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DPNote.xsd"/>
+         <xs:include schemaLocation="../class/MeddelelseType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DokumentFilStrukturType.xsd"/>
+				     
+         <xs:element name="DPDokumentOuputStruktur" type="fase2.1:DPDokumentOuputStrukturType"/>
+         <xs:complexType name="DPDokumentOuputStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DokumentTitel"/>
+                  
+                  <xs:element ref="fase2.1:DPDokumentType"/>
+
+               <xs:element ref="fase2.1:DMIIndberetterOpretStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPDokumentOprettetDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPPostJournalNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DMIFordringHaverID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelsesDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:IndsatsID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:IndsatsUnderTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPNoteID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPNoteTekst" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:DPDokumentPrioritet"/>
+
+               <xs:element ref="fase2.1:MeddelelseTypeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DokumentFilStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPDokumentArt" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPDokumentEksternReference" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:DPPostType"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

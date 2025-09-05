@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DPPostTypeType.xsd"/>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:element name="DPPostType" type="fase2.1:DPPostTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af post. Dokumenter der sendes via DPMeddelelseSendAkter bliver automatisk markeret som Udgående posttype. Dokumenter der bliver oprettet med DPDokumentOpret bliver markeret som Indgående hvis flaget IndgåendePostMarkering er sat. Ellers sættes posttype til Notat.  Enumeration:  Indgående Udgående Notat</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPPostJournalNummer" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det journalnummer udgående post stemples med</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

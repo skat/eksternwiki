@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En udbetaling af børnefamilieydelse for et barn i en given periode.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="BFYUdbetalingModregningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Eventuelt beløb som er blevet modregnet i udbetalingen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingPeriodeFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for en udbetalingsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingPeriodeTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for en udbetalingsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ydelsens udbetalingsbeløb for en given periode og et givent barn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingForventetDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår ydelsen forventes udbetalt. Mapning af OIO-elementet UdbetalingForventetDato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingForventetBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som forventes udbetalt for perioden for et givent barn. Mapning af OIO-elementet UdbetalingForventetBeloeb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingReduktionBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Eventuelt beløb som udbetalingen af ydelsen er reduceret med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingKorrektionBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb som udbetalingen af ydelsen er korrigeret med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BFYUdbetalingYdelseType" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvilken Børne Familie Ydelse der er tale om (børn eller unge).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

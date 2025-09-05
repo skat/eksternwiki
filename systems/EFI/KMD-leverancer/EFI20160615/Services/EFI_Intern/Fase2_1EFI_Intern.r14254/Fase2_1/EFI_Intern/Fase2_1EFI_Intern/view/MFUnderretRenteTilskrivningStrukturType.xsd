@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../operational/RentePeriodeType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RentePeriodeFraDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RentePeriodeTilDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/RentePeriodeBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RentePeriodeBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RenteAArTilDatoBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RenteAArTilDatoBeloebDKK.xsd"/>
+				     
+         <xs:element name="MFUnderretRenteTilskrivningStruktur"
+                     type="fase2.1:MFUnderretRenteTilskrivningStrukturType"/>
+         <xs:complexType name="MFUnderretRenteTilskrivningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="FordringListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="Fordring" minOccurs="1" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringTypeKategori"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+
+                                 <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:DMIFordringPEnhedNummer" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:RentePeriodeType"/>
+                  
+                                 <xs:element ref="fase2.1:RentePeriodeFraDato"/>
+                  
+                                 <xs:element ref="fase2.1:RentePeriodeTilDato"/>
+                  
+                                 <xs:element ref="fase2.1:ValutaKode"/>
+                  
+                                 <xs:element ref="fase2.1:RentePeriodeBeløb"/>
+                  
+                                 <xs:element ref="fase2.1:RentePeriodeBeløbDKK"/>
+                  
+                                 <xs:element ref="fase2.1:RenteÅrTilDatoBeløb"/>
+                  
+                                 <xs:element ref="fase2.1:RenteÅrTilDatoBeløbDKK"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>(HæftelseAfgiftBeregning) indeholder elementer som anvendes til beregning af hæftelseafgift.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="HæftAfgBeregnIndgITillægsafg" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Hæftelse er indgået i tillægsafgift. Nej: Hæftelse er ikke indgået i tillægsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnIndgåetRetsafgift" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Hæftelse indgået i beregning af retsafgift. Nej: Hæftelse ikke indgået i beregning af retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnSidsteSaldoBeregn" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsens fordring saldo ved sidste beregning af retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnSidsteSaldoBerDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsens fordring saldo (i danske kroner) ved sidste beregning af retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnSidsteSaldoRente" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsens tilhørende rente-saldo ved sidste beregning af retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnSidsteSldRenteDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsens tilhørende rente-saldo (i danske kroner) ved sidste beregning af retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnIndgåetRetsafgiftDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor dette hæftelsesforhold indgik i en retsafgiftsberegning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftAfgBeregnIndgITillægsafgDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor dette hæftelsesforhold indgik i en tillægsafgiftsberegning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Grunddatatype som indeholder alle love som en virksomhed eller person kan blive registreret for. Lov er overbegreb for aftalepligt således at der ikke findes aftalepligter som ikke relaterer sig til en lov. Loven angives med den officielle lovtekst, hvorimod aftalepligt angives med den i daglig tale anvendte tekst.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Type.xsd"/>
+      </xs:schema>

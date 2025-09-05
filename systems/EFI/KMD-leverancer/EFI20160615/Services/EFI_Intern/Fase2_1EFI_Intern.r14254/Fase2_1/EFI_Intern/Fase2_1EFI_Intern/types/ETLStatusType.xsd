@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="ETLStatusType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="25"/>
+                  <xs:enumeration value="AFSENDELSESFEJL"/>
+                  <xs:enumeration value="AFSENDT"/>
+                  <xs:enumeration value="TINGLYSTMEDFRIST"/>
+                  <xs:enumeration value="UDSLETTET"/>
+                  <xs:enumeration value="ENDELIGTINDFØRT"/>
+                  <xs:enumeration value="TEKNISKMODTAGET"/>
+                  <xs:enumeration value="MODTAGET"/>
+                  <xs:enumeration value="MANUEL"/>
+                  <xs:enumeration value="AFVIST"/>
+                  <xs:enumeration value="TINGLYST"/>
+                  <xs:enumeration value="TINGLYSTANMÆRKNING"/>
+                  <xs:enumeration value="TINGLYSTFRIST"/>
+                  <xs:enumeration value="TINGLYSTANMÆRKNINGFRIST"/>
+                  <xs:enumeration value="FEJL"/>
+                  <xs:enumeration value="FINDESIKKE"/>
+                  <xs:enumeration value="KØ"/>
+                  <xs:enumeration value="AFSLUTTET"/>
+                  <xs:enumeration value="RETSANMÆRKNINGSLETTET"/>
+                  <xs:enumeration value="TIDSFRISTADVARSEL"/>
+                  <xs:enumeration value="DOKUMENTUDSLETTET"/>
+                  <xs:enumeration value="TIDSFRISTSLETTET"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

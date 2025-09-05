@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebPositivNegativ11Decimaler2Type.xsd"/>
+         <xs:element name="NettoIndkomstBeregningBeløb"
+                     type="fase2.1:BeløbPositivNegativ11Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet nettoindkomstbeløb pr. måned</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NettoIndkomstBeregningAIndkomstTilLønindeholdelseBeløb"
+                     type="fase2.1:BeløbPositivNegativ11Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den A-IndKomst, der kan laves lønindeholdelse i (lønindeholdelse eksklusiv Paragraf 12).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NettoIndkomstBeregningAIndkomstTilSærligLønindeholdelseBeløb"
+                     type="fase2.1:BeløbPositivNegativ11Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den A-IndKomst, der kan laves særlig lønindeholdelse i (lønindeholdelse inklusiv Paragraf 12).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

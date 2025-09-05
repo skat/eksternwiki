@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RapportOplysningIdentifikation.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Skattecenter.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/RapportOplysningAdresseStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="RapportOplysningIdentifikationStruktur" type="fase2.1:RapportOplysningIdentifikationStrukturType"/>
+   
+   
+   
+   <xs:complexType name="RapportOplysningIdentifikationStrukturType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+         
+         <!--Sequence removed-->
+                  
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningIdentifikationKvalifikator"/>
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningIdentifikationKvalifikatorTekst" minOccurs="0"/>
+
+
+
+         
+            
+            
+         <xs:element name="Identifikator">
+            
+               
+               
+            <xs:complexType>
+               
+                  
+                  
+               <xs:choice>
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+				
+				
+				
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:VirksomhedSENummer"/>
+				
+				
+				
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:MyndighedNummer"/>
+				
+				
+				
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:PersonCPRNummer"/>
+				
+				
+				
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:SkattecenterKode"/>
+
+               
+                  
+                  
+               </xs:choice>
+            
+               
+               
+            </xs:complexType>
+         
+            
+            
+         </xs:element>
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningIdentifikationNavn" minOccurs="0"/>
+
+
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningIdentifikationBoNavn" minOccurs="0"/>
+
+
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningAdresseStruktur" minOccurs="0"/>
+
+
+      
+         
+         
+            
+         
+         
+         
+         
+      
+					
+      
+      
+      </xs:sequence>
+							
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Underliggende forhold til registreringsforhold eller forretningsområdeforhold. Angiver hvilken acontoforhold, der eventuelt er registreret for en virksomhed for en given pligt på et givet tidspunkt. Virksomhedens acontoforhold har indflydelse på, hvornår der skal angives og betales for de pligter der er omfattet af ordningen.  Der kan være fra et til flere acontoforhold på samme tid til enten registreringsforhold eller forretningsområdeforhold.  På registreringsforholdet kan der være aftalt en acontoafregning (i form af kode). Det gælder for nuværende for angivelsestyperne Lønsumsafgift, Selskabsskat og Pensionsafkastbeskatning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeEtCifferStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AcontoForholdKode" type="fase2.1:KodeEtCifferStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik kode som identificerer et acontoforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoForholdGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for et acontoforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AcontoForholdGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for et acontoforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

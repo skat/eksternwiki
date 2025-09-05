@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Repræsenterer et skattecenter som en specialisering af myndighed. Myndighedsnummeret nedarves fra myndighed (17xx).  Liste af skattecenter.  Skattecenterkode  Skattecenter        SAP/HR Kode  8082                        Ballerup              4320 8087                        Rønne                4330 8085                        Fredensborg       4340 8084                        Frederikssund     4350 8081                        Høje Tåstrup      4360 8083                        Nærum               4370 8079                        København        4380 8069                        Holbæk              6320 8062                        Korsør                 6330 8066                        Køge                   6340 8060                        Maribo                 6350 8061                        Næstved             6360 8068                        Roskilde              6370 8052                        Billund                 9220 8053                        Esbjerg               9230 8054                        Haderslev           9240 8056                        Middelfart            9250 8057                        Odense               9260 8058                        Svendborg          9270 8055                        Tønder                9280 8030                        Hjørring               9720 8034                        Skive                  9730 8033                        Thisted               9740 8031                        Aalborg               9750 8040                        Grenå                 9820 8048                        Herning               9830 8050                        Horsens              9840 8039                        Randers              9850 8035                        Struer                  9860 8047                        Aarhus                9870        </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/KodeFireCifreStartEtType.xsd"/>
+         <xs:element name="SkattecenterNummer" type="fase2.1:TalHelType">
+               
+            </xs:element>
+         <xs:element name="SkattecenterNavn" type="fase2.1:TekstKortType">
+               
+            </xs:element>
+         <xs:element name="SkattecenterSapKode" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattecentrets SAP HR-kode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkattecenterKode" type="fase2.1:KodeFireCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>SKATs interne unikke identifikation af et skattecenter (80xx).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

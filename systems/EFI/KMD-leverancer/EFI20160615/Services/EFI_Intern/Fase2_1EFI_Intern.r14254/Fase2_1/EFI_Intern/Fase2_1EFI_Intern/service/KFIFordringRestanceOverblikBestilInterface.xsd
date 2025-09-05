@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen sender en af fire meddelelsestyper til en person eller virksomhed alt efter om personen/virksomheden har gæld til inddrivelse eller ej. Servicen kalder DMIFordringList for afgøre om personen/selskabet er 'gældfri', og servicen sender en af nedenstående meddelelsestyper til personen/selskabet: restanceattest uden gæld - virksomhed restanceattest uden gæld - person restanceattest med gæld - virksomhed restanceattest med gæld - person  Servicen returnerer en markering for om person/virksomheden var gældfri eller ej. </xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/KFIFordringRestanceOverblikBestil_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/KFIFordringRestanceOverblikBestil_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="KFIFordringRestanceOverblikBestilInterface"
+                     type="fase2.1:KFIFordringRestanceOverblikBestilInterfaceType"/>
+         <xs:complexType name="KFIFordringRestanceOverblikBestilInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:KFIFordringRestanceOverblikBestil_I"/>
+               <xs:element ref="fase2.1:KFIFordringRestanceOverblikBestil_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

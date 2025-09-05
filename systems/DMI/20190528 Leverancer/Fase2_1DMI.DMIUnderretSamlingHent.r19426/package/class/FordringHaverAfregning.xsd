@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder oplysning om afregninger der er foretaget til fordringshaveren.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/FordringHaverAfregningUnderretKodeDomaeneType.xsd"/>
+         <xs:element name="FordringHaverAfregningID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af afregningen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb der skal afregnes til fordringshaver i den valgte valuta</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb der skal afregnes til fordringshaver omregnet til danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato afregningen til fordringshaver er oprettet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningUdbetalt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Udbetalt til Fordringhaver Nej Ikke udbetalt til fordringshaver</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningPerFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>FordringHaverAfregningPeriodeFraDato er pr. definition altid én dag efter sidste FordringHaverAfregningDato.  Note til elementnavn: Dette elementnavn er ikke blevet forkortet til de aftalte maks. 30 karakterer, da det ikke var muligt at finde en forkortelse der ikke var meningsforstyrrende i forhold til begrebet. Elementet skal forkortes i databasen, og her er SKATs forslag til forkortelse: FordringHaverAfrPeriodeFra </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningPerTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PerTil er = med FordringHaverAfregningsdato . </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAfregningUnderret"
+                     type="fase2.1:FordringHaverAfregningUnderretKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der oplyser om underretningen er en udligning eller en afregning.  Note til elementnavn: Dette elementnavn er ikke blevet forkortet til de aftalte maks. 30 karakterer, da det ikke var muligt at finde en forkortelse der ikke var meningsforstyrrende i forhold til begrebet. Elementet skal forkortes i databasen, og her er SKATs forslag til forkortelse: FordringHaverAfrUnderret</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

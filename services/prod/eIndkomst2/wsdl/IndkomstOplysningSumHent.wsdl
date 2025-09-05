@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" name="IndkomstOplysningSumHentService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet er at hente summerede indkomstoplysninger for en eller flere personer eller én indberetningspligtig for den angivne periode af basismåneder. En basismåned er den måned, som indkomsten efter gældende skatteregler hører til i. Er basismåned 201101, dvs. januar måned 2011, så hører indkomsten til i indkomstår 2011 og indgår således i årsopgørelsen for 2011.</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0">
+			<xsd:include schemaLocation="../service/IndkomstOplysningSumHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IndkomstOplysningSumHentServiceRequest">
+		<wsdl:part name="Request" element="eindkomstws:IndkomstOplysningSumHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="IndkomstOplysningSumHentServiceResponse">
+		<wsdl:part name="Response" element="eindkomstws:IndkomstOplysningSumHent_O"/>
+	</wsdl:message>
+	<wsdl:portType name="IndkomstOplysningSumHentServicePortType">
+		<wsdl:operation name="getIndkomstOplysningSumHent">
+			<wsdl:input message="eindkomstws:IndkomstOplysningSumHentServiceRequest"/>
+			<wsdl:output message="eindkomstws:IndkomstOplysningSumHentServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+		<wsdl:binding name="IndkomstOplysningSumHentServiceBinding" type="eindkomstws:IndkomstOplysningSumHentServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getIndkomstOplysningSumHent">
+			<soap:operation soapAction="getIndkomstOplysningSumHent"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="IndkomstOplysningSumHentServiceBindingQSService">
+		<wsdl:port name="IndkomstOplysningSumHentServiceBindingQSPort" binding="eindkomstws:IndkomstOplysningSumHentServiceBinding">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/IndkomstOplysningSumHentServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Bygning.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:include schemaLocation="../operational/eTLIdentifikatorMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/eTLAndelsIdentifikator.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AktivAndel.xsd"/>
+         <xs:include schemaLocation="../class/Andelsbolig.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="KFIAktivAndelStruktur" type="fase2.1:KFIAktivAndelStrukturType"/>
+         <xs:complexType name="KFIAktivAndelStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+
+                  <xs:element ref="fase2.1:AktivTinglysningBeløb" minOccurs="0"/>
+
+                  <xs:element ref="fase2.1:KFIAdresseStruktur"/>
+
+                  <xs:element ref="fase2.1:BygningeTLNummer" minOccurs="0"/>
+
+
+                  <xs:element name="Kommune">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MyndighedNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element ref="fase2.1:eTLIdentifikatorMarkering" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:eTLAndelsIdentifikator" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivAndelEjerAndel" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AndelsboligNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivAndelMedejer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivAndelRestgæld" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivSkønnetFriværdi" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivSkønnetFriværdiBegrundelse" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivDenunciationStatusKode" minOccurs="0"/>
+
+
+                  <!--Sequence removed-->
+
+                     <xs:element name="AndelsboligAdministrator" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+
+                              <xs:element ref="fase2.1:KFIAdresseStruktur" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:PersonNavnNavn" minOccurs="0"/>
+
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+
+                  <xs:element ref="fase2.1:AktivNavnAdresseTredjemand" minOccurs="0"/>
+
+               
+            
+         
+         
+         
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:element name="TilstandStruktur" type="fase2.1:TilstandStrukturType"/>
+         <xs:complexType name="TilstandStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:TilstandID"/>
+                  
+                  <xs:element ref="fase2.1:TilstandNavn"/>
+                  
+                  <xs:element ref="fase2.1:TilstandBeskrivelse"/>
+                  
+                  <xs:element ref="fase2.1:TilstandType"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

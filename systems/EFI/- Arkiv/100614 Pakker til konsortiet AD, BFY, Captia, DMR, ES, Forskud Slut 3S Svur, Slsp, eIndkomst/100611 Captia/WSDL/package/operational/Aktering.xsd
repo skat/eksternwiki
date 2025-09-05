@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+      
+   
+   
+   <xs:element name="Aktering" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Markering af, hvorvidt et dokument skal akteres på den pågældende sag eller ej. Sættes denne markering vil Captia genererer et SagAktNummer for akteringen, som angiver præcis hvilken sagsakt et dokument er i forhold til den pågældende sag.  Et dokument kan ikke ændres, når det er akteret på en sag. Et dokument kan kun være akteret på én sag. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

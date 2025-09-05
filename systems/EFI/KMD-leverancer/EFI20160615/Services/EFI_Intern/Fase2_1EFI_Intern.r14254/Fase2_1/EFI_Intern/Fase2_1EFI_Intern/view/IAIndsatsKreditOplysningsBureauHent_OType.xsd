@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:include schemaLocation="../class/EFIFordring.xsd"/>
+         <xs:include schemaLocation="../class/KOBIndberetning.xsd"/>
+         <xs:include schemaLocation="../operational/KOBBegrundelseKode.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KOBBegrundelseTekst.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHaendelse.xsd"/>
+         <xs:include schemaLocation="../class/Kreditoplysningsbureau.xsd"/>
+         <xs:include schemaLocation="../class/Opgave.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/SporSkabelon.xsd"/>
+         <xs:element name="IAIndsatsKreditOplysningsBureauHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:IAIndsatsKreditOplysningsBureauHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="IAIndsatsKreditOplysningsBureauHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:IndsatsStartdato" minOccurs="0"/>
+                     <xs:element name="IndsatsOprettetAf" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:RessourceNummer"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element ref="fase2.1:IndsatsSlutdato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:IndsatsTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:IndsatsUnderTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandNavn" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:TilstandType" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:EFIFordringFundamentDato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:KOBIndberetningDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningUdløbDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningAfmeldelseDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningVarselDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningVarselHenvendelseFristDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningVarselIkkeModtaget" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBBegrundelseKode" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBBegrundelseTekst" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningFordringSum" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KOBIndberetningRestSaldo" minOccurs="0"/>
+
+
+                     
+
+                        <xs:element name="FremtidigHændelse" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:EFIHændelseID"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+
+                     <xs:element ref="fase2.1:KreditoplysningsbureauNavn" minOccurs="0"/>
+
+
+                     
+
+                        <xs:element name="Varsel" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:OpgaveBookingreference"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     
+
+                        <xs:element name="Indberetning" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:OpgaveBookingreference"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <xs:element name="FordringOmfattetSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0" maxOccurs="unbounded"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element name="KOBIndberetningRefSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="IndberetningsRef" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="IdentifikationValg">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:VirksomhedSENummer"/>
+				
+				
+				                                            <xs:element ref="fase2.1:PersonCPRNummer"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element ref="fase2.1:KOBIndberetningID"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+
+                     <xs:element ref="fase2.1:SporSkabelonIndsatsSkabelonID" minOccurs="0"/>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

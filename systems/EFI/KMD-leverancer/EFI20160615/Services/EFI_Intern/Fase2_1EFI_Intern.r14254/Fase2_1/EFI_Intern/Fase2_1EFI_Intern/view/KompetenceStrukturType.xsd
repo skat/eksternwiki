@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Kompetence.xsd"/>
+         <xs:element name="KompetenceStruktur" type="fase2.1:KompetenceStrukturType"/>
+         <xs:complexType name="KompetenceStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="KompetenceStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:KompetenceID"/>
+                  
+                        <xs:element ref="fase2.1:KompetenceKompetenceKategori"/>
+                  
+                        <xs:element ref="fase2.1:KompetenceNavn"/>
+
+                        <xs:element ref="fase2.1:KompetenceNøgle" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KompetenceFra" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KompetenceTil" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KompetenceScore" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:KompetenceOprettetAf"/>
+                  
+                        <xs:element ref="fase2.1:KompetenceOprettetTid"/>
+
+                        <xs:element ref="fase2.1:KompetenceÆndretAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KompetenceÆndretTid" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KompetenceSlettetAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:KompetenceSlettetTid" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:KompetenceTimestampVersion"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

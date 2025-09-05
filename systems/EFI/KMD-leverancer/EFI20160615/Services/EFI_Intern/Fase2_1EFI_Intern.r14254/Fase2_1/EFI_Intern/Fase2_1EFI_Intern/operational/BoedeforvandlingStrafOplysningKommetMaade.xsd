@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/EFIHenvendelseFormTypeType.xsd"/>
+         
+         <xs:element name="BødeforvandlingStrafOplysningKommetMåde"
+                     type="fase2.1:EFIHenvendelseFormTypeType">
+            <xs:annotation>
+               <xs:documentation>Angiv årsag til at tilbagekald bødeforvandlingsstraffen - telefonisk eller brev</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

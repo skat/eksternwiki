@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En postering er en fællesbetegnelse for en bevægelse på en konto (f.eks. en debitorkonto eller en finanskonto).   En postering er i forbindelse med Opkrævning og Inddrivelse en fællesbetegnelse for en bevægelse på kundes konto i form af en Indbetaling, en Udbetaling eller en Fordring.  Er der tale om en finanspostering gælder postering for en enkelt bevægelse (bogføring) på en finanskonto, som indgår i et regnskab. En finanspostering kan være en sum af poster fra underliggende konti, men kan ligeså godt være en enkelt post.  I forhold til § 38 regnskabet vil en finanspostering f.eks. kunne være summen af alle fordringsposteringer af en bestemt type på en dag i januar måned, dvs. en indtægt for SKAT. I forhold til § 9 vil et eksempel kunne være en husleje udgift for SKAT</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/AarType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="PosteringID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt id for en postering</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PosteringBeløb" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="PosteringBogføringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvornår en regnskabspostering er bogført</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PosteringBetalingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan være dato for betaling, kreditering ind- eller udbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PosteringForfaldDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for forfald af tilsvar/krav.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PosteringIndkomstÅr" type="fase2.1:AarType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indkomstår såfremt en postering vedrører indkomst</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="PosteringFirmakode" type="fase2.1:KodeType">
+               
+            </xs:element>
+         <xs:element name="PosteringUdligningsnummer" type="fase2.1:KodeType">
+               
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="AdresseType">
+               <xs:annotation>
+                  <xs:documentation>Adresse følger den sædvanlige opbygning af en adresse, bl.a. med mulighed for at angive c/o navn. Dvs. adresse består af de sædvanlige underattributter for en adresse, som fx. hos CPR og CVR. Skal også håndtere udenlandske adresser.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="68"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

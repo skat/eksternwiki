@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="SubScoreVariabelNavn" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver navnet på den enkelte variabel der er en del af subscorekortet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SubScoreVariabelVærdi" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver værdien af variablen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

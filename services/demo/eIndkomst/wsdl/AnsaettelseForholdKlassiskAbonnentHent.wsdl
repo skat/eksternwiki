@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AnsættelseForholdKlassiskAbonnentHentService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Formålet er at bestille og hente ansættelsesoplysninger til myndigheder og andre (abonnenter), som periodisk har behov for oplysninger fra indkomstregistret, hvor indkomstmodtager eller indkomstudbetaler ikke på forhånd er kendt. 
+
+Der overføres oplysninger, som er registreret i eIndkomst siden sidste levering. Oplysningerne leveres uden nogen tolkning.
+
+Servicen stiller oplysninger til rådighed for myndigheder og andre, som iht. eIndkomstlovens § 7 stk. 1, jf. § 15 stk. 1 i eIndkomstbekendtgørelsen, kan anvende oplysninger fra indkomstregistret. 
+
+Anvendelsen af servicen er betinget af, at de pågældende har indgået en abonnementsaftale med told- og skatteforvaltningen herom, jf. § 7 stk. 4 i lov om et indkomstregister. 
+
+Servicen udstilles ikke til enhver og må således alene anvendes af kendte brugere, dvs. af de myndigheder m.fl., som abonnerer på ansættelsesoplysninger.
+
+Servicen kan give adgang til alle oplysninger om ansættelse eller en begrænset mængde af disse oplysninger afhængig af abonnent. De oplysninger, som en abonnent ikke har adgang til, filtreres fra (fjernes før udstilling til abonnenten) på grundlag af oplysning om abonnent, abonnement og anvendelsesformål.
+
+LeveringTilAbonnentStatusStatusNyDatoTid udtrykker det tidspunkt, hvortil der skal hentes nye oplysninger. Der hentes oplysninger fra sidste levering til dato tid for ny levering.
+		
+			Operationerne udføres i denne rækkefølge:
+			1) getAnsættelseForholdKlassiskAbonnentHent_I
+			2) getAnsættelseForholdKlassiskAbonnentHent_O
+			3)	getAnsættelseForholdKlassiskAbonnentHent_OK
+			
+			Mellem trin 1 og 2 kan der polles vha. service nr. 2 eller der kan udføres et callback fra SKAT til en service hos kunden.
+			Callback servicen er specificeret særskilt.
+		</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<soap:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:ns="http://rep.oio.dk/cpr.dk/xml/schemas/2007/01/02/" xmlns:nfase2="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:nfase20="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:nfase21="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" xmlns:nfase22="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingcallbackreference/xml/schemas/20071202/" xmlns:nfase23="http://rep.oio.dk/skat.dk/eindkomst/class/abonnentbestillingidentifikator/xml/schemas/20071202/" xmlns:nfase24="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" xmlns:nfase25="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" xmlns:nfase26="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" xmlns:nfase27="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" xmlns:nfase28="http://rep.oio.dk/skat.dk/eindkomst/class/blanket/xml/schemas/20071202/" xmlns:nfase29="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" xmlns:nsoap="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/05/19/" xmlns:nsoap0="http://rep.oio.dk/skat.dk/eindkomst/class/feltenhedtype/xml/schemas/20071202/" xmlns:nsoap1="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangmedarbejderidentifikator/xml/schemas/20071202/" xmlns:nsoap2="http://rep.oio.dk/skat.dk/eindkomst/class/leveringabonnentstatusnydatotid/xml/schemas/20071202/" xmlns:nsoap3="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:nsoap4="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:nsoap5="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns:nsoap6="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns3="http://rep.oio.dk/cpr.dk/xml/schemas/core/2006/01/10/" xmlns:ns4="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" xmlns:ns5="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:ns6="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:ns7="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2006/01/23/" xmlns:ns8="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" xmlns:ns9="http://rep.oio.dk/skat.dk/TSE/virksomhed/xml/schemas/2006/09/01/" xmlns:soap="http://www.w3.org/2001/XMLSchema" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<soap:include schemaLocation="../service/AnsaettelseForholdKlassiskAbonnentHentInterface.xsd"/>
+		</soap:schema>
+	</wsdl:types>
+	<wsdl:message name="AnsættelseForholdKlassiskAbonnentHent_IServiceRequest">
+		<wsdl:part element="fase2:AnsaettelseForholdKlassiskAbonnentHent_I_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="AnsættelseForholdKlassiskAbonnentHent_IServiceResponse">
+		<wsdl:part element="fase2:AnsaettelseForholdKlassiskAbonnentHent_I_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:message name="AnsættelseForholdKlassiskAbonnentHent_OServiceRequest">
+		<wsdl:part element="fase2:AnsaettelseForholdKlassiskAbonnentHent_O_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="AnsættelseForholdKlassiskAbonnentHent_OServiceResponse">
+		<wsdl:part element="fase2:AnsaettelseForholdKlassiskAbonnentHent_O_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:message name="AnsættelseForholdKlassiskAbonnentHent_OKServiceRequest">
+		<wsdl:part element="fase2:AnsaettelseForholdKlassiskAbonnentHent_OK_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="AnsættelseForholdKlassiskAbonnentHent_OKServiceResponse">
+		<wsdl:part element="fase2:AnsaettelseForholdKlassiskAbonnentHent_OK_O" name="Response"/>
+	</wsdl:message>
+	<wsdl:portType name="AnsættelseForholdKlassiskAbonnentHent_IServicePortType">
+		<wsdl:operation name="getAnsættelseForholdKlassiskAbonnentHent_I">
+			<wsdl:input message="fase2:AnsættelseForholdKlassiskAbonnentHent_IServiceRequest"/>
+			<wsdl:output message="fase2:AnsættelseForholdKlassiskAbonnentHent_IServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="AnsættelseForholdKlassiskAbonnentHent_OServicePortType">
+		<wsdl:operation name="getAnsættelseForholdKlassiskAbonnentHent_O">
+			<wsdl:input message="fase2:AnsættelseForholdKlassiskAbonnentHent_OServiceRequest"/>
+			<wsdl:output message="fase2:AnsættelseForholdKlassiskAbonnentHent_OServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="AnsættelseForholdKlassiskAbonnentHent_OKServicePortType">
+		<wsdl:operation name="getAnsættelseForholdKlassiskAbonnentHent_OK">
+			<wsdl:input message="fase2:AnsættelseForholdKlassiskAbonnentHent_OKServiceRequest"/>
+			<wsdl:output message="fase2:AnsættelseForholdKlassiskAbonnentHent_OKServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Binding1" type="fase2:AnsættelseForholdKlassiskAbonnentHent_IServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAnsættelseForholdKlassiskAbonnentHent_I">
+			<soap:operation soapAction="urn:#getAnsættelseForholdKlassiskAbonnentHent_I"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Binding2" type="fase2:AnsættelseForholdKlassiskAbonnentHent_OServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAnsættelseForholdKlassiskAbonnentHent_O">
+			<soap:operation soapAction="urn:#getAnsættelseForholdKlassiskAbonnentHent_O"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Binding3" type="fase2:AnsættelseForholdKlassiskAbonnentHent_OKServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAnsættelseForholdKlassiskAbonnentHent_OK">
+			<soap:operation soapAction="urn:#getAnsættelseForholdKlassiskAbonnentHent_OK"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AnsaettelseForholdKlassiskAbonnentHent">
+		<wsdl:port binding="fase2:Binding1" name="Binding1Port">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/AnsaettelseForholdKlassiskAbonnentHentServicePort"/>
+		</wsdl:port>
+		<wsdl:port binding="fase2:Binding2" name="Binding2Port">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/BestillingHent "/>
+		</wsdl:port>
+		<wsdl:port binding="fase2:Binding3" name="Binding3Port">
+			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/BestillingModtaget "/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

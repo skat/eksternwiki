@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortIndkomstAAr.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortAlleMarkering.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Blanket.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/BlanketFelt.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/eSkattekortType.xsd"/>
+         
+   
+   
+   
+   <xs:element name="eSkattekortHent_FejlId" type="fase2.1:eSkattekortHent_FejlIdType"/>
+   
+   
+   
+   <xs:complexType name="eSkattekortHent_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedSENummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:PersonCPRNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:eSkattekortIndkomstÅr" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SøgeDatoFra" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:eSkattekortAlleMarkering" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:BlanketNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:BlanketFeltNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:eSkattekortTypeKode" minOccurs="0"/>
+
+
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

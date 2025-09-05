@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Hvis kunden ikke kan betale fordringen, kan Inddrivelsesmyndigheden foretage udlæg i alt, hvad kunden ejer. Ved udlæg sikrer Inddrivelsesmyndigheden sig retten til at hente og sælge, hvad kunden ejer. Derefter kan de vælge at lade kundens ejendele bortsælge på tvangsauktion.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/UdlaegTilsigelseFormType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/OrganisatoriskEnhedType.xsd"/>
+         <xs:include schemaLocation="../types/UdlaegOpgaveTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/UdlaegEjGennemfoertAktionType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/LoebeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2000Type.xsd"/>
+         <xs:element name="UdlægUdsendelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for udsendelse af tilsigelse til kunde. Kaldes også tilsigelsesdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægTilsigelseForm" type="fase2.1:UdlægTilsigelseFormType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for tilsigelsesformen.  1: Foged med brevforkyndelse 2: Foged med politiforkyndelse 3: Foged med postforkyndelse 4: Foged med stævningsmandsforkyndelse 5: Foged uden forkyndelse 6: Foged vedr. fortrinsberettigede fordringer uden forkyndelse 7: Kunde uden forkyndelse 8: Kunde med brevforkyndelse 9: Kunde med politiforkyndelse 10: Kunde med postforkyndelse 11: Kunde med stævningsmandsforkyndelse 12: Tilsigelse til et konverteret udlæg</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægMedTilsigelse" type="fase2.1:JaNejType">
+               
+            </xs:element>
+         <xs:element name="UdlægTilsigManuelt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette er en boolean datatype, hvor man kan vælge mellem ja og nej (hhv. true og false).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægMødeDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for møde i forbindelse med udlæg. Er angivet i tilsigelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægMødested" type="fase2.1:OrganisatoriskEnhedType">
+               
+               <xs:annotation>
+                  <xs:documentation>Stedet som kunden i følge tilsigelsen skal møde op i forbindelse med udlægsforretningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor udlægget er gennemført. Fungerer som angivelse af, om udlægget er gennemført eller ej. En forretningsregel er her, at når udlæg er foretaget og datoen er udfyldt, skal der indsættes en ny forældelsesdato baseret på forældelsesreglen for fordringstypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægForældelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato et udlæg forælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægOpgaveType" type="fase2.1:UdlægOpgaveTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enum:  Hos foged Hos foged vedr. Fortrinsberettigede fordringer Hos kunde Hos kunde som opfølgning på ej gennemført udlæg  [VIGTIGT! Anders 20110412: Leverandør har defineret hele af udgaver med af:  UdlægOpgaveType  Derfor stemmer enum IKKE overens med ovennævnte beskrivelse. SKAT afventer afklaring fra leverandør. Måske man skulle skele til RS-modulets generiske modellering af opgavetype og på baggrund af dette klart definere de forkellige typer som findes?]</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægOpgaveNavn" type="fase2.1:Tekst80Type">
+               
+            </xs:element>
+         <xs:element name="UdlægOpgaveStartDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tid for hvornår opgaven skal finde sted.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægForkyndelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato kunden modtager tilsigelsen fra stævningsmand o.l..</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægEjGennemførtAktion" type="fase2.1:UdlægEjGennemførtAktionType">
+               
+               <xs:annotation>
+                  <xs:documentation>Foreslået enums: Ej gennemført, Anvend opfølgning, Anvend politifremstilling [Anders: Skal præciceres af leverandør, dvs uden mellemrum mv.]</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægSagsfremstilling" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Dækker over en beskrivelse af sagsbehandlerens fremstilling af udlægget til tredjemand. Angiver en tekststreng på op til 4000 karakterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægSagsfremstillingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det beløb, der foretages udlæg for</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægPlanlagtOpfølgningDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="UdlægLøbenummer" type="fase2.1:LøbeNummerType">
+               
+            </xs:element>
+         <xs:element name="UdlægFordringSaldoSum" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="UdlægTilsigelseDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="UdlægAktivFjernBegrundelse" type="fase2.1:Tekst2000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekst til sagsbehandlerens begrundelse for at fjerne aktivet fra indsatsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægEjGennemførtBegrundelse" type="fase2.1:Tekst2000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekst til sagsbehandlerens begrundelse for at udlægget er ej gennemført.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægForetagetHosSKAT" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer om udlægget er foretaget hos SKAT</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægGenoptagetHosSKAT" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer om udlægget er genoptaget  hos SKAT</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s1:definitions name="IndberetningRettighederHentServiceDefinitions" targetNamespace="http://service" xmlns="" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="SkatGatewayAuthentication">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+		</wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part">wls:SecurityHeader(wsu:Timestamp)</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="Sign.xml">
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SystemHeaders()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SecurityHeader(wsu:Timestamp)
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+      wsp:Body()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+          <wssp:TokenIssuer>CN=TDC OCES CA,O=TDC,C=DK,</wssp:TokenIssuer>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+    <wssp:MessageAge Age="60" xmlns:wssp="http://www.bea.com/wls90/security/policy"/>
+  </wsp:Policy>
+  <s1:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/intrastat/" version="1.0" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:listeangivelse="http://rep.oio.dk/skat.dk/intrastat/class/listeangivelse/xml/schemas/20080601/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="IndberetningRettighederHent_I" type="fase2:IndberetningRettighederHent_IType">
+	</xsd:element>
+      <xsd:complexType name="IndberetningRettighederHent_IType">
+        <xsd:sequence>
+          <xsd:element ref="kontekst:HovedOplysninger"/>
+          <xsd:element ref="listeangivelse:AngivelseTypeNavn"/>
+          <xsd:element ref="cvr:CVRnumberIdentifier"/>
+          <xsd:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+          <xsd:element minOccurs="0" name="Revisor">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="IndberetningRettighederHent_O" type="fase2:IndberetningRettighederHent_OType">
+	</xsd:element>
+      <xsd:complexType name="IndberetningRettighederHent_OType">
+        <xsd:sequence>
+          <xsd:element ref="kontekst:HovedOplysningerSvar"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="IndberetningRettighederHentInterface" type="fase2:IndberetningRettighederHentInterfaceType"/>
+      <xsd:complexType name="IndberetningRettighederHentInterfaceType">
+        <xsd:choice>
+          <xsd:element ref="fase2:IndberetningRettighederHent_I"/>
+          <xsd:element ref="fase2:IndberetningRettighederHent_O"/>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" version="1.1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="CVRnumberIdentifier" type="cvr:CVRnumberIdentifierType"/>
+      <xsd:simpleType name="CVRnumberIdentifierType">
+        <xsd:restriction base="string">
+          <xsd:length value="8"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="VirksomhedSENummerIdentifikator" type="cvr:CVRnumberIdentifierType"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/intrastat/class/listeangivelse/xml/schemas/20080601/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="AngivelseTypeNavn" type="string"/>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" version="1.0" xmlns:ctxt="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://dk/skat/liws/gw/ws" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="HovedOplysningerSvar" type="ctxt:HovedOplysningerSvarType"/>
+      <xsd:complexType name="HovedOplysningerSvarType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:ServiceIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionTid"/>
+          <xsd:element ref="ctxt:SvarStruktur"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HovedOplysninger" type="ctxt:HovedOplysningerType"/>
+      <xsd:complexType name="HovedOplysningerType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionTid"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SvarStruktur" type="ctxt:SvarStrukturType"/>
+      <xsd:complexType name="SvarStrukturType">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element ref="ctxt:AdvisStruktur"/>
+          <xsd:element ref="ctxt:FejlStruktur"/>
+        </xsd:choice>
+      </xsd:complexType>
+      <xsd:element name="TransaktionIdentifikator" type="ctxt:TransaktionIdentifikatorType"/>
+      <xsd:simpleType name="TransaktionIdentifikatorType">
+        <xsd:restriction base="xs:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="100"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="TransaktionTid" type="xs:dateTime"/>
+      <xsd:element name="ServiceIdentifikator" type="xs:string"/>
+      <xsd:element name="AdvisStruktur" type="ctxt:AdvisStrukturType"/>
+      <xsd:complexType name="AdvisStrukturType">
+        <xsd:sequence>
+          <xsd:element ref="ctxt:AdvisIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:AdvisTekst"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AdvisIdentifikator" type="ctxt:FejlIdentifikatorType"/>
+      <xsd:element name="FejlIdentifikator" type="ctxt:FejlIdentifikatorType"/>
+      <xsd:simpleType name="FejlIdentifikatorType">
+        <xsd:restriction base="xs:integer"/>
+      </xsd:simpleType>
+      <xsd:element name="AdvisTekst" type="ctxt:FejlTekstType"/>
+      <xsd:element name="FejlTekst" type="ctxt:FejlTekstType"/>
+      <xsd:simpleType name="FejlTekstType">
+        <xsd:restriction base="xs:string">
+          <xsd:minLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="FejlStruktur" type="ctxt:FejlStrukturType"/>
+      <xsd:complexType name="FejlStrukturType">
+        <xsd:sequence>
+          <xsd:element ref="ctxt:FejlIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:FejlTekst"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://service" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getIndberetningRettighederHent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="int:IndberetningRettighederHent_I" xmlns:int="http://rep.oio.dk/skat.dk/intrastat/"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getIndberetningRettighederHentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="int:IndberetningRettighederHent_O" xmlns:int="http://rep.oio.dk/skat.dk/intrastat/"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s1:types>
+  <s1:message name="getIndberetningRettighederHent">
+    <s1:part element="s2:getIndberetningRettighederHent" name="parameters"/>
+  </s1:message>
+  <s1:message name="getIndberetningRettighederHentResponse">
+    <s1:part element="s2:getIndberetningRettighederHentResponse" name="parameters"/>
+  </s1:message>
+  <s1:portType name="IndberetningRettighederHent">
+    <s1:operation name="getIndberetningRettighederHent" parameterOrder="parameters">
+      <s1:input message="s2:getIndberetningRettighederHent"/>
+      <s1:output message="s2:getIndberetningRettighederHentResponse"/>
+    </s1:operation>
+  </s1:portType>
+  <s1:binding name="IndberetningRettighederHentServiceSoapBinding" type="s2:IndberetningRettighederHent">
+    <s3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s1:operation name="getIndberetningRettighederHent">
+      <s3:operation soapAction="" style="document"/>
+      <s1:input>
+        <s3:body parts="parameters" use="literal"/>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Sign.xml"/>
+          <wsp:PolicyReference URI="#SkatGatewayAuthentication"/>
+        </wsp:Policy>
+      </s1:input>
+      <s1:output>
+        <s3:body parts="parameters" use="literal"/>
+      </s1:output>
+    </s1:operation>
+  </s1:binding>
+  <s1:service name="IndberetningRettighederHentService">
+    <s1:port binding="s2:IndberetningRettighederHentServiceSoapBinding" name="IndberetningRettighederHentSoapPort">
+      <s3:address location="https://securegateway1test.skat.dk:443/intrastat/OIOIndberetningRettighederHent/IndberetningRettighederHent"/>
+    </s1:port>
+  </s1:service>
+</s1:definitions>

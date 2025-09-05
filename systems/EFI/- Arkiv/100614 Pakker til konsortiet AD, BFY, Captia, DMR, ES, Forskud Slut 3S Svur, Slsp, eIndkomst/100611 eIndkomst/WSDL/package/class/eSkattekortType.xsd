@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Angiver de rekvisitionstyper der kan anvendes ved rekvisition af eSkattekort.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/KodeToCifreStartNulType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:element name="eSkattekortTypeKode" type="fase2.1:KodeToCifreStartNulType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Kode som entydig identificerer de mulige koder for rekvisition af eSkattekort via servicen eSkattekortHent (øjebliksbillede) og rekvisition af eSkattekort via individ 2101 i eIndkomst/LetLøn.  Der findes pt. følgende muligheder for rekvisition af eSkattekort:  01 Hovedkort 02 Bikort 06 Hovedkort uden lønindeholdelse  07 Bikort uden lønindeholdelse 08 Hovedkort til A-kasser </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkattekortTypeTekst" type="fase2.1:Tekst45Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver klartekst til en tilladt værdi</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkattekortTypeGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Gyldig fra og med dato</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="eSkattekortTypeGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Gyldig til og med dato</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En afstemningsrapport beskriver hvad der henholdsvis er afsendt til bogføring og hvad er reelt er bogført på hver enkelt finanskonto. Hvis der er differencer mellem det afsendte og det bogførte, vil dette fremgå af afstemningsrapporten. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+         <xs:include schemaLocation="../types/StartdatoType.xsd"/>
+         <xs:include schemaLocation="../types/SlutdatoType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/FinanskontonummerType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:element name="AfstemningsRapportID" type="fase2.1:IdentifikationNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt fortløbende ID for en given afstemningsrapport, der benyttes så 2 afstemningsrapporter for samme periode kan differentieres.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportPeriodeStart" type="fase2.1:StartdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdatoen for afstemningsrapporten. Det er CPU-datoen der skal anvendes</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportPerideSlut" type="fase2.1:SlutdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdatoen for afstemningsrapporten. Det er CPU-datoen der skal anvendes</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den dato hvor afstemningsrapporten er genereret</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportFinanskontoDMO" type="fase2.1:FinanskontonummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kontonummeret i DMO</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportFinanskontoParagraf38"
+                     type="fase2.1:FinanskontonummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kontonummeret i §38 regnskab (det nuværende økonomisystem)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportBeloebDMO"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det bogførte beløb på finanskontoen i DMO for den definerede periode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportBeløbParagraf38"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det bogførte beløb på finanskontoen i § 38 (den nuværende økonomisystem) for den definerede periode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AfstemningsRapportDifferencer"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver eventuelle differencer mellem bogført sumpost i § 38 regnskabet (det nuværende økonomisystem) og de overførte sumposter fra DMO</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

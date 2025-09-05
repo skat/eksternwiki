@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="SkatteBeregningSelskabIndkomstskatProcent" type="skat2016:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets skatteprocent for året.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabBeregnetSlutskatBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutskat: skatten minus evt. lempelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabAcontoskatTotalBeløb" type="skat2016:BeløbType">
+               
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabRestskatFørTillægEllerOverskydendeSkatBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabsskat efter modregning af acontoskat og udbytteskat.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabGodtgørelseEllerRestskatTillægProcent"
+                     type="skat2016:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Årets restskatprocent.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabGodtgørelseEllerRestskatTillægBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregning af restskattillæg.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabRestskatEfterTillægEllerOverskydendeSkatBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabsskat efter modregning af acontoskat og udbytteskat og godtgørelse/resttillæg.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabEndeligRestskatEllerOverskydendeSkatBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den endelige skat.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabIndkomstskatBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabets skattebeløb for året.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatteBeregningSelskabManuelSlutskatBeløb" type="skat2016:BeløbType">
+               
+            </xs:element>
+      </xs:schema>

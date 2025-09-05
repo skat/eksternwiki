@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:indkomstoplysningadgangreferencenummer="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" schemaLocation="../class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/SKAT_IndkomstOplysningAdgangReferenceNummerIdentifikator.xsd"/><xs:include schemaLocation="../view/IndberetningForVirksomhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/IndberetningPligtigVirksomhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/SoegePeriodeAAbenStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/SoegeAArMaanedAAbenStrukturType.xsd"/>
+	<xs:element name="VirksomhedIndkomstÅbenSøgeStruktur" type="fase2:VirksomhedIndkomstÅbenSøgeStrukturType"/>
+	<xs:complexType name="VirksomhedIndkomstÅbenSøgeStrukturType">
+		<xs:sequence>
+			<!--Sequence removed-->
+			<xs:element ref="fase2:IndberetningForVirksomhedStruktur"/>
+			<xs:element ref="indkomstoplysningadgangreferencenummer:IndkomstOplysningAdgangReferenceNummerIdentifikator" minOccurs="0"/>
+			<xs:element ref="fase2:IndberetningPligtigVirksomhedStruktur" minOccurs="0"/>
+			<xs:element ref="fase2:SøgePeriodeÅbenStruktur" minOccurs="0"/>
+			<xs:element ref="fase2:SøgeÅrMånedÅbenStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

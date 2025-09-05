@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="HjemRegionType">
+               <xs:annotation>
+                  <xs:documentation>Nummer som entydigt identificerer en Told- og Skatteregion.  Told- og Skatteregioner er efterfølgende ændret til SkatteCentre.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:totalDigits value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/AlarmType.xsd"/>
+         <xs:element name="AlarmTypeStruktur" type="fase2.1:AlarmTypeStrukturType"/>
+         <xs:complexType name="AlarmTypeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:AlarmTypeID"/>
+                  
+                  <xs:element ref="fase2.1:AlarmTypeAlarmKategori"/>
+                  
+                  <xs:element ref="fase2.1:AlarmTypeNavn"/>
+
+               <xs:element ref="fase2.1:AlarmTypeBeskrivelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlarmTypeFarve" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:AlarmTypeNotifikation"/>
+                  
+                  <xs:element ref="fase2.1:AlarmTypeOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:AlarmTypeOprettetTid"/>
+
+               <xs:element ref="fase2.1:AlarmTypeÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlarmTypeÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlarmTypeSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlarmTypeSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:AlarmTypeTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

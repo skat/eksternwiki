@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/MFOpgave.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../operational/EjerAfEnkeltmandsvirksomhed.xsd"/>
+				     
+         <xs:include schemaLocation="../class/FordringAfskrivning.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/MFOpretTransportStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFOpretFordringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFAEndrFordringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIAlternativKontaktStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AfskrivningAArsagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFAfskrivFordringStrukturType.xsd"/>
+				     
+         <xs:element name="MFFordringOpgaveHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MFFordringOpgaveHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MFFordringOpgaveHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:MFOpgaveID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:MFOpgaveType" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:MFOpgaveAfsluttetDatoTid" minOccurs="0"/>
+
+
+                     <xs:element name="OpgaveTypeValg" minOccurs="0">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:sequence>
+                                 <xs:element name="TransportOpgave">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                          <xs:element ref="fase2.1:DMIFordringModtagelseDato"/>
+                  
+                                          <xs:element ref="fase2.1:MFOpretTransportStruktur"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				
+				                          </xs:sequence>
+                              <xs:sequence>
+				
+                                 <xs:element name="AKROpgave">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="FordringSamling">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="Fordring" minOccurs="0" maxOccurs="unbounded">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                                            <xs:element ref="fase2.1:DMIFordringModtagelseDato"/>
+                                                            <xs:element name="AktionValg">
+                                                               <xs:complexType>
+                                                                  <xs:choice>
+                                                                     <xs:element ref="fase2.1:MFOpretFordringStruktur"/>
+				
+				
+				                                                                 <xs:element ref="fase2.1:MFÆndrFordringStruktur"/>
+                                                                  </xs:choice>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                          <xs:element name="Modtaget">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:EFIAlternativKontaktStruktur"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element name="KandidatSamling">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:KundeStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				
+				                          </xs:sequence>
+                              <xs:sequence>
+				
+                                 <xs:element name="AfskrivOpgave">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Sagsbehandler">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:RessourceNummer"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element name="Kunde">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                                   <xs:element ref="fase2.1:KundeType"/>
+                  
+                                                   <xs:element ref="fase2.1:EjerAfEnkeltmandsvirksomhed"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element ref="fase2.1:FordringAfskrivningVirkningFra"/>
+                  
+                                          <xs:element ref="fase2.1:AfskrivningÅrsagStruktur"/>
+                  
+                                          <xs:element ref="fase2.1:FordringAfskrivningDato"/>
+                                          <xs:element name="FordringAfskrivSamling">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:MFAfskrivFordringStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

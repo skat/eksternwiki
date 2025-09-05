@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et kombineret nøgle som globat unikt identificerer et afsendt sæt opkrævningsfordringer og gør det muligt at afgøre om en forsendelse tidligere er oprettet. Hvis man i tilfælde af fejlsituation hvor der ikke er kommet svar ved oprettelse, er det tilladt at gensende listen med samme kombinerede nøgle. Hvis opkrævningsfordringerne er oprettet, vil servicen da returnere en fejl.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OpkrævningFordringForsendelseBestillingID" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>ID på bestilling af opkrævningsfordringer. DMO genererer dette ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringForsendelseDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for forsendelsens modtagelse. Tidsstempel som genereres af DMO og som bruges internt i DMO til sletning af gamle IDer. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

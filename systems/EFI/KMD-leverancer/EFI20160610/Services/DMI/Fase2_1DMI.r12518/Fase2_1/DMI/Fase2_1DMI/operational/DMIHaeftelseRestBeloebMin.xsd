@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         
+         <xs:element name="DMIHæftelseRestBeløbMin" type="fase2.1:BeløbType">
+            <xs:annotation>
+               <xs:documentation>Søgeparameter. Der søges efter fordringer, hvor hæfter på forespørgselstidspunktet skylder beløbet i angivet i DMIHæftelseRestBeløbMin eller mere. Der skal kunne søges på at beløbet er 0 (nul).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

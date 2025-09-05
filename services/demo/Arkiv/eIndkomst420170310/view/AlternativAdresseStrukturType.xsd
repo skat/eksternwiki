@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:land="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/375687/artefact/SKAT_Land.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/6906/artefact/DKCC_PostalAddressFifthLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/4045/artefact/DKCC_PostalAddressFourthLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/1572/artefact/DKCC_PostalAddressThirdLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/5909/artefact/DKCC_PostalAddressSecondLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/6448/artefact/DKCC_PostalAddressFirstLineText.xsd"/><xs:element name="AlternativAdresseStruktur" type="hsws:AlternativAdresseStrukturType"/>
+	<xs:complexType name="AlternativAdresseStrukturType">
+		<xs:sequence>
+			<xs:element ref="dkcc:PostalAddressFirstLineText"/>
+			<xs:element ref="dkcc:PostalAddressSecondLineText"/>
+			<xs:element ref="dkcc:PostalAddressThirdLineText"/>
+			<xs:element ref="dkcc:PostalAddressFourthLineText" minOccurs="0"/>
+			<xs:element ref="dkcc:PostalAddressFifthLineText" minOccurs="0"/>
+			<xs:element ref="land:LandKode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

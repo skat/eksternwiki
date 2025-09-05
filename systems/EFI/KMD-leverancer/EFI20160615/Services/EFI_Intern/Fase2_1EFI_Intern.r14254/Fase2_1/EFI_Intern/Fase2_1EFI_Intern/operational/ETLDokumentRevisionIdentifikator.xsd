@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel18Type.xsd"/>
+         
+         <xs:element name="ETLDokumentRevisionIdentifikator" type="fase2.1:TalHel18Type">
+            <xs:annotation>
+               <xs:documentation>En sub identifikator til DokumentIdentifikator der bruges i forbindelse med at der er revisioner af dokumentet. Dermed kan man identificere hver revision af dokumentet unikt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

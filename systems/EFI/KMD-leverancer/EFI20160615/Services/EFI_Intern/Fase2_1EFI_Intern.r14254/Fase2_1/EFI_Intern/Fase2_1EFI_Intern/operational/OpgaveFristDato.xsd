@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         
+         <xs:element name="OpgaveFristDato" type="fase2.1:DatoTidType">
+            <xs:annotation>
+               <xs:documentation>Hvis opgaven er en aftaleopgave eller en telefonopgave, er datoen den dag opgaven senest må ligge i en kalender. Hvis opgaven er en plukkeopgave, er datoen den dag opgaven skal være plukket før.  Bliver kun returneret fra RessourceStyring.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="RSMedarbejderArbejdsstedGemService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Vedligeholdelse af medarbejderens egne arbejdssteder og arbejdsstedernes tilhørende kørselstider.</xs:documentation>
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/RSMedarbejderArbejdsstedGemInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="RSMedarbejderArbejdsstedGemServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:RSMedarbejderArbejdsstedGem_I"/>
+         </wsdl:message>
+         <wsdl:message name="RSMedarbejderArbejdsstedGemServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:RSMedarbejderArbejdsstedGem_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="RSMedarbejderArbejdsstedGemServicePortType">
+            <wsdl:operation name="getRSMedarbejderArbejdsstedGem">
+               <wsdl:input message="fase2.1:RSMedarbejderArbejdsstedGemServiceRequest"/>
+               <wsdl:output message="fase2.1:RSMedarbejderArbejdsstedGemServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Fordringshaver i SKATs opkrævningssystem, DMO.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:element name="OpkrævningFordringHaverNummer" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikationen på en fordringshaver i SKATs fælles opkrævningssystem, DMO.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringHaverNummerType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificere typen af FordringHaver, dvs. hvad FordringHaverNummer dækker over.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringHaverNavn" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på en fordringshaver i SKATs fælles opkrævningssystem, DMO.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringHaverOmråde" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på fagsystemet som har en fordringen til opkrævning for eksempel DMR eller D/R-systemet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

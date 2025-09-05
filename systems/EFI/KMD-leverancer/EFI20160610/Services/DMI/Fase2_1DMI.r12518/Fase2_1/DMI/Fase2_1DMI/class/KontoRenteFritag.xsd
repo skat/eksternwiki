@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En Konto kan være rentefritaget i en given periode. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KontoRenteFritagStatusKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="KontoRenteFritagID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af rentefritagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagStart" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for rentefritagelse (rentestop)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagSlut" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for rentefritagelse (rentestop)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagStatusKode" type="fase2.1:KontoRenteFritagStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Status på rentefritagelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for rentefritagelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagAnnBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende forklaring til årsagen for annulering af rentefritagelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagAnnDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for annulering af rentefritagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagÅrsagMark" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering omkring rentefritagelse (Ja / Nej).Hvis ja skal dette begrundes i KontoRenteFritagÅrsagBegr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoRenteFritagAnnMark" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering om rentefritagelsen er annullereT (Ja / Nej). Hvis ja, kan dette begrundes i KontoRenteFritagAnnBegr</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

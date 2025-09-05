@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Generel reference som identificerer en genstand. Kan fx være journalnummer eller matrikelnummer.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="RapportOplysningReferenceKvalifikator" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En kode som beskriver et referenceelement.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RapportOplysningReferenceKvalifikatorTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af tilhørende kvalifikatorkode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RapportOplysningReferenceTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Reference som kan bruges som nøgle andre oplysninger fx et journalnummer eller sagsakt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

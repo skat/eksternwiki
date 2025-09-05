@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="EFIBudgetBeregningRegelType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+                  <xs:enumeration value="REGNEREGEL_1"/>
+                  <xs:enumeration value="REGNEREGEL_2"/>
+                  <xs:enumeration value="REGNEREGEL_3"/>
+                  <xs:enumeration value="REGNEREGEL_4"/>
+                  <xs:enumeration value="REGNEREGEL_5"/>
+                  <xs:enumeration value="REGNEREGEL_6"/>
+                  <xs:enumeration value="REGNEREGEL_7"/>
+                  <xs:enumeration value="REGNEREGEL_8"/>
+                  <xs:enumeration value="REGNEREGEL_9"/>
+                  <xs:enumeration value="REGNEREGEL_10"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

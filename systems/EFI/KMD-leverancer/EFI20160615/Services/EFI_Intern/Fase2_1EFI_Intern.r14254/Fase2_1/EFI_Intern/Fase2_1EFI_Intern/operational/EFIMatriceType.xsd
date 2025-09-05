@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/EFIMatriceTypeType.xsd"/>
+         
+         <xs:element name="EFIMatriceType" type="fase2.1:EFIMatriceTypeType">
+            <xs:annotation>
+               <xs:documentation>En matrice er logisk set enten en af tre typer:  Matrice2D: En matrice med en X og en Y dimension.  Matrice3D: En matrice med en X, Y og Z dimension.  Tabel: En 2D matrice hvor X dimension er kolonne overskrifter, og Y dimension er de unikke nøgler for at finde en række i tabellen. </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

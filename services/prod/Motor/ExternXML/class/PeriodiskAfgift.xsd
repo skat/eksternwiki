@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>En given periodisk afgift er en registrering af en given specifik afgiftsopkrævning for en køretøjs registrering.  En afgift gælder for en given periode, som er med til at bestemme afgiftens størrelse.   Er den periode, som afgiften dækker over.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:include schemaLocation="../types/TekstKortType.xsd"/>
+	<xs:include schemaLocation="../types/PeriodeHyppighedType.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:element name="PeriodiskAfgiftDaekkerFraDato" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Er datoen for hvornår afgiftens betaling er dækkende fra.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodiskAfgiftDaekkerTilDato" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Er datoen for hvornår afgiften er dækkende til.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodiskAfgiftNavn" type="dmr:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Navnet på Periodiskafgift som skal opkræves.(Fordringstype)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodiskAfgiftPeriodeHyppighed" type="dmr:PeriodeHyppighedType">
+		<xs:annotation>
+			<xs:documentation>En angivelse af hyppigheden for opkrævningen (f.eks. 12mdr, 9 mdr, 18 mdr, 6 mdr, 4 mdr, 3 mdr, 1mdr) osv.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PeriodiskAfgiftBetalEfterBraendstofforbrug" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Betal efter brændstofforbrug har relevans for køretøjer med køreklar vægt over 2.585 kg, hvor der ikke foreligger oplysning om brændstofforbrug fra typegodkendelsen eller coc-dokumentet.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

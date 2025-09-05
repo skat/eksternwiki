@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver om der for en given kombination af pligt mv. skal vedligeholdes kontoaftale. Hvis Ja: angiver, at der skal vedligeholdes kontoaftale, hvis Nej: angiver, at der ikke skal vedligeholdes kontoaftale. Anvendes alene for aftaleforhold, hvor der skal ske opkrævning af krav.   Specielt for eIndkomst: KontoMarkering anvender KontoMarkering til at afvikle servicen AdvisereIndkomstAftaleKonto. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AngivelseFrekvensRegelKontoMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Generel type for markeringer. Kan være:  false true</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AngivelseFrekvensRegelGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver starttidspunkt for, hvornår AngivelseFrekvensRegelen er gyldig.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AngivelseFrekvensRegelGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sluttidspunkt for, hvornår AngivelseFrekvensRegelen er gyldig.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Til frokost, mødetid, præferencer og private aftaler er der mulighed for at angive gentagelse. Der er mulighed for at lave daglig, ugentlig, månedlig eller årlig gentagelse.     </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/OpgaveGentagelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="OpgaveGentagelseID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Gentagelsens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseSlotID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på det slot gentagelsen gælder for.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseGentagelseType" type="fase2.1:OpgaveGentagelseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>I Ressourcestyring er der mulighed for at sætte gentagelsesmønster på mødetider, frokosttider, præferencer og private aftaler. Der er fire gentagelsestyper:       1 Daglig      2 Ugentlig      3 Månedlig      4 årlig.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseSlutDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for gentagelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseGentagNGange" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvor mange gange slottet skal gentages, det første slot er inkluderet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverNDag" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kun for gentagelsetype DAGLIG. Intervallet for slottet. Hvis HverNDag er 3 og første dag er mandag, vil slottene ligge mandag, torsdag, søndag, onsdag, lørdag osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverNUge" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype UGENTLIG. Intervallet mellem slottene. Hvis HverNUge er 4, og slottet ligger i uge 3, vil slottene ligge i uge 3, 7, 11, 15, 19 osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverNMåned" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype MÅNEDLIG. Intervallet mellem slottene. Hvis HverNMåned er 2 og slottet er i februar, vil slottene ligge i februar, april, juni, august osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverNÅr" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype ÅRLIG. Intervallet mellem slottene. Hvis HverNÅr er 3 og startåret er 2009, vil slottene ligge i 2009, 2012, 2015, 2018 osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseAlleHverdage" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver at gentagelsen kun skal gælde for hverdage. Weekender og helligdage er ikke med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverFørste" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype MÅNEDLIG. Aftalen gentages f.eks. hver den første mandag hver måned.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverAnden" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype MÅNEDLIG. Aftalen gentages f.eks. hver den anden tirsdag hver måned.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverTredje" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype MÅNEDLIG. Aftalen gentages f.eks. hver den tredje onsdag hver måned.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverFjerde" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype MÅNEDLIG. Aftalen gentages f.eks. hver den fjerde torsdag i måneden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseHverSidste" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gælder kun for gentagelsetype MÅNEDLIG. Aftalen gentages f.eks. hver den sidste fredag i måneden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseMandag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på mandage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseTirsdag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på tirsdage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseOnsdag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på onsdage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseTorsdag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på torsdage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseFredag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på fredage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseLørdag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på lørdage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseSøndag" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgaven ligger på søndage.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet gentagelsen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt gentagelsen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret gentagelsen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt gentagelsen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet gentagelsen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt gentagelsen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveGentagelseTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til gentagelsen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

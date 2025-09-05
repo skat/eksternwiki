@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst1024Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="UdlægÆndringBegrundelse" type="fase2.1:Tekst1024Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekst til sagsbehandlerens begrundelse for mødets ændring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægÆndringSendMeddelelseTilKunde" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer om kunden skal meddeles om ændring af mødet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdlægÆndringBrugSammeRessourceTilOpfølgning" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer om samme sagsbehandler skal foretage opfølgningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" xmlns:ansaettelseforhold="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" xmlns:indkomstpersongruppe="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstpersongruppe/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstpersongruppe/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/indkomstpersongruppe/xml/schemas/20071202/IndkomstPersonGruppeDispositionDato.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/ansaettelseforhold/xml/schemas/20071202/AnsaettelseforholdMedarbejderIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/angivelse/xml/schemas/20071202/AngivelseVirksomhedEgenIdentifikator.xsd"/><xs:include schemaLocation="AngivelsePeriodeStruktur.xsd"/>
+	<xs:include schemaLocation="AngivelseBlanketIndholdStruktur.xsd"/>
+	<xs:element name="LoenPeriodeOplysningStruktur" type="hsws:LoenPeriodeOplysningStrukturType"/>
+	<xs:complexType name="LoenPeriodeOplysningStrukturType">
+		<xs:sequence>
+			<xs:element ref="angivelse:AngivelseVirksomhedEgenIdentifikator"/>
+			<xs:element ref="hsws:AngivelsePeriodeStruktur"/>
+			<xs:element ref="ansaettelseforhold:AnsaettelseforholdMedarbejderIdentifikator" minOccurs="0"/>
+			<xs:element ref="indkomstpersongruppe:IndkomstPersonGruppeDispositionDato" minOccurs="0"/>
+			<xs:element ref="hsws:AngivelseBlanketIndholdStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

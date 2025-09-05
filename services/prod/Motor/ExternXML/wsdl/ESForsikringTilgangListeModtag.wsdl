@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="ESForsikringTilgangListeModtagService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Skat vil sende en tilgang til det relevante forsikringsselskab, når en forsikring er accepteret (enten digitalt eller papirmæssigt), samt efter modtagelse af en genetablering eller selskabsskifte. Dermed bliver forsikringsselskabet gjort opmærksom på, at SKAT meddeler, at forsikringsselskabet har accepteret at dække køretøjet ansvarsmæssigt.</xs:documentation>
+		<xs:documentation>r3110</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/ESForsikringTilgangListeModtagInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ESForsikringTilgangListeModtagServiceRequest">
+		<wsdl:part name="Request" element="dmr:ESForsikringTilgangListeModtag_I"/>
+	</wsdl:message>
+	<wsdl:message name="ESForsikringTilgangListeModtagServiceResponse">
+		<wsdl:part name="Response" element="dmr:ESForsikringTilgangListeModtag_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="ESForsikringTilgangListeModtagServicePortType">
+		<wsdl:operation name="getESForsikringTilgangListeModtag">
+			<wsdl:input message="dmr:ESForsikringTilgangListeModtagServiceRequest"/>
+			<wsdl:output message="dmr:ESForsikringTilgangListeModtagServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

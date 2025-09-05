@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Nedskrivning af fordringer opstår, hvis fordringshaver/rettighedshaver, f.eks. pga. en indbetaling til eget system, ønsker at gøre sin fordring mindre.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/FordringNedskrivningAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="FordringNedskrivningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dags dato, ,  (samme som registreringsdato i DMI)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningVirkningFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra afskrivningen skal træde i kraft. Løsningen skal automatisk indsætte dags dato, men sagsbehandleren skal have mulighed for at ændre den.  Note til elementnavn: Dette elementnavn er ikke blevet forkortet til de aftalte maks. 30 karakterer, da det ikke var muligt at finde en forkortelse der ikke var meningsforstyrrende i forhold til begrebet. Elementet skal forkortes i databasen, og her er SKATs forslag til forkortelse: FordringNedskrivVirkningFra</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring ønskes eller er nedskrevet med i den indrapporterede valuta.  Forudsætning for 0 er at FordringOpskrivningÅrsagKode = Endelig Fastsættelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring er ønskes eller er nedskrevet med  indrapporteret eller omregnet til danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningÅrsagKode"
+                     type="fase2.1:FordringNedskrivningÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mulighed for at vælge en årsag til nedskrivning af fordring ud fra en fast liste. Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for, hvorfor en nedskrivning er foretaget. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringNedskrivningBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

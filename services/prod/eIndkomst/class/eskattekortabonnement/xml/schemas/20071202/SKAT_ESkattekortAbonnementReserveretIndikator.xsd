@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekortabonnement/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ESkattekortAbonnementReserveretIndikator" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Formålet er i år 2008 at kunne vise reservation af hovedkort. Dette er nødvendigt for at der i en overgangsperiode ikke skal gå "panik" i udbetalingen af eksempelvis folkepensioner, hvis almindelige pensionsselskaber eller private arbejdsgivere, hvor en pensionist arbejder få timer om ugen, ønsker at "hugge" hovedkortet fra det offentlige. 
+
+Hvis et hovedkort er reserveret vil det ikke være muligt for andre indkomstudbetalere at 'hugge' hovedkortet fra den som har reserveret det.
+
+Ordningen ophører pr. 1. januar 2009.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

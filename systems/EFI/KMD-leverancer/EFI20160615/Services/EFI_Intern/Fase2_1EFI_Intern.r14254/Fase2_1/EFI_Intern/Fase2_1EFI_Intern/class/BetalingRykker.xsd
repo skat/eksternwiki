@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/SidsteRettidigeBetalingFristType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/AntalType.xsd"/>
+         <xs:element name="BetalingRykkerID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik definition af en betalingsrykker.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det skyldige beløb der rykkes for. Det kan være en betalingsordning rate, en eller flere fordringer,</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerSRBDato" type="fase2.1:SidsteRettidigeBetalingFristType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for sidste rettidige betaling af betalingsrykkeren.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerAfsendtDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for afsendelse af betalingsrykker.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerPåmindelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>En Dato et xx dage før sidste rettidige indbetalings dato (SRB) hvor påmindelse om betaling af en rykker skal sendes til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerAnnulleretDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for annullering af afsendelse af betalingsrykkeren.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerFristÆndrÅrsag" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en foruddefineret årsag til at forlænge betalingsfristen.  MANGLER ENUMS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerFristÆndrAntal" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver antal gange en betalingsfrist er udskudt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingRykkerGebyr" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gebyr der er tilskrevet betalingsrykkeren.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

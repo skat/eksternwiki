@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/SubScoreKortNavnType.xsd"/>
+         <xs:element name="SubScorekortNavn" type="fase2.1:SubScoreKortNavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver navnet på subscorekortet der er anvendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

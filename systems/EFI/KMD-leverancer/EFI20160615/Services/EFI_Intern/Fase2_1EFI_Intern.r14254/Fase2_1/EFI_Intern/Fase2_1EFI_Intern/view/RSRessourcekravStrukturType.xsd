@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/RSRessourcekrav.xsd"/>
+         <xs:element name="RSRessourcekravStruktur" type="fase2.1:RSRessourcekravStrukturType"/>
+         <xs:complexType name="RSRessourcekravStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:RSRessourcekravID"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourcekravOpgavetypeID"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourcekravRessourcegruppeID"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourcekravVidne"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourcekravOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:RSRessourcekravOprettetTid"/>
+
+               <xs:element ref="fase2.1:RSRessourcekravÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourcekravÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourcekravSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSRessourcekravSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:RSRessourcekravTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

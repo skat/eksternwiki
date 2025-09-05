@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="TvangAuktionEjendomVurderingHentService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Serviceoperationen henter seneste ejendomsskema i PDF-format fra Skattemappen eller CSCs OnDemand-system.</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="../service/TvangAuktionEjendomVurderingHentInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="TvangAuktionEjendomVurderingHentServiceRequest">
+      
+      <part name="Request" element="fase2.1:TvangAuktionEjendomVurderingHent_I"/>
+   
+   </message>
+   
+   <message name="TvangAuktionEjendomVurderingHentServiceResponse">
+      
+      <part name="Response" element="fase2.1:TvangAuktionEjendomVurderingHent_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2.1:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2.1:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="TvangAuktionEjendomVurderingHentServicePortType">
+      
+      <operation name="getTvangAuktionEjendomVurderingHent">
+         
+         <input message="fase2.1:TvangAuktionEjendomVurderingHentServiceRequest"/>
+         
+         <output message="fase2.1:TvangAuktionEjendomVurderingHentServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2.1:KompenserTransRequest"/>
+         
+         <output message="fase2.1:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+</definitions>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder informationer om virksomhedens erhvervstilladelse i form af en bevilling eller autorisation.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="ErhvervTilladelse" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Her kan noteres, om virksomheden har en erhvervstilladelse i form af en bevilling eller autorisation. Denne oplysning findes ikke et centralt sted, men er spredt på de forskellige bevillingsmyndigheder. Derfor er der behov for at registrere denne oplysning, hvis man bliver klar over den.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ErhvervTilladelseType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af bevilling og autorisation. For hver type er der defineret en række bevillingsmyndigheder, som skal kontaktes i tilfælde af indsatsen ErhvervTilladelseFratagelse, Anmod om fratagelse af erhvervstilladelse.  Skal udfyldes, hvis der er registreret en erhvervstilladelse for en virksomhed </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

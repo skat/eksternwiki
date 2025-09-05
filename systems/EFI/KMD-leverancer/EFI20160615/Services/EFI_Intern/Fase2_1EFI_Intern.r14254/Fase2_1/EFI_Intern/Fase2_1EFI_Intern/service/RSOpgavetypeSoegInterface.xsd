@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Fremsøgning af Ressourcestyring opgavetyper</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/RSOpgavetypeSoeg_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/RSOpgavetypeSoeg_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="RSOpgavetypeSøgInterface" type="fase2.1:RSOpgavetypeSøgInterfaceType"/>
+         <xs:complexType name="RSOpgavetypeSøgInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:RSOpgavetypeSøg_I"/>
+               <xs:element ref="fase2.1:RSOpgavetypeSøg_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

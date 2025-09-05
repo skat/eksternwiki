@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En kunde er enten en person eller virksomhed, der har en relation til SKAT. For både personer og virksomheder findes der flere typer. Se under KundeType.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:element name="KundeNummer" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikationen af kunden i form af CVR/SE nr. for virksomheder, CPR for personer og journalnr. for dem, som ikke har et af de 2 andre typer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på kunde</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificere typen kunde, dvs. hvad KundeNummer dækker over.  Værdisæt for DMO og DMR er fastsat, mens værdisæt for EFI/DMI foreløbig (pr 20100924) sat til:  CVR-Virksomhed SE-Virksomhed CPR-Person AKR-EFI-Person AKR-EFI-Virksomhed AKR-EFI-Myndighed AKR-EFI-Ukendt  Disse fastlægges endeligt af EFI/DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

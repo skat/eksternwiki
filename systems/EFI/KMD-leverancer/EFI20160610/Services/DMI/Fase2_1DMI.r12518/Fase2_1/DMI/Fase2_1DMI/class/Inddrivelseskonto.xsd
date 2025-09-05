@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En fordring under inddrivelse behandles på Inddrivelseskontoen. Inddrivelseskonto er en specialisering af begrebet Konto. Specielt for Inddrivelseskontoen gælder, at det er her, der er henvisning til renteregler og her rentebeløbet kan opgøres.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Rentesats85Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="InddrivelseskontoRenteRegel" type="fase2.1:Rentesats85Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Regel/rentesats for rente på kontoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseskontoRenteBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rente for saldoen på kontoen, beregnet med den aktuelle rentesats.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

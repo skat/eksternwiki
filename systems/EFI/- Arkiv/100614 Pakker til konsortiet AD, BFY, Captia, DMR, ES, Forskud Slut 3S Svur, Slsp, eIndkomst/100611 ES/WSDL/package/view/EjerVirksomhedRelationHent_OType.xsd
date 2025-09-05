@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/VirksomhedType.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedEjerForholdStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedStamOplysningStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/EjerForholdHistorikStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="EjerVirksomhedRelationHent_O">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:EjerVirksomhedRelationHent_OType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2311"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="EjerVirksomhedRelationHent_OType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+										
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            
+
+         
+               
+            
+         <xs:element name="EjerForholdVirksomhedSamling" minOccurs="0">
+            
+                  
+               
+            <xs:complexType>
+               
+                     
+                  
+               <xs:sequence>
+
+
+                  
+                        
+                     
+                  <xs:element name="EjerForholdVirksomhed" minOccurs="1" maxOccurs="unbounded">
+                     
+                           
+                        
+                     <xs:complexType>
+                        
+                              
+                           
+                        <xs:sequence>
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:VirksomhedEjerForholdStruktur"/>
+
+                           
+                                 
+                              
+                           <xs:element name="DriftFormEjerTypeRolleSamling">
+                              
+                                    
+                                 
+                              <xs:complexType>
+                                 
+                                       
+                                    
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                       
+                                    <xs:element name="DriftFormEjerTypeRolle" minOccurs="1" maxOccurs="unbounded">
+                                       
+                                             
+                                          
+                                       <xs:complexType>
+                                          
+                                                
+                                             
+                                          <xs:sequence>
+                                             
+                                                   
+                                                
+                                             <xs:element ref="fase2.1:EjerRolleTypeKode"/>
+                  
+                  
+                                             
+                                                   
+                                                
+                                             <xs:element ref="fase2.1:EjerTypeKode"/>
+
+
+                                             
+                                                   
+                                                
+                                             <xs:element ref="fase2.1:DriftFormKode" minOccurs="0"/>
+
+
+
+                                             
+                                                   
+                                                
+                                             <xs:element name="EjerForholdVirksomhedStamOplysningSamling">
+                                                
+                                                      
+                                                   
+                                                <xs:complexType>
+                                                   
+                                                         
+                                                      
+                                                   <xs:sequence>
+
+
+                                                      
+                                                            
+                                                         
+                                                      <xs:element name="EjerForholdVirksomhedStamOplysning" minOccurs="1" maxOccurs="unbounded">
+                                                         
+                                                               
+                                                            
+                                                         <xs:complexType>
+                                                            
+                                                                  
+                                                               
+                                                            <xs:sequence>
+                                                               
+                                                                     
+                                                                  
+                                                               <xs:element ref="fase2.1:VirksomhedStamOplysningStruktur"/>
+                  
+                  
+                                                               
+                                                                     
+                                                                  
+                                                               <xs:element ref="fase2.1:VirksomhedTypeKode"/>
+
+                                                               
+                                                                     
+                                                                  
+                                                               <xs:element name="EjerForholdHistorikSamling">
+                                                                  
+                                                                        
+                                                                     
+                                                                  <xs:complexType>
+                                                                     
+                                                                           
+                                                                        
+                                                                     <xs:sequence>
+
+                                                                        
+                                                                              
+                                                                           
+                                                                        <xs:element ref="fase2.1:EjerForholdHistorikStruktur" minOccurs="1" maxOccurs="unbounded"/>
+
+                                                                     
+                                                                           
+                                                                        
+                                                                     </xs:sequence>
+                                                                  
+                                                                        
+                                                                     
+                                                                  </xs:complexType>
+                                                               
+                                                                     
+                                                                  
+                                                               </xs:element>
+
+
+                                                            
+                                                                  
+                                                               
+                                                            </xs:sequence>
+                                                         
+                                                               
+                                                            
+                                                         </xs:complexType>
+                                                      
+                                                            
+                                                         
+                                                      </xs:element>
+
+                                                   
+                                                         
+                                                      
+                                                   </xs:sequence>
+                                                
+                                                      
+                                                   
+                                                </xs:complexType>
+                                             
+                                                   
+                                                
+                                             </xs:element>
+
+
+                                          
+                                                
+                                             
+                                          </xs:sequence>
+                                       
+                                             
+                                          
+                                       </xs:complexType>
+                                    
+                                          
+                                       
+                                    </xs:element>
+
+                                 
+                                       
+                                    
+                                 </xs:sequence>
+                              
+                                    
+                                 
+                              </xs:complexType>
+                           
+                                 
+                              
+                           </xs:element>
+
+
+                        
+                              
+                           
+                        </xs:sequence>
+                     
+                           
+                        
+                     </xs:complexType>
+                  
+                        
+                     
+                  </xs:element>
+
+               
+                     
+                  
+               </xs:sequence>
+            
+                  
+               
+            </xs:complexType>
+         
+               
+            
+         </xs:element>
+
+               
+      
+            
+            
+         
+         
+         
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

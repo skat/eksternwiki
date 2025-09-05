@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="PladeBestillingStatusType">
+		<xs:annotation>
+			<xs:documentation>Status på en pladebestilling</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+			<xs:enumeration value="Bestilt"/>
+			<xs:enumeration value="Afsendt"/>
+			<xs:enumeration value="Leveret"/>
+			<xs:enumeration value="Oprettet"/>
+			<xs:enumeration value="Annulleret"/>
+			<xs:enumeration value="TilBestilling"/>
+			<xs:enumeration value="Kvitteret"/>
+			<xs:enumeration value="Afvist"/>
+			<xs:enumeration value="AfsendtTilModtageren"/>
+			<xs:enumeration value="AfsendtTilMotorstyrelsen"/>
+			<xs:enumeration value="AdviseretTilAfhentning"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

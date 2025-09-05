@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         
+         <xs:element name="EFIMatriceVersionID" type="fase2.1:UUIDType">
+            <xs:annotation>
+               <xs:documentation>Unik id for en matrice version. Kan bruges til at hente og opdatere en specifik version, men hvis en anden bruger opdaterer matrice versionen først vil den ikke længere være gyldig.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

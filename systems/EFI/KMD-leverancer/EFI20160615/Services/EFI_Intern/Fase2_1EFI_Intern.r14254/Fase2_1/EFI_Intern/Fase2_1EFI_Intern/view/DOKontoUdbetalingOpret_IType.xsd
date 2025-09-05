@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Opgave.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+         <xs:include schemaLocation="../class/DMIUdbetaling.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdbetalingBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativUdbetalingKanalStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIUdbetalingAArsagStrukturType.xsd"/>
+				     
+         <xs:element name="DOKontoUdbetalingOpret_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DOKontoUdbetalingOpret_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DOKontoUdbetalingOpret_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <!--Sequence removed-->
+
+                        <xs:element name="AfslutOpgave" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:OpgaveBookingreference"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                     <xs:element name="Udbetaling">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:DMIIndberetterOpretStruktur"/>
+
+                              <xs:element ref="fase2.1:DMITransaktionLøbenummer" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                              <xs:element ref="fase2.1:UdbetalingBeløbStruktur"/>
+                  
+                              <xs:element ref="fase2.1:DMIIndbetalingID"/>
+                  
+                              <xs:element ref="fase2.1:DMIUdbetalingDato"/>
+
+                              <xs:element ref="fase2.1:DMIUdbetalingBogførtDen" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:DMIUdbetalingNote"/>
+                  
+                              <xs:element ref="fase2.1:DMIUdbetalingNoteDato"/>
+
+                              <xs:element ref="fase2.1:AlternativUdbetalingKanalStruktur" minOccurs="0"/>
+
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="AlternativtKundenummer" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:KundeStruktur"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="AdresseOplysning" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element ref="fase2.1:KundeNavn" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:AlternativAdresseStruktur" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+                              <xs:element ref="fase2.1:DMIUdbetalingÅrsagStruktur"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Overordnet begreb for en opgørelse fx en årsopgørelse.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IndkomstAArType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="OpgørelseIndkomstÅr" type="fase2.1:IndkomstÅrType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgørelsens indkomstår</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgørelseNummer" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sekvensnummer for en opgørelse, såfremt der er dannet flere opgørelser indenfor en given periode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver tilladte kombinationer af driftform, ejerrolle og ejertype. Angiver tillige mindste antal krævede ejere og højeste tilladte antal ejere. Anvendes til validering af ejerforhold ved oprettelse og vedligeholdelse af oplysninger på virksomheder.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeToCifreStartNulType.xsd"/>
+         <xs:include schemaLocation="../types/KodeFireCifreStartEtType.xsd"/>
+         <xs:element name="DriftFormEjerRegelGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag en given regel gælder</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormEjerRegelGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag en given regel gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormEjerRegelMinimumAntalEjere"
+                     type="fase2.1:KodeToCifreStartNulType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det antal ejere og ejerroller som en virksomhed med en given driftsform mindst skal have. To numeriske karakterer. Værdien 00 er tilladt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormEjerRegelMaksimunAntalEjere"
+                     type="fase2.1:KodeFireCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver det antal ejere og ejerroller, som en virksomhed med en given driftsform maksimalt må have. 4 numeriske karakterer fra 0001 til 9999.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

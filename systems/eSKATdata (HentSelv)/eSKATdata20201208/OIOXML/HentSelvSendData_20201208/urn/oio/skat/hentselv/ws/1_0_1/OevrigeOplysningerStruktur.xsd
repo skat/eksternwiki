@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterTilAEgtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterFraAEgtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningUdenlandskIndkomstOverfoertBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningVirksomhedIndkomstOverfoertBeloeb.xsd"/><xs:element name="OevrigeOplysningerStruktur" type="hsws:OevrigeOplysningerStrukturType"/>
+	<xs:complexType name="OevrigeOplysningerStrukturType">
+		<xs:sequence>
+			<xs:element name="VirksomhedIndkomstOverfoertBeloebListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:PersonKontrolOplysningVirksomhedIndkomstOverfoertBeloeb" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="RenteudgifterFraAegtefaelleBeloebListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterFraAEgtefaelleBeloeb" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="RenteudgifterTilAegtefaelleBeloebListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterTilAEgtefaelleBeloeb" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UdenlandskIndkomstOverfoertBeloebListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:PersonKontrolOplysningUdenlandskIndkomstOverfoertBeloeb" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

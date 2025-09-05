@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="DOKontoStopÆndrService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Denne service har ansvaret for at orkestrere ændring af stop parametre på kundens konto med DMIKontoÆndr og oprettelse af en tilhørende kunde note.  Servicen kan  ændre parametre på en kundes konto med henblik på at lave - Udbetalingsstop - Udligningsstop - Modregningsstop (Kunden kan fritages, Udbetalingstype, Fordringstyper, BFY) - Flag for bobehandling  Det kundenummer der angives først i input skal være det samme som  bruges i de underliggende stop strukturer. </xs:documentation>
+            <xs:documentation>1.6</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/DOKontoStopAEndrInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="DOKontoStopÆndrServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:DOKontoStopÆndr_I"/>
+         </wsdl:message>
+         <wsdl:message name="DOKontoStopÆndrServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:DOKontoStopÆndr_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="DOKontoStopÆndrServicePortType">
+            <wsdl:operation name="getDOKontoStopÆndr">
+               <wsdl:input message="fase2.1:DOKontoStopÆndrServiceRequest"/>
+               <wsdl:output message="fase2.1:DOKontoStopÆndrServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Sag dækker over to typer, begge dokumentsamlinger:  - Enkeltsag: Dette er samlingen af dokumenter, der vedrørende en konkret sag, der har et afsluttet forløb og som fører til en afgørelse. Et eksempel er bindende svar, hvor ansøgeren får et svar baseret på anmodningen, hvorefter sagen lukkes.  - Dossiersag: Dette er samlingen af dokumenter, der vedrører en borger, en virksomhed eller et objekt (f.eks. en ejendom eller et køretøj ), men hvor der som udgangspunkt ikke nødvendigvis er tale om en sag og hvor man ikke tidsmæssigt/opgavemæssigt kan afgrænse sagen (udover at virksomheden ophører med at eksisterende eller ejendommen bliver revet ned osv.).</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/SagJournalNummerType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst240Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/NavnType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst13Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst32Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/SagStatusType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst2000Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/UUIDType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+      
+   
+   
+   <xs:element name="SagNummer" type="fase2.1:SagJournalNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>år-6cifre fortløbende 06-001122</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagTitel" type="fase2.1:Tekst240Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En kort angivelse af titlen for sagen.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagProfilNavn" type="fase2.1:NavnType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Enhver sag i CAPTIA er beskrevet ved fire egenskaber: Myndighed, Gruppe, Indblik og Organisatoriskenhed.  For at gøre det simplere, kan kalderen nøjes med at referere til et på forhånd aftalt SagProfilNavn, der udpeger værdier for disse fire egenskaber. Herefter sørger servicen selv for at sætte de fire egenskaber tilsvarende før sagen bliver oprettet i CAPTIA.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagGruppe" type="fase2.1:Tekst13Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>numerisk journalplan - angiver sagsindhold -  feks 0958 (Bindende Svar)</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagEmneord" type="fase2.1:Tekst32Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Supplerende ord til nærmere angivelse af sagens  indhold, feks UDLANDET, BEFORDRING.  Der kan kun anvendes emneord, der er oprettet i Captia i forvejen.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagStatus" type="fase2.1:SagStatusType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>har parten fåret Medhold, Delvis medhold,  Afslag, Andet</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagIndblik" type="fase2.1:Tekst32Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>rettighed/sikkerhedsstyring - dels et fagligt snit der afhænger af sagsgruppen, dels et organisatorisk feks 3_motor &amp; 90 betyder, at alle i myndighed 90 (SKAT) kan se sagen, hvis de har 3_motor i BRAS - kan ændres manuelt</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagBemærkning" type="fase2.1:Tekst2000Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Fritekstfelt til notering af eventuelle bemærkninger o. lign. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagMyndighed" type="fase2.1:Tekst11Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Dette afspejler ESDHs håndtering af Myndigheder.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagUUID" type="fase2.1:UUIDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Unik ekstern sagsidentifikator - forskelligt fra SagNummer</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagOprettetDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>dato for sagens oprettelse i Captia-basen</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagPlanlagtAfslutningDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>dato for påtænkt afslutning af sagen</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="SagAfsluttetDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>dato for sagens afslutning</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

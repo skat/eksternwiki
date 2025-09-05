@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USSupplerendeKarrosseriTypeListeHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USSupplerendeKarrosseriTypeListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USSupplerendeKarrosseriTypeListeHentServiceRequest">
+		<wsdl:part name="Request" element="dmr:USSupplerendeKarrosseriTypeListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="USSupplerendeKarrosseriTypeListeHentServiceResponse">
+		<wsdl:part name="Response" element="dmr:USSupplerendeKarrosseriTypeListeHent_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USSupplerendeKarrosseriTypeListeHentServicePortType">
+		<wsdl:operation name="getUSSupplerendeKarrosseriTypeListeHent">
+			<wsdl:input message="dmr:USSupplerendeKarrosseriTypeListeHentServiceRequest"/>
+			<wsdl:output message="dmr:USSupplerendeKarrosseriTypeListeHentServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

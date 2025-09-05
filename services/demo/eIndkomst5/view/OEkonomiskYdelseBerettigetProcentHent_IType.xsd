@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:eindkomst="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:eindkomst1="urn:oio:skat:eindkomst:1.0.0" xmlns:ws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../class/SKAT_HovedOplysninger.xsd"/>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../class/OptjeningProcentIndikator.xsd"/>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../class/HistorikIndikator.xsd"/>
+	<xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="../class/OplysningAjourfoeringDatoTid.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/" schemaLocation="../view/AbonnentAdgangStrukturType.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../class/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+	<xs:include schemaLocation="../view/SoegeAArMaanedLukketStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/AbonnentStrukturType.xsd"/>
+	<xs:element name="OekonomiskYdelseBerettigetProcentHent_I" type="eindkomstws:OekonomiskYdelseBerettigetProcentHent_IType"/>
+	<xs:complexType name="OekonomiskYdelseBerettigetProcentHent_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="eindkomst:AbonnentAdgangStruktur"/>
+			<xs:element ref="ws:AbonnentStruktur"/>
+			<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+			<xs:element ref="eindkomstws:SoegeAarMaanedLukketStruktur"/>
+			<xs:element ref="eindkomst1:OplysningAjourfoeringDatoTid"/>
+			<xs:element ref="eindkomst1:HistorikIndikator"/>
+			<xs:element ref="eindkomst1:OptjeningProcentIndikator"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

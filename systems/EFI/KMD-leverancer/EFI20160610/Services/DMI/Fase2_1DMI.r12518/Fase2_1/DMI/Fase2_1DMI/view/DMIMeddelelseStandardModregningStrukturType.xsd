@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/MeddelelseAfsenderDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../operational/AdresseBeskyttelse.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/MyndighedUdbetaling.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Person.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../operational/RestbeloebTilMyndighedMarkering.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/NemKontoUdbetaling.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/FordringHaverStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MyndighedUdbetalingPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransaktionDaekningBeloebStrukturType.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/UdbetalingBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativUdbetalingKanalStrukturType.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:element name="DMIMeddelelseStandardModregningStruktur"
+                     type="fase2.1:DMIMeddelelseStandardModregningStrukturType"/>
+         <xs:complexType name="DMIMeddelelseStandardModregningStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:MeddelelseAfsenderDato"/>
+
+                  <xs:element ref="fase2.1:ProduktionEnhedNummer" minOccurs="0"/>
+
+
+                  <xs:element name="MyndighedUdbetaling">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode"/>
+                  
+                           <xs:element ref="fase2.1:FordringHaverStruktur"/>
+                           <!--Sequence removed-->
+
+                              <xs:element name="FordringHaverAdresse" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:AdresseStruktur"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="TransportEllerUdlægFordring" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="TransportGiver">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:KundeStruktur"/>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element ref="fase2.1:AdresseBeskyttelse"/>
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="TransportGiverAdresse" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:choice>
+                                                   <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                                               <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                                </xs:choice>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+
+                           <xs:element ref="fase2.1:MyndighedUdbetalingDato" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:MyndighedUdbetalingPeriodeStruktur" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:MyndighedUdbetalingBeløb"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Modregning">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="SpecificeretModregningListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="Modregning" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:FordringHaverStruktur"/>
+                                    <!--Sequence removed-->
+
+                                       <xs:element name="FordringHaverAdresse" minOccurs="0">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    
+                                    <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                    <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringModtagelseDato" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="USpecificeretModregningListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="Modregning" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:FordringHaverStruktur"/>
+                                    <!--Sequence removed-->
+
+                                       <xs:element name="FordringHaverAdresse" minOccurs="0">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                    <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+
+                                    <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="ÆgtefælleRestanceListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="ÆgtefælleRestance" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:PersonCPRNummer"/>
+                  
+                                    <xs:element ref="fase2.1:FordringHaverStruktur"/>
+                                    <!--Sequence removed-->
+
+                                       <xs:element name="FordringHaverAdresse" minOccurs="0">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    
+
+
+                                    <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                    <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringModtagelseDato" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="TransportOgUdlægListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="TransportEllerUdlæg" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                                    <xs:element name="TransportEllerUdlægRettighedHaver">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:KundeStruktur"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="fase2.1:AdresseBeskyttelse"/>
+                                    <!--Sequence removed-->
+
+                                       <xs:element name="TransportEllerUdlægRettighedHaverAdresse" minOccurs="0">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    
+                                    <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                    <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringModtagelseDato" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <!--Sequence removed-->
+
+                     <xs:element name="RestBeløb" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element ref="fase2.1:RestbeløbTilMyndighedMarkering" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:UdbetalingBeløbStruktur"/>
+
+                              <xs:element ref="fase2.1:NemKontoUdbetalingModtagerPosteringTekst" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:AlternativUdbetalingKanalStruktur" minOccurs="0"/>
+
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="AlternativtKundenummer" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:KundeStruktur"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="AdresseOplysning" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:choice>
+                                          <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                                      <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                                       </xs:choice>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+                  <!--Sequence removed-->
+                     <xs:element ref="fase2.1:FordringHaverStruktur" minOccurs="0"/>
+                     
+
+                        <xs:element name="FordringHaverAdresse" minOccurs="0">
+                           <xs:complexType>
+                              <xs:choice>
+                                 <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                             <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                              </xs:choice>
+                           </xs:complexType>
+                        </xs:element>
+                     
+
+                  
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

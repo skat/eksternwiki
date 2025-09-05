@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="KidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Et positivt heltal, der kan repræsenterer værdier i intervallet 0 til 9.999.999.999.999.999</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:integer">
+            
+         
+         
+         <xs:pattern value="([0-9])*"/>
+            
+         
+         
+         <xs:totalDigits value="16"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

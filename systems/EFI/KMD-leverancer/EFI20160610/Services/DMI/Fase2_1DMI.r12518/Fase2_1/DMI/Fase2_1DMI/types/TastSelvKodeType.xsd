@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="TastSelvKodeType">
+               <xs:annotation>
+                  <xs:documentation>Angiver TastSelv-kode som første gang dannes automatisk som Random7. Virksomheden kan efterfølgende selv bestemme og ændre indholdet af TastSelv koden, såfremt den overholder ToldSkats fastsatte regler for et korrekt password. TastSelv koder kan anvendes, med mindre virksomheden er overgået til anvendelse af OCES og administrationsmodulet er taget i anvendelse.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

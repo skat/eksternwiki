@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+   
+   
+   <xs:element name="BeregnetRegnskabPeriodeStartDato" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

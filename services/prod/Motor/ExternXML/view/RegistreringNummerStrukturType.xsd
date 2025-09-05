@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:element name="RegistreringNummerStruktur" type="dmr:RegistreringNummerStrukturType"/>
+	<xs:complexType name="RegistreringNummerStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:RegistreringNummerType"/>
+			<xs:element ref="dmr:RegistreringNummerStatus"/>
+			<xs:element ref="dmr:RegistreringNummerStatusDato"/>
+			<xs:element ref="dmr:RegistreringNummerKvadratiskIndhold1"/>
+			<xs:element ref="dmr:RegistreringNummerKvadratiskIndhold2" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerAflangIndhold"/>
+			<xs:element ref="dmr:RegistreringNummerUdloebDato" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerGraensepladeDkDato" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerNummer"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

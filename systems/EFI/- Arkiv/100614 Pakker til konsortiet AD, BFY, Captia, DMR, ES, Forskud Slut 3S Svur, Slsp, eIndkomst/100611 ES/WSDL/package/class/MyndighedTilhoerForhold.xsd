@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Klassen  informationer omkring en given adresses tilhørsforhold til en eller flere myndigheder.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:element name="MyndighedTilhørForholdMaskinelOpsatMarkering" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Generel type for markeringer. Kan være:  false true</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MyndighedTilhørForholdGodkendtTilhørForhold" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Generel type for markeringer. Kan være:  false true</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MyndighedTilhørForholdGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Specifik dato (uden start og slutangivelse).</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MyndighedTilhørForholdGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Specifik dato (uden start og slutangivelse).</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

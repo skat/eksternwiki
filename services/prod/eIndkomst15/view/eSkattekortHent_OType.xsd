@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../class/SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../class/SKAT_VirksomhedSENummerIdentifikator.xsd"/>
+	<xs:include schemaLocation="../view/eSkattekortPersonStrukurType.xsd"/>
+	<xs:element name="eSkattekortHent_O" type="fase2:eSkattekortHent_OType"/>
+	<xs:complexType name="eSkattekortHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="eSkattekortSamling" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="eSkattekortBrugerVirksomhedStrukturSamling" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+									<xs:element name="eSkattekortPersonStrukurSamling">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2:eSkattekortPersonStrukur" minOccurs="1" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

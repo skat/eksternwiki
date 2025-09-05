@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OpgaveEkstrainfo.xsd"/>
+         <xs:element name="OpgaveEkstrainfoStruktur" type="fase2.1:OpgaveEkstrainfoStrukturType"/>
+         <xs:complexType name="OpgaveEkstrainfoStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OpgaveEkstrainfoID"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveEkstrainfoKompetenceKategori"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveEkstrainfoOpgaveID"/>
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoNøgle" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoVærdi" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveEkstrainfoOprettetTid"/>
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveEkstrainfoTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

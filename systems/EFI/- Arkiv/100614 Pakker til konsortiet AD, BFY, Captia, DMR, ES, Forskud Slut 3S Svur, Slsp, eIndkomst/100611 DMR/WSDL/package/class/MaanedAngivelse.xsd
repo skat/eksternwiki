@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En månedsangivelse svarer til afgiftsangivelse af registreringsafgift, hvor en stribe registreringsafgifter bliver registreret til angivelsen og efterfølgende samlet opkrævet.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/MaanedAngivelseStatusType.xsd"/>
+      
+   
+   
+   <xs:element name="MånedAngivelsePeriodeFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En registrering af en given periodes begyndelsestidspunkt.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MånedAngivelsePeriodeTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En registrering af en given periodes sluttidspunkt.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="MånedAngivelseStatus" type="fase2.1:MånedAngivelseStatusType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En registrering af den givne månedsangivelses status</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

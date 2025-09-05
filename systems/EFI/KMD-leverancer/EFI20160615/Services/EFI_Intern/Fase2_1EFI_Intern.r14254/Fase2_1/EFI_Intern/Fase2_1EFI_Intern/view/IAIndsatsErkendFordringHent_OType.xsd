@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:include schemaLocation="../operational/ErkendelseFristDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ErkendelseBrevAfsendtDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RykkerBrevAfsendtDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/SporSkabelon.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../view/OpgaveReferenceStrukturType.xsd"/>
+				     
+         <xs:element name="IAIndsatsErkendFordringHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:IAIndsatsErkendFordringHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="IAIndsatsErkendFordringHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="ErkendFordringSvar" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:IndsatsStartdato"/>
+                              <xs:element name="IndsatsOprettetAf">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:RessourceNummer"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element ref="fase2.1:IndsatsSlutdato" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:IndsatsTypeKode"/>
+
+                              <xs:element ref="fase2.1:IndsatsUnderTypeKode" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:TilstandID"/>
+                  
+                              <xs:element ref="fase2.1:TilstandNavn"/>
+                  
+                              <xs:element ref="fase2.1:TilstandType"/>
+
+                              <xs:element ref="fase2.1:ErkendelseFristDato" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:ErkendelseBrevAfsendtDato" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:RykkerBrevAfsendtDato" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:SporSkabelonIndsatsSkabelonID" minOccurs="0"/>
+
+
+                              <xs:element name="OpgaveReferenceSamling">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:OpgaveReferenceStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element name="FordringOmfattetSamling">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element name="OevrigeFordringerSamling">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="VirksomhedSøgService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Søg på CVR-nr ELLER Firmanavn, Gade/Vej, Husnr., Postnr. eller Postdistrikt. Hvis der søges med CVR-nr modtages SE-numre og navne på de administrative enheder under den juridiske enhed. Denne søgning anvendes bl.a. i forbindelse med login med digital signatur (OCES), hvor der kun angives et CVR-nr. Hvis der søges med navne- og adresseoplysninger modtages SE-numre og navne på både juridiske og administrative enheder. Regler for hvilke søgefelter der kan udfyldes, samt hvor der kan søges med wild card (*) ses under Input og Fejl. Der søges i virksomhedens officielle adresse (virksomhedsadressen). </xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="../service/VirksomhedSoegInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="VirksomhedSøgServiceRequest">
+      
+      <part name="Request" element="fase2.1:VirksomhedSøg_I"/>
+   
+   </message>
+   
+   <message name="VirksomhedSøgServiceResponse">
+      
+      <part name="Response" element="fase2.1:VirksomhedSøg_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2.1:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2.1:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="VirksomhedSøgServicePortType">
+      
+      <operation name="getVirksomhedSøg">
+         
+         <input message="fase2.1:VirksomhedSøgServiceRequest"/>
+         
+         <output message="fase2.1:VirksomhedSøgServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2.1:KompenserTransRequest"/>
+         
+         <output message="fase2.1:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+</definitions>

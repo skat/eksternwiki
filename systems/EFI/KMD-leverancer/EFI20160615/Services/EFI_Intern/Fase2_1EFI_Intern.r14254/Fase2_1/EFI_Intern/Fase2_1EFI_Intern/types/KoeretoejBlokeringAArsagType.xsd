@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="KøretøjBlokeringÅrsagType">
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af baggrunden for at en registreringsattest er blevet blokeret.  </xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+                  <xs:enumeration value="Mangel"/>
+                  <xs:enumeration value="SkadetKøretøj"/>
+                  <xs:enumeration value="TotalskadetKøretøj"/>
+                  <xs:enumeration value="HenvistTilSKAT"/>
+                  <xs:enumeration value="IndkaldtTilRegistrering"/>
+                  <xs:enumeration value="SkalVærdifastsættes"/>
+                  <xs:enumeration value="SkalAfgiftsberigtiges"/>
+                  <xs:whiteSpace value="collapse"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

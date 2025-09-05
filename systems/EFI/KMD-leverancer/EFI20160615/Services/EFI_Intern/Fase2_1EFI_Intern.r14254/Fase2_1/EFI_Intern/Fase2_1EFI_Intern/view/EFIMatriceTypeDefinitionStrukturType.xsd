@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/EFIMatriceTypeNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIVaerdiType.xsd"/>
+         <xs:include schemaLocation="../operational/EFIVaerdiValgfri.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIWildcardMulig.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIMatriceAlleKoderKraevet.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIMatriceKodeSamlingSubset.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIDapGun.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIKode.xsd"/>
+				     
+         <xs:element name="EFIMatriceTypeDefinitionStruktur"
+                     type="fase2.1:EFIMatriceTypeDefinitionStrukturType"/>
+         <xs:complexType name="EFIMatriceTypeDefinitionStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:EFIMatriceTypeNavn"/>
+                  
+                  <xs:element ref="fase2.1:EFIVærdiTypeKode"/>
+                  
+                  <xs:element ref="fase2.1:EFIVærdiValgfri"/>
+                  
+                  <xs:element ref="fase2.1:EFIWildcardMulig"/>
+                  
+                  <xs:element ref="fase2.1:EFIMatriceAlleKoderKrævet"/>
+                  
+                  <xs:element ref="fase2.1:EFIMatriceKodeSamlingSubset"/>
+
+               <xs:element ref="fase2.1:EFIDapGun" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="KodeSamling" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:EFIKode" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

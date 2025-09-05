@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="DMIKontoSpecifikationHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Servicen henter startsaldo og transaktioner på kundens konto for et specificeret tidsinterval.  Transaktioner består af både åbne og lukkede poster, så som fordringer, indbetalinger og udbetalinger, opskrivninger, nedskrivninger, returner og tilbagekald osv.  Servicen henter Konto/Kundestop som er aktuelle på søgningstidspunktet.  </xs:documentation>
+            <xs:documentation>1.20</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/DMIKontoSpecifikationHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="DMIKontoSpecifikationHentServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:DMIKontoSpecifikationHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="DMIKontoSpecifikationHentServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:DMIKontoSpecifikationHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="DMIKontoSpecifikationHentServicePortType">
+            <wsdl:operation name="getDMIKontoSpecifikationHent">
+               <wsdl:input message="fase2.1:DMIKontoSpecifikationHentServiceRequest"/>
+               <wsdl:output message="fase2.1:DMIKontoSpecifikationHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

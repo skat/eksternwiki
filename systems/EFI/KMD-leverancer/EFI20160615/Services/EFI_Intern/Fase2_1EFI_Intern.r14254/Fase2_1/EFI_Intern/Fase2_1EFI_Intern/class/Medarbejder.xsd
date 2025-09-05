@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Medarbejder hos SKAT/RIM.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/SprogType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="MedarbejderRolle" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rollen/r for en medarbejder.  Dette kan bruges til at styre, hvilken type der har komptence til at løse hvilke sager.  Hver ressource kan være mere end en type.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderKompetence" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>De kompetencer (og herunder autorisationer) en medarbejder er tildelt. Det kan f.eks. være, at en medarbejder gerne må behandle en bestemt slags fordringer over et bestemt beløb. Eller det kan være, at en medarbejder gerne må godkende andres opgaveløsning. Dette skal i fremtiden være en struktureret liste af kompetencer, som man kan vælge fra, evt. suppleret med regelsæt omkring beløb mm.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderKompetenceNiveau" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Niveauet for medarbejderens kompetencer i form af en skala fra fx 1-5.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderSprogKompetence" type="fase2.1:SprogType">
+               
+               <xs:annotation>
+                  <xs:documentation>De sprog en medarbejder kan læse og skrive. I fremtiden kan det blive suppleret med niveauet for sprogkompetencen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderPointSystem" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af, om medarbejderen er tilmeldt pointsystemet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderPointSum" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens samlede pointsum. Denne kan veksles til fx førstevalg til ferie.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderBrugtPointÅrsag" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Når en medarbejder anvender opsparede point, noteres årsagen til forbruget, fx anvendt til påskeferie</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

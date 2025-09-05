@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Registrering af bankkontonummer på kunder, som ikke kan modtage udbetalinger gennem nemkonto.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IBANNummerType.xsd"/>
+         <xs:include schemaLocation="../types/BICNummerType.xsd"/>
+         <xs:element name="UdenlandskBankKontoIBANNummer" type="fase2.1:IBANNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>En vilkårlig kode på max 34 tegn (ISO13616)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UdenlandskBankKontoSWIFTKode" type="fase2.1:BICNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bank Identifier Code (BIC) er en international standard: ISO 9362. (Består af enten 8 eller 11 tegn.) (Alias: SWIFT-kode / SWIFT ID / SWIFT-adresse)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

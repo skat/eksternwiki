@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/KFIDelAfAlternativKontaktID.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AlternativKontakt.xsd"/>
+         <xs:include schemaLocation="../class/AlternativKontaktPerson.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../view/AlternativKontaktReferenceStrukturType.xsd"/>
+				     
+         <xs:element name="KFIAlternativKontaktSøgStruktur"
+                     type="fase2.1:KFIAlternativKontaktSøgStrukturType"/>
+         <xs:complexType name="KFIAlternativKontaktSøgStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:KFIDelAfAlternativKontaktID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativKontaktNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativKontaktType" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="Personoplysninger" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <!--Sequence removed-->
+
+                              <xs:element name="FødselDatoFra" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:AlternativKontaktPersonFødselDato"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="FødselDatoTil" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:AlternativKontaktPersonFødselDato"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:AlternativKontaktReferenceStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EmailAdresseEmail" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:TelefonUdenlandskNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AdressePostNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:LandKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

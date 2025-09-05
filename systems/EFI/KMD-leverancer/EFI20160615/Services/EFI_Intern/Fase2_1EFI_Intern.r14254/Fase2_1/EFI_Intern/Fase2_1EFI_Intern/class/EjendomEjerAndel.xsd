@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Ejer andel af en fast ejendom - angives som en brøk. (Størrelsen angiver enten den andel som indgår i en handel, eller den angiver hvor stor en andel en ejer besidder på et givet tidspunkt.)</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel3Type.xsd"/>
+         <xs:element name="EjendomEjerAndelFordelingstæller" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tælleren i brøken, der udtrykker hvor stor en andel af en ejendom en sælger afstår, eller en køber overtager.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EjendomEjerAndelFordelingsnævner" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nævneren i brøken, der udtrykker hvor stor en andel af en ejendom en sælger afstår, eller en køber overtager.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EjendomEjerAndelTæller" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tæller i den brøk som angiver hvor stor en andel af ejendommen der besiddes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EjendomEjerAndelNævner" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Nævner i den brøk som angiver hvor stor en andel af ejendommen der besiddes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

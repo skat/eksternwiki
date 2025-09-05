@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen MFFordringOpret har ansvaret for at oprette alle arter og typer af fordringer inklusiv hæftelsesinformation i EFI og DMI.  Svaret sendes normalt retur så snart fordringen og evt. hæftelser er oprettet. Undtagelsen herfra er hvis der kaldes fra selvbetjenings portalen og fordringen skal behandles manuelt af en sagsbehandler. I dette tilfælde vil svaret have markeringen MFFordringSagsbehandles sat.  Der returneres liste af hæftelser . Denne liste vil også indeholde hæftelsesforhold som MF har beriget fordringen med. - Hvis en kunde ejer enkeltmandsvirksomheder vil virksomhederne være påført ved SE nummer - Hvis en kunde er en enkeltmandsvirksomhed ved ejeren være påført ved CPR nummer. - Hvis en kunde er et interessentskab kan interessenter være påført hvis fordringhaveraftale tillader det.  Der er optionelle felter som det er specificeret i fordringhaveraftale om de skal udfyldes og hvis de ikke er udfyldt hvordan de beregnes/beriges. Den beregnede værdi returneres i svaret.  Berigelses felter:  - DMIFordringStiftelseTidspunkt</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/MFFordringOpret_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/MFFordringOpret_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="MFFordringOpretInterface" type="fase2.1:MFFordringOpretInterfaceType"/>
+         <xs:complexType name="MFFordringOpretInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:MFFordringOpret_I"/>
+               <xs:element ref="fase2.1:MFFordringOpret_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

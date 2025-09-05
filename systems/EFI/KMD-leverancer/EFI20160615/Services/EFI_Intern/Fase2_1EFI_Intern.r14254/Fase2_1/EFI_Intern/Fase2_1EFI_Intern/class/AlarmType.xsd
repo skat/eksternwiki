@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En alarmtype er en template for alarmer, den indeholder en række stamoplysninger som beskriver alarmerne af den type. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/AlarmKategoriType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="AlarmTypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Alarmtypens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeAlarmKategori" type="fase2.1:AlarmKategoriType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den alarmkategori som alarmtypen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Alarmtypens navn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Detaljeret beskrivelse af alarmtypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeFarve" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den farve alarmtypen vises med i alarmlisten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeNotifikation" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Notifikation angiver om alarmen skal resultere i en besked til produktionslederen, hvis ikke, vises alarmen kun på oversigten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet alarmtypen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmtypen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret alarmtypen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmtypen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet alarmtypen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmtypen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTypeTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til alarmtypen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

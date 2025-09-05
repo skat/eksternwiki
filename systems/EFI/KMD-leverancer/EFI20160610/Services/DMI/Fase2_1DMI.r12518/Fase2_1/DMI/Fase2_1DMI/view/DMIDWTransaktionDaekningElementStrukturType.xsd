@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/CRUDFunktionType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+         <xs:include schemaLocation="../operational/DMITransaktionIDType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/DMITransaktionDaekning.xsd"/>
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../view/DMIIndberetterHentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransaktionDaekningBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIDWTransaktionDækningElementStruktur"
+                     type="fase2.1:DMIDWTransaktionDækningElementStrukturType"/>
+         <xs:complexType name="DMIDWTransaktionDækningElementStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:CRUDFunktionType"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                  <xs:element ref="fase2.1:DMIIndberetterHentStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMITransaktionType"/>
+                  
+                  <xs:element ref="fase2.1:DMITransaktionID"/>
+                  
+                  <xs:element ref="fase2.1:DMITransaktionIDType"/>
+                  
+                  <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMITransaktionDækningDato"/>
+
+               <xs:element ref="fase2.1:DMIIndbetalingArt" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

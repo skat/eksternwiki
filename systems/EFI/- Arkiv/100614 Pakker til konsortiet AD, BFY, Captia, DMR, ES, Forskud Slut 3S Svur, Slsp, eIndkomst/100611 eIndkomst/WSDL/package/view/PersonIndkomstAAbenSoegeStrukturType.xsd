@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/IndkomstOplysningAdgangReferenceNummer.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/IndberetningPligtigVirksomhedStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/SoegePeriodeAAbenStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="PersonIndkomstÅbenSøgeStruktur" type="fase2.1:PersonIndkomstÅbenSøgeStrukturType"/>
+   
+   
+   
+   <xs:complexType name="PersonIndkomstÅbenSøgeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:PersonCPRNummer"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:IndkomstOplysningAdgangReferenceNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:IndberetningPligtigVirksomhedStruktur" minOccurs="0"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SøgePeriodeÅbenStruktur"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

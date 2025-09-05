@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver de mulige typer af henvisning der kan registreres mellem to virksomheder. Angiver endvidere hvilke roller de 2 virksomheder kan spille i henvisningen. Henv_type_ktrl_mrk J/N(1/0) bruges til at angive om henvisningen skal kontrolleres op mod Henv_dr_form_rgl og Henv_henv_rgl. Mrk = 1 - så udføres der kontrol. Mrk = 0 - så udføres der ikke kontrol. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="HenvisningTypeKode" type="fase2.1:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver tilladte værdier af henvisningstypekode </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningTypeTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder mulige henvisningstyper i klartekst </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningTypeHjælpeTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Formålet med hjælpeteksten er at give brugeren en supplerende og/eller forklarende bemærkning til en konkret forekomst af et grunddataværdisæt. Hjælpeteksten anvendes som hjælp til brugeren, hvor denne eksempelvis bliver i tvivl om indholdet af en konkret forekomst af et grunddataværdisæt.  Hjælpeteksten kan, når det er relevant, indeholder reference til lovgivningens paragraffer og faglige vejledninger., hvor brugeren kan finde yderligere hjælp. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningTypeKontrolMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Denne markering fortæller, om der skal foretages kontrol af eksisterende henvisninger/driftsformer for virksomhederne i en henvisning. Der skal f.eks ikke foretages kontrol på henvisningstypen Kontrolhenvisninger.   True (J) = Der skal foretages kontrol som beskrevet i processerne False (N) = Der skal aldrig foretages kontrol - alt er tilladt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdato for henvisningen (år md dg) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdato for en henvisning (år md dg) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

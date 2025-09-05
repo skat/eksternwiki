@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="MFUnderretNyFordringHaverStruktur"
+                     type="fase2.1:MFUnderretNyFordringHaverStrukturType"/>
+         <xs:complexType name="MFUnderretNyFordringHaverStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringTypeKategori"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+
+               <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DMIFordringPEnhedNummer" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:DMIFordringModtagelseDato"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringStiftelseTidspunkt"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringForfaldDato"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringSRBDato"/>
+                  
+                  <xs:element ref="fase2.1:FordringBeløbStruktur"/>
+                  
+                  <xs:element ref="fase2.1:FordringPeriodeStruktur"/>
+
+               <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+               <xs:element name="FordringHæftelseListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="FordringHæftelse" minOccurs="1" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                                 <xs:element ref="fase2.1:HæftelseForm"/>
+
+                                 <xs:element ref="fase2.1:HæftelseSubsidiær" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:HæftelseStartDato"/>
+
+                                 <xs:element ref="fase2.1:HæftelseSlutDato" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="GammelFordringHaver">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                  
+                        <xs:element ref="fase2.1:KundeStruktur"/>
+
+                        <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

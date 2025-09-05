@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:xkom1="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xmlns:hentselv1="urn:oio:skat:hentselv:1.0.1" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:dkal="urn:oio:dkal:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/MedarbejderinvesteringsselskabIndskudAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/MedarbejderinvesteringsselskabIndskudBruttoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/SundhedsforsikringspraemieArbejdsgiverbetaltBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/SundhedsforsikringspraemiePensionsbetaltIkkeGruppelivBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/SundhedsforsikringspraemiePensionsbetaltGruppelivBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/JubilaeumsGratialeFratraedelsesGodtgoerelseIndsatPensionsordningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/JubilaeumsGratialeFratraedelsesGodtgoerelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/OpgoerelseFilStoerrelseMaal.xsd"/><xs:import namespace="urn:oio:dkal:1.0.0" schemaLocation="../../../../dkal/1_0_0/FilformatNavn.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/OpgoerelseFilIndholdData.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/BeloebDispositionDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndberetningIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/RestanceOplysningKvantitet.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/RestanceOplysningSumBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonVaerdiFriSommerboligDKBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonIndtaegtsartKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonIndberetningDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAldersopsparingForeloebigASkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAldersopsparingASkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAldersopsparingAIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonBruttoferiepengeTimeloennedeBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonBruttoferiepengeFratraedenFunktionaerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonFeriepengeUdbetalerIdentifier.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonNettoferiepengeFratraedenFunktionaerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonNettoferiepengeTimeloennedeBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonVaerdiHaedersgaverBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonVaerdiFriHelaarsboligBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonVaerdiFriKostLogiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonArbejdsgiversPensionsandelBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAndrePersonalegoderUdenBundgraenseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAndrePersonalegoderOverstigerBundgraenseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.1" schemaLocation="../../1_0_1/IndkomstOplysningPersonLoenmodtagerPensionsandelBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.1" schemaLocation="../../1_0_1/IndkomstOplysningPersonPersonLoentimerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonTilbagefoerselKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonSkattefriRejseBefordringsgodtgoerelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonRettelseTidligereIndberetningKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonReference.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningIndkomstTypeKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonIndberetningsartKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonForBagudLoenKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.1" schemaLocation="../../1_0_1/IndkomstOplysningPersonIndkomstTypeIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonVaerdiAfFriTelefonBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonFriBilVaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonIndeholdtForskudsskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonATPBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonATPSatsTekst.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonBIndkomstIkkeTilArbejdsmarkedbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonBIndkomstTilArbejdsmarkedbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonIndeholdtArbejdsmarkedbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonIndeholdtASkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonASkatUdenLoenindeholdelseProcent.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAIndkomstIkkeTilArbejdsmarkedbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/IndkomstOplysningPersonAIndkomstTilArbejdsmarkedbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/eSkattekortFradragDagBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/eSkattekortFradragUgeBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/eSkattekortFradrag14DageBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/eSkattekortFradragMaanedBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="../../../../../../xkom_dk/xml/schemas/2007/04/15/EndDate.xsd"/><xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="../../../../../../xkom_dk/xml/schemas/2006/09/01/StartDate.xsd"/><xs:include schemaLocation="LoenudbetalerStruktur.xsd"/>
+	<xs:include schemaLocation="AarligSkatteOplysningStruktur.xsd"/>
+	<xs:include schemaLocation="PersonKontrolOplysningStruktur.xsd"/>
+	<xs:element name="HentSelvSendData_O" type="hsws:HentSelvSendData_OType">
+	</xs:element>
+	<xs:complexType name="HentSelvSendData_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="IndkomstOplysningPerson" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier" minOccurs="0"/>
+						<xs:element name="IndkomstOplysningerDetaljer" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="IndberetningOplysningListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="IndberetningOplysning" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="Indberetter">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="LoenperiodeListe">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="Loenperiode" minOccurs="1" maxOccurs="unbounded">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element ref="hentselv:IndberetningIdentifikator"/>
+																					<xs:element ref="xkom:StartDate"/>
+																					<xs:element ref="xkom1:EndDate"/>
+																					<xs:element ref="hentselv:BeloebDispositionDato" minOccurs="0"/>
+																					<xs:element name="BlanketOplysninger">
+																						<xs:complexType>
+																							<xs:sequence>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonASkatUdenLoenindeholdelseProcent" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAndrePersonalegoderOverstigerBundgraenseBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAndrePersonalegoderUdenBundgraenseBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv1:IndkomstOplysningPersonIndkomstTypeIdentifikator"/>
+																								<xs:element ref="hentselv:IndkomstOplysningIndkomstTypeKode" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonIndberetningsartKode" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonReference" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonForBagudLoenKode" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonRettelseTidligereIndberetningKode" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonTilbagefoerselKode" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonSkattefriRejseBefordringsgodtgoerelseBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAIndkomstTilArbejdsmarkedbidragBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAIndkomstIkkeTilArbejdsmarkedbidragBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonIndeholdtASkatBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonIndeholdtArbejdsmarkedbidragBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonFriBilVaerdiBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonBIndkomstTilArbejdsmarkedbidragBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonBIndkomstIkkeTilArbejdsmarkedbidragBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonATPSatsTekst" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonATPBidragBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonVaerdiAfFriTelefonBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonIndeholdtForskudsskatBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv1:IndkomstOplysningPersonPersonLoentimerBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv1:IndkomstOplysningPersonLoenmodtagerPensionsandelBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonArbejdsgiversPensionsandelBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonVaerdiFriKostLogiBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonVaerdiFriHelaarsboligBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonVaerdiFriSommerboligDKBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonVaerdiHaedersgaverBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonNettoferiepengeTimeloennedeBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonNettoferiepengeFratraedenFunktionaerBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonFeriepengeUdbetalerIdentifier" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonBruttoferiepengeFratraedenFunktionaerBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonBruttoferiepengeTimeloennedeBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAldersopsparingAIndkomstBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAldersopsparingASkatBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonAldersopsparingForeloebigASkatBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonIndberetningDato" minOccurs="0"/>
+																								<xs:element ref="hentselv:IndkomstOplysningPersonIndtaegtsartKode" minOccurs="0"/>
+																								<xs:element ref="hentselv:JubilaeumsGratialeFratraedelsesGodtgoerelseBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:JubilaeumsGratialeFratraedelsesGodtgoerelseIndsatPensionsordningBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:SundhedsforsikringspraemiePensionsbetaltGruppelivBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:SundhedsforsikringspraemiePensionsbetaltIkkeGruppelivBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:SundhedsforsikringspraemieArbejdsgiverbetaltBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:MedarbejderinvesteringsselskabIndskudBruttoBeloeb" minOccurs="0"/>
+																								<xs:element ref="hentselv:MedarbejderinvesteringsselskabIndskudAMBidragBeloeb" minOccurs="0"/>
+																							</xs:sequence>
+																						</xs:complexType>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LoenudbetalerListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hsws:LoenudbetalerStruktur" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SkatteOplysninger" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hsws:AarligSkatteOplysningStruktur" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SlutOpgoerelse" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:OpgoerelseFilIndholdData"/>
+						<xs:element ref="dkal:FilformatNavn"/>
+						<xs:element ref="hentselv:OpgoerelseFilStoerrelseMaal"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PersonKontrolOplysning" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hsws:PersonKontrolOplysningStruktur" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="eSkattekortHent" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:eSkattekortFradragMaanedBeloeb" minOccurs="0"/>
+						<xs:element ref="hentselv:eSkattekortFradrag14DageBeloeb" minOccurs="0"/>
+						<xs:element ref="hentselv:eSkattekortFradragUgeBeloeb" minOccurs="0"/>
+						<xs:element ref="hentselv:eSkattekortFradragDagBeloeb" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="RestanceOplysning" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="hentselv:RestanceOplysningSumBeloeb"/>
+						<xs:element ref="hentselv:RestanceOplysningKvantitet"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/MeddelelseAfsenderDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/AfskrivningAArsagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransaktionDaekningBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringHaverStrukturType.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:element name="DMIMeddelelseAutomatiskAfskrivningStruktur"
+                     type="fase2.1:DMIMeddelelseAutomatiskAfskrivningStrukturType"/>
+         <xs:complexType name="DMIMeddelelseAutomatiskAfskrivningStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:MeddelelseAfsenderDato"/>
+                  <xs:element name="AfskrivningListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="Restance" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:AfskrivningÅrsagStruktur"/>
+
+                                    <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                    <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:FordringHaverStruktur"/>
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringModtagelseDato" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="ResterendeListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="Fordring" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                    <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                    <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:TransaktionDækningBeløbStruktur" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:FordringHaverStruktur"/>
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+
+                                    <xs:element ref="fase2.1:DMIFordringModtagelseDato" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

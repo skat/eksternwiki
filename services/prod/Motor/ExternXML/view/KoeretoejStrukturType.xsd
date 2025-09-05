@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/TypeAttestVariant.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejRegistrering.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejOplysningStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejRegistreringGrundlagSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TilladelseSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/RegistreringNummerStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/ForsikringSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejRegistreringStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/SynIndkaldelseStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/SynResultatStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/FysiskPladeSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejArtStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejAnvendelseStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejAnvendelseSamlingStrukturType.xsd"/>
+	<xs:element name="KoeretoejStruktur" type="dmr:KoeretoejStrukturType"/>
+	<xs:complexType name="KoeretoejStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejOplysningStruktur"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagSamlingStruktur"/>
+			<xs:element ref="dmr:TypeAttestVariantNummer" minOccurs="0"/>
+			<xs:element ref="dmr:TilladelseSamlingStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerIdent" minOccurs="0"/>
+			<xs:element ref="dmr:ForsikringSamlingStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejRegistreringNummer" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejRegistreringStruktur" minOccurs="0"/>
+			<xs:element name="SynIndkaldelseSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:SynIndkaldelseStruktur" minOccurs="0" maxOccurs="2"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:SynResultatStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:FysiskPladeSamlingStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejArtStruktur"/>
+			<xs:element ref="dmr:KoeretoejAnvendelseStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejAnvendelseSamlingStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

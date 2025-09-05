@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/RSActionType.xsd"/>
+         
+         <xs:element name="RSAction" type="fase2.1:RSActionType">
+            <xs:annotation>
+               <xs:documentation>Angiver opdateringstype: C - create  U - update  D - Delete  Grundlæggende værdiset: C: Create U: Update D: Delete N:null, ingen aktion  </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

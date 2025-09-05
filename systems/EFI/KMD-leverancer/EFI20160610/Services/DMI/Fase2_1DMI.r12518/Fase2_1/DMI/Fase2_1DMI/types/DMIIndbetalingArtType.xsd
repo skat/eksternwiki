@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="DMIIndbetalingArtType">
+               <xs:annotation>
+                  <xs:documentation>En underopdeling af indbetaling.  Liste med faste værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="BANKO"/>
+                  <xs:enumeration value="CHECK"/>
+                  <xs:enumeration value="DANKO"/>
+                  <xs:enumeration value="KONTA"/>
+                  <xs:enumeration value="LONIN"/>
+                  <xs:enumeration value="LONKO"/>
+                  <xs:enumeration value="MODRE"/>
+                  <xs:enumeration value="OCRLI"/>
+                  <xs:enumeration value="OMPOST"/>
+                  <xs:enumeration value="RENTG"/>
+                  <xs:enumeration value="TRMAND"/>
+                  <xs:enumeration value="ULAND"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

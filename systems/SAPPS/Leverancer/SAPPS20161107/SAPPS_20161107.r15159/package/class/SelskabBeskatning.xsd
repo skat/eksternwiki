@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst12Type.xsd"/>
+         <xs:element name="SelskabBeskatningParagrafTekst" type="skat2016:Tekst12Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabsskatte beskatningsparagraf i udskrevet tekst, eks. SEL § 1.1.1</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

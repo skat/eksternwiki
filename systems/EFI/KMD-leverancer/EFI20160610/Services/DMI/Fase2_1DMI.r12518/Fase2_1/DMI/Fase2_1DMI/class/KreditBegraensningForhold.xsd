@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Underliggende forhold til registreringsforhold eller forretningsområdeforhold eller acontoforhold. Angiver kreditbegrænsning for en given virksomhed, pligt og periode. Anvendes ved oprettelse af registreringsforhold, der ikke er af subtypen oplysningsforhold. d.v.s. afregningsforhold.  Der kan være fra et til flere kreditbegrænsningsforhold på samme tid til enten registreringsforhold, forretningsområdeforhold eller acontoforhold. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="KreditBegrænsningForholdKode" type="fase2.1:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerende kode for en kreditbegrænsning.  Eksempel: 16 (Kontant)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KreditBegrænsningForholdGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag et givet kreditbegrænsningsforhold gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KreditBegrænsningForholdGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag et givet kreditbegrænsningsforhold gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

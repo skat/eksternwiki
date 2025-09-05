@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KFIPersonStamoplysningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIVirksomhedStamoplysningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAlternativKontaktStrukturType.xsd"/>
+				     
+         <xs:element name="SagsKundeStruktur" type="fase2.1:SagsKundeStrukturType"/>
+         <xs:complexType name="SagsKundeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="SagsKundeStrukturValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element ref="fase2.1:KFIPersonStamoplysningStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIVirksomhedStamoplysningStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAlternativKontaktStruktur"/>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

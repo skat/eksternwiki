@@ -1,0 +1,11 @@
+BEMÆRK: Denne leverance indeholder kun HentSelvSendData
+
+- Output i HentSelvSendData udvidet med 
+ÅrligSkatteOplysningKapitalIndkomstSumPositiv
+ÅrligSkatteOplysningKapitalIndkomstSumNegativ
+
+I OIO hedder elementerne hhv.
+AarligSkatteOplysningKapitalIndkomstSumPositivBeloeb
+AarligSkatteOplysningKapitalIndkomstSumNegativBeloeb
+ 
+

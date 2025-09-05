@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En myndighedsudbetalingstype.  F.eks. børnefamilieydelse, overskydende skat osv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MyndighedUdbetalingTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/YdelsesArtNemKontoType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:element name="MyndighedUdbetalingTypeKode"
+                     type="fase2.1:MyndighedUdbetalingTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for DMIs myndighedudbetalingstype.  Grundlæggende værdiset: ADGP: Arbejdsløshedsdagpenge BBID: Børnebidrag BFMY: Børnefamilieydelse BIBL: Biblioteksafgift BOSI: Boligsikring BOST: Boligstøtte ERST: Erstatning FENK: FødevareErhverv (NemKonto) FESK: FødevareErhverv (SKAT) KISL: Rentegodtgørelse kildeskatteloven KNTH: Kontanthjælp KSLD: Kreditsaldo fra EKKO LØN:  Løn MOMS: Moms OMGO: Omkostningsgodtgørelse OSKA: Overskydende skatte- eller afgiftsbeløb OVAM: Overskydende arbejdsmarkedsbidrag OVIR: Overskydende virksomhedsskatter eller afgifter OVSK: Overskydende skat PENS: Pension PERS: Personskatter RELO: Rentegodtgørelse renteloven SDGP: Sygedagpenge SLØU: Særlig lønindeholdelse udgør 1% SÆLØ: S-løn SÆRI: Særlig indkomstskat</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingTypeNavn" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på DMIs myndighedudbetalingstype</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingTypeNKSArt" type="fase2.1:YdelsesArtNemKontoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Myndighedsudbetalingstypens navngivning/nummerering i NemKonto.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingTypeBFYModregningProcent"
+                     type="fase2.1:ProcentHeltTalPositivtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en ændret % som skal være mindre end  lov max for modregning i BFY.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingTypeBFYModregningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver beløb der ønskes i modregning af BFY. Beløb skal være mindre en lov max for modregning i BFY.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingTypeNote" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Myndigheds mulighed for at kunne skrive note på udbetaling:  I NemKonto specifikationen er det feltet Purpose.Proprietary </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingTypeKategori" type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>et ascii tegn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

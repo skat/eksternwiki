@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En aktivitet under en indsats.  Aktiviteterne svarer til aktiviteter på indsatsen (processen), dvs. en aktivitet er lig med en use case.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/StartdatoType.xsd"/>
+         <xs:include schemaLocation="../types/SlutdatoType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/GennemfoerselTidType.xsd"/>
+         <xs:include schemaLocation="../types/RegelSaetType.xsd"/>
+         <xs:include schemaLocation="../types/AdresseType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/MoedetidType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2000Type.xsd"/>
+         <xs:element name="AktivitetID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetStartdato" type="fase2.1:StartdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af, hvornår den pågældende aktivitet under en indsats er igangsat. Startdatoen for påbegyndelsen af aktiviteten. Der vil være en startdato for hver ny aktivitet i forbindelse med indsatsen, f.eks. en dato for Varsko om Kreditoplysningsbureau indberetning og en dato for Indberet til Kreditoplysningsbureau.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetSlutdato" type="fase2.1:SlutdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen for hver aktivitet i forbindelse med en indsats. Denne slutdato skal være styrende for, hvornår næste aktivitet skal igangsættes, dvs. løsningen skal styre på denne dato. Angiver, hvornår en given aktivitet er afsluttet. Når slutdatoen (fristen for aktiviteten) indsættes i en meddelelse er dette den umiddelbare slutdato. Dog skal denne opdateres i forhold til den dato, hvor meddelelsen (f.eks. varsel) reelt er udsendt af Distributionsservicen. Hvis meddelelsen først udsendes to dage efter, sagsbehandleren har genereret meddelelsen,  skal meddelelsen opdateres med den nye dato for fristen. Denne nye dato skal indsættes som slutdatoen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetNavn" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette er listen af de aktiviteter (underindsatser), man kan anvende i en indsats. Aktiviteterne svarer til aktiviteter på procesdiagrammerne, dvs. der er en aktivitet per use case.  Fra listen kan man kun vælge de aktiviteter, der er knyttet til den specifikke indsats som defineret i procesbeskrivelserne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetGennemførselTid" type="fase2.1:GennemførselTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den faktiske tid, det tager at gennemføre aktiviteten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetGennemførselTidRegel" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvor lang tid det må tage at gennemføre en type af aktivitet.  Specifikt Restanceinddrivelsesmyndigheden: Se matrix Aktivitet_Gennemførselsfrist.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetFrist" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette er typen af frist med tilhørende fastlagt fristperiode (parameterstyring). Typen af frist bruges til at beregne den nye frist for aktiviteten, som indsættes i slutdatoen for aktiviteten.  Indsatserne er beskrevet i matrixen Fristtyper.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetMødeSted" type="fase2.1:AdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Stedet for mødet. Det kan være hos den organisatoriske enhed eller hos kunden selv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetMødeDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for mødet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetMødeTid" type="fase2.1:MødetidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tiden for mødets afholdelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetUdsendelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dags dato på meddelelsen og dermed dato for udsendelse af den enkelte meddelelse. Når dags dato indsættes i en meddelelse, er dette den umiddelbare udsendelsesdato. Dog skal denne opdateres i forhold til den reelle udsendelsesdato af Distributionsservicen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetSagFremstilling" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Her indsættes fremstillinger af sagen ved f.eks. afgørelser. Bruges til at begrunde afgørelser. Denne sagsfremstilling kan anvendes i meddelelser internt og eksternt.  Sagsfremstilling er forskellig fra attributterne Begrundelse og Note.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetBegrundelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Her kan sagsbehandleren indsætte sin begrundelse for en bestemt handling under en aktivitet. Dette skal kunne flettes ind i meddelelser til interne og eksterne parter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetNote" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandleren kan have behov for at tilknytte en note omkring aktiviteter i forbindelse med en indsats. Skal indgå i sagsloggen for en indsats. Bruges også til sagsbemærkninger under Bobehandling.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetMinimumBeløb" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for det minimumsbeløb der skal kunne opsættes for hver aktivitet.  Beløbet angiver, hvor stort et beløb fordringerne skal være på, før man må igangsætte en aktivitet.  Se matrix Indsatstype_minimumsbeløb, som også indeholder aktiviternes minimumsbeløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetGennemført" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Registrering af om aktiviteten er gennemført. Dette behøver ikke være lig med slutdatoen, da slutdatoen er udtryk for den frist, hvor aktiviteten burde være gennemført.  Hvis ingen dato er aktiviteten ikke gennemført. Løsningen indsætter automatisk datoen, når aktiviteten er gennemført. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetRessourceRegelsæt" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvordan opgavebookning ved en type aktivitet under en indsats skal foregå.  Specifikt Restanceinddrivelsesmyndigheden: Se matrix Indsats(aktivitet)_Ressource_Regelsæt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivitetResultat" type="fase2.1:Tekst2000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>[Anders 20101208: Afventer beskrivelse fra KMD]</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

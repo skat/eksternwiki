@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/RSAction.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/MedarbejderArbejdsstedStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ArbejdsstedStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KoerselstidStrukturType.xsd"/>
+				     
+         <xs:element name="RSMedarbejderArbejdsstedGem_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:RSMedarbejderArbejdsstedGem_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="RSMedarbejderArbejdsstedGem_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="MedarbejderArbejdsstedSamling">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="MedarbejderArbejdssted" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:RSAction"/>
+                  
+                                       <xs:element ref="fase2.1:MedarbejderArbejdsstedStruktur"/>
+                                       <xs:element name="Arbejdssted">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:RSAction"/>
+                  
+                                                <xs:element ref="fase2.1:ArbejdsstedStruktur"/>
+                                                <xs:element name="KørselstidSamling">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+
+                                                         <xs:element name="Kørselstid" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:element ref="fase2.1:RSAction"/>
+                  
+                                                                  <xs:element ref="fase2.1:KørselstidStruktur"/>
+                                                               </xs:sequence>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

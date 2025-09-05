@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>I medarbejderens profil har medarbejderen mulighed for, at opsætte en række parametre, som vil påvirke hvordan medarbejderen bookes af systemet. F.eks. er der mulighed for at opsætte kompetencer, belægningsprocent osv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/MedarbejderNummerType.xsd"/>
+         <xs:include schemaLocation="../types/TelefonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/MailAdresseType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="MedarbejderprofilID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderprofilens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource medarbejderprofilen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilWNummer" type="fase2.1:MedarbejderNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens nummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilMobilnummer" type="fase2.1:TelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens mobiltelefon nummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilEmail" type="fase2.1:MailAdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens e-mail adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilBelægningsprocent"
+                     type="fase2.1:ProcentHeltTalPositivtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderen kan i medarbejderprofilen angive hvor meget af tiden i løbet af en dag der skal være åbent for bookinger.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilPointsystem" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderen har mulighed for at af- eller tilmelde sig pointsystemet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilPoint" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal point på medarbejderens pointkonto. Hver opgave har et antal point. Når medarbejderen har løst en opgave bliver medarbejderens pointkonto opskrevet med opgavens point.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilMedbringVidne" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderen har selv mulighed for at fravælge at medtage vidne på f.eks. udgående fogedforretning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilVilVæreVidne" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderen har mulighed for at fravælge at være vidne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilAlarmTilMobil" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderen har mulighed for at få sendt eventuelle alarmer som sms til sin mobiltelefon. Alarmerne vil stadigvæk fremgå af alarmlisten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilAlarmTilEmail" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderen har mulighed for at få sendt eventuelle alarmer som mail. Alarmerne vil stadigvæk fremgå af alarmlisten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilDefaultFrokostFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens default frokost start tid. Selv om der er en default frokost tid i medarbejderprofilen, har medarbejderen altid mulighed for at indsætte en anden frokost tid i kalenderen som vil virke i stedet for default tiden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilDefaultFrokostTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderens default frokost slut tid. Selv om der er en default frokost tid i medarbejderprofilen, har medarbejderen altid mulighed for at indsætte en anden frokost tid i kalenderen som vil virke i stedet for default tiden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet medarbejderprofilen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt medarbejderprofilen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret medarbejderprofilen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt medarbejderprofilen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har slettet elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt medarbejderprofilen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderprofilTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til medarbejderprofilen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

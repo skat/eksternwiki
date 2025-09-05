@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../operational/EjerAfEnkeltmandsvirksomhed.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/HaeftelseStop.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseStopAArsagStrukturType.xsd"/>
+				     
+         <xs:element name="HæftelseStopListeStruktur" type="fase2.1:HæftelseStopListeStrukturType"/>
+         <xs:complexType name="HæftelseStopListeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="HæftelseStopListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="HæftelseStop" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                 <xs:element ref="fase2.1:KundeType"/>
+
+                                 <xs:element ref="fase2.1:EjerAfEnkeltmandsvirksomhed" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                 <xs:element ref="fase2.1:HæftelseStopType"/>
+                  
+                                 <xs:element ref="fase2.1:HæftelseStopStart"/>
+                  
+                                 <xs:element ref="fase2.1:HæftelseStopSlut"/>
+                  
+                                 <xs:element ref="fase2.1:HæftelseStopÅrsagStruktur"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

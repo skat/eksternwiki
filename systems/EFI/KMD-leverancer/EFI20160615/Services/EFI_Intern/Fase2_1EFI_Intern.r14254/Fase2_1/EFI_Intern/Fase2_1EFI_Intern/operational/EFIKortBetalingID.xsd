@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         
+         <xs:element name="EFIKortBetalingID" type="fase2.1:Tekst45Type">
+            <xs:annotation>
+               <xs:documentation>Unik nøgleværdi returneret fra KortBetalingOpret servicen. Denne nøgle har mange navne ifølge interfacebeskrivelse for SKAT generisk betalingskort løsning dokumentationen.  Den returneres fra KortBetalingOpret som feltet UnikNøgle der er af typen Tekst45.  Den skal angives som token parameter i forretningssystemets (EFI portalen) kald til betalings.aspx websiden.   Den angives som BetalingsID felt i betalingskort løsningens callback til EFI via servicen KortBetalingCaptureCallback. BetalingsID er defineret som typen GUID (Tekst36).  </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

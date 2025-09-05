@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Tilladelse.xsd"/>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejOplysning.xsd"/>
+	<xs:include schemaLocation="../view/TilladelseTypeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejGenerelIdentifikatorStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+	<xs:element name="TilladelseStruktur" type="dmr:TilladelseStrukturType"/>
+	<xs:complexType name="TilladelseStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:TilladelseGyldigFra"/>
+			<xs:element ref="dmr:TilladelseGyldigTil" minOccurs="0"/>
+			<xs:element ref="dmr:TilladelseKommentar" minOccurs="0"/>
+			<xs:element ref="dmr:TilladelseTypeStruktur"/>
+			<xs:element name="TilladelseTypeDetaljeValg" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="VariabelKombination">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="dmr:KoeretoejGenerelIdentifikatorStruktur"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="FastTilkobling">
+								<xs:complexType>
+									<xs:choice>
+										<xs:element ref="dmr:KoeretoejIdent"/>
+										<xs:element ref="dmr:KoeretoejOplysningStelNummer"/>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="KunGodkendtForJuridiskEnhed">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="dmr:JuridiskEnhedIdentifikatorStruktur"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

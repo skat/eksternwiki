@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="VirksomhedAlleEjerLederRelationSamlingHentService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Formålet er at hente oplysninger om hvilke ejere og/eller ledere en virksomhed har.  JaNej markering anvendelse: hvis Ja hentes oplysninger, hvis Nej hentes oplysninger ikke.  Er søgedato udfyldt hentes oplysninger, som er gældende fra og med den anførte søgedato eller i den angivne søgeperiode.  Er søgedato ikke udfyldt hentes alle oplysninger. Er EjerTypeRolleValg udfyldt hentes alene ejerforhold for virksomheder, der opfylder Valg. Er LedelsesTypeValg udfyldt hentes alene ledelsesforhold for virksomheder, der opfylder Valg. Er EjerTypeRolleValg og LedelsesTypeValg udfyldt hentes ejerforhold og ledelsesforhold, der opfylder Valg.  Vedr EjerTypeValg: Er driftsform udfyldt hentes alene ejerforhold for virksomheder, som har den anførte driftsform.  Er både driftsform, ejerrolle og ejertype udfyldt hentes ejerforhold, som gælder for den anførte kombinati-on af ejerrolle, ejertype og driftsform.  Der hentes uanset søgedato altid aktuelt gældende kort navn for virksomhed samt adresse af typen virk-somhedsadresse for SENummer og eventuelt CVRNummer. </xs:documentation>
+            <xs:documentation>r6074</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/VirksomhedAlleEjerLederRelationSamlingHentInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="VirksomhedAlleEjerLederRelationSamlingHentServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:VirksomhedAlleEjerLederRelationSamlingHent_I"/>
+         </wsdl:message>
+         <wsdl:message name="VirksomhedAlleEjerLederRelationSamlingHentServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:VirksomhedAlleEjerLederRelationSamlingHent_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="VirksomhedAlleEjerLederRelationSamlingHentServicePortType">
+            <wsdl:operation name="getVirksomhedAlleEjerLederRelationSamlingHent">
+               <wsdl:input message="fase2.1:VirksomhedAlleEjerLederRelationSamlingHentServiceRequest"/>
+               <wsdl:output message="fase2.1:VirksomhedAlleEjerLederRelationSamlingHentServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

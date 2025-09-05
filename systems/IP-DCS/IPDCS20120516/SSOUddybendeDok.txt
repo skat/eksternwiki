@@ -1,0 +1,299 @@
+1. Anonym bruger, Anonym Kontekst
+
+SimpelBrugerIdent = OracleUID1234
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:SimpelBrugerIdent>OracleUID1234</sik:SimpelBrugerIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+2. UP bruger,	Username/password bruger kontekst
+
+SimpelBrugerIdent = OracleUID1234
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:SimpelBrugerIdent>OracleUID1234</sik:SimpelBrugerIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+3. SKAT-systembruger, Systembruger kontekst
+
+InternSystemIdent = OracleUID1234
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:InternSystemIdent>OracleUID1234</sik:InternSystemIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+4. Borger, Borger (TastSelv kode/POCES) kontekst
+
+Borger = 3003603072
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+5. Borger (TastSelv kode/POCES) der arbejder på vegne af en Borger
+
+Borger = 3003603072
+På vegne af borger = 1212783047
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+			<sik:PersonCPRNummer>1212783047</sik:PersonCPRNummer>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+6. Borger (TastSelv kode/POCES) der er ansat af (egen) enkeltmandsvirksomhed
+
+Borger = 3003603072
+VirksomhedSENummer = 09876543
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>AnsatAf</sik:SikkerhedIdentRelation>
+			<sik:VirksomhedSENummer>09876543</sik:VirksomhedSENummer>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+7. Virksomhed, Virksomhed (TastSelv kode)
+
+SE-nummer = 09876543
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedSENummer>09876543</sik:VirksomhedSENummer>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+8. Virksomhed (TastSelv kode) der arbejder på vegne af Virksomhed
+
+SE-nummer = 12345678
+På vegne af SE-nummer = 98765432
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedSENummer>12345678</sik:VirksomhedSENummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+			<sik:VirksomhedSENummer>98765432</sik:VirksomhedSENummer>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+9. Virksomhed (TastSelv kode) der arbejder på vegne af Borger
+
+SE-nummer = 12345678
+På vegne af Borger = 3003603072
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedSENummer>12345678</sik:VirksomhedSENummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+			<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+10. Virksomhedsystembruger (VOCES)
+
+SystemIdent = UID123456789
+CVR-Nummer = 55337788
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedCVRNummer>55337788</sik:VirksomhedCVRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>HarSystem</sik:SikkerhedIdentRelation>
+			<sik:SystemIdent>UID123456789</sik:SystemIdent>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+11. Virksomhedsystembruger (VOCES), der arbejder på vegne af Virksomhed
+
+SystemIdent = UID123456789
+CVR-Nummer = 55337788
+På vegne af SE-nummer = 98765432
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedCVRNummer>55337788</sik:VirksomhedCVRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>HarSystem</sik:SikkerhedIdentRelation>
+			<sik:SystemIdent>UID123456789</sik:SystemIdent>
+			<sik:TertiærIdent>			
+				<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+				<sik:VirksomhedSENummer>98765432</sik:VirksomhedSENummer>			
+			</sik:TertiærIdent>		
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+12. Virksomhed (VOCES) der arbejder på vegne af Borger
+
+SystemIdent = UID123456789
+CVR-Nummer = 55337788
+På vegne af Borger = 3003603072
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedCVRNummer>55337788</sik:VirksomhedCVRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>HarSystem</sik:SikkerhedIdentRelation>
+			<sik:SystemIdent>UID123456789</sik:SystemIdent>
+			<sik:TertiærIdent>			
+				<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+				<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>	
+			</sik:TertiærIdent>		
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+13. Medarbejder (MOCES) der repræsenterer en Virksomhed
+
+CVR-Nummer = 55337788
+MedarbejderIdent = RID123456789
+Arbejde for SE-nummer = 98765432
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedCVRNummer>55337788</sik:VirksomhedCVRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>HarMedarbejder</sik:SikkerhedIdentRelation>
+			<sik:MedarbejdeIdent>RID123456789</sik:MedarbejdeIdent>
+			<sik:TertiærIdent>			
+				<sik:SikkerhedIdentRelation>ArbejderFor</sik:SikkerhedIdentRelation>
+				<sik:VirksomhedSENummer>98765432</sik:VirksomhedSENummer>			
+			</sik:TertiærIdent>				
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+14. Medarbejder (MOCES) der repræsentere en Virksomhed, som arbejder på vegne af en Virksomhed
+
+CVR-Nummer = 55337788
+MedarbejderIdent = RID123456789
+Arbejde for SE-nummer = 98765432
+På vegne af SE-nummer = 12345678
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedCVRNummer>55337788</sik:VirksomhedCVRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>HarMedarbejder</sik:SikkerhedIdentRelation>
+			<sik:MedarbejdeIdent>RID123456789</sik:MedarbejdeIdent>
+			<sik:TertiærIdent>			
+				<sik:SikkerhedIdentRelation>ArbejderFor</sik:SikkerhedIdentRelation>
+				<sik:VirksomhedSENummer>98765432</sik:VirksomhedSENummer>
+				<sik:KvartærIdent>			
+					<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+					<sik:VirksomhedSENummer>12345678</sik:VirksomhedSENummer>		
+				</sik:KvartærIdent>		
+			</sik:TertiærIdent>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+15. Medarbejder (MOCES) der repræsentere en Virksomhed, som arbejder på vegne af en Borger
+
+CVR-Nummer = 55337788
+MedarbejderIdent = RID123456789
+Arbejde for SE-nummer = 98765432
+På vegne af Borger = 3003603072
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:VirksomhedCVRNummer>55337788</sik:VirksomhedCVRNummer>
+		<sik:SekundærIdent>
+			<sik:SikkerhedIdentRelation>HarMedarbejder</sik:SikkerhedIdentRelation>
+			<sik:MedarbejdeIdent>RID123456789</sik:MedarbejdeIdent>
+			<sik:TertiærIdent>			
+				<sik:SikkerhedIdentRelation>ArbejderFor</sik:SikkerhedIdentRelation>
+				<sik:VirksomhedSENummer>98765432</sik:VirksomhedSENummer>
+				<sik:KvartærIdent>			
+					<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+					<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>		
+				</sik:KvartærIdent>		
+			</sik:TertiærIdent>
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+16. SKAT Medarbejder, SKAT Medarbejder (Kerberos)
+
+RessourceNummer (SKAT-medarbejder)  = w48765
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:RessourceNummer>w48765</sik:RessourceNummer>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+17. SKAT Medarbejder (Kerberos), der arbejder på vegne af en Virksomhed
+
+RessourceNummer (SKAT-medarbejder)  = w48765
+På vegne af SE-nummer = 12345678
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:RessourceNummer>w48765</sik:RessourceNummer>
+		<sik:SekundærIdent>		
+			<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+			<sik:VirksomhedSENummer>12345678</sik:VirksomhedSENummer>		
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+18. SKAT Medarbejder (Kerberos) der arbejder på vegne af en Borger
+
+RessourceNummer (SKAT-medarbejder)  = w48765
+På vegne af Borger = 3003603072
+
+<?xml version="1.0" encoding="utf-8"?>
+<sik:SingleSignOnSession xmlns:sik="http://skat.dk/begrebsmodel/xml/schemas/sikkerhed/2012/04/16/">
+	<sik:PrimærIdent>
+		<sik:RessourceNummer>w48765</sik:RessourceNummer>
+		<sik:SekundærIdent>		
+			<sik:SikkerhedIdentRelation>PåVegneAf</sik:SikkerhedIdentRelation>
+			<sik:PersonCPRNummer>3003603072</sik:PersonCPRNummer>	
+		</sik:SekundærIdent>
+	</sik:PrimærIdent>
+</sik:SingleSignOnSession>
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En persons eller virksomheds EAN nummer, som bruges i forbindelse med elektronisk fakturering.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/EANNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="EANNummer" type="fase2.1:EANNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>EAN-nummeret skal altid med på en e-faktura. EAN-nummeret er et 13-cifret nummer, der entydigt identificerer den enkelte offentlige myndighed og sikrer, at regningen når frem til rette sted. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EANGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EANGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EANOrdreNummer" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den offentlige myndighed skal ved regsitrering eller ejer/brugerskifte af et køretøj, hvor der opkræves periodiske afgifter, oplyse ordrenummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EANKontoNummer" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Her kan den offentlige myndighed oplyse til interne kontostreng.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EANKontakt" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den offentlige myndigheds kontaktperson.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

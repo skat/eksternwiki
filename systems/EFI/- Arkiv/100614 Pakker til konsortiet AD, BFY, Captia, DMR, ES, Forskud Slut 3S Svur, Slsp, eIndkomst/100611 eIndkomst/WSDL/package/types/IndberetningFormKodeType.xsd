@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="IndberetningFormKodeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver angivelsestypens mulige indberetningsformer.   For angivelsestypen MIA findes f.eks. Ingen udbetaling af A-indkomst, Ingen ændringer i forhold til forrige periode, Ændringer i forhold til forrige periode, Ændringer i forhold til forrige periode inklusive visning af CPR-numre,  Totalindberetning af alle A-indkomstmodtagere og Filoverførsel.  Nogle indberetningsformer er kun forbeholdt revisor, mens andre indberetningsformer både er tilladt for virksomheden og revisor.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:integer">
+            
+         
+         
+         <xs:totalDigits value="3"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Opkrævningskonto håndterer alle debiteringer, krediteringer samt diverse regler for renter, gebyrer, fordringstyper og inddrivelse mv.   En Kunde (virksomhed eller borger) har én Opkrævningskonto.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/Rentesats85Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:element name="OpkrævningKontoStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår en opkrævningskonto er oprettet i DMO.  For personer: OpkrævningKontoStartDato er den dato, når en Person fylder 15 år eller i øvrigt bliver skattepligtig.  For virksomheder: OpkrævningKontoStartDato er den dato, når en virksomheds er registreringsforhold er oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår enten:   - en person er død - en virksomheds registreringsforhold er afsluttet og afmeldt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoSidsteBevægelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for opkrævningskontoens seneste bevægelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoUdbetalingGrænseBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Grænsen der er opsat på den enkelte kundes konto for, hvornår der skal ske udbetaling. Udbetalingsgrænsen vil fra starten være sat til 100 kr., men kan til enhver tid, og som ofte ønsket, ændres af kunden.  Eksempel: En kunde har sat udbetalingsgrænsen til 2.000 kr. og der er opstået en saldo i kundens favør på 3.500 kr. Det betyder, at der kun vil blive udbetalt 1.500 kr. og de resterende 2.000 kr. vil blive stående på kundens konto. Hvis kunden ønsker hele beløbet udbetalt, skal udbetalingsgrænsen ændres til 0 kr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoUdbetalingGrænseBeløbDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>viser dag og tid for, hvornår kontoens udbetalingsgrænse sidst er opdateret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoRykkerNiveau" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Bestemmer hvilken handling der skal foretages ved næste rykkerkørsel. Rykkerniveau anvendes bl.a. til styring af overdragelse til Inddrivelse.  Der er tale om flere rykkerniveauer:  1 (første rykker) 2 (anden rykker inden overdragelse til Inddrivelse)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoRykkerprocedure" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvordan der må rykkes for saldoen på kontoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoRenteregel" type="fase2.1:Rentesats85Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Regel for rente på kontoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoRenteBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rente for saldoen på kontoen, beregnet med den aktuelle rentesats.  Debitrenter på fordringer tilskrives ikke her, men tilskrives fordringen og oprettes selv som en fordring knyttet til den oprindelige fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoRentefritBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Valgfrit beløb der ikke skal tilskrives rente.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoPosteringerTilGodkendelseMarkering"
+                     type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markiering af hvorvidt der er posteringer, der venter godkendelse,  på kontoen. Sættes til True hvis ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoSikkerhedstillelseMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markiering af hvorvidt der er sikkkerhedstillelse,  på kontoen. Sættes til True hvis ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoBetalingOrdningMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt der er en eller flere betalingsordninger på kontoen. Sættes til True hvis ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoAdministrativTiltagMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt der findes et administrativt tiltag på kontoen. Sættes til True hvis ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoNyModregningMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt der er modregninger på kontoen der ikke er set. Hvis der er modregninger der ikke er set sættes til true.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoModregningerAntal" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antallet af modregningsmeddelelser på kontoen der ikke er markeret set.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

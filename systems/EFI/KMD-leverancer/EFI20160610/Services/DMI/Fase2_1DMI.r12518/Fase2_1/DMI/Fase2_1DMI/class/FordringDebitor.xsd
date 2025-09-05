@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Fordringsdebitor (ikke kunden) er en, der skylder kunden penge. Det kan eksempelvis være SKAT ved overskydende skat eller andre eksterne parter som måtte skylde kunden penge.   Specifikt RestanceInddrivelsesMyndigheden (RIM): Bruges i tilfælde af fordringer i tilstanden transport, ved skadesløs transport (indsatsen i Ét Fælles Inddrivelsessystem) eller ved aktiver, RIM har foretaget udlæg i, og hvor fordringsdebitoren skal underrettes (denuncieres) om, at de fremover skal betale til RIM i stedet for kunden.  Eksempel: Når RIM har foretaget udlæg i kundens gældsbrev, skal der sendes en meddelelse til gældsbrevsdebitoren, som i RIMs øjne er fordringsdebitoren.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:element name="FordringDebitorID" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringsdebitorens cpr eller cvr nummer.  RIM vil ikke altid kunne få oplyst dette fra kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringDebitorNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på fordringsdebitoren.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

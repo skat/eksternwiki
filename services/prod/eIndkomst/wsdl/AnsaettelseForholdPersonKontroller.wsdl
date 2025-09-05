@@ -1,0 +1,56 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AnsaettelseForholdPersonKontrollerService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+- <wsdl:types>
+- <soap:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://www.w3.org/2001/XMLSchema" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<!--soap:include schemaLocation="http://85.81.229.78/rep.oio.dk/skat.dk/eindkomst/service/AnsaettelseForholdPersonKontrollerInterface.xsd" /-->
+			<soap:include schemaLocation="../service/AnsaettelseForholdPersonKontrollerInterface.xsd"/>
+		</soap:schema>
+	</wsdl:types>
+	<wsdl:message name="AnsættelseForholdPersonKontrollerServiceRequest">
+		<wsdl:part element="fase2:AnsaettelseForholdPersonKontroller_I" name="Request"/>
+	</wsdl:message>
+	<wsdl:message name="AnsættelseForholdPersonKontrollerServiceResponse">
+		<wsdl:part element="fase2:AnsaettelseForholdPersonKontroller_O" name="Response"/>
+	</wsdl:message>
+	<!--wsdl:message name="KompenserTransRequest">
+  <wsdl:part element="fase2:KompenserTrans" name="Request" /> 
+  </wsdl:message>
+ <wsdl:message name="KompenserTransResponse">
+  <wsdl:part element="fase2:KompenserTransSvar" name="Response" /> 
+  </wsdl:message-->
+	<wsdl:portType name="AnsættelseForholdPersonKontrollerServicePortType">
+		<wsdl:operation name="getAnsættelseForholdPersonKontroller">
+			<wsdl:input message="fase2:AnsættelseForholdPersonKontrollerServiceRequest"/>
+			<wsdl:output message="fase2:AnsættelseForholdPersonKontrollerServiceResponse"/>
+		</wsdl:operation>
+		<!--wsdl:operation name="getKompenserTrans">
+  <wsdl:input message="fase2:KompenserTransRequest" /> 
+  <wsdl:output message="fase2:KompenserTransResponse" /> 
+  </wsdl:operation-->
+	</wsdl:portType>
+	<wsdl:binding name="AnsættelseForholdPersonKontrollerServiceBinding" type="fase2:AnsættelseForholdPersonKontrollerServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAnsættelseForholdPersonKontroller">
+			<soap:operation soapAction="urn:#getAnsættelseForholdPersonKontroller"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<!--wsdl:operation name="getKompenserTrans">
+  <soap:operation soapAction="urn:#getKompenserTrans" /> 
+ <wsdl:input>
+  <soap:body use="literal" /> 
+  </wsdl:input>
+ <wsdl:output>
+  <soap:body use="literal" /> 
+  </wsdl:output>
+  </wsdl:operation-->
+	</wsdl:binding>
+	<wsdl:service name="AnsættelseForholdPersonKontrollerServiceBindingQSService">
+		<wsdl:port binding="fase2:AnsættelseForholdPersonKontrollerServiceBinding" name="AnsættelseForholdPersonKontrollerServiceBindingQSPort">
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/AnsaettelseForholdPersonKontrollerServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

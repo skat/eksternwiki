@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aarsopgoerelsetaksationkode="urn:oio:skat:hentselv:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="AArsopgoerelseTaksationKode" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Værdien af dette felt angiver om der er tale om en takseret årsopgørelse. Værdierne i feltet kan være som følger:  1       Taksation via system 55 billede TAKS - opsættes maskinelt (kan ikke indberettes).  2       Manuel taksation af formue.  3       Manuel taksation af særlig indkomst efter fradrag.  4       Manuel taksation af formue og særlig indkomst efter fradrag.   5       Taksation via KMD SKAT-Ligning (opsættes maskinelt)   8       Indberetning af ej skattepligt kan foretages via taksationsbilledet TAKS i system 55. Værdi 8 indicerer, at der ikke er tale om taksation.  Blank: Ingen taksation (defaultværdi).</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

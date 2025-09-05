@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Pligt.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/ForretningOmraadeType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/OplysningVirksomhedType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/OplysningType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/BevillingType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/AcontoType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KreditBegraensningType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/AngivelseFrekvensType.xsd"/>
+         
+   
+   
+   
+   <xs:element name="PligtKodeStruktur" type="fase2.1:PligtKodeStrukturType"/>
+   
+   
+   
+   <xs:complexType name="PligtKodeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:PligtKode"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:ForretningOmrådeTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:OplysningVirksomhedTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:OplysningTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:BevillingTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:AcontoTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:KreditBegrænsningTypeKode" minOccurs="0"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:AngivelseFrekvensTypeKode"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

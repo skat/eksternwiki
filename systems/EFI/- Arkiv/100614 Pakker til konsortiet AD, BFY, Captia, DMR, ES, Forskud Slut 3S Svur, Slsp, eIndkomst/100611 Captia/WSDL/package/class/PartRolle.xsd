@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En Part kan være forskellige roller i forhold til forskellige sager.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+      
+   
+   
+   <xs:element name="PartRolleBetegnelse" type="fase2.1:Tekst11Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Partens rolle i forhold til sagen.  Roller =stoerre end Definition Sagspart =stoerre endSagens part. Den borger, virksomhed mv., som sagen drejer sig om - altså den sagens afgørelse, vejledning mv. er rettet mod.  Partsrepr =stoerre end Partens repræsentant, typisk advokat eller revisor. Ligningsråd Ligningsrådet  Øvr. myndig =stoerre end Øvrige myndigheder, f.eks. Skatteministeriets departement, andre ministerier og styrelser, politi og anklagemyndighed, domstolene.  Andre ekst. =stoerre end Andre eksterne. Personer, selskaber og virksomheder, der ikke er sagspart eller partsrepræsentant. F.eks. brancheorganisationer eller andre, der skal høres/orienteres i en sag eller Kammeradvokaten.  Egen myndighed =stoerre end Egen myndighed, dvs. når der korresponderes internt i myndigheden. Hvis et kontor i Hovedcenteret f.eks. hører andre afdelinger, eller et andet skattecenter.Der skal også sættes part på egne notater mv.i LISY-kodesager med sagstidsmåling, selvom notatet ikke har en modtager eller afsender. Egen organisatoriske enhed sættes på som part med rollen Egen myndighed</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

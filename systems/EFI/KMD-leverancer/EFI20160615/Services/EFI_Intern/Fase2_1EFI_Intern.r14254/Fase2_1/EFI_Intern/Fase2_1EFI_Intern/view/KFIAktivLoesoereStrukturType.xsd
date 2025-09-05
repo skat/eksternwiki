@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/AktivLoesoere.xsd"/>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+         <xs:include schemaLocation="../class/AktivRettighedType.xsd"/>
+         <xs:include schemaLocation="../view/KFIAktivPlaceringStrukturType.xsd"/>
+				     
+         <xs:element name="KFIAktivLøsøreStruktur" type="fase2.1:KFIAktivLøsøreStrukturType"/>
+         <xs:complexType name="KFIAktivLøsøreStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:KFIAktivPlaceringStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivLøsøreType" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivLøsøreAntal" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivLøsøreBeskrivelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivSkønnetFriværdi" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivSkønnetFriværdiBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivNavnAdresseTredjemand" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivDenunciationStatusKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivRettighedTypeKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivLøsøreBehæftelseType" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

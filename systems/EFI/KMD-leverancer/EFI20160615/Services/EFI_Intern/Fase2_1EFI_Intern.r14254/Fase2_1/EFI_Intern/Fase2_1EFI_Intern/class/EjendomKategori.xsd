@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Kategorisering af ejendommens anvendelse  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartNulType.xsd"/>
+         <xs:element name="EjendomKategoriKode" type="fase2.1:KodeToCifreStartNulType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kodeværdierne er:  1. Ubebygget grund 2. Flerfamilieejendom 3. Erhvervsejendom 4. Enfamilieejendom 5. Fritidsejendom 6. Landbrug 7. Anden ejendom</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder informationer om en given myndighed. I dette tilfælde fungerer myndighed i rollen som myndighed for en given kunde - og ikke som juridisk enhed.   En myndighed kan for SKAT fx være af typen kommune, skattecenter, politikreds, retskreds mv.   </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MyndighedNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/MyndighedsforkortelseType.xsd"/>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="MyndighedNummer" type="fase2.1:MyndighedNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer der entydigt identificerer de for SKAT relevante myndigheder. Nummeret er 4-ciftret og tildeles af Indenrigsministeriet.   Eksempel: Københavns Kommune har nummeret 0101.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på myndigheden fx Skatteministeriet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedNavnKort" type="fase2.1:MyndighedsforkortelseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forkortet udgave af det officielle navn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedType" type="fase2.1:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typekoden for myndigheder. Typer omfatter:  01 Kommune 02 Skattecenter 03 Politikreds 04 Retskreds 05 Skifteret 06 Kommunalt ligningsfællesskab 07 Ligningscenter 08 Skatteankenævnssekretariat 09 Skattesamarbejde 10 Grænsegængercenter 11 Grænsegængersekretariat 12 Offentlig statslig myndighed</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedÅbningstid" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekstangivelse af myndighedens åbningstid. Bruges til breve/meddelelser. Fx Mandag - fredag 10:00 - 14:00</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedTypeKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En ældre myndighedstype, som vedligeholdes af SKAT. Juli 2010 har CSC meddelt at koderne ikke er opdateret, men at SKAT selv har mulighed for at foretage oprydning.   0 = kommune 1 = amt 2 = amtskatteinspektorat 3 = retskredse og politikredse 4 = skatteråd 5 = regional EDB-central 6 = distrikstoldkamre  7 = interne myndigheder (reserveret) 8 = Told- og Skatteregioner 9 = benyttes ej p.t.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

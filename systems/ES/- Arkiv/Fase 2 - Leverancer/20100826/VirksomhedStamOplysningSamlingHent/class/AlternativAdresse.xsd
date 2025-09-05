@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation>Indeholder em uordnet adresse (eller fritekst adresse). Dvs. adresse inddata som fremgår som en enkelt streng.</xs:documentation>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/AdresseAnvendelseKodeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/AdresseLinieType.xsd"/>
+   
+   
+   
+   
+   
+   
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+   
+   
+   <xs:element name="AlternativAdresseFortløbendeNummer" type="fase2:IdentifikationNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver fortløbende nummerering ved flere adresser af samme type og på samme tidspunkt. Indikerer prioritet.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAnvendelseKode" type="fase2:AdresseAnvendelseKodeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Beskriver adresseringsmuligheder</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie1" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinje 1</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie2" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinie 2</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie3" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinie 3</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie4" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinie 4</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie5" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinie 5</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie6" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinie 6</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseAdresseLinie7" type="fase2:AdresseLinieType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Adresselinie 7</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseGyldigFra" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Specifik dato (uden start og slutangivelse).</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseGyldigTil" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Specifik dato (uden start og slutangivelse).</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AlternativAdresseSkjult" type="fase2:MarkeringType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Når sagsbehandlere registrerer en alternativ adresse for en kunde eller juridisk enhed, skal man samtidig angive, hvorvidt alternativ adresse skal være skjult for kunden.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

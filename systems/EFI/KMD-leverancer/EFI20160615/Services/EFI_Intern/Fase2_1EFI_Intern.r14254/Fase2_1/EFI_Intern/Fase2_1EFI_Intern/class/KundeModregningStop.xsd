@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En kunde kan være fritaget for  modregning i  fordringer i en given periode.  En kunde kan være fritaget for modregning i en eller flere myndighedsudbetalingstyper i en i en given periode.  En kunde kan være fritaget for modregning i en eller flere fordringstyper i en given periode.. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeModregningStopTypeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/AArsagStopKodeModregningType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="KundeModregningStopType" type="fase2.1:KundeModregningStopTypeDomæneType">
+               
+            </xs:element>
+         <xs:element name="KundeModregningStopStart" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato stop modregning gælder fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeModregningStopSlut" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato stop for modregning ophører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeModregningStopÅrsagKode" type="fase2.1:ÅrsagStopKodeModregningType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandler muligheder for valg mellem foruddefineret årsag til stop. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeModregningStopÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybning af valg af StopÅrsagKode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeModregningStopÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybning af ÅrsagKode Anden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

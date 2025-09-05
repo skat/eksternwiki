@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BudgetTypeKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/BudgetGodkendelseStatusKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/EFIBudgetStatusKodeType.xsd"/>
+         <xs:element name="EFIBudgetID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik ID for budget</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetGodkendt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af om budgettet er godkendt af en sagsbehandler.  En budgetkladde er aldrig godkendt </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetTypeKode" type="fase2.1:BudgetTypeKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af budgttet  Værdisæt: AKPBUDGET – Personkunde i det alternative kontaktregister CPRBUDGET – Personkunde i CPR registeret VIRKSOMHEDBUDGET – Virksomhedskunde i ES eller det alternative kontaktregister </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSagsbehandlerStatusKode"
+                     type="fase2.1:BudgetGodkendelseStatusKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sagsbehandlerens godkendelsesstatus af budgettet.   Det er uden betydning for beregningen af betalingsevnen, om budgettet er godkendt eller delvist godkendt.  Der beregnes ikke betalingsevne efter et afvist budget, dvs. et ikke godkendt budget.  Værdisæt:  GODKENDT – budgettet er godkendt af en sagsbehandler DELVIST – budgettet er delvist godkendt af en sagsbehandler, dvs. budgettet indeholder budgetposter, som sagsbehandleren har rettet i forhold til kundens opgivelse AFVIST – budgettet er ikke godkendt Det samlede resultat af budgettet i den indrapporterede valuta </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetKladdeMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om budgettet er en budgetkladde.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSidstGodkendtAf" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af hvilken aktør, der manuelt har godkendt den sidste version af budgettet. Et budget kan være godkendt af kunden eller en sagsbehandler.   Hvis budgettet er opdateret af kunden med værdier indenfor toleranceværdierne, er budgettet godkendt af kunden, og elementet indeholder strengen ”Kunde”.  Hvis budgettet er godkendt af en sagbehandler, indeholder elementet sagsbehandlerens medarbejdernummer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSidstGodkendtDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for den sidste godkendelse af en sagsbehandler eller kunden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSidstRedigeretAf" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken aktør, der sidst har redigeret budgettet. Et budget kan være redigeret af kunden, en sagsbehandler eller opdateret automatisk.  Hvis budgettet er redigeret af kunden, indeholder elementet strengen ”Kunde”.  Hvis budgettet er redigeret af en sagsbehandler, indeholder elementet sagsbehandlerens medarbejdernummer.  Hvis en eller flere budgetposter er opdateret automatisk, indeholder elementet betegnelsen for aktøren, dvs, en af følgende værdier:  ’BFY’ ’NIB’ ’Forsøgerberegning’ </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSidstRedigeretAfRolle" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rollen af den bruger, der sidst har redigeret budgettet. Hentes fra Ændr requestet eller sættes til en passende systembruger, når ændringen sker pga. en hændelse, f.eks. BFY eller NIB</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSidstRedigeretDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for den sidste ændring af budgettet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetGyldigFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetGyldigTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetForsørgerMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kunden er forsøger</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSagsbehandlerSærligBegrundelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En særlig begrundelse, som sagsbehandleren skal udfylder, hvis SKAT  træffer den afgørelse,  at en kundes betalingsevne skal beregnes efter budgetmodellen frem for skemamodellen, selvom kunden ikke ønsker beregningen udført efter budgettet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetStatusKode" type="fase2.1:EFIBudgetStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation> </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetSimuleringMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis Sand udføres en betalingsevneberegning efter budgettet og resultatet returneres i responset fra servicen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetAfgørelseTekst" type="fase2.1:Tekst300Type">
+               
+            </xs:element>
+      </xs:schema>

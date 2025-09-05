@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/eSkattekortTypeStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="eSkattekortPersonStrukur" type="fase2.1:eSkattekortPersonStrukurType"/>
+   
+   
+   
+   <xs:complexType name="eSkattekortPersonStrukurType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+         
+         
+         
+         <xs:element name="eSkattekortStrukturPerson">
+            
+            
+            
+            <xs:complexType>
+               
+               
+               
+               <xs:sequence>
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:PersonCPRNummer"/>
+
+                  
+                  
+                  
+                  <xs:element name="eSkattekortTypeStrukturSamling">
+                     
+                     
+                     
+                     <xs:complexType>
+                        
+                        
+                        
+                        <xs:sequence>
+
+                           
+                           
+                           
+                           <xs:element ref="fase2.1:eSkattekortTypeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+
+                        
+                        
+                        
+                        </xs:sequence>
+                     
+                     
+                     
+                     </xs:complexType>
+                  
+                  
+                  
+                  </xs:element>
+
+
+               
+               
+               
+               </xs:sequence>
+            
+            
+            
+            </xs:complexType>
+         
+         
+         
+         </xs:element>
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

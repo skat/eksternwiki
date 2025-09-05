@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En forventet indbetaling af en rate i forbindelse med en betalingsordning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BetalingOrdningRateIDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst10Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingOrdningRateStatusKodeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="BetalingOrdningRateID" type="fase2.1:BetalingOrdningRateIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af betalingsordning rate.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateSRBDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for sidste rettidige betaling af en betalingsordning rate.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateRykkerDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>En dato xx dage efter SRB, hvor rykker for raten skal sendes til kunden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det er det beløb, som skal betales pr. rate, dvs. ratens størrelse i den indrapporterede valuta.  Den sidste rate er ikke nødvendigvis identisk med de første rater, men vil være det resterende beløb der skal betales (mindre end de øvrige ratebeløb) i den indrapporterede valuta.    </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det er det beløb, som skal betales pr. rate, dvs. ratens størrelse i  i danske kroner  Den sidste rate er ikke nødvendigvis identisk med de første rater, men vil være det resterende beløb der skal betales (mindre end de øvrige ratebeløb) i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateStatusDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for sidste gang Raten har ændret status.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateStatÅrsKode" type="fase2.1:Tekst10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver baggrund for statuskode.  Grundlæggende værdiset: IGANG: I gang FRITAGET: Fritaget</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateStatÅrsBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende forklaring til status på rate for betalingsordning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateStatÅrTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateStatusKode"
+                     type="fase2.1:BetalingOrdningRateStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til at angive om raten er aktiveret, inaktiv eller annuleret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateBetalt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>BetalingOrdningRateBetalt - ja/nej:  Angiver om raten er helt betalt eller ej.  Hvis raten ikke betalt eller kun delvist er betalt angives nej.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRateIndbetalt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja  = Hvis akkumuleret indbetalte beløb (IndbetaltBeløb ) stoerre end= BetalingOrdningRateBeløbStruktur. Indikerer at kunden har indbetalt raten. Nej = Hvis akkumuleret indbetalte beløb (IndbetaltBeløb ) mindre end BetalingOrdningRateBeløbStruktur. Kunden har kun delvist eller slet ikke indbetalt ratebeløbet. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

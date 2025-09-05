@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="ForBagudLønType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver om der er tale om forudløn eller bagudløn. Forudløn er til disposition for indkomstmodtager før lønner er optjent. Bagudløn er til disposition for indkomstmodtager, når lønner er optjent.  Værdisæt: Forud = Forudløn, Bagud = Bagudløn</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:maxLength value="5"/>
+            
+         
+         
+         <xs:enumeration value="Forud"/>
+            
+         
+         
+         <xs:enumeration value="Bagud"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

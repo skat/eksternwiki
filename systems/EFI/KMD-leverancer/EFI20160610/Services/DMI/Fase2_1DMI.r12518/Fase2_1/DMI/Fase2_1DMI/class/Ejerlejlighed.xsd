@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En speciel type ejendom identiciceret ved selvstændigt ejerlejlighedsnummer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/ArealType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="EjerlejlighedNummer" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En fortløbende nummerering af ejerlejligheder inden for en hovedejendom.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EjerlejlighedAreal" type="fase2.1:ArealType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ejerlejlighedens areal</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EjerlejlighedFordelingstæller" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tælleren for fordelingstallet, der består af en tæller og nævner (brøk) og angiver hvor stor er en del af hovedejendommen en ejerlejlighed udgør.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EjerlejlighedFordelingsnævner" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nævneren for fordelingstallet, der består af en tæller og nævner (brøk) og angiver hvor stor er en del af hovedejendommen en ejerlejlighed udgør.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/UdenlandskVirksomhed.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Person.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoTil.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/UdenlandskPerson.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+   
+   
+   
+   <xs:element name="EjerVirksomhedRelationHent_FejlId" type="fase2.1:EjerVirksomhedRelationHent_FejlIdType"/>
+   
+   
+   
+   <xs:complexType name="EjerVirksomhedRelationHent_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:DriftFormKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:EjerRolleTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:EjerTypeKode" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:UdenlandskVirksomhedNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:PersonCPRNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SøgeDatoFra" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SøgeDatoTil" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:UdenlandskPersonNummer" minOccurs="0"/>
+
+
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:VirksomhedSENummer" minOccurs="0"/>
+
+
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

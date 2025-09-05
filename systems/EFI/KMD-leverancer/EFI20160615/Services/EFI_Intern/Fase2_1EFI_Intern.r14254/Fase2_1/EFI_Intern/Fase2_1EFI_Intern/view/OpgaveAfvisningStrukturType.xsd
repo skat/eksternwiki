@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OpgaveAfvisning.xsd"/>
+         <xs:element name="OpgaveAfvisningStruktur" type="fase2.1:OpgaveAfvisningStrukturType"/>
+         <xs:complexType name="OpgaveAfvisningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OpgaveAfvisningID"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveAfvisningOpgaveID"/>
+
+               <xs:element ref="fase2.1:OpgaveAfvisningMedarbejderprofilID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveAfvisningTekst" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveAfvisningAfvistAf"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveAfvisningAfvistTid"/>
+
+               <xs:element ref="fase2.1:OpgaveAfvisningSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveAfvisningSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveAfvisningTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

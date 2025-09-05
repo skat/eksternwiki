@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/RegistreringNummerType.xsd"/>
+      
+   
+   
+   <xs:element name="RegistreringNummerNummer" type="fase2.1:RegistreringNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Et registreringsnummer kan være opdelt i en eller to rækker. Da man eksempelvis i forhold til ønskeplader selv kan vælge indholdet på række 1 og række 2, vil det være relevant at have et felt, som samler de to rækker i en samlet indholdsattribut.  Hvis der kun er en enkelt række, så vil indholdet både stå i række 1 og i den samlede række. Denne attribut kan afledes af det samlede indhold i række 1 og række2. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

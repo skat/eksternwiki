@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/KundeInaktivDage.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+         <xs:include schemaLocation="../operational/DMIFordringModtagelseDatoStart.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIFordringModtagelseDatoSlut.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OEnskesModregning.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OEnskesOpkraevning.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OEnskesInddrivelse.xsd"/>
+				     
+         <xs:element name="DMIKundeList_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIKundeList_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIKundeList_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="Søgekriterie">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:element ref="fase2.1:KundeInaktivDage"/>
+				
+				                          <xs:sequence>
+				
+                                 <xs:element name="FordringHaverPeriode">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                  
+                                          <xs:element ref="fase2.1:DMIFordringModtagelseDatoStart"/>
+                  
+                                          <xs:element ref="fase2.1:DMIFordringModtagelseDatoSlut"/>
+                  
+                                          <xs:element ref="fase2.1:ØnskesModregning"/>
+                  
+                                          <xs:element ref="fase2.1:ØnskesOpkrævning"/>
+                  
+                                          <xs:element ref="fase2.1:ØnskesInddrivelse"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Angivelse.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:element name="AngivelsePeriodeStruktur" type="fase2.1:AngivelsePeriodeStrukturType"/>
+   
+   
+   
+   <xs:complexType name="AngivelsePeriodeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:AngivelsePeriodeFra"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:AngivelsePeriodeTil"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

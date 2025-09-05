@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/PointAnvendelse.xsd"/>
+         <xs:element name="PointAnvendelseStruktur" type="fase2.1:PointAnvendelseStrukturType"/>
+         <xs:complexType name="PointAnvendelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="PointAnvendelseStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:PointAnvendelseID"/>
+                  
+                        <xs:element ref="fase2.1:PointAnvendelseMedarbejderprofilID"/>
+                  
+                        <xs:element ref="fase2.1:PointAnvendelseDato"/>
+                  
+                        <xs:element ref="fase2.1:PointAnvendelseBeskrivelse"/>
+                  
+                        <xs:element ref="fase2.1:PointAnvendelsePoint"/>
+                  
+                        <xs:element ref="fase2.1:PointAnvendelseOprettetAf"/>
+                  
+                        <xs:element ref="fase2.1:PointAnvendelseOprettetTid"/>
+
+                        <xs:element ref="fase2.1:PointAnvendelseSlettetAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:PointAnvendelseSlettetTid" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:PointAnvendelseTimestampVersion"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

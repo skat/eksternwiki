@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Alarm.xsd"/>
+         <xs:element name="AlarmStruktur" type="fase2.1:AlarmStrukturType"/>
+         <xs:complexType name="AlarmStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AlarmStruktur">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:AlarmID"/>
+                  
+                        <xs:element ref="fase2.1:AlarmAlarmtypeID"/>
+                  
+                        <xs:element ref="fase2.1:AlarmAlarmKategori"/>
+
+                        <xs:element ref="fase2.1:AlarmSupplerendeTekst" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmFarve" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmOrganisatoriskEnhedID" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmOpgavekøID" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmOpgaveID" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmRessourceID" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:AlarmOprettetAf"/>
+                  
+                        <xs:element ref="fase2.1:AlarmOprettetTid"/>
+
+                        <xs:element ref="fase2.1:AlarmÆndretAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmÆndretTid" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmSlettetAf" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlarmSlettetTid" minOccurs="0"/>
+
+                        <xs:element ref="fase2.1:AlarmTimestampVersion"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

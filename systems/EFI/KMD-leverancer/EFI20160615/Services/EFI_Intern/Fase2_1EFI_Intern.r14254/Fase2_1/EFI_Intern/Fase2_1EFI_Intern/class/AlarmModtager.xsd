@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En alarm kan have en eller flere modtagere, som hver især har mulighed for at se og ignorere alarmen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="AlarmModtagerID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>AlarmModtager objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerMedarbejderprofilID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke medarbejderprofil ID på den medarbejder der har modtaget alarmen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerAlarmID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Alarmens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerSetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmen er set af medarbejderen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerIgnoreretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmen er blevet ignoreret af medarbejderen. Når alarmen er ignoreret af medarbejderen vil der ikke længere komme nye versioner af denne alarm til medarbejderen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet alarmmodtageren. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmmodtager objektet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet alarmmodtager objektet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmmodtager objektet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmModtagerTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til alarmmodtager objektet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

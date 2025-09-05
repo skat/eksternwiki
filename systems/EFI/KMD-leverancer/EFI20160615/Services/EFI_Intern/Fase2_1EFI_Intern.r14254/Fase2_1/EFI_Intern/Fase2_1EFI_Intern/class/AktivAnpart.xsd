@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel10Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst64Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/BehaeftelseTypeKodeType.xsd"/>
+         <xs:element name="AktivAnpartAntal" type="fase2.1:TalHel10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver ejers antal andele</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivAnpartNummer" type="fase2.1:Tekst64Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Anpartsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivAnpartBeskrivelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Yderligere beskrivelse af anpart</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivAnpartBehæftelseType" type="fase2.1:BehæftelseTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om aktivet er behæftet  Enum omfatter:  Behæftet, Ubehæftet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

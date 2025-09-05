@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>At fremsøge virksomheder i form af SE-numre, CVR-numre eller firmanavne ud fra en række søgekriterier. Det er muligt at søge direkte på en virksomhed eller at finde virksomheder, der inden for et givent interval er blevet oprettet eller ændret.  Hvis man søger på virksomheder med ændringer inden for et givet interval, er det muligt at filtrere sin søgning, således at der kun fremsøges virksomheder, der inden for perioden har ændret fx driftsform, registreringsforhold, adresse eller lignende. </xs:documentation>
+            <xs:documentation>r19879</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/VirksomhedSoeg_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/VirksomhedSoeg_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="VirksomhedSøgInterface" type="fase2.1:VirksomhedSøgInterfaceType"/>
+         <xs:complexType name="VirksomhedSøgInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:VirksomhedSøg_I"/>
+               <xs:element ref="fase2.1:VirksomhedSøg_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

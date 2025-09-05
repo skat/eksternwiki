@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Opgørelse fra SLUT  Årsopgørelsen indkomstoplysninger kan ligge til grund for den procent som beregnes ud fra  den skematiske model og anvendes både i forbindelse med afgørelse om  betalingsordning og lønindeholdelse.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/IndkomstAArType.xsd"/>
+         <xs:element name="ÅrsopgørelseNummer" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer på den aktuelle årsopgørelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseIndkomstÅr" type="fase2.1:IndkomstÅrType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver et indkomstår, f.eks. 2009    </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

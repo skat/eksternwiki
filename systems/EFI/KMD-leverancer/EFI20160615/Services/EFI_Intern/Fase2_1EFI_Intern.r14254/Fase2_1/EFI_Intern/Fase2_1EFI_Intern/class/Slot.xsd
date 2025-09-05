@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et slot er et tidsrum i en kalender i Ressourcestyring. Et slot kan være fem forskellige ting: aftale, privat aftale, præference, frokost og mødetid.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/SlotTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="SlotID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Slottets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotKalenderID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den kalender slottet tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotArbejdsstedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på det arbejdssted der kan være sat på et præferenceslot</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotOpgaveID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavens unikke ID, anvendes kun hvis slottet er et aftaleslot.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotPræferenceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Præferencens unikke ID, anvendes kun hvis slottet er et præferenceslot.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotSlotType" type="fase2.1:SlotTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slottets type.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotOriginalDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den originale start dato på et gentaget slot.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotStartDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slottets startdato og -tidspunkt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotSlutDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slottets slutdato og -tidspunkt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotVidne" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om slottet er et vidne slot. Anvendes kun af aftaleslots, når medarbejderen er vidne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Slottets navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af slottet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotExchangeID" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slottets ID i Microsoft Exchange serveren. Anvendes af aftale slots når de er synkroniseret med Microsoft Exchange.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotExchangeChangeKey" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes hvis slottet er synkroniseret med Microsoft Exchange.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet slottet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt slottet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret slottet. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt slottet er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet slottet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt slottet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SlotTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til slottet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

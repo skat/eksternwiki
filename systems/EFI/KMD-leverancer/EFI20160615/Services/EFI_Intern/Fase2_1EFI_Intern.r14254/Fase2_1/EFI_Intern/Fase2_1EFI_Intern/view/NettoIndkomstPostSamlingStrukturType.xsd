@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIBudgetPost.xsd"/>
+         <xs:include schemaLocation="../operational/NettoIndkomstPeriodeTypeKode.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/EFIBudgetPostBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="NettoIndkomstPostSamlingStruktur"
+                     type="fase2.1:NettoIndkomstPostSamlingStrukturType"/>
+         <xs:complexType name="NettoIndkomstPostSamlingStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="NettoIndkomstPostSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="NettoIndkomstPost" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="fase2.1:EFIBudgetPostID" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:EFIBudgetPostBeskrivelse" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:NettoIndkomstPeriodeTypeKode" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:EFIBudgetPostSimuleringMarkering"/>
+                  
+                                 <xs:element ref="fase2.1:EFIBudgetPostSletMarkering"/>
+                  
+                                 <xs:element ref="fase2.1:EFIBudgetPostGyldigFraDato"/>
+                  
+                                 <xs:element ref="fase2.1:EFIBudgetPostGyldigTilDato"/>
+                  
+                                 <xs:element ref="fase2.1:EFIBudgetPostBeløbStruktur"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

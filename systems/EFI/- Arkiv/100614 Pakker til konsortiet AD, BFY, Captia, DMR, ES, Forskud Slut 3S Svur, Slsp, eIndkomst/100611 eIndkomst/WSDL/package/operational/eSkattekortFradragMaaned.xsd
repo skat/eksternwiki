@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHel15Type.xsd"/>
+      
+   
+   
+   <xs:element name="eSkattekortFradragMåned" type="fase2.1:TalHel15Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Ligningsmæssigt fradrag pr. måned</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

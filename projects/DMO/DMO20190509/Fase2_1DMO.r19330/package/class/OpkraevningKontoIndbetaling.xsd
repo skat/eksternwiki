@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En udefrakommende indbetaling til kontoen fx. indbetaling via FI-kort eller en kontooverførsel.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="OpkrævningKontoIndbetalingForm" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver de mulige indbetalingsformer, fx BS (Betalingsservice), HomeBanking, Statens Koncern Bank (SKB), FI-kort eller kontant herunder også Dankort og onlinebetaling.   Det er altså betalingsmuligheder. Betalingsformen SKB vedrører dog kun offentlige betalere, herunder kommuner (OBS-loven) og kan ikke fravælges.  Offentlige virksomheder (indberettere og betalere) identificeres på specifikke forretningsområder under den enkelte pligt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningKontoIndbetalingFordringHenvisning" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Henvisning til hvilken konto, der indbetales til. Det kan f.eks. være referencen fra et udsendt FI-kort.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

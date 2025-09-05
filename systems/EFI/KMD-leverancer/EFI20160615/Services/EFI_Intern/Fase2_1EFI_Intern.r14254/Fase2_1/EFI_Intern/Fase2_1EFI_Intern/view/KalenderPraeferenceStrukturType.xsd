@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KalenderPraeference.xsd"/>
+         <xs:element name="KalenderPræferenceStruktur" type="fase2.1:KalenderPræferenceStrukturType"/>
+         <xs:complexType name="KalenderPræferenceStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KalenderPræferenceID"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceOrganisatoriskEnhedID"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceNavn"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceMinimumBlok"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceType"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceKanUdskiftes"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:KalenderPræferenceOprettetTid"/>
+
+               <xs:element ref="fase2.1:KalenderPræferenceÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KalenderPræferenceÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KalenderPræferenceSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KalenderPræferenceSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:KalenderPræferenceTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

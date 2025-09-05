@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekorttype/xml/schemas/20071202/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ESkattekortTypeKode" type="xs:integer">
+		<xs:annotation>
+			<xs:documentation>Kode som entydig identificerer en skattekort type.  Der findes pt. følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 01 = Bruttokort 02 = Hovedkort 03 = Frikort 04 = Bikort 05 = Bruttokort uden lønindeholdelse 06 = Hovedkort uden lønindeholdelse  07 = Bikort uden lønindeholdelse</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

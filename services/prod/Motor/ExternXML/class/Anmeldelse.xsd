@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/KoeretoejstandType.xsd"/>
+	<xs:include schemaLocation="../types/TalFlydendeType.xsd"/>
+	<xs:include schemaLocation="../types/Tekst2000Type.xsd"/>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:element name="AnmeldelseIdent" type="dmr:TalHelType">
+	</xs:element>
+	<xs:element name="AnmeldelseStand" type="dmr:KoeretoejstandType">
+	</xs:element>
+	<xs:element name="AnmeldelseKmStand" type="dmr:TalFlydendeType">
+	</xs:element>
+	<xs:element name="AnmeldelseBemaerkning" type="dmr:Tekst2000Type">
+	</xs:element>
+	<xs:element name="AnmeldelseGyldigFra" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AnmeldelseGyldigTil" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

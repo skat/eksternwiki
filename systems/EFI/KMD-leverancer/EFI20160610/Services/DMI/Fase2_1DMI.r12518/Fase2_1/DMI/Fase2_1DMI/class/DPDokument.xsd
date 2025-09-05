@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentRefTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentArtType.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentPrioritetType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentOpretterRolleType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentMeddelelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DPDokumentIndsigelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst13Type.xsd"/>
+         <xs:element name="DPDokumentRefID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af et DPDokument.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentRefType" type="fase2.1:DPDokumentRefTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan være kundenote, fordringsnote, indsatsnote, Captia-reference, AD-reference eller note.  Enumaeration:  KundeNote FordringNote IndsatsNote DokRefCaptia DokRefAD Note</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentArt" type="fase2.1:DPDokumentArtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dokument arten karakteriserer dokumentets indhold. Det vil være angivet, f.eks. når ModtagFordring modtager et transport dokument.  OMPOSTERING og MODREGNING benyttes af DMI til KundeNoter vedrørende disse.  Anvender fast enumeration.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentType" type="fase2.1:DPDokumentTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på DP-dokumenttypen.  Enumeration:  KundeNote FordringNote IndsatsNote FordringHaverNote</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentPrioritet" type="fase2.1:DPDokumentPrioritetType">
+               
+               <xs:annotation>
+                  <xs:documentation>Visningsprioritet 1-5 for visning i brugerinterface. Hvis der ikke angives en værdi, bruges værdien 3.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentOpretterID" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>ID for opretter. (Typen styres af DPDokumentOpretterRolle).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentOpretterRolle" type="fase2.1:DPDokumentOpretterRolleType">
+               
+               <xs:annotation>
+                  <xs:documentation>Type for DPDokumentOpretterID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentOprettetDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato for oprettelse af meddelelsen, som det  kaldende system ønsker meddelelsen oprettet med i EFI og Captia.  Hvis feltet ikke er sat af kalderen, opretter EFI meddelelsen med værdien dagsdato og det aktuelle tidspunkt.  Når meddelelsen placeres i Captia fjerner EFI tidsdelen, når elementet sendes i DokumentModtagetDato </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentMeddelelseType" type="fase2.1:DPDokumentMeddelelseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Meddelelsestyper  MANGLER ENUMS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentIndsigelseType" type="fase2.1:DPDokumentIndsigelseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indsigelsestyper   MANGLER ENUMS</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DPDokumentFormateretMeddelelse" type="fase2.1:Tekst13Type">
+               
+            </xs:element>
+         <xs:element name="DPDokumentEksternReference" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshavers egen reference til indberettet dokument.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

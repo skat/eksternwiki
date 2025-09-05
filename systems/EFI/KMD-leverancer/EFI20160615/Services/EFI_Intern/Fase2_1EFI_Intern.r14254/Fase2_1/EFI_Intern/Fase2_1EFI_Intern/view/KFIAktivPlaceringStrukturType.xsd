@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/AktivRettighedType.xsd"/>
+         <xs:include schemaLocation="../class/AktivPlacering.xsd"/>
+         <xs:include schemaLocation="../class/AktivPlaceringType.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:element name="KFIAktivPlaceringStruktur" type="fase2.1:KFIAktivPlaceringStrukturType"/>
+         <xs:complexType name="KFIAktivPlaceringStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+
+                  <xs:element ref="fase2.1:AktivRettighedTypeKode" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivPlaceringBegrundelse" minOccurs="0"/>
+
+                  <xs:element ref="fase2.1:AktivPlaceringTypeKode"/>
+
+                  <xs:element ref="fase2.1:AktivPlaceringLokation" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AktivPlaceringLokaleNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AdresseVejNavn" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AdresseFraHusNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AdressePostNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:AdresseByNavn" minOccurs="0"/>
+
+               
+            
+         
+         
+         
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

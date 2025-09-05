@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../operational/BoedeforvandlingStrafSamarbejdspartKontakt.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoedeforvandlingStrafSamarbejdspartTelefon.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoedeforvandlingStrafSamarbejdspartReference.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BoedeforvandlingStraf.xsd"/>
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:element name="BødeforvandlingStrafOpdaterPolitikredsStruktur"
+                     type="fase2.1:BødeforvandlingStrafOpdaterPolitikredsStrukturType"/>
+         <xs:complexType name="BødeforvandlingStrafOpdaterPolitikredsStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+
+                  <xs:element ref="fase2.1:BødeforvandlingStrafSamarbejdspartKontakt" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:BødeforvandlingStrafSamarbejdspartTelefon" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:BødeforvandlingStrafSamarbejdspartReference" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:BødeforvandlingStrafBegrundelse" minOccurs="0"/>
+
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

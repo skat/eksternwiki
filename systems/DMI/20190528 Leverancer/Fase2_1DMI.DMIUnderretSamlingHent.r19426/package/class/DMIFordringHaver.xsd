@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Parten som har penge til gode hos en kunde og som har indsendt fordringer til modregning eller inddrivelse.  Eksempler på fordringshavere er: SKAT, København Kommune, politimesteren i Ringsted.   En fordringshaver skal have indgået en aftale med inddrivelsesmyndigheden før en fordring kan modtages til modregning eller inddrivelse.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/FordringHaverArtDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/DMIFordringHaverAftaleTypeDomaeneType.xsd"/>
+         <xs:element name="DMIFordringHaverID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer den unikke aftale ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverNummer" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikationen af fordringshaveren i form af CVR/SE nr. for virksomheder, CPR for personer og journalnr. for dem, som ikke har et af de 2 andre typer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificere typen fordringshaver, dvs. hvad FordringhaverNummer dækker over.  Værdisæt for DMO og DMR er fastsat, mens værdisæt for EFI/DMI foreløbig (pr 20100924) sat til:  CVR-Virksomhed SE-Virksomhed CPR-Person AKR-EFI-Person AKR-EFI-Virksomhed AKR-EFI-Myndighed AKR-EFI-Ukendt  Disse fastlægges endeligt af EFI/DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på fordringshaver.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverArt" type="fase2.1:FordringHaverArtDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Arten på fordringshaver</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverAftaleStart" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshaver aftalens startdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverAftaleSlut" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringhaver aftalens Slutdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHaverAftaleType"
+                     type="fase2.1:DMIFordringHaverAftaleTypeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikation af om det er en fordringshaveraftale, rettighedhaveraftale eller begge </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

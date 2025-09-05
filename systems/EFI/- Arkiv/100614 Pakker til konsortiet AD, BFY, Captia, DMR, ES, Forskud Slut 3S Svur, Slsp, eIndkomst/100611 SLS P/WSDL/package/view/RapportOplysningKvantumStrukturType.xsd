@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RapportOplysningKvantum.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:element name="RapportOplysningKvantumStruktur" type="fase2.1:RapportOplysningKvantumStrukturType"/>
+   
+   
+   
+   <xs:complexType name="RapportOplysningKvantumStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningKvantumKvalifikator"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningKvantumKvalifikatorTekst" minOccurs="0"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningKvantumAntal"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:RapportOplysningKvantumEnhedKode"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Hændelsen informerer om at fordrings saldo på et hæftelsesforholdet er ændret eller HæftelseSubsidiær er ændret. DMI udsender ikke hændelsen når der tilskrives renter.</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/EFIFordringSaldoAEndret_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/EFIFordringSaldoAEndret_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="EFIFordringSaldoÆndretInterface"
+                     type="fase2.1:EFIFordringSaldoÆndretInterfaceType"/>
+         <xs:complexType name="EFIFordringSaldoÆndretInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:EFIFordringSaldoÆndret_I"/>
+               <xs:element ref="fase2.1:EFIFordringSaldoÆndret_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

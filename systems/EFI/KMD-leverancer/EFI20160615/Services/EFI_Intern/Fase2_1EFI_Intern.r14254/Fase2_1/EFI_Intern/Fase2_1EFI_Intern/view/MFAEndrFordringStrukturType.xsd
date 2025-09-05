@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../operational/LaesDatoTid.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIKunde.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/AlternativKontakt.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/MFNoteStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFDokumentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RenteValgStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFHaeftelseStrukturType.xsd"/>
+				     
+         <xs:element name="MFÆndrFordringStruktur" type="fase2.1:MFÆndrFordringStrukturType"/>
+         <xs:complexType name="MFÆndrFordringStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+
+                  <xs:element ref="fase2.1:LæsDatoTid" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:DMIFordringFordringArtKode" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:DMIFordringPEnhedNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:DMIFordringStiftelseTidspunkt" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:EFIKundeArrest" minOccurs="0"/>
+
+
+                  <!--Sequence removed-->
+
+                     <xs:element name="NyFordringHaverStruktur" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="IdentValg">
+                                 <xs:complexType>
+                                    <xs:choice>
+                                       <xs:element ref="fase2.1:PersonCPRNummer"/>
+				
+				
+				                                   <xs:element ref="fase2.1:VirksomhedSENummer"/>
+				
+				
+				                                   <xs:element ref="fase2.1:AlternativKontaktID"/>
+				
+				
+				                                   <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                                    </xs:choice>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+                  <xs:element name="SagsbemærkningSamling">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MFNoteStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="DokumentSamling">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MFDokumentStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+
+                  <xs:element ref="fase2.1:RenteValgStruktur" minOccurs="0"/>
+
+
+                  <xs:element name="HæftelseSamling">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MFHæftelseStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            
+         
+         
+         
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r18034</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/OpkraevningFordring.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../operational/OpkraevningSletMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EAN.xsd"/>
+         <xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringType.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/OpkraevningDelFordringType.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningDelFordring.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/OpkraevningHaeftelse.xsd"/>
+         <xs:include schemaLocation="../view/OpkraevningSpecifikationStrukturType.xsd"/>
+				     
+         <xs:element name="OpkrævningFordringOpdater_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:OpkrævningFordringOpdater_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r18034"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="OpkrævningFordringOpdater_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="OpkrævningFordring">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:OpkrævningFordringID"/>
+                  
+                              <xs:element ref="fase2.1:KundeType"/>
+                  
+                              <xs:element ref="fase2.1:KundeNummer"/>
+                              <!--Sequence removed-->
+
+                                 <xs:element name="IdentifikationSletOpdaterValg" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:choice>
+                                          <xs:element ref="fase2.1:OpkrævningSletMarkering"/>
+				
+				                                      <xs:sequence>
+				
+                                             <xs:element name="Opdater">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element name="OpkrævningIdentifikationValg">
+                                                         <xs:complexType>
+                                                            <xs:choice>
+                                                               <xs:sequence>
+                                                                  <xs:element name="EANOplysninger">
+                                                                     <xs:complexType>
+                                                                        <xs:sequence>
+                                                                           <xs:element ref="fase2.1:EANNummer"/>
+                  
+                                                                           <xs:element ref="fase2.1:EANOrdreNummer"/>
+                  
+                                                                           <xs:element ref="fase2.1:EANKontoNummer"/>
+                  
+                                                                           <xs:element ref="fase2.1:EANKontakt"/>
+
+                                                                           <xs:element ref="fase2.1:ProduktionEnhedNummer" minOccurs="0"/>
+
+
+                                                                        </xs:sequence>
+                                                                     </xs:complexType>
+                                                                  </xs:element>
+				
+				                                                           </xs:sequence>
+				                                                           <xs:element ref="fase2.1:ProduktionEnhedNummer"/>
+                                                            </xs:choice>
+                                                         </xs:complexType>
+                                                      </xs:element>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:choice>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <xs:element name="Hovedoplysninger">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringArt" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringTypeID" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringErOpkrævetMarkering"/>
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringForfaldDato" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringOprindeligSidsteRettidigBetalingDato"
+                                             minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringBeløb" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringModtagelseDato" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="KommentarSletTilføjValg" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:choice>
+                                                   <xs:element ref="fase2.1:OpkrævningSletMarkering"/>
+				
+				
+				                                               <xs:element ref="fase2.1:OpkrævningFordringKommentar"/>
+                                                </xs:choice>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringPeriodeFraDato" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:OpkrævningFordringPeriodeTilDato" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="DatoValg" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:choice>
+                                                   <xs:element ref="fase2.1:OpkrævningFordringSidsteRettidigBetalingDato"/>
+				
+				
+				                                               <xs:element ref="fase2.1:OpkrævningFordringFrigivelseDato"/>
+                                                </xs:choice>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <!--Sequence removed-->
+
+                                 <xs:element name="SpecifikationSletOpdaterValg" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:choice>
+                                          <xs:element ref="fase2.1:OpkrævningSletMarkering"/>
+				
+				
+				                                      <xs:element ref="fase2.1:OpkrævningSpecifikationStruktur"/>
+                                       </xs:choice>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="OpkrævningFordringDelFordringListe" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="OpkrævningFordringDelFordring" minOccurs="1" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:OpkrævningDelFordringTypeID"/>
+                  
+                                                   <xs:element ref="fase2.1:OpkrævningDelFordringBeløb"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="HæftelseSletOpdaterValg" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:choice>
+                                          <xs:element ref="fase2.1:OpkrævningSletMarkering"/>
+				
+				                                      <xs:sequence>
+				
+                                             <xs:element name="HæftelseListe">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+
+                                                      <xs:element name="Hæftelse" minOccurs="1" maxOccurs="unbounded">
+                                                         <xs:complexType>
+                                                            <xs:sequence>
+                                                               <xs:element name="Medhæfter">
+                                                                  <xs:complexType>
+                                                                     <xs:sequence>
+                                                                        <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                                                        <xs:element ref="fase2.1:KundeType"/>
+                                                                     </xs:sequence>
+                                                                  </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="EnkeltHæftelseSletOpdaterValg">
+                                                                  <xs:complexType>
+                                                                     <xs:choice>
+                                                                        <xs:element ref="fase2.1:OpkrævningSletMarkering"/>
+				
+				                                                                    <xs:sequence>
+				
+                                                                           <xs:element name="Opdater">
+                                                                              <xs:complexType>
+                                                                                 <xs:sequence>
+                                                                                    <xs:element ref="fase2.1:OpkrævningHæftelseForm"/>
+
+                                                                                    <xs:element ref="fase2.1:OpkrævningHæftelseStartDato" minOccurs="0"/>
+
+
+
+                                                                                    <xs:element ref="fase2.1:OpkrævningHæftelseSlutDato" minOccurs="0"/>
+
+
+                                                                                 </xs:sequence>
+                                                                              </xs:complexType>
+                                                                           </xs:element>
+                                                                        </xs:sequence>
+                                                                     </xs:choice>
+                                                                  </xs:complexType>
+                                                               </xs:element>
+                                                            </xs:sequence>
+                                                         </xs:complexType>
+                                                      </xs:element>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+
+                                          </xs:sequence>
+                                       </xs:choice>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

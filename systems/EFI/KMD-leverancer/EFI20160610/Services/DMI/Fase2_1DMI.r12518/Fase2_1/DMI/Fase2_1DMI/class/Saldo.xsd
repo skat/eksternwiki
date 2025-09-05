@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="SaldoBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SaldoType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typer er karakteriseret af lister, hvorfra kan vælges vedtagne værdier.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SaldoGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>En datotid datatype, som samlet betegner en dato og tid, med formatet dd-mm-yyyy hh:mm:ss</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SaldoGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>En datotid datatype, som samlet betegner en dato og tid, med formatet dd-mm-yyyy hh:mm:ss</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

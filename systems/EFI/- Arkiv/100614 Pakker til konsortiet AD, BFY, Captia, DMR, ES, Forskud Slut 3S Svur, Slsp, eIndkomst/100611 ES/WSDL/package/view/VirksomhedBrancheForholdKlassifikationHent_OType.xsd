@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/BrancheForholdBrancheKode.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/BrancheForholdStartDato.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/BrancheForholdSlutDato.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/BrancheForholdBrancheNummer.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Branche.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/BrancheUnderGruppe.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:element name="VirksomhedBrancheForholdKlassifikationHent_O">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:VirksomhedBrancheForholdKlassifikationHent_OType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2311"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="VirksomhedBrancheForholdKlassifikationHent_OType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+										
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            
+
+         
+               
+            
+         <xs:element name="Identifikation" minOccurs="0">
+            
+                  
+               
+            <xs:complexType>
+               
+                     
+                  
+               <xs:sequence>
+                  
+                        
+                     
+                  <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+
+                  
+                        
+                     
+                  <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+               
+                     
+                  
+               </xs:sequence>
+            
+                  
+               
+            </xs:complexType>
+         
+               
+            
+         </xs:element>
+
+         
+               
+            
+         <xs:element name="BrancheForholdListe" minOccurs="0">
+            
+                  
+               
+            <xs:complexType>
+               
+                     
+                  
+               <xs:sequence>
+
+
+                  
+                        
+                     
+                  <xs:element name="BrancheForholdUddata" minOccurs="0" maxOccurs="unbounded">
+                     
+                           
+                        
+                     <xs:complexType>
+                        
+                              
+                           
+                        <xs:sequence>
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheForholdBrancheKode"/>
+                  
+                  
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheForholdStartDato"/>
+
+
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheForholdSlutDato" minOccurs="0"/>
+
+
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheForholdBrancheNummer"/>
+                  
+                  
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheNavn"/>
+                  
+                  
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheUnderGruppeNummer"/>
+
+
+                           
+                                 
+                              
+                           <xs:element ref="fase2.1:BrancheUnderGruppeNavn" minOccurs="0"/>
+
+
+
+                        
+                              
+                           
+                        </xs:sequence>
+                     
+                           
+                        
+                     </xs:complexType>
+                  
+                        
+                     
+                  </xs:element>
+
+               
+                     
+                  
+               </xs:sequence>
+            
+                  
+               
+            </xs:complexType>
+         
+               
+            
+         </xs:element>
+
+               
+      
+            
+            
+         
+         
+         
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

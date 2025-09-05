@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Konkrete indsatser som er en type af sagsbehandling, SKAT kan anvende i forbindelse med fx opkrævning og inddrivelse af fordringer. Man kan sige, at indsatser er mulige metoder i sagsbehandlingen.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/IndsatsLivsFaseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:element name="IndsatsID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer der identificerer den enkelte indsats.  Identifikation af instansen af en indsats, dvs. eksempelvis betalingsordningen for kunden Hans Hansen, der starter 1.1.2007.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsIndsatsAfviklerID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Lokal ID i IA-modulet (Indsatsafvikler-modulet). Når der skiftes spor oprettes en ny indsats med et nyt ID, som en kopi af den gamle.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsStartdato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af, hvornår den pågældende indsats er igangsat. Startdatoen for påbegyndelsen af indsatsen.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsSlutdato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen for indsatsen. Denne slutdato skal være styrende for, hvornår en evt. næste indsats på sporet skal igangsættes, dvs. løsningen skal styre på denne dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsGyldighedPeriodeVarselTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et varsels ophør</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsGyldighedPeriodeVarselFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et varsels ikrafttræden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsLivsFase" type="fase2.1:IndsatsLivsFaseTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der indgår i et spor mindst en indsats. For ALLE indsatser i et spor er det registreret hvilken fase de bedfinder sig i (Levende, Aktiv eller asluttet (Afviklet/gennemført). Disse er defineret som enummerasion.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsStopBegrundelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>En tekst som beskriver, hvorfor indsatsen er blevet stoppet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsBegrundelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers begrundelse for at starte indsats</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Afgift i forbindelse med f.eks. udlæg. Der kan kun beregnes retsafgift af en specifik restance én gang.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="RetsafgiftSidsteGrundlagBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>* Beskrivelse mangler *</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RetsafgiftSidsteBeregningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>* Beskrivelse mangler *</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RetsafgiftBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet  fordringssaldo inkl. retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RetsafgiftBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet  fordringssaldo inkl. retsafgift. - i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RetsafgiftBetaltBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som sagsbehandler har modtaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RetsafgiftBetaltBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som sagsbehandler har modtaget - i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

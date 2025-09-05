@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Renter tilskrives i DMI som særskilte fordringer, der er knyttet til den oprindelige fordring</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Rentesats85Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:element name="InddrivelseRenteTilskrevetDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for rentetilskrivningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRenteRenteSats" type="fase2.1:Rentesats85Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Satserne for renter. 3 heltal og 5 decimaler.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRenteDelPeriodeFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra renten beregnes eller tilskrives</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRenteDelPeriodeTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvortil renten beregnes eller tilskrives</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRenteDelPeriode" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="InddrivelseRenteBeregnet" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="InddrivelseRenteSum" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af inddrivelsesrenter på fordringen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRenteKaldOgVarselFrasagt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er der frasagt kald og varsel på sum af inddrivelsesrenter</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRenteIndbetaling" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der kan indbetales på sum af inddrivelsesrenter</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseRentePeriode" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Perioden for summerede inddrivelsesrenter for en hovedfordring. Perioden er defineret som tidligste fradato til seneste til-dato for de inddrivelsesrente fordringer der indgår i den summerede fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/CRUDFunktionType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdning.xsd"/>
+         <xs:include schemaLocation="../class/BetalingOrdningRate.xsd"/>
+         <xs:include schemaLocation="../operational/BetalingOrdningBSFremsendt.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BetalingOrdningBSFremsendtDato.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningRateBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIDWBetalingOrdningRateListeStruktur"
+                     type="fase2.1:DMIDWBetalingOrdningRateListeStrukturType"/>
+         <xs:complexType name="DMIDWBetalingOrdningRateListeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="Rate">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:CRUDFunktionType"/>
+                  
+                           <xs:element ref="fase2.1:BetalingOrdningID"/>
+                  
+                           <xs:element ref="fase2.1:BetalingOrdningRateID"/>
+                  
+                           <xs:element ref="fase2.1:BetalingOrdningBSFremsendt"/>
+                  
+                           <xs:element ref="fase2.1:BetalingOrdningBSFremsendtDato"/>
+                  
+                           <xs:element ref="fase2.1:BetalingOrdningRateBeløbStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

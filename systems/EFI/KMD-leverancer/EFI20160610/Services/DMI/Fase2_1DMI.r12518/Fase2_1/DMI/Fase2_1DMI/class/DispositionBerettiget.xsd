@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angivelse af en virksomheds dispositionsberettigelse</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="DispositionBerettigetID" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikationsnummeret på den dispositionsberettigede.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DispositionBerettigetNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på den person, som kan disponere på virksomhedens vegne, fx. navnet på den tegningsberettigede.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DispositionBerettigetType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af den person, som må agere på virksomhedens vegne.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DispositionBerettigetGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for gyldighedsperioden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DispositionBerettigetGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for gyldighedsperioden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

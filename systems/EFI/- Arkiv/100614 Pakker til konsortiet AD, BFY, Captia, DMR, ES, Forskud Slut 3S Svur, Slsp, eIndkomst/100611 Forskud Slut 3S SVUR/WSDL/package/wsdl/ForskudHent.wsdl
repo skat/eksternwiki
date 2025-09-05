@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" name="ForskudHentService" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+   
+   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      
+      <xs:documentation>Hent forskudsopgørelseServiceoperationen henter en kundes seneste forskudsopgørelse i PDF-format fra Skattemappen eller KMDs ONDemand system (Forskudssystemet), således at den kan vises i sagsbehandlerbilledet.</xs:documentation>
+   
+   </xs:annotation>
+   
+   <types>
+      
+      <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+         
+         <xsd:include schemaLocation="../service/ForskudHentInterface.xsd"/>
+      
+      </xsd:schema>
+   
+   </types>
+   
+   <message name="ForskudHentServiceRequest">
+      
+      <part name="Request" element="fase2.1:ForskudHent_I"/>
+   
+   </message>
+   
+   <message name="ForskudHentServiceResponse">
+      
+      <part name="Response" element="fase2.1:ForskudHent_O"/>
+   
+   </message>
+   
+   <message name="KompenserTransRequest">
+      
+      <part name="Request" element="fase2.1:KompenserTrans"/>
+   
+   </message>
+   
+   <message name="KompenserTransResponse">
+      
+      <part name="Response" element="fase2.1:KompenserTransSvar"/>
+   
+   </message>
+   
+   <portType name="ForskudHentServicePortType">
+      
+      <operation name="getForskudHent">
+         
+         <input message="fase2.1:ForskudHentServiceRequest"/>
+         
+         <output message="fase2.1:ForskudHentServiceResponse"/>
+      
+      </operation>
+      
+      <operation name="getKompenserTrans">
+         
+         <input message="fase2.1:KompenserTransRequest"/>
+         
+         <output message="fase2.1:KompenserTransResponse"/>
+      
+      </operation>
+   
+   </portType>
+
+</definitions>

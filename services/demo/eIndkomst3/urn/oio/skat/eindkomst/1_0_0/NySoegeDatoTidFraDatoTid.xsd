@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:eindkomst:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nysoegedatotidfradatotid="urn:oio:skat:eindkomst:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="NySoegeDatoTidFraDatoTid" type="xs:dateTime">
+		<xs:annotation>
+			<xs:documentation>Angiver det starttidspunkt, som en bruger skal angive ved næste søgning på indkomstoplysninger for at undgå 'huller' eller 'dubletter' i fremsøgte indkomstoplysninger. Elementet indgår ikke i nogen klasse og opbevares ikke.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

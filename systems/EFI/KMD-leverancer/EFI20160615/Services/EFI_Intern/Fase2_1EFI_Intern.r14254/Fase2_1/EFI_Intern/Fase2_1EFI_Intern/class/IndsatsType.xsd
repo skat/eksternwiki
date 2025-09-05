@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Typen af indsats, som er udtryk for mulige typer af sagsbehandling, dvs. de metoder SKAT kan anvende. Det vil være typer af indsatser, som SKAT kan anvende til fx at opkræve og inddrive fordringer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IndsatsTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/RegelSaetType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/GennemfoerselTidType.xsd"/>
+         <xs:element name="IndsatsTypeKode" type="fase2.1:IndsatsTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af en indsatstype. Enumeration omfatter:  KREDITOPLYSBUREAU HENSTAND RYKKER BOEDEFORVANDLSTRAF MANUELSAGSBEHANDL LOENINDEHOLDELSE UDLAEG BETALINGSORDNING BOBEHANDLING KUNDEMOEDE </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeAfgiftregel" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et regelsæt der definerer, hvordan et objekt skal behandles.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeFordringType" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvornår en fordringstype må komme under en bestemt indsatstype. Der er et regelsæt for hver tilstand en fordring kan være i, fx Opkrævning og Restance.   Specifikt Restanceinddrivelsesmyndigheden: Se matricer: Fordringstype(Opkrævning)_Indsatstype og Fordringstype(Restance)_Indsatstype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeGebyrRegel" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette er regelsættet for de gebyrer, en indsats kan medføre. Regelsættet består af, hvilke gebyrer der kan anvendes med hvilke indsatser samt beløbet for gebyret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeMinimumBeløb" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for det minimumsbeløb der skal kunne opsættes for hver indsats.  Beløbet angiver, hvor stort et beløb fordringerne skal være på, før man må igangsætte en indsats. F.eks. kan man forestille sig, at man ikke skal igangsætte betalingsrykker, hvis saldoen for de relevante fordringer er under 250 kr. og rykkergebyret i sig selv kan være 250 kr.  Se matrix Indsatstype_minimumsbeløb. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeAnvendelseRegelsæt" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvilke indsatstyper, der må anvendes sammen med andre indsatstyper.   Specifikt Restanceinddrivelsesmyndigheden: Se matrix Indsats_Indsats.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeGennemførselTid" type="fase2.1:GennemførselTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den faktiske tid det tager at gennemføre indsatsen med underliggende aktiviteter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndsatsTypeGennemførselTidRegel" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Specifikt Restanceinddrivelsesmyndigheden: Regelsættet for hvor lang tid det må/bør tage for den enkelte indsatstype at blive gennemført. Se matrix Indsats_Gennemførselsfrist. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

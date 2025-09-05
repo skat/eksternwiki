@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r6074</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EjerForhold.xsd"/>
+         <xs:include schemaLocation="../class/LigningInteressentForhold.xsd"/>
+         <xs:element name="EjerForholdHistorikStruktur"
+                     type="fase2.1:EjerForholdHistorikStrukturType"/>
+         <xs:complexType name="EjerForholdHistorikStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:EjerForholdGyldigFra"/>
+
+                  <xs:element ref="fase2.1:EjerForholdGyldigTil" minOccurs="0"/>
+
+
+                  <xs:element name="LigningInteressentForholdSamling">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="LigningInteressentForhold" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:LigningInteressentForholdGyldigFra"/>
+
+                                    <xs:element ref="fase2.1:LigningInteressentForholdGyldigTil" minOccurs="0"/>
+
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

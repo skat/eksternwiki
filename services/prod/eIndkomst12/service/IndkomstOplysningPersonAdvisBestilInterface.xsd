@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>En abonnents bestilling af adviseringer på en kreds af personer til senere (asynkron) afhentning. Servicen leverer ikke detaljer om de oplysninger, der ligger til grund for adviseringen. Detailoplysninger om indkomstoplysninger til brug for yderligere behandling skal hentes via andre serviceopslag på udstillede indkomst- og ansættelsesoplysninger.  Kredsen af personer, der ønskes advisering for, oprettes og vedligeholdes via servicen IndkomstOplysningPersonAbonne-mentAjourfør.  Servicen stiller indkomstoplysninger til rådighed for myndigheder og andre, som iht. eIndkomstlovens § 7 stk. 1, jf. § 15 stk. 1 i eIndkomstbekendtgørelsen, kan anvende oplysninger fra indkomstregistret.   Anvendelsen af servicen er betinget af, at der er indgået en abonnementsaftale med told- og skatteforvaltningen herom, jf. § 7 stk. 4 i lov om et indkomstregister.   Begrænsning i kredsen af personer, som der stilles adviser til rådighed for, sker hos den enkelte abonnent og fastlægges individuelt med abonnenten i den aftale, der skal indgås iht. lov og bekendtgørelse. Eksempelvis begrænser servicen ikke adgangen for en kommune til alene at omfatte de indberetningspligtige, som bor i kommunen. Denne begrænsning skal ske hos kommunen.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAdvisBestil_I_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAdvisBestil_I_OType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAdvisBestil_O_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAdvisBestil_O_OType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAdvisBestilAfslut_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAdvisBestilAfslut_OType.xsd"/>
+	<xs:element name="IndkomstOplysningPersonAdvisBestilInterface" type="eindkomstws:IndkomstOplysningPersonAdvisBestilInterfaceType"/>
+	<xs:complexType name="IndkomstOplysningPersonAdvisBestilInterfaceType">
+		<xs:choice>
+			<xs:element ref="eindkomstws:IndkomstOplysningPersonAdvisBestil_I_I"/>
+			<xs:element ref="eindkomstws:IndkomstOplysningPersonAdvisBestil_I_O"/>
+			<xs:element ref="eindkomstws:IndkomstOplysningPersonAdvisBestil_O_I"/>
+			<xs:element ref="eindkomstws:IndkomstOplysningPersonAdvisBestil_O_O"/>
+			<xs:element ref="eindkomstws:IndkomstOplysningPersonAdvisBestilAfslut_I"/>
+			<xs:element ref="eindkomstws:IndkomstOplysningPersonAdvisBestilAfslut_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

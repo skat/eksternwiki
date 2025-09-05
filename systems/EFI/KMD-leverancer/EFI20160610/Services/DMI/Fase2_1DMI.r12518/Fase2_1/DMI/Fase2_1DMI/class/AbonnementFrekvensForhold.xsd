@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver hvilken form for vedligeholdelse der er sket på et givet  angivelsesfrekvensforhold, som en given abonnent abonnerer på. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AbonnementFrekvensForholdKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik kode for hver abonnementfrekvensforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnementFrekvensForholdStatus" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Status for et abonnementfrekvensforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnementFrekvensForholdGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gyldighedsstartdato for en abonnementets frekvens</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnementFrekvensForholdGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gyldighedsslutdato for en abonnementets frekvens</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

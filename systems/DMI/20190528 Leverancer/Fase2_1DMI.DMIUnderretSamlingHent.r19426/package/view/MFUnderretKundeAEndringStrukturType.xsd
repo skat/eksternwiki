@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19425</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/AlternativKontakt.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/AlternativKontaktReferenceStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativKontaktErstatningNummerStrukturType.xsd"/>
+				     
+         <xs:element name="MFUnderretKundeÆndringStruktur"
+                     type="fase2.1:MFUnderretKundeÆndringStrukturType"/>
+         <xs:complexType name="MFUnderretKundeÆndringStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="KundeÆndringValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="CPRNummerSkift">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:PersonCPRNummer"/>
+                                    <xs:element name="NytCPRNummer">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:PersonCPRNummer"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="AKRNummerSkift">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:AlternativKontaktID"/>
+                                    <xs:element name="AlternativKontaktReferenceStrukturListe">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:AlternativKontaktReferenceStruktur" minOccurs="0"
+                                                         maxOccurs="unbounded"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+
+                                    <xs:element ref="fase2.1:AlternativKontaktErstatningNummerStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

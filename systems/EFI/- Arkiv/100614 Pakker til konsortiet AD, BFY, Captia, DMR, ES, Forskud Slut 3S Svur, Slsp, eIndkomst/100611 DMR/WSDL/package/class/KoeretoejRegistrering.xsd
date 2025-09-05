@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Et hvert køretøj, som anvendes på offentlig vej, skal have en registreringsattest og et registreringsnummer. Denne klasse indeholder informationer omkring registreringen af køretøjet (bundet op på registreringsattesten).</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHelType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/KoeretoejRegistreringStatusType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/KoeretoejRegistreringStatusAArsagType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/KodeEtCifferStartNulType.xsd"/>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGyldigFra" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Denne dato angiver datoen for registreringen af et køretøj.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGyldigTil" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Denne dato angiver datoen for ophøret af registreringen for et køretøj, enten ved afmeldingsdatoen, udløb af grænsenummerplade tilladelse eller ny registreringsdato.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringNummer" type="fase2.1:TalHelType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Et nummer, som unikt identificerer en given forekomst.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringStatus" type="fase2.1:KøretøjRegistreringStatusType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Status på et køretøjs registrering</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringStatusDato" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Tidspunktet hvor den nyeste status blev sat.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringStatusÅrsag" type="fase2.1:KøretøjRegistreringStatusÅrsagType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En registrering af årsagen til ændringen.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringKontrolTal" type="fase2.1:KodeEtCifferStartNulType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Er kontroltallet, der er konverteret fra CMR3 og findes på alle køretøjer. Findes på de fleste registreringsattester.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

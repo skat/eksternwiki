@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En finanskonto er en samling af en bestemt type finansposteringer. Kontoen indeholder debet- og kreditposteringer.  En finanskonto kan fungere som en samlekonto (benævnes også som kontrolkonto) i forhold til f.eks. debitorer (kunder) eller kreditorer (fordringshavere). Finanskontoen kan være specifik for en bestemt udgifts- eller indtægtsart, f.eks. for en bestemt momstype.  Finanskonti er defineret i forhold til et specifikt regnskab med udgangspunkt i regnskabets kontoplan.  Finanskontoen kan være af typen resultatkonto eller beholdningskonto. I SKAT er der finanskonti i såvel Debitormotorens finansmodul,  i § 9 regnskabet, i § 38 regnskabet og i Statsregnskabet.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/FinanskontonummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="FinansKontoNummer" type="fase2.1:FinanskontonummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer kontoen ved hjælp af et antal cifre.     </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoNavn" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på en Finanskonto</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver opdelingen i FinansKonto, - resultatkonto eller beholdningskonto</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for Finanskontoens ikrafttræden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FinansKontoSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for Finanskontoens afslutning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

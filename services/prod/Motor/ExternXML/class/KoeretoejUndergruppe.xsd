@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Begrebet dækker over den køretøjsundergruppe sg, som en lastbil kan indplaceres i baseret på 'køretøjgruppe', 'kabinetype' og motoreffekt. Det vil være synsvirksomheden eller importørensansvar at angive den korrekt køretøjsundergruppe sg.  </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/TekstKortType.xsd"/>
+	<xs:element name="KoeretoejUndergruppeNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Kode som viser Køretøjundergruppen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUndergruppeNavn" type="dmr:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Navn på køretøjundergruppen. I relation til CO2emissionsklassificering findes der følgende værdier: 4-UD, 4-RD, 4-LH, 9-RD, 9-LH, 5-RD, 5-RH, 10-RD, 10-lH</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder generelle parametre til anvendelse i meddelelsesskabeloner i PrintNet</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="MeddelelseSkabelonParamAnvendMedarbejderAliasMarkering"
+                     type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien true angiver at meddelelseskabelonen skal anvende et alias som afsender af meddelelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

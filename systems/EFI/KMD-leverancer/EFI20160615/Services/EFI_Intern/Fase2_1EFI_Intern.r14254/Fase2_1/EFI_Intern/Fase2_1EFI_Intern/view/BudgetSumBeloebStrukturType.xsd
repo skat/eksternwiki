@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/BudgetSumTotalBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BudgetSumTotalBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIBudgetPost.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoerneBudgetSumTotalBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoerneBudgetSumTotalBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoerneBudgetIndtaegtSumBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoerneBudgetIndtaegtSumBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoerneBudgetUdgiftSumBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoerneBudgetUdgiftSumBeloebDKK.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/EFIBudgetPostGruppeSumStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BarnBudgetSumBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="BudgetSumBeløbStruktur" type="fase2.1:BudgetSumBeløbStrukturType"/>
+         <xs:complexType name="BudgetSumBeløbStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:ValutaKode"/>
+                  
+                  <xs:element ref="fase2.1:BudgetSumTotalBeløb"/>
+
+               <xs:element ref="fase2.1:BudgetSumTotalBeløbDKK" minOccurs="0"/>
+
+
+               <xs:element name="BudgetPostSumListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="BudgetPostGruppeSum" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:EFIBudgetPostGruppeKode"/>
+                  
+                                 <xs:element ref="fase2.1:EFIBudgetPostGruppeSumStruktur"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <!--Sequence removed-->
+
+                  <xs:element name="BørneBudgetSumBeløbStruktur" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="fase2.1:BørneBudgetSumTotalBeløb" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:BørneBudgetSumTotalBeløbDKK" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:BørneBudgetIndtægtSumBeløb"/>
+
+                           <xs:element ref="fase2.1:BørneBudgetIndtægtSumBeløbDKK" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:BørneBudgetUdgiftSumBeløb"/>
+
+                           <xs:element ref="fase2.1:BørneBudgetUdgiftSumBeløbDKK" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <xs:element name="BarnBudgetSumListe">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:BarnBudgetSumBeløbStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

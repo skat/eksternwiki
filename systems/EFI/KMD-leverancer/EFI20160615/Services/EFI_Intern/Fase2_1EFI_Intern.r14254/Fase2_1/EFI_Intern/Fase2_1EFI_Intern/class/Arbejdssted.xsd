@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et arbejdssted kan både være et SKAT kontors adresse og en medarbejders hjemmeadresse hvis medarbejderen arbejder hjemme.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/AdresseLinieType.xsd"/>
+         <xs:include schemaLocation="../types/PostNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="ArbejdsstedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Arbejdsstedets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedAdresse" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Arbejdsstedets adresse (vejnavn og husnummer)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedPostNummer" type="fase2.1:PostNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Arbejdsstedets postnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedBynavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Arbejdsstedets bynavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet arbejdsstedet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt arbejdsstedet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret arbejdsstedet. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt arbejdsstedet er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet arbejdsstedet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt arbejdsstedet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ArbejdsstedTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til arbejdsstedet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

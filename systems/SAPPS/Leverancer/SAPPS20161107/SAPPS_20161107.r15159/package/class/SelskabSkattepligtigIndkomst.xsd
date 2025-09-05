@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="SelskabSkattepligtigIndkomstFørUnderskud" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattepligtig indkomst før fradrag af underskud fra tidligere indkomstår. Felt 076</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstErhvervsmæssigNettoIndkomst"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattepligtig erhvervsmæssig nettoindkomst. Rubrik 1 Felt 001 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstØvrigNettoIndkomst" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattepligtig øvrig nettoindkomst inkl. skattepligtig udbytte. Rubrik 2 Felt 002</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstEfterUnderskudSELParagraf12"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattepligtig indkomst før uddelinger og efter anvendelse af underskud efter selskabsskattelovens § 12 Felt 006</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstEfterAnvendtUnderskud"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattepligtig indkomst efter anvendt underskud. Felt 016</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstAnsatEfterAnvendtUnderskud"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansat skattepligtig indkomst efter anvendt underskud. Felt 017</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstAnsatFørFradragUnderskudTidligereÅr"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansat skattepligtig indkomst før fradrag af underskud fra tidligere indkomstår. Felt 077</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstNegativIndkomstTidligereDelPerioder"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Årets negative indkomst for tidligere delperioder. Felt 166</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstPositivIndkomst" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation> Felt 075</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstFørUnderskudTotal" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet er summeringsfelt for samtlige felt 076 i en sambeskatning.  Felt 080</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstAnsatFørFradragUnderskudTidligereÅrTotal"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet er summeringsfelt for samtlige felt 077 i en sambeskatning. Felt 081</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstFradragUddelinger" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fradrag for uddelinger Felt 007 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstFradragYderligereNettotab"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Yderligere fradrag for nettotab fra felt 049 eller anvendt tab, jf. fondsbeskatningslovens § 3 stk. 2 Felt 008</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstBruttoAnsat" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansat skattepligtig indkomst Felt 017</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstSkattetillægAntalDage"
+                     type="skat2016:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage for sent indgået ifm. beregning af skattetillæg  Felt 010</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SelskabSkattepligtigIndkomstFørUddelinger" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skattepligtig indkomst før uddelinger Felt 040</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s1:definitions name="ListeAngivelseFilOpretServiceDefinitions" targetNamespace="http://service" xmlns="" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/" xmlns:s2="http://service" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="SkatGatewayAuthentication">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+		</wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part">wls:SecurityHeader(wsu:Timestamp)</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="Sign.xml">
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SystemHeaders()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SecurityHeader(wsu:Timestamp)
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+      wsp:Body()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+          <wssp:TokenIssuer>CN=TDC OCES CA,O=TDC,C=DK,</wssp:TokenIssuer>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+    <wssp:MessageAge Age="180" xmlns:wssp="http://www.bea.com/wls90/security/policy"/>
+  </wsp:Policy>
+  <s1:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/intrastat/" version="1.0" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:angivelseeindkomst="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" xmlns:ebxml="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:listeangivelse2="http://rep.oio.dk/skat.dk/intrastat/class/listeangivelse/xml/schemas/20080601/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="AngiverVirksomhedSENummer" type="fase2:AngiverVirksomhedSENummerType"/>
+      <xsd:complexType name="AngiverVirksomhedSENummerType">
+        <xsd:sequence>
+          <xsd:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AngivelseValgtPeriode" type="fase2:AngivelseValgtPeriodeType"/>
+      <xsd:complexType name="AngivelseValgtPeriodeType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="angivelseeindkomst:AngivelsePeriode"/>
+        </xsd:sequence>
+        <!-- </xs:sequence> -->
+      </xsd:complexType>
+      <xsd:element name="ListeAngivelseFilOpret_I" type="fase2:ListeAngivelseFilOpret_IType"/>
+      <xsd:complexType name="ListeAngivelseFilOpret_IType">
+        <xsd:sequence>
+          <xsd:element ref="kontekst:HovedOplysninger"/>
+          <xsd:sequence>
+            <xsd:sequence>
+              <xsd:element name="InputParametre">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="VirksomhedIndsender">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="AngivelseInddata">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element ref="angivelseeindkomst:AngivelseValgtIndberetningFormKode"/>
+                          <xsd:element ref="angivelseeindkomst:AngivelseDatoTid"/>
+                          <xsd:element ref="angivelse:ValutaKode"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="IndberetningFilListe">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" minOccurs="1" name="ListeAngivelseLinie">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element ref="listeangivelse2:ListeAngivelseKoeberMomsnummerIdentifikator"/>
+                                <xsd:element ref="ebxml:CountryIdentificationCode"/>
+                                <xsd:element minOccurs="0" ref="listeangivelse2:ListeAngivelseSalgBeloeb"/>
+                                <xsd:element minOccurs="0" ref="listeangivelse2:ListeAngivelseTrekantBeloeb"/>
+                                <xsd:element minOccurs="0" ref="listeangivelse2:ListeAngivelseInternReferenceIdentifikator"/>
+                                <xsd:element name="ListeAngivelseInddata">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element ref="fase2:AngiverVirksomhedSENummer"/>
+                                      <xsd:element ref="fase2:AngivelseValgtPeriode"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ListeAngivelseFilOpret_O" type="fase2:ListeAngivelseFilOpret_OType"/>
+      <xsd:complexType name="ListeAngivelseFilOpret_OType">
+        <xsd:sequence>
+          <xsd:element ref="kontekst:HovedOplysningerSvar"/>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="TekniskKvittering">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element maxOccurs="1" minOccurs="0" ref="angivelse:AngivelseKvitteringIdentifikator"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ListeAngivelseFilOpretInterface" type="fase2:ListeAngivelseFilOpretInterfaceType"/>
+      <xsd:complexType name="ListeAngivelseFilOpretInterfaceType">
+        <xsd:choice>
+          <xsd:element ref="fase2:ListeAngivelseFilOpret_I"/>
+          <xsd:element ref="fase2:ListeAngivelseFilOpret_O"/>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" version="1.0" xmlns:ctxt="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="AdvisIdentifikator" type="ctxt:FejlIdentifikatorType">
+			</xsd:element>
+      <xsd:element name="AdvisTekst" type="ctxt:FejlTekstType"/>
+      <xsd:element name="AdvisStruktur" type="ctxt:AdvisStrukturType">
+			</xsd:element>
+      <xsd:complexType name="AdvisStrukturType">
+        <xsd:sequence>
+          <xsd:element ref="ctxt:AdvisIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:AdvisTekst"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FejlIdentifikator" type="ctxt:FejlIdentifikatorType">
+			</xsd:element>
+      <xsd:simpleType name="FejlIdentifikatorType">
+        <xsd:restriction base="xs:integer"/>
+      </xsd:simpleType>
+      <xsd:element name="FejlTekst" type="ctxt:FejlTekstType"/>
+      <xsd:simpleType name="FejlTekstType">
+        <xsd:restriction base="xs:string">
+          <xsd:minLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="FejlStruktur" type="ctxt:FejlStrukturType">
+			</xsd:element>
+      <xsd:complexType name="FejlStrukturType">
+        <xsd:sequence>
+          <xsd:element ref="ctxt:FejlIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:FejlTekst"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SvarStruktur" type="ctxt:SvarStrukturType">
+			</xsd:element>
+      <xsd:complexType name="SvarStrukturType">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element ref="ctxt:AdvisStruktur"/>
+          <xsd:element ref="ctxt:FejlStruktur"/>
+        </xsd:choice>
+      </xsd:complexType>
+      <xsd:element name="TransaktionIdentifikator" type="ctxt:TransaktionIdentifikatorType">
+			</xsd:element>
+      <xsd:simpleType name="TransaktionIdentifikatorType">
+        <xsd:restriction base="xs:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="100"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="TransaktionTid" type="xs:dateTime"/>
+      <xsd:element name="ServiceIdentifikator" type="xs:string"/>
+      <xsd:element name="HovedOplysninger" type="ctxt:HovedOplysningerType"/>
+      <xsd:complexType name="HovedOplysningerType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionTid"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HovedOplysningerSvar" type="ctxt:HovedOplysningerSvarType">
+			</xsd:element>
+      <xsd:complexType name="HovedOplysningerSvarType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:ServiceIdentifikator"/>
+          <xsd:element minOccurs="0" ref="ctxt:TransaktionTid"/>
+          <xsd:element ref="ctxt:SvarStruktur"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" version="1.0" xml:lang="DA" xmlns:angivelse="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="AngivelseKvitteringIdentifikator" type="angivelse:AngivelseKvitteringIdentifikatorType">
+			</xsd:element>
+      <xsd:simpleType name="AngivelseKvitteringIdentifikatorType">
+        <xsd:restriction base="xs:integer">
+          <xsd:totalDigits value="26"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ValutaKode" type="angivelse:ValutaKodeType">
+			</xsd:element>
+      <xsd:simpleType name="ValutaKodeType">
+        <xsd:restriction base="xs:string">
+          <xsd:enumeration value="AED"/>
+          <xsd:enumeration value="AFA"/>
+          <xsd:enumeration value="ALL"/>
+          <xsd:enumeration value="AMD"/>
+          <xsd:enumeration value="ANG"/>
+          <xsd:enumeration value="AOA"/>
+          <xsd:enumeration value="ARS"/>
+          <xsd:enumeration value="AUD"/>
+          <xsd:enumeration value="AWG"/>
+          <xsd:enumeration value="AZM"/>
+          <xsd:enumeration value="BAM"/>
+          <xsd:enumeration value="BBD"/>
+          <xsd:enumeration value="BDT"/>
+          <xsd:enumeration value="BGL"/>
+          <xsd:enumeration value="BHD"/>
+          <xsd:enumeration value="BIF"/>
+          <xsd:enumeration value="BMD"/>
+          <xsd:enumeration value="BND"/>
+          <xsd:enumeration value="BOB"/>
+          <xsd:enumeration value="BRL"/>
+          <xsd:enumeration value="BSD"/>
+          <xsd:enumeration value="BTN"/>
+          <xsd:enumeration value="BWP"/>
+          <xsd:enumeration value="BZD"/>
+          <xsd:enumeration value="CAD"/>
+          <xsd:enumeration value="CHF"/>
+          <xsd:enumeration value="CLP"/>
+          <xsd:enumeration value="CNY"/>
+          <xsd:enumeration value="COP"/>
+          <xsd:enumeration value="CRC"/>
+          <xsd:enumeration value="CSD"/>
+          <xsd:enumeration value="CUP"/>
+          <xsd:enumeration value="CVE"/>
+          <xsd:enumeration value="CYP"/>
+          <xsd:enumeration value="CZK"/>
+          <xsd:enumeration value="DEM"/>
+          <xsd:enumeration value="DJF"/>
+          <xsd:enumeration value="DKK"/>
+          <xsd:enumeration value="DOP"/>
+          <xsd:enumeration value="DZD"/>
+          <xsd:enumeration value="ECS"/>
+          <xsd:enumeration value="EEK"/>
+          <xsd:enumeration value="EGP"/>
+          <xsd:enumeration value="ETB"/>
+          <xsd:enumeration value="EUR"/>
+          <xsd:enumeration value="FJD"/>
+          <xsd:enumeration value="FKP"/>
+          <xsd:enumeration value="GBP"/>
+          <xsd:enumeration value="GEK"/>
+          <xsd:enumeration value="GHC"/>
+          <xsd:enumeration value="GIP"/>
+          <xsd:enumeration value="GMD"/>
+          <xsd:enumeration value="GNF"/>
+          <xsd:enumeration value="GTQ"/>
+          <xsd:enumeration value="GWP"/>
+          <xsd:enumeration value="GYD"/>
+          <xsd:enumeration value="HKD"/>
+          <xsd:enumeration value="HNL"/>
+          <xsd:enumeration value="HRK"/>
+          <xsd:enumeration value="HTG"/>
+          <xsd:enumeration value="HUF"/>
+          <xsd:enumeration value="IDR"/>
+          <xsd:enumeration value="ILS"/>
+          <xsd:enumeration value="INR"/>
+          <xsd:enumeration value="IQD"/>
+          <xsd:enumeration value="IRR"/>
+          <xsd:enumeration value="ISK"/>
+          <xsd:enumeration value="JMD"/>
+          <xsd:enumeration value="JOD"/>
+          <xsd:enumeration value="JPY"/>
+          <xsd:enumeration value="KES"/>
+          <xsd:enumeration value="KGS"/>
+          <xsd:enumeration value="KHR"/>
+          <xsd:enumeration value="KMF"/>
+          <xsd:enumeration value="KPW"/>
+          <xsd:enumeration value="KRW"/>
+          <xsd:enumeration value="KWD"/>
+          <xsd:enumeration value="KYD"/>
+          <xsd:enumeration value="KZT"/>
+          <xsd:enumeration value="LAK"/>
+          <xsd:enumeration value="LBP"/>
+          <xsd:enumeration value="LKR"/>
+          <xsd:enumeration value="LRD"/>
+          <xsd:enumeration value="LSL"/>
+          <xsd:enumeration value="LTL"/>
+          <xsd:enumeration value="LVL"/>
+          <xsd:enumeration value="LYD"/>
+          <xsd:enumeration value="MAD"/>
+          <xsd:enumeration value="MDL"/>
+          <xsd:enumeration value="MGF"/>
+          <xsd:enumeration value="MKD"/>
+          <xsd:enumeration value="MMK"/>
+          <xsd:enumeration value="MNT"/>
+          <xsd:enumeration value="MOP"/>
+          <xsd:enumeration value="MRO"/>
+          <xsd:enumeration value="MTL"/>
+          <xsd:enumeration value="MUR"/>
+          <xsd:enumeration value="MVR"/>
+          <xsd:enumeration value="MWK"/>
+          <xsd:enumeration value="MXN"/>
+          <xsd:enumeration value="MYR"/>
+          <xsd:enumeration value="MZM"/>
+          <xsd:enumeration value="NAD"/>
+          <xsd:enumeration value="NGN"/>
+          <xsd:enumeration value="NIO"/>
+          <xsd:enumeration value="NOK"/>
+          <xsd:enumeration value="NPR"/>
+          <xsd:enumeration value="NZD"/>
+          <xsd:enumeration value="OMR"/>
+          <xsd:enumeration value="PAB"/>
+          <xsd:enumeration value="PEN"/>
+          <xsd:enumeration value="PGK"/>
+          <xsd:enumeration value="PHP"/>
+          <xsd:enumeration value="PKR"/>
+          <xsd:enumeration value="PLN"/>
+          <xsd:enumeration value="PYG"/>
+          <xsd:enumeration value="QAR"/>
+          <xsd:enumeration value="ROL"/>
+          <xsd:enumeration value="RUR"/>
+          <xsd:enumeration value="RWF"/>
+          <xsd:enumeration value="SAR"/>
+          <xsd:enumeration value="SBD"/>
+          <xsd:enumeration value="SCR"/>
+          <xsd:enumeration value="SDD"/>
+          <xsd:enumeration value="SEK"/>
+          <xsd:enumeration value="SGD"/>
+          <xsd:enumeration value="SHP"/>
+          <xsd:enumeration value="SIT"/>
+          <xsd:enumeration value="SKK"/>
+          <xsd:enumeration value="SLL"/>
+          <xsd:enumeration value="SOS"/>
+          <xsd:enumeration value="SRG"/>
+          <xsd:enumeration value="STD"/>
+          <xsd:enumeration value="SVC"/>
+          <xsd:enumeration value="SYP"/>
+          <xsd:enumeration value="SZL"/>
+          <xsd:enumeration value="THB"/>
+          <xsd:enumeration value="TJR"/>
+          <xsd:enumeration value="TMM"/>
+          <xsd:enumeration value="TND"/>
+          <xsd:enumeration value="TOP"/>
+          <xsd:enumeration value="TPE"/>
+          <xsd:enumeration value="TRL"/>
+          <xsd:enumeration value="TTD"/>
+          <xsd:enumeration value="TWD"/>
+          <xsd:enumeration value="TZS"/>
+          <xsd:enumeration value="UAH"/>
+          <xsd:enumeration value="UGX"/>
+          <xsd:enumeration value="USD"/>
+          <xsd:enumeration value="UYU"/>
+          <xsd:enumeration value="UZS"/>
+          <xsd:enumeration value="VEB"/>
+          <xsd:enumeration value="VND"/>
+          <xsd:enumeration value="VUV"/>
+          <xsd:enumeration value="WST"/>
+          <xsd:enumeration value="XAF"/>
+          <xsd:enumeration value="XCD"/>
+          <xsd:enumeration value="XOF"/>
+          <xsd:enumeration value="XPF"/>
+          <xsd:enumeration value="YER"/>
+          <xsd:enumeration value="YUN"/>
+          <xsd:enumeration value="ZAR"/>
+          <xsd:enumeration value="ZMK"/>
+          <xsd:enumeration value="ZRN"/>
+          <xsd:enumeration value="ZWD"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" version="1.1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="CVRnumberIdentifier" type="cvr:CVRnumberIdentifierType">
+			</xsd:element>
+      <xsd:simpleType name="CVRnumberIdentifierType">
+        <xsd:restriction base="string">
+          <xsd:length value="8"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="VirksomhedSENummerIdentifikator" type="cvr:CVRnumberIdentifierType">
+			</xsd:element>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/intrastat/class/listeangivelse/xml/schemas/20080601/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="ListeAngivelseInternReferenceIdentifikator" type="string">
+			</xsd:element>
+      <xsd:element name="ListeAngivelseTrekantBeloeb" type="integer">
+			</xsd:element>
+      <xsd:element name="ListeAngivelseSalgBeloeb" type="integer"/>
+      <xsd:element name="ListeAngivelseKoeberMomsnummerIdentifikator" type="string">
+			</xsd:element>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="CountryIdentificationCode" type="dkcc:CountryIdentificationCodeType"/>
+      <xsd:complexType name="CountryIdentificationCodeType">
+        <xsd:simpleContent>
+          <xsd:extension base="dkcc:_CountryIdentificationCodeType">
+            <xsd:attribute name="scheme" type="dkcc:_CountryIdentificationSchemeType" use="required"/>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="_CountryIdentificationCodeType">
+        <xsd:restriction base="string">
+          <xsd:pattern value="[a-z,A-Z]{2}|[a-z,A-Z]{3}|[0-9]{3}|[0-9]{4}"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="_CountryIdentificationSchemeType">
+        <xsd:restriction base="string">
+          <xsd:enumeration value="iso3166-alpha2"/>
+          <xsd:enumeration value="iso3166-alpha3"/>
+          <xsd:enumeration value="un-numeric3"/>
+          <xsd:enumeration value="imk"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="StartDate" type="date"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="EndDate" type="date"/>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns:xkom-2006="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:xkom2="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="DurationMeasure" type="xkom:DurationMeasureType"/>
+      <xsd:simpleType name="DurationMeasureType">
+        <xsd:restriction base="duration">
+          <xsd:pattern value="-?P([0-9]+Y)?(([1-9]|1[0-1])M)?(([1-9]|[1-2][0-9]|3[0-1])D)?(T(([1-9]|1[0-9]|2[0-3])H)?(([1-5]?[0-9])M)?((([1-5]?[0-9](\.[0-9]+)?))S)?)?"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="DateInterval" type="xkom:DateIntervalType"/>
+      <xsd:complexType name="DateIntervalType">
+        <xsd:choice>
+          <xsd:sequence>
+            <xsd:element ref="xkom-2006:StartDate"/>
+            <xsd:choice minOccurs="0">
+              <xsd:element ref="xkom2:EndDate"/>
+              <xsd:element ref="xkom:DurationMeasure"/>
+            </xsd:choice>
+          </xsd:sequence>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="xkom:DurationMeasure"/>
+            <xsd:element ref="xkom2:EndDate"/>
+          </xsd:sequence>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelse/xml/schemas/20071202/" version="1.0" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns:p="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2007/09/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="AngivelseValgtIndberetningFormKode" type="integer">
+			</xsd:element>
+      <xsd:element name="AngivelseDatoTid" type="dateTime"/>
+      <xsd:element name="AngivelsePeriode" type="xkom:DateIntervalType">
+			</xsd:element>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://service" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://service" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getListeAngivelseFilOpret">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="int:ListeAngivelseFilOpret_I" xmlns:int="http://rep.oio.dk/skat.dk/intrastat/"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListeAngivelseFilOpretResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="int:ListeAngivelseFilOpret_O" xmlns:int="http://rep.oio.dk/skat.dk/intrastat/"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s1:types>
+  <s1:message name="getListeAngivelseFilOpret">
+    <s1:part element="s2:getListeAngivelseFilOpret" name="parameters"/>
+  </s1:message>
+  <s1:message name="getListeAngivelseFilOpretResponse">
+    <s1:part element="s2:getListeAngivelseFilOpretResponse" name="parameters"/>
+  </s1:message>
+  <s1:portType name="ListeAngivelseFilOpret">
+    <s1:operation name="getListeAngivelseFilOpret" parameterOrder="parameters">
+      <s1:input message="s2:getListeAngivelseFilOpret"/>
+      <s1:output message="s2:getListeAngivelseFilOpretResponse"/>
+    </s1:operation>
+  </s1:portType>
+  <s1:binding name="ListeAngivelseFilOpretServiceSoapBinding" type="s2:ListeAngivelseFilOpret">
+    <s3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s1:operation name="getListeAngivelseFilOpret">
+      <s3:operation soapAction="" style="document"/>
+      <s1:input>
+        <s3:body parts="parameters" use="literal"/>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#Sign.xml"/>
+          <wsp:PolicyReference URI="#SkatGatewayAuthentication"/>
+        </wsp:Policy>
+      </s1:input>
+      <s1:output>
+        <s3:body parts="parameters" use="literal"/>
+      </s1:output>
+    </s1:operation>
+  </s1:binding>
+  <s1:service name="ListeAngivelseFilOpretService">
+    <s1:port binding="s2:ListeAngivelseFilOpretServiceSoapBinding" name="ListeAngivelseFilOpretSoapPort">
+      <s3:address location="https://securegateway1.skat.dk:443/intrastat/OIOListeAngivelseFilOpret/ListeAngivelseFilOpret"/>
+    </s1:port>
+  </s1:service>
+</s1:definitions>

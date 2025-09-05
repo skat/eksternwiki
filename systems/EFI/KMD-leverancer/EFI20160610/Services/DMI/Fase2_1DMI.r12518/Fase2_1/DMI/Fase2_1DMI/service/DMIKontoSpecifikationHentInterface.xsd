@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen henter startsaldo og transaktioner på kundens konto for et specificeret tidsinterval.  Transaktioner består af både åbne og lukkede poster, så som fordringer, indbetalinger og udbetalinger, opskrivninger, nedskrivninger, returner og tilbagekald osv.  Servicen henter Konto/Kundestop som er aktuelle på søgningstidspunktet.  </xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DMIKontoSpecifikationHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DMIKontoSpecifikationHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DMIKontoSpecifikationHentInterface"
+                     type="fase2.1:DMIKontoSpecifikationHentInterfaceType"/>
+         <xs:complexType name="DMIKontoSpecifikationHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DMIKontoSpecifikationHent_I"/>
+               <xs:element ref="fase2.1:DMIKontoSpecifikationHent_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

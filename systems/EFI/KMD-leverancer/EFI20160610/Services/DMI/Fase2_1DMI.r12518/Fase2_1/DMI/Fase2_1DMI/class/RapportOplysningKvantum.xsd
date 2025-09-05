@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angivelse af en mængde, mål eller antal, som ikke er et beløb, fx et areal eller antal aktier.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TalFlydendeType.xsd"/>
+         <xs:element name="RapportOplysningKvantumKvalifikator" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver betydningen af et antal eller mål i den konkrete sammenhæng.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RapportOplysningKvantumKvalifikatorTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af tilhørende kvalifikatorkode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RapportOplysningKvantumAntal" type="fase2.1:TalFlydendeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien i et kvantumfelt fx et antal kvadratmetre eller et antal aktier. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RapportOplysningKvantumEnhedKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som beskriver måleenheden for et antalfelt. Kan fx være en kode for kvadratmeter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en organisatorisk enhed og en tilknyttet alarmtype. Alarmtypen kan konfigureres med en farve alarmerne af denne type skal vises med på alarmlisten.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>OrganisatoriskEnhedAlarmtype objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeOrganisatoriskEnhedID"
+                     type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den organisatoriske enheds unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeAlarmtypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Alarmtypens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeFarve" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den farve alarmerne af denne type vises med i alarmlisten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet organisatoriskenhedalarmtype objektet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt organisatoriskenhedalarmtype objektet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret organisatoriskenhedalarmtype objektet. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt organisatoriskenhedalarmtype objektet er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet organisatoriskenhedalarmtype objektet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt organisatoriskenhedalarmtype objektet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedAlarmtypeTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til organisatoriskenhedalarmtype objektet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

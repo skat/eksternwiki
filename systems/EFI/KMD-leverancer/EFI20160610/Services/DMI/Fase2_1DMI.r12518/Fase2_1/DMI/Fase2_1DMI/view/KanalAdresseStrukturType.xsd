@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/AdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TelefonNummerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EmailAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FaxNummerStrukturType.xsd"/>
+				     
+         <xs:element name="KanalAdresseStruktur" type="fase2.1:KanalAdresseStrukturType"/>
+         <xs:complexType name="KanalAdresseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AdresseValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element ref="fase2.1:AdresseStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:TelefonNummerStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:EmailAdresseStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:FaxNummerStruktur"/>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

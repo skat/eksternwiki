@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:hentselv:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indkomstoplysningpersonreference="urn:oio:skat:hentselv:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="IndkomstOplysningPersonReference" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Reference til gammel record som ønskes tilbageført. Referencen er IndberetningsID på den indberetning som ønskes tilbageført. Skal bruges for præcist at identificere den indberetning der ønskes tilbageført/tilbageført fra.  Referencen bruges i særdeleshed ifm  tilbageførsel men kan også bruges frivilligt af indberetter til at henvise til en tidligere indberetning. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

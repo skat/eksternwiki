@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>I forhold til afgiftsberigtigelsen er det muligt at tilknytte en række klausuler. Disse klausuler er generelt beskrevet i denne klasse, hvori der er indeholdt en liste af disse klausuler med tilhørende beskrivelser og angivelser af yderligere informationskrav (f.eks. omkring tidsbegrænsning, ejer begrænsning og brugerbegrænsning).  Følgende klausultyper er identificeret: Gruppe: 1 - Standardklausuler - toldattest (afgiftsfritagelse) 101 - Danske statsinstitutioner, beredskabskommissioner m.fl. 102 - Afgiftsfritagelse for køretøjer fra Færøerne og Grønland 103 - Arbejdsredskaber 104 - Diplomater 105 - Teknisk/Administrativt Personale(Diplomat) 106 - Internationale Organisationer(Diplomat) 110 - Køretøjer til udlejning til valutaudlændige 112 - Biler indrettet til godstransport 117 - Tilladelse til erhvervsmæssig persontransport, som udelukkende anvendes dertil 118 - Specialkøretøjer til brandslukning og redningstjeneste 119 - Mandskabsvogne 126 - Hyrevogne med kørestolsindretning 133 - Busser til privat buskørsel (afgiftsfritaget efter tidligere lovgivning) 134 - Busser, der anvendes af plejehjem, ældrecentre og lign. institutioner 135 - Busser med reduceret sædeantal til erhvervsmæssig sygetransport 136 - Busser specielt indrettet til erhvervsmæssig transport af teater-, orkester-, film- og tv-hold. 137 - Biler specielt indrettet til erhvervsmæssigt formål 140 - Daginstitutionskøretøjer 141 - Køretøjer til afprøvning af komponenter 142 - Testbiler for handicappede 143 - Arrangementer afholdt af eller sammen med den danske regering 144 - Køretøjer, som udelukkende benyttes i lukkede dyreparker. 145 - Firmabiler (hovedsageligt til anvendelse i udlandet) 150 - Busser til privat buskørsel (handicapbrug) 151 - Varebiler til udlejning til valutaudlændinge 152 - Busser til køreskoler 160 - Lufthavnskøretøjer 161 - Banekørsel 163 - Brandvæsenets egne nummerplader  Gruppe: 2 - Standardklausuler - toldattest (afgiftsberigtigelse) 207 - Varebiler specielt indrettet til erhvervsmæssigt formål. 208 - Varebil specielt indrettet til erhvervsmæssig anvendelse som ledsagebil for særtransporter 216 - Turistbusser 217 - Hyrevogne 218 - Limousiner 221 - Busser med lejlighedsvis reduceret sædeantal 222 - Busser med reduceret sædeantal tilhørende plejehjem og lign. institutioner 223 - Sygetransportkøretøjer 224 - Teater- og orkesterbusser 225 - Specialbusser til erhvervsmæssigt formål. 227 - Campingbiler 233 - Busser til privat buskørsel 240 - Udlændinges berigtigelse af registreringsafgift under tidsbegrænset ophold i Danmark 243 - Firmabil (bruger har hovederhverv i udenlandsk virksomhed) 245 - 50% Reg.afg. Vægtafgift efter 2001-2500 250 - Ukendt klausul fra CRM3  Gruppe: 3 - Told- og Momsfritagelse 301 - Told- og Momsfritagelse: Flyttegods fra ikke-EU land (1år) 302 - Told- og Momsfritagelse: Diplomat (2år) 303 - Told- og Momsfritagelse: Teknisk-administrativt Personel (3år) 304 - Told- og Momsfritagelse: International Organisation (Permanent)  Gruppe: 4 - Diverse klausuler 401 - Kommunallåneklausul (6år)   </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/TekstKortType.xsd"/>
+	<xs:element name="RegistreringAfgiftKlausulTypeKraeverBrugerBegraensning" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>En klausul kan ligeledes være begrænset i forhold til en eller flere specifikke brugere. Således må listen af brugere ikke udvides med mindre dette vil få væsentlige konsekvenser for fastsættelse af køretøjet. Der er således tale om en potentiel liste af brugere, som bare ikke må udvides. Eksempelvis kunne dette være i forhold til handicapkøretøjer, som kun må anvendes af den bevægelseshæmmede selv.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulTypeKraeverEjerBegraensning" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>En klausul kan specifikt kræve, at der opstilles en ejer begrænsning i forhold til køretøjet. Dermed skal køretøjet være specifikt ejet af en eller flere personer, og forhold ved klausulen skal verificeres ved eksempelvis ejerskifte.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulTypeKraeverTidsbegraensning" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>En klausul kan være tidsbegrænset (f.eks. gældende for 6 år i forhold til handicapkørsel), hvor køretøjet ikke må sælges inden for denne periode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulTypeNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Et nummer, som unikt beskrive den enkelte værdi for en given periode.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulTypeNavn" type="dmr:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

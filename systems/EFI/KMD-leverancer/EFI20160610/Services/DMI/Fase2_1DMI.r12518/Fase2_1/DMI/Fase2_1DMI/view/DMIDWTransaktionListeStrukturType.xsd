@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/CRUDFunktionType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMITransaktionIDType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+         <xs:include schemaLocation="../view/DMIIndberetterHentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMITransaktionBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIDWTransaktionListeStruktur"
+                     type="fase2.1:DMIDWTransaktionListeStrukturType"/>
+         <xs:complexType name="DMIDWTransaktionListeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="Transaktion">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:CRUDFunktionType"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionID"/>
+                  
+                           <xs:element ref="fase2.1:DMIIndberetterHentStruktur"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionType"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionIDType"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionLøbenummer"/>
+
+                           <xs:element ref="fase2.1:DMIFordringHaverID" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionBeløbStruktur"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionDato"/>
+
+                           <xs:element ref="fase2.1:DMITransaktionVirkningDato" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:DMITransaktionBogføringDato"/>
+
+                           <xs:element ref="fase2.1:DMITransaktionÅrsagKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:DMITransaktionÅrsagBegr" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:DMITransaktionÅrsagTekst" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:DMIFordringFordringArtKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:HæftelseForm" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

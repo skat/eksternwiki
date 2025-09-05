@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En ressources kalender. Kalenderen indeholder en række forskellige elementer (slots):      Mødetid      Frokost      Præference      Aftale      Privat Aftale</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="KalenderID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kalenderens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource kalenderen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDefaultMødetidStart" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcens default mødetid. Anvendes når der ikke er angivet en mødetid på en specifik dag i kalenderen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderDefaultMødetidSlut" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcens default gå-hjem-tid. Anvendes når der ikke er specificeret en gå-hjem-tid på en specifik dag i kalenderen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet kalenderen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kalenderen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret kalenderen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kalenderen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>DN på medarbejderen der har foretaget sletningen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt kalenderen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KalenderTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til kalenderen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

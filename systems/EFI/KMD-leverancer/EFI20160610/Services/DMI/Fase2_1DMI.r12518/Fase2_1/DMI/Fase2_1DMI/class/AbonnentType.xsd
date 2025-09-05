@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver de abonnenter, som der kan oprettes abonnement for, dvs. hvem der abonnerer. Der kan ikke dynamisk oprettes nye værdier af abonnenttype, medmindre dette er omfattet af et standardabonnement.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeFireCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AbonnentTypeKode" type="fase2.1:KodeFireCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Abonnenttypens unikke kode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnentTypeTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Abonnenttypens tekst som beskriver abonnenttypekoden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnentTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Abonnenttypens startdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AbonnentTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Abonnenttypens slutdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

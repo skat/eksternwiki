@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:es:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elforbrugsstedaftageforholdbehandlingkodetext="urn:oio:skat:es:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ElForbrugsstedAftageForholdBehandlingKodeText" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Kode, der angiver typen af ændring af oplysninger, for en virksomheds el-aftageforhold.
+
+O = oprettelse af forekomst 
+E = ændring af forekomst 
+S = sletning af forekomst og evt. underliggende forhold 
+P = ophør af forekomst eller ændring af slutdato + ophør af de underliggende forhold (slutdato opsættes på overforhold) 
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

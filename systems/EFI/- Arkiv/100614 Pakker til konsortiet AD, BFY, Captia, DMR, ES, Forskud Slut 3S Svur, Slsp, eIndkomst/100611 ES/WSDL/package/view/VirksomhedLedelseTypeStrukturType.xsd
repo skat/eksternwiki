@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../operational/LedelseForholdTypeKode.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerType.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedEjerLederForholdStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/LederForholdHistorikStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="VirksomhedLedelseTypeStruktur" type="fase2.1:VirksomhedLedelseTypeStrukturType"/>
+   
+   
+   
+   <xs:complexType name="VirksomhedLedelseTypeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:LedelseForholdTypeKode"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:EjerTypeKode"/>
+
+         
+         
+         
+         <xs:element name="VirksomhedLederForholdSamling">
+            
+            
+            
+            <xs:complexType>
+               
+               
+               
+               <xs:sequence>
+
+
+                  
+                  
+                  
+                  <xs:element name="Lederforhold" minOccurs="0" maxOccurs="unbounded">
+                     
+                     
+                     
+                     <xs:complexType>
+                        
+                        
+                        
+                        <xs:sequence>
+                           
+                           
+                           
+                           <xs:element ref="fase2.1:VirksomhedEjerLederForholdStruktur"/>
+
+                           
+                           
+                           
+                           <xs:element name="LederForholdHistorikSamling">
+                              
+                              
+                              
+                              <xs:complexType>
+                                 
+                                 
+                                 
+                                 <xs:sequence>
+
+                                    
+                                    
+                                    
+                                    <xs:element ref="fase2.1:LederForholdHistorikStruktur" minOccurs="1" maxOccurs="unbounded"/>
+
+                                 
+                                 
+                                 
+                                 </xs:sequence>
+                              
+                              
+                              
+                              </xs:complexType>
+                           
+                           
+                           
+                           </xs:element>
+
+
+                        
+                        
+                        
+                        </xs:sequence>
+                     
+                     
+                     
+                     </xs:complexType>
+                  
+                  
+                  
+                  </xs:element>
+
+               
+               
+               
+               </xs:sequence>
+            
+            
+            
+            </xs:complexType>
+         
+         
+         
+         </xs:element>
+
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

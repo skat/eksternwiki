@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="VirksomhedSøgService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>At fremsøge virksomheder i form af SE-numre, CVR-numre eller firmanavne ud fra en række søgekriterier. Det er muligt at søge direkte på en virksomhed eller at finde virksomheder, der inden for et givent interval er blevet oprettet eller ændret.  Hvis man søger på virksomheder med ændringer inden for et givet interval, er det muligt at filtrere sin søgning, således at der kun fremsøges virksomheder, der inden for perioden har ændret fx driftsform, registreringsforhold, adresse eller lignende. </xs:documentation>
+            <xs:documentation>1.0</xs:documentation>
+            <xs:documentation>r19879</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/VirksomhedSoegInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="VirksomhedSøgServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:VirksomhedSøg_I"/>
+         </wsdl:message>
+         <wsdl:message name="VirksomhedSøgServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:VirksomhedSøg_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="VirksomhedSøgServicePortType">
+            <wsdl:operation name="getVirksomhedSøg">
+               <wsdl:input message="fase2.1:VirksomhedSøgServiceRequest"/>
+               <wsdl:output message="fase2.1:VirksomhedSøgServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Udbetaling kan være initieret som konsekvens af en eller flere af nedenstående hændelser (listen er ikke udtømmende):  - overskydende indbetaling - Afskrivninger - Omposteringer - Rentegodtgørelse - Tilbagekaldelse af fordringer - Modregninger  Udbetalinger - på kundens inddrivelseskonto - kan have status afventer godkendelse eller godkendt til udbetaling. Denne markering sættes enten automatisk eller som en del af en sagsbehandlers godkendelse.  Kun hvis en udbetaling har status godkendt, bliver den udbetalt.  Udbetalinger kan evt. have tilknyttet specifikke udbetalingskontooplysninger/adresser samt ønsket udbetalingskanal:  - Nemkonto  -Check  - (Dansk) Bank  - Swift  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/DMIUdbetalingGodkTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/UdbetalingAfvisAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/MedarbejderNummerType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingFormType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/UdbetalingAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:include schemaLocation="../types/AdresseLandKodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst60Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst15Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst140Type.xsd"/>
+         <xs:element name="DMIUdbetalingID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af den enkelte udbetaling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingNote" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for udbetalingen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingNoteDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for begrundelsen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingGodkTypeKode" type="fase2.1:DMIUdbetalingGodkTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af godkendelse.  (Er defineret som ENUM). </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingAfvisÅrsagKode"
+                     type="fase2.1:UdbetalingAfvisÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver årsag til afvisning af udbetaling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingAfvisÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for valg af Anden årsag.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingÅrsagAfvisBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Giver godkender mulighed for at begrunde sin afvisning af udbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingGodkendt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis Ja er udbetalingen godkendt. Hvis Nej er udbetalingen ikke godkendt. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingGodkendDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato udbetalingen er godkendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingGodkendMedarb" type="fase2.1:MedarbejderNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejdernummer på den medarbejder der har godkendt udbetalingen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for udbetaling af beløbet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingStatus" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Status for udbetaling  Værdisæt: AFVENTGODK: Afventer godkendelse AFVENTKONT: Afventer kontering til anden kunde AFVIST: Afvist CHECK: Udbetalt via check EJINDLØST: Check ej indløst FEJLET: Fejlet - udbetales via check GENNEMFØRT: Gennemført GODKENDT: Godkendt til udbetaling MASSEGODK: Massegodkendelse NEMKAFS: Udbetaling sendt til NemKonto</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbet der skal udbetales/er udbetalt i den udbetalende valuta </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbet der skal udbetales/er udbetalt omregnet til danske kroner </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingForm" type="fase2.1:BetalingFormType">
+               
+               <xs:annotation>
+                  <xs:documentation>Som udgangspunkt udbetales alt til Nemkonto (det offentliges digitale udbetalingsmyndighed, der kender til virksomheders / personers bankkontonummer). Udenlandske parter eller parter uden bankkonti, der ikke har en Nemkonto, kan få udbetalt via andre medier, fx. check eller bankoverførsel (hvis SKAT har deres bankkontooplysninger).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingValuta" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den valuta (ISO-møntkoden) beløbet udbetales i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingType" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udbetalingstype</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingÅrsagKode" type="fase2.1:UdbetalingÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver årsag til udbetaling   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for, hvorfor en udbetaling er foretaget.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybning af ÅrsagKode Anden </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingInitieretAfBruger" type="fase2.1:MedarbejderNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejdernummer, der har initieret udbetalingen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingEFIIndsatsID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Indsats i EFI der er anledning til udbetalingen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingRegistreringsNummer" type="fase2.1:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En banks registreringsnummer der entydigt identificerer pengeinstituttet. Bliver valideret i henhold til pengeinstitutternes officielle liste.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingBankLand" type="fase2.1:AdresseLandKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Landekode for den pågældende bank der udbetales til</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingBankNavn" type="fase2.1:Tekst60Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på banken udbetalingen foretages til.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingBankNøgle" type="fase2.1:Tekst15Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Nøgle der entydigt identificerer et udenlandsk pengeinstitut. De forskellige lande har sine egne regelsæt for længder og algoritmer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingSwiftKode" type="fase2.1:Tekst11Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Internationalt anerkendt entydig identikation af pengeinstitut</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingIBANKode" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Internationalt anerkendt entydig identikation af pengeinstitut og kontonummer. Feltet valideres idet det har indbygget kontrolciffer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingEgenNemkonto" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikator om der skal udbetales til egen nemkonto.  Hvis Nej skal KundeStruktur udfyldes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIUdbetalingReference" type="fase2.1:Tekst140Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Refernce til den udbetaling der er foretaget til fordringhaveren. Del af posteringsteksten fra NemKonto udbetalingen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

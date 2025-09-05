@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En medarbejder har mulighed for at afvise en opgave i Ressourcestyring. En afvisning vil medføre at opgaven bliver sendt tilbage på opgavekøen, så en anden medabejder kan tage opgaven.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OpgaveAfvisningID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Afvisningens unikke ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningOpgaveID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unitkke ID på den opgave som afvisningen er tilknyttet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningMedarbejderprofilID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på en medarbejderprofil. I en afvisning er det muligt at henvise til en anden medarbejder og anmode denne medarbejder om at løse opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningTekst" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>I teksten er der mulighed for at angive en årsag til afvisningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningAfvistAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har afvist opgaven.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningAfvistTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgaven er afvist.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet afvisningen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt afvisningen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveAfvisningTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til afvisningen, det kan både være oprettelse og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

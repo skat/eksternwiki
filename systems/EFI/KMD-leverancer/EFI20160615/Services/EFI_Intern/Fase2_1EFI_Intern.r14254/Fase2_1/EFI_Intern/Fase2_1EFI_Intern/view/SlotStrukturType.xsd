@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Slot.xsd"/>
+         <xs:include schemaLocation="../operational/SlotSlotKategori.xsd"/>
+				     
+         <xs:element name="SlotStruktur" type="fase2.1:SlotStrukturType"/>
+         <xs:complexType name="SlotStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:SlotID"/>
+                  
+                  <xs:element ref="fase2.1:SlotKalenderID"/>
+
+               <xs:element ref="fase2.1:SlotArbejdsstedID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotOpgaveID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotPræferenceID" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:SlotSlotType"/>
+
+               <xs:element ref="fase2.1:SlotSlotKategori" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotOriginalDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:SlotStartDatoTid"/>
+                  
+                  <xs:element ref="fase2.1:SlotSlutDatoTid"/>
+
+               <xs:element ref="fase2.1:SlotVidne" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotBeskrivelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotExchangeID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotExchangeChangeKey" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:SlotOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:SlotOprettetTid"/>
+
+               <xs:element ref="fase2.1:SlotÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:SlotSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:SlotTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

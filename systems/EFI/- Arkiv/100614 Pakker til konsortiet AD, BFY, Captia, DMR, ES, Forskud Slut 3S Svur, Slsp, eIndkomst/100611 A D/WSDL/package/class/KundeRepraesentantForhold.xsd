@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Beskriver forholdet mellem en kunde og hans kunderepræsentant (også en kunde).  Til forholdet er knyttet de meddelelsestyper, der er gældende for forholdet: Når der fra SKAT sendes en meddelelse til kunden af den pågældende type, skal der sendes til kunderepræsentanten i stedet for. Herudover skal meddelelsen place-res i kundens kommunikationsmappe ligesom den skal placeres i den til forholdet hørende mappe.  En forhold er først gældende når det er godkendt både af kunden og af kunderepræsentanten. </xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/JaNejType.xsd"/>
+      
+      
+   
+   
+   <xs:element name="KundeRepræsentantForholdGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Forholdets gyldighed - start</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KundeRepræsentantForholdGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Forholdets gyldighed - slut </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KundeRepræsentantForholdGodkendt" type="fase2.1:JaNejType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver om forholdet er godkendt af begge parter</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KundeRepræsentantForholdStartDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Startdato sættes default = med GyldighedFra. StartDato kan ændres tilbage i tiden,  hvis kunderepræsentanten skal kunne se kundens meddelelser, som har oprettelsesdato før kunderepræsentforholdet indgåelse.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

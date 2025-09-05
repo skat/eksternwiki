@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="StelNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Stelnummeret på et køretøj. StelNummer har normalt 17 tegn. For blokvogne og traktorer (og kun disse) skal det være muligt at indsætte stelnummer med flere tegn.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:minLength value="0"/>
+            
+         
+         
+         <xs:maxLength value="17"/>
+            
+         
+         
+         <xs:pattern value="([A-Z0-9])*"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

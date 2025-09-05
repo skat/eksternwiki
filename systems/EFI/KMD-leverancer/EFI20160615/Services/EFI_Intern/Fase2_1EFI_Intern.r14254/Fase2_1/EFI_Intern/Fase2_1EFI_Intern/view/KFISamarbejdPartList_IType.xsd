@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/SamarbejdPart.xsd"/>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:element name="KFISamarbejdPartList_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:KFISamarbejdPartList_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="KFISamarbejdPartList_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+
+                     <xs:element ref="fase2.1:SamarbejdPartNavn" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:SamarbejdPartType" minOccurs="0"/>
+
+
+                     <!--Sequence removed-->
+
+                        <xs:element name="NøgleValg" minOccurs="0">
+                           <xs:complexType>
+                              <xs:choice>
+                                 <xs:element ref="fase2.1:AdressePostNummer"/>
+				
+				
+				                             <xs:element ref="fase2.1:LandKode"/>
+				
+				                             <xs:sequence>
+				
+                                    <xs:element name="KFIKontaktIdentStrukturSamling">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="fase2.1:EFIKundeIdentStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+
+                                 </xs:sequence>
+                              </xs:choice>
+                           </xs:complexType>
+                        </xs:element>
+                     
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Denne webservice returnerer en liste af kundens fordringer med fhv. få outputparametre for hver fordring. Desuden beregner servicen restgælden for hver fordringstype og for hver fordringsart, samt returnerer listen af transaktioner på kundens konto i den ønskede periode. Ønskes flere detaljer på den enkelte fordring, kaldes KFIFordringHent-webservicen.</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/KFIKundeFordringList_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/KFIKundeFordringList_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="KFIKundeFordringListInterface"
+                     type="fase2.1:KFIKundeFordringListInterfaceType"/>
+         <xs:complexType name="KFIKundeFordringListInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:KFIKundeFordringList_I"/>
+               <xs:element ref="fase2.1:KFIKundeFordringList_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

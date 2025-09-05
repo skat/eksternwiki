@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Angiver de oplysninger, som er fælles for en indberetning til eIndkomst, for en gruppe af indkomstmodtagere</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/ForBagudLoenType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/VirksomhedEgenIDType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+      
+   
+   
+   <xs:element name="IndkomstPersonGruppeDispositionDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Den dato som en indkomstudbetaling er disponibel fra, dvs.  den dato, hvor en indkomstmodtager har råderet over indkomsten.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndkomstPersonGruppeForBagudLøn" type="fase2.1:ForBagudLønType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver om der er tale om forudløn eller bagudløn. Forudløn er til disposition for indkomstmodtager før lønner er optjent. Bagudløn er til disposition for indkomstmodtager, når lønner er optjent.  Værdisæt: Forud = Forudløn, Bagud = Bagudløn</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndkomstPersonGruppeTilbageførtVirksomhedEgenID" type="fase2.1:VirksomhedEgenIDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver en unik indberetningidentifikation for en virksomhed for en given indberetning som er tilbageført.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="IndkomstPersonGruppeTilbageførtMarkering" type="fase2.1:MarkeringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Default = false. = True, hvis indberetningen er blevet tilbageført af en senere tilbageførsel.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

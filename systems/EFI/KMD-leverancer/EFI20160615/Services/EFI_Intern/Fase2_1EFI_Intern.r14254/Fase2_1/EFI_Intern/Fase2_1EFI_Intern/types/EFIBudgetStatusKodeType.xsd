@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="EFIBudgetStatusKodeType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="16"/>
+                  <xs:enumeration value="GODKENDT"/>
+                  <xs:enumeration value="DELVISTGODKENDT"/>
+                  <xs:enumeration value="UNDERTRYKT"/>
+                  <xs:enumeration value="UDLØBET"/>
+                  <xs:enumeration value="AFVIST"/>
+                  <xs:enumeration value="KLADDEGODKEND"/>
+                  <xs:enumeration value="KLADDE"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

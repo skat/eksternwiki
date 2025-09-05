@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Medarbejderprofil.xsd"/>
+         <xs:element name="MedarbejderprofilStruktur" type="fase2.1:MedarbejderprofilStrukturType"/>
+         <xs:complexType name="MedarbejderprofilStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:MedarbejderprofilID"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilRessourceID"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilWNummer"/>
+
+               <xs:element ref="fase2.1:MedarbejderprofilMobilnummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MedarbejderprofilEmail" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:MedarbejderprofilBelægningsprocent"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilPointsystem"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilPoint"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilMedbringVidne"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilVilVæreVidne"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilAlarmTilMobil"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilAlarmTilEmail"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilDefaultFrokostFra"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilDefaultFrokostTil"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:MedarbejderprofilOprettetTid"/>
+
+               <xs:element ref="fase2.1:MedarbejderprofilÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MedarbejderprofilÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MedarbejderprofilSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:MedarbejderprofilSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:MedarbejderprofilTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

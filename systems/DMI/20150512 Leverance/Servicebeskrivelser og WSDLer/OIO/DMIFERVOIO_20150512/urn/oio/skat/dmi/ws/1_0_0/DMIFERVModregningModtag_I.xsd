@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dmi="urn:oio:skat:dmi:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../1_0_0/FERVSidstDaekkedeTransportModtagelseDato.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../1_0_0/MyndighedUdbetalingNummerIdentifier.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../1_0_0/SKATDaekningTilStiftelseDato.xsd"/><xs:import namespace="urn:oio:skat:dmi:1.0.0" schemaLocation="../../1_0_0/FERVUdaekketKravIndikator.xsd"/><xs:include schemaLocation="KundeStruktur.xsd"/>
+	<xs:include schemaLocation="MyndighedUdbetalingBeloebStruktur.xsd"/>
+	<xs:element name="DMIFERVModregningModtag_I" type="dmiws:DMIFERVModregningModtag_IType">
+	</xs:element>
+	<xs:complexType name="DMIFERVModregningModtag_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="dmiws:KundeStruktur"/>
+			<xs:element name="Udbetaling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmiws:MyndighedUdbetalingBeloebStruktur"/>
+						<xs:element ref="dmi:MyndighedUdbetalingNummerIdentifier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DaekningParameter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmi:FERVSidstDaekkedeTransportModtagelseDato"/>
+						<xs:element ref="dmi:FERVUdaekketKravIndikator"/>
+						<xs:element ref="dmi:SKATDaekningTilStiftelseDato"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

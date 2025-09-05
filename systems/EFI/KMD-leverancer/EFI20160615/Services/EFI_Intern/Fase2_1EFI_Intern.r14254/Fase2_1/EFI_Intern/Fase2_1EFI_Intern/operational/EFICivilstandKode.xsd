@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst10Type.xsd"/>
+         
+         <xs:element name="EFICivilstandKode" type="fase2.1:Tekst10Type">
+            <xs:annotation>
+               <xs:documentation>Kode for en persons civilstand, det vil sige de forhold, der gør sig gældende om en persons ægteskab og samliv  Værdisæt:  G: Gift eller indtrådt i registreret partnerskab F:  Fraskilt eller har fået opløst registreret partnerskab </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

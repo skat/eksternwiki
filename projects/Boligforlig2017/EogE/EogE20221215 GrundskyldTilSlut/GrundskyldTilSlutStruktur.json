@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Comment describing your JSON Schema",
+  "properties": {
+    "ListeOplysninger": {
+      "required": [
+        "IndkomstÅr"
+      ],
+      "properties": {
+        "IndkomstÅr": {
+          "description": "Det år, hvor den indkomst, der er lagt til grund for skatteberegningen, er indtjent.",
+          "type": "integer",
+          "x-typeDescription": "Alle gyldige årstal i den danske kalender."
+        }
+      }
+    },
+    "EjerskabListe": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "Ejerskab": {
+            "required": [
+              "Ajourføringshandling",
+              "GrundskyldsberegningID",
+              "GrundskyldsberegningTidspunkt",
+              "Ejer",
+              "Ejendom",
+              "EjendomEjerskabEjerandel",
+              "Ejerperiode",
+              "Ejerskabsgrundskyld"
+            ],
+            "properties": {
+              "Ajourføringshandling": {
+                "description": "Angivelse af hvilken handling der udføres:R - rettelse (incl. tilføjelse af nyt ejerskab)S - sletning af ejerskab",
+                "type": "string",
+                "x-typeDescription": "Tekst med en længde på 0 eller 1 tegn."
+              },
+              "GrundskyldsberegningID": {
+                "description": "Unik identifikation af en given beregning af kommunale ejendomsskatter mv. for en givet ejendom",
+                "type": "string",
+                "x-typeDescription": "GUID repræsentation",
+                "pattern": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"
+              },
+              "GrundskyldsberegningTidspunkt": {
+                "description": "Tidspunktet for en given beregning af kommunale ejendomsskatter mv. for en given ejendom.Tidszonen UTC, timestamp til og med millisekunder. ",
+                "type": "string",
+                "format": "date-time",
+                "x-typeDescription": "En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime."
+              },
+              "FejlKode": {
+                "description": "Kode til beskrivelse af fejl. Fltt kan bruges til både tekniske og andre typr af fejl.Fx for typen \"Teknisk fejl\" kunne en kode være \"Servicekald fejlet\".",
+                "type": "string",
+                "x-typeDescription": "Angiver en tekst på max. 20 alfanummeriske karakterer"
+              },
+              "FejlTekst": {
+                "description": "Tekst der beskriver koden for fejl.",
+                "type": "string",
+                "x-typeDescription": "En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb. I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)"
+              },
+              "Ejer": {
+                "required": [
+                  "PersonCPRNummer"
+                ],
+                "properties": {
+                  "PersonCPRNummer": {
+                    "description": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.",
+                    "type": "string",
+                    "x-typeDescription": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.",
+                    "pattern": "((((0[1-9]|1[0-9]|2[0-9]|3[0-1])(01|03|05|07|08|10|12))|((0[1-9]|1[0-9]|2[0-9]|30)(04|06|09|11))|((0[1-9]|1[0-9]|2[0-9])(02)))[0-9]{6})|0000000000"
+                  }
+                }
+              },
+              "Ejendom": {
+                "required": [
+                  "KommuneNummer",
+                  "KommunepromilleGrundskyld",
+                  "EjendomNummer",
+                  "VurderingsejendomID",
+                  "BFENummerListe",
+                  "Beliggenhedsadresse",
+                  "Vurdering",
+                  "Grundskyld2024GammelLov",
+                  "Grundskyld2024NyLov",
+                  "EjendomsgrundskyldBeløb"
+                ],
+                "properties": {
+                  "KommuneNummer": {
+                    "description": "En 3-cifret kode som identificerer en kommune.(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+                    "type": "integer",
+                    "x-typeDescription": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+                    "maximum": 999,
+                    "minimum": 100
+                  },
+                  "KommunepromilleGrundskyld": {
+                    "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for ikke-produktionsjord",
+                    "type": "number",
+                    "maximum": 999
+                  },
+                  "EjendomNummer": {
+                    "description": "6-cifret identifikation af en ejendom i BBR-registreret",
+                    "type": "integer",
+                    "x-typeDescription": "Angiver en ejendoms nummer i BBR"
+                  },
+                  "VurderingsejendomID": {
+                    "description": "Entydig identifikation for en Vurderingsejendom som den forventes at se ud i det fremtidige Ejendomsvurderingssystem ICE. ",
+                    "type": "integer",
+                    "x-typeDescription": "Et heltal fra 0 - 9.999.999.999"
+                  },
+                  "BFENummerListe": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "BestemtFastEjendomBFENummer": {
+                          "description": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.OBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side.",
+                          "type": "integer",
+                          "x-typeDescription": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.OBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side."
+                        }
+                      }
+                    }
+                  },
+                  "Beliggenhedsadresse": {
+                    "required": [
+                      "AdresseKortAdressering"
+                    ],
+                    "properties": {
+                      "AdresseKortAdressering": {
+                        "description": "Kort adresseringsfelt hvor man kan anføre enten - Vejnavn, husnummer og etageoplysningereller- teksten \"Ukendt adresse\"Evt. afkortning:vejnavnet kortes ned til hvad der måtte være plads til ud over husnummer etc. og der laves ikke mellemrum foran husnr. når der er tale om en forkortet tekst.Eksempel: Borgmester Jakob Jense32 2. thNote:Husnummer er husnummertekst til adressen, som den leveres fra Datafordeleren. Her er AdresseFraHusNummer + evt. AdresseFraHusBogstav kombineret, ligesom det yderligere kan være kombineret med AdresseTilHusNummer + evt. AdresseTilHusBogstav.F.eks.: 10; 10A; 10a; 12-16; 12-16BEtageoplysninger \u003d etagebetegnelse + dørbetegnelse fra Datafordeleren.",
+                        "type": "string",
+                        "x-typeDescription": "Angiver en tekst på max. 30 karakterer."
+                      },
+                      "AdressePostNummer": {
+                        "description": "Angiver postnummer (4-cifre)",
+                        "type": "integer",
+                        "x-typeDescription": "Angiver postnummer (4-cifre)",
+                        "minimum": 1
+                      },
+                      "AdressePostDistrikt": {
+                        "description": "Angiver postdistriktnavn for postnummer",
+                        "type": "string",
+                        "x-typeDescription": "Angiver postdistriktsnavn for postnummer"
+                      },
+                      "AdresseByNavn": {
+                        "description": "Angiver bynavn (lokalt stednavn)Et supplerende bynavn som knyttes til en gruppe af adresser, når det er hensigtsmæssigt at præcisere deres beliggenhed inden for et postdistrikt yderligere. F.eks. øer, som ikke har selvstændigt postnummer; her vil bynavnet give vigtig viden om, hvordan man når frem til adressen.",
+                        "type": "string",
+                        "x-typeDescription": "Generisk navnefelt.Bruges til personnavne og virksomhedsnavne m.m."
+                      }
+                    }
+                  },
+                  "Vurdering": {
+                    "required": [
+                      "EjendomsvurderingVurderingsID",
+                      "EjendomsvurderingÆndringDato",
+                      "EjendomsvurderingÅr",
+                      "EjendomsvurderingOprindelseKode",
+                      "GrundværdiBeskatningsgrundlag"
+                    ],
+                    "properties": {
+                      "EjendomsvurderingVurderingsID": {
+                        "description": "Nøgle der entydig identificerer en ejendomsvurdering",
+                        "type": "integer",
+                        "x-typeDescription": "Et positivt heltal, der kan repræsenterer værdier i intervallet 0 til 99.999.999.999"
+                      },
+                      "EjendomsvurderingÆndringDato": {
+                        "description": "Angiver den dato for hvornår en vurdering er oprrettet Ex. hvis der klages over en vurdering med vurderingsår 2012 og ændring dato 01-10-2012, så oprettes der f.eks. den 27.5.2018 en klagesag med vurderingår 2012 og ændringdato 27-05-2013",
+                        "type": "string",
+                        "format": "date",
+                        "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+                      },
+                      "EjendomsvurderingÅr": {
+                        "description": "Det år vurderingen gælder for.",
+                        "type": "integer",
+                        "x-typeDescription": "Et årstal. Gyldige værdier er 1700 - 9999",
+                        "pattern": "[0-9]{4}",
+                        "maximum": 9999,
+                        "minimum": 1700
+                      },
+                      "EjendomsvurderingOprindelseKode": {
+                        "description": "(Svarer til VURMARK hos VUR)En kode som siger noget om en vurdering på flere parametre:System: \tVUR; EogGType:\tordinær; foreløbigÆndring:\tÆndret; (Ikke ændret)Videreførelse:\tvidereført; (ikke videreført)Årstype: \tVurderingsår; efterfølgende årGrundtype: \tudstykning fra erhvervsejendom (i Q4 2019); (andet)Yderligere: Manuelt behandlet i SLUTI koderne kombineres flere parametre, f.eks.:0\tIngen vurdering.1\tOrdinær Vurdering fra VUR2\tForeløbig beregning fra E\u0026G3\tOrdinær Vurdering fra E\u0026G...8\tVidereført ændret foreløbig beregning fra E\u0026G9\tQ4: Erhvervsejendom, hvorfra der er sket udstykning til en Q4-ejendom10\tQ4 - Foreløbig beregning fra E\u0026G...13\tQ4 - Videreført ændret foreløbig beregning14\tManuel sagsbehandling foretaget i SLUT (reserveret til EVS SLUT/FORSKUD – kommer ikke på vurderinger eller foreløbige beregninger i VUR)...",
+                        "type": "integer",
+                        "x-typeDescription": "En integer maksimalt bestående af 3 decimaler"
+                      },
+                      "GrundværdiBeskatningsgrundlag": {
+                        "description": "Beskatningsgrundlaget, som grundskylden beregnes af, er grundværdien reduceret efter forsigtighedsprincippet og fratrukket fritagelser og fradrag for forbedringer.Beregningsrækkefølgen er i december 2021 ikke endeligt fastlagt",
+                        "type": "number",
+                        "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+                      }
+                    }
+                  },
+                  "Grundskyld2024GammelLov": {
+                    "required": [
+                      "EjendomsgrundskyldBeløb"
+                    ],
+                    "properties": {
+                      "EjendomsgrundskyldBeløb": {
+                        "description": "Grundskyld der skal opkræves for hele ejendommen for et helt givet IndkomstÅr før der evt. fratrækkes rabat.",
+                        "type": "number",
+                        "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+                      }
+                    }
+                  },
+                  "Grundskyld2024NyLov": {
+                    "required": [
+                      "EjendomsgrundskyldBeløb"
+                    ],
+                    "properties": {
+                      "EjendomsgrundskyldBeløb": {
+                        "description": "Grundskyld der skal opkræves for hele ejendommen for et helt givet IndkomstÅr før der evt. fratrækkes rabat.",
+                        "type": "number",
+                        "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+                      }
+                    }
+                  },
+                  "EjendomsgrundskyldBeløb": {
+                    "description": "Grundskyld der skal opkræves for hele ejendommen for et helt givet IndkomstÅr før der evt. fratrækkes rabat.",
+                    "type": "number",
+                    "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+                  }
+                }
+              },
+              "EjendomEjerskabEjerandel": {
+                "description": "Ejerandel af ejendomsværdi.1\u003d100Felt 735",
+                "type": "number",
+                "x-typeDescription": "En andel udtrykt som kommatal med 4 decimaler, hvor 1\u003d100%Bemærk at i JSON er skilletegn punktum:1.0000 \u003d 100%0.5000 \u003d 50%"
+              },
+              "Ejerperiode": {
+                "required": [
+                  "ÅrsejerperiodeStartdato",
+                  "ÅrsejerperiodeSlutDato",
+                  "ÅrsejerperiodeAntalDage",
+                  "EjendomEjerskabSlutdato"
+                ],
+                "properties": {
+                  "ÅrsejerperiodeStartdato": {
+                    "description": "Den første dag i ejerperioden i et givet IndkomstÅr. Hvis ejendommen er erhvervet før IndkomstÅrets begyndelse, er Startdatoen 1. januar i IndkomstÅret.",
+                    "type": "string",
+                    "format": "date",
+                    "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+                  },
+                  "ÅrsejerperiodeSlutDato": {
+                    "description": "Den sidste dag i ejerperioden i et givet IndkomstÅr.Hvis ejendommen IKKE bliver afhændet før IndkomstÅrets afslutning, er Slutdatoen 31. december i IndkomstÅret. Ellers er det datoen for afhændelsen.",
+                    "type": "string",
+                    "format": "date",
+                    "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+                  },
+                  "ÅrsejerperiodeAntalDage": {
+                    "description": "Antallet af dage i et givet år et ejendomsejerskab gælder.Beregnes ud fra et år på 360 dage, dvs. 30 dage pr. måned uanset månedens faktiske længde.",
+                    "type": "integer",
+                    "x-typeDescription": "Heltal med op til 3 cifre"
+                  },
+                  "EjendomEjerskabSlutdato": {
+                    "description": "Slutdatoen for ejerperioden i hvilken der skal betales ejendomsværdiskat i forbindelse med køb/salg",
+                    "type": "string",
+                    "format": "date",
+                    "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+                  }
+                }
+              },
+              "Ejerskabsgrundskyld": {
+                "required": [
+                  "OpkrævningskanalPersonskat31Dec",
+                  "EjerfordeltGrundskyldBeløb"
+                ],
+                "properties": {
+                  "OpkrævningskanalPersonskat31Dec": {
+                    "description": "Markering af om grundskyldsopkrævning for denne ejendom var genstand for opkrævning i personskattesystemerne for denne ejer den 31.12 i foregående indkomstår.I indkomståret 2024 vil det være en markering af om personen helt eller delvist ejede ejendommen 31.12.2023, da opkrævning på dette tidspunkt blev foretaget af kommunerne.",
+                    "type": "boolean",
+                    "x-typeDescription": "Dette er en boolean datatype, hvor man kan vælge mellem ja og nej. I Json er værdierne hhv. true og false."
+                  },
+                  "EjerfordeltGrundskyldBeløb": {
+                    "description": "Den beregnede grundskyld for et givet ejerfohold i et givet IndkomstÅr, d.v.s. hvor der er indregnet ejerandel og Årsejerperiode, men ikke en evt. rabat.",
+                    "type": "number",
+                    "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

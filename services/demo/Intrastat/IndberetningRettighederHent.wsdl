@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://rep.oio.dk/skat.dk/intrastat/" name="IndberetningRettighederHentService" xmlns:fase2="http://rep.oio.dk/skat.dk/intrastat/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Dette er en simplificeret frontend for en eksisterende service og er oprettet mhp. en OIO-service.Kontroller om en revisor er registreret for en given angivelsetype for en given virksomhed. </xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/intrastat/">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/432652/artefact/IndberetningRettighederHentInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="IndberetningRettighederHentServiceRequest">
+		<part name="Request" element="fase2:IndberetningRettighederHent_I"/>
+	</message>
+	<message name="IndberetningRettighederHentServiceResponse">
+		<part name="Response" element="fase2:IndberetningRettighederHent_O"/>
+	</message>
+	<portType name="IndberetningRettighederHentServicePortType">
+		<operation name="getIndberetningRettighederHent">
+			<input message="fase2:IndberetningRettighederHentServiceRequest"/>
+			<output message="fase2:IndberetningRettighederHentServiceResponse"/>
+		</operation>
+	</portType>
+</definitions>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+	
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+	
+   
+   
+   <xs:element name="KompenserTrans" type="fase2.1:KompenserTransType"/>
+	
+   
+   
+   <xs:complexType name="KompenserTransType">
+		
+      
+      
+      <xs:sequence>
+			
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+		
+      
+      
+      </xs:sequence>
+	
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

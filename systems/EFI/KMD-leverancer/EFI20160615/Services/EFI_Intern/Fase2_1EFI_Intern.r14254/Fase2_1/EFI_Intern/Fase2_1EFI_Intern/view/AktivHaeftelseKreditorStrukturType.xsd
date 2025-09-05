@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:element name="AktivHæftelseKreditorStruktur"
+                     type="fase2.1:AktivHæftelseKreditorStrukturType"/>
+         <xs:complexType name="AktivHæftelseKreditorStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:PersonNavnNavn" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:PersonFødselDato" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

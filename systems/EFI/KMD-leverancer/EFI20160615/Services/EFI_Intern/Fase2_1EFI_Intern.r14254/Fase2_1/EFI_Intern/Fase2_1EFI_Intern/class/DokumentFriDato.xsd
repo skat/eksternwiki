@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="DokumentFriDatoLedetekst" type="fase2.1:Tekst11Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på et frit datofelt der knytter sig til dokumentet - skal være kendt i Captia</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DokumentFriDatoDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien for et frit datofelt knyttet til dokumentet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst32Type.xsd"/>
+         
+         <xs:element name="EFIDataTabelNavn" type="fase2.1:Tekst32Type">
+            <xs:annotation>
+               <xs:documentation>YIL: SKal formentlig være enum på sigt. Til start kode værdi med de kendte værdier:  FORDRING_TYPE FORDRING_ART INDSATS_TYPE BOBEHAND_TYPE FRIST_TYPE</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

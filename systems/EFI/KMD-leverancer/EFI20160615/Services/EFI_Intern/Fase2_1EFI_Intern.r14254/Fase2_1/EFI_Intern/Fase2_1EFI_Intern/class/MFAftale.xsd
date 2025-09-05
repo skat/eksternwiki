@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MFAftaleKanSkalEjKodeType.xsd"/>
+         <xs:include schemaLocation="../types/MFAftaleBerigelseKodeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst20Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="MFAftaleKanSkalEjKode" type="fase2.1:MFAftaleKanSkalEjKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om fordringhaver kan, skal eller ikke må indberette på et felt  Enumeration med værdierne: KAN:     Kan indberette SKAL:   Skal indberette EJ:        Må ikke indberette</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleBerigelseKode" type="fase2.1:MFAftaleBerigelseKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Koden angiver en beregnings algoritme for berigelse af et fordrings felt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleDeaktiveret" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en Modtag Fordring-aftale er deaktiveret</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleKontaktPerson" type="fase2.1:Tekst20Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på kontaktperson ifm Modtag Fordring-aftalen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleSystemIntegration" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt fordringshaver benytter sig af system til system integration med EFI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleInteressentBerig" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt fordringshaver garanterer at alle involverede interessenter på en given fordring i mod et firma af typen I/S er informeret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleSenesteIndberetning" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunkt for seneste fordring indberetning på aftalen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleUdbetalendeMyndighed" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er aftale modpart en udbetalende myndighed?   Er kun relevant for rettighedshaveraftaler</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAftaleOpretMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skal aftale oprettes eller opdateres?</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

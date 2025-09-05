@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USDispensationTypeListeHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At stille den komplette liste af supplerende data typer til rådighed for andre systemer.</xs:documentation>
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USDispensationTypeListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USDispensationTypeListeHentServiceRequest">
+		<wsdl:part name="Request" element="dmr:USDispensationTypeListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="USDispensationTypeListeHentServiceResponse">
+		<wsdl:part name="Response" element="dmr:USDispensationTypeListeHent_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USDispensationTypeListeHentServicePortType">
+		<wsdl:operation name="getUSDispensationTypeListeHent">
+			<wsdl:input message="dmr:USDispensationTypeListeHentServiceRequest"/>
+			<wsdl:output message="dmr:USDispensationTypeListeHentServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

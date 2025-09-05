@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../class/MFFordring.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../class/Haeftelse.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterHentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="MFFordringOpret_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MFFordringOpret_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MFFordringOpret_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:DMIFordringFordringArtKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:DMIFordringTypeKategori" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:DMIFordringModtagelseDato" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:DMIFordringStiftelseTidspunkt" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:MFFordringSagsbehandles" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:DMIIndberetterHentStruktur" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:DMITransaktionLøbenummer" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:FordringBeløbStruktur" minOccurs="0"/>
+
+
+                     <xs:element name="HæftelseSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="EFIHæftelse" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:HæftelseForm"/>
+
+                                       <xs:element ref="fase2.1:HæftelseSubsidiær" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:HæftelseUnderBobehandling"/>
+                  
+                                       <xs:element ref="fase2.1:DMIIndberetterHentStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:HæftelseStartDato"/>
+
+                                       <xs:element ref="fase2.1:HæftelseSlutDato" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

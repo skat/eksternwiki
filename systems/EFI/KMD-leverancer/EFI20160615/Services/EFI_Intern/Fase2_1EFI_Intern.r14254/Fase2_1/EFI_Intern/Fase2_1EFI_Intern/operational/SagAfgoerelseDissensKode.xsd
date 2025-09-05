@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         
+         <xs:element name="SagAfgørelseDissensKode" type="fase2.1:TalHel2Type">
+            <xs:annotation>
+               <xs:documentation>Det kan angives om der har været afgivet dissens i forbindelse med sagens afgørelse.  Værdisæt: 01:Ja 02: Nej 03: Retsmøde formand 04: Retsmøde medlem 05: Skr. Votering formand 06: Skr. Votering medlem</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

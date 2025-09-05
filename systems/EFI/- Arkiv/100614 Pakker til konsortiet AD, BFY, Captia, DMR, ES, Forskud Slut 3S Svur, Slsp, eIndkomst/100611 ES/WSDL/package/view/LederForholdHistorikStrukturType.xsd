@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../operational/LedelseForholdGyldigFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/LedelseForholdGyldigTil.xsd"/>
+   
+   
+   
+   <xs:element name="LederForholdHistorikStruktur" type="fase2.1:LederForholdHistorikStrukturType"/>
+   
+   
+   
+   <xs:complexType name="LederForholdHistorikStrukturType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+               
+         
+         <!--Sequence removed-->
+                  
+         
+            
+            
+         <xs:element ref="fase2.1:LedelseForholdGyldigFra"/>
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:LedelseForholdGyldigTil" minOccurs="0"/>
+
+
+      
+         
+         
+            
+         
+         
+         
+         
+         
+         
+         
+      
+					
+      
+      
+      </xs:sequence>
+							
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

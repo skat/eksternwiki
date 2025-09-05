@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Hændelsen hvor en kunde får erstattet sit kundenummer med et nyt (f.eks. ved kønsskifte).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="KundeNummerSkiftAktivDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet hvor kundeskiftet bliver aktivt - evt. tidspunkt for registrering</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

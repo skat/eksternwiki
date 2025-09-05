@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Er en del af en opkrævningsfordring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:element name="OpkrævningDelFordringBeløb"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb tilknyttet undertypen til en opkrævningsfordringtype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

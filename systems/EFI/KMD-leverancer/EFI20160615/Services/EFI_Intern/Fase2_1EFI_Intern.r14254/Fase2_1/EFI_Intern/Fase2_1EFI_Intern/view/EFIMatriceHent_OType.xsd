@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/EFIMatriceNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIMatriceVersionID.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIMatriceGyldigFraDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIMatriceGyldigTilDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIMatriceStatus.xsd"/>
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/EFIMatriceModelStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIMatriceCelleSamlingStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIMatriceValideringRapportSamlingStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIMatriceDeltaRapportSamlingStrukturType.xsd"/>
+				     
+         <xs:element name="EFIMatriceHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:EFIMatriceHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="EFIMatriceHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="EFIMatriceStruktur" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:EFIMatriceNavn"/>
+                  
+                              <xs:element ref="fase2.1:EFIMatriceVersionID"/>
+                  
+                              <xs:element ref="fase2.1:EFIMatriceGyldigFraDato"/>
+
+                              <xs:element ref="fase2.1:EFIMatriceGyldigTilDato" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:EFIMatriceStatus"/>
+                  
+                              <xs:element ref="fase2.1:EFIMatriceModelStruktur"/>
+                  
+                              <xs:element ref="fase2.1:EFIMatriceCelleSamlingStruktur"/>
+
+                              <xs:element ref="fase2.1:EFIMatriceValideringRapportSamlingStruktur" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:EFIMatriceDeltaRapportSamlingStruktur" minOccurs="0"/>
+
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Domænespecifik information som supplerer de generelle opgaveoplysninger. I EFI domænet er ekstrainfo f.eks. sportype, driftformtype, indkomsttype osv. Kan være repræsenteret af en unik nøgle, en værdi eller begge dele.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/KompetenceKategoriType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OpgaveEkstrainfoID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ekstrainfoens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoKompetenceKategori" type="fase2.1:KompetenceKategoriType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ekstrainfoens kompetencekategori.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoOpgaveID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den opgave ekstrainfoen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoNøgle" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ekstrainfoens nøgle. Hvis det f.eks. er i kategorien sportype, er nøglen sportypens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoVærdi" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ekstrainfoens værdi. Kan være et beløb, som f.eks. ved samlede fordringer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet ekstrainfoen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ekstrainfoen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret ekstrainfoen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ekstrainfoen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet ekstrainfoen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt ??? er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgaveEkstrainfoTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til ekstrainfoen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

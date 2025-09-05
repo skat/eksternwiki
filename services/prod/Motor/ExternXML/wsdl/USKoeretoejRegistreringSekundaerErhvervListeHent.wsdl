@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USKoeretoejRegistreringSekundaerErhvervListeHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At sende oplysninger om et køretøj registrering til Kommunerne eller til et privat parkering selskab. </xs:documentation>
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USKoeretoejRegistreringSekundaerErhvervListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USKoeretoejRegistreringSekundaerErhvervListeHentServiceRequest">
+		<wsdl:part name="Request" element="dmr:USKoeretoejRegistreringSekundaerErhvervListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="USKoeretoejRegistreringSekundaerErhvervListeHentServiceResponse">
+		<wsdl:part name="Response" element="dmr:USKoeretoejRegistreringSekundaerErhvervListeHent_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USKoeretoejRegistreringSekundaerErhvervListeHentServicePortType">
+		<wsdl:operation name="getUSKoeretoejRegistreringSekundaerErhvervListeHent">
+			<wsdl:input message="dmr:USKoeretoejRegistreringSekundaerErhvervListeHentServiceRequest"/>
+			<wsdl:output message="dmr:USKoeretoejRegistreringSekundaerErhvervListeHentServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

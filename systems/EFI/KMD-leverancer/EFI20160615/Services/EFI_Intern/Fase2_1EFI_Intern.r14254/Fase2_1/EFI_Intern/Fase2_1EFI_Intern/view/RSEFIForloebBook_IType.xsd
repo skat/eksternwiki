@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Opgave.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Medarbejderprofil.xsd"/>
+         <xs:include schemaLocation="../view/RSEFIEkstraInfoStrukturType.xsd"/>
+				     
+         <xs:element name="RSEFIForløbBook_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:RSEFIForløbBook_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="RSEFIForløbBook_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="OpgaveForløb">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="OpgaveListe">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element name="Opgave" minOccurs="2" maxOccurs="unbounded">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:OpgaveOpgavetypeID"/>
+
+                                                <xs:element ref="fase2.1:OpgaveBookingreference" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveKundeid" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveTekst" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveLinkParametre" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveSandsynlighed" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgavePrioritet" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveVentedage" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveGennemførselsfrist" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveGennemførselstid" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgavePoint" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveOverbooking" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveBookingInterval" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:OpgaveBookingsvarDage" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:RSEFIEkstraInfoStruktur" minOccurs="0"/>
+
+
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="BooketAf" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:MedarbejderprofilWNummer"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

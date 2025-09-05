@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Oplysninger om fysisk forsendelse af post</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="PostForsendelsePortopriszoneKode" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Zone for brevporto. Anvendes til sortering og beregning af porto. Eksempel: 1=Danmark</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

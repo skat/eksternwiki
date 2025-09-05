@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:dmi:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:skatdaekningtilstiftelsedato="urn:oio:skat:dmi:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="SKATDaekningTilStiftelseDato" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>NAER afleverer stiftelsesdato på den sidste SKAT fordring, som er behandlet under udbetaling  SKAT anvender datoen til brug for hvilke fordringer der må dækkes. Der må dækkes fordringer til og med stiftelsesdatoen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

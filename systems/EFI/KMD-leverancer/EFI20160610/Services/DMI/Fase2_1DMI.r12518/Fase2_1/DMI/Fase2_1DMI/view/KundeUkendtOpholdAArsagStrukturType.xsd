@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/KundeUkendtOpholdAArsagKode.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KundeUkendtOpholdAArsagBegr.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KundeUkendtOpholdAArsagTekst.xsd"/>
+				     
+         <xs:element name="KundeUkendtOpholdÅrsagStruktur"
+                     type="fase2.1:KundeUkendtOpholdÅrsagStrukturType"/>
+         <xs:complexType name="KundeUkendtOpholdÅrsagStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KundeUkendtOpholdÅrsagKode"/>
+                  
+                  <xs:element ref="fase2.1:KundeUkendtOpholdÅrsagBegr"/>
+
+               <xs:element ref="fase2.1:KundeUkendtOpholdÅrsagTekst" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

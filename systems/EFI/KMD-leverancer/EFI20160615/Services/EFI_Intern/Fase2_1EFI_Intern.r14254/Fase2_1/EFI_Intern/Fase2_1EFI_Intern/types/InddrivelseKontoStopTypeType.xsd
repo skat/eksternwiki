@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="InddrivelseKontoStopTypeType">
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandler mulighed for valg mellem stop på kundens konto.  Liste af faste værdier (Enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="3"/>
+                  <xs:enumeration value="UDB"/>
+                  <xs:enumeration value="UDL"/>
+                  <xs:enumeration value="OUS"/>
+                  <xs:enumeration value="OUO"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

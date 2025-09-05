@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/BoedeforvandlingStrafAfsoningPaabegyndDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoedeforvandlingStrafAfsoningAfslutDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BoedeforvandlingStrafOpfoelgningDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BoedeforvandlingStraf.xsd"/>
+         <xs:element name="BødeforvandlingStrafAfsoningOpdater"
+                     type="fase2.1:BødeforvandlingStrafAfsoningOpdaterType"/>
+         <xs:complexType name="BødeforvandlingStrafAfsoningOpdaterType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BødeforvandlingStrafAfsoningPåbegyndDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BødeforvandlingStrafAfsoningAfslutDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BødeforvandlingStrafOpfølgningDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BødeforvandlingStrafBegrundelse" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

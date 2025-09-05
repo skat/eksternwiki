@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/Civilstand.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/Fax.xsd"/>
+         <xs:element name="StatstidendePersonStruktur" type="fase2.1:StatstidendePersonStrukturType"/>
+         <xs:complexType name="StatstidendePersonStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="fase2.1:PersonNavnNavn"/>
+
+                  <xs:element ref="fase2.1:PersonFødselDato" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:PersonCPRNummer" minOccurs="0"/>
+
+
+                  <!--Sequence removed-->
+
+                     <xs:element name="TidligereNavn" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:PersonNavnNavn"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+                  <!--Sequence removed-->
+
+                     <xs:element name="EfternavnVedFødsel" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:PersonNavnEfterNavn"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+
+                  <xs:element ref="fase2.1:CivilstandDødDato" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:TelefonNummer" minOccurs="0"/>
+
+
+
+                  <xs:element ref="fase2.1:FaxNummer" minOccurs="0"/>
+
+               
+            
+         
+         
+         
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

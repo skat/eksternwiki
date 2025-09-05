@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="UnderkontoArtKodeType">
+               <xs:annotation>
+                  <xs:documentation>Angiver typen af afregning, f.eks. månedlig, kvartal osv   Første ciffer angiver angivelsestypen, f.eks. er 9 = Moms, 7 = Lønsum og 2 = A-skat   De to efterfølende cifre viser hvorledes virksomheden angiver f.eks. 900 = moms kvartalsafregning og 940 = moms, angivelse fra forsent registreret virksomhed</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:pattern value="[0-9]{3}"/>
+                  <xs:totalDigits value="3"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

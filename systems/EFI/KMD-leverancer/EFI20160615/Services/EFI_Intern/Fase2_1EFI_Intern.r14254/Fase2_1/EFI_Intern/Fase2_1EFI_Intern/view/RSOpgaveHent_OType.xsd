@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../class/RSOrganisatoriskEnhed.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/OpgaveStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ArbejdsstedStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpgavetypeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpgavekoeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RSRessourceStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/OpgaveAfvisningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SlotStrukturType.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/RSEFIEkstraInfoStrukturType.xsd"/>
+				     
+         <xs:element name="RSOpgaveHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:RSOpgaveHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="RSOpgaveHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="Opgave" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:OpgaveStruktur"/>
+                              <xs:element name="OrgEnhedAdresse">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:RSOrganisatoriskEnhedNavn"/>
+                  
+                                       <xs:element ref="fase2.1:ArbejdsstedStruktur"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element ref="fase2.1:OpgavetypeStruktur" minOccurs="0"/>
+
+
+
+                              <xs:element ref="fase2.1:OpgavekøStruktur" minOccurs="0"/>
+
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="ProduktionslederSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="ProduktionslederListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:RSRessourceStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="RessourceSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Ressourcer">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:RSRessourceStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="AfvisningSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Afvisninger">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:OpgaveAfvisningStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="SlotSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="KalenderSlot">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:SlotStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="ForløbsopgaveSamling" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="Forløbsopgaver">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:OpgaveStruktur" minOccurs="1" maxOccurs="unbounded"/>
+
+                                                   <xs:element ref="fase2.1:OpgavetypeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                              <!--Sequence removed-->
+
+                                 <xs:element name="EkstraInfo" minOccurs="0">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:RSEFIEkstraInfoStruktur"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

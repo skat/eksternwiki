@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/EFIVersionNummer.xsd"/>
+				     
+         <xs:include schemaLocation="../class/SporSkabelon.xsd"/>
+         <xs:include schemaLocation="../operational/SporSkifteMetode.xsd"/>
+				     
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/SporRegelType.xsd"/>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsParameter.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIVaerdiType.xsd"/>
+         <xs:include schemaLocation="../class/Graensezone.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../view/EFIVaerdiTypeStrukturType.xsd"/>
+				     
+         <xs:element name="SporSkabelonGemStruktur" type="fase2.1:SporSkabelonGemStrukturType"/>
+         <xs:complexType name="SporSkabelonGemStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:EFIVersionNummer" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:SporSkabelonID"/>
+                  
+                  <xs:element ref="fase2.1:SporSkabelonNavn"/>
+                  
+                  <xs:element ref="fase2.1:SporSkifteMetode"/>
+               <xs:element name="SporSkabelonIndsatsSkabelonSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="SporSkabelonIndsatsSkabelon" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:SporSkabelonIndsatsSkabelonID"/>
+                  
+                                 <xs:element ref="fase2.1:IndsatsTypeKode"/>
+                  
+                                 <xs:element ref="fase2.1:IndsatsUnderTypeKode"/>
+                                 <xs:element name="SporRegelTypeSamling">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="SporRegelType" minOccurs="0" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:SporRegelTypeID"/>
+                                                   <xs:element name="AktiverIndsatsSkabelon">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:SporSkabelonIndsatsSkabelonID"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                   <xs:element ref="fase2.1:TilstandID"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                                 <xs:element name="IndsatsParameterSamling">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="IndsatsParameterGem" minOccurs="0" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:IndsatsParameterKode"/>
+                                                   <xs:element name="NyVærdi">
+                                                      <xs:complexType>
+                                                         <xs:choice>
+                                                            <xs:element ref="fase2.1:EFIVærdiTypeStruktur"/>
+				
+				
+				                                                        <xs:element ref="fase2.1:EFIVærdiTypeSlet"/>
+                                                         </xs:choice>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                   <xs:element ref="fase2.1:EFIVærdiTypeFraDato"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="IkkeTilladtIndsatsTypeSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="IkkeTilladtIndsatsType" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:IndsatsTypeKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <!--Sequence removed-->
+
+                  <xs:element name="GrænsezoneVærdierType" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <!--Sequence removed-->
+
+                              <xs:element name="OmfattesIkkeMaxbeløb" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:GrænsezoneOmfattesIkkeMaxbeløb"/>
+                  
+                                       <xs:element ref="fase2.1:SporSkabelonID"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="Maxbeløb" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:GrænsezoneMaxbeløb"/>
+                  
+                                       <xs:element ref="fase2.1:SporSkabelonID"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="OmfattesIkkeMaxProcent" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:GrænsezoneOmfattesIkkeMaxProcent"/>
+                  
+                                       <xs:element ref="fase2.1:SporSkabelonID"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                           <!--Sequence removed-->
+
+                              <xs:element name="FordringTypeSporSkabelon" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="FordringTypeForSportypeSkifteSamling">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:DMIFordringTypeKode" minOccurs="1" maxOccurs="unbounded"/>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                       <xs:element ref="fase2.1:SporSkabelonID"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="RSDomæneType">
+               <xs:annotation>
+                  <xs:documentation>Et domæne er et systemområde i SKAT som anvender Ressourcestyring. Hvert domæne har sine egne opgavekøer og kompetencekategorier, og har mulighed for at supplere opgaverne med egne informationer når der bookes.  Der er i øjeblikket ét domæne:       1000 EFI</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="1000"/>
+                  <xs:minInclusive value="1000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

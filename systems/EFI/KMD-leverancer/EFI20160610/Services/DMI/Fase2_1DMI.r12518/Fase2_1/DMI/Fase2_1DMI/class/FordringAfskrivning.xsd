@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Afskrivning af fordringer opstår når RIM/sagsbehandler giver afkald på at inddrive en fordring helt eller delvist, f.eks. i eftergivelsessager, konkurser, etc.  Afskrivning skal enten godkendes vha. Godkendelse eller sagsbehandlerens autorisation.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentSatsPositivType.xsd"/>
+         <xs:include schemaLocation="../types/FordringAfskrivningAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="FordringAfskrivningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dags dato, ,  (samme som registreringsdato i DMI)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningVirkningFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra afskrivningen skal træde i kraft. Løsningen skal automatisk indsætte dags dato, men sagsbehandleren skal have mulighed for at ændre den.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring ønskes afskrevet med i den indrapporterede valuta. Sagsbehandleren vælger, om hele fordringen eller kun en del af den skal afskrives. Default skal det være det fulde Fordringsbeløb. I EFI kan sagsbehandleren enten indtaste et beløb der skal afskrives, eller en procent der omregnes automatisk til et beløb. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring ønskes afskrevet med indrapporteret eller omregnet til danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningProcent" type="fase2.1:ProcentSatsPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Procent som fordringen skal er afskrevet med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningAfsBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring er afskrevet  med i den indrapporterede valuta.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningAfsBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb en fordring er afskrevet  omregnet til danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningÅrsagKode"
+                     type="fase2.1:FordringAfskrivningÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers mulighed for at vælge en årsag til afskrivning af fordring ud fra en fast liste. Ved valg af årsagskode anden skal felt Anden tekst udfyldes med forklaring af, hvorfor de øvrige årsager ikke er anvendelige</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for, hvorfor en afskrivning er foretaget og anvendes typisk til at bestemme om en afskrivning kræver en godkendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringAfskrivningBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

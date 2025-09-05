@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En organisatorisk enhed i SKAT dækker over skattecentre, faglige søjler og enheder.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/OrganisatoriskEnhedNummerType.xsd"/>
+         <xs:include schemaLocation="../types/AAbningTidType.xsd"/>
+         <xs:element name="OrganisatoriskEnhedNavn" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på den organisatoriske enhed, f.eks. skattecentrets navn. Eksempel: Hvis typen af organisation er Kundecenter, så vil navnet være Roskilde, så det er Kundecenter Roskilde.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedNummer" type="fase2.1:OrganisatoriskEnhedNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette er nummeret på den organisatoriske enhed, f.eks. nummeret på Skattecenteret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedÅbningTid" type="fase2.1:ÅbningTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>RestanceInddrivelsesmyndighed: Det skal være muligt i forbindelse med ressoucestyring at kunne inddrage den organisatoriske enheds åbningstid.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

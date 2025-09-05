@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Medarbejderarbejdssted er relationen mellem en medarbejder og et arbejdssted medarbejderen selv har oprettet i sin medarbejderprofil. Indeholder en gyldighedsperiode.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="MedarbejderArbejdsstedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>MedarbejderArbejdssted objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedArbejdsstedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Arbejdsstedets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedMedarbejderprofilID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejderprofilens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdatoen på gyldighedsperioden for relationen mellem arbejdsstedet og medarbejderen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen på gyldighedsperioden for relationen mellem arbejdsstedet og medarbejderen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet arbejdsstedet. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt arbejdsstedet er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret arbejdsstedet. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt arbejdsstedet er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet arbejdsstedet. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt arbejdsstedet er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MedarbejderArbejdsstedTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til arbejdsstedet, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

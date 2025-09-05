@@ -1,0 +1,1983 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "0.1",
+    "x-svnRevision": 25888,
+    "x-namespace": "Skat2022",
+    "x-source": "Ejendomme",
+    "title": "Ejendomsskat",
+    "x-system": "Ejendomsskat \u0026 Ejendomsbidrag  (EogE)",
+    "x-functionality": "Servicen er baseret på REST og modtager et GET Request med query parameters til at specificere output. Data er repræsenteret som JSON og til servicen findes der en OpenAPI-specifikation.\r\n\r\nKomplethed\r\nDer udstilles alle felter vedr. ejendomsskat.\r\nDer udstilles data med historik for de enkelte indkomstår og der udstilles data gældende fra 1. januar 2024.\r\n\r\nKorrekthed\r\nDer udstilles beregnet ejendomsskat, men en gyldig beregning kan på et senere tidspunkt erstattes af en ny, hvilket betyder, at den tidligere beregning ikke længere er gyldig.\r\n\r\nAktualitet\r\nEjendomsskatter beregnes årligt for det kommende indkomstår for alle ejendomme i september. \r\nDerefter genberegnes der løbende i beregningen for individuelle ejendomme ved ændringer i de relevante data der ligger til grund for beregningerne som f.eks. ejerforhold. Da disse data hentes dagligt fra eksterne registre, kan der gå op til en dag fra en ændring er registreret i det eksterne register, til den ændrede beregning bliver tilgængelig via denne service.\r\nI tilfælde af \"omplacering\" (dvs. ændring af en persons CPR-nummer), vil det nye CPR-nummer først fremgå når der sker en ændring i selve beregningen af ejendomsskat, f.eks. i forbindelse med ejerskifte.\r\n",
+    "contact": {
+      "name": "Udviklings- og forenklingsstyrelsen",
+      "url": "https://ufst.dk",
+      "email": "arkitektur-strategi@ufst.dk"
+    },
+    "license": {
+      "name": "Skatteforvaltningen"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dataudstilling.skat.dk",
+      "description": "Produktionsversionen af denne service"
+    },
+    {
+      "url": "https://dataudstilling.tfe.skat.dk",
+      "description": "Test versionen med syntetisk og anonymiseret data"
+    }
+  ],
+  "security": [
+    {
+      "jwtBillet": []
+    }
+  ],
+  "paths": {
+    "/ejendomsskathent/": {
+      "parameters": [
+        {
+          "name": "x-transaktions-id",
+          "in": "header",
+          "required": true,
+          "description": "Transaktions id er en universelt transaktionidentifikator der bruges til at spore en samlet handling på tværs af flere kald og systemer. Hvis en handling resultere i flere kald skal Transaktions id genbruges og hvis et kald finder sted grundet en handling i et andet system skal transaktions id fra den oprindelige handling bruges til videre kald. Transaktions id skal være en UUID version 4, jf. ietf RFC 4122 og skal kunne korreleres med logfiler fra det kaldende system for altid at kunne svare på hvem der er ansvarlig for den handling der har resulteret i kaldet.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-request-id",
+          "in": "header",
+          "required": true,
+          "description": "Request id er et requestidentifikator der bruges til at spore et kald og tilhørende svar. Request id må modsat transaktions id ikke genbruges. Request id skal være en UUID version 4, jf. ietf RFC 4122.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-major-version",
+          "in": "header",
+          "required": false,
+          "description": "Servicen versioneres med Semantisk versionering (Major, Minor, patch), hvor kun Major versioner indeholder breaking changes til snitfladen. Som udgangspunkt er der kun adgang til den nyeste version af services på en et miljø og det er kunderne såvel som service udstillers opgave at finde fejl på de lavere miljøer før en ny release løftes til produktion. Specifikt for nye Major releases kan der aftales en paralleldrift hvor den gamle version kan tilgås ved at specificere x-major-version. Hvis der kaldes med en x-major-version som ikke er tilgængelig modtages en fejl. Når x-major-version ikke er udfyldt kaldes den nyeste version automatisk.",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "EjendomsskatHent",
+        "description": "Servicen kræver et IndkomstÅr som input og returnerer de i dataudvekslingsaftalen specificerede data fra den beregnede ejendomsskat fordelt på ejendomme i det udvalgte IndkomstÅr, evt. yderligere begrænset med andre søgeparametre.\r\nSøgningen kan begrænses til en eller flere kommuner ved at angive en liste af KommuneNummer, til en eller flere ejendomme ved angivelse af en liste af BestemtFastEjendomBFENummer, eller til en eller flere ejere ved angivelse af liste(r) af PersonCPRNummer, eller VirksomhedCVRNummer .\r\nDer kan defineres en periode ved at bruge EjendomsskatteberegningKontroltidspunktFra og/eller EjendomsskatteberegningKontroltidspunktTil, som vil resultere i, at der kun leveres ejendomsskatteberegninger der i den periode er registreret som systemgodkendt og dermed gjort tilgængelig for serviceanvenderne. Dette kan fx bruges til at hente beregninger, der er blevet tilgængelige siden der sidst blev forespurgt, ved at udfylde EjendomsskatteberegningKontroltidspunktFra med tidspunktet der sidst blev forespurgt.\r\n",
+        "operationId": "c257ab08-0143-48ba-9a1e-c12ed2183f77",
+        "parameters": [
+          {
+            "name": "IndkomstÅr",
+            "in": "query",
+            "required": true,
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "schema": {
+              "type": "number",
+              "description": "Alle gyldige årstal i den danske kalender."
+            }
+          },
+          {
+            "name": "KommuneNummer",
+            "in": "query",
+            "required": false,
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+                "minimum": 100,
+                "exclusiveMinimum": false,
+                "maximum": 999,
+                "exclusiveMaximum": false
+              }
+            }
+          },
+          {
+            "name": "BestemtFastEjendomBFENummer",
+            "in": "query",
+            "required": false,
+            "description": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.\r\n\r\nOBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.\r\n\r\nOBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side."
+              }
+            }
+          },
+          {
+            "name": "PersonCPRNummer",
+            "in": "query",
+            "required": false,
+            "description": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "((((0[1-9]|1[0-9]|2[0-9]|3[0-1])(01|03|05|07|08|10|12))|((0[1-9]|1[0-9]|2[0-9]|30)(04|06|09|11))|((0[1-9]|1[0-9]|2[0-9])(02)))[0-9]{6})|0000000000",
+                "description": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person."
+              }
+            }
+          },
+          {
+            "name": "VirksomhedCVRNummer",
+            "in": "query",
+            "required": false,
+            "description": "Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "[0-9]{8}",
+                "description": "Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR)."
+              }
+            }
+          },
+          {
+            "name": "EjendomsskatteberegningKontroltidspunktFra",
+            "in": "query",
+            "required": false,
+            "description": "EjendomsskatteberegningKontroltidspunktFra skal ses i sammenhæng med EjendomsskatteberegningKontroltidspunktTil, som tilsammen angiver en periode hvor et beregningsresultat er blevet kontrolleret for om det kan anvendes i det videre forløb.\r\nEjendomsskatteberegningKontroltidspunktFra anvendes typisk som et udsøgningskriterie i en service eller rapport, hvor det skal forstås, at et beregningsresultats kontroltidspunkt skal ligge efter EjendomsskatteberegningKontroltidspunktFra.",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime."
+            }
+          },
+          {
+            "name": "EjendomsskatteberegningKontroltidspunktTil",
+            "in": "query",
+            "required": false,
+            "description": "EjendomsskatteberegningKontroltidspunktTil skal ses i sammenhæng med EjendomsskatteberegningKontroltidspunktFra, som tilsammen angiver en periode hvor et beregningsresultat er blevet kontrolleret for om det kan anvendes i det videre forløb.\r\nEjendomsskatteberegningKontroltidspunktTil anvendes typisk som et udsøgningskriterie i en service eller rapport, hvor det skal forstås, at et beregningsresultats kontroltidspunkt skal ligge før EjendomsskatteberegningKontroltidspunktTil.",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime."
+            }
+          },
+          {
+            "name": "Side",
+            "in": "query",
+            "required": false,
+            "description": "Side anvendes i forbindelse med paginering og er her en angivelse af hvilken side der ønskes returneret i servicekaldet.\r\nHvis ikke udfyldt returneres side 1.",
+            "schema": {
+              "type": "integer",
+              "description": "Et positivt heltal, som kan være op til 9 cifre langt startende fra 1 til 999999999"
+            }
+          },
+          {
+            "name": "Sidestørrelse",
+            "in": "query",
+            "required": false,
+            "description": "Anvendes i forbindelse med paginering og er her en angivelse af antallet af elementer i en side (Side) i servicekaldet.",
+            "schema": {
+              "type": "integer",
+              "description": "Et positivt heltal, som kan være op til 9 cifre langt startende fra 0 til 999999999"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Forventet svar ved korrekt forespørgsel",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/EjendomsskatHentResponse"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/Meta"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/Links"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "400": {
+            "description": "Fejl i forspørgsel\\n Mulige fejlkoder\\n - 400.1 Manglende transaktion og/eller request id (håndteret i gateway).\\n - 400.9 Major version specificeret i x-major-version er ikke tilgængelig.\\n - 400.12 JWT ikke angivet (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "401": {
+            "description": "Identifikation fejlede\\n Mulige fejlkoder\\n - 401.1 Identifikation fejlede (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "403": {
+            "description": "Autorisation fejlede\\n Mulige fejlkoder\\n - 403.1 Der er ikke de nødvendige rettigheder til den givne handling (håndteret i gateway).\\n - 403.12 JWT er ikke valid (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "404": {
+            "description": "Stien findes ikke\\n Mulige fejlkoder\\n - 404.1 Der findes ingen service for den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "405": {
+            "description": "Operationen er ikke tilladt\\n Mulige fejlkoder\\n - 405.1 Operationen kan ikke udføres på den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "422": {
+            "description": "Fejlkoder:\\n - 422.1 IndkomstÅr i input er angivet i forkert format.\\n - 422.2 IndkomstÅr mangler i input.\\n - 422.3 IndkomstÅr i input overstiger det maksimalt tilladte.\\n - 422.4 KommuneNummer i input er angivet i forkert format.\\n - 422.5 KommuneNummer i input overstiger det maksimalt tilladte.\\n - 422.6 BestemtFastEjendomBFENummer er angivet i forkert format.\\n - 422.7 BestemtFastEjendomBFENummer i input overstiger det maksimalt tilladte.\\n - 422.8 PersonCPRNummer er angivet i forkert format.\\n - 422.9 PersonCPRNummer i input overstiger det maksimalt tilladte.\\n - 422.10 VirksomhedCVRNummer er angivet i forkert format.\\n - 422.11 VirksomhedCVRNummer i input overstiger det maksimalt tilladte.\\n - 422.12 VirksomhedSENummer er angivet i forkert format.\\n - 422.13 VirksomhedSENummer i input overstiger det maksimalt tilladte.\\n - 422.15 Side i input er angivet i forkert format.\\n - 422.16 Side i input eksisterer ikke i registret.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "500": {
+            "description": "Ukendt server fejl\\n Mulige fejlkoder\\n - 500.1 Ukendt fejl.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "503": {
+            "description": "Service utilgængelig\\n Mulige fejlkoder\\n - 503.1 Der er i øjeblikket ikke kontakt til datakilden.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout\\n Mulige fejlkoder\\n - 504.1 Forespørgslen blev ikke færdig inden for det tilladte interval.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ejendomsskattesatserhent/": {
+      "parameters": [
+        {
+          "name": "x-transaktions-id",
+          "in": "header",
+          "required": true,
+          "description": "Transaktions id er en universelt transaktionidentifikator der bruges til at spore en samlet handling på tværs af flere kald og systemer. Hvis en handling resultere i flere kald skal Transaktions id genbruges og hvis et kald finder sted grundet en handling i et andet system skal transaktions id fra den oprindelige handling bruges til videre kald. Transaktions id skal være en UUID version 4, jf. ietf RFC 4122 og skal kunne korreleres med logfiler fra det kaldende system for altid at kunne svare på hvem der er ansvarlig for den handling der har resulteret i kaldet.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-request-id",
+          "in": "header",
+          "required": true,
+          "description": "Request id er et requestidentifikator der bruges til at spore et kald og tilhørende svar. Request id må modsat transaktions id ikke genbruges. Request id skal være en UUID version 4, jf. ietf RFC 4122.",
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        {
+          "name": "x-major-version",
+          "in": "header",
+          "required": false,
+          "description": "Servicen versioneres med Semantisk versionering (Major, Minor, patch), hvor kun Major versioner indeholder breaking changes til snitfladen. Som udgangspunkt er der kun adgang til den nyeste version af services på en et miljø og det er kunderne såvel som service udstillers opgave at finde fejl på de lavere miljøer før en ny release løftes til produktion. Specifikt for nye Major releases kan der aftales en paralleldrift hvor den gamle version kan tilgås ved at specificere x-major-version. Hvis der kaldes med en x-major-version som ikke er tilgængelig modtages en fejl. Når x-major-version ikke er udfyldt kaldes den nyeste version automatisk.",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "EjendomsskattesatserHent",
+        "description": "Servicen tager imod en liste af IndkomstÅr og/eller KommuneNummer og returnerer de gældende ejendomsskattesatser (promiller) for de udvalgte IndkomstÅr og/eller kommuner.",
+        "operationId": "4b690457-1cec-413c-84a0-d0a7484d7238",
+        "parameters": [
+          {
+            "name": "IndkomstÅr",
+            "in": "query",
+            "required": true,
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "description": "Alle gyldige årstal i den danske kalender."
+              }
+            }
+          },
+          {
+            "name": "KommuneNummer",
+            "in": "query",
+            "required": false,
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "description": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+                "minimum": 100,
+                "exclusiveMinimum": false,
+                "maximum": 999,
+                "exclusiveMaximum": false
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Forventet svar ved korrekt forespørgsel",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/EjendomsskattesatserHentResponse"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/Meta"
+                    },
+                    "links": {
+                      "$ref": "#/components/schemas/Links"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "400": {
+            "description": "Fejl i forspørgsel\\n Mulige fejlkoder\\n - 400.1 Manglende transaktion og/eller request id (håndteret i gateway).\\n - 400.9 Major version specificeret i x-major-version er ikke tilgængelig.\\n - 400.12 JWT ikke angivet (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "401": {
+            "description": "Identifikation fejlede\\n Mulige fejlkoder\\n - 401.1 Identifikation fejlede (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "403": {
+            "description": "Autorisation fejlede\\n Mulige fejlkoder\\n - 403.1 Der er ikke de nødvendige rettigheder til den givne handling (håndteret i gateway).\\n - 403.12 JWT er ikke valid (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "404": {
+            "description": "Stien findes ikke\\n Mulige fejlkoder\\n - 404.1 Der findes ingen service for den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "405": {
+            "description": "Operationen er ikke tilladt\\n Mulige fejlkoder\\n - 405.1 Operationen kan ikke udføres på den angivne sti (håndteret i gateway).\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "422": {
+            "description": "Fejlkoder:\\n - 422.1 IndkomstÅr i input er angivet i forkert format.\\n - 422.2 IndkomstÅr mangler i input.\\n - 422.3 IndkomstÅr i input overstiger det maksimalt tilladte.\\n - 422.4 KommuneNummer i input er angivet i forkert format.\\n - 422.5 KommuneNummer i input overstiger det maksimalt tilladte.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "500": {
+            "description": "Ukendt server fejl\\n Mulige fejlkoder\\n - 500.1 Ukendt fejl.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "503": {
+            "description": "Service utilgængelig\\n Mulige fejlkoder\\n - 503.1 Der er i øjeblikket ikke kontakt til datakilden.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway timeout\\n Mulige fejlkoder\\n - 504.1 Forespørgslen blev ikke færdig inden for det tilladte interval.\\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fejlsvar"
+                }
+              }
+            },
+            "headers": {
+              "x-transaktions-id": {
+                "$ref": "#/components/headers/x-transaktions-id"
+              },
+              "x-request-id": {
+                "$ref": "#/components/headers/x-request-id"
+              },
+              "x-major-version": {
+                "$ref": "#/components/headers/x-major-version"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "jwtBillet": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "headers": {
+      "x-transaktions-id": {
+        "description": "Transaktions id er en universelt transaktionidentifikator der bruges til at spore en samlet handling på tværs af flere kald og systemer. Hvis en handling resultere i flere kald skal Transaktions id genbruges og hvis et kald finder sted grundet en handling i et andet system skal transaktions id fra den oprindelige handling bruges til videre kald. Transaktions id skal være en UUID version 4, jf. ietf RFC 4122 og skal kunne korreleres med logfiler fra det kaldende system for altid at kunne svare på hvem der er ansvarlig for den handling der har resulteret i kaldet.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+        }
+      },
+      "x-request-id": {
+        "description": "Request id er et requestidentifikator der bruges til at spore et kald og tilhørende svar. Request id må modsat transaktions id ikke genbruges. Request id skal være en UUID version 4, jf. ietf RFC 4122.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+        }
+      },
+      "x-major-version": {
+        "description": "Servicen versioneres med Semantisk versionering (Major, Minor, patch), hvor kun Major versioner indeholder breaking changes til snitfladen. Som udgangspunkt er der kun adgang til den nyeste version af services på en et miljø og det er kunderne såvel som service udstillers opgave at finde fejl på de lavere miljøer før en ny release løftes til produktion. Specifikt for nye Major releases kan der aftales en paralleldrift hvor den gamle version kan tilgås ved at specificere x-major-version. Hvis der kaldes med en x-major-version som ikke er tilgængelig modtages en fejl. Når x-major-version ikke er udfyldt kaldes den nyeste version automatisk.",
+        "schema": {
+          "type": "integer",
+          "pattern": "([0-9])*"
+        }
+      }
+    },
+    "schemas": {
+      "EjendomsskatHentResponse": {
+        "x-entityname": "EjendomsskatHentResponse",
+        "required": [
+          "type",
+          "id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "default": "Ejendomsskat"
+          },
+          "id": {
+            "description": "Id skal være et unikt id for et specifik resource objekt, men være stabil på tværs af flere versioner af samme resource object.",
+            "type": "string"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/Ejendom"
+          }
+        }
+      },
+      "Ejendom": {
+        "x-entityname": "Ejendom",
+        "x-ui-selectable": true,
+        "required": [
+          "IndkomstÅr",
+          "KommuneNummer",
+          "BFENummerListe",
+          "EjendomsskatteberegningID",
+          "EjendomsskatteberegningTidspunkt",
+          "EjendomsskatteberegningKontrolresultat",
+          "EjendomsskatteberegningKontroltidspunkt"
+        ],
+        "properties": {
+          "IndkomstÅr": {
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "type": "number",
+            "x-typeDescription": "Alle gyldige årstal i den danske kalender."
+          },
+          "KommuneNummer": {
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "type": "integer",
+            "x-typeDescription": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+            "maximum": 999,
+            "exclusiveMaximum": false,
+            "minimum": 100,
+            "exclusiveMinimum": false
+          },
+          "EjendomNummer": {
+            "description": "6-cifret identifikation af en ejendom inden for en kommune. I kombination med KommuneNummer giver det en unik identifikation af en ejendom, kendt som Kommune-Ejendomsnummer (KE-nummer).\r\n (Udenfor Skatteforvaltningen er de kommunale ejendomsnumre under afvikling og erstattes af BFE-numre, BFE\u003dBestemt Fast Ejendom)",
+            "type": "number",
+            "x-typeDescription": "6-cifret nummer"
+          },
+          "VurderingsejendomID": {
+            "description": "Entydig identifikation for en Vurderingsejendom som den forventes at se ud i det fremtidige Ejendomsvurderingssystem ICE. ",
+            "type": "number",
+            "x-typeDescription": "Et heltal fra 0 - 9.999.999.999"
+          },
+          "BFENummerListe": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BFENummer"
+            }
+          },
+          "Beliggenhedsadresse": {
+            "$ref": "#/components/schemas/Beliggenhedsadresse"
+          },
+          "Vurdering": {
+            "$ref": "#/components/schemas/Vurdering"
+          },
+          "EjendomsskatteberegningID": {
+            "description": "Unik identifikation af en given beregning af kommunale ejendomsskatter mv. for en givet ejendom",
+            "type": "string",
+            "x-typeDescription": "GUID repræsentation",
+            "pattern": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"
+          },
+          "EjendomsskatteberegningTidspunkt": {
+            "description": "Tidspunktet for en given beregning af kommunale ejendomsskatter mv. for en given ejendom.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime."
+          },
+          "EjendomsskatteberegningKontrolresultat": {
+            "description": "Status for at beregningsresultat.\r\nKan være f.eks. GODKENDT, AFVIST, FEJLET",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 20 alfanummeriske karakterer"
+          },
+          "EjendomsskatteberegningKontroltidspunkt": {
+            "description": "Det tidspunkt hvor E\u0026E har afgjort om et beregningsresultat kan anvendes i det videre forløb. Se også GrundskyldsberegningKontrolresultat.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime."
+          },
+          "EjendomEjendomsskat": {
+            "$ref": "#/components/schemas/EjendomEjendomsskat"
+          },
+          "EjerskabListe": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ejerskab"
+            }
+          }
+        }
+      },
+      "BFENummer": {
+        "x-entityname": "BFENummer",
+        "x-ui-selectable": true,
+        "required": [
+          "BestemtFastEjendomBFENummer"
+        ],
+        "properties": {
+          "BestemtFastEjendomBFENummer": {
+            "description": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.\r\n\r\nOBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side.",
+            "type": "integer",
+            "x-typeDescription": "Fra Matriklen: Unikt fortløbende identifikation tildelt den specifikke bestemte fast ejendom.\r\n\r\nOBS: formatet foreløbigt defineret alene som Integer datatype fra Matriklens side."
+          }
+        }
+      },
+      "Beliggenhedsadresse": {
+        "x-entityname": "Beliggenhedsadresse",
+        "x-ui-selectable": true,
+        "required": [
+          "GrunddataIdLokalId",
+          "GrunddataIdNamespace"
+        ],
+        "properties": {
+          "GrunddataIdLokalId": {
+            "description": "Identifikation af et objekt\r\n(Benyttes i grunddatamodellen)",
+            "type": "string",
+            "x-typeDescription": "Identifikatorer er ISO/IEC 11578:1996 UUID\u0027er, type 4, random 128-bit, normalt beskrevet ved 32 hex-cifre og fire bindestreger på formen 8-4-4-4-12 "
+          },
+          "GrunddataIdNamespace": {
+            "description": "Identifikation af et namespace indenfor hvilket IDLokalId er unikt.\r\n(Benyttes i grunddatamodellen)",
+            "type": "string",
+            "x-typeDescription": "Dette er en lang tekst."
+          }
+        }
+      },
+      "Vurdering": {
+        "x-entityname": "Vurdering",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomsvurderingVurderingsID"
+        ],
+        "properties": {
+          "EjendomsvurderingVurderingsID": {
+            "description": "Nøgle der entydig identificerer en ejendomsvurdering",
+            "type": "number",
+            "x-typeDescription": "Et positivt heltal, der kan repræsenterer værdier i intervallet 0 til 99.999.999.999"
+          },
+          "EjendomsvurderingÆndringDato": {
+            "description": "Angiver den dato for hvornår en vurdering er oprrettet Ex. hvis der klages over en vurdering med vurderingsår 2012 og ændring dato 01-10-2012, så oprettes der f.eks. den 27.5.2018 en klagesag med vurderingår 2012 og ændringdato 27-05-2018",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "EjendomsvurderingÅr": {
+            "description": "Det år vurderingen gælder for.",
+            "type": "integer",
+            "x-typeDescription": "Et årstal. Gyldige værdier er 1700 - 9999",
+            "maximum": 9999,
+            "exclusiveMaximum": false,
+            "minimum": 1700,
+            "exclusiveMinimum": false
+          },
+          "EjendomsvurderingJuridiskKategorikode": {
+            "description": "4-cifret kode som angiver ejendommens overordnede kategori i relation til ejendomsvurdering og -beskatning, jf. ejendomsvurderingslovens §§ 3 og 4.\r\nEksempler: 2200 (Landbrugsejendom), 8000 (Ikke-vurderingspligtig ejendom)",
+            "type": "string",
+            "x-typeDescription": "Tekstfelt der indeholder fire alfanummeriske tegn"
+          },
+          "EjendomsvurderingJuridiskKategoriTekst": {
+            "description": "Tekst som beskriver ejendommens overordnede kategori i relation til ejendomsvurdering og -beskatning svarende til den juridiske kategorikode, jf. ejendomsvurderingslovens §§ 3 og 4.\r\nEksempler: \"Landbrugsejendom\" (kode 2200), \"Ikke-vurderingspligtig ejendom\" (kode 8000)",
+            "type": "string",
+            "x-typeDescription": "En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb. \r\nI nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)"
+          },
+          "EjendomsvurderingJuridiskUnderkategorikode": {
+            "description": "4-cifret kode som angiver ejendommens underordnede kategori i relation til ejendomsvurdering og -beskatning, jf. ejendomsvurderingslovens §§ 3 og 4.\r\nEksempler:  1120 (Ejerlejlighed til helårsbeboelse), 1153 (Sommerhus eller andet fritidshus på fremmed grund), begge underkategorier til kategorien 1100 (Ejerbolig til vurdering i lige år). ",
+            "type": "string",
+            "x-typeDescription": "Tekstfelt der indeholder fire alfanummeriske tegn"
+          },
+          "EjendomsvurderingJuridiskUnderkategoriTekst": {
+            "description": "Tekst som beskriver ejendommens underordnede kategori i relation til ejendomsvurdering og -beskatning svarende til den juridiske underkategorikode, jf. ejendomsvurderingslovens §§ 3 og 4.\r\nEksempler: \"Ejerlejlighed til helårsbeboelse\" (kode 1120), \"Sommerhus eller andet fritidshus på fremmed grund\" (kode 1153), begge underkategorier til kategorien \"Ejerbolig til vurdering i lige år\" (kode 1100).",
+            "type": "string",
+            "x-typeDescription": "En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb. \r\nI nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)"
+          },
+          "EjendomsvurderingOprindelseKode": {
+            "description": "(Svarer til VURMARK hos VUR)\r\n\r\nEn kode som siger noget om en vurdering på flere parametre:\r\nSystem: \tVUR; EogG\r\nType:\tordinær; foreløbig\r\nÆndring:\tÆndret; (Ikke ændret)\r\nVidereførelse:\tvidereført; (ikke videreført)\r\nÅrstype: \tVurderingsår; efterfølgende år\r\nGrundtype: \tudstykning fra erhvervsejendom (i Q4 2019); (andet)\r\nYderligere: Manuelt behandlet i SLUT\r\n\r\nI koderne kombineres flere parametre, f.eks.:\r\n0\tIngen vurdering.\r\n1\tOrdinær Vurdering fra VUR\r\n2\tForeløbig beregning fra E\u0026G\r\n3\tOrdinær Vurdering fra E\u0026G\r\n...\r\n8\tVidereført ændret foreløbig beregning fra E\u0026G\r\n9\tQ4: Erhvervsejendom, hvorfra der er sket udstykning til en Q4-ejendom\r\n10\tQ4 - Foreløbig beregning fra E\u0026G\r\n...\r\n13\tQ4 - Videreført ændret foreløbig beregning\r\n14\tManuel sagsbehandling foretaget i SLUT (reserveret til EVS SLUT/FORSKUD – kommer ikke på vurderinger eller foreløbige beregninger i VUR)\r\n...",
+            "type": "integer",
+            "x-typeDescription": "En integer maksimalt bestående af 3 decimaler"
+          },
+          "BeskatningsgrundlagValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BeskatningsgrundlagEjLandOgSkovOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/LandOgSkovejendomBeskatningsgrundlagOneOfValg"
+              }
+            ]
+          }
+        }
+      },
+      "EjendomEjendomsskat": {
+        "x-entityname": "EjendomEjendomsskat",
+        "x-ui-selectable": true,
+        "properties": {
+          "ForsigtighedsprincipProcentsats": {
+            "description": "Procentsats som angiver den andel af vurderingens grundværdi, som der beregnes ejendomsskat af.\r\nEr i 2022 80%.",
+            "type": "number",
+            "x-typeDescription": "Vilkårligt heltal på 1-2 cifre."
+          },
+          "EjendomEjendomsskatValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/GrundskyldEjLandOgSkovOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/LandOgSkovEjendomGrundskyldOneOfValg"
+              }
+            ]
+          },
+          "DækningsafgiftErhverv": {
+            "$ref": "#/components/schemas/DaekningsafgiftErhverv"
+          },
+          "DækningsafgiftOffentligMyndighed": {
+            "$ref": "#/components/schemas/DaekningsafgiftOffentligMyndighed"
+          }
+        }
+      },
+      "DaekningsafgiftErhverv": {
+        "x-entityname": "DækningsafgiftErhverv",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomsdækningsafgiftBeløb"
+        ],
+        "properties": {
+          "KommunepromilleDækningsafgiftErhverv": {
+            "description": "Den promille hvormed der beregnes dækningsafgift af erhvervsejendomme i en given kommune.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "EjendomsdækningsafgiftBeløb": {
+            "description": "Det beløb der skal betales i dækningsafgift for en given ejendom i et helt givet indkomstår.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "DaekningsafgiftOffentligMyndighed": {
+        "x-entityname": "DækningsafgiftOffentligMyndighed",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomsdækningsafgiftBeløb"
+        ],
+        "properties": {
+          "KommunepromilleDækningsafgiftOffentligMyndighed": {
+            "description": "Den promille hvormed der beregnes dækningsafgift af ejendomme ejet af offentlige myndigheder i en given kommune.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "EjendomsdækningsafgiftBeløb": {
+            "description": "Det beløb der skal betales i dækningsafgift for en given ejendom i et helt givet indkomstår.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "Ejerskab": {
+        "x-entityname": "Ejerskab",
+        "x-ui-selectable": true,
+        "properties": {
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          },
+          "EjerIDValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PersonOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/CVRVirksomhedOneOfValg"
+              }
+            ]
+          },
+          "PåHoldRegistreringstidspunkt": {
+            "description": "Det tidspunkt, hvor et EjendomEjerskab er sat \"på hold\" fordi ejeren er død, og der derfor ikke længere skal beregnes grundskyld på ejerskabet.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schema-typen dateTime."
+          },
+          "EjendomEjerskabEjerandel": {
+            "description": "Ejerandel af ejendomsværdi.\r\n\r\n1\u003d100\r\n\r\nFelt 735",
+            "type": "number",
+            "x-typeDescription": "En andel udtrykt som kommatal med 4 decimaler, hvor 1\u003d100%\r\n\r\nBemærk at i JSON er skilletegn punktum:\r\n1.0000 \u003d 100%\r\n0.5000 \u003d 50%\r\n"
+          },
+          "Ejerperiode": {
+            "$ref": "#/components/schemas/Ejerperiode"
+          },
+          "EjerskabEjendomsskat": {
+            "$ref": "#/components/schemas/EjerskabEjendomsskat"
+          }
+        }
+      },
+      "Ejerperiode": {
+        "x-entityname": "Ejerperiode",
+        "x-ui-selectable": true,
+        "properties": {
+          "TotalEjerperiode": {
+            "$ref": "#/components/schemas/TotalEjerperiode"
+          },
+          "Årsejerperiode": {
+            "$ref": "#/components/schemas/Aarsejerperiode"
+          }
+        }
+      },
+      "TotalEjerperiode": {
+        "x-entityname": "TotalEjerperiode",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomEjerskabStartdato"
+        ],
+        "properties": {
+          "EjendomEjerskabStartdato": {
+            "description": "Startdatoen for ejerperioden i hvilken der skal betales ejendomsværdiskat i forbindelse med køb/salg",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "EjendomEjerskabSlutdato": {
+            "description": "Slutdatoen for ejerperioden i hvilken der skal betales ejendomsværdiskat i forbindelse med køb/salg",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          }
+        }
+      },
+      "Aarsejerperiode": {
+        "x-entityname": "Årsejerperiode",
+        "x-ui-selectable": true,
+        "required": [
+          "ÅrsejerperiodeStartdato",
+          "ÅrsejerperiodeSlutDato"
+        ],
+        "properties": {
+          "ÅrsejerperiodeStartdato": {
+            "description": "Den første dag i ejerperioden i et givet IndkomstÅr. \r\nHvis ejendommen er erhvervet før IndkomstÅrets begyndelse, er Startdatoen 1. januar i IndkomstÅret.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "ÅrsejerperiodeSlutDato": {
+            "description": "Den sidste dag i ejerperioden i et givet IndkomstÅr.\r\nHvis ejendommen IKKE bliver afhændet før IndkomstÅrets afslutning, er Slutdatoen 31. december i IndkomstÅret. Ellers er det datoen for afhændelsen.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "ÅrsejerperiodeAntalDage": {
+            "description": "Antallet af dage i et givet år et ejendomsejerskab gælder.\r\nBeregnes ud fra et år på 360 dage, dvs. 30 dage pr. måned uanset månedens faktiske længde.",
+            "type": "number",
+            "x-typeDescription": "Heltal med op til 3 cifre"
+          }
+        }
+      },
+      "EjerskabEjendomsskat": {
+        "x-entityname": "EjerskabEjendomsskat",
+        "x-ui-selectable": true,
+        "properties": {
+          "EjerfordeltGrundskyldBeløb": {
+            "description": "Den beregnede grundskyld for et givet ejerfohold i et givet IndkomstÅr, d.v.s. hvor der er indregnet ejerandel og Årsejerperiode, men ikke en evt. rabat.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          },
+          "EjerfordeltGrundskyldRabatBeløb": {
+            "description": "Den grundskyldsrabat, som gives til ejeren for et givet ejerskab.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          },
+          "EjerfordeltGrundskyldBeløbEfterRabat": {
+            "description": "Det beløb som skal opkræves i grundskyld for et givet ejerfohold i et givet IndkomstÅr, d.v.s. hvor der er indregnet ejerandel og Årsejerperiode samt evt. rabat.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          },
+          "RateListe": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/Rate"
+            }
+          }
+        }
+      },
+      "Rate": {
+        "x-entityname": "Rate",
+        "x-ui-selectable": true,
+        "required": [
+          "Hovedoplysninger"
+        ],
+        "properties": {
+          "OpkrævningFordringID": {
+            "description": "ID er den unikke identifikation på den enkelte opkrævningsfordring i DMO.\r\n\r\nIdentifikationen (ID) skal bl.a. anvendes i tilfælde af tilbagekaldelse, korrektion eller bortfald fra fordringshavers side.\r\n\r\n",
+            "type": "string",
+            "x-typeDescription": "En tekststreng på max 32 alfanummeriske tegn (karakterer)."
+          },
+          "HovedejerIDValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PersonOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/CVRVirksomhedOneOfValg"
+              }
+            ]
+          },
+          "OpkrævningIdentifikationValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/EANOplysningerOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/ProduktionEnhedNummerOneOfValg"
+              }
+            ]
+          },
+          "Hovedoplysninger": {
+            "$ref": "#/components/schemas/Hovedoplysninger"
+          },
+          "OpkrævningFordringDelFordringListe": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpkraevningFordringDelFordring"
+            }
+          },
+          "HæftelseListe": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+              "$ref": "#/components/schemas/Haeftelse"
+            }
+          }
+        }
+      },
+      "Hovedoplysninger": {
+        "x-entityname": "Hovedoplysninger",
+        "x-ui-selectable": true,
+        "required": [
+          "OpkrævningFordringBeløb"
+        ],
+        "properties": {
+          "OpkrævningFordringArt": {
+            "description": "En fordrings overordnede art/kategori:\r\n\r\n- Ordinær opkrævningsfordring\r\n- Efterangivet opkrævningsfordring (Efterangivelse)\r\n- Foreløbig Fastsættelse (FF)",
+            "type": "string",
+            "x-typeDescription": "En fordrings overordnede art/kategori:\r\n\r\n- Ordinær opkrævningsfordring\r\n- Efterangivet opkrævningsfordring (Efterangivelse)\r\n- Foreløbig Fastsættelse (FF)"
+          },
+          "OpkrævningFordringInternKommentar": {
+            "description": "Oplysninger til intern brug vedr. den konkrete fordring.",
+            "type": "string",
+            "x-typeDescription": "Dette er en lang tekst."
+          },
+          "OpkrævningFordringTypeID": {
+            "description": "Unik identifikation af en opkrævningsfordringstype. Nummerrækken er grupperet således:\r\n\r\n1000-1099 - Motor\r\n1100-1199 - Askat\r\n1200-1249 - Bøder\r\n1250-1299 - Lønsum\r\n1300-1399 - Moms\r\n1400-1449 - Pensionsskat\r\n1450-1499 - Punktafgifter\r\n1500-1549 - Kommunale ejendomsskatter\r\n1700-1749 - Renter og gebyrer\r\n1750-1849 - Selskabsskat\r\n1850-1949 - Told",
+            "type": "integer"
+          },
+          "OpkrævningFordringTypeNavn": {
+            "description": "Navn på opkrævningsfordringstypen.",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 30 karakterer."
+          },
+          "OpkrævningFordringErOpkrævetMarkering": {
+            "description": "Markering af hvorvidt en opkrævningsfordring er opkrævet (værdien Ja) eller ej af afsendersystem. SKATs opkrævningssystem, DMO, skal kunne se, hvorvidt der skal dannes opkrævninger til kunden eller ej.",
+            "type": "boolean",
+            "x-typeDescription": "Generel type for markeringer. Kan være:\r\n\r\nfalse\r\ntrue"
+          },
+          "OpkrævningFordringForfaldDato": {
+            "description": "Forfaldsdato er tidspunktet, hvor en fordring forfalder til betaling.\r\nEn forfaldsdato er ikke altid lig med sidste rettidig betalingsdato. Eksempelvis kan forfaldsdatoen være den 1. i en kalendermåned, mens sidste rettidig betalingsdato kan være den 10. i forfaldsmåneden.\r\n\r\nForfaldsdato vil være den dato, hvor en fordring kan indgå i kontoens saldo, hvis kunden (virksomhed eller borger) betaler fordringen (f.eks. skatten/afgiften) før SRB.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringRenteDato": {
+            "description": "RenteDato er datoen for Fordringshavers sidste renteberegningsdato. Dvs. den dato for hvornår der sidst er beregnet renter på en given fordring. \r\nFørste gang der skal ske en renteberegning, er ud fra SidsteRettidigBetalingDato (SRB), som er den rentebærende dato. Efterfølgende sker en evt. renteberegning af saldoen fra den dato, hvor der sidst er sket rentetilskrivning.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringBeløb": {
+            "description": "Beløb er det beløb, der skal opkræves for en fordring - beløbet kan være positivt eller negativt, ligesom beløbet kan være på 0 kr.\r\nPåløbne renter og påhæftede gebyrer bliver oprettet som deres egne fordringer med reference til den oprindelige fordring.\r\nNår fordringen er fuldt betalt, vil beløbet være 0,00 kr.",
+            "type": "number",
+            "x-typeDescription": "Angiver positive og negative beløb på 15 karakterer samt 2 decimaler.\r\nVærdierne ligger indenfor følgende område: -999.999.999.999.999,00 - 999.999.999.999.999,00",
+            "maximum": 999999999999999,
+            "exclusiveMaximum": false,
+            "minimum": -999999999999999,
+            "exclusiveMinimum": false
+          },
+          "ValutaOplysningKode": {
+            "description": "ISO-kode for den pågældende valuta fx DKK",
+            "type": "string",
+            "x-typeDescription": "Angiver valuta enheden (ISO-møntkoden) for et beløb.\r\nFx den som en angivelsen er indberettet i, hvis der er tale om en angivelsestype med beløb. \r\n\r\nPå nuværende tidspunkt kan SKAT kun modtage angivelser i danske kroner.",
+            "pattern": "[A-Z]{2,3}"
+          },
+          "OpkrævningFordringForældelseDato": {
+            "description": "Forældelsesdatoen er datoen for, hvornår en fordring er forældet og ikke længere kan inddrives eller opkræves. \r\nNår forældelsesdatoen er overskredet, er det udtryk for en \"afskreven fordring\".",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringOprindeligSidsteRettidigBetalingDato": {
+            "description": "Den oprindelige sidste rettidige betalingsdato er den dato som ville have været sidste rettidige indbetalingsdato, hvis der var sket rettidig indmelding af moms.\r\nNår der er forsinket indberetning (og dermed foreløbig fastsættelse - FF) eller efterangivelse (EA) pga regulering, fastsættes sidste rettidige betalingsdato ud fra indberetningstidspunktet, men hvis fordringen senere går til inddrivelse, skal udgangspunktet for beregning af forældelsesdato være den oprindelige sidste rettidige betalingsdato.\r\n",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Betyder Sidste Rettidig Betalingsdato (SRB), og er den dato, hvor et beløb skal være indbetalt. Det er således fristen for betaling."
+          },
+          "OpkrævningFordringModtagelseDato": {
+            "description": "Modtagelsesdato er datoen for, hvornår en fordring er modtaget hos Fordringshaver.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringStiftelseDato": {
+            "description": "Stiftelsestidspunktet er det tidspunkt, hvor en fordring er stiftet. Tidspunktet kan være forskelligt fra forfaldstidspunkt, periode og sidste rettidige betalingsdato.\r\n\r\nEksempelvis har man for fordringstypen \"restskat\" stiftelsestidspunktet 31/12 2006, perioden vil være hele året 2006 og forfaldsdatoen vil være 1/9, 1/10 og 1/11 2007 og endeligt vil sidste rettidige betalingsdato være 20/9, 20/10 og 20/11 2007.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringBogføringDato": {
+            "description": "Dato til identifikation af opkrævningsfordringens regnskabsperiode.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringReferenceNummer": {
+            "description": "Lokalt referencenummer på opkrævningsfordringen i afsenderens, typisk fordringshaverens, fagsystem. Nummer er unikt for en given afsender.",
+            "type": "string",
+            "x-typeDescription": "Lokalt referencenummer på en opkrævningsfordrings afsender"
+          },
+          "OpkrævningFordringKommentar": {
+            "description": "Supplerende oplysning vedrørende den konkrete fordring.\r\nI SAP-DMO drejer det sig f.eks. om oplysning om hvilken afgift et gebyr vedrører, eller hvilken ejendom der opkræves ejendomsskat for. Teksten videresendes til Inddrivelsen, hvor den bruges i henvendelser til skyldner.",
+            "type": "string",
+            "x-typeDescription": "Dette er en lang tekst."
+          },
+          "OpkrævningFordringPeriodeFraDato": {
+            "description": "PeriodeFra er startdatoen for perioden, som en fordring vedrører. (Periode vil typisk være en angivelsesperiode)\r\nFor fordringer vedr. motor (DMR) vil PeriodeFra være det samme som afgiftsdækningsperioden.\r\n",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningFordringPeriodeTilDato": {
+            "description": "PeriodeTil er slutdatoen for perioden, som en fordring vedrører. (Periode vil typisk være en angivelsesperiode).\r\nFor fordringer vedr. motor (DMR) vil PeriodeFra være det samme som afgiftsdækningsperioden.\r\n",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "DatoValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SRBOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/FrigivelsesdatoOneOfValg"
+              }
+            ]
+          },
+          "OpkrævningFordringRykkerHenstandDato": {
+            "description": "Dato for, hvis kunden skal have henstand i forbindelse med udsendelse af en rykker. Bruges til bruges til renteberegning ved korrektion.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          }
+        }
+      },
+      "OpkraevningFordringDelFordring": {
+        "x-entityname": "OpkrævningFordringDelFordring",
+        "x-ui-selectable": true,
+        "required": [
+          "OpkrævningDelFordringTypeID",
+          "OpkrævningDelFordringBeløb"
+        ],
+        "properties": {
+          "OpkrævningDelFordringTypeID": {
+            "description": "Unik identifikation af en opkrævningsdelfordringstype. ",
+            "type": "integer"
+          },
+          "OpkrævningDelFordringTypeNavn": {
+            "description": "Navn på typen til en opkrævningsdelfordringen.",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 30 karakterer."
+          },
+          "OpkrævningDelFordringBeløb": {
+            "description": "Beløb tilknyttet undertypen til en opkrævningsfordringtype.",
+            "type": "number",
+            "x-typeDescription": "Angiver positive og negative beløb på 15 karakterer samt 2 decimaler.\r\nVærdierne ligger indenfor følgende område: -999.999.999.999.999,00 - 999.999.999.999.999,00",
+            "maximum": 999999999999999,
+            "exclusiveMaximum": false,
+            "minimum": -999999999999999,
+            "exclusiveMinimum": false
+          },
+          "FordringHaver": {
+            "$ref": "#/components/schemas/FordringHaver"
+          }
+        }
+      },
+      "FordringHaver": {
+        "x-entityname": "FordringHaver",
+        "x-ui-selectable": true,
+        "required": [
+          "OpkrævningFordringHaverNummerType",
+          "OpkrævningFordringHaverNummer",
+          "OpkrævningFordringHaverNavn"
+        ],
+        "properties": {
+          "OpkrævningFordringHaverNummerType": {
+            "description": "Identificere typen af FordringHaver, dvs. hvad FordringHaverNummer dækker over.",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 30 karakterer."
+          },
+          "OpkrævningFordringHaverNummer": {
+            "description": "Identifikationen på en fordringshaver i SKATs fælles opkrævningssystem, DMO.",
+            "type": "string",
+            "x-typeDescription": "Et nummer, som for SKAT identificerer en person, virksomhed eller alternativ kontakt (person, virksomhed, myndighed, ukendt)",
+            "pattern": "[0-9]{8,11}"
+          },
+          "OpkrævningFordringHaverNavn": {
+            "description": "Navnet på en fordringshaver i SKATs fælles opkrævningssystem, DMO.",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 30 karakterer."
+          }
+        }
+      },
+      "Haeftelse": {
+        "x-entityname": "Hæftelse",
+        "x-ui-selectable": true,
+        "required": [
+          "OpkrævningHæftelseForm"
+        ],
+        "properties": {
+          "MedhæfterIDValg": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PersonOneOfValg"
+              },
+              {
+                "$ref": "#/components/schemas/CVRVirksomhedOneOfValg"
+              }
+            ]
+          },
+          "OpkrævningHæftelseForm": {
+            "description": "Hæftelsesformen som indikerer på hvilken måde, at hæfteren hæfter for fordringen. Hæftelsesformer er et udtryk for hvem der skylder, andel af fordringen samt hvilket aktiver/formue kreditorerne kan søge sig fyldestgjort i, f.eks. i forbindelse med en udlægsforretning.Hæftelsesformen indikerer implicit hæftelsesprocenten (som findes på Hæftelse). Fx. betyder solidarisk hæftelse, at alle kunder hæfter 100% for fordringen.",
+            "type": "string",
+            "x-typeDescription": "Angiver en tekst på max. 30 karakterer."
+          },
+          "OpkrævningHæftelseStartDato": {
+            "description": "Den dato hæftelse for en fordring gælder fra.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          },
+          "OpkrævningHæftelseSlutDato": {
+            "description": "Den dato hæftelse for en fordring ophører.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          }
+        }
+      },
+      "BeskatningsgrundlagEjLandOgSkovOneOfValg": {
+        "properties": {
+          "BeskatningsgrundlagEjLandOgSkov": {
+            "$ref": "#/components/schemas/BeskatningsgrundlagEjLandOgSkov"
+          }
+        }
+      },
+      "BeskatningsgrundlagEjLandOgSkov": {
+        "x-entityname": "BeskatningsgrundlagEjLandOgSkov",
+        "x-ui-selectable": true,
+        "required": [
+          "GrundværdiBeskatningsgrundlag"
+        ],
+        "properties": {
+          "GrundværdiBeskatningsgrundlag": {
+            "description": "Beskatningsgrundlaget, som grundskylden beregnes af, er grundværdien fratrukket fritagelser og fradrag for forbedringer (FFF), og derefter reduceret til 80% efter forsigtighedsprincippet. \r\n\r\nAfgiftspligtig grundværdi efter Ejendomsskatteloven (\"ny lov\") \u003d (Grundværdi for skatteåret - (sum FFF + sum fritagelser)) * Forsigtighedsprincip (0,8)",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "LandOgSkovejendomBeskatningsgrundlagOneOfValg": {
+        "properties": {
+          "LandOgSkovejendomBeskatningsgrundlag": {
+            "$ref": "#/components/schemas/LandOgSkovejendomBeskatningsgrundlag"
+          }
+        }
+      },
+      "LandOgSkovejendomBeskatningsgrundlag": {
+        "x-entityname": "LandOgSkovejendomBeskatningsgrundlag",
+        "x-ui-selectable": true,
+        "properties": {
+          "GrundværdiStuehusBeskatningsgrundlag": {
+            "description": "Beskatningsgrundlaget for ejendomsskat på den del af grunden som hører til stuehuset på en land- og skovejendom, beregnet af vurderingens stuehusgrundværdi reduceret efter forsigtighedsprincippet.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          },
+          "GrundværdiProduktionsjordBeskatningsgrundlag": {
+            "description": "Beskatningsgrundlaget for ejendomsskat på produktionsjorden på en land- og skovejendom, beregnet af vurderingens grundværdi af produktionsjord reduceret efter forsigtighedsprincippet og fratrukket fritagelser og fradrag for forbedringer.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          },
+          "GrundværdiRestarealBeskatningsgrundlag": {
+            "description": "Beskatningsgrundlaget for ejendomsskat på den del af grunden som ikke hører til enten stuehuset eller produktionsjorden på en land- og skovejendom, beregnet af vurderingens restarealgrundværdi reduceret efter forsigtighedsprincippet.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "GrundskyldEjLandOgSkovOneOfValg": {
+        "properties": {
+          "GrundskyldEjLandOgSkov": {
+            "$ref": "#/components/schemas/GrundskyldEjLandOgSkov"
+          }
+        }
+      },
+      "GrundskyldEjLandOgSkov": {
+        "x-entityname": "GrundskyldEjLandOgSkov",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleGrundskyld"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyld": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for ikke-produktionsjord",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          }
+        }
+      },
+      "LandOgSkovEjendomGrundskyldOneOfValg": {
+        "properties": {
+          "LandOgSkovEjendomGrundskyld": {
+            "$ref": "#/components/schemas/LandOgSkovEjendomGrundskyld"
+          }
+        }
+      },
+      "LandOgSkovEjendomGrundskyld": {
+        "x-entityname": "LandOgSkovEjendomGrundskyld",
+        "x-ui-selectable": true,
+        "properties": {
+          "Stuehus": {
+            "$ref": "#/components/schemas/Stuehus"
+          },
+          "Produktionsjord": {
+            "$ref": "#/components/schemas/Produktionsjord"
+          },
+          "Restareal": {
+            "$ref": "#/components/schemas/Restareal"
+          }
+        }
+      },
+      "Stuehus": {
+        "x-entityname": "Stuehus",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomsgrundskyldStuehusBeløb"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyld": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for ikke-produktionsjord",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "EjendomsgrundskyldStuehusBeløb": {
+            "description": "Grundskyld der skal opkræves for stuehuset på en land- og skovejendom for et helt givet IndkomstÅr",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "Produktionsjord": {
+        "x-entityname": "Produktionsjord",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomsgrundskyldProduktionsjordBeløb"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyldProduktionsjord": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for produktionsjord.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "EjendomsgrundskyldProduktionsjordBeløb": {
+            "description": "Grundskyld der skal opkræves for produktionsjorden på en land-og skovejendom for et helt givet IndkomstÅr",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "Restareal": {
+        "x-entityname": "Restareal",
+        "x-ui-selectable": true,
+        "required": [
+          "EjendomsgrundskyldRestarealBeløb"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyld": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for ikke-produktionsjord",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "EjendomsgrundskyldRestarealBeløb": {
+            "description": "Grundskyld der skal opkræves for restarealet (også kaldet \"øvrig jord\") på en land-og skovejendom for et helt givet IndkomstÅr.",
+            "type": "number",
+            "x-typeDescription": "Beløb angivet som decimaltal, fx. 1500,00"
+          }
+        }
+      },
+      "PersonOneOfValg": {
+        "properties": {
+          "Person": {
+            "$ref": "#/components/schemas/Person"
+          }
+        }
+      },
+      "Person": {
+        "x-entityname": "Person",
+        "x-ui-selectable": true,
+        "required": [
+          "PersonCPRNummer"
+        ],
+        "properties": {
+          "PersonCPRNummer": {
+            "description": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.",
+            "type": "string",
+            "x-typeDescription": "CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.",
+            "pattern": "((((0[1-9]|1[0-9]|2[0-9]|3[0-1])(01|03|05|07|08|10|12))|((0[1-9]|1[0-9]|2[0-9]|30)(04|06|09|11))|((0[1-9]|1[0-9]|2[0-9])(02)))[0-9]{6})|0000000000"
+          }
+        }
+      },
+      "CVRVirksomhedOneOfValg": {
+        "properties": {
+          "CVRVirksomhed": {
+            "$ref": "#/components/schemas/CVRVirksomhed"
+          }
+        }
+      },
+      "CVRVirksomhed": {
+        "x-entityname": "CVRVirksomhed",
+        "x-ui-selectable": true,
+        "required": [
+          "VirksomhedCVRNummer"
+        ],
+        "properties": {
+          "VirksomhedCVRNummer": {
+            "description": "Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR).",
+            "type": "string",
+            "x-typeDescription": "Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR).",
+            "pattern": "[0-9]{8}"
+          }
+        }
+      },
+      "EANOplysningerOneOfValg": {
+        "properties": {
+          "EANOplysninger": {
+            "$ref": "#/components/schemas/EANOplysninger"
+          }
+        }
+      },
+      "EANOplysninger": {
+        "x-entityname": "EANOplysninger",
+        "x-ui-selectable": true,
+        "required": [
+          "EANNummer",
+          "EANOrdreNummer",
+          "EANKontoNummer"
+        ],
+        "properties": {
+          "EANNummer": {
+            "description": "EAN-nummeret skal altid med på en e-faktura. EAN-nummeret er et 13-cifret nummer, der entydigt identificerer den enkelte offentlige myndighed og sikrer, at regningen når frem til rette sted.\r\n",
+            "type": "string",
+            "x-typeDescription": "EAN-nummeret er et 13-cifret nummer, der entydigt identificerer den enkelte offentlige myndighed."
+          },
+          "EANOrdreNummer": {
+            "description": "Den offentlige myndighed skal ved regsitrering eller ejer/brugerskifte af et køretøj, hvor der opkræves periodiske afgifter, oplyse ordrenummer.",
+            "type": "string",
+            "x-typeDescription": "Fri tekst på 45 karakterer"
+          },
+          "EANKontoNummer": {
+            "description": "Her kan den offentlige myndighed oplyse til interne kontostreng.",
+            "type": "string",
+            "x-typeDescription": "Fri tekst på 45 karakterer"
+          },
+          "EANKontakt": {
+            "description": "Den offentlige myndigheds kontaktperson.",
+            "type": "string",
+            "x-typeDescription": "En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb. \r\nI nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)"
+          },
+          "ProduktionEnhedNummer": {
+            "description": "Det nummer som for SKAT identificerer en produktionsenhed.",
+            "type": "number",
+            "x-typeDescription": "Det nummer som for SKAT identificerer en produktionsenhed."
+          }
+        }
+      },
+      "ProduktionEnhedNummerOneOfValg": {
+        "properties": {
+          "ProduktionEnhedNummer": {
+            "$ref": "#/components/schemas/ProduktionEnhedNummer"
+          }
+        }
+      },
+      "ProduktionEnhedNummer": {
+        "description": "Det nummer som for SKAT identificerer en produktionsenhed.",
+        "type": "number",
+        "x-typeDescription": "Det nummer som for SKAT identificerer en produktionsenhed."
+      },
+      "SRBOneOfValg": {
+        "properties": {
+          "SRB": {
+            "$ref": "#/components/schemas/SRB"
+          }
+        }
+      },
+      "SRB": {
+        "x-entityname": "SRB",
+        "x-ui-selectable": true,
+        "required": [
+          "OpkrævningFordringSidsteRettidigBetalingDato"
+        ],
+        "properties": {
+          "OpkrævningFordringSidsteRettidigBetalingDato": {
+            "description": "Sidste rettidige betalingsdato er den sidste frist for, hvornår en fordring skal være betalt.\r\n\r\nSidste rettidig betalingsdato - også kaldet SRB - er den rentebærende dato, dvs. den dato, hvorfra der evt. skal beregnes rente.\r\n\r\nSidsteRettidigBetalingDato er ikke altid lig med ForfaldDato.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          }
+        }
+      },
+      "FrigivelsesdatoOneOfValg": {
+        "properties": {
+          "Frigivelsesdato": {
+            "$ref": "#/components/schemas/Frigivelsesdato"
+          }
+        }
+      },
+      "Frigivelsesdato": {
+        "x-entityname": "Frigivelsesdato",
+        "x-ui-selectable": true,
+        "required": [
+          "OpkrævningFordringFrigivelseDato"
+        ],
+        "properties": {
+          "OpkrævningFordringFrigivelseDato": {
+            "description": "FrigivelseDato er datoen for, hvornår en negativ fordring skal eller er frigivet til at indgå i kontoens saldo. \r\nFrigivelsesdatoen vil være lig med rentedato, da renten først skal beregnes, når beløbet er frigivet.",
+            "type": "string",
+            "format": "date",
+            "x-typeDescription": "Alle gyldige datoer i den danske kalender."
+          }
+        }
+      },
+      "EjendomsskattesatserHentResponse": {
+        "x-entityname": "EjendomsskattesatserHentResponse",
+        "required": [
+          "type",
+          "id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "default": "Ejendomsskattesatser"
+          },
+          "id": {
+            "description": "Id skal være et unikt id for et specifik resource objekt, men være stabil på tværs af flere versioner af samme resource object.",
+            "type": "string"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/Aarssatser"
+          }
+        }
+      },
+      "Aarssatser": {
+        "x-entityname": "Årssatser",
+        "x-ui-selectable": true,
+        "required": [
+          "IndkomstÅr",
+          "KommuneListe"
+        ],
+        "properties": {
+          "IndkomstÅr": {
+            "description": "Det år, hvor indkomst eller aktiver, der er lagt til grund for skatteberegningen, er indtjent henholdsvis ejet.",
+            "type": "number",
+            "x-typeDescription": "Alle gyldige årstal i den danske kalender."
+          },
+          "Forsigtighedsprincip": {
+            "$ref": "#/components/schemas/Forsigtighedsprincip"
+          },
+          "KommuneListe": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/Kommune"
+            }
+          }
+        }
+      },
+      "Forsigtighedsprincip": {
+        "x-entityname": "Forsigtighedsprincip",
+        "x-ui-selectable": true,
+        "required": [
+          "ForsigtighedsprincipProcentsats"
+        ],
+        "properties": {
+          "ForsigtighedsprincipProcentsats": {
+            "description": "Procentsats som angiver den andel af vurderingens grundværdi, som der beregnes ejendomsskat af.\r\nEr i 2022 80%.",
+            "type": "number",
+            "x-typeDescription": "Vilkårligt heltal på 1-2 cifre."
+          },
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          }
+        }
+      },
+      "Kommune": {
+        "x-entityname": "Kommune",
+        "x-ui-selectable": true,
+        "required": [
+          "KommuneNummer"
+        ],
+        "properties": {
+          "KommuneNummer": {
+            "description": "En 3-cifret kode som identificerer en kommune.\r\n(Nogle systemer tillader dog en række koder som ikke er egentlige kommuner.)",
+            "type": "integer",
+            "x-typeDescription": "Der er 98 kommuner i Danmark som hver især er identificeret af et tre-cifret nummer.",
+            "maximum": 999,
+            "exclusiveMaximum": false,
+            "minimum": 100,
+            "exclusiveMinimum": false
+          },
+          "GrundskyldEjLandOgSkov": {
+            "$ref": "#/components/schemas/GrundskyldEjLandOgSkov"
+          },
+          "ProduktionsjordGrundskyld": {
+            "$ref": "#/components/schemas/ProduktionsjordGrundskyld"
+          },
+          "DækningsafgiftErhverv": {
+            "$ref": "#/components/schemas/DaekningsafgiftErhverv1"
+          },
+          "DækningsafgiftOffentligMyndighed": {
+            "$ref": "#/components/schemas/DaekningsafgiftOffentligMyndighed1"
+          }
+        }
+      },
+      "ProduktionsjordGrundskyld": {
+        "x-entityname": "ProduktionsjordGrundskyld",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleGrundskyldProduktionsjord"
+        ],
+        "properties": {
+          "KommunepromilleGrundskyldProduktionsjord": {
+            "description": "Den promille der beregnes i grundskyld af beskatningsgrundlaget for produktionsjord.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          }
+        }
+      },
+      "DaekningsafgiftErhverv1": {
+        "x-entityname": "DækningsafgiftErhverv",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleDækningsafgiftErhvervMarkering"
+        ],
+        "properties": {
+          "KommunepromilleDækningsafgiftErhvervMarkering": {
+            "description": "Angivelse af om en given kommune opkræver dækningsafgift af erhvervsejendomme.",
+            "type": "boolean",
+            "x-typeDescription": "Generel type for markeringer. Kan være:\r\n\r\nfalse\r\ntrue"
+          },
+          "KommunepromilleDækningsafgiftErhverv": {
+            "description": "Den promille hvormed der beregnes dækningsafgift af erhvervsejendomme i en given kommune.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          }
+        }
+      },
+      "DaekningsafgiftOffentligMyndighed1": {
+        "x-entityname": "DækningsafgiftOffentligMyndighed",
+        "x-ui-selectable": true,
+        "required": [
+          "KommunepromilleDækningsafgiftOffentligMyndighedMarkering"
+        ],
+        "properties": {
+          "KommunepromilleDækningsafgiftOffentligMyndighedMarkering": {
+            "description": "Angivelse af om en given kommune opkræver dækningsafgift af ejendomme ejet af offentlige myndigheder. ",
+            "type": "boolean",
+            "x-typeDescription": "Generel type for markeringer. Kan være:\r\n\r\nfalse\r\ntrue"
+          },
+          "KommunepromilleDækningsafgiftOffentligMyndighed": {
+            "description": "Den promille hvormed der beregnes dækningsafgift af ejendomme ejet af offentlige myndigheder i en given kommune.",
+            "type": "number",
+            "maximum": 999,
+            "exclusiveMaximum": false
+          },
+          "RegistreringTidspunkt": {
+            "description": "Angiver et tidspunkt for, hvornår data om et forretningsobjekt er registreret i et system.\r\nAnvendes typisk som udsøgningskriterie i en service eller rapport.",
+            "type": "string",
+            "format": "date-time",
+            "x-typeDescription": "Angiver tidspunkt for indfrielse, udtrækning eller overdragelse"
+          }
+        }
+      },
+      "Fejlsvar": {
+        "required": [
+          "errors",
+          "meta",
+          "links"
+        ],
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Fejl"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "Fejl": {
+        "required": [
+          "kode",
+          "besked"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type af returkode - advis eller fejl"
+          },
+          "kode": {
+            "type": "string",
+            "description": "Fejlkode"
+          },
+          "besked": {
+            "type": "string",
+            "description": "Fejlbeskrivelse"
+          },
+          "data": {
+            "type": "string",
+            "description": "Data der indeholder fejl"
+          },
+          "status": {
+            "type": "string",
+            "description": "HTTP status kode"
+          }
+        }
+      },
+      "Meta": {
+        "type": "object",
+        "description": "Meta data for forespørgslen",
+        "properties": {
+          "operationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tidspunkt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Tidspunktet forespørgslen blev foretaget"
+          },
+          "klassifikation": {
+            "type": "string",
+            "description": "klassifikation af data i niveauerne Følsomme personoplysninger, Personoplysninger, Fortrolige data, Interne data eller Offentlige data. Vær opmærksom på at Fortrolige data også dækker over Følsomme personoplysninger og personoplysninger men klassifikationen Fortrolige data har ikke tilstrækkelig præcision for data med personoplysninger. Hvis klassifikation ikke er udfyldt, så skal anvender forholde sig til x-klassifikation i den tilhørende Open API specifikation. klassifikationen danner grundlagt for de sikkerhedsforanstaltninger der skal tages i forhold til data i transmission såvel som ved lagring. Hvis der er tvivl om hvordan man skal forholde sig til de enkelte klassifikationer skal der tages kontakt til kontoret for Persondatabeskyttelse."
+          }
+        }
+      },
+      "Links": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string",
+            "format": "url",
+            "description": "Linket der genererede denne forespørgsel"
+          },
+          "first": {
+            "type": "string",
+            "format": "url",
+            "description": "Den første side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "prev": {
+            "type": "string",
+            "format": "url",
+            "description": "Den forrige side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "next": {
+            "type": "string",
+            "format": "url",
+            "description": "Den næste side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "last": {
+            "type": "string",
+            "format": "url",
+            "description": "Den sidste side med data. Linket er tilgængelig i forbindelse med paginering"
+          },
+          "spec": {
+            "type": "string",
+            "format": "url",
+            "description": "Linkt til den udstillede Open API Spec"
+          }
+        }
+      }
+    }
+  }
+}

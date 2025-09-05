@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldPantebreveDepotRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldPantebreveDepotEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldSaerligeEjerForholdRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldSaerligeEjerForholdEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldPensionForsikringPantebreveRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldPensionForsikringPantebreveEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanUnderAfviklingRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanUnderAfviklingEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOevrigRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOevrigEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutEjerStatusKode.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningStudielaanAfviklingVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningStudielaanAfviklingBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningStudielaanAfviklingDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningStudielaanAfviklingStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningStudielaanAfviklingRestgaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterSaerligeEjerForholdVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterSaerligeEjerForholdBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterSaerligeEjerForholdDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterSaerligeEjerForholdStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningRenteudgifterSaerligeEjerForholdRestgaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebreveDepotVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebreveDepotBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebrevePensionForsikringVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebrevePensionForsikringBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebreveDepotDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebreveDepotStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebreveDepotRestgaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebrevePensionForsikringDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebrevePensionForsikringStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningPantebrevePensionForsikringRestgaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudieLaanStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudieLaanDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOEvrigeStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOEvrigeDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutStartDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutDatoRegistreringDato.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankRestBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldBankBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionRestBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldForsikringPensionBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanRestBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldStudielaanBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOevrigeRestBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOevrigeVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldOevrigeBankRegistreringsnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutRestBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutVirksomhedSEnummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="../../1_0_0/PersonKontrolOplysningGaeldRealkreditinstitutBankRegistreringsnummerIdentifikator.xsd"/><xs:include schemaLocation="OevrigeOplysningerStruktur.xsd"/>
+	<xs:element name="PersonKontrolOplysningStruktur" type="hsws:PersonKontrolOplysningStrukturType"/>
+	<xs:complexType name="PersonKontrolOplysningStrukturType">
+		<xs:sequence>
+			<xs:element name="GaeldRealkreditinstitutListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GaeldRealkreditinstitut" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GaeldRealkreditinstitutValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutRestBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldRealkreditinstitutRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GaeldOevrigeListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GaeldOevrige" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GaeldOevrigeValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldOevrigeBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldOevrigeVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldOevrigeRestBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldOEvrigeDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldOEvrigeStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldOevrigEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldOevrigRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GaeldStudielaanListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GaeldStudielaan" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GaeldStudielaanValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanRestBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudieLaanDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudieLaanStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GaeldForsikringPensionListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GaeldForsikringPension" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GaeldForsikringPensionValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionRestBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldForsikringPensionRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GaeldBankListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="GaeldBank" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GaeldBankValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankRestBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldBankRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StudielaanUnderAfviklingListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="StudielaanUnderAfvikling" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="StudielaanUnderAfviklingValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningStudielaanAfviklingBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningStudielaanAfviklingVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningStudielaanAfviklingRestgaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningStudielaanAfviklingStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningStudielaanAfviklingDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanUnderAfviklingEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldStudielaanUnderAfviklingRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PensionForsikringPantebreveListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PensionForsikringPantebreve" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PensionForsikringPantebreveValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningPantebrevePensionForsikringBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningPantebrevePensionForsikringVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningPantebrevePensionForsikringRestgaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningPantebrevePensionForsikringStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningPantebrevePensionForsikringDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldPensionForsikringPantebreveEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldPensionForsikringPantebreveRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="RenteudgifterSaerligeEjerForholdListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RenteudgifterSaerligeEjerForhold" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="RenteudgifterSaerligeEjerForholdValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterSaerligeEjerForholdBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterSaerligeEjerForholdVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterSaerligeEjerForholdRestgaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterSaerligeEjerForholdStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningRenteudgifterSaerligeEjerForholdDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldSaerligeEjerForholdEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldSaerligeEjerForholdRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PantebreveDepotListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PantebreveDepot" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PantebreveDepotValg" minOccurs="0">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="hentselv:PersonKontrolOplysningPantebreveDepotBankRegistreringsnummerIdentifikator"/>
+												<xs:element ref="hentselv:PersonKontrolOplysningPantebreveDepotVirksomhedSEnummerIdentifikator"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="hentselv:PersonKontrolOplysningPantebreveDepotRestgaeldBeloeb" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningPantebreveDepotStartDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningPantebreveDepotDatoRegistreringDato" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldPantebreveDepotEjerStatusKode" minOccurs="0"/>
+									<xs:element ref="hentselv:PersonKontrolOplysningGaeldPantebreveDepotRenteudgiftBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="hsws:OevrigeOplysningerStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

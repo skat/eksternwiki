@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation>Hent slutopgørelseServiceoperationen henter en kundes seneste slutopgørelse i PDF-format CSCs ONDemand system (3S), således at den kan vises i sagsbehandlerbilledet.</xs:documentation>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../view/SelskabSkatteOplysningerHent_IType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/SelskabSkatteOplysningerHent_OType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+   
+   
+   
+   <xs:element name="SelskabSkatteOplysningerHentInterface" type="fase2.1:SelskabSkatteOplysningerHentInterfaceType"/>
+   
+   
+   
+   <xs:complexType name="SelskabSkatteOplysningerHentInterfaceType">
+      
+      
+      
+      <xs:choice>
+         
+         
+         
+         <xs:element ref="fase2.1:SelskabSkatteOplysningerHent_I"/>
+         
+         
+         
+         <xs:element ref="fase2.1:SelskabSkatteOplysningerHent_O"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTrans"/>
+         
+         
+         
+         <xs:element ref="fase2.1:KompenserTransSvar"/>
+      
+      
+      
+      </xs:choice>
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

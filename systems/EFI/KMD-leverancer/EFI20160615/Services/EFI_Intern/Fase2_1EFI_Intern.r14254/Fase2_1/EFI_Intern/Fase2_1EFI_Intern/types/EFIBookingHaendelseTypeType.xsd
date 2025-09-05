@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="EFIBookingHændelseTypeType">
+               <xs:annotation>
+                  <xs:documentation>Benyttes som underhændelsestype i en  bookingsvar hændelse fra RSEFIOpgaveBook</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="ForhoejLoenIndeholdProcent"/>
+                  <xs:enumeration value="GenoptagLoenIndehold"/>
+                  <xs:enumeration value="KundebrevLoenoplysning"/>
+                  <xs:enumeration value="NedsaetLoenIndeholdProcent"/>
+                  <xs:enumeration value="NedsatLoenIndehold"/>
+                  <xs:enumeration value="NyFordring"/>
+                  <xs:enumeration value="Udl"/>
+                  <xs:enumeration value="VarslLoenIndehold"/>
+                  <xs:enumeration value="Man"/>
+                  <xs:enumeration value="KOB"/>
+                  <xs:enumeration value="Rykker"/>
+                  <xs:enumeration value="BEOMeddTvungenBo"/>
+                  <xs:enumeration value="BEOMeddFrivBo"/>
+                  <xs:enumeration value="BEOMeddBetalEvneBo"/>
+                  <xs:enumeration value="BEOMeddFordringer"/>
+                  <xs:enumeration value="BEOMeddSkiftTvungen"/>
+                  <xs:enumeration value="BEOMeddForhBo"/>
+                  <xs:enumeration value="BFSRessAnmodPoliti"/>
+                  <xs:enumeration value="BFSFristVarslingUdloebet"/>
+                  <xs:enumeration value="BFSRessVarselKundeAfsoning"/>
+                  <xs:enumeration value="BFSFristForaeldelse"/>
+                  <xs:enumeration value="BFSFristOpfoelgning"/>
+                  <xs:enumeration value="BFSBookAnmodPoliti"/>
+                  <xs:enumeration value="BFSBookBudget"/>
+                  <xs:enumeration value="BFSBookVarskoKunde"/>
+                  <xs:enumeration value="EFBookRKH"/>
+                  <xs:enumeration value="KUMBook"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

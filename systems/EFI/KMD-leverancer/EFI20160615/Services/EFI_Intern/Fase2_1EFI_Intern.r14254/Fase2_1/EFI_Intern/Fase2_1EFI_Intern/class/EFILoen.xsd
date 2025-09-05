@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indsatsdata for lønindeholdelse </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst255Type.xsd"/>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/EFILoenAfgoerelseTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst100Type.xsd"/>
+         <xs:include schemaLocation="../types/OCRLinjeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel3Type.xsd"/>
+         <xs:include schemaLocation="../types/EFILoenMeddelelseStatusType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1024Type.xsd"/>
+         <xs:element name="EFILønVarsletProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den varslede lønindeholdelsesprocent fra BetalingEvneKomponenten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønVarsletBeløbDKK" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="EFILønOprindeligIværksatProcent" type="fase2.1:ProcentType">
+               
+            </xs:element>
+         <xs:element name="EFILønIværksatProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder den iværksatte lønindeholdelsesprocent</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønBerostillingBegrundelse" type="fase2.1:Tekst255Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for berostilling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønOpgaveBookingForskudRegistrering" type="fase2.1:UUIDType">
+               
+            </xs:element>
+         <xs:element name="EFILønOpgaveBookingReferenceVarsling" type="fase2.1:UUIDType">
+               
+            </xs:element>
+         <xs:element name="EFILønOpgaveBookingReferenceIværksættelse" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikatorer er ISO/IEC 11578:1996 UUID'er, type 4, random 128-bit, normalt beskrevet ved 32 hex-cifre og fire bindestreger på formen 8-4-4-4-12 </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønVarselDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender. Indeholder udsendelsesdato for varsel </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønIværksatDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønAfgørelseType" type="fase2.1:EFILønAfgørelseTypeType">
+               
+            </xs:element>
+         <xs:element name="EFILønAfgørelseDatoForIgangværende" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender. Datoen for den igangværende lønindeholdelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønForældelsesafbrydendeDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="EFILønDMIForældelseAnnullerID" type="fase2.1:UUIDType">
+               
+            </xs:element>
+         <xs:element name="EFILønBeregnetProcent" type="fase2.1:ProcentType">
+               
+            </xs:element>
+         <xs:element name="EFILønReduceretProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder den reducerede lønindeholdelsesprocent </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønJusteretProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder den justerede lønindeholdelsesprocent.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønAfdragProcent" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder afdragsprocenten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønSærligBegrundelse" type="fase2.1:Tekst100Type">
+               
+            </xs:element>
+         <xs:element name="EFILønOCRLinje" type="fase2.1:OCRLinjeType">
+               
+            </xs:element>
+         <xs:element name="EFILønBetalingEvneBeregning" type="fase2.1:Tekst100Type">
+               
+            </xs:element>
+         <xs:element name="EFILønMeddelelseID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>MeddelelseID på løn afgørelse meddelelsen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønMeddelelseTypeID" type="fase2.1:UUIDType">
+               
+            </xs:element>
+         <xs:element name="EFILønMeddelelseSendt" type="fase2.1:JaNejType">
+               
+            </xs:element>
+         <xs:element name="EFILønDækningsRækkefølgeIndex" type="fase2.1:TalHel3Type">
+               
+            </xs:element>
+         <xs:element name="EFILønMeddelelseStatus" type="fase2.1:EFILønMeddelelseStatusType">
+               
+               <xs:annotation>
+                  <xs:documentation>Information om meddelelse er sendt.  Enumeration omfatter:  SENDT RETURNERET IKKESENDT </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønBeregnetDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="EFILønÅrsopgørelseÅrNummer" type="fase2.1:Tekst100Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekststreng med maks. 100 alfanumeriske tegn. Eks. 2009 nr. 1 Beskriver beregningsgrundlag hvis det er baseret på årsopgørsel </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFILønGensendBegrundelse" type="fase2.1:Tekst1024Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers begrundelse for at gensende lønindeholdelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

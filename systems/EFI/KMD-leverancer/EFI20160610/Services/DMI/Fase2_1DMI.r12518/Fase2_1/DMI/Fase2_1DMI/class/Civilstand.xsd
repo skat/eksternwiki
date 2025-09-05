@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder oplysning om en persons civilstand.  Fra Det Centrale Personregister (CPR):  Oplysning om hvorvidt en person er  - ugift  - gift  - i registreret partnerskab  - separeret  - fraskilt  - har fået opløst et registreret partnerskab  - enke eller enkemand,  - den længstlevende partner   Død er ikke en civilstandskode i CSR-P.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/CivilstandKodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/GiftKodeType.xsd"/>
+         <xs:include schemaLocation="../types/CPRNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DoedKodeType.xsd"/>
+         <xs:include schemaLocation="../types/GenoplivetKodeType.xsd"/>
+         <xs:include schemaLocation="../types/UmyndighedsKodeType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="CivilstandKode" type="fase2.1:CivilstandKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for en persons civilstand, det vil sige de forhold, der gør sig gældende om en persons ægteskab og samliv. I nogle systemer angiver koden i stedet om personen er død eller evt. genoplivet. Her har en død person civilstandkode = D og en genoplivet person har tidligere haft civilstandkode = D.  Fra CSR-P:  U = ugift  G = gift  P = i registreret partnerskab  S = separeret  F = fraskilt  O = har fået opløst et registreret partnerskab  E = enke eller enkemand,  L = den længstlevende partner   (Død er ikke en civilstandskode i CSR-P).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandStatusDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver datoen for civilstandens ikrafttrædelse - fx vielsesdato. I nogle systemer angiver det datoen hvor personen er død eller evt. genoplivet.   Der er ingen CivilstandStatusDato for CivilstandKode =  U (ugift).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandGiftKode" type="fase2.1:GiftKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for om en person er gift eller lign.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandGiftFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandGiftTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandÆgtefælleCPRNummer" type="fase2.1:CPRNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>CPR-nummer er et 10 cifret personnummer der entydigt identificerer en dansk person.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandUgiftFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandUgiftTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandDødKode" type="fase2.1:DødKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for død</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandDødDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Personens dødsdag. Oplyses via CPR/CSRP. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandGenoplivetKode" type="fase2.1:GenoplivetKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>J=Genoplivet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandGenoplivetDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandUmyndighedKode" type="fase2.1:UmyndighedsKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>U=Umyndiggjort V=Værges adresse skal benyttes X=Umyndiggjort og værges adresse skal benyttes</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandUmyndigFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandUmyndigTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="CivilstandForsørgerPligt" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Generel type for markeringer. Kan være:  false true</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

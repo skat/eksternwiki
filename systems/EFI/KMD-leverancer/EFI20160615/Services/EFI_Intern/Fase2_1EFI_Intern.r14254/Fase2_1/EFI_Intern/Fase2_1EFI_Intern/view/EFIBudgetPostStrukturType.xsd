@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIBudgetPost.xsd"/>
+         <xs:include schemaLocation="../operational/EFIBudgetPostErOEvrigePostMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIBudgetPostErOEvrigePostStatus.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIBudgetPostSamleverBegrundelse.xsd"/>
+				     
+         <xs:element name="EFIBudgetPostStruktur" type="fase2.1:EFIBudgetPostStrukturType"/>
+         <xs:complexType name="EFIBudgetPostStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:EFIBudgetPostID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostGruppeKode" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:EFIBudgetPostTypeKode"/>
+
+               <xs:element ref="fase2.1:EFIBudgetPostErØvrigePostMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostBeskrivelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostSidstRedigeretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostSidstRedigeretAfRolle" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostSorteringRækkefølge" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:EFIBudgetPostDokumenteret"/>
+
+               <xs:element ref="fase2.1:EFIBudgetPostErØvrigePostStatus" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostKundeBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostSagsbehandlerBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostSamleverBegrundelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostGyldigFraDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetPostGyldigTilDato" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:EFIBudgetPostRedigerbar"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

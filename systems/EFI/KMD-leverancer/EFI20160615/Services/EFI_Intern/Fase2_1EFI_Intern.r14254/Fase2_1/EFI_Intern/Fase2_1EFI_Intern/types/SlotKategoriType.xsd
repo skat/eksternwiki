@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="SlotKategoriType">
+               <xs:annotation>
+                  <xs:documentation>Et slot kan være én af fire kategorier:      1 Default - hvis slottet er dannet på baggrund af en default frokost tid eller default mødetid.     2 Gentagelsemaster - hvis slottet har gentagelser     3 Gentagelse - hvis slottet er dannet som en gentagelse af et slot     4 Almindeligt slot</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="5"/>
+                  <xs:minInclusive value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

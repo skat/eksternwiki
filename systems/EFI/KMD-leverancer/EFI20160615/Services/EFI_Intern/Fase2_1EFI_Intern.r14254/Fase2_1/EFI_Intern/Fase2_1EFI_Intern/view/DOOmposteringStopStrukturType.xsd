@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OmposteringStop.xsd"/>
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+         <xs:include schemaLocation="../operational/StopAktivMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/StopAEndrAktion.xsd"/>
+				     
+         <xs:element name="DOOmposteringStopStruktur" type="fase2.1:DOOmposteringStopStrukturType"/>
+         <xs:complexType name="DOOmposteringStopStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OmposteringStopType"/>
+                  
+                  <xs:element ref="fase2.1:DMIIndbetalingID"/>
+
+               <xs:element ref="fase2.1:StopAktivMarkering" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:StopÆndrAktion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

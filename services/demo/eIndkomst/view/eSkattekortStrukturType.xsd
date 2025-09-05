@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:eskattekort="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" xmlns:eindkomst="urn:oio:skat:eindkomst:1.0.0" xmlns:eskattekorttraekprocent="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekorttraekprocent/xml/schemas/20071202/" xmlns:eskattefrikort="http://rep.oio.dk/skat.dk/eindkomst/class/eskattefrikort/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattefrikort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/6951/artefact/SKAT_ESkatteFrikortSaldoBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekorttraekprocent/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/997/artefact/SKAT_ESkattekortTraekProcent.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/1295059/artefact/ESkattekortSaerskiltForskudTraekProcent.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/3947/artefact/SKAT_ESkattekortFradragDagBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/773/artefact/SKAT_ESkattekortFradragUgeBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/2256/artefact/SKAT_ESkattekortFradragFjortenDageBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/3941/artefact/SKAT_ESkattekortFradragMaanedBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/3530/artefact/SKAT_ESkattekortIkraftDato.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/1147/artefact/SKAT_ESkattekortLoebenummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/eskattekort/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/4225/artefact/SKAT_ESkattekortKoerselDato.xsd"/><xs:element name="eSkattekortStruktur" type="fase2:eSkattekortStrukturType"/>
+	<xs:complexType name="eSkattekortStrukturType">
+		<xs:sequence>
+			<xs:element name="eSkattekortStruktur">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="eskattekort:ESkattekortKoerselDato"/>
+						<xs:element ref="eskattekort:ESkattekortLoebenummerIdentifikator"/>
+						<xs:element ref="eskattekort:ESkattekortIkraftDato"/>
+						<xs:element ref="eskattekort:ESkattekortFradragMaanedBeloeb" minOccurs="0"/>
+						<xs:element ref="eskattekort:ESkattekortFradragFjortenDageBeloeb" minOccurs="0"/>
+						<xs:element ref="eskattekort:ESkattekortFradragUgeBeloeb" minOccurs="0"/>
+						<xs:element ref="eskattekort:ESkattekortFradragDagBeloeb" minOccurs="0"/>
+						<xs:element ref="eindkomst:ESkattekortSaerskiltForskudTraekProcent" minOccurs="0"/>
+						<xs:element ref="eskattekorttraekprocent:ESkattekortTraekProcent" minOccurs="0"/>
+						<xs:element ref="eskattefrikort:ESkatteFrikortSaldoBeloeb" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

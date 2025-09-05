@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r18034</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OpkraevningFordring.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringHaver.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringReference.xsd"/>
+         <xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringGenstand.xsd"/>
+         <xs:include schemaLocation="../class/ValutaOplysning.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningFordringType.xsd"/>
+         <xs:include schemaLocation="../class/OpkraevningDelFordringType.xsd"/>
+         <xs:element name="OpkrævningFordringOpdater_FejlId"
+                     type="fase2.1:OpkrævningFordringOpdater_FejlIdType"/>
+         <xs:complexType name="OpkrævningFordringOpdater_FejlIdType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:OpkrævningFordringBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringHaverNummerType" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringHaverNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KundeType" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KundeNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringReferenceNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ProduktionEnhedNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringGenstandNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ValutaOplysningKode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringTypeID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningDelFordringTypeID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringForældelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringPeriodeFraDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringPeriodeTilDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringStiftelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringModtagelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpkrævningFordringBogføringDato" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r15115</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Underskud.xsd"/>
+         <xs:include schemaLocation="../class/SelskabSkattepligtigIndkomst.xsd"/>
+         <xs:include schemaLocation="../class/SkatteBeregningSelskab.xsd"/>
+         <xs:include schemaLocation="../class/AArsopgoerelseSelskab.xsd"/>
+         <xs:element name="ÅrsopgørelseSkatteberegningStruktur"
+                     type="skat2016:ÅrsopgørelseSkatteberegningStrukturType"/>
+         <xs:complexType name="ÅrsopgørelseSkatteberegningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Skatteberegning">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:UnderskudTotalAnvendt" minOccurs="0"/>
+
+                        <xs:element ref="skat2016:SelskabSkattepligtigIndkomstAnsatEfterFradragUnderskudTidligereÅrTotalBeløb"/>
+                  
+                        <xs:element ref="skat2016:SkatteBeregningSelskabIndkomstskatProcent"/>
+
+                        <xs:element ref="skat2016:SkatteBeregningSelskabIndkomstskatBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:SkatteBeregningSelskabBeregnetSlutskatBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:ÅrsopgørelseSelskabAcontoOgUdbytteskatIAltBeløb" minOccurs="0"/>
+
+                        <xs:element ref="skat2016:SkatteBeregningSelskabRestskatFørTillægEllerOverskydendeSkatBeløb"/>
+                  
+                        <xs:element ref="skat2016:SkatteBeregningSelskabGodtgørelseEllerRestskatTillægProcent"/>
+
+                        <xs:element ref="skat2016:SkatteBeregningSelskabGodtgørelseEllerRestskatTillægBeløb"
+                                    minOccurs="0"/>
+
+                        <xs:element ref="skat2016:SkatteBeregningSelskabRestskatEfterTillægEllerOverskydendeSkatBeløb"/>
+
+                        <xs:element ref="skat2016:SkatteBeregningSelskabEndeligRestskatEllerOverskydendeSkatBeløb"
+                                    minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

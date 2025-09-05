@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Koerselstid.xsd"/>
+         <xs:element name="KørselstidStruktur" type="fase2.1:KørselstidStrukturType"/>
+         <xs:complexType name="KørselstidStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KørselstidID"/>
+                  
+                  <xs:element ref="fase2.1:KørselstidArbejdsstedID"/>
+                  
+                  <xs:element ref="fase2.1:KørselstidPostNummer"/>
+                  
+                  <xs:element ref="fase2.1:KørselstidMinutter"/>
+                  
+                  <xs:element ref="fase2.1:KørselstidMinutterIndenforPostNummer"/>
+                  
+                  <xs:element ref="fase2.1:KørselstidOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:KørselstidOprettetTid"/>
+
+               <xs:element ref="fase2.1:KørselstidÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KørselstidÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KørselstidSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:KørselstidSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:KørselstidTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

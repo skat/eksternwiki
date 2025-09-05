@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/EFIFordringFundamentEtableringTypeType.xsd"/>
+         <xs:include schemaLocation="../types/EFIFordringFundamentEtableringMetodeType.xsd"/>
+         <xs:include schemaLocation="../types/EFIFordringFundamentMangelStatusType.xsd"/>
+         <xs:element name="EFIFordringOprindeligBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringens oprindelige beløb også kaldet hovedstolen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringOprindeligBeløbDKK" type="fase2.1:BeløbType">
+               
+            </xs:element>
+         <xs:element name="EFIFordringKonvertering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en EFI-fordring er konverteret eller ej.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringRenteOmkostningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>EFIFordringRenteOmkostningBeløb = AkkumuleretRenteBeløb + AkkumuleretGebyrBeløb fra DMIFordringList.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringRenteOmkostningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Akkumulerede renter til dags dato uanset om de fysisk er tilskrevne eller der er tale om beregnede renter. Beløb i danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringFundamentDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fundamentsdato for en EFI-fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringFundamentEtableringType"
+                     type="fase2.1:EFIFordringFundamentEtableringTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enumeration omfatter:  RYKKERSENDT: Der er sendt mindst to rykkere til kunden vedr. fordringen UDLAEGFORSOEGT: Der er forsøgt foretaget udlæg for fordringen UDLAEGFORETAGET: Der er foretaget udlæg for fordringen, hvor kunden er til stede ERKENDT: Det offentlige har erhvervet skyldnerens skriftlige erkendelse af fordringen DOM: Fordringen er fastslået ved dom IKKERELEVANT: Ikke relevant (anvendes når fordringtypen ikke har udpantningsret og dermed ikke kan have en fundamentsdato) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringFundamentEtableringMetode"
+                     type="fase2.1:EFIFordringFundamentEtableringMetodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enumeration omfatter:  MANUELT: Manuelt AUTO: Automatisk IKKERELEVANT: Ikke relevant (anvendes når fordringtypen ikke har udpantningsret og dermed ikke kan have en fundamentsdato)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringFundamentMangelStatus"
+                     type="fase2.1:EFIFordringFundamentMangelStatusType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enumeration omfatter:  VERIFICERET: Verificeret IKKEVERIFICERET: Ikke-verificeret IKKERELEVANT: Ikke relevant (anvendes når fordringen har en fundamentdato eller når fordringstypen ikke har udpantningsret og fordringen dermed ikke kan have en fundamentsdato)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringRetsafgiftDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for den relaterede fordring af typen retsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringTillægsafgiftDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for den relaterede fordring af typen tillægsafgift.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIFordringInddrivelseForældelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hver gang der sker en forældelsesafbrydende handling i form af udlæg, lønindeholdelse, anerkendelse af gæld o.l., så genereres der en ny forældelsesdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

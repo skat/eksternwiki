@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/MeddelelseAfsenderDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIIndberetningsAAr.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/DMIKontoTypeTekst.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkkumuleretFordringRestBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/AkkumuleretFordringRestBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkkumuleretRenteBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AkkumuleretRenteBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIRestanceMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIEjerStatusKode.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIRentefod.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIIndberetningDato.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/DMIRenteBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/DMIRenteBeloebDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringHaverStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringRestBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIMeddelelseRenteIndberetningStruktur"
+                     type="fase2.1:DMIMeddelelseRenteIndberetningStrukturType"/>
+         <xs:complexType name="DMIMeddelelseRenteIndberetningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:MeddelelseAfsenderDato"/>
+                  
+                  <xs:element ref="fase2.1:DMIIndberetningsÅr"/>
+               <xs:element name="RenteIndberetningListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="RenteIndberetning" minOccurs="1" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:FordringHaverStruktur"/>
+                  
+                                 <xs:element ref="fase2.1:DMIKontoTypeTekst"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                                 <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                 <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:DMIFordringForfaldDato"/>
+                                 <xs:element name="AkkumuleretFordringRestBeløb">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:AkkumuleretFordringRestBeløb"/>
+                  
+                                          <xs:element ref="fase2.1:ValutaKode"/>
+
+                                          <xs:element ref="fase2.1:AkkumuleretFordringRestBeløbDKK" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                                 <xs:element name="AkkumuleretRenteBeløb">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:AkkumuleretRenteBeløb"/>
+                  
+                                          <xs:element ref="fase2.1:ValutaKode"/>
+
+                                          <xs:element ref="fase2.1:AkkumuleretRenteBeløbDKK" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                                 <xs:element name="IndberetningsListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="Indberetning" minOccurs="1" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:DMIRestanceMarkering"/>
+                  
+                                                   <xs:element ref="fase2.1:DMIEjerStatusKode"/>
+                  
+                                                   <xs:element ref="fase2.1:DMIRentefod"/>
+                  
+                                                   <xs:element ref="fase2.1:DMIIndberetningDato"/>
+                  
+                                                   <xs:element ref="fase2.1:FordringRestBeløbStruktur"/>
+                                                   <xs:element name="RenteBeløbStruktur">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:DMIRenteBeløb"/>
+                  
+                                                            <xs:element ref="fase2.1:ValutaKode"/>
+
+                                                            <xs:element ref="fase2.1:DMIRenteBeløbDKK" minOccurs="0"/>
+
+
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Rentetilskrivning anvendes til at håndterer de rentetilskrivninger, der foretages på den enkelte fordring.  Der foretages ikke rentetilskrivning af saldoen, men af den/de enkelte fordringer, der indgår i en saldo.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/PeriodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentSatsPositivType.xsd"/>
+         <xs:element name="RenteTilskrivningPeriode" type="fase2.1:PeriodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>den periode som en rente skal beregnes for</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteTilskrivningBeregnetFremTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>den dato hvortil en rente er beregnet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteTilskrivningFordringBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>det beløb som renten skal beregnes af</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteTilskrivningRenteBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>det rentebeløb som er beregnet for en fordring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RenteTilskrivningProcentSats" type="fase2.1:ProcentSatsPositivType">
+               
+            </xs:element>
+      </xs:schema>

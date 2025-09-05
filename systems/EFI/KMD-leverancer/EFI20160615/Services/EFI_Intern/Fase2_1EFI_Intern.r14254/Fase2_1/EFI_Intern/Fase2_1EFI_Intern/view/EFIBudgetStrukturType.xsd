@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/EFIVersionNummer.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIBudget.xsd"/>
+         <xs:include schemaLocation="../operational/EFIBudgetAEgtefaelleCPRNummer.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/VirksomhedBudgetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/PersonBudgetStrukturType.xsd"/>
+				     
+         <xs:element name="EFIBudgetStruktur" type="fase2.1:EFIBudgetStrukturType"/>
+         <xs:complexType name="EFIBudgetStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:EFIVersionNummer"/>
+
+               <xs:element ref="fase2.1:EFIBudgetTypeKode" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:EFIBudgetStatusKode"/>
+
+               <xs:element ref="fase2.1:EFIBudgetÆgtefælleCPRNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetSidstGodkendtAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetSidstGodkendtDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetSidstRedigeretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetSidstRedigeretAfRolle" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetSidstRedigeretDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetGyldigFraDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIBudgetGyldigTilDato" minOccurs="0"/>
+
+
+               <xs:element name="BudgetTypeValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element ref="fase2.1:VirksomhedBudgetStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:PersonBudgetStruktur"/>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

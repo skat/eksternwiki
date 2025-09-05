@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/FordringAfskrivning.xsd"/>
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:element name="AfskrevetBeløbStruktur" type="fase2.1:AfskrevetBeløbStrukturType"/>
+         <xs:complexType name="AfskrevetBeløbStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:FordringAfskrivningProcent" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ValutaKode"/>
+                  
+                  <xs:element ref="fase2.1:FordringAfskrivningAfsBeløb"/>
+                  
+                  <xs:element ref="fase2.1:FordringAfskrivningAfsBeløbDKK"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

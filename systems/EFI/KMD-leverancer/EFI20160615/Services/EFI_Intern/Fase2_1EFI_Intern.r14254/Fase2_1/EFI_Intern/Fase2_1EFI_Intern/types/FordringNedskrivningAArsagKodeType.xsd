@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="FordringNedskrivningÅrsagKodeType">
+               <xs:annotation>
+                  <xs:documentation>Sagbehandlers muligheder for valg af årsag til nedskrivning.   Liste af faste værdier (Enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="ANDN"/>
+                  <xs:enumeration value="FAST"/>
+                  <xs:enumeration value="FEJL"/>
+                  <xs:enumeration value="HÆBO"/>
+                  <xs:enumeration value="HÆFO"/>
+                  <xs:enumeration value="INDB"/>
+                  <xs:enumeration value="LIHE"/>
+                  <xs:enumeration value="REGU"/>
+                  <xs:enumeration value="TRVE"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En specialisering af klassen KontaktOplysning. Indeholder et telefonnummer til en given person/virksomhed. Ifølge standarden E.164 kan et internationalt telefonnummer være op til 15 cifre inkl. landekode og excl. præfix. Et udenlandsk telefonnummer kan indeholde flere tegn end 15, derfor er det også muligt at angive et udenlandsk telefonnummer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TelefonFaxLandeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TelefonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/UdenlandskTelefonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="TelefonLandeKode" type="fase2.1:TelefonFaxLandeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Telefon- og faxnummer landekode. Fx +45 eller 0045. Selve telefonnummeret indgår ikke.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TelefonNummer" type="fase2.1:TelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et telefonnummer svarende til eks: 23232323.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TelefonUdenlandskNummer" type="fase2.1:UdenlandskTelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Andre telefonnumre end danske.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TelefonGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TelefonGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

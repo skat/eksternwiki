@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/DMIDWTransaktionListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWHaeftelseTransaktionDaekningListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWFordringTransaktionListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWFordringTransaktionDaekningListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWHaeftelseAttrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWHaeftelseForaeldelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWInddrivelsesfordringMflListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWTransportEllerUdlaegsfordringListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWTransportRettighedHaverListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWTransportTransaktionListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWIndbetalingListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWUdbetalingListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWBetalingOrdningRateListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWFordringHaverFordelingListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWFordringStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWHaeftelseModregningStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWHaeftelseRenteFritagListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIDWHaeftelseStopListeStrukturType.xsd"/>
+				     
+         <xs:element name="DMIDWInformationStruktur" type="fase2.1:DMIDWInformationStrukturType"/>
+         <xs:complexType name="DMIDWInformationStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:DMIDWTransaktionListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWHæftelseTransaktionDækningListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWFordringTransaktionListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWFordringTransaktionDækningListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWHæftelseAttrStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWHæftelseForældelseStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWInddrivelsesfordringMflListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWTransportEllerUdlægsfordringListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWTransportRettighedHaverListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWTransportTransaktionListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWIndbetalingListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWUdbetalingListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWBetalingOrdningRateListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWFordringHaverFordelingListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWFordringStopListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWHæftelseModregningStopListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWHæftelseRenteFritagListeStruktur"/>
+                  
+                  <xs:element ref="fase2.1:DMIDWHæftelseStopListeStruktur"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

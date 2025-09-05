@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/SupplerendePersonOplysning.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="SupplerendePersonOplysningStruktur" type="fase2.1:SupplerendePersonOplysningStrukturType"/>
+   
+   
+   
+   <xs:complexType name="SupplerendePersonOplysningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:SupplerendePersonOplysningNavn"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SupplerendePersonOplysningFødselDato" minOccurs="0"/>
+
+
+         
+         
+         
+         <xs:element ref="fase2.1:SupplerendePersonOplysningKøn"/>
+                  
+                  
+         
+         
+         
+         <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+               
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/BolskType.xsd"/>
+      
+   
+   
+   <xs:element name="KøretøjEfterlyst" type="fase2.1:BolskType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Variablen bruges til at søge efter om et køretøj er efterlyst eller ej. Er variablen sandt er køretøjet efterlyst, er variablen falsk er køretøjet ikke efterlyst.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

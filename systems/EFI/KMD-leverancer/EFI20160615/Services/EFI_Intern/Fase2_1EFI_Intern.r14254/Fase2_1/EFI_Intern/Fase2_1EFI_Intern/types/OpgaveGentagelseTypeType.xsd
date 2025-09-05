@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="OpgaveGentagelseTypeType">
+               <xs:annotation>
+                  <xs:documentation>I Ressourcestyring er der mulighed for at sætte gentagelsesmønster på mødetider, frokosttider, præferencer og private aftaler. Der er fire gentagelsestyper:       1 Daglig      2 Ugentlig      3 Månedlig      4 årlig.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="4"/>
+                  <xs:minInclusive value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

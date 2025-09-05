@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/SoegeDatoTil.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/EjerJaNej.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/LederJaNej.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerType.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/LedelseForholdTypeKode.xsd"/>
+            
+      
+         
+   
+   
+   
+   <xs:element name="VirksomhedAlleEjerLederRelationSamlingHent_I">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:VirksomhedAlleEjerLederRelationSamlingHent_IType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2311"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="VirksomhedAlleEjerLederRelationSamlingHent_IType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+									
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            
+            <!--Sequence removed-->
+
+         
+               
+               
+         <xs:element name="AlleEjerLederVirksomhedValgSamling">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+
+                  
+                        
+                        
+                  <xs:element name="AlleEjerLederVirksomhedValg" minOccurs="1" maxOccurs="unbounded">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:DriftFormKode" minOccurs="0"/>
+
+
+
+                           
+                                 
+                                 
+                           <xs:element name="SøgePeriode">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SøgeDatoFra" minOccurs="0"/>
+
+
+
+
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:SøgeDatoTil" minOccurs="0"/>
+
+
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="EjerLederOplysningerValg">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:EjerJaNej"/>
+                  
+                  
+                                    
+                                          
+                                          
+                                    <xs:element ref="fase2.1:LederJaNej"/>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+                           
+                                 
+                                 
+                           <xs:element name="EjerTypeRolleValgSamling">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="EjerTypeRolleValg" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+                                             
+                                                   
+                                                   
+                                             <xs:element ref="fase2.1:EjerRolleTypeKode"/>
+                  
+                  
+                                             
+                                                   
+                                                   
+                                             <xs:element ref="fase2.1:EjerTypeKode"/>
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                           
+                                 
+                                 
+                           <xs:element name="LederTypeValgSamling">
+                              
+                                    
+                                    
+                              <xs:complexType>
+                                 
+                                       
+                                       
+                                 <xs:sequence>
+
+
+                                    
+                                          
+                                          
+                                    <xs:element name="LederTypeValg" minOccurs="0" maxOccurs="unbounded">
+                                       
+                                             
+                                             
+                                       <xs:complexType>
+                                          
+                                                
+                                                
+                                          <xs:sequence>
+                                             
+                                                   
+                                                   
+                                             <xs:element ref="fase2.1:LedelseForholdTypeKode"/>
+                  
+                  
+                                             
+                                                   
+                                                   
+                                             <xs:element ref="fase2.1:EjerTypeKode"/>
+
+                                          
+                                                
+                                                
+                                          </xs:sequence>
+                                       
+                                             
+                                             
+                                       </xs:complexType>
+                                    
+                                          
+                                          
+                                    </xs:element>
+
+                                 
+                                       
+                                       
+                                 </xs:sequence>
+                              
+                                    
+                                    
+                              </xs:complexType>
+                           
+                                 
+                                 
+                           </xs:element>
+
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+
+               
+      
+            
+            
+            
+         
+         
+         
+         
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

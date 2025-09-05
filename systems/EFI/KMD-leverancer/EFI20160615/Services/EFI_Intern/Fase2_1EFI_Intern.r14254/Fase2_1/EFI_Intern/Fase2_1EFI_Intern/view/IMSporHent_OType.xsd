@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/EFIVersionNummer.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Spor.xsd"/>
+         <xs:include schemaLocation="../class/SporSkabelon.xsd"/>
+         <xs:include schemaLocation="../operational/StopAutomatiskSporskifteMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/Tilstand.xsd"/>
+         <xs:include schemaLocation="../class/SporRegel.xsd"/>
+         <xs:element name="IMSporHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:IMSporHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="IMSporHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:EFIVersionNummer" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:SporID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:SporSkabelonID" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:SporSkabelonNavn" minOccurs="0"/>
+                  
+                     <xs:element ref="fase2.1:StopAutomatiskSporskifteMarkering" minOccurs="0"/>
+                     <xs:element name="IndsatsSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Indsats" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:IndsatsID"/>
+                  
+                                       <xs:element ref="fase2.1:IndsatsIndsatsAfviklerID"/>
+
+                                       <xs:element ref="fase2.1:SporSkabelonIndsatsSkabelonID" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:IndsatsTypeKode"/>
+
+                                       <xs:element ref="fase2.1:IndsatsStartdato" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:IndsatsLivsFase"/>
+                  
+                                       <xs:element ref="fase2.1:IndsatsUnderTypeKode"/>
+
+                                       <xs:element ref="fase2.1:TilstandNavn" minOccurs="0"/>
+
+
+                                       <xs:element name="SporRegelSamling">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="SporRegel" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:SporRegelID"/>
+                                                         <xs:element name="AktiverIndsats">
+                                                            <xs:complexType>
+                                                               <xs:sequence>
+                                                                  <xs:element ref="fase2.1:IndsatsID"/>
+                                                               </xs:sequence>
+                                                            </xs:complexType>
+                                                         </xs:element>
+                                                         <xs:element ref="fase2.1:TilstandID"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

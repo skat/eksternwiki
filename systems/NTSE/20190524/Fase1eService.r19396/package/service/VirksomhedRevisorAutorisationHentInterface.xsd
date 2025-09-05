@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Henter angivelsestyper og tilhørende revisor SE-nr for en specifik virksomheds tilmelding.</xs:documentation>
+            <xs:documentation>r19396</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/VirksomhedRevisorAutorisationHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/VirksomhedRevisorAutorisationHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="VirksomhedRevisorAutorisationHentInterface"
+                     type="fase1:VirksomhedRevisorAutorisationHentInterfaceType"/>
+         <xs:complexType name="VirksomhedRevisorAutorisationHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase1:VirksomhedRevisorAutorisationHent_I"/>
+               <xs:element ref="fase1:VirksomhedRevisorAutorisationHent_O"/>
+               <xs:element ref="fase1:KompenserTrans"/>
+               <xs:element ref="fase1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

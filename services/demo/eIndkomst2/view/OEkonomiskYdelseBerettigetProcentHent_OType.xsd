@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eindkomstws="urn:oio:skat:eindkomst:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:eindkomst:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:efi="urn:oio:skat:efi:1.0.0" xmlns:eindkomst="urn:oio:skat:eindkomst:1.0.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247432/artefact/SKAT_HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/2000474/artefact/OekonomiskYdelseBeregningGrundlagTekst.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/2000390/artefact/OekonomiskYdelseBeregningGrundlagDatoTid.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/2000398/artefact/OekonomiskYdelseBeregningGrundlagPointMaal.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/2000443/artefact/OekonomiskYdelseBeregningGrundlagRegelIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/2000484/artefact/OekonomiskYdelseBerettigetProcent.xsd"/><xs:import namespace="urn:oio:skat:eindkomst:1.0.0" schemaLocation="http://digitaliser.dk/resource/2000503/artefact/OekonomiskYdelseBerettigetProcentBasisMaanedIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:efi:1.0.0" schemaLocation="http://digitaliser.dk/resource/1980180/artefact/OplysningDatoTid.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:include schemaLocation="../view/SoegeAArMaanedLukketStrukturType.xsd"/>
+	<xs:element name="OekonomiskYdelseBerettigetProcentHent_O" type="eindkomstws:OekonomiskYdelseBerettigetProcentHent_OType">
+	</xs:element>
+	<xs:complexType name="OekonomiskYdelseBerettigetProcentHent_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="OekonomiskYdelseOplysninger" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+						<xs:element ref="eindkomstws:SoegeAarMaanedLukketStruktur" minOccurs="0"/>
+						<xs:element ref="efi:OplysningDatoTid"/>
+						<xs:element name="BerettigetProcentOplysningerSamling">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BerettigetProcentOplysninger" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="eindkomst:OekonomiskYdelseBerettigetProcentBasisMaanedIdentifikator"/>
+												<xs:element ref="eindkomst:OekonomiskYdelseBerettigetProcent"/>
+												<xs:element name="BeregningsgrundlagSamling">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="Beregningsgrundlag" minOccurs="0" maxOccurs="unbounded">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="eindkomst:OekonomiskYdelseBeregningGrundlagRegelIdentifikator"/>
+																		<xs:element ref="eindkomst:OekonomiskYdelseBeregningGrundlagPointMaal"/>
+																		<xs:element ref="eindkomst:OekonomiskYdelseBeregningGrundlagDatoTid"/>
+																		<xs:element ref="eindkomst:OekonomiskYdelseBeregningGrundlagTekst" minOccurs="0"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

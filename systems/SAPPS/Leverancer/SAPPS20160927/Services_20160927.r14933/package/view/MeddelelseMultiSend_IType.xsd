@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14933</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Fagsystem.xsd"/>
+         <xs:include schemaLocation="../class/MeddelelseBatch.xsd"/>
+         <xs:include schemaLocation="../class/Meddelelse.xsd"/>
+         <xs:include schemaLocation="../class/MeddelelseType.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../operational/GensendMeddelelseID.xsd"/>
+				     
+         <xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+         <xs:include schemaLocation="../class/KanalType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/MeddelelseTypeSkalIKommunikationMappe.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AttachmentContainer.xsd"/>
+         <xs:include schemaLocation="../view/KanalAdresseStrukturType.xsd"/>
+				     
+         <xs:element name="MeddelelseMultiSend_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MeddelelseMultiSend_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14933"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MeddelelseMultiSend_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="fase2.1:FagsystemNavn"/>
+                  
+                     <xs:element ref="fase2.1:MeddelelseBatchID"/>
+                     <xs:element name="Meddelelser">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Meddelelse" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:MeddelelseIndhold"/>
+                  
+                                       <xs:element ref="fase2.1:MeddelelseTypeNummer"/>
+                  
+                                       <xs:element ref="fase2.1:MeddelelseAfsenderReference"/>
+                  
+                                       <xs:element ref="fase2.1:KundeNummer"/>
+
+                                       <xs:element ref="fase2.1:GensendMeddelelseID" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:KundeType" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:ProduktionEnhedNummer" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:MeddelelseOprettetAfMedarbejder" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:KanalTypeNummer" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="KanalAdresseNavn" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:KundeNavn"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+
+                                       <xs:element ref="fase2.1:KanalAdresseStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:MeddelelseTypeSkalIKommunikationMappe" minOccurs="0"/>
+
+
+                                       <xs:element name="Filer">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="Fil" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:AttachmentContainerType"/>
+                  
+                                                         <xs:element ref="fase2.1:AttachmentContainerIndhold"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

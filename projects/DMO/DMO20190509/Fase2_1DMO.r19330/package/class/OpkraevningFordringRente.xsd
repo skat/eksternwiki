@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/RentesatsType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel3Type.xsd"/>
+         <xs:element name="OpkrævningFordringRentePeriodeFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato på perioden renten vedrører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRentePeriodeTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for perioden renten vedrører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteGrundlagBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb som har dannet grundlag for renteberegningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb for selve renten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteProcentsats" type="fase2.1:RentesatsType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rentesats for renteberegningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteDageAntal" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage renteberegningen vedrører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteKorrigeretBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb for eventuel korrigering af rentegrundlag.  F.eks. Summen af de fordringsbeløb, der er rentestop på.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteReduceretBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb for eventuelle nedsættelser af rentegrundlaget.  F.eks 5000 ved rentegodtgørelse, hvis beregningsgrundlag er større end 5000.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringRenteSenestBeregnDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for sidste renteberegning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

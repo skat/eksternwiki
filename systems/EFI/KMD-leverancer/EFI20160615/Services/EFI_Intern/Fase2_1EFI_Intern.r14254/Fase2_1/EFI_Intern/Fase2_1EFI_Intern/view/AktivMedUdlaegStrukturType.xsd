@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Aktiv.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Udlaeg.xsd"/>
+         <xs:include schemaLocation="../operational/ETLDokumentIdentifikator.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLDokumentRevisionIdentifikator.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLUdlaegOprettetDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLAdKomstErklaeringVideresendt.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/ETLMeddelelseEjdAdminDokumentID.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TinglysningAnmeldelseStrukturType.xsd"/>
+				     
+         <xs:element name="AktivMedUdlægStruktur" type="fase2.1:AktivMedUdlægStrukturType"/>
+         <xs:complexType name="AktivMedUdlægStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AktivReference">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:AktivID"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="TinglysningsAnmeldelseSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:TinglysningAnmeldelseStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+
+               <xs:element ref="fase2.1:UdlægForældelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLDokumentIdentifikator" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLDokumentRevisionIdentifikator" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:AktivTinglysningBeløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLUdlægOprettetDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLAdKomstErklæringVideresendt" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ETLMeddelelseEjdAdminDokumentID" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

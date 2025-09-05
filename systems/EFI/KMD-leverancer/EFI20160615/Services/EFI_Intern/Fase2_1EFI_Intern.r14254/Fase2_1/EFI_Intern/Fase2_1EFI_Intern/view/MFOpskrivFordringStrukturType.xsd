@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+         <xs:include schemaLocation="../class/FordringOpskrivning.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpskrivningAArsagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpskrivningBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="MFOpskrivFordringStruktur" type="fase2.1:MFOpskrivFordringStrukturType"/>
+         <xs:complexType name="MFOpskrivFordringStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+
+               <xs:element ref="fase2.1:EFIKundeIdentStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:FordringOpskrivningVirkningFra" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpskrivningÅrsagStruktur"/>
+                  
+                  <xs:element ref="fase2.1:OpskrivningBeløbStruktur"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

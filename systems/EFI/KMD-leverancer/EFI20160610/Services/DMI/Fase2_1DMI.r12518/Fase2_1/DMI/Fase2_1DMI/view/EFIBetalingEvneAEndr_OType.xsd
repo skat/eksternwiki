@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingEvne.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneResStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SBetalingEvneStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SBetalingEvneResStrukturType.xsd"/>
+				     
+         <xs:element name="EFIBetalingEvneÆndr_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:EFIBetalingEvneÆndr_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="EFIBetalingEvneÆndr_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="BetalingEvne" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="KundeValg">
+                                 <xs:complexType>
+                                    <xs:choice>
+                                       <xs:sequence>
+                                          <xs:element name="DMI">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:KundeStruktur"/>
+
+                                                   <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+				
+				                                   </xs:sequence>
+				                                   <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+                                    </xs:choice>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element ref="fase2.1:BetalingEvneEnhedPeriode" minOccurs="0"/>
+
+
+                              <xs:element name="BetalingEvneListe">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:BetalingEvneStruktur" minOccurs="1" maxOccurs="2"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                              <xs:element name="ReservationListe">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:BetalingEvneResStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     
+
+                        <xs:element name="SBetalingEvne" minOccurs="0">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:SBetalingEvneStruktur"/>
+                                 <xs:element name="SReservationListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:SBetalingEvneResStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

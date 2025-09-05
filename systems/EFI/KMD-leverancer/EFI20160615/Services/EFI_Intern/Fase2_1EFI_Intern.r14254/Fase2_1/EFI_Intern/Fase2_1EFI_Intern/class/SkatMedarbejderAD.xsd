@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Teknisk klasse som indeholder data på en skat medarbejder gemt i Active Directory</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ADFornavnType.xsd"/>
+         <xs:include schemaLocation="../types/ADEfternavnType.xsd"/>
+         <xs:include schemaLocation="../types/ADMellemnavnType.xsd"/>
+         <xs:include schemaLocation="../types/ADKaldeNavnType.xsd"/>
+         <xs:include schemaLocation="../types/ADFuldNavnBeskrivelseType.xsd"/>
+         <xs:include schemaLocation="../types/ADStillingType.xsd"/>
+         <xs:include schemaLocation="../types/ADMailType.xsd"/>
+         <xs:include schemaLocation="../types/ADMobilnummerType.xsd"/>
+         <xs:include schemaLocation="../types/ADTelefonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/ADSAMAccountNameType.xsd"/>
+         <xs:include schemaLocation="../types/ADKontorNummerType.xsd"/>
+         <xs:include schemaLocation="../types/ADAfdelingByType.xsd"/>
+         <xs:include schemaLocation="../types/ADAfdelingType.xsd"/>
+         <xs:include schemaLocation="../types/ADAdresseType.xsd"/>
+         <xs:include schemaLocation="../types/ADGadeNavnAdresseType.xsd"/>
+         <xs:element name="SkatMedarbejderADFornavn" type="fase2.1:ADFornavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fornavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADEfternavn" type="fase2.1:ADEfternavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Efternavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADMellemNavnInitialer" type="fase2.1:ADMellemnavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Initialer for mellemnavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADKaldeNavn" type="fase2.1:ADKaldeNavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kaldenavn / visningsnavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADFuldNavnBeskrivelse"
+                     type="fase2.1:ADFuldNavnBeskrivelseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivende tekst for person</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADStillingBetegnelseKort" type="fase2.1:ADStillingType">
+               
+               <xs:annotation>
+                  <xs:documentation>Stillingsbetegnelse (kort)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADMailAdresse" type="fase2.1:ADMailType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mail adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADMobilNummer" type="fase2.1:ADMobilnummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer på mobiltelefon</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADTelefonNummer" type="fase2.1:ADTelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Telefonnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADNummer" type="fase2.1:ADSAMAccountNameType">
+               
+               <xs:annotation>
+                  <xs:documentation>Medarbejdernummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADKontorNummer" type="fase2.1:ADKontorNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kontornummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADAfdelingBy" type="fase2.1:ADAfdelingByType">
+               
+               <xs:annotation>
+                  <xs:documentation>By som afdelingen ligger i</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADAfdelingKontor" type="fase2.1:ADAfdelingType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på afdeling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADAdresse" type="fase2.1:ADAdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Adresse (gade, nr, postnummer, by)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkatMedarbejderADGadeNavnAdresse" type="fase2.1:ADGadeNavnAdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gadenavn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

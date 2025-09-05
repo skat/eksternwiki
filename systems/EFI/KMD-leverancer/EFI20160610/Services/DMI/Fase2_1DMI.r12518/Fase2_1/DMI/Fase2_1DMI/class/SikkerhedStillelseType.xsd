@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Typen af sikkerhedsstillelse. Typen er udtryk for de mulige måder, som en person eller virksomhed kan stille sikkerhed på. Det kunne fx være en bankgaranti, kontanter deponeret hos SKAT eller SKATs sikkerhedsstillelsesordning. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="SikkerhedStillelseTypeKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik kode som identificerer sikkerhedsstillelsestypen f.eks. 02 (Kontanter) og 13 (Bankgaranti).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseTypeTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på sikkerhedsstillelsestypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvorfra typen af sikkerhedsstillelse kan anvendes til at beskrive en konkret sikkerhedsstillelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedStillelseTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor typen af sikkerhedsstillelse ikke længere kan anvendes til at beskrive en konkret sikkerhedsstillelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Opkrævningskonto håndterer alle debiteringer, krediteringer samt diverse regler for renter, gebyrer, fordringstyper, inddrivelse mv.   En Kunde har én Opkrævningskonto.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/Rentesats85Type.xsd"/>
+         <xs:element name="OpkrævningskontoUdbetalingGrænse" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Grænsen der er opsat på den enkelte kundes konto for, hvornår der skal ske udbetaling. Udbetalingsgrænsen vil fra starten være sat til 100 kr., men kan til enhver tid, og som ofte ønsket, ændres af kunden.  Eksempel: En kunde har sat udbetalingsgrænsen til 2.000 kr. og der er opstået en saldo i kundens favør på 3.500 kr. Det betyder, at der kun vil blive udbetalt 1.500 kr. og de resterende 2.000 kr. vil blive stående på kundens konto. Hvis kunden ønsker hele beløbet udbetalt, skal udbetalingsgrænsen ændres til 0 kr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningskontoRykkerNiveau" type="fase2.1:KodeType">
+               
+            </xs:element>
+         <xs:element name="OpkrævningskontoRykkerprocedure" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvordan der må rykkes for saldoen på kontoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningskontoRenteregel" type="fase2.1:Rentesats85Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Regel for rente på kontoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningskontoRenteBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rente for saldoen på kontoen, beregnet med den aktuelle rentesats.  Debitrenter på fordringer tilskrives ikke her, men tilskrives fordringen og oprettes selv som en fordring knyttet til den oprindelige fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

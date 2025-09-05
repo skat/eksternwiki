@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Parameter som indgår i den meddelelse som sendes til AD i en  opkrævningfordringskabelon fx navnet på modtageren.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:element name="OpkrævningSpecifikationParameterTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i et felt i en opkrævningmeddelseskabelon, som indeholder fritekst</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationParameterBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i et parameterfelt i en opkrævningsmeddelelseskabelon som er et beløb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationParameterDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i et felt i en opkrævningsmeddelelseskabelon som indholder en dato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationParameterSats" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i et felt i en opkrævningsmeddelelseskabelon som indholder en sats (konteksafhængig)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationParameterMængde" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i et felt i en opkrævningsmeddelelseskabelon som indholder en mængdeangivelse (kontekstafhængig).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Typen af fordring, som fx kan være DSB bøde, Moms, Kreditbegrænsningsgebyr m.m. For hver fordringstype er der forskellige regelsæt, som er med til at definere, hvordan en konkret fordring skal behandles. Masteren for listen af fordringstyper vedligeholde i EFI administrationsportal. Servicen MFFordringTypeHent returnerer listen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DMIFordringTypeKodeTekst7Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/RegelSaetType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/FordringKategoriType.xsd"/>
+         <xs:include schemaLocation="../types/FordringKlasseType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:element name="DMIFordringTypeKode" type="fase2.1:DMIFordringTypeKodeTekst7Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode på 7 karakter som må bestå af tal og/eller bogstaver som modsvarer en fordringstype.  Eksempler: DAAEOGS (Adfærdsregulerende afgifter til Erhvervs-og Selskabsstyrelsen) DOADVOM  (Advokatomkostninger) PAGLØDL (Afgift af glødelamper mv.)  Se fordringstype regneark med værdier og beskrivelse.  Der skal indsættes reference i SA til Dokumentet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringTypeNavn" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på fordringstypen, fx A-skat, Moms, DSB bøde.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringTypeGebyrSats" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Satser for gebyrer (bestemte fordringstyper)der tilskrives en fordring (oprettes som sin egen fordring med link til den fordring, den er opstået på grund af). Satsen hentes her ved oprettelse af den type fordring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringTypeFradragsret" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en fordring er fradragsberettiget og skal indberettes til RKO</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringTypeKategori" type="fase2.1:FordringKategoriType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringskategori angiver om det er en hovedfordring, en Inddrivelsesrente, en opkrævningsrente  eller et inddrivelsesgebyr</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringTypeKlasse" type="fase2.1:FordringKlasseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dækningsrækkefølgen for fordringstyper.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringTypeGruppe" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken gruppe fordringstypen er relateret til. f.eks Punktafgift, Diverse omkostninger, personskatter mv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

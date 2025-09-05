@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Et registreringsgrundlag er fundamentet for fastsættelsen af registreringsafgiften herunder en angivelse af køretøjets art og anvendelse. Ændringer i art og anvendelse m.v. vil medføre oprettelse af et nyt køretøjregistreringsgrundlag.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHelType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/KodeType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/KoeretoejRegistreringGrundlagStatusType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/KoeretoejRegistreringGrundlagSynDatoTypeType.xsd"/>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagGyldigFra" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Det tidspunkt, hvor registreringsgrundlaget blev gyldigt til videre anvendelse (registreringsgrundlaget blev godkendt til registrering (og/eller) afgiftsberigtigelse)</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagGyldigTil" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Tidspunktet (dato + tid), hvor registreringsgrundlaget var gyldigt til.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagIdent" type="fase2.1:TalHelType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En unik identifikation af det enkelte køretøjs registrerings grundlag.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagKode" type="fase2.1:KodeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Koden, som skal anvendes ved køretøjets første registrering. Dette er importørkoden (IRK-kode)</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagStatus" type="fase2.1:KøretøjRegistreringGrundlagStatusType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En statusmarkering for det enkelte køretøjs registreringsgrundlag.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagStatusDato" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Det tidspunkt (dato og tid) for, hvornår den nyeste status blev tildelt.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KøretøjRegistreringGrundlagSynDatoType" type="fase2.1:KøretøjRegistreringGrundlagSynDatoTypeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver, hvilken dato, som skal anvendes i forhold til synsudtrækkene.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/OrganisatoriskEnhedOpgavekoe.xsd"/>
+         <xs:element name="OrganisatoriskEnhedOpgavekøStruktur"
+                     type="fase2.1:OrganisatoriskEnhedOpgavekøStrukturType"/>
+         <xs:complexType name="OrganisatoriskEnhedOpgavekøStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøID"/>
+                  
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøOrganisatoriskEnhedID"/>
+                  
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøOpgavekøID"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøGyldigFra" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøGyldigTil" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøOprettetTid"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OrganisatoriskEnhedOpgavekøTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

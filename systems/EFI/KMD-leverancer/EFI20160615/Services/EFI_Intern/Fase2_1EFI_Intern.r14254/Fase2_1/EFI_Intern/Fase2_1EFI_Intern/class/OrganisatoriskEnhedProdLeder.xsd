@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en organisatorisk enhed og en produktionsleder (ressource).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OrganisatoriskEnhedProdLederID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på relationen mellem den organisatoriske enhed og produktionslederen (ressourcen).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederOrganisatoriskEnhedID"
+                     type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den organisatoriske enheds unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ressourcens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>DN på medarbejderen der har tilføjet produktionslederen til den organisatoriske enhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet produktionslederen blev tilføjet til den organisatoriske enhed</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>DN på medarbejderen der fjernede produktionslederen fra den organisatoriske enhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet produktionslederen blev fjernet fra den organisatoriske enhed</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedProdLederTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunkt for sidste ændring til relationen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

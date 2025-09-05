@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/MeddelelsePakkeBilagKundeMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/MeddelelsePakkeBilagSamarbejdspartnerMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/MeddelelsePakkeBilagKunderepraesentantMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../class/MeddelelsePakkeBilag.xsd"/>
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+         <xs:element name="MeddelelsePakkeBilagStruktur"
+                     type="fase2.1:MeddelelsePakkeBilagStrukturType"/>
+         <xs:complexType name="MeddelelsePakkeBilagStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:MeddelelsePakkeBilagKundeMarkering"/>
+                  
+                  <xs:element ref="fase2.1:MeddelelsePakkeBilagSamarbejdspartnerMarkering"/>
+                  
+                  <xs:element ref="fase2.1:MeddelelsePakkeBilagKunderepræsentantMarkering"/>
+                  
+                  <xs:element ref="fase2.1:MeddelelsePakkeBilagDato"/>
+                  
+                  <xs:element ref="fase2.1:MeddelelsePakkeBilagTitel"/>
+
+               <xs:element ref="fase2.1:MeddelelsePakkeBilagNote" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:DPDokumentRefID" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

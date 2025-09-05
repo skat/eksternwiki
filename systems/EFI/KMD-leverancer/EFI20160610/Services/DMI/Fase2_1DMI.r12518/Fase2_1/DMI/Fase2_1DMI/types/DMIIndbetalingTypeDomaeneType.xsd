@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="DMIIndbetalingTypeDomæneType">
+               <xs:annotation>
+                  <xs:documentation>Værdier for indbetalingstype  Liste med faste værdier (enum)</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="6"/>
+                  <xs:enumeration value="BSIND"/>
+                  <xs:enumeration value="PCRIND"/>
+                  <xs:enumeration value="BANK"/>
+                  <xs:enumeration value="KONT"/>
+                  <xs:enumeration value="CHECK"/>
+                  <xs:enumeration value="DANK"/>
+                  <xs:enumeration value="MONEKO"/>
+                  <xs:enumeration value="MOFERV"/>
+                  <xs:enumeration value="MODBFY"/>
+                  <xs:enumeration value="MODEIN"/>
+                  <xs:enumeration value="MODISK"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+         <xs:include schemaLocation="../types/KodeEtCifferStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="FordringHaverAftaleID" type="fase2.1:IdentifikationNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af den enkelte fordringhaveraftale. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAftaleType" type="fase2.1:KodeEtCifferStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshaveraftale eller rettighedhaveraftale. 1 = Fordringhaveraftale 2= Rettighedsaftale</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAftaleStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Aftalens startdato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAftaleSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Aftalens SlutDato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverAftaleInternModr" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshavers mulighed for at angive om der må foretages intern modregning af fordringer.  Ja = Intern modregning Nej = ikke intern Modregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Kundens adresse på en kanal. F.eks. e-mailadresse eller postadresse eller mobilnummer.  Kunden kan selv oprette op til to adresser per kanaltype.   En adresse gælder for en og kun kanaltype.   Adresser er enten officielle, kundevalgte eller bestemt af det fagsystem, der ønsker forsendelse af meddelelsen. Procesejers opsætning i A&amp;D styrer om ikke-officielle adresser kan anvendes eller ej.  Officielle adresser kommer fra SKAT's kunderegistre. For personer CSR-P (kopi af CPR-registret) og for virksomheder ES (erhvervssystemet). ES indeholder også kopi af adresser på CVR-enheder.   Produktionsenhedsnummeradresser kan ikke oprettes af kunden selv (findes altså kun som officiel).  KanalAdresse er modelteknisk abstrakt, og den kan egentlig opfattes som en generalisering af KontaktOplysning (relationen er dog modelleret som en 1-1 association)  Kunden anvender kanaladresser i sin opsætning af kommunikationspræferencer, der angiver kundens valg af kanaladresse (og dermed kanaltype) pr. meddelelsestype. F.eks. at kunden ønsker, at rykkere skal sendes pr. email (til hans/en e-mailadresse)  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/KanalAdresseFejlKodeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="KanalAdresseIndex" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummerering af kommunikationsaftalers kanaladresser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KanalAdresseFejlmarkeret" type="fase2.1:KanalAdresseFejlKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis en SMS eller e-mail kanaladresse er fejlet to gange, skal denne adresse markeres som fejlbehæftet, således at denne ikke anvendes igen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KanalAdresseAktivMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>En kanaladresse er aktiv indtil kunden sletter den i sin kommunikationsaftale. En inaktiv kanaladresse kan være refereret fra en historisk meddelelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

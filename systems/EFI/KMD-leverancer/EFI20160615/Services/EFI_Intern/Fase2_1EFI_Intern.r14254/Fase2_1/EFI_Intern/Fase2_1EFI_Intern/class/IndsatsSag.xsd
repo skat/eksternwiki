@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:element name="IndsatsSagAlias" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik id for en indsats sag, der benyttes hvis man ikke kender IndsatsID. Der vil blive oprettet en Indsats sag for hvert unikt IndsatsSagAlias.   Enum der angiver sag relativt til KundeNummer  Fordring Kunde KMD-IND RIS Modregning Ompostering </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

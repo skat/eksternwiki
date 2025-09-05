@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="KøretøjRegistreringGrundlagSynDatoTypeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver, hvilken dato, som skal anvendes i forhold til synsudtrækkene.  </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:maxLength value="40"/>
+            
+         
+         
+         <xs:enumeration value="ValgfriSynsdato"/>
+            
+         
+         
+         <xs:enumeration value="FørsteRegistreringsdato"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Angiver den nøjagtige aftale, som en virksomhed har indgået med SKAT i henhold til told-, skatte- og afgiftslovgivningen. Aftalens specifikke indhold afhænger af hvilke kombinationer af PligtKode, eventuel ForretningOmrådeKode, eventuel OplysningForholdKode, eventuel OplysningForholdVirksomhedTypeKode, eventuel BevillingForholdKode, eventuel AcontoForholdKode eventuel KreditBegrænsningKode og AngivelseFrekvensTypeKode, der indgår i aftalen.   Aftalen angiver med hvilken frekvens en virksomhed forventes at indberette til SKAT. Pt. er følgende værdier af AngivelseFrekvensTypeKode tilladt:  AngivelseFrekvensTypeKode   AngivelseFrekvensTypeTekst 00                                              Ingen 01                                              Straks 02                                              Daglig 05                                              Ugentlig 06                                              14 dage 07                                              Månedlig 08                                              Kvartal 09                                              Halvårlig 10                                              Årlig 16                                              Variabel 17                                              Lejlighedsvis  På grundlag af det specifikke AngivelseFrekvensForhold kan fristerne for angivelse og betaling samt forfaldsdato fastlægges via ’AngivelseFristKalender’.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:element name="AngivelseFrekvensForholdGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Startdato for en given angivelsesfrekvens.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="AngivelseFrekvensForholdGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Slutdato for en given angivelsefrekvens.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

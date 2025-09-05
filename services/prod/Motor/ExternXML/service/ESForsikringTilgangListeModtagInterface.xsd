@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Skat vil sende en tilgang til det relevante forsikringsselskab, når en forsikring er accepteret (enten digitalt eller papirmæssigt), samt efter modtagelse af en genetablering eller selskabsskifte. Dermed bliver forsikringsselskabet gjort opmærksom på, at SKAT meddeler, at forsikringsselskabet har accepteret at dække køretøjet ansvarsmæssigt.</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/ESForsikringTilgangListeModtag_IType.xsd"/>
+	<xs:include schemaLocation="../view/ESForsikringTilgangListeModtag_OType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_IType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_OType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_IType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_OType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+	<xs:element name="ESForsikringTilgangListeModtagInterface" type="dmr:ESForsikringTilgangListeModtagInterfaceType"/>
+	<xs:complexType name="ESForsikringTilgangListeModtagInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmr:ESForsikringTilgangListeModtag_I"/>
+			<xs:element ref="dmr:ESForsikringTilgangListeModtag_O"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAnmod_I"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAnmod_O"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAfslut_I"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAfslut_O"/>
+			<xs:element ref="dmr:KompenserTrans"/>
+			<xs:element ref="dmr:KompenserTransSvar"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,63 @@
+Tilrettede services i denne leverance:
+
+M1SSVirksomhedInformationHent
+M1SSVirksomhedInformationHændelseOpdater
+M1SSVirksomhedInformationHændelseSamlingHent
+M1SSVirksomhedSamlingHent
+UdenlandskPersonHent
+
+Uddybning:
+
+1) UdenlandskPersonHent_O er rettet til således: 
+
+( 
+        * UdenlandskPerson * 
+        [ 
+                PersonNavnNavn 
+				(PersonFødselDato)  NY!
+                * UdenlandskPersonKontaktOplysning * 
+                [ 
+                        PersonAdresseOplysningStruktur 
+                        (TelefonOplysningStruktur) 
+                ] 
+        ] 
+) 
+
+2) M1SSVirksomhedInformationHændelseSamlingHent
+I _FejlIdType mangler de to nye data M1SSVirksomhedInformationHændelseRealTidspunkt og VoeSVirksomhedNationaltNummer
+	- Fejlen er rettet
+
+3) M1SSVirksomhedInformationHændelseOpdater 
+De nye VoeSHjemlandOplysninger mangler
+	- Fejlen er rettet
+
+4) M1SSVirksomhedInformationHent
+Er det med overlæg at niveauet "M1SSInformation" er væk, så detail informationerne under det tidligere M1SSInformation nu ligger på niveau med AfmeldingOplysninger, TidligereOplysninger, UVIRInformation og MomsnummerAndenMedlemStat.
+	- Ja, det er okay, at de M1SS-specifikke informationer ikke er pakket ind for sig, idet ingen af ovennævnte informationer vil eksistere uden at en M1SS-virksomhed findes.
+
+5) M1SSVirksomhedSamlingHent
+	a) Vi har ikke tidligere fået skemaer til denne service, men den ligner jo M1SSVirksomhedInformationHent. Så jeg har samme kommentarer som til M1SSVirksomhedInformationHent vedrørende niveauerne.
+		- Se pkt 4)
+	b) I servicebeskrivelsen- formålet er lige en trykfejl. kunne skal rettes til hente. 
+		- Det er rettet.
+
+6) Vedrørende:
+- M1SSVirksomhedInformationHændelseSamlingHent
+- M1SSVirksomhedSamlingHent
+- M1SSVirksomhedInformationHent
+- M1SSVirksomhedInformationHændelseOpdater
+
+Dataelement: VoeSVirksomhedNummer
+	- Fejl i enumeration: EU[0-9]{9} => SLETTET
+	- Rettet XSD-facet pattern: EU[0-9]{9}
+
+7) M1SSVirksomhedInformationHændelseSamlingHent_O_I
+	- ”fejlstrukturen” i M1SSVirksomhedInformationHændelseSamlingHent_O_I er fjernet. Beskrevet at Hovedoplysninger bruges istedet
+	
+8) Vedrørende:
+- M1SSVirksomhedInformationHændelseSamlingHent
+- M1SSVirksomhedSamlingHent
+- M1SSVirksomhedInformationHent
+- M1SSVirksomhedInformationHændelseOpdater
+
+Dataelementet ”IkkeEtableretAfgiftPligtigAfmeldingÅrsagKode” og det tilhørende domæne AfmeldeldseÅrsagKode er ændret, så enumeration værdien -1 nu er 9

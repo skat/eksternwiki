@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Skabelonen beskriver hvordan meddelelsen skal formateres og transformeres til det output, der skal sendes til kunden/gemmes i kommunikationsmappen.  I skabelonen kombineres inputværdier med faste elementer, såsom standardtekster, logoer, sidenumre osv. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+         <xs:include schemaLocation="../types/XMLType.xsd"/>
+         <xs:include schemaLocation="../types/SprogType.xsd"/>
+         <xs:element name="SkabelonNavn" type="fase2.1:NavnType">
+               
+            </xs:element>
+         <xs:element name="SkabelonGyldigFra" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="SkabelonGyldigTil" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="SkabelonNummer" type="fase2.1:IdentifikationNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer en instans af en skabelon</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkabelonTransformation" type="fase2.1:XMLType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selve skabelonens indhold - her angivet som XML fordi standardproduktets type ikke er kendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SkabelonSprog" type="fase2.1:SprogType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det sprog der gælder for skabelonen. Avendes til at finde den rigtige skabelon afhængig af det sprog kunden har valgt at modtage sine meddelelser i.  Default er dansk.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

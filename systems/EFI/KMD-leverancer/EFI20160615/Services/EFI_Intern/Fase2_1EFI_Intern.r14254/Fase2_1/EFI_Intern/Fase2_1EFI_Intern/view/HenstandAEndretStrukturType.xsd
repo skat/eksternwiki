@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/IndsatsUnderType.xsd"/>
+         <xs:include schemaLocation="../class/Henstand.xsd"/>
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:include schemaLocation="../operational/HenstandOpdaterForaeldelse.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenstandBookSagsbehandlerVedUdloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenstandSenesteMeddelelsestype.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenstandSkaeringsdato.xsd"/>
+				     
+         <xs:element name="HenstandÆndretStruktur" type="fase2.1:HenstandÆndretStrukturType"/>
+         <xs:complexType name="HenstandÆndretStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:IndsatsUnderTypeKode"/>
+                  
+                  <xs:element ref="fase2.1:HenstandBegrundelseKode"/>
+
+               <xs:element ref="fase2.1:HenstandBegrundelseTekst" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:HenstandUdløbDato"/>
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HenstandOpdaterForældelse" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HenstandBookSagsbehandlerVedUdløb" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HenstandSenesteMeddelelsestype" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:HenstandSkæringsdato" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

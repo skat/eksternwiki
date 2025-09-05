@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/HovedFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../view/HovedFordringTilbagekaldAArsagStrukturType.xsd"/>
+				     
+         <xs:element name="DMIFordringTilbagekaldStruktur"
+                     type="fase2.1:DMIFordringTilbagekaldStrukturType"/>
+         <xs:complexType name="DMIFordringTilbagekaldStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="RelateretFordringKategoriListe">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:DMIFordringTypeKategori" minOccurs="0" maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+                  <xs:element ref="fase2.1:HovedFordringTilbagekaldÅrsagStruktur"/>
+                  
+                  <xs:element ref="fase2.1:HovedFordringTilbageDato"/>
+                  
+                  <xs:element ref="fase2.1:DMIFordringVirkningFra"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

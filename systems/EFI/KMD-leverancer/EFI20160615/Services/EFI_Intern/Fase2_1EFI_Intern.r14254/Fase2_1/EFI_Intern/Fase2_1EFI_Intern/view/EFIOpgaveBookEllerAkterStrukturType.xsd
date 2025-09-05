@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Opgavetype.xsd"/>
+         <xs:include schemaLocation="../class/Opgave.xsd"/>
+         <xs:include schemaLocation="../class/Slot.xsd"/>
+         <xs:include schemaLocation="../operational/EFIOpgaveDatoFra.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIOpgaveDatoTil.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+				     
+         <xs:include schemaLocation="../class/RSRessource.xsd"/>
+         <xs:include schemaLocation="../class/Medarbejderprofil.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AlternativAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RSEFIEkstraInfoStrukturType.xsd"/>
+				     
+         <xs:element name="EFIOpgaveBookEllerAkterStruktur"
+                     type="fase2.1:EFIOpgaveBookEllerAkterStrukturType"/>
+         <xs:complexType name="EFIOpgaveBookEllerAkterStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OpgavetypeNavn"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveTekst"/>
+               <xs:element name="OpgaveDatoTidValg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="EFIOpgaveTid">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:SlotStartDatoTid"/>
+                  
+                                    <xs:element ref="fase2.1:OpgaveGennemførselstid"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EFIOpgavePeriode">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:EFIOpgaveDatoFra"/>
+                  
+                                    <xs:element ref="fase2.1:EFIOpgaveDatoTil"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element ref="fase2.1:EFIHenvendelseForm" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHenvendelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveBookingreference" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MødeAdresse" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:AlternativAdresseStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="RessourceTrækListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="RessourceTræk" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:RSRessourceID"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+               <xs:element name="BooketAf">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:MedarbejderprofilWNummer"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element ref="fase2.1:RSEFIEkstraInfoStruktur" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

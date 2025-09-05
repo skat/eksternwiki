@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen anvendes til at oprette eller ændre reservation af betalingsevne, samt til at meddele betalingsevneberegningen, hvor stor en del af en kundes betalingsevne kalderen ønsker at anvende. Servicen returnerer det beløb, kalderen kan anvende af kundensbetalingsevne. Servicen garanterer ikke, at kalderen kan få eller reservere hele det ønskede beløb. Servicen anvendes endvidere til at oprette eller ændre reservation af S-betalingsevne.  Kalderen angiver reservations beløb og reservationens startdato i reservationsstrukturen. Reservationer foretaget af indsatser er i princippet uendelige, da indsatser skal kalde denne services med 0 kr. som reservationsbeløb for at stoppe reservationen. Reservationer foretaget af DMI gælder altid i en måned med udløb den næste 1. i måneden. Herefter overvåger betalingsevneberegningen reservationen i en parameterstyret periode . Hvis DMI ikke har foretaget en fornyelse af reservation via kald til denne service, så ophører reservationen ved udløb af den parameterstyrerede periode.  En reservation tildeles et nummer i reservationsrækkefølgen i sekventiel rækkefølge.   Hvis kalderen ønsker at stoppe en reservation, angives 0 kr. som reservationsbeløb. Indsatser er selv ansvarlige for at stoppe deres reservationer.  Servicen returnerer det faktiske beløb, som kalderen kan anvende af kundensbetalingsevne samt en række tilhørende værdier, der primært anvendes af indsatser i EFI, DMI og SKAT's sagsbehandlere.  En kundes betalingsevne kan påvirkes af en række hændelser, f.eks. ændringer i kundens indkomst. Kundens betalingsevne genberegnes derfor løbende. Kundens betalingsevne er aktuel i den forstand, at betalingsevnen altid genberegnes, når der modtages ændringer til beregningsgrundlaget.   En kundes betalingsevne måles i kroner per tidsenhed, og kalderen kan specificere den ønskede tidsenhed, f.eks. kroner pr. uge.  Kundens S-betalingsevne og reservationer af S-betalingsevne er uafhængigt af kundens betalingsevne og reservationer af betalingsevnen.  En S-reservation tildeles et nummer i S-reservationsrækkefølgen i sekventiel rækkefølge.   Hvis kalderen ønsker at stoppe en S-reservation, angives 0 kr. som S-reservationsbeløb. Kalderen er ansvarlig for at stoppe sine reservationer, da der ikke er overvågning af S-reservationer.  Servicen returnerer de faktiske beløb og procentsats, som kalderen kan anvende af kundens S-betalingsevne.  En kundes S-betalingsevne påvirkes af ændringer i kundens indkomst. Kundens S-indeholdelsesbeløb og procent genberegnes derfor løbende.   En kundes S-betalingsevne måles i kroner per periode, hvor perioden er den samme som for kundens betalingsevne. </xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/EFIBetalingEvneAEndr_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/EFIBetalingEvneAEndr_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="EFIBetalingEvneÆndrInterface"
+                     type="fase2.1:EFIBetalingEvneÆndrInterfaceType"/>
+         <xs:complexType name="EFIBetalingEvneÆndrInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:EFIBetalingEvneÆndr_I"/>
+               <xs:element ref="fase2.1:EFIBetalingEvneÆndr_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

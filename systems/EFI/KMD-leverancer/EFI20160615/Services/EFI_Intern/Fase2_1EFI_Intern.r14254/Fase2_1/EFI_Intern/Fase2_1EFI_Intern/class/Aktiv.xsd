@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et aktiv er en fysisk genstand kunden frivilligt stiller i sikkerhed, eller der foretages udlæg i. Der kan være flere aktiver tilknyttet den enkelte indsats.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/AktivTypeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/AktivBeloebType.xsd"/>
+         <xs:include schemaLocation="../types/AktivDenunciationStatusKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/AktivKildeTypeType.xsd"/>
+         <xs:element name="AktivID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Transient  Unik identifikation af et aktiv (UUID)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivType" type="fase2.1:AktivTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Aktivets type. Udgøres af de specialiserede klasser på Aktiv. Det skal være muligt at begrænse visningen til de aktiver, det skal være mulige at vælge på den enkelte indsats og aktiviter herunder.  Fx skal det ikke være muligt at vælge aktivtypen Luftfartøj ved aktiviteten Anmod fogedret om tvangssalg af andelsbolig.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivBeskrivelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af aktivet.  Fx Varelager: 14 l. mælk, 10 l. vodka osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivOprettetManuelt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer om aktiv er oprettet manu-elt (true) eller kommer fra R75 ser-vice. Bruges til at styre om det er til-ladt at redigere visse dataelementer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSkønnetFriværdi" type="fase2.1:AktivBeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den skønnede friværdi på aktivet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivSkønnetFriværdiBegrundelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for selve skønnet af friværdi på aktivet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivDenunciationStatusKode"
+                     type="fase2.1:AktivDenunciationStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver status på evt. denunciation af transporten af aktivet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivNavnAdresseTredjemand" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ustruktureret navn og adresse på trejdemand.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKildeType" type="fase2.1:AktivKildeTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kilde til aktiv (manuelt oprettet i EFI, EKSTERN kilde som f.eks. R75)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivTinglysningBeløb" type="fase2.1:AktivBeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver beløb til tinglysning (af udlæg)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

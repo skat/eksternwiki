@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="MFFordringFeltKodeType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="8"/>
+                  <xs:enumeration value="STIFTL"/>
+                  <xs:enumeration value="RNTSTS"/>
+                  <xs:enumeration value="RYKDATO1"/>
+                  <xs:enumeration value="RYKDATO2"/>
+                  <xs:enumeration value="DOK"/>
+                  <xs:enumeration value="SAGBMRK"/>
+                  <xs:enumeration value="HFTKOM"/>
+                  <xs:enumeration value="BESKR"/>
+                  <xs:enumeration value="FORÆLD"/>
+                  <xs:enumeration value="PENHED"/>
+                  <xs:enumeration value="FHFREF"/>
+                  <xs:enumeration value="HFID"/>
+                  <xs:enumeration value="MODTDATO"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

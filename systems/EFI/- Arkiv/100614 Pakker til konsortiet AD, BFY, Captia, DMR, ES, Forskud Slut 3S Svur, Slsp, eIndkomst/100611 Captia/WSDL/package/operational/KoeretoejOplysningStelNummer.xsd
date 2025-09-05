@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:include schemaLocation="../types/StelNummerType.xsd"/>
+      
+   
+   
+   <xs:element name="KøretøjOplysningStelNummer" type="fase2.1:StelNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Ethvert registreringspligtigt køretøj skal være forsynet med 17-tegns stelnummer (VIN-mærkning). Nogle køretøjer har flere tegn i stelnummeret.  Bemærk at stelnummeret ikke er unikt, og at ikke alle køretøjer har det nye internationale format for stelnumre. Ligeledes er der en del historiske stelnumre, som er mindre en 17 tegn lange. Der findes enkelte køretøjer, som ikke har noget stelnummer.   Tale med Færdselsstyrelsen omkring traktor med 19 tegn i stelnummeret.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+   
+
+
+</xs:schema>

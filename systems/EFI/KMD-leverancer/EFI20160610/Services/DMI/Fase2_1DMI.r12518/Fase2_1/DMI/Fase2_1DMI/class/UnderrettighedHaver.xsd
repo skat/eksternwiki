@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En advokat (Rettighedshaver) indsender en transport til SKAT for sin klient (Underrettighedshaver). Afregning på transporten skal ske direkte til klienten.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="UnderrettighedHaverID" type="fase2.1:IDType">
+               
+            </xs:element>
+         <xs:element name="UnderrettighedHaverNavn" type="fase2.1:NavnType">
+               
+            </xs:element>
+         <xs:element name="UnderrettighedHaverType" type="fase2.1:TypeType">
+               
+            </xs:element>
+      </xs:schema>

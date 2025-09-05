@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/RSOpsaetning.xsd"/>
+         <xs:element name="RSOpsætningStruktur" type="fase2.1:RSOpsætningStrukturType"/>
+         <xs:complexType name="RSOpsætningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:RSOpsætningID"/>
+                  
+                  <xs:element ref="fase2.1:RSOpsætningKey"/>
+
+               <xs:element ref="fase2.1:RSOpsætningValue" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSOpsætningBeskrivelse" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:RSOpsætningOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:RSOpsætningOprettetTid"/>
+
+               <xs:element ref="fase2.1:RSOpsætningÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSOpsætningÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSOpsætningSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:RSOpsætningSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:RSOpsætningTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

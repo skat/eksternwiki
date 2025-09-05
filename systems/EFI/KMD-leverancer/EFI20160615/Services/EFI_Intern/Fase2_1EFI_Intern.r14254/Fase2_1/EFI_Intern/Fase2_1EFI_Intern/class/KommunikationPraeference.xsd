@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En kommunikationspræference udtrykker kundens ønske om at anvende en bestemt kanaladresse i forbindelse med SKAT's udsendelse af meddelelser af en bestemt meddelelsetype til kunden.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:element name="KommunikationPræferenceGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Samtykkets gyldighed - start</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KommunikationPræferenceGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Samtykkets gyldighed - slut</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KommunikationPræferenceNiveau" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om præferencens gyldighedsområde: Alle meddelelsestyper, en specifik meddelelsestypegruppe, eller en specifik meddelelsestype</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

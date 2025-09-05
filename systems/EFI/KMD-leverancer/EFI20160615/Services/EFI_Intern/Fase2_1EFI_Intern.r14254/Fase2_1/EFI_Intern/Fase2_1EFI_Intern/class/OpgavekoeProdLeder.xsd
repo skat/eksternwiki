@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en opgavekø og en produktionsleder.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="OpgavekøProdLederID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Relationens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Produktionslederens (ressourcens) unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>DN på medarbejderen der har tilføjet produktionslederen til opgavekøen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet produktionslederen er blevet tilknyttet opgavekøen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>DN på medarbejderen der har fjernet produktionslederen fra opgavekøen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet produktionslederen er blevet fjernet fra opgavekøen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøProdLederTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunkt for seneste ændring til relationen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

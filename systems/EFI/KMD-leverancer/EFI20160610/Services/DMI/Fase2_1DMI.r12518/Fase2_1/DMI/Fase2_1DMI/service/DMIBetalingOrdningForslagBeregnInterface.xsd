@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Servicen beregner et forslag til en betalingsordning i DMI og returnerer resultatet. Beregningen kan foretages ud fra de valgte fordringers saldo eller et af sagsbehandleren valgt beløb. </xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DMIBetalingOrdningForslagBeregn_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DMIBetalingOrdningForslagBeregn_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DMIBetalingOrdningForslagBeregnInterface"
+                     type="fase2.1:DMIBetalingOrdningForslagBeregnInterfaceType"/>
+         <xs:complexType name="DMIBetalingOrdningForslagBeregnInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DMIBetalingOrdningForslagBeregn_I"/>
+               <xs:element ref="fase2.1:DMIBetalingOrdningForslagBeregn_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

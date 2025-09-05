@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En opgjort afgift er en registrering af det beregnede beløb umiddelbart før det bliver til en fordring. Denne klasse vil have en relation til en fordring specificeret i udbudsmaterialet for en skattekonto.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/BeloebType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/IDType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TalHelType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+   
+   
+   <xs:element name="OpgjortAfgiftBeløb" type="fase2.1:BeløbType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En registrering af afgiftens beløb</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="OpgjortAfgiftDatoTid" type="fase2.1:DatoTidType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>En registrering af tidspunktet (inkl. dato) for, hvornår afgiften blev beregnet og opgjort.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="OpgjortAfgiftFordringId" type="fase2.1:IDType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Den unikke identifikation af den enkelte fordring, som skal bruges primært til at kommunikere serviceudbyder og fordringshaver imellem. Det er en forretningsmæssigt vigtig identifikation da, man præcist skal identificere fordringen i tilfælde af tilbagekaldelse eller bortfald fra fordringshavers side.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="OpgjortAfgiftNummer" type="fase2.1:TalHelType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Et positivit heltal, som kan være op til tyve tal langt startende fra 0 til 99.999.999.999.999.999.999 </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="OpgjortAfgiftSidsteBetalingDato" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Sidste rettidige betalingsdato. Den sidste frist for, hvornår en fordring skal være betalt.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

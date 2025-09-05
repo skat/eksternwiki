@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/ValgtOpgavetype.xsd"/>
+         <xs:element name="ValgtOpgavetypeStruktur" type="fase2.1:ValgtOpgavetypeStrukturType"/>
+         <xs:complexType name="ValgtOpgavetypeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:ValgtOpgavetypeID"/>
+                  
+                  <xs:element ref="fase2.1:ValgtOpgavetypeMedarbejderprofilID"/>
+                  
+                  <xs:element ref="fase2.1:ValgtOpgavetypeOpgavetypeID"/>
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeEgentidMinutter" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:ValgtOpgavetypeOprettetTid"/>
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:ValgtOpgavetypeTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

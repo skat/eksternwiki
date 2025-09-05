@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Hver kunde scores i forhold til de foruddefinerede parametre, og på baggrund af dette kommer de ind på et spor, hvor deres fordringer behandles i forhold til dette spor. Det betyder, at sporet er afgørende for, hvilke indsatser der anvendes overfor den pågældende kunde.  Ved oprettelsen af et spor vælges et antal indsatser som opsættes i den rækkefølge, de ønskes afviklet. Sporet indeholder planen for, hvordan inddrivelse finder sted for en bestemt kundegruppe.   Så længe det er muligt køres efter sporet. Hvis det viser sig, at det ikke er muligt at følge sporet for en betydelig del af fordringerne, skiftes spor.  I tilfælde hvor man overgår til manuel sagsbehandling, kan sagsbehandleren selv sammensætte et spor evt. baseret på et af de allerede fastlagte spor. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/StartdatoType.xsd"/>
+         <xs:include schemaLocation="../types/SlutdatoType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="SporID" type="fase2.1:UUIDType">
+               
+            </xs:element>
+         <xs:element name="SporStartdato" type="fase2.1:StartdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for sporet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SporSlutdato" type="fase2.1:SlutdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for sporet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SporStopAutomatiskInddrivelse" type="fase2.1:JaNejType">
+               
+            </xs:element>
+      </xs:schema>

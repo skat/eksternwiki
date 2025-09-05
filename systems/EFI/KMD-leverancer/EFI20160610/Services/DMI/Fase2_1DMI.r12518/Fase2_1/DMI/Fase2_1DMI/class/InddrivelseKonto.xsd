@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En opgørelse af kundens mellemværende, således at kontoen til enhver tid angiver kundens mellemværende.  Kontoen fungerer som en opsummering af de enkelte Fordringer + Indbetalinger heraf samt Udbetalinger. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="InddrivelseKontoID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af en inddrivelseskonto.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="InddrivelseKontoSaldo" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb beregnet af DMI. Det er alle kontoens FordringBeløb fratrukket alle typer af korrektioner og indbetalinger - altså saldo dags dato </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

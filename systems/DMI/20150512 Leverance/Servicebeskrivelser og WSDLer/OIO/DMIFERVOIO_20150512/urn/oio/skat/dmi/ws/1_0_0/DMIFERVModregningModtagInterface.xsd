@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmiws="urn:oio:skat:dmi:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:dmi:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>NaturErhvervstyrelsen (NAER) kalder denne service for at informere DMI, hvis NAER har en transport  i en udbetaling og der er et overskydende beløb til modregning hos til SKAT.  (NAER hed tidligere FERV - Fødevare og Erhverv.Ved  navngivning af service og parametre fastholdes FERV-præfixet, for konsistensens skyld) </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="DMIFERVModregningModtag_I.xsd"/>
+	<xs:include schemaLocation="DMIFERVModregningModtag_O.xsd"/>
+	<xs:element name="DMIFERVModregningModtagInterface" type="dmiws:DMIFERVModregningModtagInterfaceType"/>
+	<xs:complexType name="DMIFERVModregningModtagInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmiws:DMIFERVModregningModtag_I"/>
+			<xs:element ref="dmiws:DMIFERVModregningModtag_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

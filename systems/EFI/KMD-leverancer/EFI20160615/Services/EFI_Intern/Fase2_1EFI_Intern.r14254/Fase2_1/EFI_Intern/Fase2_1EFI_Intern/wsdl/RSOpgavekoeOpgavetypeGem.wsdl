@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <wsdl:definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                        name="RSOpgavekøOpgavetypeGemService">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Opretter, ændrer eller sletter OpgavekøOpgavetyper.</xs:documentation>
+            <xs:documentation>1.2</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+               <xsd:include schemaLocation="../service/RSOpgavekoeOpgavetypeGemInterface.xsd"/>
+               
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="RSOpgavekøOpgavetypeGemServiceRequest">
+            <wsdl:part name="Request" element="fase2.1:RSOpgavekøOpgavetypeGem_I"/>
+         </wsdl:message>
+         <wsdl:message name="RSOpgavekøOpgavetypeGemServiceResponse">
+            <wsdl:part name="Response" element="fase2.1:RSOpgavekøOpgavetypeGem_O"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransRequest">
+            <wsdl:part name="Request" element="fase2.1:KompenserTrans"/>
+         </wsdl:message>
+         <wsdl:message name="KompenserTransResponse">
+            <wsdl:part name="Response" element="fase2.1:KompenserTransSvar"/>
+         </wsdl:message>
+         <wsdl:portType name="RSOpgavekøOpgavetypeGemServicePortType">
+            <wsdl:operation name="getRSOpgavekøOpgavetypeGem">
+               <wsdl:input message="fase2.1:RSOpgavekøOpgavetypeGemServiceRequest"/>
+               <wsdl:output message="fase2.1:RSOpgavekøOpgavetypeGemServiceResponse"/>
+            </wsdl:operation>
+            <wsdl:operation name="getKompenserTrans">
+               <wsdl:input message="fase2.1:KompenserTransRequest"/>
+               <wsdl:output message="fase2.1:KompenserTransResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         </wsdl:definitions>

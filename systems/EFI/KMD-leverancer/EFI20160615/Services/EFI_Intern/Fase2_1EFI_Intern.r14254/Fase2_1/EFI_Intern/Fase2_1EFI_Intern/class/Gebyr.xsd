@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Gebyrer tilskrives i DMI som særskilte fordringer, der er knyttet til den oprindelige fordring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="GebyrType" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gebyrtype (pt. er mulige værdier ukendt)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="GebyrBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gebyrbeløb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Alle opgaver i Ressourcestyring er placeret på opgavekøer. Opgavekøerne er konfigureret til at modtage forskellige opgaver. F.eks. kan der være køer der indeholder opgaver af specifikke typer, eller i EFI, opgaver til kunder der ligger på specifikke spor.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/RSDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst80Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="OpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøDomæne" type="fase2.1:RSDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det domæne opgavekøen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøNavn" type="fase2.1:Tekst80Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøens navn</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af opgavekøen. Eventuelt en beskrivelse af de opgaver der kan lande på køen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøPrioritet" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøens prioritet. Hvis en opgave kan lande på to køer, er det opgavekøen med den højeste prioritet der modtager opgaven. Der kan ikke være to køer med samme prioritet indenfor samme domæne. Det højeste tal er ensbetydende med højeste prioritet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøFrigivet" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om køen er frigivet til produktion. Hvis opgavekøen ikke er frigivet, bliver der ikke placeret opgaver på køen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdatoen for opgavekøens gyldighed, dvs. hvornår er køen åben for at modtage opgaver.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen for opgavekøens gyldighed, der kan ikke placeres opgaver på køens hvis gennemførselsfristen overskrider køens gyldighedsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet opgavekøen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavekøen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har ændret elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavekøen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet opgavekøen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt opgavekøen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til opgavekøen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

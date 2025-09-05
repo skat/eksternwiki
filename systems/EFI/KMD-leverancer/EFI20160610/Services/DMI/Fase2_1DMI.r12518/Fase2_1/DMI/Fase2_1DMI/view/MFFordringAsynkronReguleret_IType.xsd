@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/FordringReguleringBatchID.xsd"/>
+				     
+         <xs:include schemaLocation="../class/FordringReguleringAktion.xsd"/>
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/FordringReguleringAktionAfvistStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIFordringNedskrivSvarStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIFordringOpskrivSvarStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIFordringTilbagekaldSvarStrukturType.xsd"/>
+				     
+         <xs:element name="MFFordringAsynkronReguleret_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MFFordringAsynkronReguleret_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MFFordringAsynkronReguleret_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="fase2.1:FordringReguleringBatchID"/>
+                     <xs:element name="FordringAktionSamling">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="FordringAktionSvar" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:FordringReguleringAktionTypeKode"/>
+                  
+                                       <xs:element ref="fase2.1:DMITransaktionLøbenummer"/>
+                  
+                                       <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+
+                                       <xs:element ref="fase2.1:FordringReguleringAktionAfvistStruktur" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="AktionValg" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:choice>
+                                                   <xs:element ref="fase2.1:DMIFordringNedskrivSvarStruktur"/>
+				
+				
+				                                               <xs:element ref="fase2.1:DMIFordringOpskrivSvarStruktur"/>
+				
+				
+				                                               <xs:element ref="fase2.1:DMIFordringTilbagekaldSvarStruktur"/>
+                                                </xs:choice>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

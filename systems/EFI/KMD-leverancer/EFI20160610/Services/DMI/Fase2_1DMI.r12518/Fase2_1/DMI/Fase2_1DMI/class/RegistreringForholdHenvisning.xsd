@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder henvisning mellem to virksomheder som er relateret til et af virksomhedernes registreringsforhold, f.eks. fællesafregning og sambeskatning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/HenvisningKodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="RegistreringForholdHenvisningKode" type="fase2.1:HenvisningKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fortæller hvilke typer henvisninger der findes mellem 2 SE_nr, f.eks. Koncern, Nummerskift.......  Tilladte værdier:  01-99 01 Fællesregistrering 02 Sambeskatning 03 Fusion, skattefri 04 Spaltning 05 Koncern 06 Nummerskift 07 Modregning - totalt indehaversammenfald 09 Kontrol, fælles regnskabsfunktion 10 Kontrol, reguleringsforpligtigelse 11 Kontrol, anden kontrolhenvisning 12 Kontrol, anden koncernsammenhæng 13 Tilførsel af aktiver 14 Modregning - delvist ejersammenfald 15 Modregning - andet 16 Dobbeltoprettet i CVR 17 Bo 18 Aktieombytning 19 Kontrol, Søsterselskab - sambeskatning   Værdier som anvendes af TastSelv Erhverv: 02 = sambeskatning  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegistreringForholdHenvisningStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder start datoen for henvisninger mellem to virksomheder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegistreringForholdHenvisningSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder slut datoen for henvisninger mellem to virksomheder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

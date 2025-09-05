@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="AlternativKontaktReferenceTypeType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+                  <xs:enumeration value="Pasnummer"/>
+                  <xs:enumeration value="Kørekortnummer"/>
+                  <xs:enumeration value="Telefonnummer"/>
+                  <xs:enumeration value="EANNummer"/>
+                  <xs:enumeration value="UdenlandskNummerplade"/>
+                  <xs:enumeration value="IntenNøgle"/>
+                  <xs:enumeration value="UdenlandskPersonnummer"/>
+                  <xs:enumeration value="UdenlandskVirksomhedsnummer"/>
+                  <xs:enumeration value="AndenNøgle"/>
+                  <xs:enumeration value="AdresseløsPersonMedCPR"/>
+                  <xs:enumeration value="UdgåetVirksomhedMedCvrEllerSe"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

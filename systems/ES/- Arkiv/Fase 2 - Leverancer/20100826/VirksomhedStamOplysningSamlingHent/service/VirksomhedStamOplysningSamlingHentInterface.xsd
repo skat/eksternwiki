@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedStamOplysningSamlingHent_IType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedStamOplysningSamlingHent_OType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedStamOplysningSamlingHent_FejlIdType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+   
+   
+   <xs:element name="VirksomhedStamOplysningSamlingHentInterface" type="fase2:VirksomhedStamOplysningSamlingHentInterfaceType"/>
+   
+   
+   <xs:complexType name="VirksomhedStamOplysningSamlingHentInterfaceType">
+      
+      
+      <xs:choice>
+         
+         
+         <xs:element ref="fase2:VirksomhedStamOplysningSamlingHent_I"/>
+         
+         
+         <xs:element ref="fase2:VirksomhedStamOplysningSamlingHent_O"/>
+         
+         
+         <xs:element ref="fase2:VirksomhedStamOplysningSamlingHent_FejlId"/>
+         
+         
+         <xs:element ref="fase2:KompenserTrans"/>
+         
+         
+         <xs:element ref="fase2:KompenserTransSvar"/>
+      
+      
+      </xs:choice>
+   
+   
+   </xs:complexType>
+
+
+</xs:schema>

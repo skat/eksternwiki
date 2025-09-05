@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver tilladte værdier af de virksomhedstyper som findes, dvs. juridisk enhed, administrativ enhed og ikke CVR-enhed.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="VirksomhedTypeKode" type="fase2.1:KodeToCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver tilladte værdier. To numeriske karakterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedTypeTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Omsætter kode til klartekst. Character felt på 45 karakterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag en given værdi gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag en given værdi gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

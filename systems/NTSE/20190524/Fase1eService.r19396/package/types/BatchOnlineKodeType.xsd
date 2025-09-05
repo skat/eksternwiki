@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BatchOnlineKodeType">
+               <xs:annotation>
+                  <xs:documentation>Angiver om revisorordning vedrørende en specifik angivelsestype for en virksomheds tilmelding er foretaget via SKAT (F.12) eller online via TastSelv Erhverv. Kodens indhold ved leverance til DW dannes via loggen og der leveres altid et totalt indhold for en virksomhed ved en ændring. Det er derfor kun muligt at levere korrekt kode B første gang for en autorisation, mens næste leverance for virksomheden (grundet en anden ændring) vil have O i samme kode.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+                  <xs:enumeration value="O"/>
+                  <xs:enumeration value="B"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Kommunikationsaftalen består som minimum af Kundens stamoplysninger, dvs. adresse og telefonnummer, samt den adgangskode, der giver Kunden adgang til at rette sine oplysninger.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/SprogType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="KommunikationAftaleGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Start dato for en kommunikationsaftale.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KommunikationAftaleGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slut dato for en kommunikationsaftale.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KommunikationAftaleSprog" type="fase2.1:SprogType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sprogpræferencer i forbindelse med mundtlig kommunikation og udsendelse af meddelelser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KommunikationAftaleAdviseringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor kunden skal adviseres om at opdatere den pågældende kommunikationspræferenceaftale.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KommunikationAftaleSamtykke" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kunden har afgivet samtykke til anvendelse af andre kanaladresser end brev</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

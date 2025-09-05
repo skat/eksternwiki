@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Meddelelsestyper kan have forskellilge versioner som er gyldige på skift. Kun EN version kan være gyldig ad gangen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="MeddelelseTypeVersionNummer" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Løbenummer til identifikation af meddelelsetypeversion for en given meddelelsetype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MeddelelseTypeVersionGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender + tid.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MeddelelseTypeVersionGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender + tid.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MeddelelseTypeVersionSkalIKommunikationMappeMarkering"
+                     type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den formaterede meddelelse skal være tilgængelig via kommunikationsmappen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MeddelelseTypeVersionKvitteringMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der skal sendes kvittering til fagsystemet for den pågældende meddelelsestype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MeddelelseTypeVersionESDHMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om den aktuelle meddelelsetype skal arkiveres i ESDH.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MeddelelseTypeVersionKunOfficielAdresse" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: betyder at en meddelelse kun må sendes til kundens officielle adresse.  Nej: betyder at en meddelese også kan sendes til kundes eventuelle andre adresser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

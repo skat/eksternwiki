@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" version="1.1">
+   <element name="MunicipalRealPropertyIdentifier" type="bbr:MunicipalRealPropertyIdentifierType">
+      <annotation>
+         <documentation>The real property identifier is composed of 5 digits and a control number. The real property identifier is unique within the single municipality. The real property identifier identifies the single property within the municipality. When the real property identifier is complemented with the municipality code, it uniquely identifies the single property nationally.
+			</documentation>
+      </annotation>
+   </element>
+   <simpleType name="MunicipalRealPropertyIdentifierType">
+      <restriction base="string">
+         <pattern value="[0-9]{6}"/>
+      </restriction>
+   </simpleType>
+</schema>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/Udlaeg.xsd"/>
+         <xs:include schemaLocation="../class/SamarbejdPart.xsd"/>
+				     
+         <xs:include schemaLocation="../class/RSOrganisatoriskEnhed.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIVirksomhedStamoplysningStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="UdlægPolitieftersøgningAnmodSendStruktur"
+                     type="fase2.1:UdlægPolitieftersøgningAnmodSendStrukturType"/>
+         <xs:complexType name="UdlægPolitieftersøgningAnmodSendStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element name="KundeAdresse">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:KFIAdresseStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element ref="fase2.1:UdlægSagsfremstilling"/>
+                  <xs:element name="PolitiSamarbejdsPart">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:SamarbejdPartType"/>
+                  
+                           <xs:element ref="fase2.1:SamarbejdPartNavn"/>
+                  
+                           <xs:element ref="fase2.1:KFIVirksomhedStamoplysningStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <!--Sequence removed-->
+
+                     <xs:element name="PolitifremstillingSted" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:RSOrganisatoriskEnhedNavn"/>
+                  
+                              <xs:element ref="fase2.1:KFIAdresseStruktur"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

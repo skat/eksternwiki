@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Fordringshaver skal vælge en afregningsmetode pr. fordringstype, da de bl.a. kan vælge at afregne via statsregnskabet m.m. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/AfregningMetodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/FrekvensType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:element name="FordHaverFordTypeAfrSpecØnskes" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshavers mulighed for at angive om der ønskes afregningsspecifikation ud over afregningsbeløb  Ja: Afregningsspcifikation og afregningsbeløb Nej: Kun afregningsbeløb Blank</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeAfrMetode" type="fase2.1:AfregningMetodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den udbetalingskilde en fordringshaver ønsker afregningen af fordringstype foretaget med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeAfrHeleKroner" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshaver mulighed for at angive om der kun ønskes afregning i hele kroner.  Ja = hele kroner Nej = ikke hele kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeIntModrMeddJa" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skal RIM udsende modregningsmeddelelser på vegne af fordringshaver (kun modregningsfordringer)  Ja = Send meddelelse Nej = Meddelelse sendes ikke</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeAfrModrFrekv" type="fase2.1:FrekvensType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshaver mulighed for at angive opdateringsfrekvens på den enkelte fordringstype</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeAfrOplIntModr" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshavers mulighed for at angive om der ønskes afregning samtidig med oplysning om intern modregning eller om afregning skal følge fordringshaverens primære ønske om afregning.   Ja = afregning sammen med oplysning om modregning Nej = ikke afregning ved oplysning om modregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeIBANNr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>IBANNummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeSWIFTKode" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshaves angivelse af egen SWIFTKode. (Kaldes også BIC - Bank Identifier Code)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeAltDkKontoNr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>DanskKontoNummer som Fordringshaver kan henvise sin afregning til.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeSENrNemKonto" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>SE nummer hvis fordringhaveren for en given fordringtype vil have afregnet via NemKonto for et andet SE nummer end fordringhaverens SE nummer. Hvis feltet er tomt afregnes via fordringhaverens SE nummer. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordHaverFordTypeAfrIR" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>felt der angiver om afregning af inddrivelsesrenter skal følge hovedfordringen. Default er false.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

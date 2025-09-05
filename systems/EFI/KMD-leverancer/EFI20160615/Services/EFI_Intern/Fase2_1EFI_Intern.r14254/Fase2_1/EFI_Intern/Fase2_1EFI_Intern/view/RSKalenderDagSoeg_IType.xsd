@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/KalenderDag.xsd"/>
+         <xs:include schemaLocation="../operational/KalenderDagSoegFraDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KalenderDagSoegTilDato.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../operational/KalenderDagSoegAntalDage.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/InkluderLukkedage.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/FindBankDag.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/FindAAbenDag.xsd"/>
+				     
+				     
+				     
+         <xs:element name="RSKalenderDagSøg_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:RSKalenderDagSøg_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="RSKalenderDagSøg_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="SøgeStruktur">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:sequence>
+                                 <xs:element name="GenerelSøgningStruktur">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element ref="fase2.1:KalenderDagNavn" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:KalenderDagType" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:KalenderDagSøgFraDato" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:KalenderDagSøgTilDato" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				
+				                          </xs:sequence>
+                              <xs:sequence>
+				
+                                 <xs:element name="BeregnDatoStruktur">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:KalenderDagSøgFraDato"/>
+                  
+                                          <xs:element ref="fase2.1:KalenderDagSøgAntalDage"/>
+
+                                          <xs:element ref="fase2.1:InkluderLukkedage" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:FindBankDag" minOccurs="0"/>
+
+
+
+                                          <xs:element ref="fase2.1:FindÅbenDag" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+				
+				                          </xs:sequence>
+                              <xs:sequence>
+				
+                                 <xs:element name="FindFørstkommendeDagStruktur">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:KalenderDagSøgFraDato"/>
+
+                                          <xs:element ref="fase2.1:FindBankDag" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

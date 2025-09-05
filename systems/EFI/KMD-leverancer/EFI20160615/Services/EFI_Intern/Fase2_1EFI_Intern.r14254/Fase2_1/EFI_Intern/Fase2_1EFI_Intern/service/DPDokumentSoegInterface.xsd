@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Service til at hente en liste af dokumenter ud fra en række søgekriterier. Dokumenterne kan ligge enten som note i EFI databasen, meddelelse i A&amp;D eller dokument i Captia. Listen af dokumenter inkluderer alle dokument-attributter fra EFI-databasen. Hvis der til et dokument/note findes et tilknyttet binært dokument, vil flaget DPDokumentFilMarkering være sat. Selve det binære dokument kan i så fald findes ved kald af DPDokumentHent.  Servicen kan anvendes til at søge efter dokumenter på tværs af kunder.</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DPDokumentSoeg_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DPDokumentSoeg_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DPDokumentSøgInterface" type="fase2.1:DPDokumentSøgInterfaceType"/>
+         <xs:complexType name="DPDokumentSøgInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DPDokumentSøg_I"/>
+               <xs:element ref="fase2.1:DPDokumentSøg_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

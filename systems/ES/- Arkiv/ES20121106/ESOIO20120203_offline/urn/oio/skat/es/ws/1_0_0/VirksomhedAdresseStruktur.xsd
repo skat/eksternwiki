@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:virksomhedadressetype="http://rep.oio.dk/skat.dk/motor/class/virksomhedadressetype/xml/schemas/20080401/" xmlns:adressetype="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" xmlns:adresse="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:es="urn:oio:skat:es:1.0.0" xmlns:vandindvinding="urn:oio:skat:vandindvinding:1.0.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:dkcc2="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/" xmlns:core1="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:alternativadresse="http://rep.oio.dk/skat.dk/eindkomst/class/alternativadresse/xml/schemas/20071202/" xmlns:dkcc3="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:core2="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/05/19/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/adresse/xml/schemas/20080301/AdresseGyldigPeriode.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/05/19/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/05/19/CompletePostalLabelText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressSixthLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFifthLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFourthLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressThirdLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressSecondLineText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFirstLineText.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/alternativadresse/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/alternativadresse/xml/schemas/20071202/AlternativAdresseAnvendelseKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/alternativadresse/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/alternativadresse/xml/schemas/20071202/AlternativAdressePrioritetIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2002/06/28/AuthorityCode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/13/PostOfficeBoxIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/StreetCode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/DistrictName.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/PostCodeIdentifier.xsd"/><xs:import namespace="urn:oio:skat:vandindvinding:1.0.0" schemaLocation="../../../vandindvinding/1_0_0/AdresseByNavn.xsd"/><xs:import namespace="urn:oio:skat:es:1.0.0" schemaLocation="../../1_0_0/KundeReferenceNavn.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/SuiteIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/FloorIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/adresse/xml/schemas/20080301/AdresseHusNummerSlutIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/adresse/xml/schemas/20080301/AdresseHusNummerStartIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/03/15/StreetName.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="../../../../../../skat_dk/emcs/class/adresse/xml/schemas/20080301/AdressePrioritetIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/adressetype/xml/schemas/20080401/AdresseTypeKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhedadressetype/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhedadressetype/xml/schemas/20080401/VirksomhedAdresseTypeKode.xsd"/><xs:element name="VirksomhedAdresseStruktur" type="esws:VirksomhedAdresseStrukturType"/>
+	<xs:complexType name="VirksomhedAdresseStrukturType">
+		<xs:sequence>
+			<xs:element ref="virksomhedadressetype:VirksomhedAdresseTypeKode"/>
+			<xs:element ref="adressetype:AdresseTypeKode"/>
+			<xs:element name="AdresseValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="Adresse">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="adresse:AdressePrioritetIdentifikator" minOccurs="0"/>
+										<xs:element ref="dkcc:StreetName" minOccurs="0"/>
+										<xs:element ref="adresse:AdresseHusNummerStartIdentifikator" minOccurs="0"/>
+										<xs:element ref="adresse:AdresseHusNummerSlutIdentifikator" minOccurs="0"/>
+										<xs:element ref="dkcc1:FloorIdentifier" minOccurs="0"/>
+										<xs:element ref="dkcc1:SuiteIdentifier" minOccurs="0"/>
+										<xs:element ref="es:KundeReferenceNavn" minOccurs="0"/>
+										<xs:element ref="vandindvinding:AdresseByNavn" minOccurs="0"/>
+										<xs:element ref="dkcc:PostCodeIdentifier" minOccurs="0"/>
+										<xs:element ref="dkcc:DistrictName" minOccurs="0"/>
+										<xs:element ref="core:StreetCode" minOccurs="0"/>
+										<xs:element ref="dkcc2:PostOfficeBoxIdentifier" minOccurs="0"/>
+										<xs:element ref="adresse:AdresseGyldigPeriode" minOccurs="0"/>
+										<xs:element ref="dkcc1:CountryIdentificationCode" minOccurs="0"/>
+										<xs:element ref="core1:AuthorityCode" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="AlternativAdresse">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="alternativadresse:AlternativAdressePrioritetIdentifikator" minOccurs="0"/>
+										<xs:element ref="alternativadresse:AlternativAdresseAnvendelseKode" minOccurs="0"/>
+										<xs:element ref="dkcc3:PostalAddressFirstLineText" minOccurs="0"/>
+										<xs:element ref="dkcc3:PostalAddressSecondLineText" minOccurs="0"/>
+										<xs:element ref="dkcc3:PostalAddressThirdLineText" minOccurs="0"/>
+										<xs:element ref="dkcc3:PostalAddressFourthLineText" minOccurs="0"/>
+										<xs:element ref="dkcc3:PostalAddressFifthLineText" minOccurs="0"/>
+										<xs:element ref="dkcc3:PostalAddressSixthLineText" minOccurs="0"/>
+										<xs:element ref="core2:CompletePostalLabelText" minOccurs="0"/>
+										<xs:element ref="adresse:AdresseGyldigPeriode" minOccurs="0"/>
+										<xs:element ref="dkcc1:CountryIdentificationCode" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

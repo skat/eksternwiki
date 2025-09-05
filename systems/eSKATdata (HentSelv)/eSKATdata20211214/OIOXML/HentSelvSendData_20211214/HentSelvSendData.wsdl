@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:hsws="urn:oio:skat:hentselv:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="HentSelvSendDataService" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1">
+         <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:documentation>Web servicen HentSelvSendData returnerer en række oplysninger af værdi for pengeinstitutters kreditevaluering af private låntagere. En bank kan tilgå servicen såfremt der foreligger et samtykke fra den enkelte borger, samt en videreanvendelsesaftale med Skatteforvaltningen.</xs:documentation>
+            <xs:documentation>1.2</xs:documentation>
+            <xs:documentation>r23677</xs:documentation>
+         </xs:annotation>
+         <wsdl:types>
+            <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:hentselv:ws:1.0.1">
+               <xsd:include schemaLocation="urn/oio/skat/hentselv/ws/1_0_1/HentSelvSendDataInterface.xsd"/>
+            </xsd:schema>
+         </wsdl:types>
+         <wsdl:message name="HentSelvSendDataServiceRequest">
+            <wsdl:part element="hsws:HentSelvSendData_I" name="Request"/>
+         </wsdl:message>
+         <wsdl:message name="HentSelvSendDataServiceResponse">
+            <wsdl:part element="hsws:HentSelvSendData_O" name="Response"/>
+         </wsdl:message>
+         <wsdl:portType name="HentSelvSendDataServicePortType">
+            <wsdl:operation name="getHentSelvSendData">
+               <wsdl:input message="hsws:HentSelvSendDataServiceRequest"/>
+               <wsdl:output message="hsws:HentSelvSendDataServiceResponse"/>
+            </wsdl:operation>
+         </wsdl:portType>
+         <wsdl:binding name="HentSelvSendDataServiceBinding" type="hsws:HentSelvSendDataServicePortType">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="getHentSelvSendData">
+         <soap:operation soapAction="getHentSelvSendData"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="HentSelvSendDataServiceBindingQSService">
+      <wsdl:port binding="hsws:HentSelvSendDataServiceBinding" name="HentSelvSendDataServiceBindingQSPort">
+         <soap:address location="https://xxxxxxxxx/HentSelvSendDataServicePort"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

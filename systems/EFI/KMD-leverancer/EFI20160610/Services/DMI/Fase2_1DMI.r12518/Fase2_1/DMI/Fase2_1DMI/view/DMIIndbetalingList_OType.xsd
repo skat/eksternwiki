@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+         <xs:include schemaLocation="../class/BetalingOrdning.xsd"/>
+         <xs:include schemaLocation="../class/BetalingOrdningRate.xsd"/>
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/LoenIndeholdelse.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterHentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndbetalingBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndbetalingRestBeloebStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/MyndighedUdbetalingPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIArbejdsgiverStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransaktionDaekningElementStrukturType.xsd"/>
+				     
+         <xs:element name="DMIIndbetalingList_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIIndbetalingList_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIIndbetalingList_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="IndbetalingList" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Indbetaling" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DMIIndberetterHentStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:DMIIndbetalingID"/>
+
+                                       <xs:element ref="fase2.1:BetalingOrdningID" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:BetalingOrdningRateID" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:DMITransaktionLøbenummer"/>
+                  
+                                       <xs:element ref="fase2.1:KundeStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:IndbetalingBeløbStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:IndbetalingRestBeløbStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:DMIIndbetalingDato"/>
+
+                                       <xs:element ref="fase2.1:DMIIndbetalingBogførtDen" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:DMIIndbetalingArt"/>
+                  
+                                       <xs:element ref="fase2.1:DMIIndbetalingKilde"/>
+
+                                       <xs:element ref="fase2.1:DMIIndbetalingAfsender" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="IndrivelseKunde" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:KundeStruktur"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+
+                                       <xs:element ref="fase2.1:MyndighedUdbetalingTypeKode" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:MyndighedUdbetalingPeriodeStruktur" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="BasisPeriode" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:LønIndeholdelseBasisPeriodeFra"/>
+                  
+                                                   <xs:element ref="fase2.1:LønIndeholdelseBasisPeriodeTil"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+
+                                       <xs:element ref="fase2.1:DMIArbejdsgiverStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:IndsatsID" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:DMIIndbetalingEFIIndbetalingID" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:DMIIndbetalingAdvisTekst" minOccurs="0"/>
+
+
+                                       <xs:element name="TransaktionDækningElementListe">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="TransaktionDækningElement" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:TransaktionDækningElementStruktur"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

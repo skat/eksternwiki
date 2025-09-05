@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/DPMeddelelseEkspres.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIHaendelseGenerer.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/DPDokument.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsSag.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+         <xs:include schemaLocation="../class/Dokument.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DPPost.xsd"/>
+         <xs:include schemaLocation="../class/DPNote.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Opgavetype.xsd"/>
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMIIndberetterOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DPADMeddelselseStrukturType.xsd"/>
+				     
+         <xs:element name="DPMeddelelseSendAkter_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DPMeddelelseSendAkter_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DPMeddelelseSendAkter_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="fase2.1:DPMeddelelseEkspres"/>
+                  
+                     <xs:element ref="fase2.1:EFIHændelseGenerer"/>
+                     <xs:element name="DokumentMeddelelseSamling">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="DokumentMeddelelse" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="DPDokument">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element name="KundeValg">
+                                                   <xs:complexType>
+                                                      <xs:choice>
+                                                         <xs:element ref="fase2.1:KundeStruktur"/>
+				
+				
+				                                                     <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+                                                      </xs:choice>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                                <xs:element ref="fase2.1:DPDokumentType"/>
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="NoteRelationValg" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:choice>
+                                                            <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+				
+				
+				                                                        <xs:element ref="fase2.1:IndsatsID"/>
+				
+				
+				                                                        <xs:element ref="fase2.1:IndsatsSagAlias"/>
+				
+				
+				                                                        <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                                                         </xs:choice>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                
+
+
+                                                <xs:element ref="fase2.1:DPDokumentPrioritet" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DPDokumentArt" minOccurs="0"/>
+
+                                                <xs:element ref="fase2.1:DokumentTitel"/>
+
+                                                <xs:element ref="fase2.1:DMIIndberetterOpretStruktur" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DPDokumentOprettetDato" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DPPostJournalNummer" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DPDokumentRefID" minOccurs="0"/>
+
+                                                <xs:element ref="fase2.1:DPNoteTekst"/>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                       <xs:element ref="fase2.1:DPADMeddelselseStruktur"/>
+
+                                       <xs:element ref="fase2.1:OpgavetypeID" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

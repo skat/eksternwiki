@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Typen af fordring, som fx kan være moms halvår, moms halvår FF eller gebyr.   For hver fordringstype er der forskellige regelsæt, som er med til at definere, hvordan en konkret fordring skal behandles.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID4Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:element name="OpkrævningFordringTypeID" type="fase2.1:ID4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en opkrævningsfordringstype. Nummerrækken er grupperet således:  1000-1099 - Motor 1100-1199 - Askat 1200-1249 - Bøder 1250-1299 - Lønsum 1300-1399 - Moms 1400-1449 - Pensionsskat 1450-1699 - Punktafgifter 1700-1749 - Renter og gebyrer 1750-1849 - Selskabsskat 1850-1949 - Told</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringTypeNavn" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på opkrævningsfordringstypen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringTypeOplysningRegel" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsættet for hvilke oplysninger en fordringshaver skal oplyse ved oversendelse af en opkrævningsfordring (kan- og skal-oplysninger).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringTypeRenteRegel" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der er et bestemt sæt af regler for, hvilke og hvor mange renter der må beregnes for den enkelte opkrævningsfordringstype. Se Bilag 1.10</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringTypeRenteSats" type="fase2.1:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>For de renter, som må beregnes er der bestemte procentuelle rentesatser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringTypeGebyrSats" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Satser for gebyrer (bestemte opkrævningsfordringstyper) der tilskrives en opkrævningsfordring (oprettes som sin egen opkrævningsfordring med link til den opkrævningsfordring, den er opstået på grund af).   Satsen hentes her ved oprettelse af den type opkrævningsfordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

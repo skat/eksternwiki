@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/PladeBestilling.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../class/PladeSerieTypeKombination.xsd"/>
+	<xs:include schemaLocation="../view/JuridiskEnhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+	<xs:element name="PladeStamDataSamlingStruktur" type="dmr:PladeStamDataSamlingStrukturType"/>
+	<xs:complexType name="PladeStamDataSamlingStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:PladeBestillingNummer" minOccurs="0"/>
+			<xs:element name="PladeStamDataSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:RegistreringNummerNummer" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PladeSerieTypeKombinationIdentifikation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:PladeSerieTypeKombinationNummer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Plademodtager">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:JuridiskEnhedStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PladeProducent">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:JuridiskEnhedIdentifikatorStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

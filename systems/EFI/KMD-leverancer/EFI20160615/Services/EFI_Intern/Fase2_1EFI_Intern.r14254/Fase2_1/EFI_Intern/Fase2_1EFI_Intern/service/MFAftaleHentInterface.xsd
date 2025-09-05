@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>At hente en aftale for en fordringhaver og/eller rettighedshaver. Der eksisterer kun en aftale per haver. Det fremgår af feltet DMIFordringHaverAftaleType om aftalen er for en fordringhaver, en rettighedshaver eller en kombinations aftale.  Alle fordringhavere skal have en aftale , og rettighedshavere kan have en aftale.  Fordringhavere identificeres unikt ved et DMIFordringHaverID, men har også altid en tilknyttet KundeStruktur.</xs:documentation>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/MFAftaleHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/MFAftaleHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="MFAftaleHentInterface" type="fase2.1:MFAftaleHentInterfaceType"/>
+         <xs:complexType name="MFAftaleHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:MFAftaleHent_I"/>
+               <xs:element ref="fase2.1:MFAftaleHent_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

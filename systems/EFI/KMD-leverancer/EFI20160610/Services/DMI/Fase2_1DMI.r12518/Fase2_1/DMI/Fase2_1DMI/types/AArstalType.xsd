@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="ÅrstalType">
+               <xs:annotation>
+                  <xs:documentation>Et årstal f.eks. 1999 eller 2006, 2007 eller 2008.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:pattern value="[0-9]{4}"/>
+                  <xs:maxInclusive value="9999"/>
+                  <xs:minInclusive value="1700"/>
+                  <xs:totalDigits value="4"/>
+                  <xs:fractionDigits value="0"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

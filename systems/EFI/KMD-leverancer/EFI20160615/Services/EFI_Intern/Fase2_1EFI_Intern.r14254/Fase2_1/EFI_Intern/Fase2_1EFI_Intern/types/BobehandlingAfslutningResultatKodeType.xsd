@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BobehandlingAfslutningResultatKodeType">
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="REKONSTRUKTION"/>
+                  <xs:enumeration value="KREDITORORDNING"/>
+                  <xs:enumeration value="KONKURS_SELSKABER"/>
+                  <xs:enumeration value="KONKURS_PERSON"/>
+                  <xs:enumeration value="GÆLDSSANERING"/>
+                  <xs:enumeration value="DØDSBO"/>
+                  <xs:enumeration value="EFTERGIVELSE"/>
+                  <xs:enumeration value="TVANGSOPLØSNING"/>
+                  <xs:enumeration value="INDGIVELSE_KONKURSBEGÆRING"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indkomstoplysningpersonpersonloentimerbeloeb="urn:oio:skat:hentselv:1.0.1" elementFormDefault="qualified" targetNamespace="urn:oio:skat:hentselv:1.0.1" version="1.0" xml:lang="DA">
+	<xs:element name="IndkomstOplysningPersonPersonLoentimerBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Løntimer er defineret som timer, for hvilke en  arbejdsgiver har udbetalt løn, eller som dækkes af en udbetalt løn, og hvor lønnen er omfattet af oplysningspligten efter skattekontrollovens §7, stk. 1, nr. 1, 1. pkt. 
+
+For timelønnede omfatter det lønperiodens normale timetal samt timetallet for evt. udbetalt overarbejde. 
+
+For fastlønnede, funktionærer ol. skal der indberettes timenormen, fx ved månedsansatte på fuld tid 160,33 timer (ugelønnede 37 timer) samt timer for evt. udbetalt overarbejde. 
+
+"Fuld tid" indberettes altid med 160,33/37 timer pr. måned/uge ("normtid") selvom den fastsatte og faktiske arbejdstid er større eller mindre. Hvis pågældende er ansat på deltid i forhold til normtiden, indberettes en forholdsmæssig andel heraf.
+
+Der skal kun indberettes løntimer for kontrollabel arbejdstid i dette felt.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

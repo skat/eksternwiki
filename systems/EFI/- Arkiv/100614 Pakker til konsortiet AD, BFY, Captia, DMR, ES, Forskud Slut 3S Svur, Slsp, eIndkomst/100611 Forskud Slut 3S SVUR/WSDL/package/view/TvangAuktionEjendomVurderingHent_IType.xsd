@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Kunde.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/AktivID.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/PeriodeFra.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../operational/PeriodeTil.xsd"/>
+   
+   
+   
+   <xs:element name="TvangAuktionEjendomVurderingHent_I">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:TvangAuktionEjendomVurderingHent_IType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2311"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="TvangAuktionEjendomVurderingHent_IType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+									
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+            
+            <!--Sequence removed-->
+                  
+         
+               
+               
+         <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                  
+         
+               
+               
+         <xs:element ref="fase2.1:AktivID"/>
+
+
+         
+               
+               
+         <xs:element ref="fase2.1:PeriodeFra" minOccurs="0"/>
+
+
+
+
+         
+               
+               
+         <xs:element ref="fase2.1:PeriodeTil" minOccurs="0"/>
+
+
+      
+            
+            
+            
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

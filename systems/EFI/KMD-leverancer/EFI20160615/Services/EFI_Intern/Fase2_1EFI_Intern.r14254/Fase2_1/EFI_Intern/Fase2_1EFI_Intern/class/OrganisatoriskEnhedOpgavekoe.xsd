@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Relation mellem en organisatorisk enhed og en opgavekø. Selve relationen mellem enheden og opgavekøen har en gyldighedsperiode.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="OrganisatoriskEnhedOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>OrganisatoriskEnhedOpgavekø objektets unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøOrganisatoriskEnhedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den organisatoriske enheds unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøGyldigFra" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdatoen på gyldighedsperioden for relationen mellem den organisatoriske enhed og opgavekøen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøGyldigTil" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen på gyldighedsperioden for relationen mellem den organisatoriske enhed og opgavekøen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet tilknytningen mellem opgavekøen og den organisatoriske enhed. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem den organisatoriske enhed og opgavekøen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret tilknytningen mellem den organisatoriske enhed og opgavekøen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem den organisatoriske enhed og opgavekøen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet tilknytningen mellem den organisatoriske enhed og opgavekøen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt tilknytningen mellem den organisatoriske enhed og opgavekøen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OrganisatoriskEnhedOpgavekøTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til tilknytningen mellem den organisatoriske enhed og opgavekøen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

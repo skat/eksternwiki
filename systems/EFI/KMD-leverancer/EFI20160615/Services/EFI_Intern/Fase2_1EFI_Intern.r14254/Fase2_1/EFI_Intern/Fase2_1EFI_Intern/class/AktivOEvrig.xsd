@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/AktivOEvrigTypeType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel10Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:include schemaLocation="../types/BehaeftelseTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="AktivØvrigType" type="fase2.1:AktivØvrigTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Enum omfatter:  Luftfartøj, Skib, Omsætningsgældsbrev, AktivIUdlandet, Andet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivØvrigAntal" type="fase2.1:TalHel10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver antallet af enheder i aktiv</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivØvrigBeskrivelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af aktivet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivØvrigBehæftelseType" type="fase2.1:BehæftelseTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om aktivet er behæftet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivØvrigBeskrivelseUdlAktiv" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>En beskrivelse af (udenlandsk) aktiv sammensat af oplysninger fra R75 (type, land, landekode, nummer, reference)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

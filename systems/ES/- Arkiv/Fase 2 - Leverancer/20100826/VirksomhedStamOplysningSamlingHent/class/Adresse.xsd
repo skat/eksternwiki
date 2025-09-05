@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation>En superklasse i forhold til de specialiserede klasser: VirksomhedAdresse og PersonAdresse. Indeholder ordnede adresselagringer, hvor hvert adresseelement udfyldes særskilt. Fritekst-adresser benyttes i stedet for, klassen AlternativeAdresse.</xs:documentation>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../types/VirksomhedAdresseLoebeNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/AdresseAnvendelseKodeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/VejKodeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/HusNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/HusBogstavType.xsd"/>
+   
+   
+   
+   
+   <xs:include schemaLocation="../types/LigeUligeType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/EtageTekstType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/SideDoerTekstType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/NavnType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/PostNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/PostDistriktType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../types/PostBoksNummerType.xsd"/>
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+   
+   
+   
+   <xs:element name="AdresseFortløbendeNummer" type="fase2:VirksomhedAdresseLøbeNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver fortløbende nummerering ved flere adresser af samme type og på samme tidspunkt.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseAnvendelseKode" type="fase2:AdresseAnvendelseKodeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Kode som angiver adresseringsmuligheder.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseVejNavn" type="fase2:TekstKortType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver navnet  på en vej/gade  i Danmark</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseVejKode" type="fase2:VejKodeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Kode der sammen med kommunenummer entydigt identificerer en vej eller en del af en vej i Danmark.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseFraHusNummer" type="fase2:HusNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver 1. husnummer i et vejafsnit i gaden eller på vejen.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseFraHusBogstav" type="fase2:HusBogstavType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver bogstav tilknyttet husnummeret</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseTilHusNummer" type="fase2:HusNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver sidste lige husnummer i et vejafsnit i gaden eller på vejen.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseTilHusBogstav" type="fase2:HusBogstavType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver bogstav tilknyttet husnummeret</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseLigeUlige" type="fase2:LigeUligeType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angivelse om tal er lige eller ulige.</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseEtageTekst" type="fase2:EtageTekstType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver etagen tilknyttet husnummer/husbogstav</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseSideDørTekst" type="fase2:SideDørTekstType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver side/dør tilknyttet husnummer/husbogstav</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseCONavn" type="fase2:NavnType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver navn for en CO-adresse (for virksomheder)</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdressePostNummer" type="fase2:PostNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver postnummer (4-cifre)</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdressePostDistrikt" type="fase2:PostDistriktType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver postdistriktnavn for postnummer</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseByNavn" type="fase2:NavnType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver bynavn (lokalt stednavn)</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdressePostBox" type="fase2:PostBoksNummerType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver postboksnummer</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseGyldigFra" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver startdato for adresse (år md dg)</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+   
+   
+   <xs:element name="AdresseGyldigTil" type="fase2:DatoType">
+      
+      
+      <xs:annotation>
+         
+         
+         <xs:documentation>Angiver slutdato for adressen (år md dg)</xs:documentation>
+      
+      
+      </xs:annotation>
+   
+   
+   </xs:element>
+
+
+</xs:schema>

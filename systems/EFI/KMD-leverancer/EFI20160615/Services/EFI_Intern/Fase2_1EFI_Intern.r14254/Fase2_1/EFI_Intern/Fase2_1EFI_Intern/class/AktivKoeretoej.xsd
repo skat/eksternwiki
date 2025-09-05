@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En kundes aktiv som er et køretøj.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst20Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel17Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BehaeftelseTypeKodeType.xsd"/>
+         <xs:element name="AktivKøretøjForsikringOplysning" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forsikringsoplysninger vedr. køretøjet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjRegistreringNummer" type="fase2.1:Tekst20Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Køretøjets registreringsnummer (nr.plade)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjRegistreringGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første registreringsdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjStelNummer" type="fase2.1:Tekst20Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Stelnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjStelLøbeNummer" type="fase2.1:TalHel17Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Stel-løbenummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjMærke" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af køretøjets mærke</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjTilgangDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver handel med køretøj i indkomstår - tilgang</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjAfgangDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver handel med køretøj i indkomstår - afgang</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjErEjer" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kunde er registreret som ejer af køretøjet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjErBruger" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kunde er registreret som bruger (men ikke ejer) af køretøjet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivKøretøjBehæftelseType" type="fase2.1:BehæftelseTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om aktivet er behæftet  Enum omfatter:  Behæftet, Ubehæftet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

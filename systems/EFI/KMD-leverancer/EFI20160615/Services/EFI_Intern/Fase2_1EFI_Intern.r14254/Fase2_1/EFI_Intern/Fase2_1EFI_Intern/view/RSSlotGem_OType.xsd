@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+				     
+         <xs:include schemaLocation="../operational/GentagelseMarkering.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/SlotStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OpgaveGentagelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SlotUndtagelseStrukturType.xsd"/>
+				     
+         <xs:element name="RSSlotGem_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:RSSlotGem_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="RSSlotGem_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="SlotListe" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Slot" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:SlotStruktur"/>
+
+                                       <xs:element ref="fase2.1:OpgaveGentagelseStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:GentagelseMarkering" minOccurs="0"/>
+
+
+                                       <!--Sequence removed-->
+
+                                          <xs:element name="UndtagelseSamling" minOccurs="0">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element name="Undtagelser">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:SlotUndtagelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

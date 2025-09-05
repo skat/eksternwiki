@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Den kunde der erhverver ret til at modtage udbetalingen i f.eks. overskydende skat eller udbetalingen fra negativ moms etc.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="TransporthaverID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en transporthaver</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

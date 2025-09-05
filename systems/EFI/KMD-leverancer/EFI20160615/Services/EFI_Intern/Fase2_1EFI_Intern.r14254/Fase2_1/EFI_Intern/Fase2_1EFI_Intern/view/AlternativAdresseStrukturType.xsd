@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../class/AdresseType.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:element name="AlternativAdresseStruktur" type="fase2.1:AlternativAdresseStrukturType"/>
+         <xs:complexType name="AlternativAdresseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AlternativAdresse">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="fase2.1:AlternativAdresseFortløbendeNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAnvendelseKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie5" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie6" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseAdresseLinie7" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseGyldigFra" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AlternativAdresseGyldigTil" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeTekst" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeGyldigFra" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:AdresseTypeGyldigTil" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:LandKode" minOccurs="0"/>
+
+
+
+                        <xs:element ref="fase2.1:LandNavn" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

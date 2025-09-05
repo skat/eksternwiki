@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Bobehandling</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4000Type.xsd"/>
+         <xs:include schemaLocation="../types/BobehandlingAfslutningResultatKodeType.xsd"/>
+         <xs:element name="BobehandlingKendelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kendelsesdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKlagefristDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Klagefrist</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKlagefristRemonstrationDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Klagefrist ved remonstration</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingModtagetDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Skifterettens modtagelsesdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingModtagetKlageDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Klage modtaget dato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingSkifteretMødeDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mødedato for fremmøde i skifteretten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingNyAfgørelseRemonstration" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ny afgørelsesårsag ved remonstration .eks: Fastholdt/Helt medhold/Delvis medhold/Andet. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingNyAfgørelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ny afgørelse  ved remonstration</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingOpdaterForældelse" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>markering for om forældelse skal beregnes jftr regler om forældelse.  Hvis markering ikke er sat, bliver forældelse ikke genberegnet for omfattede fordringer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingProklamaDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Proklama dato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingSkæringDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="BobehandlingUdløbDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="BobehandlingUdløbBegrundelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse ændret udløb</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAfgørelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for afgørelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAfgørelseÅrsag" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Afgørelsesårsag f.eks: Fastholdt/Ændret/Hjemvist/Andet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAfgørelseKlageInstans" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Afgørelseårsag  fra klageinstans f.eks: Fastholdt/Ændret/Hjemvist/Andet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAfgørelseKlageInstansDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afgørelsesdato fra klageinstans</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAnmeldelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anmeldelsedato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAnsøgningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for Ansøgning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingCirkulæreModtagetDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Cirkulæreskrivelse modtaget</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingCirkulærePlanlagtDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Næste Cirkulæreskrivelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingDekretDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dekretdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingEfteranmeldelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Efteranmeldelsesdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingFristDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fristdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingIndgivelseAnmodningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indgivelse af konkursbegæringdato </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingIndledningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indledningsdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingAfslutningResultatKode"
+                     type="fase2.1:BobehandlingAfslutningResultatKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afslutningsresultat for bobehandling I forbindelse med skift til anden undertype. Styres af matricen Oversigt over bobehandlingstyper med indsatsen (mulige skift.)   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingÅrsagBeskrivelse" type="fase2.1:Tekst4000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Årsag for afgørelse fra klageinstans</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingGældssaneringForslagDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Gældssaneringsforslagdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

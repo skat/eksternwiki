@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:esws="urn:oio:skat:es:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:es:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>At hente aktuelle oplysninger om en virksomheds el-aftageforhold.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="VirksomhedAftageForholdHent_I.xsd"/>
+	<xs:include schemaLocation="VirksomhedAftageForholdHent_O.xsd"/>
+	<xs:element name="VirksomhedAftageForholdHentInterface" type="esws:VirksomhedAftageForholdHentInterfaceType"/>
+	<xs:complexType name="VirksomhedAftageForholdHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="esws:VirksomhedAftageForholdHent_I"/>
+			<xs:element ref="esws:VirksomhedAftageForholdHent_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

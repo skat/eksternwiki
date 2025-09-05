@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/ErEFIKunde.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedStatusType.xsd"/>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/EjerForhold.xsd"/>
+         <xs:element name="KFIVirksomhedEjerforholdHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:KFIVirksomhedEjerforholdHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="KFIVirksomhedEjerforholdHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element ref="fase2.1:ErEFIKunde" minOccurs="0"/>
+                     <xs:element name="VirksomhedStamoplysning" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+                              <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:VirksomhedStartDato"/>
+
+                              <xs:element ref="fase2.1:VirksomhedOphørDato" minOccurs="0"/>
+
+                              <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                     <xs:element name="EjerforholdSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Ejerforhold" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:VirksomhedSENummer"/>
+                  
+                                       <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                  
+                                       <xs:element ref="fase2.1:EjerRolleTypeKode"/>
+
+                                       <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:VirksomhedStatusTypeKode" minOccurs="0"/>
+
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element name="VirksomhedEjerSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="VirksomhedEjer" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="Valg">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:PersonCPRNummer"/>
+				
+				
+				                                            <xs:element ref="fase2.1:VirksomhedSENummer"/>
+				
+				
+				                                            <xs:element ref="fase2.1:VirksomhedCVRNummer"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                       <xs:element ref="fase2.1:PersonNavnNavn" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:EjerRolleTypeKode"/>
+
+                                       <xs:element ref="fase2.1:VirksomhedStatusTypeKode" minOccurs="0"/>
+
+
+                                       <xs:element name="EjerForholdHistorikSamling">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="EjerForholdHistorikStruktur" minOccurs="1" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:EjerForholdGyldigFra"/>
+
+                                                         <xs:element ref="fase2.1:EjerForholdGyldigTil" minOccurs="0"/>
+
+
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

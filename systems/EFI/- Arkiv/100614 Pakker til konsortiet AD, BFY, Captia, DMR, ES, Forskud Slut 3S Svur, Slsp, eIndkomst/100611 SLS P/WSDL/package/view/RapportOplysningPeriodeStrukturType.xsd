@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RapportOplysningPeriode.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+   
+   
+   
+   <xs:element name="RapportOplysningPeriodeStruktur" type="fase2.1:RapportOplysningPeriodeStrukturType"/>
+   
+   
+   
+   <xs:complexType name="RapportOplysningPeriodeStrukturType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+         
+         <!--Sequence removed-->
+                  
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningPeriodeKvalifikator"/>
+
+
+         
+            
+            
+         <xs:element ref="fase2.1:RapportOplysningPeriodeKvalifikatorTekst" minOccurs="0"/>
+
+
+
+         
+            
+            
+         <xs:element name="Periode">
+            
+               
+               
+            <xs:complexType>
+               
+                  
+                  
+               <xs:choice>
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningPeriodeÅr"/>
+				
+				
+                  
+                     
+                     
+                  <xs:sequence>
+				
+
+                     
+                        
+                        
+                     <xs:element name="ÅrKvartal">
+                        
+                           
+                           
+                        <xs:complexType>
+                           
+                              
+                              
+                           <xs:sequence>
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeÅr"/>
+                  
+                  
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeKvartal"/>
+
+                           
+                              
+                              
+                           </xs:sequence>
+                        
+                           
+                           
+                        </xs:complexType>
+                     
+                        
+                        
+                     </xs:element>
+				
+				
+                  
+                     
+                     
+                  </xs:sequence>
+                  
+                     
+                     
+                  <xs:sequence>
+				
+
+                     
+                        
+                        
+                     <xs:element name="ÅrMåned">
+                        
+                           
+                           
+                        <xs:complexType>
+                           
+                              
+                              
+                           <xs:sequence>
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeÅr"/>
+                  
+                  
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeMåned"/>
+
+                           
+                              
+                              
+                           </xs:sequence>
+                        
+                           
+                           
+                        </xs:complexType>
+                     
+                        
+                        
+                     </xs:element>
+				
+				
+                  
+                     
+                     
+                  </xs:sequence>
+				
+                  
+                     
+                     
+                  <xs:element ref="fase2.1:RapportOplysningPeriodeDato"/>
+				
+				
+                  
+                     
+                     
+                  <xs:sequence>
+				
+
+                     
+                        
+                        
+                     <xs:element name="Årrække">
+                        
+                           
+                           
+                        <xs:complexType>
+                           
+                              
+                              
+                           <xs:sequence>
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeStartÅr"/>
+                  
+                  
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeSlutÅr"/>
+
+                           
+                              
+                              
+                           </xs:sequence>
+                        
+                           
+                           
+                        </xs:complexType>
+                     
+                        
+                        
+                     </xs:element>
+				
+				
+                  
+                     
+                     
+                  </xs:sequence>
+                  
+                     
+                     
+                  <xs:sequence>
+				
+
+                     
+                        
+                        
+                     <xs:element name="DatoPeriode">
+                        
+                           
+                           
+                        <xs:complexType>
+                           
+                              
+                              
+                           <xs:sequence>
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeStartDato"/>
+                  
+                  
+                              
+                                 
+                                 
+                              <xs:element ref="fase2.1:RapportOplysningPeriodeSlutDato"/>
+
+                           
+                              
+                              
+                           </xs:sequence>
+                        
+                           
+                           
+                        </xs:complexType>
+                     
+                        
+                        
+                     </xs:element>
+
+                  
+                     
+                     
+                  </xs:sequence>
+               
+                  
+                  
+               </xs:choice>
+            
+               
+               
+            </xs:complexType>
+         
+            
+            
+         </xs:element>
+      
+         
+         
+            
+         
+         
+         
+         
+      
+					
+      
+      
+      </xs:sequence>
+							
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

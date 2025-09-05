@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Opgave.xsd"/>
+         <xs:include schemaLocation="../operational/OpgaveStatusFarve.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OpgaveTidligsteStartDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OpgaveFristDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/OpgaveSlotStartDatoTid.xsd"/>
+				     
+         <xs:element name="OpgaveStruktur" type="fase2.1:OpgaveStrukturType"/>
+         <xs:complexType name="OpgaveStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:OpgaveID"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveOpgavetypeID"/>
+
+               <xs:element ref="fase2.1:OpgaveOpgavekøID" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveDomæne"/>
+
+               <xs:element ref="fase2.1:OpgaveBookingreference" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveKundeid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveTekst" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveLinkParametre" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveSandsynlighed"/>
+                  
+                  <xs:element ref="fase2.1:OpgavePrioritet"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveVentedage"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveGennemførselsfrist"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveGennemførselstid"/>
+
+               <xs:element ref="fase2.1:OpgaveForløbID" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveForløbOpgavenummer" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgavePoint"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveOverbooking"/>
+
+               <xs:element ref="fase2.1:OpgaveStatusFarve" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveTidligsteStartDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveFristDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveBookingInterval" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveBookingForsøgTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveBooketAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveBooketTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveSlotStartDatoTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveBookingsvarDage" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveSvarAfsendtTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveValgtAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveValgtTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveAfsluttetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveAfsluttetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:OpgaveOprettetTid"/>
+
+               <xs:element ref="fase2.1:OpgaveÆndretAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveÆndretTid" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgaveSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:OpgaveTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

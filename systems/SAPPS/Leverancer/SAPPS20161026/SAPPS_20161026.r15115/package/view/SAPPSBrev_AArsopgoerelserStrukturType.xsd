@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r15115</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Opgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/SelskabSelvangivelse.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/AngivelseFristKalender.xsd"/>
+         <xs:include schemaLocation="../operational/UdskriftDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/OpkraevningFordring.xsd"/>
+         <xs:include schemaLocation="../operational/VirksomhedRegnskabPeriodeStartDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/VirksomhedRegnskabPeriodeSlutDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BeskatningParagrafType.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/AArsopgoerelseSkatteberegningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/OCRLinjeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AArsopgoerelseAcontoskatStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AArsopgoerelseUdbytteskatStrukturType.xsd"/>
+				     
+         <xs:element name="SAPPSBrev_ÅrsopgørelserStruktur"
+                     type="skat2016:SAPPSBrev_ÅrsopgørelserStrukturType"/>
+         <xs:complexType name="SAPPSBrev_ÅrsopgørelserStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="skat2016:OpgørelseNummer"/>
+                  <xs:element name="ModtagerStamOplysninger">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:SelskabSelvangivelseIndkomstÅr"/>
+                  
+                           <xs:element ref="skat2016:VirksomhedSENummer"/>
+                  
+                           <xs:element ref="skat2016:AngivelseFristKalenderForfaldDato"/>
+                  
+                           <xs:element ref="skat2016:UdskriftDato"/>
+                  
+                           <xs:element ref="skat2016:OpkrævningFordringSidsteRettidigBetalingDato"/>
+                  
+                           <xs:element ref="skat2016:VirksomhedRegnskabPeriodeStartDato"/>
+                  
+                           <xs:element ref="skat2016:VirksomhedRegnskabPeriodeSlutDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ParagrafForhold">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:BeskatningParagrafTypeKode"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Skatteberegning">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:ÅrsopgørelseSkatteberegningStruktur"/>
+                  
+                           <xs:element ref="skat2016:OCRLinjeStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="AcontoSkatSpecifikationListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="AcontoSkatSpecifikation" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+
+                                    <xs:element ref="skat2016:VirksomhedSENummer" minOccurs="0"/>
+
+                                    <xs:element ref="skat2016:ÅrsopgørelseAcontoskatStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="UdbytteSkatSpecifikationListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="UdbytteSkatSpecifikation" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:ÅrsopgørelseUdbytteskatStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

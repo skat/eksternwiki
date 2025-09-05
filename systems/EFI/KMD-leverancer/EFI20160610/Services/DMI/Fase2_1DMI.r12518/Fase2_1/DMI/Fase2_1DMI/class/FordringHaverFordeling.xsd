@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>1. Procentvis, ligestillet fordeling af det dækkede.  Her fordeles det dækkede med udgangspunkt i den procent, der er angivet ved oprettelse af fordringen og der afregnes efterfølgende fordringshaver for fordringshaver.  2. Prioriteret fordeling af det dækkede  Her afregnes der til fordringshavere i den rækkefølge og med de beløb, der er angivet ved oprettelse af fordringen. Efterhånden som der dækkes arbejder DMI sig ned i rækkefølgen, indtil alle fordringshavere er dækket. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/LoebeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentAndelType.xsd"/>
+         <xs:element name="FordringHaverFordelingPriorit" type="fase2.1:LøbeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den rækkefølge hvorefter dækningen af en fordring skal afregnes til fordringshaverne. Det er en stigende sortering 01 - først .. ... 99 sidst Tom ingen rangorden   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverFordelingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbsandel  af en fordring , der skal afregnes til fordringshaverne idenfor en rangorden i udenlandsk valuta   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverFordelingBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbsandel  af en fordring , der skal afregnes til fordringshaverne idenfor en rangorden i danske kroner </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringHaverFordelingProcent" type="fase2.1:ProcentAndelType">
+               
+               <xs:annotation>
+                  <xs:documentation>En fordring kan have flere fordringshavere. Fordelingen af fordringen angives i procent. Denne procent anvendes også som fordelingen af fordringshavernes andel i en evt. indbetaling. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

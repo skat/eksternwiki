@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Er en statslig eller kommunal/regional udbetaling af f.eks:  Overskydende skat,  Negativ moms tilsvar  pension boligsikring rentegodtgørelse mv.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/NKSNummerType.xsd"/>
+         <xs:element name="MyndighedUdbetalingSpec" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekst</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingPeriodeFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeFra er startdatoen for perioden, som en myndighedsudbetalingen vedrører. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingPeriodeTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeTil er Slutdatoen for perioden, som en myndighedsudbetaling vedrører. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingPeriodeType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers mulighed for i fri tekst at beskrive periode. F.eks  År Halvår Kvartal Måned Uge Dag </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingFrist" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato en myndighedsudbetalingen senest skal være foretaget</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingNote" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Myndigheds mulighed for at kunne skrive note på udbetaling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb der er til udbetaling fra myndigheden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb i danske kroner, der er til udbetaling fra myndigheden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato myndighedens pengeinstitut foretager trækket på myndighedens konto.  (Det er ikke kundens dispositionsdato).  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingNKSTilSKAT" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det tidpunkt, hvor NemKonto har sendt udbetalingen til SKAT</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingSpecKonto" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet skal den indeholde reg.nr. og bankkontnr. som eventuelt anvendes for en specifik ydelsesart. Oplysningen modtages fra NemKonto i strukturen BankAccountStructure.  Hvis BankAccountStructure er tom anvendes teksten 'NemKonto' i stedet.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MyndighedUdbetalingNKSNr" type="fase2.1:NKSNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udbetalende myndigheds nksnummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

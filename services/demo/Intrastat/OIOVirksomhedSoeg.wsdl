@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="urn:oio:skat:intrastat:ws:1.0.0" name="OIOVirksomhedSøgService" xmlns:fase2_1="urn:oio:skat:intrastat:ws:1.0.0" xmlns:oio="http://rep.oio.dk/skat.dk/intrastat/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>OIO-service som henter SE-numre for et givent CVR-nummer.</xs:documentation>
+	</xs:annotation>
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:intrastat:ws:1.0.0">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/401990/artefact/OIOVirksomhedSoegInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="OIOVirksomhedSøgServiceRequest">
+		<part name="Request" element="oio:OIOVirksomhedSøg_I"/>
+	</message>
+	<message name="OIOVirksomhedSøgServiceResponse">
+		<part name="Response" element="fase2_1:OIOVirksomhedSøg_O"/>
+	</message>
+	<portType name="OIOVirksomhedSøgServicePortType">
+		<operation name="getOIOVirksomhedSøg">
+			<input message="fase2_1:OIOVirksomhedSøgServiceRequest"/>
+			<output message="fase2_1:OIOVirksomhedSøgServiceResponse"/>
+		</operation>
+	</portType>
+</definitions>

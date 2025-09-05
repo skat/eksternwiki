@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specielle felter der omhandler en negativ fordring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="NegativFordringFrigivetMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt frigivelsesdato er passeret. Sættes til true hvis dato er overskredet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NegativFordringDækningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Viser hvor meget af en negativ fordring, der er brugt til dækning af en positiv fordring </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="NegativFordringDækningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Viser hvornår en negativ fordring er brugt til dækning af en positiv fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

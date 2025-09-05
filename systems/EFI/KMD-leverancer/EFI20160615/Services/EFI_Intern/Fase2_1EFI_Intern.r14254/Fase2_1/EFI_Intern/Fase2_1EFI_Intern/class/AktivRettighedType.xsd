@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En rettighedshaver kan have et aktiv i pant, som kunden ejer. Rettighedshaveren kan dermed være en, som kunden skylder penge. En rettighedshaver er en tredje mand, som Inddrivelsesmyndigheden skal kunne registrere oplysninger omkring, bl.a. til brug for at kunne sende meddelelser til dem.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/AktivRettighedTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="AktivRettighedTypeKode" type="fase2.1:AktivRettighedTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af rettighedshaver, f.eks. en transporthaver i en transportsituation.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivRettighedTypeBegrundelse" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for valget af rettighedstypen på et aktiv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

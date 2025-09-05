@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Adresse.xsd"/>
+         <xs:element name="KundeMødeAdresseStruktur" type="fase2.1:KundeMødeAdresseStrukturType"/>
+         <xs:complexType name="KundeMødeAdresseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:AdresseVejKode"/>
+                  
+                  <xs:element ref="fase2.1:AdresseVejNavn"/>
+                  
+                  <xs:element ref="fase2.1:AdresseFraHusNummer"/>
+                  
+                  <xs:element ref="fase2.1:AdresseTilHusNummer"/>
+                  
+                  <xs:element ref="fase2.1:AdresseEtageTekst"/>
+                  
+                  <xs:element ref="fase2.1:AdresseFraHusBogstav"/>
+                  
+                  <xs:element ref="fase2.1:AdresseTilHusBogstav"/>
+                  
+                  <xs:element ref="fase2.1:AdresseSideDørTekst"/>
+                  
+                  <xs:element ref="fase2.1:AdressePostNummer"/>
+                  
+                  <xs:element ref="fase2.1:AdresseByNavn"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

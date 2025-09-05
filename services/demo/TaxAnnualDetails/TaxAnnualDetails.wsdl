@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://rep.oio.dk/toldskat.dk/xml/schemas/2008/01/22/TaxAnnualDetails" xmlns:toldskat="http://rep.oio.dk/toldskat.dk/xml/schemas/2004/09/17/" xmlns:toldskat2008="http://rep.oio.dk/toldskat.dk/xml/schemas/2008/01/22/" xmlns:toldskat2010="urn:oio:skat:toldskat:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TaxAnnualDetails" targetNamespace="http://rep.oio.dk/toldskat.dk/xml/schemas/2008/01/22/TaxAnnualDetails">
+	<types>
+		<xsd:schema targetNamespace="urn:oio:skat:toldskat:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="http://digitaliser.dk/resource/448786/artefact/toldskat_TaxAnnualDetailsInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="TaxAnnualDetailsRequest">
+		<part name="Request" element="toldskat2008:RequestTaxAnnualDetails"/>
+	</message>
+	<message name="TaxAnnualDetailsResponse">
+		<part name="Response" element="toldskat2010:ResponseTaxAnnualDetails"/>
+	</message>
+	<portType name="TaxAnnualDetailsPortType">
+		<operation name="getTaxAnnualDetails">
+			<input message="tns:TaxAnnualDetailsRequest"/>
+			<output message="tns:TaxAnnualDetailsResponse"/>
+		</operation>
+	</portType>
+	<binding name="TaxAnnualDetailsBinding" type="tns:TaxAnnualDetailsPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getTaxAnnualDetails">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body parts="Request" use="literal"/>
+			</input>
+			<output>
+				<soap:body parts="Response" use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="TaxAnnualDetails">
+		<port name="TaxAnnualDetails" binding="tns:TaxAnnualDetailsBinding">
+			<soap:address location="https://www.demo.tastselv.skat.dk/aftaler-ws/services/TaxAnnualDetailsService"/>
+		</port>
+	</service>
+</definitions>

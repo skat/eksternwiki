@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specialisering af SKATs kundebegreb for DMI</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/CVRNummerType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="DMIKundeCVRNummer" type="fase2.1:CVRNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>CVRNummer der medsendes hvis kundenummer er et SENummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KundeUnderBobehandling" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Kunde under af bobehandling Nej: Kunde ikke under af bobehandling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

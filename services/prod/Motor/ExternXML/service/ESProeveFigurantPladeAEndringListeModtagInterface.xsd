@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>At sende politiet en liste af nummerplader for prøve- og figurantplader hvor der har været ændringer i: - registreringen - CPR og CVR nummer for den tilknyttede juridiske enhed samt - forsikring</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/ESProeveFigurantPladeAEndringListeModtag_IType.xsd"/>
+	<xs:include schemaLocation="../view/ESProeveFigurantPladeAEndringListeModtag_OType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_IType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_OType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_IType.xsd"/>
+	<xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_OType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+	<xs:element name="ESProeveFigurantPladeAendringListeModtagInterface" type="dmr:ESProeveFigurantPladeAendringListeModtagInterfaceType"/>
+	<xs:complexType name="ESProeveFigurantPladeAendringListeModtagInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmr:ESProeveFigurantPladeAendringListeModtag_I"/>
+			<xs:element ref="dmr:ESProeveFigurantPladeAendringListeModtag_O"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAnmod_I"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAnmod_O"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAfslut_I"/>
+			<xs:element ref="dmr:StyretFiloverfoerselModtagAfslut_O"/>
+			<xs:element ref="dmr:KompenserTrans"/>
+			<xs:element ref="dmr:KompenserTransSvar"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

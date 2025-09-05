@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Forsikring.xsd"/>
+	<xs:element name="ForsikringStruktur" type="dmr:ForsikringStrukturType"/>
+	<xs:complexType name="ForsikringStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:ForsikringStatus"/>
+			<xs:element ref="dmr:ForsikringStatusAendringAarsag" minOccurs="0"/>
+			<xs:element ref="dmr:ForsikringStatusDato"/>
+			<xs:element ref="dmr:ForsikringBevisNummer"/>
+			<xs:element ref="dmr:ForsikringBevisDato"/>
+			<xs:element ref="dmr:ForsikringUdstedtDigitalt"/>
+			<xs:element ref="dmr:ForsikringUdstedtPapir"/>
+			<xs:element ref="dmr:ForsikringTilgangRegistreretDato" minOccurs="0"/>
+			<xs:element ref="dmr:ForsikringAfgangRegistreretDato" minOccurs="0"/>
+			<xs:element ref="dmr:ForsikringErFejlhaandteret"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

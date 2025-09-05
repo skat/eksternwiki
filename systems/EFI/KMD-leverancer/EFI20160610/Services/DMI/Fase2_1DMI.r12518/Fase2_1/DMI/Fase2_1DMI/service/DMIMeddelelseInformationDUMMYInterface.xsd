@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Dette er ikke en reel service men KUN en teknisk placeholder for de datastrukturer, som anvendes til DMI-beskeder.</xs:documentation>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/DMIMeddelelseInformationDUMMY_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/DMIMeddelelseInformationDUMMY_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="DMIMeddelelseInformationDUMMYInterface"
+                     type="fase2.1:DMIMeddelelseInformationDUMMYInterfaceType"/>
+         <xs:complexType name="DMIMeddelelseInformationDUMMYInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:DMIMeddelelseInformationDUMMY_I"/>
+               <xs:element ref="fase2.1:DMIMeddelelseInformationDUMMY_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

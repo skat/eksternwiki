@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Oplysninger om valuta såsom kurs og kursdato. Valutakurser håndteres i SAPIntern system, og her gemmes også historiske valutaoplysninger.  Valutaoplysninger anvendes i flere situationer, bl.a. til at omberegne beløb fra dansk valuta til udenlandsk valuta og omvendt.  Specifikt Opkrævnings- og Inddrivelsesmyndigheden: Her anvendes valutaoplysninger ved modtagelse af fordringer i anden valuta end dansk, ved omberegning af fordringer som sendes til inddrivelse i udlandet samt ved ind- og udbetalinger. I sidstnævnte tilfælde kan valutaoplysninger fx. anvendes ved modtagelse af en indbetaling i udenlandsk valuta, som skal omregnes til dansk valuta før beløbet kan anvendes til at dække en fordring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ValutaKursType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:element name="ValutaOplysningKurs" type="fase2.1:ValutaKursType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kursen på den pågældende valuta på den angivne kursdato, fx. 830,91.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValutaOplysningKursType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af hvorvidt kursen er: Dagskurs, Toldkurs, Officiel middelkurs eller Sælgerkurs</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValutaOplysningKursDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for valutakursen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ValutaOplysningKode" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation>ISO-kode for den pågældende valuta fx DKK</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

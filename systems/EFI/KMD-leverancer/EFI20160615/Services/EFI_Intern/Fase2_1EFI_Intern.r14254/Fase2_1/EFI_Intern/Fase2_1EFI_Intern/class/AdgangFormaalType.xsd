@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder tilladte værdier af formål med adgang, som en abonnent kan foretage. Eksempelvis kontanthjælp, boligstøtte </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeTreCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AdgangFormålTypeKode" type="fase2.1:KodeTreCifreStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver tilladte værdier af formål med adgang</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdgangFormålTypeTekst" type="fase2.1:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver klartekst til en tilladt værdi af formål med adgang.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdgangFormålTypeGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdgangFormålTypeGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>Formålet er at vedligeholde et abonnement på fremtidige ændringer i indkomstoplysninger for en kreds af personer. Anvendelsen af servicen er betinget af, at de pågældende har indgået en abonnementsaftale med told- og skatteforvaltningen herom, jf. § 7 stk. 4 i lov om et indkomstregister. Servicen udstilles ikke til enhver og må således alene anvendes af kendte brugere, dvs. af de myndighe-der m.fl., som abonnerer på indkomstoplysninger. eIndkomstPersonIndkomstAbonnementGyldigFra angiver den dato, som abonnementet gælder fra og med. eIndkomstPersonIndkomstAbonnementGyldigTil angiver den dato, som abonnementet ophører fra og med. En af datoerne skal angives. Start- og slutdato kan ikke være før eller efter dags dato. Det er ikke muligt at ændre en allerede ajourført start- eller slutdato for abonnement. Der må oprettes nyt abonnement. Som tekst for abonnentadgangomgang angives navnet på den service, som stiller indkomstoplysningerne til rådighed.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAbonnementAjourfoer_IType.xsd"/>
+	<xs:include schemaLocation="../view/IndkomstOplysningPersonAbonnementAjourfoer_OType.xsd"/>
+	<xs:element name="IndkomstOplysningPersonAbonnementAjourførInterface" type="fase2:IndkomstOplysningPersonAbonnementAjourførInterfaceType"/>
+	<xs:complexType name="IndkomstOplysningPersonAbonnementAjourførInterfaceType">
+		<xs:choice>
+			<xs:element ref="fase2:IndkomstOplysningPersonAbonnementAjourfør_I"/>
+			<xs:element ref="fase2:IndkomstOplysningPersonAbonnementAjourfør_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/FrekvensType.xsd"/>
+         
+         <xs:element name="NettoIndkomstPeriodeTypeKode" type="fase2.1:FrekvensType">
+            <xs:annotation>
+               <xs:documentation>Periodeangivelse for nettoindkomstbeløbet, som sagsbehandleren har indtastet, f.eks 2500 kr. pr. uge. Det indtastede beløb omregnes til beløb pr. måned og år, når det anvendes i betalingsevneberegninger.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

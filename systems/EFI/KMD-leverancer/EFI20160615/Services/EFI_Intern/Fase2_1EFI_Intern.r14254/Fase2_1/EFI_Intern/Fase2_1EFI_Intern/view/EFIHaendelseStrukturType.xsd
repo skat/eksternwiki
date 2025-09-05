@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EFIHaendelse.xsd"/>
+         <xs:include schemaLocation="../operational/EFIHaendelseSekvensnummer.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Opgavetype.xsd"/>
+         <xs:include schemaLocation="../class/Ressource.xsd"/>
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BookingSvarStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ScoringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AnbefaletSporskabelonStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/CSRPAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/CSRPCivilstandStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/CSRPDoedsfaldStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndsatsStartStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndsatsStopStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndsatsFordringFjernStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndsatsFordringTilfoejStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringOprettetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringSaldoAEndretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HenstandAEndretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DPMeddelelseIkkeSendtStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DPMeddelelseIkkeModtagetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KreditoplysningsbureauVarselFristAEndretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KreditoplysningsbureauStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ETLAnmeldelseSvarStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ErkendFordringErkendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegAktivForaeldelseDatoAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegAktivAndelsboligTinglysningFristAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegMoedeAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegPolitieftersoegningAnmodSendStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegAktivTinglysStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegTilsigelseSendStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegForkyndelsesdatoAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegbladDanStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegbladKladdeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegEjGennemfoertStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegAktivAndelsboligSendRykkerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegAktivFjernStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UdlaegAktivAndelsboligTinglysningAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIBetalingOrdningMisligholdtStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MeddelelsePakkeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RykkerBetalingsFristAEndretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LoenIndeholdelseBegrundelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LoenIndeholdelseBerostilStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LoenIndeholdelseGensendStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingGemKontaktStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingSletKontaktStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/StopAutomatiskSporskiftStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIOpgaveBookEllerOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIOpgaveBookEllerAkterStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningParametreRateAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningDaekningRaekkefoelgeAEndrStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingOrdningOprettetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingAnnulerForventetIndbetalingStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingFremtidigHaendelseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingAEndrAutomatiskStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingAutomatiskTvangsoploesningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BobehandlingForventetIndbetalingOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafAfsoningAflysStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafAfsoningOpdaterType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafSendVarselStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafGensendVarselStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafKorrektionSendStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafVarselAEndretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafSendAnmodningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BoedeforvandlingStrafOpdaterPolitikredsStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KUMGennemfoertStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KUMAEndrStrukturType.xsd"/>
+				     
+         <xs:element name="EFIHændelseStruktur" type="fase2.1:EFIHændelseStrukturType"/>
+         <xs:complexType name="EFIHændelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:EFIHændelseType"/>
+
+               <xs:element ref="fase2.1:EFIHændelseSekvensnummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:EFIHændelseDato" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:OpgavetypeBeskrivelse" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="Sagsbehandler" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:RessourceNummer"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="ProducentReference" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:IndsatsID"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <xs:element name="ModtagerReferenceSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:IndsatsID" minOccurs="0" maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+                  <xs:element ref="fase2.1:KundeStruktur"/>
+               <!--Sequence removed-->
+
+                  <xs:element name="IndholdValg" minOccurs="0">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element ref="fase2.1:BookingSvarStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:ScoringStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:AnbefaletSporskabelonStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:CSRPAdresseStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:CSRPCivilstandStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:CSRPDødsfaldStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:IndsatsStartStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:IndsatsStopStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:IndsatsFordringFjernStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:IndsatsFordringTilføjStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:FordringOprettetStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:FordringSaldoÆndretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:HenstandÆndretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:DPMeddelelseIkkeSendtStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:DPMeddelelseIkkeModtagetStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:KreditoplysningsbureauVarselFristÆndretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:KreditoplysningsbureauStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:ETLAnmeldelseSvarStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:ErkendFordringErkendelseStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægAktivForældelseDatoÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægAktivAndelsboligTinglysningFristÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægMødeÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægPolitieftersøgningAnmodSendStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægAktivTinglysStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægTilsigelseSendStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægForkyndelsesdatoÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægbladDanStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægbladKladdeStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægEjGennemførtStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægAktivAndelsboligSendRykkerStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægAktivFjernStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:UdlægAktivAndelsboligTinglysningÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:EFIBetalingOrdningMisligholdtStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:MeddelelsePakkeStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:RykkerBetalingsFristÆndretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:LønIndeholdelseBegrundelseStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:LønIndeholdelseBerostilStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:LønIndeholdelseGensendStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingGemKontaktStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingSletKontaktStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:StopAutomatiskSporskiftStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:EFIOpgaveBookEllerOpretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:EFIOpgaveBookEllerAkterStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BetalingOrdningParametreRateÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BetalingOrdningDækningRækkefølgeÆndrStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BetalingOrdningOprettetStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingAnnulerForventetIndbetalingStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingFremtidigHændelseStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingÆndrAutomatiskStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingAutomatiskTvangsopløsningStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BobehandlingForventetIndbetalingOpretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafAfsoningAflysStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafAfsoningOpdater"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafSendVarselStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafGensendVarselStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafKorrektionSendStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafVarselÆndretStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafSendAnmodningStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:BødeforvandlingStrafOpdaterPolitikredsStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:KUMGennemførtStruktur"/>
+				
+				
+				                       <xs:element ref="fase2.1:KUMÆndrStruktur"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

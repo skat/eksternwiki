@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="BødeforvandlingStrafKorrektionÅrsagType">
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="50"/>
+                  <xs:enumeration value="DelvisBetFlere"/>
+                  <xs:enumeration value="DelvisModFlere"/>
+                  <xs:enumeration value="BoedeFrafaldFlere"/>
+                  <xs:enumeration value="NyeBoederAfson"/>
+                  <xs:enumeration value="Andet"/>
+                  <xs:enumeration value="FuldBetaling"/>
+                  <xs:enumeration value="ModregnAlle"/>
+                  <xs:enumeration value="BoedeFrafaldIngen"/>
+                  <xs:enumeration value="HenstandBevilg"/>
+                  <xs:enumeration value="BOOprettet"/>
+                  <xs:enumeration value="AnsEftergivelse"/>
+                  <xs:enumeration value="KundeDoed"/>
+                  <xs:enumeration value="UnderBOB"/>
+                  <xs:enumeration value="KundeUdrejst"/>
+                  <xs:enumeration value="TilbagekaldAndet"/>
+                  <xs:enumeration value="BoedeAfsonet"/>
+                  <xs:enumeration value="StoppetAnden"/>
+                  <xs:enumeration value="StatusAfson"/>
+                  <xs:enumeration value="FordringKorrektion"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

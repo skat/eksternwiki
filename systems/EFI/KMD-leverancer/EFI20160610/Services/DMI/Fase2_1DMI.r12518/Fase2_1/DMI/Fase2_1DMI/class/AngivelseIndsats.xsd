@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Har til formål at sikre at kunden (virksomheden) indsender angivelse. Der kan udsendes påmindelsesmail, dannes Foreløbig Fastsættelse, dannes rykkere, beregnes sikkerhedsstillelsesgebyr for import mv.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/AArsagType.xsd"/>
+         <xs:element name="AngivelseIndsatsType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>For Angivelse kan indsatstypen være: - Danne Foreløbig Fastsættelse ved manglende angivelse - Danne Rykker for manglende angivelse (gælder pt for motormånedsangivelse) - Danne Påmindelsesmail for manglende angivelse - Danne Påmindelsesmail med oplysning om angivelsesperiode er tilgængelig og frister - Danne sikkerhedsstillelsesgebyr for import - Danne gebyr for kreditbegrænsning/forkortet afregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AngivelseIndsatsÅrsag" type="fase2.1:ÅrsagType">
+               
+            </xs:element>
+      </xs:schema>

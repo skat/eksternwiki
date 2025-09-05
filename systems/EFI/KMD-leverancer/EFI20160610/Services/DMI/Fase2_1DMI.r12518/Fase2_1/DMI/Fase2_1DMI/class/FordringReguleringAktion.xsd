@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/FordringReguleringAktionTypeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1000Type.xsd"/>
+         <xs:element name="FordringReguleringAktionTypeKode"
+                     type="fase2.1:FordringReguleringAktionTypeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver typen af aktion.  NEDFOR: Nedskrivning af fordring NEDTRP: Nedskrivning af transport OPSFOR: Opskrivning af fordring OPSTRP: Opskrivning af transport TBKFOR: Tilbagekaldning af fordring TBKTRP: Tilbagekaldning af transport</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringReguleringAktionAfvistNummer" type="fase2.1:TalHel5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fejlnummer der angiver årsag til afvisning af en fordringregulering.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringReguleringAktionAfvistParam" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Element i en liste af parametre, som sammen med af FordringReguleringAktionAfvistNummer, angiver årsagen til afvisning af en fordringsregulering.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FordringReguleringAktionAfvistTekst" type="fase2.1:Tekst1000Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for afvisning - når afvisning er foretaget af sagsbehandler. (Læsbar formatering af FordringReguleringAktionAfvistNummer med tilhørende parameterliste)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

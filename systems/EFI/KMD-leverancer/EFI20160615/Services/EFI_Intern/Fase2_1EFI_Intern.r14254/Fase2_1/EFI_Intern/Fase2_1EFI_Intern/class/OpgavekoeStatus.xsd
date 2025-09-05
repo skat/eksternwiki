@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En opgavekøs status og belægningsprocent for en bestemt periode.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentHeltTalPositivtType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:element name="OpgavekøStatusID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgavekøstatusens unikke id</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke id på den opgavekø statusen gælder for.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusStartDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for den periode statusen er beregnet for.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusSlutDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdatoen for den periode statusen er beregnet for.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusStatus" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Køens status. Anvendes ikke på nuværende tidspunkt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusBelægningsprocent"
+                     type="fase2.1:ProcentHeltTalPositivtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Belægningsprocenten angiver gennemsnittet af belægningsprocenterne på de medarbejdere der er tilknyttet køen i statusens periode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har oprettet elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt elementet er oprettet. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke DN på den ressource (medarbejder) der har slettet elementet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt elementet er slettet. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgavekøStatusTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for sidste ændring af elementet, det kan være oprettelse, ændring eller sletning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:indkomstoplysningadgangreferencenummer="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" schemaLocation="../class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/SKAT_IndkomstOplysningAdgangReferenceNummerIdentifikator.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://eksternwiki.skat.dk/oioxml/cpr_dk/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+	<xs:include schemaLocation="../view/IndberetningPligtigVirksomhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/SoegePeriodeLukketStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/SoegeAArMaanedLukketStrukturType.xsd"/>
+	<xs:element name="PersonIndkomstSøgeStruktur" type="fase2:PersonIndkomstSøgeStrukturType"/>
+	<xs:complexType name="PersonIndkomstSøgeStrukturType">
+		<xs:sequence>
+			<!--Sequence removed-->
+			<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+			<xs:element ref="indkomstoplysningadgangreferencenummer:IndkomstOplysningAdgangReferenceNummerIdentifikator" minOccurs="0"/>
+			<xs:element ref="fase2:IndberetningPligtigVirksomhedStruktur" minOccurs="0"/>
+			<xs:element ref="fase2:SøgePeriodeLukketStruktur" minOccurs="0"/>
+			<xs:element ref="fase2:SøgeÅrMånedLukketStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USKoeretoejArtListeHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At hente en liste over alle mulige køretøjsarter, som man kan vælge under oprettelsen af et nyt køretøj.</xs:documentation>
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USKoeretoejArtListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USKoeretoejArtListeHentServiceRequest">
+		<wsdl:part name="Request" element="dmr:USKoeretoejArtListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="USKoeretoejArtListeHentServiceResponse">
+		<wsdl:part name="Response" element="dmr:USKoeretoejArtListeHent_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USKoeretoejArtListeHentServicePortType">
+		<wsdl:operation name="getUSKoeretoejArtListeHent">
+			<wsdl:input message="dmr:USKoeretoejArtListeHentServiceRequest"/>
+			<wsdl:output message="dmr:USKoeretoejArtListeHentServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

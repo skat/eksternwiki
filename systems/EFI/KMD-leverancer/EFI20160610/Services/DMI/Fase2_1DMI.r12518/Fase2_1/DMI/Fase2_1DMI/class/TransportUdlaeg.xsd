@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En kunde kan give transport til en rettighedshaver/underrettighedshaver i en udbetaling (f.eks. overskydende skat for 2010).  Transport i en udbetaling oprettes som en transportfordring i DMI.   Fogedretten kan på vegne af  en rettighedshaver/underrettighedshaver foretage udlæg i en udbetaling (f.eks. overskydende skat for 2010).  Udlæg i en udbetaling oprettes som en transportfordring i DMI.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:include schemaLocation="../types/ProcentAndelType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="TransportUdlægAcceptDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den udbetalende myndigheds acceptdato på transporten eller RIM acceptdato af transporten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægKorrektionDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sættes = DMIFordringModtagelseDato første gang TransportUdlægsfordringen oprettes.Opdateres hver gang der sker ændring på transportUlægsfordringen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægAftaleGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>AftaleGyldigFra er startdatoen for den periode, som rettighedshaver har indgået aftale om at vedligeholde transporten/udlægget fra. Datoen er en incl. dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægAftaleGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>  AftaleGyldigTil er slutdatoen for den periode, som rettighedshaver har indgået aftale om at vedligeholde transporten/udlægget til. Datoen er en incl. dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægUbegrænset" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja = Der er ingen beløbsbegrænsning på transporten/Udlægget.  Ved Ja:  DMIFordringBeløb er 9.999.999.999,- ved oprettelse af fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægVerificeres" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er et flag hvor det angives at en transport/udlæg skal verificeres uanset øvrige parametre. Ja = skal verficeres</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægFordelPriorit" type="fase2.1:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Prioritet af fordeling af transportbeløb mellem flere transportfordringer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægProcent" type="fase2.1:ProcentAndelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til fordeling af transportbeløb mellem flere transportfordringer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til fordeling af transportbeløb mellem flere transportfordringer i den angivne valuta.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til fordeling af transportbeløb mellem flere transportfordringer i danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægRettighedStart" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er startdatoen som rettigheden til en transport/udlæg vedrører. Datoen er en incl.dato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportUdlægRettighedSlut" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Er slutdatoen som rettigheden til en transport/udlægvedrører. Datoen er en incl.dato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

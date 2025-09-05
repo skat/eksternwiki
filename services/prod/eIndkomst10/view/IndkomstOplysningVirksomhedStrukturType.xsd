@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indkomstoplysningadgangreferencenummer="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/" schemaLocation="../class/indkomstoplysningadgangreferencenummer/xml/schemas/20071202/SKAT_IndkomstOplysningAdgangReferenceNummerIdentifikator.xsd"/>
+	<xs:include schemaLocation="../view/IndberetningForVirksomhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/IndberetningPligtigVirksomhedStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/LoenPeriodeOplysningStrukturType.xsd"/>
+	<xs:element name="IndkomstOplysningVirksomhedStruktur" type="fase2:IndkomstOplysningVirksomhedStrukturType"/>
+	<xs:complexType name="IndkomstOplysningVirksomhedStrukturType">
+		<xs:sequence>
+			<!--Sequence removed-->
+			<xs:element ref="fase2:IndberetningForVirksomhedStruktur"/>
+			<xs:element ref="indkomstoplysningadgangreferencenummer:IndkomstOplysningAdgangReferenceNummerIdentifikator" minOccurs="0"/>
+			<xs:element name="IndkomstOplysningVirksomhedSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IndberetningPligtigVirksomhed" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="fase2:IndberetningPligtigVirksomhedStruktur"/>
+									<xs:element name="IndkomstLønPeriodeSamling">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="fase2:LønPeriodeOplysningStruktur" minOccurs="1" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

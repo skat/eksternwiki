@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/BetalingEvne.xsd"/>
+         <xs:include schemaLocation="../class/MyndighedUdbetalingType.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../operational/PeriodeStartDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/PeriodeSlutDato.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/BetalingEvneBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneForventLoenIndBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneAArsindkomstBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneBeregnetAIndkomstBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneNettoIndkomstBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BetalingEvneNettoIndkPerAArBeloebStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/NettoIndkomstBeregningMetodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/NettoIndkomstBeregningSpecifikatonGruppeStrukturType.xsd"/>
+				     
+         <xs:element name="BetalingEvneStruktur" type="fase2.1:BetalingEvneStrukturType"/>
+         <xs:complexType name="BetalingEvneStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+
+               <xs:element ref="fase2.1:BetalingEvneBeløbStruktur" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:BetalingEvneEnhedPeriode"/>
+                  
+                  <xs:element ref="fase2.1:BetalingEvneBeregningTypeKode"/>
+
+               <xs:element ref="fase2.1:MyndighedUdbetalingTypeKategori" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneVarighedMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneBeregLønIndProcent" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneForventLønIndBeløbStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneRedLønIndProcent" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneAfdragProcent" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneÅrsindkomstBeløbStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneBeregnetAIndkomstBeløbStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneNettoIndkomstBeløbStruktur" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneNettoIndkPeriode" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:BetalingEvneNettoIndkPerÅrBeløbStruktur" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="IndkomstValg" minOccurs="0">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:sequence>
+                              <xs:element name="NettoIndkomstIndtastet">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element name="NettoIndkomstIndtastetMetodeListe">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="NettoIndkomstIndtastetMetode" minOccurs="1" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:BetalingEvneNettoIndkomstBeløbStruktur"/>
+
+                                                         <xs:element ref="fase2.1:BetalingEvneNettoIndkomstIndtastetSagsbehandlerBegrundelse"
+                                                                  minOccurs="0"/>
+
+                                                         <xs:element ref="fase2.1:PeriodeStartDato"/>
+                  
+                                                         <xs:element ref="fase2.1:PeriodeSlutDato"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+				
+				                       </xs:sequence>
+                           <xs:sequence>
+				
+                              <xs:element name="NettoIndkomstBeregnet">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:NettoIndkomstBeregningMetodeStruktur"/>
+                                       <xs:element name="NettoIndkomstBeregningSpecifikatonGruppeSamling">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:NettoIndkomstBeregningSpecifikatonGruppeStruktur" minOccurs="1"
+                                                         maxOccurs="unbounded"/>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

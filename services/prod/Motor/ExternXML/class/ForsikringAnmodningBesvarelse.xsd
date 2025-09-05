@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Elektronisk svar fra et forsikringsselskab på en elektronisk fremsendt forsikringsanmodning.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TekstLangType.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/ForsikringAfgangTypeType.xsd"/>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:element name="Bemaerkning" type="dmr:TekstLangType">
+	</xs:element>
+	<xs:element name="ForsikringAccept" type="dmr:BolskType">
+	</xs:element>
+	<xs:element name="ForsikringAfgangType" type="dmr:ForsikringAfgangTypeType">
+		<xs:annotation>
+			<xs:documentation>En angivelse af afgangstypen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ForsikringGyldigFra" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Denne dato angiver den første gyldige dato for forsikringen. Typisk vil det være dags dato for udarbejdelsen af registreringen.  Datoen er inklusiv. Det vil sige, at datoen angiver den dag, hvor forsikringen gælder fra. Eksempelvis vil datoen: 12/06/2006 betyde, at køretøjet har en lovlig gyldig ansvarsforsikring fra d. 12.06.2006 kl. 00:00 (natten mellem d. 11 og 12).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KraeverBevis" type="dmr:BolskType">
+	</xs:element>
+</xs:schema>

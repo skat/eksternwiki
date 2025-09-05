@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver hvilke henvisningstyper det er tilladt at registrere mellem to virksomheder samt hvilke roller de to virksomheder kan spille i henvisningen afhængigt af virksomhedernes driftsform. Reglen gælder både de maskinelt og manuelt opsatte henvisninger. Reglen omfatter alle de mulige forekomster (positivliste), men da en forekomst er korrekt både hvis den læses fra venstre mod højre og fra højre mod venstre opsættes en regel kun een gang. En forekomst i denne entitet læses altså begge veje!! </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="HenvisningDriftFormRegelKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver driftsformen på den virksomhed, der henvises fra i et henvisningspar med en given henvisningstype.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningDriftFormRegelMaskinelMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Denne markering fortæller, om henvisningen i henvisningdriftsformregel skal opsættes maskinelt eller alene kan opsættes manuelt. True (J) = Der skal altid oprettes en maskinel henvisning hvis det er muligt False (N) = Der kan kun oprettes manuel henvisning. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningDriftFormRegelGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver første dag en given regel gælder </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HenvisningDriftFormRegelGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver sidste dag en given regel gælder </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../operational/EFIParamNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIParamBeskrivelse.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIParamKategori.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EFIVaerdi.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIVaerdiType.xsd"/>
+         <xs:element name="EFIParamTabelGem_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:EFIParamTabelGem_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="EFIParamTabelGem_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="EFIParamSamling">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="EFIParam" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:EFIParamNavn"/>
+
+                                       <xs:element ref="fase2.1:EFIParamBeskrivelse" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:EFIParamKategori"/>
+                  
+                                       <xs:element ref="fase2.1:EFIVærdi"/>
+                  
+                                       <xs:element ref="fase2.1:EFIVærdiTypeKode"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

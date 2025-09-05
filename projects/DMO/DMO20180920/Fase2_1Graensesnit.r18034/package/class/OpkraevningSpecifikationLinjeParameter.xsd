@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et antal yderligere parametre som knytter sig til en OpkrævningSpecifikationLinje. Bruges til ekstra mellemliggende kolonner ud over tekst og beløb.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:element name="OpkrævningSpecifikationLinjeParameterNavn" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navn på en parameter på en specifikationslinje</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationLinjeParameterTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekstparameter på en specifikationslinje</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationLinjeParameterBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløbparameter på en specifikationslinje</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationLinjeParameterDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoparameter på en specifikationslinje</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationLinjeParameterSats" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i en specifikationslinje i en opkrævningsmeddelelseskabelon som indholder en sats (konteksafhængig)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningSpecifikationLinjeParameterMængde" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Indhold i en specifikationslinje i en opkrævningsmeddelelseskabelon som indholder en mængdeangivelse (kontekstafhængig).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

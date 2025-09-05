@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:element name="BetalingOrdningOprettetStruktur"
+                     type="fase2.1:BetalingOrdningOprettetStrukturType"/>
+         <xs:complexType name="BetalingOrdningOprettetStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:IndsatsID"/>
+                  
+                  <xs:element ref="fase2.1:IndsatsStartdato"/>
+               <xs:element name="FordringSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="1" maxOccurs="unbounded"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

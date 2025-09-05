@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USForsikringGenetableringListeModtagService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Hvis en forsikring er blevet meldt ophørt (rød afmelding) af et forsikrings-selskab (typisk grundet restance), og årsagen til forsikringsophøret senere afklares (typisk restancen betales), så har forsikringsselskabet mulighed for at genetablere forsikringen, så længe køretøjet endnu ikke er blevet afmeldt.</xs:documentation>
+		<xs:documentation>r3110</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USForsikringGenetableringListeModtagInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USForsikringGenetableringListeModtagServiceRequest">
+		<wsdl:part name="Request" element="dmr:USForsikringGenetableringListeModtag_I"/>
+	</wsdl:message>
+	<wsdl:message name="USForsikringGenetableringListeModtagServiceResponse">
+		<wsdl:part name="Response" element="dmr:USForsikringGenetableringListeModtag_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USForsikringGenetableringListeModtagServicePortType">
+		<wsdl:operation name="getUSForsikringGenetableringListeModtag">
+			<wsdl:input message="dmr:USForsikringGenetableringListeModtagServiceRequest"/>
+			<wsdl:output message="dmr:USForsikringGenetableringListeModtagServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

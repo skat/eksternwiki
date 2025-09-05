@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/FordringKorrektionAArsagKode.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/FordringKorrektionAArsagBegr.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/FordringKorrektionAArsagTekst.xsd"/>
+				     
+         <xs:element name="FordringKorrektionÅrsagStruktur"
+                     type="fase2.1:FordringKorrektionÅrsagStrukturType"/>
+         <xs:complexType name="FordringKorrektionÅrsagStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:FordringKorrektionÅrsagKode"/>
+                  
+                  <xs:element ref="fase2.1:FordringKorrektionÅrsagBegr"/>
+
+               <xs:element ref="fase2.1:FordringKorrektionÅrsagTekst" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

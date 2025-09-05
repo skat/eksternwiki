@@ -1,0 +1,25 @@
+#
+# Notes for developers
+#
+
+In the SKAT OIO WSDL files, types are defined by import of external namespaces and nested 
+sets of schemas.
+
+This method is valid according to the w3c specifications, and is also the only practical 
+way to deal with types that are used across multiple services. The other method of defining 
+WSDL files, is by defining types fully inline in the WSDL files. This method is a valid 
+alternative according to w3c, but does not scale well across multiple services. 
+
+Some development environments may not include the external schemas correctly. The solution 
+is to transform the official WSDL files presented here, into an inlined version of 
+the same WSDL file, before generating actual client code. There are tools that can do this. We
+have had success using this tool:
+
+http://jordal.dk/webserviceguide/ExpandWsdl.aspx
+
+Further questions about inlining types in SKAT WSDL files can be sent to:
+Jesper.T.Johansen(at)skat.dk
+
+
+
+

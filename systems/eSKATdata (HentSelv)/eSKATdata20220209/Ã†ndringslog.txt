@@ -1,0 +1,33 @@
+﻿HentSelvSendData_O (09-02-2022)
+	PersonligVirksomhedOplysning flyttes under ÅrligSkatteOplysningStruktur:
+		(
+			*PersonligVirksomhedOplysning*
+			[
+				(SelvstændigVirksomhedOverskud)
+				(SelvstændigVirksomhedUnderskud)
+				(VirksomhedTypeLigningArtKode)
+				(VirksomhedTypeFremtidigLigningArtKode)
+				(VirksomhedOplysningSamledeHævningerBeløb)
+			]
+		)
+	Der blev oprettet en ny struktur RegnskabOplysningStruktur hvor følgende blev flyttet under den nye struktur:
+		*RegnskabOplysningListe*
+		0{
+			*RegnskabOplysning*
+			[
+				(
+					*RegnskabsoplysningValg*
+					[
+						VirksomhedCVRNummer
+						|
+						PersonCPRNummer
+					]
+				)
+			(RegnskabOplysningNettoomsætning)
+			(RegnskabOplysningOrdinærtResultatBeløb)
+			]
+		}
+
+ÅrligSkatteOplysningHent_O (09-02-2022)
+	Der blev tilføjet følgende struktur: 
+		(RegnskabOplysningStruktur)

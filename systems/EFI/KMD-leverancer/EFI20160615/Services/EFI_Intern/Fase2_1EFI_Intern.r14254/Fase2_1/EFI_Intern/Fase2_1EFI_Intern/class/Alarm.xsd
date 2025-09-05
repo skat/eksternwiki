@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En alarm er en meddelelse til en medarbejder (produktionsleder) om at der er noget i systemet der kræver hans opmærksomhed. Det kan f.eks. være en opgave der ikke er blevet løst og som har overskredet sin gennemførselsfrist.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/AlarmKategoriType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst128Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="AlarmID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Alarmens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmAlarmtypeID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den alarmtype alarmen tilhører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmAlarmKategori" type="fase2.1:AlarmKategoriType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den alarmkategori som alarmen tilhører. AlarmKategorien er en enumeration med følgende værdier: 1000 Organisatorisk enhed, 1001 Opgavekø, 1002 Opgave, 1003 Ressource, 1004 Administration</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmSupplerendeTekst" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En tekst der beskriver alarmen i detaljer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmFarve" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den farve alarmen skal vise med i alarmlisten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmOrganisatoriskEnhedID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis alarmen vedrører en organisatorisk enhed, vil denne attribut indeholde den organisatoriske enheds unikke ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmOpgavekøID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis alarmen vedrører en opgavekø, vil denne attribut indeholde opgavekøens unikke ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmOpgaveID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis alarmen vedrører en opgave, vil denne attribut indeholde opgavens unikke ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmRessourceID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis alarmen vedrører en ressource, vil denne attribut indeholde ressourcens unikke ID.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmOprettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har oprettet alarmen. Hvis ID er -1, er det systemet der har foretaget oprettelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmOprettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmen er blevet oprettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmÆndretAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der sidst har ændret alarmen. Hvis ID er -1, er det systemet der har foretaget ændringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmÆndretTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmen er blevet ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmSlettetAf" type="fase2.1:Tekst128Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det unikke ID på den ressource (medarbejder) der har slettet alarmen. Hvis ID er -1, er det systemet der har foretaget sletningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmSlettetTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt alarmen er blevet slettet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AlarmTimestampVersion" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dato og tidspunkt for sidste ændring til alarmen, det kan både være oprettelse, opdatering og sletning. Attributten anvendes til optimistisk låsning i databasen, samt til at hente delta-ændringer når der overføres til DataWarehouse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

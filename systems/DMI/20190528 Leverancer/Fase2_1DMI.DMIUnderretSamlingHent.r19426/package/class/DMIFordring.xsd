@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En fordring i relation til retsplejeloven er et krav på betaling af en pengeydelse.   Fordringer (krav)  i DMI kan være:  - En inddrivelsesfordring - En modregningsfordring - En transportfordring - En opkrævningsfordring - En opkrævningsrente fordring - En Inddrivelsesrente fordring - Et gebyrfordring - En retsafgiftfordring        </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/DMIFordringArtType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/ProduktionEnhedNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/LoebeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/RentesatsPositivType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/FordringKlasseType.xsd"/>
+         <xs:include schemaLocation="../types/Rentesats85Type.xsd"/>
+         <xs:element name="DMIFordringEFIFordringID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den unikke identifikation af den enkelte  RIMfordring.  Benyttes til kommunikation mellem EFI og  DMI.   EFIFordringID vidreføres som ID i DMI. Det er en forret-ningsmæssigt vigtig identifikation da, man præcist skal iden-tificere DMI fordringen i tilfælde af tilbagekaldelse eller bortfald fra fordringshavers side. FordringID tildeles i EFI eller i DMI ud fra separate nummerserier. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringFordringArtKode" type="fase2.1:DMIFordringArtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Koder der anvendes til at definere om en fordring er en Inddrivelsesfordring, Opkrævningsfordring, Modregningsfordring eller en Transport</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringForeløbigFastsat" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om fordringen er en foreløbig fastsættelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringModtagelseDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for hvornår fordringen er modtaget i EFI/MF. Anvendes bl.a. til dækningsrækkefølge i DMI. Alle relaterede fordringer nedarver modtagelsesdato fra hovedfordringen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringStiftelseTidspunkt" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det dato hvor fordringen er stiftet. Indgår i dækningsrækkefølgen når der er transport/udlæg involveret </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringVirkningFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Når fordringshaver oversender en korrektion (op- eller ned-skrivning) til fordringen, skal de medsende den dato, hvor korrektionen har virkning fra.. Denne dato vil fungere som ny rentevirkningsdato, dvs. ifølge renteberegningsreglen for fordringstypen skal renten tilbagerulles og genberegnes fra virkningsdatoen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringForfaldDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunktet hvor en fordring forfalder til betaling. Eksempelvis kan forfaldsdatoen være den 1. i en kalendermåned, mens sidste rettidig betalingsdato kan være 10. i forfaldsmåneden.  Opkrævningsmyndigheden: Vil være den dato, hvor en angivelse kan indgå i kontoens saldo, hvis virksomheden betaler fordringen (f.eks. skatten/afgiften) før SRB. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringSRBDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste rettidige betalingsdato. Den sidste frist for, hvornår en fordring skal være betalt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRegistreringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hvor fordringen er modtaget og registreret i DMI</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb i den til inddrivelse/ opkrævning/ modregning/ transport i DMI i den indrapporterede valuta  Påløbne renter og påhæftede gebyrer bliver oprettet som deres egne fordringer med reference til den oprindelige fordring  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRestBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet restbeløb i den inddraporterede valuta. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringValutaKode" type="fase2.1:ValutaType">
+               
+            </xs:element>
+         <xs:element name="DMIFordringBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>FordringBeløb indrapporteret eller omregnet til danske kr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRestBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb omregnet til danske kr.  Det er FordringBeløb fratrukket alle typer af korrektioner og indbetalinger - altså saldo dags dato </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringPEnhedNummer" type="fase2.1:ProduktionEnhedNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>P-nummeret er et 10-cifret entydigt nummer.   Da virksomheden tildeles et P-nummer for hver fysisk beliggenhed, hvorfra der drives virksomhed, kan der således være tilknyttet flere P-numre til samme CVR-nummer.   Kun udfyldt hvis fordringshaveren har oplyst P-nummeret . Bruges alene som information. Aldrig som ID. Bruges eksempelvis for opkrævningsrentefordring. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringEFIHovedFordringID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Relation der henviser til hovedfordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringFordringHaverRef" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fordringshavers interne reference.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringFordringHaverBeskr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Supplerende beskrivelse (fritekst) til Fordringen. F.eks. Brandstøvler er ikke afleveret retur. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRenteRegelNummer" type="fase2.1:LøbeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer på en renteregel. Angiver den faktiske algoritme. F.eks. startmåned, slutmåned, kvartalsvis m.m. Hvis denne er angivet på fordringen anvendes den - ellers anvendes standard rentereglenr. på fordringstypen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRenteSatsKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Særlig rentesatskode indsendt sammen med fordringen. Hvis rentesatskoden findes på fordringen er det altid denne rente-sats der skal anvendes ellers anvendes standardværdien fra fordringstype.  Der oprettes parameterstyrende værdier i SAP og derigennem fås tilladte værdier: Der er på nuværende tidspunkt 4 typer af rentesatskoder (værdierne vil variere og er blot med som eksempler, disse er fra 2007): Indlånsrente: 0,1% mdr Udlånsrente: 0,8% mdr. Nationalbankens diskonto: 0,1% mdr. Rentegodtgørelse: 7,0% p.a. + Nationalbankens diskontosats  Kommentar: Bør der ikke være rentesatsperiode, som er opsat som gyldighed for den enkelte renteregel.   F.eks. Rentegodtgørelse 1/1 31/12 2009 1/1 31/12 2010   Leverandøren (begge)mener at BM skal indeholde særskilte dataelementer for hver sats idet vi ellers kun kan oplyse en samlet sats og ikke f.eks. diskonto + en rentesats.   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRenteSats" type="fase2.1:RentesatsPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>En konkret rente. Denne bruges i stedet for rentesatskode, hvis den er udfyldt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRentePeriodeTilDato" type="fase2.1:DatoType">
+               
+            </xs:element>
+         <xs:element name="DMIFordringBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringPeriodeType" type="fase2.1:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Sagsbehandlers mulighed for i fri tekst at beskrive periode. F.eks med:  År Halvår Kvartal Måned Uge Dag </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringPeriodeFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Periode Fra er startdatoen for perioden, som en fordring vedrører. Datoen er en incl. dato. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringPeriodeTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeTil er slutdatoen for perioden, som en fordring vedrører.  Datoen er en incl dato.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringEndeligFastsat" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja angiver at fordringen er endelig fastsat Nej Angiver at fordringen ikke er endelig fastsat.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringKlasse" type="fase2.1:FordringKlasseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver dækningsrækkefølgen for fordringer.   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringRenteSatsAnvendt" type="fase2.1:Rentesats85Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Summen af rente udpeget af RenteSatsKode (gældende dags dato) og RenteSats. (Der tages ikke hensyn til værdien af dette felt i en opdaterende service.)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringHovedFordringID" type="fase2.1:ID18Type">
+               
+            </xs:element>
+      </xs:schema>

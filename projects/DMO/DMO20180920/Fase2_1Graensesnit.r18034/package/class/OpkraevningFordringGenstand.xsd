@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Det objekt som en fordring vedrører. Anvendes hvor der er behov for at tilknytte en genstand på en opkrævning eksempelvis et køretøj. Når der oprettes betalingsaftaler via betalingsservice, vil aftalen knytte sig til en specifik genstand fx vægtafgift for køretøj X. Dvs. aftalen kan globalt identificeres med en kombination af kundenummer og genstandnummer</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst25Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="OpkrævningFordringGenstandNummer" type="fase2.1:Tekst25Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af genstand for opkrævning fx køretøj. Er unik for den enkelte kunde.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpkrævningFordringGenstandType" type="fase2.1:KodeType">
+               
+            </xs:element>
+      </xs:schema>

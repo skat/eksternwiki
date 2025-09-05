@@ -1,0 +1,53 @@
+ReleaseNote
+
+vedr. VirksomhedHændelseSamlingHent:
+
+1) Vedr issue 33)
+
+Der skal fastlægges en grænse for, hvor mange hændelser der kan gives i svaret. Dette har betydning for svartiden.
+
+2014.04.02/CSC: Vi arbejder udfra flg. forudsætninger:
+1. Der kan maksimalt vises 1.000 hændelser uden ændringsmarkering.
+2. Der kan maksimalt vises 500 hændelser inkl. Før- og EfterVærdiListe. 
+Hvis Skat er enig, bedes dette indarbejdet i servicebeskrivelsen for VirksomhedHændelseSamlingHent.
+
+SVAR:
+Dette er dog ikke godkendt af SKATs arkitekt endnu. Derfor skrives det ikke ind i servicebeskrivelsen endnu.
+
+2)  Vedr. issue 34
+
+I Før- og EfterVærdi er følgende datoer defineret som optionelle. De er egentlig mandatory, og bør nok rettes af hensyn til forståelse af servicen.
+VirksomhedOprettelseH.: VirksomhedStartDato => OK
+VirksomhedOphørH.: VirksomhedOphørDato => OK
+PrimærAdresseH.: AdreseeGyldigFra
+PrimærTelefonH.: TelefonGyldigFra => OK
+PrimærEmailAdresseH.: EmailAdresseGyldigFra => OK
+VirksomhedPligtH.: RegistreringForholdStartDato => OK (desuden er PligtKode gjort obligatorisk i * EfterVærdi *)
+VirksomhedStatusForholdH.: VirksomhedStatusForholdGyldigFra => OK
+VirksomhedRegnskabsperiodeH.: VirksomhedRegnskabPeriodeStartDato og VirksomhedRegnskabPeriodeSlutDato => OK
+
+SVAR: Det er hermed gjort, hvor der står OK. De steder, hvor det ikke er gjort, er årsagen, at strukturen anvendes andre, hvor feltet muligvis er valgtfrit.
+
+3) Vedr. issue 20
+
+SKAT bedes venligst definere, hvad denne hændelse omfatter i forhold til: 
+
+- flytning af virksomheds startdato (begge veje)
+SVAR:
+- Denne beskrivelse bør illustreres grafisk i bilag til servicebeskrivelsen. SKAT vil komme med et eksempel efter Påske. Lad vide, hvis beskrivelsen er kritisk.
+
+- genstart af virksomhed
+SVAR:
+- Denne beskrivelse bør illustreres grafisk i bilag til servicebeskrivelsen. SKAT vil komme med et eksempel efter Påske. Lad vide, hvis beskrivelsen er kritisk.
+
+- oprettelse af virksomhed med efterflg. registrering af DIAS relevante pligter
+SVAR:
+- Servicen skal KUN forholde sig til hændelsen VirksomhedOprettelse. Afledte pligter skal derfor komme som selvstændige hændelser.
+
+4) Vedr. issue 21
+
+SKAT bedes venligst definere, hvad denne hændelse omfatter i forhold til: 
+
+- ændring af virksomheds ophørsdato (begge veje samt sletning)
+SVAR:
+- Denne beskrivelse bør illustreres grafisk i bilag til servicebeskrivelsen. SKAT vil komme med et eksempel efter Påske. Lad vide, hvis beskrivelsen er kritisk.

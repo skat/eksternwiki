@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KOBIndberetning.xsd"/>
+         <xs:include schemaLocation="../operational/KOBIndberetningVarselHenvendelseFirstBegrundelseKode.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KOBIndberetningVarselHenvendelseFristBegrundelseTekst.xsd"/>
+				     
+         <xs:include schemaLocation="../class/EFIHenvendelse.xsd"/>
+         <xs:element name="KreditoplysningsbureauVarselFristÆndretStruktur"
+                     type="fase2.1:KreditoplysningsbureauVarselFristÆndretStrukturType"/>
+         <xs:complexType name="KreditoplysningsbureauVarselFristÆndretStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:KOBIndberetningVarselHenvendelseFristDato"/>
+                  
+                  <xs:element ref="fase2.1:KOBIndberetningVarselHenvendelseFirstBegrundelseKode"/>
+                  
+                  <xs:element ref="fase2.1:KOBIndberetningVarselHenvendelseFristBegrundelseTekst"/>
+                  
+                  <xs:element ref="fase2.1:EFIHenvendelseForm"/>
+                  
+                  <xs:element ref="fase2.1:EFIHenvendelseDato"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

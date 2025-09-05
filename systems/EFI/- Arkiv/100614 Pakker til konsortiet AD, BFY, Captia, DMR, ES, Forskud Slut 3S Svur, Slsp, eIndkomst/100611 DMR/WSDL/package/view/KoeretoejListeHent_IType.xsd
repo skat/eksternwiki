@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+   
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Koeretoej.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/KoeretoejEfterlyst.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KoeretoejOplysning.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KoeretoejRegistreringGrundlag.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KoeretoejRegistrering.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KoeretoejArt.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/KoeretoejAnvendelse.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Forsikring.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/ForsikringSelskab.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/EjerBrugerForhold.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/GyldigKoeretoejsErklaering.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/PladeType.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/MaanedAngivelse.xsd"/>
+         
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/Importoer.xsd"/>
+         
+            
+      
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/DatoTidSoegStrukturType.xsd"/>
+   
+   
+   
+   <xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+   
+   
+   
+   
+   
+   <xs:element name="KøretøjListeHent_I">
+      
+      
+      
+      <xs:complexType>
+         
+         
+         
+         <xs:complexContent>
+            
+            
+            
+            <xs:extension base="fase2.1:KøretøjListeHent_IType">
+               
+               
+               
+               <xs:attribute name="revision">
+                  
+                  
+                  
+                  <xs:simpleType>
+                     
+                     
+                     
+                     <xs:restriction base="xs:string">
+                        
+                        
+                        
+                        <xs:pattern value="r2317"/>
+                     
+                     
+                     
+                     </xs:restriction>
+                  
+                  
+                  
+                  </xs:simpleType>
+               
+               
+               
+               </xs:attribute>
+            
+            
+            
+            </xs:extension>
+         
+         
+         
+         </xs:complexContent>
+      
+      
+      
+      </xs:complexType>
+   
+   
+   
+   </xs:element>
+   
+   
+   
+   <xs:complexType name="KøretøjListeHent_IType">
+					
+      
+      
+      <xs:sequence>
+							
+         
+         
+         <xs:element ref="fase2.1:Kontekst"/>
+							
+         
+         <!--Sequence removed-->
+									
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            
+            <!--Sequence removed-->
+                  
+         
+               
+               
+         <xs:element ref="fase2.1:DatoTidSøgStruktur"/>
+
+
+         
+               
+               
+         <xs:element ref="fase2.1:KøretøjIdent" minOccurs="0"/>
+
+
+
+
+         
+               
+               
+         <xs:element ref="fase2.1:KøretøjEfterlyst" minOccurs="0"/>
+
+
+
+         
+               
+               
+         <xs:element name="KøretøjOplysningSøgning">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+                  
+                        
+                        
+                  <xs:element name="KøretøjOprettetUdFraListe">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:KøretøjOplysningOprettetUdFra" minOccurs="0" maxOccurs="unbounded"/>
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+
+                  
+                        
+                        
+                  <xs:element name="HarEnAfStatusListe">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:KøretøjOplysningStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+
+                  
+                        
+                        
+                  <xs:element name="HarIkkeEnAfStatusListe">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:KøretøjOplysningStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+
+                  
+                        
+                        
+                  <xs:element name="HarAldrigHaftStatusListe">
+                     
+                           
+                           
+                     <xs:complexType>
+                        
+                              
+                              
+                        <xs:sequence>
+
+                           
+                                 
+                                 
+                           <xs:element ref="fase2.1:KøretøjOplysningStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+                        
+                              
+                              
+                        </xs:sequence>
+                     
+                           
+                           
+                     </xs:complexType>
+                  
+                        
+                        
+                  </xs:element>
+
+
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:KøretøjOplysningStelNummer" minOccurs="0"/>
+
+
+
+                  
+                        
+                        <!--Sequence removed-->
+
+
+                     
+                           
+                           
+                  <xs:element name="KøretøjOplysningTotalVægt_Minimum" minOccurs="0">
+                        
+                              
+                              
+                     <xs:complexType>
+                           
+                                 
+                                 
+                        <xs:sequence>
+                              
+                                    
+                                    
+                           <xs:element ref="fase2.1:KøretøjOplysningTotalVægt"/>
+
+                           
+                                 
+                                 
+                        </xs:sequence>
+                        
+                              
+                              
+                     </xs:complexType>
+                     
+                           
+                           
+                  </xs:element>
+
+                  
+                        
+                        
+
+
+                  
+                        
+                        <!--Sequence removed-->
+
+
+                     
+                           
+                           
+                  <xs:element name="KøretøjOplysningFørsteRegistreringDato_Før" minOccurs="0">
+                        
+                              
+                              
+                     <xs:complexType>
+                           
+                                 
+                                 
+                        <xs:sequence>
+                              
+                                    
+                                    
+                           <xs:element ref="fase2.1:KøretøjOplysningFørsteRegistreringDato"/>
+
+                           
+                                 
+                                 
+                        </xs:sequence>
+                        
+                              
+                              
+                     </xs:complexType>
+                     
+                           
+                           
+                  </xs:element>
+
+                  
+                        
+                        
+
+
+                  
+                        
+                        <!--Sequence removed-->
+
+
+                     
+                           
+                           
+                  <xs:element name="KøretøjBlokering" minOccurs="0">
+                        
+                              
+                              
+                     <xs:complexType>
+                           
+                                 
+                                 
+                        <xs:sequence>
+                              
+                                    
+                                    
+                           <xs:element ref="fase2.1:KøretøjOplysningBlokering"/>
+
+
+                              
+                                    
+                                    
+                           <xs:element ref="fase2.1:KøretøjOplysningBlokeringÅrsag" minOccurs="0"/>
+
+
+
+                           
+                                 
+                                 
+                        </xs:sequence>
+                        
+                              
+                              
+                     </xs:complexType>
+                     
+                           
+                           
+                  </xs:element>
+
+                  
+                        
+                        
+
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+
+         
+               
+               
+         <xs:element name="RegistreringNummerSøgning">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:RegistreringNummerNummer" minOccurs="0"/>
+
+
+
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:RegistreringNummerType" minOccurs="0"/>
+
+
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="RegistreringGrundlagSøgning" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:KøretøjRegistreringGrundlagIdent"/>
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               
+         <xs:element name="RegistreringStatusSøgningListe">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:KøretøjRegistreringStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="KøretøjArtSøgning" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:KøretøjArtNummer"/>
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="KøretøjAnvendelseSøgning" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:KøretøjAnvendelseNummer"/>
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               
+         <xs:element name="ForsikringSøgning">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:ForsikringStatus" minOccurs="0"/>
+
+
+
+
+                  
+                        
+                        
+                  <xs:element ref="fase2.1:ForsikringBevisNummer" minOccurs="0"/>
+
+
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="ForsikringSelskab" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:ForsikringSelskabNummer"/>
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="EjerBruger" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+
+
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:EjerBrugerForholdForhold" minOccurs="0"/>
+
+
+
+
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:EjerBrugerForholdPrimær" minOccurs="0"/>
+
+
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:JuridiskEnhedIdentifikatorStruktur"/>
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="GyldigKøretøjsErklæring" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:GyldigKøretøjsErklæring"/>
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               
+         <xs:element name="RegistreretPåPladeType">
+            
+                  
+                  
+            <xs:complexType>
+               
+                     
+                     
+               <xs:sequence>
+
+                  
+                        
+                        <!--Sequence removed-->
+
+
+                     
+                           
+                           
+                  <xs:element name="PladeTypeIdentifikation" minOccurs="0">
+                        
+                              
+                              
+                     <xs:complexType>
+                           
+                                 
+                                 
+                        <xs:sequence>
+                              
+                                    
+                                    
+                           <xs:element ref="fase2.1:PladeTypeNummer"/>
+
+                           
+                                 
+                                 
+                        </xs:sequence>
+                        
+                              
+                              
+                     </xs:complexType>
+                     
+                           
+                           
+                  </xs:element>
+
+                  
+                        
+                        
+
+
+               
+                     
+                     
+               </xs:sequence>
+            
+                  
+                  
+            </xs:complexType>
+         
+               
+               
+         </xs:element>
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="ForhandlersMånedsangivelseSøgning" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:JuridiskEnhedIdentifikatorStruktur"/>
+
+                     
+                           
+                           
+                  <xs:element name="HarEnAfStatusListe">
+                        
+                              
+                              
+                     <xs:complexType>
+                           
+                                 
+                                 
+                        <xs:sequence>
+
+                              
+                                    
+                                    
+                           <xs:element ref="fase2.1:MånedAngivelseStatus" minOccurs="0" maxOccurs="unbounded"/>
+
+                           
+                                 
+                                 
+                        </xs:sequence>
+                        
+                              
+                              
+                     </xs:complexType>
+                     
+                           
+                           
+                  </xs:element>
+
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+
+         
+               
+               <!--Sequence removed-->
+
+
+            
+                  
+                  
+         <xs:element name="KøretøjOprettetAfImportør" minOccurs="0">
+               
+                     
+                     
+            <xs:complexType>
+                  
+                        
+                        
+               <xs:sequence>
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:JuridiskEnhedIdentifikatorStruktur"/>
+
+
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:ImportørNummer" minOccurs="0"/>
+
+
+
+
+                     
+                           
+                           
+                  <xs:element ref="fase2.1:ImportørNavn" minOccurs="0"/>
+
+
+
+                  
+                        
+                        
+               </xs:sequence>
+               
+                     
+                     
+            </xs:complexType>
+            
+                  
+                  
+         </xs:element>
+
+         
+               
+               
+
+      
+            
+            
+            
+         
+         
+         
+         
+      
+							
+         
+         
+									
+						
+      
+      
+      </xs:sequence>
+								
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

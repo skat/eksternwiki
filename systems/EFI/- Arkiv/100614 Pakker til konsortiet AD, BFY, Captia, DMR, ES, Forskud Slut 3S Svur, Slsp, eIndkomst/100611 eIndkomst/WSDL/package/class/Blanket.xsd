@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Angiver hvilke blanketter som anvendes for hvilke pligter/forretningsområder. Der findes ikke altid specifikke blanketter ved angivelse af punktafgifter. Blanketterne opbygges så i stedet ved hjælp af blankettens parametre.</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/BlanketNummerType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/BlanketNavnKortType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:element name="BlanketNummer" type="fase2.1:BlanketNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Blanketnummer eller blanketkode. Pr. 2007.09.30 findes der to beskrivelser og anvendelsesmåder.   I eServiceprojektet, nyt TastSelvErhverv gælder følgende:   Angiver SKATs blanketnummer, f.eks. 01.004 eller Y922A. Beskrivelsen her svarer til Erhvervssystemets anvendelse af elementet BlanketNavnKort. En angivelsestype kan godt omfatte flere blanketnumre.   Erhvervssystemet anvender også betegnelsen blanketkode, som angiver det unike blanketnummer. Denne blanketkode er ikke defineret særskilt. Blanketkoden, der er på to cifre (character), anvendes ved generering af nærmere angivne typer af uddata fra Erhvervssystemet, jf. nedenstående værdisætTS_BLK_KOD - Char 2   VÆRDISÆT: 01 = ophørsbevis 02 = registreringsbevis 03 = Brev stor virk. pga. henvisning 04 = Brev stor virk. pga. indeholdt beløb 05 = Brev lille virksomhed 06 = Behandl_kod = B1 (Omregistrering til måned pga. henvisning) 07 = Behandl_kod = B2 (Omregistrering til måned pga. omsætning) 08 = Behandl_kod = B3 (Omregistrering til kvartal pga. omsætning) 09 = Behandl_kod = B4 (Omregistrering til halvår pga. omsætning)  10 = Behandl_kod = B5 (Omregistrering af vandafgift) 11 = Brev til virksomhed, hvor regionen skifter navn og adresse 12 = Brev til virksomhed, region fra 6102 til 6103 13 = Brev til virksomhed, region fra 6103 til 6142 14 = Brev til virksomhed, region fra 6142 til 6103 15 = Brev til virksomhed, region fra 6103 til 6102  For eIndkomstprojektet og de services, der udstilles mellem eIndkomst, IBM, eIndkomst - udstilling, KMD og Erhvervssystemet gælder:   BlanketNummer angiver et entydigt dumt nummer for en blanket.   Uagtet at formatet for BlanketNummer er defineret som character 5, kan der kun anvendes tal (number), som format for BlanketNummer for elementet i grund- og blanketdata i Erhvervssystemet samt de services, som anvender dette element. Pt. anvendes elementet bl.a. i servicene AngivelseAftaleForholdKontroller, AftaleForholdBlanketRegelHent, AbonnentAdgangRegelHent, BlanketRegelSamlingHent, IndkomstOplysningHent, IndkomstOplysningKlassiskAbonnentHent. </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="BlanketNavn" type="fase2.1:TekstKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Her angives navn på enten person eller virksomhed.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="BlanketNavnKort" type="fase2.1:BlanketNavnKortType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Blanketnavn/nummer fx 91004 eller Y922A eller 02. En tocifret kode anvendes ved generering af typer af uddata fra Erhvervssystemet</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="BlanketGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="BlanketGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

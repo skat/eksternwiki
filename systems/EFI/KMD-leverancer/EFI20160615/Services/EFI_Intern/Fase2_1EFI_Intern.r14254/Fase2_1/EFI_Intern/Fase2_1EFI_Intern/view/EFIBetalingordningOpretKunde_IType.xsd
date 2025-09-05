@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../operational/AntalRater.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdning.xsd"/>
+         <xs:include schemaLocation="../operational/BetalingOrdningRykRateGebyr.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/RateFrekvens.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/BenytBetalingsevneTilRateBeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/AlternativIndbetaler.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/Begrundelse.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/FoersteRate.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenvendelsesDato.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/HenvendelsesForm.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+         <xs:include schemaLocation="../operational/Ratebeloeb.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/SendBSAccept.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeIdentStrukturType.xsd"/>
+				     
+         <xs:element name="EFIBetalingordningOpretKunde_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:EFIBetalingordningOpretKunde_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="EFIBetalingordningOpretKunde_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element ref="fase2.1:EFIKundeIdentStruktur"/>
+                     <xs:element name="FordringSamling">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="fase2.1:DMIFordringEFIFordringID" minOccurs="1" maxOccurs="unbounded"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+
+                     <xs:element ref="fase2.1:AntalRater" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:BetalingOrdningSendMeddelelse"/>
+                  
+                     <xs:element ref="fase2.1:BetalingOrdningRykRate"/>
+                  
+                     <xs:element ref="fase2.1:BetalingOrdningPåmind"/>
+                  
+                     <xs:element ref="fase2.1:BetalingOrdningRykRateGebyr"/>
+                  
+                     <xs:element ref="fase2.1:BetalingOrdningType"/>
+                  
+                     <xs:element ref="fase2.1:BetalingOrdningBSMarkering"/>
+
+                     <xs:element ref="fase2.1:RateFrekvens" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:BenytBetalingsevneTilRateBeløb" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:AlternativIndbetaler" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:Begrundelse" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:BetalingOrdningKundeBankKonto" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:BetalingOrdningKundeBankRegNr" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:FørsteRate" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenvendelsesDato" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:HenvendelsesForm" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:AlternativAdresseAdresseLinie1" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:AlternativAdresseAdresseLinie2" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:AlternativAdresseAdresseLinie3" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:AlternativAdresseAdresseLinie4" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:LandKode" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:KundeNavn" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:Ratebeløb" minOccurs="0"/>
+
+
+
+                     <xs:element ref="fase2.1:SendBSAccept" minOccurs="0"/>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

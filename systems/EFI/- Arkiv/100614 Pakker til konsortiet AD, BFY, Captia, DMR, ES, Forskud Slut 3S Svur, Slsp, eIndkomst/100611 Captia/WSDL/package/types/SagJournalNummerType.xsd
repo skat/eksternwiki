@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="SagJournalNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Et journalnummer, som forefindes og skabes i et ESDH system. I ESDH bestegnes jorunal nummer som sagsnummer. Journal nummer har formen nn-xxxxxx, hvor nn er de sidste to cifre i et årstal, imens xxxxxxx er et løbenummer, som starter ved 000001</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:maxLength value="30"/>
+            
+         
+         
+         <xs:pattern value="[0-9]{2}-[0-9]{6}"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

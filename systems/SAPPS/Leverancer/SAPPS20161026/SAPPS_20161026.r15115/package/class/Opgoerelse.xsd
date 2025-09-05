@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Overordnet begreb for en opgørelse fx en årsopgørelse.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IndkomstAArType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="OpgørelseIndkomstÅr" type="skat2016:IndkomstÅrType">
+               
+               <xs:annotation>
+                  <xs:documentation>Opgørelsens indkomstår</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgørelseNummer" type="skat2016:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sekvensnummer for en opgørelse, såfremt der er dannet flere opgørelser indenfor en given periode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgørelseKørselDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Viser den skattemæssige 'kørselsdato' for pågældendes opgørelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="OpgørelseSambeskatningKode" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette er en kode i forskuds- og årsopgørelsessystemet. Kodeværdierne dækker over skattemæssige sambeskatningsforhold. Koden har følgende værdier (numerisk):  Værdi Betydning 1 Enlig, ikke gift. Beskattes som enlig.                  Værdien opsættes eller indberettes for skatteydere, der ikke er gift (henvisningsnummer                        000000 - 0000 i CSR-P ved indkomstårets udgang). 2 Gift. Sambeskattes.  3 Nygift. Sambeskattes.   4 Gift, separeret. Beskattes som enlig (hentes automatisk fra CSR-P).   5 Gift, ikke sambeskattet for indeværende (herunder plejehjemsanbringelse).  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

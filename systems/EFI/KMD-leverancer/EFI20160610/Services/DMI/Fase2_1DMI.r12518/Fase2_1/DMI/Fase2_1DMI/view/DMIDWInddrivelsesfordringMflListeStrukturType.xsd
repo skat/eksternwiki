@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/CRUDFunktionType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+         <xs:include schemaLocation="../operational/DMITransaktionIDType.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/RenteValgStrukturType.xsd"/>
+				     
+         <xs:element name="DMIDWInddrivelsesfordringMflListeStruktur"
+                     type="fase2.1:DMIDWInddrivelsesfordringMflListeStrukturType"/>
+         <xs:complexType name="DMIDWInddrivelsesfordringMflListeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="InddrivelsesfordringMfl">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:CRUDFunktionType"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionID"/>
+                  
+                           <xs:element ref="fase2.1:DMITransaktionIDType"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringTypeKategori"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringModtagelseDato"/>
+
+                           <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                           <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:DMIFordringStiftelseTidspunkt"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+
+                           <xs:element ref="fase2.1:DMIFordringKlasse" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringForfaldDato"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringSRBDato"/>
+                  
+                           <xs:element ref="fase2.1:FordringPeriodeStruktur"/>
+                  
+                           <xs:element ref="fase2.1:DMIFordringForeløbigFastsat"/>
+
+                           <xs:element ref="fase2.1:RenteValgStruktur" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

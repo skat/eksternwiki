@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Bobehandling kontakt</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst255Type.xsd"/>
+         <xs:include schemaLocation="../types/AdresseLinieType.xsd"/>
+         <xs:element name="BobehandlingKontaktNr" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kontakt nummer f.eks. CPR, SE, AKR eller andet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktRef" type="fase2.1:Tekst255Type">
+               
+               <xs:annotation>
+                  <xs:documentation>1 linies tekst til f.eks journalnr, telefon nr, bemærkning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie1" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie2" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie3" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie4" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie5" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie6" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BobehandlingKontaktLinie7" type="fase2.1:AdresseLinieType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver linie i adresse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

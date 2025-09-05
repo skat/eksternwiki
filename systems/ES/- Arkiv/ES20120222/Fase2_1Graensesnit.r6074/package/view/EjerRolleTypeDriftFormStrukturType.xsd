@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r6074</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/EjerRolleType.xsd"/>
+         <xs:include schemaLocation="../class/EjerType.xsd"/>
+         <xs:include schemaLocation="../class/DriftForm.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/VirksomhedEjerLederForholdStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EjerForholdHistorikStrukturType.xsd"/>
+				     
+         <xs:element name="EjerRolleTypeDriftFormStruktur"
+                     type="fase2.1:EjerRolleTypeDriftFormStrukturType"/>
+         <xs:complexType name="EjerRolleTypeDriftFormStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:EjerRolleTypeKode"/>
+                  
+                  <xs:element ref="fase2.1:EjerTypeKode"/>
+
+               <xs:element ref="fase2.1:DriftFormKode" minOccurs="0"/>
+
+
+               <xs:element name="VirksomhedEjerForholdSamling">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="EjerForhold" minOccurs="1" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:VirksomhedEjerLederForholdStruktur"/>
+                                 <xs:element name="EjerForholdHistorikSamling">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:EjerForholdHistorikStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

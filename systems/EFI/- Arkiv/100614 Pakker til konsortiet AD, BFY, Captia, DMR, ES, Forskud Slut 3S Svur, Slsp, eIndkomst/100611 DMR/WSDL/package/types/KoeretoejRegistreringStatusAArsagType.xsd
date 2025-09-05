@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="KøretøjRegistreringStatusÅrsagType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Årsag til en given status er sat.   </xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:maxLength value="40"/>
+            
+         
+         
+         <xs:enumeration value="IkkeRelevant"/>
+            
+         
+         
+         <xs:enumeration value="RegistreretAlmindeligt"/>
+            
+         
+         
+         <xs:enumeration value="AfmeldtAlmindeligt"/>
+            
+         
+         
+         <xs:enumeration value="AfmeldtGrundetMangler"/>
+            
+         
+         
+         <xs:enumeration value="NummerpladerOverførtTilAndetKøretøj"/>
+            
+         
+         
+         <xs:enumeration value="AfmeldtUdenAfleveringAfNummerplader"/>
+            
+         
+         
+         <xs:whiteSpace value="collapse"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

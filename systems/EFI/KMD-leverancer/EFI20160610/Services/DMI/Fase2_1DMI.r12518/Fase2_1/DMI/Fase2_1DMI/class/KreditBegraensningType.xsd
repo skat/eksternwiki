@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Grunddatatype som angiver de tilladte typer af kreditbegrænsning som kan pålægges en virksomhed. Kreditbegrænsning medfører kortere forfalds- og betalingsfrist og nedsætter dermed risikoen for tab. Den kortere forfalds- og betalingsfrist kan ophæves mod at der stilles sikkerhed. Kreditbegrænsning registreres pr. RegistreringForhold og eventuelt ForretningOmrådeForhold.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeToCifreStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="KreditBegrænsningTypeKode" type="fase2.1:KodeToCifreStartEtType">
+               
+            </xs:element>
+         <xs:element name="KreditBegrænsningTypeTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

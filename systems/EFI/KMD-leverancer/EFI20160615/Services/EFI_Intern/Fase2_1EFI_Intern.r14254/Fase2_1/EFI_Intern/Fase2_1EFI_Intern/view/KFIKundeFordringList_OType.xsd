@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/DMIFordring.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringType.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+         <xs:include schemaLocation="../operational/FordringHaverNavn.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/TransportUdlaeg.xsd"/>
+         <xs:include schemaLocation="../class/DMIIndberetter.xsd"/>
+         <xs:include schemaLocation="../class/Indsats.xsd"/>
+         <xs:include schemaLocation="../class/IndsatsType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/KontoStartSaldo.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMITransaktion.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIUdbetaling.xsd"/>
+         <xs:include schemaLocation="../operational/DMIKontoSaldo.xsd"/>
+				     
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+				     
+         <xs:include schemaLocation="../class/BetalingOrdning.xsd"/>
+         <xs:include schemaLocation="../class/BetalingOrdningRate.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+				     
+         <xs:include schemaLocation="../view/EFIKundeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringPeriodeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringRestBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AkkumulOpkraevningGebyrRestBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AkkumulOpkraevningRenteRestBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AkkumulInddrivelseRenteRestBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AkkumulInddrivelseGebyrRestBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndbetalingBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringSumSamlingStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/DMITransaktionBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndbetalingRestBeloebStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="KFIKundeFordringList_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:KFIKundeFordringList_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14254"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="KFIKundeFordringList_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="FordringSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Fordring" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:DMIFordringEFIFordringID"/>
+                  
+                                       <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                       <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+
+                                       <xs:element ref="fase2.1:DMIFordringTypeKategori" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:DMIFordringEFIHovedFordringID"/>
+
+                                       <xs:element ref="fase2.1:DMIFordringFordringHaverRef" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:DMIFordringHaverID" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:FordringHaverNavn" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:DMIFordringFordringHaverBeskr" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:EFIKundeStruktur"/>
+
+                                       <xs:element ref="fase2.1:FordringPeriodeStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:DMIFordringSRBDato" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:DMIFordringForfaldDato" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:FordringBeløbStruktur" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:FordringRestBeløbStruktur"/>
+
+                                       <xs:element ref="fase2.1:AkkumulOpkraevningGebyrRestBeløbStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:AkkumulOpkraevningRenteRestBeløbStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:AkkumulInddrivelseRenteRestBeløbStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:AkkumulInddrivelseGebyrRestBeløbStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:IndbetalingBeløbStruktur" minOccurs="0"/>
+
+
+
+                                       <xs:element ref="fase2.1:TransportUdlægUbegrænset" minOccurs="0"/>
+
+                                       <xs:element ref="fase2.1:DMIIndberetterRolle"/>
+                                       <xs:element name="FordringIndsatsSamling">
+                                          <xs:complexType>
+                                             <xs:sequence>
+
+                                                <xs:element name="FordringIndsats" minOccurs="0" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                      <xs:sequence>
+                                                         <xs:element ref="fase2.1:IndsatsID"/>
+                  
+                                                         <xs:element ref="fase2.1:IndsatsTypeKode"/>
+                                                      </xs:sequence>
+                                                   </xs:complexType>
+                                                </xs:element>
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                     <xs:element ref="fase2.1:FordringSumSamlingStruktur" minOccurs="0"/>
+                     <xs:element name="TransaktionSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="KontoSaldo">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:KontoStartSaldo"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element name="TransaktionListe">
+                                 <xs:complexType>
+                                    <xs:sequence>
+
+                                       <xs:element name="Transaktion" minOccurs="0" maxOccurs="unbounded">
+                                          <xs:complexType>
+                                             <xs:sequence>
+                                                <xs:element ref="fase2.1:DMITransaktionLøbenummer"/>
+                  
+                                                <xs:element ref="fase2.1:DMITransaktionType"/>
+                  
+                                                <xs:element ref="fase2.1:DMITransaktionID"/>
+                  
+                                                <xs:element ref="fase2.1:DMITransaktionBeløbStruktur"/>
+
+                                                <xs:element ref="fase2.1:DMITransaktionVirkningDato" minOccurs="0"/>
+
+                                                <xs:element ref="fase2.1:DMITransaktionBogføringDato"/>
+
+                                                <xs:element ref="fase2.1:DMITransaktionÅrsagKode" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DMITransaktionÅrsagBegr" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DMITransaktionÅrsagTekst" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DMIUdbetalingStatus" minOccurs="0"/>
+
+
+
+                                                <xs:element ref="fase2.1:DMIKontoSaldo" minOccurs="0"/>
+
+
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="Indsatser" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+
+                                                            <xs:element name="IndsatsInfo" minOccurs="1" maxOccurs="unbounded">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element ref="fase2.1:IndsatsID"/>
+                  
+                                                                     <xs:element ref="fase2.1:IndsatsTypeKode"/>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+
+                                                
+
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="FordringInfo" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:DMIFordringFordringArtKode"/>
+                  
+                                                            <xs:element ref="fase2.1:DMIFordringTypeKode"/>
+                  
+                                                            <xs:element ref="fase2.1:DMIFordringKlasse"/>
+                  
+                                                            <xs:element ref="fase2.1:DMIFordringTypeKategori"/>
+                  
+                                                            <xs:element ref="fase2.1:DMIFordringModtagelseDato"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                
+
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="IndbetalingInfo" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:DMIIndbetalingArt"/>
+                  
+                                                            <xs:element ref="fase2.1:IndbetalingRestBeløbStruktur"/>
+
+                                                            <xs:element ref="fase2.1:BetalingOrdningID" minOccurs="0"/>
+
+
+
+                                                            <xs:element ref="fase2.1:BetalingOrdningRateID" minOccurs="0"/>
+
+
+                                                            <xs:element name="IndbetalingKunde">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                                                     <xs:element ref="fase2.1:KundeType"/>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                
+
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="UdbetalingInfo" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:DMIUdbetalingGodkendt"/>
+                                                            <xs:element name="UdbetalingKunde">
+                                                               <xs:complexType>
+                                                                  <xs:sequence>
+                                                                     <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                                                     <xs:element ref="fase2.1:KundeType"/>
+                                                                  </xs:sequence>
+                                                               </xs:complexType>
+                                                            </xs:element>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                
+
+                                                <!--Sequence removed-->
+
+                                                   <xs:element name="ÅbenPost" minOccurs="0">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:IndbetalingBeløbStruktur"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                
+
+                                             </xs:sequence>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

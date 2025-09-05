@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:simpleType name="BlanketNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Angiver ToldSkats blanketnummer, f.eks. 01.004 eller Y922A  En angivelsestype kan godt omfatte flere blanketnumre.  Erhvervssystemet anvender også betegnelsen blanketkode, som angiver det unike blanketnummer. Denne blanketkode er ikke defineret særskilt, men er på to cifre og kan indeholde værdierne 03 - 10.  Bemærk at der ofte bruges punktum og bindestreg i nummeret, men at disse ikke indgår i denne datarepræsentationen.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+         
+      
+      
+      <xs:restriction base="xs:string">
+            
+         
+         
+         <xs:maxLength value="5"/>
+         
+      
+      
+      </xs:restriction>
+      
+   
+   
+   </xs:simpleType>
+   
+
+
+</xs:schema>

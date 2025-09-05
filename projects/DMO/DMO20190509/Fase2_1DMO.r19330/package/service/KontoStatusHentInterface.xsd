@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Service modtager input om en kunde og leverer de seneste op til 99 posteringer på kundens skattekonto samt diverse sumbeløb og oplysninger om henholdsvis: - Posteringer til godkendelse (Udbetalinger, Afskrivninger)   - Sikkerhedsstillelse - Betalingsordninger - Administrative tiltag </xs:documentation>
+            <xs:documentation>r19330</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/KontoStatusHent_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/KontoStatusHent_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/KontoStatusHent_FejlIdType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="KontoStatusHentInterface" type="fase2.1:KontoStatusHentInterfaceType"/>
+         <xs:complexType name="KontoStatusHentInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:KontoStatusHent_I"/>
+               <xs:element ref="fase2.1:KontoStatusHent_O"/>
+               <xs:element ref="fase2.1:KontoStatusHent_FejlId"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

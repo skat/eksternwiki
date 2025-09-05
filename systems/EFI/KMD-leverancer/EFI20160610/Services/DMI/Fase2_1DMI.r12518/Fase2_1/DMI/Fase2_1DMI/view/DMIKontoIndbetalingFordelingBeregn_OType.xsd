@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+         <xs:include schemaLocation="../operational/RaekkefoelgeNummer.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/DMIIndbetaling.xsd"/>
+				     
+         <xs:include schemaLocation="../view/TransaktionDaekningElementStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/SimuleretRenteBeloebStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/HaeftelseStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/FordringStopListeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IndbetalingRestBeloebStrukturType.xsd"/>
+				     
+         <xs:element name="DMIKontoIndbetalingFordelingBeregn_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIKontoIndbetalingFordelingBeregn_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r12518"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIKontoIndbetalingFordelingBeregn_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="TransaktionDækningElementForslagListe" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="TransaktionDækningElementForslag" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:TransaktionDækningElementStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:RækkefølgeNummer"/>
+                  
+                                       <xs:element ref="fase2.1:SimuleretRenteBeløbStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:HæftelseStopListeStruktur"/>
+                  
+                                       <xs:element ref="fase2.1:FordringStopListeStruktur"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+
+                     <xs:element ref="fase2.1:DMIIndbetalingID" minOccurs="0"/>
+
+                     <xs:element ref="fase2.1:IndbetalingRestBeløbStruktur" minOccurs="0"/>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

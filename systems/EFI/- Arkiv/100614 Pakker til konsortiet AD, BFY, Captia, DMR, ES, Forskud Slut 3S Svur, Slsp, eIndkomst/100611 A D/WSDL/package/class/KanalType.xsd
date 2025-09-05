@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Typen af kanal, f.eks. e-mail eller SMS.  </xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/NavnType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/DatoType.xsd"/>
+      
+      
+   
+   
+   <xs:include schemaLocation="../types/JaNejType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+      
+   
+   
+   <xs:element name="KanalTypeNavn" type="fase2.1:NavnType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Kanaltypens unikke navn. Der er prædefinerede navne jf. listen.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KanalTypeGyldigFra" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Dato hvorfra KanalType er gyldig fra.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KanalTypeGyldigTil" type="fase2.1:DatoType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Dato hvortil KanalType er gyldig.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KanalTypeKræverSamtykke" type="fase2.1:JaNejType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Hvis kanaltypen er usikker eller kræver at kunden forstår at modtagelse via kanalen kræver at han også er (teknisk) klar til dette, skal kunden angive sit samtykke til at A&amp;D anvender den pågældende kanal.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="KanalTypeNummer" type="fase2.1:IdentifikationNummerType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Nummerering af kanaltyper</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

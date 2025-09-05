@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Budgetpost for en kunde</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/BudgetPostGruppeKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/BudgetPostTypeKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/EFIBudgetPostStatusKodeType.xsd"/>
+         <xs:element name="EFIBudgetPostID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik id for budgetpost</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostGruppeKode" type="fase2.1:BudgetPostGruppeKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Budgetposter kan samles i grupper f.eks. til visning i portalen eller i papirudgaver  Værdisæt: BEFORDRINGSOGLIGNENDEUDGIFTER, BOLIGUDGIFTER, BOERNEINDTAEGTER, BOERNEUDGIFTER, INDTAEGTER, ANDREUDGIFTER, OEVRIGEUDGIFTER, RAADIGHEDUDGIFTER, VIRKSOMHEDER </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostTypeKode" type="fase2.1:BudgetPostTypeKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af en budgetpost. Budgetposttyper kan inddeles i budgetpostgrupper. Budgetpostgruppen af en given typen er anført i parantes RAADIGHEDBELOEBBARN(UDGIFT)  NETTOINDKOMSTAUTOMATISK (INDTAEGTER) NETTOUDBETALINGEREJINETTOINDK (INDTAEGTER) NETTOUDBETALINGERERSTATNINGER (INDTAEGTER) BOLIGSIKRINGBOLIGYDELSE (BOLIGUDGIFTER) VARMETILSKUDMV (BOLIGUDGIFTER) OEVRIGEINDTAEGTER (INDTAEGTER) UDGIFTERTILTRANSPORT (BEFORDRINGSOGLIGNENDEUDGIFTER) FAGFORENINGAKASSE (BEFORDRINGSOGLIGNENDEUDGIFTER) BIDRAGTILTROSSAMFUND (BEFORDRINGSOGLIGNENDEUDGIFTER) HUSLEJE (BOLIGUDGIFTER) PRIORITETSYDELSE (BOLIGUDGIFTER) FAELLESUDGIFTERVEDREJENDOM (BOLIGUDGIFTER) RENOVATION (BOLIGUDGIFTER) EJENDOMSSKAT (BOLIGUDGIFTER) EL (BOLIGUDGIFTER) GAS (BOLIGUDGIFTER) VAND (BOLIGUDGIFTER) VARME (BOLIGUDGIFTER) BYGNINGSOGBRANDFORSIKRING (BOLIGUDGIFTER) OEVRIGEUDGIFTERBOLIG (BOLIGUDGIFTER) AEGTEFAELLEBIDRAG (ANDREUDGIFTER) BOERNEBIDRAGANDREUDGIFTER (ANDREUDGIFTER) UDGIFTERTILBOERNSSAMVAER (ANDREUDGIFTER) SAMVAERSUDGIFTERBOERN (ANDREUDGIFTER) NETTOUDGIFTSAERLIGEBEHOV (ANDREUDGIFTER) OEVRIGEUDGIFTERANDRE (ANDREUDGIFTER) YDELSEPAAAEGTEFAELLESGAELD (OEVRIGEUDGIFTER) YDELSEPAAANDENGAELD (OEVRIGEUDGIFTER) BOERNEOGUNGEYDELSE (BOERNEINDTAEGTER) BOERNETILSKUD (BOERNEINDTAEGTER) BOERNEBIDRAG (BOERNEINDTAEGTER) PASNING (BOERNEUDGIFTER) UDGIFTERTILSAERLIGEBEHOV (BOERNEUDGIFTER) OEVRIGEUDGIFTERBOERN (BOERNEUDGIFTER) BETALINGSEVNEVIRKSOMHED (VIRKSOMHED)  UDGIFTERTILTRANSPORTFRADRAG(BEFORDRINGSOGLIGNENDEUDGIFTER) OEVRIGEUDGIFTERBEFORDRING(BEFORDRINGSOGLIGNENDEUDGIFTER) YDELSEPAAGAELDREDUKTION(OEVRIGEUDGIFTER) RAADIGHEDBELOEBVOKSEN </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En beskrivelse af en budgetpost. Beskrivelsen kan f.eks. anvendes til at beskrive øvrige budgetposter indenfor den samme budgetpostgruppe.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostSidstRedigeretAf" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostSidstRedigeretAfRolle" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Rollen af den bruger, der sidst har redigeret budgetposten. Hentes fra Ændr requestet eller sættes til en passende systembruger, når ændringen sker pga. en hændelse, f.eks. BFY eller NIB</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostGodkendt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af om budgettet er godkendt af en sagsbehandler  En budgetkladde er aldrig godkendt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostDelvistGodkendt" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en sagsbehandler har rettet i et beløb i en post kunden har indtastet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostSorteringRækkefølge" type="fase2.1:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en sorteringsorden indenfor en budgetpostgruppe til visning  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostDokumenteret" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en sagsbehandler har afgjort at der findes dokumentation for budgetposten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostGyldigFraDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostGyldigTilDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Alle gyldige datoer i den danske kalender.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostKundeBeløbGodkendt" type="fase2.1:JaNejType">
+               
+            </xs:element>
+         <xs:element name="EFIBudgetPostSamleverBeløbGodkendt" type="fase2.1:JaNejType">
+               
+            </xs:element>
+         <xs:element name="EFIBudgetPostKundeBegrundelse" type="fase2.1:Tekst300Type">
+               
+            </xs:element>
+         <xs:element name="EFIBudgetPostSagsbehandlerBegrundelse" type="fase2.1:Tekst300Type">
+               
+            </xs:element>
+         <xs:element name="EFIBudgetPostGældFørSamliv" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om en udgiftsbudgetpost er stiftet før samliv mellem parterne. Markeringen angiver om posten evt. skal fratrækkes et beløb, før den kan indregnes i budgettet </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostStatusKode" type="fase2.1:EFIBudgetPostStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Status for en given budgetpost.  GODKENDT - Posten er godkendt af en sagsbehandler  IKKEGODKENDT - Posten er endnu ikke behandlet af en sagsbehandler  DELVISTGODKENDT - Posten er godkendt af en sagsbehandler, der har rettet kundens  indtastning. Posten medtages i betalingsevneberegningen  AFVIST - Posten er afvist af en sagsbehandler. Posten medtages ikke i betalingsevneberegningen   UDLØBET - EFIBudgetPostGyldigTilDato er passeret. Posten medtages ikke i betalingsevneberegningen  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostSimuleringMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis Sand og dags dato er i budgetpostens gyldighedsperiode, så anvendes posten kun i simuleringer af budgettet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostSletMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om budgetposten må slettes</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EFIBudgetPostRedigerbar" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om feltet skal være redigerbart i portalerne</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

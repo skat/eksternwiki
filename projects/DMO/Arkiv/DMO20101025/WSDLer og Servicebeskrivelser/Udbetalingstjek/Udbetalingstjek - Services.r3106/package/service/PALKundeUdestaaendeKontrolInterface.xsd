@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>At verificere om PAL har udeståender på den angivne kunde.    Udeståender kan være: - En angivelsesfrist som er overskredet. - En fordring som forfalder til betaling (SRB) indenfor x dage fra dags dato, hvor x er et specifikt angivet antal dage. </xs:documentation>
+            <xs:documentation>r3106</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/PALKundeUdestaaendeKontrol_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/PALKundeUdestaaendeKontrol_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="PALKundeUdeståendeKontrolInterface"
+                     type="fase2.1:PALKundeUdeståendeKontrolInterfaceType"/>
+         <xs:complexType name="PALKundeUdeståendeKontrolInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:PALKundeUdeståendeKontrol_I"/>
+               <xs:element ref="fase2.1:PALKundeUdeståendeKontrol_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

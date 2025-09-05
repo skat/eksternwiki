@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Betalingsordninger er aftaler, som beskriver, hvordan en eller flere fordringer betales over en given periode.  En betalingsordning kan indeholde en eller flere fordringer, som betales i afdrag (rater) over en given periode og med en given frekvens.  Typisk vil en aftale omfatte følgende forhold: ratens størrelse (ratebeløb), fordringstyperne, frekvens (ugentlig, 14-dag, månedligt osv.), betalingsmåde og påmindelser herom, øvre og nedre grænser for fordringens eller ratens størrelse, konsekvenser af misligholdelse, forholdet til nye fordringer og aftalens længde, herunder et eventuelt tidspunkt for genforhandling af aftalen.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel11Type.xsd"/>
+         <xs:include schemaLocation="../types/BetalingOrdningTypeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/PBSAftaleNummerType.xsd"/>
+         <xs:include schemaLocation="../types/FrekvensType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel3Type.xsd"/>
+         <xs:include schemaLocation="../types/BetalingOrdningStatusKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingOrdningStatAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/BetalingOrdningKundeBankRegNrType.xsd"/>
+         <xs:include schemaLocation="../types/KontoNummerType.xsd"/>
+         <xs:include schemaLocation="../types/AntalType.xsd"/>
+         <xs:include schemaLocation="../types/UUIDType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="BetalingOrdningID" type="fase2.1:TalHel11Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation som indentificerer betalingsordningen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningType" type="fase2.1:BetalingOrdningTypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af betalingsordning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningStart" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor betalingsordningen gælder fra = SRB for 1 rate.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningSlut" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor betalingsordningen ophører = inaktiv</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningUdsendelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for udsendelse af betalingsordningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningFørsteBetaling" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato første indbetaling skal ske.  Kommentar: Er den her det samme som vi har defineret Startdato som. Og efterfølgende har vi på DMIForventetIndbetalingOpret set at I har lavet en ForventetIndbetalingSidsteRettigeBetalingDato. Er det det samme vi nu har 3 dataelementer til? </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningMisligholdDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>En dato xx dage efter rykkerens sidste rettidige indbetalingsdato og hvis denne ikke findes: xx dage efter ratens sidste rettidige indbetalingsdato</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningPBSAftalenummer" type="fase2.1:PBSAftaleNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer der dannes til brug for sagsbehandlers oprettelse af betaling via BS. Dannes med EFI kald til DMI indeholdende kundens reg.nr og kontonummer. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRatefrekvens" type="fase2.1:FrekvensType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage mellem to rater</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningRykRate" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Default = Ja Ja  = Der skal  sendes rykker for en rate xx antal dage efter sidste rettidige indbetalingsdato. Nej = der skal ikke sendes rykker.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningPåmind" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Default = Nej. Nej = Der skal  ikke sendes påmindelse til kunden. Ja  = Der skal  sendes påmindelse til kunden xx dage før indbetalingen af en rate eller rykker for rate </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningAntalRater" type="fase2.1:TalHel3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antallet af rater, som aftalen består af. Det kan automatisk beregnes ud fra fordringsbeløbet, som er genstand for indsatsen, og ratebeløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningSendMeddelelse" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Default = Ja JA = Der udsendes meddelelse. Nej = Der udsendes ikke meddelelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningOpsatAfSpor" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Betalingordning er opsat af spor. Nej: Betalingsordning er ikke opsat af spor.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningStatusKode"
+                     type="fase2.1:BetalingOrdningStatusKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til at angive om betalingsordningen er aktiveret, inaktiv eller annuleret. Med en aktiv betalingsordning tilmeldes kunden til Nets (rateopkrævning eller betalingsservice) En inaktiv betalingsordning lagres i DMI og er passiv indtil den ændres til aktiv. Den kan også annulleres. En annulleret betalingsordning ønskes ikke anvendt mere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningStatÅrsagKode"
+                     type="fase2.1:BetalingOrdningStatÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver baggrund for statuskode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende forklaring til valg af Årsagskode. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningStatÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende forklaring til betalingsordningstatus</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningStatÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forklaring til valg af Anden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningOprettelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for oprettelse af aftalen enten automatisk eller oprettet af sagbehandler</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningÆndringDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår betalingsordning sidst er ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningIgangværRykker" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af at betalingsordning er blevet rykket og at frist for betaling af denne ikke er overskredet eller betalt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningKundeBankRegNr"
+                     type="fase2.1:BetalingOrdningKundeBankRegNrType">
+               
+               <xs:annotation>
+                  <xs:documentation>4 cifret kode for det aktuelle pengeinstitut mv</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningKundeBankKonto" type="fase2.1:KontoNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kontonummer hos et pengeinstitut mv</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningSidsteRateSRB" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sidste rates ønskede SRB. Anvendes f.eks. hvis der stilles krav om, at fordring skal være betalt inden ny periode forfal-der - f.eks. inden næste momsperiode er forfalden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningGiroSendFørSRB" type="fase2.1:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal dage for udsendelse af girokort før SRB. Anvendes hvis sagsbehandler ønsker at ændre på default antal dage før udsendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningUnderProtest" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om kunde betaler under protest. Hvis det er er til-fældet må forældelsesfrist på fordringer ikke genberegnes, idet kunden i så fald ikke anerkender fordringen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningEFIIndsatsID" type="fase2.1:UUIDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af instansen af en indsats, dvs. eksempelvis betalingsordningen for kunden Hans Hansen, der starter 1.1.2007.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som samlet skal indbetales i henhold betalingsordningen i den indrapporterede valuta.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb som samlet skal indbetales i henhold betalingsordningen i danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningBSMarkering" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om betalingsordningen skal tilmeldes Betalingsservice.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BetalingOrdningUdbAlternIndb" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om et overskydende beløb skal udbetales til den alternative indbetaler.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="OpgaveKategoriType">
+               <xs:annotation>
+                  <xs:documentation>Der er tre opgavekategorier i Ressourcestyring:    1 Telefonopgaver. Bliver booket i en ressources kalender, men ikke som en aftale, i stedet vil den indgå i en pulje med andre opgaver med samme kategori. Puljen vil spise af en præference som er oprettet i kalenderen.    2 Plukkeopgave. Plukkeopgaver bliver ikke booket i kalendere, i stedet vil plukkeopgaver ligge på opgavekøerne, og det er så medarbejdernes ansvar at vælge opgaven og løse den.    3 Aftaleopgaver. Aftaleopgaver bookes i ressourcernes kalendere, og vil have sit eget slot i kalenderen.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:maxInclusive value="3"/>
+                  <xs:minInclusive value="1"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="BevillingRegelAdresseKode" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En vilkårlig kode på 10 tegn.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="BevillingRegelAngivelseFrekvensForholdMarkering"
+                     type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Generel type for markeringer. Kan være:  false true</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

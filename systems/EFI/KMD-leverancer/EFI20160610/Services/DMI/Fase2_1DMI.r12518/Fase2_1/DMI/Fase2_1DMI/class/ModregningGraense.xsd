@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Kunde-specifik modregningsbegrænsning (pga. manglende betalingsevne).    Den kunde-specifikke modregningsbegrænsning udtrykkes i kroner.  Hvilke udbetalingstyper, der har modregningsbegrænsning - og i givet fald hvor meget - styres af parametre, som RIM skal kunne sætte op og ændre på. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/PeriodeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentSatsPositivType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/ModregningGraenseAArsagKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="ModregningGrænsePeriode" type="fase2.1:PeriodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den periode modregningsbegrænsningen gælder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseDisponibel" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det maksimale beløb der må ske modregning med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseForbrugt" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det forbrugte beløb der er modregnet med.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseBFYProcent" type="fase2.1:ProcentSatsPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den procentsats der maksimalt må modregnes i en børnefamilieydelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseBFYMaxBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb der maksimalt må modregnes i en børnefamilieydelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseBFYMaxBlbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb der maksimalt må modregnes i en børnefamilieydelse - omregnet til danske kroner.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseBFYPeriodeFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeFra er startdatoen for  perioden for modregningsbegrænsingen.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseBFYPeriodeTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>PeriodeTil er Slutdatoen for perioden, for modregningsbegrænsingen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseÅrsagKode" type="fase2.1:ModregningGrænseÅrsagKodeType">
+               
+            </xs:element>
+         <xs:element name="ModregningGrænseÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for valg af modregningsgrænse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ModregningGrænseÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse for valg af ÅrsagKode Anden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

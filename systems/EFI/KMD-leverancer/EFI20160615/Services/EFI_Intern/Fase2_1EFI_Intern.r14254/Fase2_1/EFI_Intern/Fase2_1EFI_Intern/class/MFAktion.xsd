@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/MFAktionKodeType.xsd"/>
+         <xs:include schemaLocation="../types/MFAktionStatusKodeType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1000Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:element name="MFAktionID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik ID tildelt en indberettet fordringaktion. Nødvendig af hensyn til at identificere ændrings aktioner der vedrører den samme fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAktionKode" type="fase2.1:MFAktionKodeType">
+               
+            </xs:element>
+         <xs:element name="MFAktionStatusKode" type="fase2.1:MFAktionStatusKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Status for modtag fordrings behandling af en indberettet fordrings aktion.  MODTAGET:        Modtaget men ikke behandlet endnu SAGSBEHAND:   Sendt til manuel sagsbehandling  AFVIST:                Fordring aktion er afvist UDFOERT:           Fordring aktion er færdig behandlet       </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAktionStatusÆndretDato" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunkt for sidste ændring af MFAktionStatusKode feltet. Dette er mest interessant i svaret fra MFKvitteringHent hvor det angiver tidspunktet for den asynkrone behandling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAktionAfvistNummer" type="fase2.1:TalHel5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fejlnummer der angiver årsag til afvisning. Listen af numre med tilhørende parameterliste fremgår af beskrivelsen på MFAktionAfvistStruktur.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MFAktionAfvistTekst" type="fase2.1:Tekst1000Type">
+               
+            </xs:element>
+         <xs:element name="MFAktionAfvistParam" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En tekststreng på 36 chars.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

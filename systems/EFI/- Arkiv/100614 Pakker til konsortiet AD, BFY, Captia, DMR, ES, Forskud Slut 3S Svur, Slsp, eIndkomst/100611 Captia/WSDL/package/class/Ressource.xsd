@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>En ressource i en organisatorisk enhed i SKAT/RIM.  </xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/TypeType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/NavnType.xsd"/>
+      
+   
+   
+   <xs:include schemaLocation="../types/PlaceringType.xsd"/>
+      
+   
+   
+   <xs:element name="RessourceNummer" type="fase2.1:Tekst11Type">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Nummeret på ressourcen, der unikt identificerer ressourcen.  Det er fx medarbejdernummer (medarbejder ID) eller køretøjets nummer.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="RessourceType" type="fase2.1:TypeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Ressourcetypen. Svarer til specialiseringerne under klassen Ressource</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="RessourceNavn" type="fase2.1:NavnType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Navnet på ressourcen ved den pågældende organisatoriske enhed, fx navnet på køretøjet, lokalet, medarbejderen mm.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+      
+   
+   
+   <xs:element name="RessourcePlacering" type="fase2.1:PlaceringType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>Placering for ressource, fx lokalenummer for en medarbejder, parkeringsplads for et RIM køretøj.</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

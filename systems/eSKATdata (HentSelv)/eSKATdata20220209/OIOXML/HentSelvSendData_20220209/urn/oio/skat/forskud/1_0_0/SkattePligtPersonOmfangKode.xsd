@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:skattepligtpersonomfangkode="urn:oio:skat:forskud:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:forskud:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="SkattePligtPersonOmfangKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Koden oplyser om skattepligtsomfang, som er en information om hvilke regler i kildeskatteloven en person skal beskattes efter. Hovedreglen er fuld skattepligt efter nævnte lovs § 1, som lidt forenklet betyder, at personen er bosiddende i Danmark og derfor er skattepligtig til Danmark af al indkomst (også benævnt globalindkomst). En person kan også være begrænset skattepligtig (ikke bosiddende i Danmark), dvs. kun skattepligtig af bestemte indtægter. Koden har følgende værdier (numerisk):
+
+0 = Fuldt skattepligtig.
+1 = Begrænset skattepligtig uden personfradrag.
+2 Ej skattepligtig. Ønskes optaget på kommende forskudsmandtal.
+3 Begrænset skattepligtig med ret til personfradrag, jf. PSL § 10, stk. 5 og 6.
+4 Diplomat (KSL § 1, stk. 1. nr. 4).
+6 Ej skattepligtig. Ønskes ikke optaget på kommende mandtal.
+7 Værdien må ikke bruges - giver forkert skattekommune.
+8 Dobbeltdomicileret.
+9 Ej skattepligtig, henstand efter KSL 73B, VSL, ABL og KGL.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

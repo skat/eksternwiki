@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         
+         <xs:element name="RetsafgiftIndsatsID" type="fase2.1:Tekst36Type">
+            <xs:annotation>
+               <xs:documentation>Identifikation af den indsats, der markerer, at hæftelsen har indgået i en retsafgiftsberegning. Hvis retsafgiften bliver nedskrevet af indsatsen, f.eks. på grund af at indsatsen stoppes, så skal indsatsen også fjerne identifikationen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dette er tiltag, som en sagsbehandler kan foretage i individuelle situationer. Det er ikke tiltag, som der ligger generiske sagsprocesser bagved. Det er fx til situationer, hvor man ved, at kunden betaler inden for kort tid.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/AArsagFastTekstType.xsd"/>
+         <xs:element name="AdministrativtTiltagType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af administrativt tiltag.  Kan vælges af sagsbehandleren/bogholderen i individuelle tilfælde, og skal medvirke til, at andre regler og procedurer startes eller stoppes.  Som en indsats gælder det administrative tiltag for nuværende fordringer (en eller flere), og på kontoen gælder det for alle fordringer inklusiv fremtidige fordringer, som kunden må få. Slutdato på typen rentestop må max være 1 år frem.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AdministrativtTiltagÅrsag" type="fase2.1:ÅrsagFastTekstType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indeholder en beskrivelse af årsagen til, hvorfor, at det administrative tiltag er igangsat. Der gives mulighed for at vælge mellem et mindre antal årsager i form af en fasttekst.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>At understøtte visning af alle normtyper.</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/USNormTypeListeHent_IType.xsd"/>
+	<xs:include schemaLocation="../view/USNormTypeListeHent_OType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+	<xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+	<xs:element name="USNormTypeListeHentInterface" type="dmr:USNormTypeListeHentInterfaceType"/>
+	<xs:complexType name="USNormTypeListeHentInterfaceType">
+		<xs:choice>
+			<xs:element ref="dmr:USNormTypeListeHent_I"/>
+			<xs:element ref="dmr:USNormTypeListeHent_O"/>
+			<xs:element ref="dmr:KompenserTrans"/>
+			<xs:element ref="dmr:KompenserTransSvar"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

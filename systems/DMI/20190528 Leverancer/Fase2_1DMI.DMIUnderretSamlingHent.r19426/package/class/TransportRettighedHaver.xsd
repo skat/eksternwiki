@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En rettighedshaver/underrettighedshaver er fordringshaver, men kan også være en almindelig kunde   Når en rettighedshavers fordring vedr. transport eller udlæg dækkes, skal den afregnes til rettigheds-haveren/underrettighedshaveren. Dette kan i de fleste tilfælde ske ved at afregningen sker via rettig-hedshavers/underrettighedshavers kundekonto, hvor beløbet betragtes som en indbetaling af typen afregning af transport/udlæg med henvisning til hvorfra den kommer, hvilke oprindelig udbetaling den vedr. etc. Den vil herefter blive fordelt på kontoen eller udsendt til modtageren afhængigt af modregningsreglerne.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/ID18Type.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:include schemaLocation="../types/ProcentAndelType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="TransportRettighedHaverID" type="fase2.1:ID18Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identificerer den unikke aftale ID</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Type af TransportRettighedHaver.  Kan antage følgende værdi:  - TransportRettighedHaverRettighedHaver - TransportRettighedHaverUnderRettighedHaver </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverBesked" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvem der skal have underretning tilsendt om modregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverModtPen" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja = Den TransportRettighedshaver der skal modtage pengene.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverForPrio" type="fase2.1:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Prioritet af fordeling af tansportbeløb mellem flere TransportRettighedhavere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverProcent" type="fase2.1:ProcentAndelType">
+               
+               <xs:annotation>
+                  <xs:documentation>En transport/udlæg kan have flere TranportRettighedshavere. Fordelingen af transporten angives i procent. Denne procent anvendes også som fordelingen af TranportRettighedshavererne andel i en evt. indbetaling. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverBlb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb TransportUdlægshaveren skal modtage i den angivne valuta</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverBlbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det beløb TransportUdlægshaveren skal modtage i  danske kroner</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportRettighedHaverEjer" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den rettighedshaver der har indberettet transporten eller som efterfølgende haf fået overdraget ejerskab ved en ændring. Kun denne rettighedshaver kan redigere, opksrive, nedskrive, tilbagekalde transporten. Hvis indberetter er udbetalende myndighed benyttes denne markering ikke.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

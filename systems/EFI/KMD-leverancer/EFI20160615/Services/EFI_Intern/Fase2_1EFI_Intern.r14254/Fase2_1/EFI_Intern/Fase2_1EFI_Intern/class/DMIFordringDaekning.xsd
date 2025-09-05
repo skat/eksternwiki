@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Indeholder oplysning om, hvordan indbetalinger har dækket fordringer og hvordan fordringer er blevet dækket af indbetalinger.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="DMIFordringDækningDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen hvor fordringen er dækket med et givet beløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringDækningBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dækningsbeløb i indbetalingens valuta. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringDækningBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>FordringDækningBeløb omregnet til danske kroner Beløbet som fordringen er dækket med, dvs. hvis fordringen er på 1000 kr. og indbetalingen er på 500 kr., så er FordringDækningBeløb 500 kr.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DMIFordringDækningBogførtDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regnskabsgyldighedsdato som påføres af DMI.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

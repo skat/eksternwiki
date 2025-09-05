@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r6074</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Person.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedType.xsd"/>
+         <xs:include schemaLocation="../class/UdenlandskPerson.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/UdenlandskVirksomhed.xsd"/>
+         <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         <xs:element name="VirksomhedEjerLederForholdStruktur"
+                     type="fase2.1:VirksomhedEjerLederForholdStrukturType"/>
+         <xs:complexType name="VirksomhedEjerLederForholdStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="EjerType">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="EjerLederSomPerson">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:PersonCPRNummer"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EjerLederSomVirksomhed">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:VirksomhedSENummer"/>
+
+                                    <xs:element ref="fase2.1:VirksomhedCVRNummer" minOccurs="0"/>
+
+                                    <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                  
+                                    <xs:element ref="fase2.1:VirksomhedNavnFirmaNavnKort"/>
+                  
+                                    <xs:element ref="fase2.1:VirksomhedTypeKode"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EjerLederSomUdenlandskPerson">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:UdenlandskPersonNummer"/>
+                  
+                                    <xs:element ref="fase2.1:PersonNavnNavn"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EjerLederSomUdenlandskVirksomhed">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:UdenlandskVirksomhedNummer"/>
+                  
+                                    <xs:element ref="fase2.1:VirksomhedNavnFirmaNavn"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EjerLederSomMyndighed">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:MyndighedNummer"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

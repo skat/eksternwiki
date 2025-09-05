@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst11Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst255Type.xsd"/>
+         <xs:element name="SagFriOplysningLedetekst" type="fase2.1:Tekst11Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på et frit oplysningsfelt der knytter sig til sagen - skal være kendt i Captia</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SagFriOplysningIndhold" type="fase2.1:Tekst255Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdien for et frit oplysningsfelt knyttet til sagen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

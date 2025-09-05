@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Utimo december dannes regnskabsperioder 1 - 12, der følger kalenderåret for det kommende år samt reguleringsperioder 13 - 16 for samme kalenderår.  En regnskabsperiode kan være afsluttet, men fortsat åben for postering. Hvis en regnskabsperiode er lukket kan der ikke bogføres i perioden.  § 38 regnskabet består af 12 ordinære regnskabsperioder samt op til 4 reguleringsperioder. De ordinære regnskabsperioder består typisk af en kalendermåned. Når en regnskabsperiode er åben kan der ske bogføring i perioden.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="RegnskabsPeriodePeriode" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver perioden som kan være mellem 1 og 16, hvor 1-12 angiver kalendermåned mens 13-16 angiver reguleringsperiode</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeDelregnskabID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilket delregnskab regnskabsperiode vedrører</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

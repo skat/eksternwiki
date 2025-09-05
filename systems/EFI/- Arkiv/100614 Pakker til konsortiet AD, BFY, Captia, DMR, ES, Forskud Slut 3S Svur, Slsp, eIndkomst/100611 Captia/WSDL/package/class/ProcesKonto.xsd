@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+      
+   
+   
+   <xs:annotation>
+         
+      
+      
+      <xs:documentation>Procesrelaterede oplysninger knyttet til en sag</xs:documentation>
+      
+   
+   
+   </xs:annotation>
+      
+   
+   
+   <xs:include schemaLocation="../types/ProcesKontoKodeType.xsd"/>
+      
+   
+   
+   <xs:element name="ProcesKontoKode" type="fase2.1:ProcesKontoKodeType">
+         
+      
+      
+      <xs:annotation>
+            
+         
+         
+         <xs:documentation>LISY-kode som bruges ved oprettelse/opdatering af en sag i CAPTIA</xs:documentation>
+         
+      
+      
+      </xs:annotation>
+      
+   
+   
+   </xs:element>
+
+
+
+</xs:schema>

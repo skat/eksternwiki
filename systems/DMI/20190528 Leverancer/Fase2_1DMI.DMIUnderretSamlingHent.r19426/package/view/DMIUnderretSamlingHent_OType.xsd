@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r19425</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/MFUnderretning.xsd"/>
+         <xs:include schemaLocation="../class/DMIFordringHaver.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/MFUnderretReturnerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretAfskrivStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretAfregnStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretRenteTilskrivningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretModregningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretNyFordringHaverStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretKundeAEndringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MFUnderretNyTransportAdministratorStrukturType.xsd"/>
+				     
+         <xs:element name="DMIUnderretSamlingHent_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:DMIUnderretSamlingHent_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r19425"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="DMIUnderretSamlingHent_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="UnderretSamling" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="MFUnderret" minOccurs="0" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:MFUnderretningNummer"/>
+                  
+                                       <xs:element ref="fase2.1:MFUnderretningDatoTid"/>
+                  
+                                       <xs:element ref="fase2.1:DMIFordringHaverID"/>
+                                       <xs:element name="UnderretValg">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="fase2.1:MFUnderretReturnerStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretAfskrivStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretAfregnStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretRenteTilskrivningStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretModregningStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretNyFordringHaverStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretKundeÆndringStruktur"/>
+				
+				
+				                                            <xs:element ref="fase2.1:MFUnderretNyTransportAdministratorStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

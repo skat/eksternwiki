@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/PraeferenceslotGeografi.xsd"/>
+         <xs:element name="PræferenceslotGeografiStruktur"
+                     type="fase2.1:PræferenceslotGeografiStrukturType"/>
+         <xs:complexType name="PræferenceslotGeografiStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:PræferenceslotGeografiID"/>
+                  
+                  <xs:element ref="fase2.1:PræferenceslotGeografiSlotID"/>
+
+               <xs:element ref="fase2.1:PræferenceslotGeografiPostNummer" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:PræferenceslotGeografiKommuneNummer" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:PræferenceslotGeografiOprettetAf"/>
+                  
+                  <xs:element ref="fase2.1:PræferenceslotGeografiOprettetTid"/>
+
+               <xs:element ref="fase2.1:PræferenceslotGeografiSlettetAf" minOccurs="0"/>
+
+
+
+               <xs:element ref="fase2.1:PræferenceslotGeografiSlettetTid" minOccurs="0"/>
+
+               <xs:element ref="fase2.1:PræferenceslotGeografiTimestampVersion"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

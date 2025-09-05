@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r12518</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/FordringStop.xsd"/>
+         <xs:element name="FordringStopÅrsagStruktur" type="fase2.1:FordringStopÅrsagStrukturType"/>
+         <xs:complexType name="FordringStopÅrsagStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="fase2.1:FordringStopÅrsagKode"/>
+                  
+                  <xs:element ref="fase2.1:FordringStopÅrsagBegr"/>
+
+               <xs:element ref="fase2.1:FordringStopÅrsagTekst" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

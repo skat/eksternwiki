@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Hæftelse findes i flere former, hvoraf DMI skal håndtere de to automatisk; resten håndteres manuelt.  Kunder kan hæfte solidarisk for en fordring. Det betyder i korte træk, at fordringen så at sige findes på alle hæfterne. En indbetaling på en kunde vil så uden videre kunne anvendes til dækning af fordringen (via hæftelsesforholdet) - efter de almindelige dækningsrækkefølgeregler og indtil fordringen er indfriet.  Kunder kan hæfte prorata, dvs. for en procentdel af en fordring. Det minder om solidarisk hæftelse med den forskel at den enkelte medhæfter kun hæfter op til den pågældende procentdel af fordringen (som var fordringen fordelt som enkeltfordringer på medhæfterkredsen).  Kommer der en indbetaling på en kunde, der er omfattet af en hæftelse, der har en anden form end de to ovennævnte (inkl. en evt. hovedhæfter), skal indbetalingen sendes til manuel behandling i EFI.  En hæftelse kan være subsidiær. Det betyder, at medhæfterens egne fordringer skal dækkes før fordringer på andre kunder, som der hæftes for. Det er angivet på hæftelsesforholdet (som modtaget i DMI), hvorvidt der er tale om et subsidiært hæftelsesforhold eller ej. </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/HaeftelsesformType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentSatsPositivType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/HaeftelseSubsidiaerDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/HaeftelseKildeType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst500Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/HaeftelseForaeldelseAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/HaeftelseMaaForaeldeAArsagKodeDomaeneType.xsd"/>
+         <xs:include schemaLocation="../types/HaeftelseMaaAfskrivesAArsagKodeType.xsd"/>
+         <xs:element name="HæftelseForm" type="fase2.1:HæftelsesformType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsesformen som indikerer på hvilken måde, at hæfteren hæfter for fordringen. Hæftelsesformer er et udtryk for hvem der skylder, andel af fordringen samt hvilket aktiver/formue kreditorerne kan søge sig fyldestgjort i, f.eks. i forbindelse med en udlægsforretning.Hæftelsesformen indikerer implicit hæftelsesprocenten (som findes på Hæftelse). Fx. betyder solidarisk hæftelse, at alle kunder hæfter 100% for fordringen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseProcent" type="fase2.1:ProcentSatsPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver den procentdel, hvormed kunden hæfter for den enkelte fordring. Har kun effekt for pro rate</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hæftelse for en fordring gælder fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseSlutDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den dato hæftelse for en fordring ophører. Dato kendes ikke altid, hvorfor elementet er optionelt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseSubsidiær" type="fase2.1:HæftelseSubsidiærDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dette element angives kun for HæftelseForm = SUB      </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseModtagelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvor hæftelsen er modtaget i EFI/MF.  Eksempel: Kan anvendes f.eks. Til at klarlægge et sagsforløb hvis SKAT ikke har nået at få fat i et aktiv hos en hæfter, fordi oplysninger om hæftelse ikke har været tilgænlige </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseKilde" type="fase2.1:HæftelseKildeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvem der har oprettet oplysninger om hæftelse  MF: Anvendes hvis fordringshaver medsender oplysninger om hæfter, når fordring oprettes. FH: Fordringshaver angiver selv via selvbetjeningsløsning et hæftelsesforhold. EFI: Når løsningen har påsat en hæfter f.eks. I forbindelse med en udlægsforretning hvor en ægtefælle går fra at være en potientel hæfter til en reel hæfter. Kunne også være en ændring som er opstået som følge af en ændring i CSR-P vedr. civilstand f.eks. skilsmisse. SB: Sagsbehandler manuelt opdatere en hæftelse f.eks. hvis kunden viser at pgl. er udtrådt af et I/S og som følge heraf ikke hæfter længere. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der er ingen funktionalitet knyttet til elementet, og eventuelle værdier i feltet kan ikke anvendes til noget brugbart.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der er ingen funktionalitet knyttet til elementet, og eventuelle værdier i feltet kan ikke anvendes til noget brugbart.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseOpkMyndRykkerDato1" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår fordringshaver har rykket kunden 1.gang for fordringen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseOpkMyndRykkerDato2" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår fordringshaver har rykket kunden 2.gang for fordringen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseKommentar" type="fase2.1:Tekst500Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekst til kommentar.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseDom" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver om der er en dom tilknyttet hæftelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseDomDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver domsdato. Feltet udfyldes kun hvis HæftelseDom = Ja og i så fald med med en dato for dommen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseRestBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsesrestbeløb i den indrapporterede valuta. Den del af fordringens restbeløb som hæfteren hæfter for.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseRestBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hæftelsesrestbeløb omregnet til danske kroner. Den del af fordringens restbeløb som hæfteren hæfter for. Er ikke veldefineret for hæftelseform andet (den fjerde hæftel-sesform dvs. hverken solidarisk, subsidiær eller prorata</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseBegrænsetProcent" type="fase2.1:ProcentSatsPositivType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer begrænset hæftelse, hvis procenten er mindre end 100, begrænses hæftelsen til den angivne procent af fordringbeløb.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseBegrænsetBeløb" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der er ingen funktionalitet knyttet til elementet, og eventuelle værdier i feltet kan ikke anvendes til noget brugbart.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseBegrænsetBeløbDKK" type="fase2.1:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Der er ingen funktionalitet knyttet til elementet, og eventuelle værdier i feltet kan ikke anvendes til noget brugbart.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseUnderBobehandling" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ja: Hæftelse omfattet af bobehandling. Nej: Hæftelse ikke omfattet af bobehandling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Den aktive dato for hvornår forældelse sker. Fordringhaver kan indmelde den første gældende dato, men i forbindelse med f.eks. betalingsordninger og lønindeholdelser vil den blive genberegnet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseDatoAktiv" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvorvidt den pågældende forældelsesdato er aktiv/inaktiv hhv. Ja/Nej</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseDatoID" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>ID der entydigt identificerer en hæftelsesforældelsesdato beregnet af DMI ud fra den fremsendte HæftelseBasisDatoForBeregning og HæftelsesForældelseÅrsagKode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseÅrsagKode"
+                     type="fase2.1:HæftelseForældelseÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken indsats der har opdateret forældelsen. Angiver en kombination af indsatser og afgørelser mv. fx iværksættelse af lønindeholdelse eller ophør af henstand. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for valg af årsag=Anden. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåForælde" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Flaget angiver om hæftelsesforholdet må forælde (ja=true), eller om det ikke må forælde (nej=false). Hæftelsesforholdet må afskrives automatiske, når HæftelseMåForælde er sand og de øvrige regler for automatisk afskrivning opfyldt. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåForældeÅrsagKode"
+                     type="fase2.1:HæftelseMåForældeÅrsagKodeDomæneType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdier til årsagen for hæftelsen må forælde.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseOpdateretDen" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Datoen for ændringen/opdateringen af forældelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåForældeUdløbsdato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår må-forælde-markeringen skal revurderes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåAfskrives" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering om hæftelsen automatisk må afskrives ved forældelse. Sættes via udvalgsregler implementeret i SKAT DW (ja=true). </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåAfskrivesÅrsagKode"
+                     type="fase2.1:HæftelseMåAfskrivesÅrsagKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Værdier til årsagen for hæftelsen må afskrives     Værdisæt skal beskrives.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåAfskrivesÅrsagBegr" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Uddybende begrundelse. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåAfskrivesÅrsagTekst" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for valg af årsag=Anden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåAfskrivesEfterDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorefter hæftelsen må afskrives</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseMåAfskrivesEfterDatoNote" type="fase2.1:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis der er markering for HæftelseMåAfskrives inkl. dato indsat (HæftelseMåAfskrivesEfterDato) noteres en kort begrundelse for at udsætte afskrivelsestidspunktet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseBasisDatoForBeregning" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ved oprettelse beregner DMI HæftelseForældelseDato ud fra den fremsendte HæftelseBasisDatoForBeregning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForlig" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indikerer om der er indgået forlig</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForligDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for forlig. Kun relevant hvis HæftelseForlig = Ja</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseForældelseAutoOpdater" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Flag angiver om DMI automatisk må opdatere forsældelsesdatoen. Ja/Nej. Default Ja. Hvis Nej er det kun fordringshaver eller sagsbehandler der kan opdatere datoen.   </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseSubsiAutoAfskriv" type="fase2.1:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet angiver om et subsidiært hæftelsesforhold må afskrives automatisk ved samlivsophævelse (true=Ja). Default værdi: falsk=Nej Når EFI modtager hændelser fra CSR-P ved samlivsophævelse, må det subsidiære hæftelsesforhold kun afskrives automatisk i de tilfælde, hvor kunden er på et spor, der tillader dette, dvs. når flaget er sat til ja.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseSubsiAutoAfskrivUdløb" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udløbsdato for flaget HæftelseSubsidiærAutoAfskriv. Ja skifter ikke til nej eller omvendt som resultat af datoen -  blot en indikator for sagsbehandler. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="HæftelseSubsiStartDato" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår et subsidiært hæftelsesforhold er gældende fra og benyttes til DMI´s overvågning af den subsidiære hæftelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

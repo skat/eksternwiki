@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/ProcentType.xsd"/>
+         <xs:element name="ÅrsopgørelseSelskabUdbytteBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udbyttegrundlaget for satsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabUdbytteDelTotalBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af alle udbyttegrundlag.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabUdbytteProcentSats" type="skat2016:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udbytteskat indholdelsesprocentsats:  0 %  16,5 %  22 %  25 %  27 %  28 %</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabUdbytteskatBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udbytteskat for satsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabUdbytteskatDelTotalBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af alle udbytteskat.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabUdbytteIAltBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Total beregning efter tillæg til staten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabForlodsUdbetaltUdbytteBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Selskabslov pgf 29D.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabForlodsUdbetaltUdbytteDelTotalBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af pgf 29D udbetaling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabAcontoOgUdbytteskatIAltBeløb"
+                     type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Sammentælling af selskabernes acontoskat rate 1 og rate 2 samt udbytteskat.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabTillægTilStatenProcent" type="skat2016:ProcentType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udbytteskat tillægsats for året.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ÅrsopgørelseSelskabTillægTilStatenBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregnet udbytteskat tillæg for året.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

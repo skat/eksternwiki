@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dette er samarbejdsparter, som serviceudbyderen kan anvende i indsatsarbejdet. Det er eksempelvis politi, domstole, advokater mm.  Specifikt Restanceinddrivelsesmyndigheden: Her kan en samarbejdspart også være en udenlandsk inddrivelsesmyndighed.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/VirksomhedNavnType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:include schemaLocation="../types/RegelSaetType.xsd"/>
+         <xs:element name="SamarbejdPartNavn" type="fase2.1:VirksomhedNavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på samarbejdsparten   Specifikt Restanceinddrivelsesmyndigheden: Det er f.eks. Søfartsstyrelsen, Statens Luftfartsvæsen og Lønmodtagernes Garantifond. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SamarbejdPartType" type="fase2.1:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Typen af samarbejdspart.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SamarbejdPartUdsendelseRegelsæt" type="fase2.1:RegelSætType">
+               
+               <xs:annotation>
+                  <xs:documentation>Regelsæt til brug automatisk valg af den samarbejdspart, der skal udsendes meddelelser til. For visse samarbejdsparter som fx politi, definerer regelsættet, at man udsender til den politikreds, som kunden har boet i/bor i.   Specifikt for Restanceinddrivelsesmyndigheden: For andre som fx udenlandske myndigheder, som man sender restancer til inddrivelse hos, gælder det, at man på baggrund af kundens landekode, kan slå op i regelsættet og finde ud af, hvilken myndighed der håndterer de inkluderede fordringstyper. Se fx matrixer: Inddrivelsesaftalter_Udland.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

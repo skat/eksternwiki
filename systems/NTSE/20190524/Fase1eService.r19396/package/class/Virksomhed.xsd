@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase1="http://skat.dk/begrebsmodel/2006/09/07/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2006/09/07/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Nogle virksomheder er opdelt i flere enheder.  Sådanne delregistreringer udgør tilsammen en virksomheds juridiske enhed.  Opdelingen har til formål at opfylde behovet for opdeling af virksomheden til specielle ToldSkat-formål.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/SENummerType.xsd"/>
+         <xs:include schemaLocation="../types/CVRNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TastSelvKodeType.xsd"/>
+         <xs:include schemaLocation="../types/OCESCertifikatType.xsd"/>
+         <xs:include schemaLocation="../types/MailAdresseType.xsd"/>
+         <xs:include schemaLocation="../types/HjemRegionType.xsd"/>
+         <xs:include schemaLocation="../types/RegistreringsBevisType.xsd"/>
+         <xs:element name="VirksomhedSENummer" type="fase1:SENummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>8-cifret nummer,  der entydigt identificerer en registreret virksomhed i  TOLD * SKAT.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedCVRNummer" type="fase1:CVRNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det nummer der tildeles juridiske enheder i et Centralt Virksomheds Register (CVR).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedStartDato" type="fase1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdato for virksomheden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedOphørsDato" type="fase1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdato for virksomheden</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedTastSelvKode" type="fase1:TastSelvKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver TastSelv-kode som første gang dannes dannes automatisk som Random7.   Virksomheden kan efterfølgende selv bestemme og ændre indholdet af TastSelv koden, såfremt den overholder ToldSkats fastsatte regler for et korrekt password.  TastSelv koder kan anvendes, med mindre virksomheden er overgået til anvendelse af OCES og administrationsmodulet er taget i anvendelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedTastSelvKodeUdløbDato" type="fase1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udløbsdato for TastSelv aktiveringskoden.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedOCESCertifikat" type="fase1:OCESCertifikatType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver virksomhedens OCES certifikat tildelt af TDC.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedMailAdresse" type="fase1:MailAdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mailadresse vedrørende TastSelv Erhverv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedHjemRegion" type="fase1:HjemRegionType">
+               
+               <xs:annotation>
+                  <xs:documentation>Nummer som entydigt identificerer en Told- og Skatteregion.  Told- og Skatteregioner er efterfølgende ændret til SkatteCentre.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VirksomhedRegistreringsBevis" type="fase1:RegistreringsBevisType">
+               
+               <xs:annotation>
+                  <xs:documentation>WEB-blanketten Registreringsbevis dannes i Erhvervssystemet ud fra et rekvisitionsindivid (5001), som omformes til en svar XML struktur, og endelig opsættes som en WEB-blanket under TastSelv Erhverv.  Et registreringsbevis er virksomhedens dokumentation for, hvordan den er registreret i ToldSkats erhvervssystem. Registreringsbeviset udsendes fra Erhvervssystemet ved virksomhedens oprettelse og når oplysningerne ændres, og ved virksomhedens ophør udsendes ophørsbevis.  TastSelv Erhverv viser dog ikke p.t. ophørsbeviser.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

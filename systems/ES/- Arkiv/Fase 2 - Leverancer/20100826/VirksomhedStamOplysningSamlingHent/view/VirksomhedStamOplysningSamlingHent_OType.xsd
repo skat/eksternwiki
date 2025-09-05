@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2008/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2="http://skat.dk/begrebsmodel/2008/01/01/">
+   
+   
+   <xs:annotation>
+      
+      
+      <xs:documentation/>
+   
+   
+   </xs:annotation>
+   
+   
+   <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					
+
+            
+      
+   
+   <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         
+            
+      
+         
+            
+      
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/DriftForm.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/DriftFormForhold.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/Fogedomraade.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/BeskatningParagrafType.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/BeskatningParagrafForhold.xsd"/>
+         
+            
+      
+         
+   
+   
+   <xs:include schemaLocation="../operational/BeregnetRegnskabPeriodeStartDato.xsd"/>
+   
+   
+   <xs:include schemaLocation="../operational/BeregnetRegnskabPeriodeSlutDato.xsd"/>
+            
+      
+   
+   <xs:include schemaLocation="../class/VirksomhedStatusType.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/VirksomhedStatusForhold.xsd"/>
+         
+            
+      
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/Myndighed.xsd"/>
+         
+            
+      
+   
+   <xs:include schemaLocation="../class/MyndighedTilhoerForhold.xsd"/>
+         
+            
+      
+         
+   
+   
+   <xs:include schemaLocation="../view/VirksomhedKontaktOplysningStrukturType.xsd"/>
+   
+   
+   <xs:element name="VirksomhedStamOplysningSamlingHent_O" type="fase2:VirksomhedStamOplysningSamlingHent_OType"/>
+   
+   
+   <xs:complexType name="VirksomhedStamOplysningSamlingHent_OType">
+					
+      
+      <xs:sequence>
+							
+         
+         <xs:element ref="fase2:Kontekst"/>
+							
+         
+         <xs:sequence>
+										
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               
+            <!--Sequence removed minOccurs = 0 maxOccurs = -->
+
+         
+               
+            <xs:element name="VirksomhedStamOplysningSamling" minOccurs="0">
+            
+                  
+               <xs:complexType>
+               
+                     
+                  <xs:sequence>
+
+
+                  
+                        
+                     <xs:element name="VirksomhedStamOplysning" minOccurs="1" maxOccurs="unbounded">
+                     
+                           
+                        <xs:complexType>
+                        
+                              
+                           <xs:sequence>
+                           
+                                 
+                              <xs:element ref="fase2:VirksomhedSENummer"/>
+
+
+                           
+                                 
+                              <xs:element ref="fase2:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+                           
+                                 
+                              <xs:element ref="fase2:VirksomhedStartDato"/>
+
+
+                           
+                                 
+                              <xs:element ref="fase2:VirksomhedOphørDato" minOccurs="0"/>
+
+
+
+                           
+                                 
+                              <xs:element name="VirksomhedNavn">
+                              
+                                    
+                                 <xs:complexType>
+                                 
+                                       
+                                    <xs:sequence>
+                                    
+                                          
+                                       <xs:element ref="fase2:VirksomhedNavnFirmaNavn"/>
+                  
+                  
+                                    
+                                          
+                                       <xs:element ref="fase2:VirksomhedNavnFirmaNavnKort"/>
+                  
+                  
+                                    
+                                          
+                                       <xs:element ref="fase2:VirksomhedNavnGyldigFra"/>
+
+
+                                    
+                                          
+                                       <xs:element ref="fase2:VirksomhedNavnGyldigTil" minOccurs="0"/>
+
+
+
+                                 
+                                       
+                                    </xs:sequence>
+                              
+                                    
+                                 </xs:complexType>
+                           
+                                 
+                              </xs:element>
+
+                           
+                                 
+                              <xs:element name="DriftForm">
+                              
+                                    
+                                 <xs:complexType>
+                                 
+                                       
+                                    <xs:sequence>
+                                    
+                                          
+                                       <xs:element ref="fase2:DriftFormKode"/>
+                  
+                  
+                                    
+                                          
+                                       <xs:element ref="fase2:DriftFormForholdStartDato"/>
+
+
+                                    
+                                          
+                                       <xs:element ref="fase2:DriftFormForholdSlutDato" minOccurs="0"/>
+
+
+
+                                 
+                                       
+                                    </xs:sequence>
+                              
+                                    
+                                 </xs:complexType>
+                           
+                                 
+                              </xs:element>
+                           
+                                 
+                              <xs:element ref="fase2:FogedområdeNummer"/>
+
+                           
+                                 
+                              <xs:sequence>
+
+
+                              
+                                    
+                                 <xs:element name="BeskatningParagraf" minOccurs="0">
+                                 
+                                       
+                                    <xs:complexType>
+                                    
+                                          
+                                       <xs:sequence>
+                                       
+                                             
+                                          <xs:element ref="fase2:BeskatningParagrafTypeKode"/>
+                  
+                  
+                                       
+                                             
+                                          <xs:element ref="fase2:BeskatningParagrafForholdStartDato"/>
+
+
+                                       
+                                             
+                                          <xs:element ref="fase2:BeskatningParagrafForholdSlutDato" minOccurs="0"/>
+
+
+
+                                    
+                                          
+                                       </xs:sequence>
+                                 
+                                       
+                                    </xs:complexType>
+                              
+                                    
+                                 </xs:element>
+
+                           
+                                 
+                              </xs:sequence>
+
+
+                           
+                                 
+                              <xs:sequence>
+
+
+                              
+                                    
+                                 <xs:element name="BeregnetRegnskabPeriode" minOccurs="0">
+                                 
+                                       
+                                    <xs:complexType>
+                                    
+                                          
+                                       <xs:sequence>
+                                       
+                                             
+                                          <xs:element ref="fase2:BeregnetRegnskabPeriodeStartDato"/>
+                  
+                  
+                                       
+                                             
+                                          <xs:element ref="fase2:BeregnetRegnskabPeriodeSlutDato"/>
+
+                                    
+                                          
+                                       </xs:sequence>
+                                 
+                                       
+                                    </xs:complexType>
+                              
+                                    
+                                 </xs:element>
+
+                           
+                                 
+                              </xs:sequence>
+
+
+                           
+                                 
+                              <xs:sequence>
+
+
+                              
+                                    
+                                 <xs:element name="VirksomhedStatus" minOccurs="0">
+                                 
+                                       
+                                    <xs:complexType>
+                                    
+                                          
+                                       <xs:sequence>
+                                       
+                                             
+                                          <xs:element ref="fase2:VirksomhedStatusTypeKode"/>
+                  
+                  
+                                       
+                                             
+                                          <xs:element ref="fase2:VirksomhedStatusForholdGyldigFra"/>
+
+
+                                       
+                                             
+                                          <xs:element ref="fase2:VirksomhedStatusForholdGyldigTil" minOccurs="0"/>
+
+
+
+                                    
+                                          
+                                       </xs:sequence>
+                                 
+                                       
+                                    </xs:complexType>
+                              
+                                    
+                                 </xs:element>
+
+                           
+                                 
+                              </xs:sequence>
+
+
+                           
+                                 
+                              <xs:element name="Myndighed">
+                              
+                                    
+                                 <xs:complexType>
+                                 
+                                       
+                                    <xs:sequence>
+                                    
+                                          
+                                       <xs:element ref="fase2:MyndighedNummer"/>
+                  
+                  
+                                    
+                                          
+                                       <xs:element ref="fase2:MyndighedTilhørForholdGyldigFra"/>
+
+
+                                    
+                                          
+                                       <xs:element ref="fase2:MyndighedTilhørForholdGyldigTil" minOccurs="0"/>
+
+
+
+                                 
+                                       
+                                    </xs:sequence>
+                              
+                                    
+                                 </xs:complexType>
+                           
+                                 
+                              </xs:element>
+
+                           
+                                 
+                              <xs:element name="PrimærAdresse">
+                              
+                                    
+                                 <xs:complexType>
+                                 
+                                       
+                                    <xs:sequence>
+                                    
+                                          
+                                       <xs:element ref="fase2:VirksomhedKontaktOplysningStruktur"/>
+
+                                 
+                                       
+                                    </xs:sequence>
+                              
+                                    
+                                 </xs:complexType>
+                           
+                                 
+                              </xs:element>
+
+                        
+                              
+                           </xs:sequence>
+                     
+                           
+                        </xs:complexType>
+                  
+                        
+                     </xs:element>
+
+               
+                     
+                  </xs:sequence>
+            
+                  
+               </xs:complexType>
+         
+               
+            </xs:element>
+
+               
+      
+            
+            
+         
+         
+         
+         
+         
+         
+         
+      
+							
+         
+         </xs:sequence>
+									
+						
+      
+      </xs:sequence>
+								
+   
+   </xs:complexType>
+
+
+</xs:schema>

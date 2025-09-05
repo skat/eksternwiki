@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         
+         <xs:element name="InddrivelseRenteHæftelseForældelseBeregn" type="fase2.1:MarkeringType">
+            <xs:annotation>
+               <xs:documentation>Angiver om DMI skal returnere den sande forældelsesdato for inddrivelsesrenter. Hvis flaget ikke er sat udelader DMI dato for inddrivelsesrenter i svaret.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

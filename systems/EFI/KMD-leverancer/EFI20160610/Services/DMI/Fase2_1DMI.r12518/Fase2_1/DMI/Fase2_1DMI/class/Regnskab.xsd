@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et regnskab er en rapport, der samler saldiene på alle finanskontiene, jf. kontoplanen for det pågældende regnskab.   Et regnskab består af en resultatopgørelse samt beholdninger.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IdentifikationNummerType.xsd"/>
+         <xs:include schemaLocation="../types/StartdatoType.xsd"/>
+         <xs:include schemaLocation="../types/SlutdatoType.xsd"/>
+         <xs:include schemaLocation="../types/FinanskontonummerType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:element name="RegnskabID" type="fase2.1:IdentifikationNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af regnskabet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeStart" type="fase2.1:StartdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver startdatoen for regnskabet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPeriodeSlut" type="fase2.1:SlutdatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver slutdatoen for regnskabet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabFinanskontonummer" type="fase2.1:FinanskontonummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kontonummeret for den finanskonto der indgår i regnskabet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabForretningsområde" type="fase2.1:FinanskontonummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver nummeret på forretningsområdet. Sammen med finanskontonummeret sikres korrekt placering i § 38 regnskabet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabPrimosaldo" type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver saldo på finanskontoen dagen før regnskabsperiodens start.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabBevægelse" type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver regnskabsperiodens samlede posteringer specificeret som debetbevægelser og kreditbevægelser</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="RegnskabUltimosaldo" type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver summen af primosaldo+bevægelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

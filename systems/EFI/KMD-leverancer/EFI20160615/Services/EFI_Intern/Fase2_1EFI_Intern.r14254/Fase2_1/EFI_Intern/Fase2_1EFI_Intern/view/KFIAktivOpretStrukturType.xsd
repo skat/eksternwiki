@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/KFIAktivFastEjendomOpretStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivAndelStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivKoeretoejStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivSimpelFordringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivLoesoereStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivAnpartStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivVaerdipapirStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivOEvrigeStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/KFIAktivSikkerhedsstillelseStrukturType.xsd"/>
+				     
+         <xs:element name="KFIAktivOpretStruktur" type="fase2.1:KFIAktivOpretStrukturType"/>
+         <xs:complexType name="KFIAktivOpretStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Valg">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element ref="fase2.1:KFIAktivFastEjendomOpretStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivAndelStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivKøretøjStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivSimpelFordringStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivLøsøreStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivAnpartStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivVærdipapirStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivØvrigeStruktur"/>
+				
+				
+				                    <xs:element ref="fase2.1:KFIAktivSikkerhedsstillelseStruktur"/>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

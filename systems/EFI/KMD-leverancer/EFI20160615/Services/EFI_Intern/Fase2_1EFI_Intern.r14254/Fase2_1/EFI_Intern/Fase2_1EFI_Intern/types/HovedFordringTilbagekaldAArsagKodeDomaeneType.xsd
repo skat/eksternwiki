@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="HovedFordringTilbagekaldÅrsagKodeDomæneType">
+               <xs:annotation>
+                  <xs:documentation>Sagbehandlers muligheder for valg af årsag    Liste af faste værdier (Enum</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:enumeration value="ANDN"/>
+                  <xs:enumeration value="BORD"/>
+                  <xs:enumeration value="FEJL"/>
+                  <xs:enumeration value="FSKI"/>
+                  <xs:enumeration value="HENS"/>
+                  <xs:enumeration value="KLAG"/>
+                  <xs:enumeration value="SMTI"/>
+                  <xs:enumeration value="SOTI"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

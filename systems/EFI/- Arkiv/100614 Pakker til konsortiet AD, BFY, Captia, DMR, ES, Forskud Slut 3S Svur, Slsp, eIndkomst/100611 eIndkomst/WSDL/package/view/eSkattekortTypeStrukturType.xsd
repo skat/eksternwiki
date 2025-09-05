@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/">
+   
+   
+   
+   <xs:annotation>
+      
+      
+      
+      <xs:documentation/>
+   
+   
+   
+   </xs:annotation>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/SkattekortType.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../operational/eSkattekortIndkomstAAr.xsd"/>
+            
+      
+   
+   
+   <xs:include schemaLocation="../class/eSkattekortAbonnement.xsd"/>
+         
+   
+   
+   
+   <xs:include schemaLocation="../view/eSkattekortStrukturType.xsd"/>
+   
+   
+   
+   <xs:element name="eSkattekortTypeStruktur" type="fase2.1:eSkattekortTypeStrukturType"/>
+   
+   
+   
+   <xs:complexType name="eSkattekortTypeStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               
+      
+      
+      
+      <xs:sequence>
+
+         
+         
+         
+         <xs:element name="eSkattekortTypeStruktur">
+            
+            
+            
+            <xs:complexType>
+               
+               
+               
+               <xs:sequence>
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:SkattekortTypeKode"/>
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortIndkomstÅr" minOccurs="0"/>
+
+
+
+
+                  
+                  
+                  
+                  <xs:element ref="fase2.1:eSkattekortAbonnementReserveretMarkering" minOccurs="0"/>
+
+
+
+                  
+                  
+                  
+                  <xs:element name="eSkattekortStrukturSamling">
+                     
+                     
+                     
+                     <xs:complexType>
+                        
+                        
+                        
+                        <xs:sequence>
+
+                           
+                           
+                           
+                           <xs:element ref="fase2.1:eSkattekortStruktur" minOccurs="0" maxOccurs="unbounded"/>
+
+                        
+                        
+                        
+                        </xs:sequence>
+                     
+                     
+                     
+                     </xs:complexType>
+                  
+                  
+                  
+                  </xs:element>
+
+
+               
+               
+               
+               </xs:sequence>
+            
+            
+            
+            </xs:complexType>
+         
+         
+         
+         </xs:element>
+      
+      
+      
+      </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+      
+   
+   
+   
+   </xs:complexType>
+
+
+
+</xs:schema>

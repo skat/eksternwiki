@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En udefrakommende indbetaling til kontoen, fx. indbetaling via girokort, checks eller kontanter.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/BetalingFormType.xsd"/>
+         <xs:include schemaLocation="../types/KontoType.xsd"/>
+         <xs:include schemaLocation="../types/KundeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:element name="KontoIndbetalingForm" type="fase2.1:BetalingFormType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver de mulige indbetalingsformer, fx BS (Betalingsservice), HomeBanking, SKB, giro eller kontant. Det er altså betalingsmuligheder. Betalingsformen SKB vedrører dog kun offentlige betalere, f.eks. kommuner og amter (OBS-loven) og kan ikke fravælges. Offentlige virksomheder (indberettere og betalere) identificeres på specifikke forretningsområder under den enkelte pligt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoIndbetalingKontoNummer" type="fase2.1:KontoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Fungere som statusfelt, der skal indikere om beløbet er indbetalt til Opkrævningsmyndigheden eller Inddrivelsesmyndigheden, hvilket har betydning for efter, hvilket regelsæt en fordring skal dækkes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoIndbetalingIndbetaler" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Indbetaler kan være kunde eller en tredje mand, som indbetaler på vegne af kunden. Indbetaleren vil være kvitteringsmodtageren. Det er som default kunden. Attributten skal kun rettes, når det er tredje mand, der indbetaler. Når det er kunden selv, så bruges attributter Indbetaler og PåVegneAf ikke. Når indbetaleren er en tredje mand, så er det identifikationsnummeret på indbetaleren, som indsættes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoIndbetalingPåVegneAf" type="fase2.1:KundeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis indbetaleren ikke er kunden, der ejer kontoen der indbetales til, men tredjemand, angives kunden her. Der angives som regel kundens identifikationsnummer. Undtagelsesvis angives i stedet navn og adresse, hvis tredjemand ikke er bekendt med kundes identifikationsnummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KontoIndbetalingFordringHenvisning" type="fase2.1:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Henvisning til hvilken fordring, der indbetales til. Det kan f.eks. være referencen fra et udsendt girokort.  For Inddrivelsesmyndigheden er der øremærkning af beløbet til dækning af den refererede fordring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

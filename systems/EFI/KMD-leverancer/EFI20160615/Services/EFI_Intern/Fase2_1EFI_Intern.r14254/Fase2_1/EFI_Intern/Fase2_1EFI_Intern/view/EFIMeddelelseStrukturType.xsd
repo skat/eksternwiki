@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14254</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/MeddelelsePakke.xsd"/>
+         <xs:include schemaLocation="../operational/OpgoerelseDato.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/ForventetIndbetalingSumDKK.xsd"/>
+				     
+         <xs:include schemaLocation="../class/ForventetIndbetaling.xsd"/>
+         <xs:include schemaLocation="../class/Kunde.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MeddelelsePakkeBilagStrukturType.xsd"/>
+				     
+         <xs:element name="EFIMeddelelseStruktur" type="fase2.1:EFIMeddelelseStrukturType"/>
+         <xs:complexType name="EFIMeddelelseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeDato1" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeDato2" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeDato3" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeDato4" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+
+               <xs:element ref="fase2.1:OpgørelseDato" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="OpkrævBeløbUdenlandsk" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element ref="fase2.1:ValutaDato" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:ValutaKode"/>
+                  
+                           <xs:element ref="fase2.1:ValutaKurs"/>
+                  
+                           <xs:element ref="fase2.1:MeddelelsePakkeBeløb"/>
+
+                           <xs:element ref="fase2.1:ForventetIndbetalingSumDKK" minOccurs="0"/>
+
+                           <xs:element ref="fase2.1:ForventetIndbetalingSRBDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="OpkrævBeløbDansk" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <!--Sequence removed-->
+
+                              <xs:element name="AlternativIndbetaler" minOccurs="0">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="fase2.1:KundeNummer"/>
+                  
+                                       <xs:element ref="fase2.1:ForventetIndbetalingUdbAltIndb"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           
+                           <xs:element ref="fase2.1:ForventetIndbetalingSRBDato"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekst1" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekst"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekst2" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekst"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekst3" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekst"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekst4" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekst"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekstLang1" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekstLang"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekstLang2" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekstLang"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekstLang3" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekstLang"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekstLang4" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekstLang"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekstLang5" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekstLang"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelsePakkeTekstLang6" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeTekstLang"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+
+               <!--Sequence removed-->
+
+                  <xs:element name="BilagSamling" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="fase2.1:MeddelelsePakkeBilagStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>
