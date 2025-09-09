@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="UUIDType">
+               <xs:annotation>
+                  <xs:documentation>Identifikatorer er ISO/IEC 11578:1996 UUID'er, type 4, random 128-bit, normalt beskrevet ved 32 hex-cifre og fire bindestreger på formen 8-4-4-4-12 </xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="36"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

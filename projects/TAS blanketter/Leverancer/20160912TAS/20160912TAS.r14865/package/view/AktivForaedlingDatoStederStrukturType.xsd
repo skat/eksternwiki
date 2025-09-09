@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14865</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/EtableringSted.xsd"/>
+				     
+         <xs:include schemaLocation="../class/AnvendelsesSted.xsd"/>
+				     
+         <xs:include schemaLocation="../class/UCCAnsoegningAfgoerelseTidligIkraefttraedelse.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/ProcedureAfslutningFrist.xsd"/>
+         <xs:include schemaLocation="../class/Toldsted.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAdresseStrukturType.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAfgoerelseIkrafttraedelseStrukturType.xsd"/>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:element name="AktivForædlingDatoStederStruktur"
+                     type="skat2016:AktivForædlingDatoStederStrukturType"/>
+         <xs:complexType name="AktivForædlingDatoStederStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AOIFindesIkke">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="HovedbogholderiAdresse">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:EtableringStedIndenforEU"/>
+               <xs:element name="EtableringSted">
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:sequence>
+                           <xs:element name="EtabletUdenforUnion">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="FørsteAnvendelseEllerForædlingSted">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                  
+                                             <xs:element ref="skat2016:AnvendelsesStedDetaljer"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+				
+				                    </xs:sequence>
+                        <xs:sequence>
+				
+                           <xs:element name="EtableretIndenforUnion">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="RegnskabStedListe">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:UCCAnsøgningAfgørelseTidligIkræfttrædelseHarÅrsag"/>
+               <xs:element name="IkrafttrædelsesdatoFindes">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCAnsøgningAfgørelseIkrafttrædelseStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="StartdatoForGyldighed">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCAnsøgningAfgørelseIkrafttrædelseStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <!--Sequence removed-->
+
+                  <xs:element name="ForædlingEllerAnvendelseStedListe" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="ForædlingEllerAnvendelseSted" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                  
+                                    <xs:element ref="skat2016:AnvendelsesStedDetaljer"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+
+               <xs:element name="ProcedureAfslutningFrist">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:ProcedureAfslutningFristAntalMåneder"/>
+                  
+                        <xs:element ref="skat2016:ProcedureAfslutningFristAutomatiskForlængelse"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Toldsteder">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:ToldstedAlleDanskeToldsteder"/>
+                  
+
+                        <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+
+
+                        <xs:element name="AfslutningToldstedListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:ToldstedNummer" minOccurs="0" maxOccurs="1"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+
+                        <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+
+
+                        <xs:element name="SikkerhedsstillelseToldsted">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

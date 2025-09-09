@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Omhandler ækvivalente varer.  Anvendelse af ækvivalente varer medfører, at varer, der er henført under proceduren for aktiv forædling, kan erstattes af varer, der er i fri omsætning i EU. Ved ækvivalente varer forstås EU-varer, som forædles i stedet for ikke-EU-varer, der er henført under aktiv forædling.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:element name="ÆkvivalenteVarerGenindførelseFristAfForudgåendeEksport"
+                     type="skat2016:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøger har angivet ja, til at der er planer om at eksportere forædlingsprodukter, der er fremstillet af ækvivalente varer, forud for importen af de varer, som de træder i stedet for (IP EX/IM).   Ansøgeren angiver den foreslåede periode i måneder, inden for hvilken ikke-EU-varerne bør angives til aktiv forædling, idet der tages hensyn til den tid, der er nødvendig til indkøb af varerne og deres transport til Unionen.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

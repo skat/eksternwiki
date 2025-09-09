@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="UCCAfgørelseTypeKode" type="skat2016:TalHelType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et positivt heltal, der kan repræsenterer værdier i intervallet 0 til 999.999.999.999.999.999</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAfgørelseBevillingNummer" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAfgørelseReferenceNummer" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Systemet sammensætter automatisk kodetype og bevillingsnummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAfgørelseUdløbDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for udløb af toldafgørelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

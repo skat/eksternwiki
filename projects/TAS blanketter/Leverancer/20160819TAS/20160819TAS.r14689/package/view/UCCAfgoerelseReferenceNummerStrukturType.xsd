@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/UCCAfgoerelse.xsd"/>
+         <xs:element name="UCCAfgørelseReferenceNummerStruktur"
+                     type="skat2016:UCCAfgørelseReferenceNummerStrukturType"/>
+         <xs:complexType name="UCCAfgørelseReferenceNummerStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:UCCAfgørelseTypeKode"/>
+                  
+                  <xs:element ref="skat2016:UCCAfgørelseBevillingNummer"/>
+
+               <xs:element ref="skat2016:UCCAfgørelseReferenceNummer" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

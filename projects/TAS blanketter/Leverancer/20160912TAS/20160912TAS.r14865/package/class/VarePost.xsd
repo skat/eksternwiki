@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et ledsagedokument består af vareposter. Hver varepost rummer et bestemt afgiftsprodukt med angivelse af mængde og vægt, samt andre strategisk vigtige oplysninger.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/VarePostLoebeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/MaengdeVaegtType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst350Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4Type.xsd"/>
+         <xs:include schemaLocation="../types/KodeEtCifferStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/AntalType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:element name="VarePostLøbeNummer" type="skat2016:VarePostLøbeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et løbenummer som gives til hver varepost i et elektronisk ledsagedokument.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostMængde" type="skat2016:MængdeVægtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mængden (eller antallet) af en given vare/produkt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBruttoMasse" type="skat2016:MængdeVægtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afgiftsproduktet i varepostens bruttovægt.  Den enkelte vareposts bruttovægt med tre decimaler. Ved bruttovægt forstås den samlede vægt af varerne inklusive al emballage, men eksklusive transportørens materiel, fx containere. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostNettoVægt" type="skat2016:MængdeVægtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afgiftsproduktet i varepostens nettovægt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostOprindelseAngivelse" type="skat2016:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Et fritekst felt, hvor oprindelsen kan udspecificeres</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostAfgiftMærke" type="skat2016:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>En ja/nej markering, som beskriver om vareposten er beskattet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBeskatningTekst" type="skat2016:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af beskatningsforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostEnhedNummer" type="skat2016:IDType">
+               
+            </xs:element>
+         <xs:element name="VarePostKommercielReferenceNummer" type="skat2016:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Enhedsnummer, der er tildelt varerne, i forbindelse med indpassage, indførsel, udpassage og udførsel. Der benyttes WCO (ISO154559) koder eller tilsvarende.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBeskrivelse" type="skat2016:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekstfelt til beskrivelse af vareposten. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostFNFarligtGodsKode" type="skat2016:Tekst4Type">
+               
+            </xs:element>
+         <xs:element name="VarePostTransportUdgifterBetalingsmåde"
+                     type="skat2016:KodeEtCifferStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for betalingsform for transportudgifter fx A for kontant og C for check </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostSærligBemærkning" type="skat2016:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til særlige bemærkninger til vareposten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostToldStatus" type="skat2016:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelsestype fx T1, T2, TD osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostVærdiPrEnhed" type="skat2016:AntalType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøger angiver den anslåede maksimale værdi i euro for de varer, som det er hensigten at henføre under den særlige procedure. Værdien kan desuden angives i en anden valuta end euro.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostMængdeEnhed" type="skat2016:MængdeVægtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøger angiver den anslåede mængde varer, som det er hensigten at henføre under den særlige procedure i bevillingens gyldighedsperiode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostIdentifikationKodeAndenForm" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for anden form for identifikation.  Hvis ansøger under vareidentifikationskoder vælger punkt 7 Andre former for identifikation, skal dette felt udfyldes  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostIdentifikationKodeAndenFormBeskrivelse"
+                     type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Anden form for identifikation.  Hvis ansøger under vareidentifikationskoder vælger punkt 7 Andre former for identifikation, skal dette felt udfyldes. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

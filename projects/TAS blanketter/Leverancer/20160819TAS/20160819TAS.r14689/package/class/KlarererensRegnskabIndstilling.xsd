@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specifikke attributter for UCC blanket 7C: Ansøgning og bevilling vedrørende toldangivelse via indskrivning i klarerens regnskaber, herunder eksportproceduren.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="KlarererensRegnskabIndstillingID" type="skat2016:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KlarererensRegnskabIndstillingUdenFrembydelse" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med angivelsen af ansøgerens kontakt-og identifikationsoplysninger, og herunder om virksomheden er AEO-certificeret, skal det angives om ansøgeren søger om indskrivning i klarerens regnskaber. Ansøgeren angiver her, om der søges en hjemstedsordning uden eller med frembydelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

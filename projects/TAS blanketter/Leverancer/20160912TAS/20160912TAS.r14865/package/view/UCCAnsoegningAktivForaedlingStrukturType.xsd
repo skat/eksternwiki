@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14865</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/ToldAktivitet.xsd"/>
+				     
+         <xs:include schemaLocation="../class/UCCAnsoegningBlanketValg.xsd"/>
+         <xs:include schemaLocation="../class/AEkvivalenteVarer.xsd"/>
+         <xs:include schemaLocation="../class/AktivForaedling.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningBasisoplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningDokumentationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningKontaktOplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AktivForaedlingDatoStederStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AktivForaedlingVarerIdentifikationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AktivForaedlingOEkonomiskeForudsaetningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/AktivForaedlingAndetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UnderskriftStrukturType.xsd"/>
+				     
+         <xs:element name="UCCAnsøgningAktivForædlingStruktur"
+                     type="skat2016:UCCAnsøgningAktivForædlingStrukturType"/>
+         <xs:complexType name="UCCAnsøgningAktivForædlingStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:UCCAnsøgningBasisoplysningerStruktur"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningDokumentationStruktur" minOccurs="0"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningKontaktOplysningerStruktur"/>
+                  
+                  <xs:element ref="skat2016:AktivForædlingDatoStederStruktur"/>
+                  
+                  <xs:element ref="skat2016:AktivForædlingVarerIdentifikationStruktur"/>
+                  
+                  <xs:element ref="skat2016:AktivForædlingØkonomiskeForudsætningerStruktur"/>
+               <xs:element name="AtivForædlingPlanlagteAktiviteter">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:ToldAktivitetPlanlagteTransaktionerOplysning"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:AktivForædlingAndetStruktur"/>
+               <xs:element name="AktivForædlingEksport">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCAnsøgningBlanketValgHarPlanEksportereForædlingProdukt"/>
+                        <xs:element name="PlanEksportereHar">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:ÆkvivalenteVarerGenindførelseFristAfForudgåendeEksport"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="AktivForædlingFriOmsætning">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:AktivForædlingFriOmsætningVedAfslutningOpgørelse"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:UnderskriftStruktur"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

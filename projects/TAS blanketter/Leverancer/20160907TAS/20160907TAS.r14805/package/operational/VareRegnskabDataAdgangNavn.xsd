@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst102Type.xsd"/>
+         
+         <xs:element name="VareRegnskabDataAdgangNavn" type="skat2016:Tekst102Type">
+            <xs:annotation>
+               <xs:documentation>I forbindelse med en ansøgning eller bevilling angives der hvilket dataadgang der bruges, som angives med tekst.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

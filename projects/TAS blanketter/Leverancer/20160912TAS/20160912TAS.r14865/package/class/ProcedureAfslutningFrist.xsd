@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Frister for både specifikke (fx aktiv forædling) og generelle toldprocedure.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="ProcedureAfslutningFristAntalMåneder" type="skat2016:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af frist for afslutningen af proceduren angivet i antal måneder.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ProcedureAfslutningFristAutomatiskForlængelse" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med angivelse af Frist for afslutning af proceduren skal ansøgende svare Ja / Nej til spørgsmålet: Finder den automatiske forlængelse af fristen for afslutning anvendelse?. Det er kun muligt at forlænge op til et afslutningen af det nuværende år.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

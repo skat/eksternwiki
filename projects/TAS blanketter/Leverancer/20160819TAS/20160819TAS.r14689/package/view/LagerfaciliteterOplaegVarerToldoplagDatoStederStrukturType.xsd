@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/Toldsted.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAdresseStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAfgoerelseIkraefttraedelseStrukturType.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:element name="LagerfaciliteterOplægVarerToldoplagDatoStederStruktur"
+                     type="skat2016:LagerfaciliteterOplægVarerToldoplagDatoStederStrukturType"/>
+         <xs:complexType name="LagerfaciliteterOplægVarerToldoplagDatoStederStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <!--Sequence removed-->
+
+                     <xs:element name="RegnskabAdresse" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+                  <xs:element name="RegnskabStedListe">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element ref="skat2016:UCCAnsøgningAfgørelseIkræfttrædelseStruktur"/>
+                  <xs:element name="Toldsteder">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:ToldstedAlleDanskeToldsteder"/>
+                           <xs:element name="HenførselToldstedListe">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+
+                           <xs:element name="AfslutningToldstedListe">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+
+                           <xs:element name="SikkerhedsstillelseToldsted">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

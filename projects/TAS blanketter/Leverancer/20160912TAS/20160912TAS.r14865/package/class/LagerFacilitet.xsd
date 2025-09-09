@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst17Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="LagerFacilitetID" type="skat2016:Tekst17Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En identification der består af: Type a1, Identifikation an..14 og landekode an2.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="LagerFacilitetBeskrivelse" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Oplysninger om de lokaler eller andre steder til midlertidig opbevaring, som påtænkes anvendt som lagerfaciliteter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

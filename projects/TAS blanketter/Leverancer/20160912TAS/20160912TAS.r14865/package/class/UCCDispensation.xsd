@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Omhandler dispensation fra kravet om at meddele varernes tilgængelighed for toldkontrol.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="UCCDispensationÅrsag" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis ansøgeren ønsker dispensation fra kravet om at meddele varernes tilgængelighed for toldkontrol, skal de her angive årsagen for dette.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCDispensationAnsøgningVedrørerEksportReeksportProcedure"
+                     type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis ansøgningen vedrører eksportproceduren eller reeksport, skal de her angive dette.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCDispensationDispensationKrævet" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af om ansøgeren ønsker dispensation fra kravet om at meddele varernes tilgængelighed for toldkontrol eller ej.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCDispensationAngivelseForudForAfgang" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en tekststreng på op til 2000 karakterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Denne klasse omhandler en ansøger samtykke til offentliggørelse på listen over bevillingshavere ved en givet bevilling.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="UCCSamtykkeOffentliggørBevillingSamtykke" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøgeren af UCC blanketten skal her angive JA eller NEJ til spørgsmålet:  Samtykke til offentliggørelse på listen over bevillingshavere.  Listen er offentlig tilgængelig liste, med angivelse af bevillingshavere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

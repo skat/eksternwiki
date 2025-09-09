@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+         <xs:element name="KompenserTransSvar" type="skat2016:KompenserTransSvarType"/>
+         <xs:complexType name="KompenserTransSvarType">
+            <xs:sequence>
+               <xs:element ref="skat2016:Kontekst"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

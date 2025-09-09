@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/ToldAktivitet.xsd"/>
+         <xs:include schemaLocation="../class/UCCAfgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/UCCDispensation.xsd"/>
+         <xs:include schemaLocation="../class/Toldsted.xsd"/>
+         <xs:element name="ToldangivelseIndskrivningIKlarererRegnskabAktiviteterProcedurerStruktur"
+                     type="skat2016:ToldangivelseIndskrivningIKlarererRegnskabAktiviteterProcedurerStrukturType"/>
+         <xs:complexType name="ToldangivelseIndskrivningIKlarererRegnskabAktiviteterProcedurerStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Toldprocedure">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="ToldaktivitetTypeListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:ToldAktivitetToldprocedureType" minOccurs="1"
+                                             maxOccurs="unbounded"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element ref="skat2016:UCCAfgørelseReferenceNummer"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="AntalTransaktioner">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:ToldAktivitetAntalTransaktioner"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Dispensation">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCDispensationAngivelseForudForAfgang"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="ToldangivelseIndskrivningIKlarererKontrolToldsted">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:ToldstedDataNavn"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

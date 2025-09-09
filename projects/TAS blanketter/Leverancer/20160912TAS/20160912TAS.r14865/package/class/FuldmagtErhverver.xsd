@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Overførelse af rettigheder og forpligtelser til en tredjepart.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="FuldmagtErhververFormaliteterBeskrivelse" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med overdragelse af rettigheder og forpligtelser for en bevillingsansøgning kan ansøgeren angive foreslåede overførelsesformaliteter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

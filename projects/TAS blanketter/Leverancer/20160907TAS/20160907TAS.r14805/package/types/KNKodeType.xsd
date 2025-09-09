@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="KNKodeType">
+               <xs:annotation>
+                  <xs:documentation>En KNKode består af et 8-cifret unikt nummer.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:integer">
+                  <xs:totalDigits value="8"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         
+         <xs:element name="ValutaNavn" type="skat2016:Tekst30Type">
+            <xs:annotation>
+               <xs:documentation>Angivelse af valuta navnet, hvis det er et andet navn end det der kan vælges af brugeren</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:schema>

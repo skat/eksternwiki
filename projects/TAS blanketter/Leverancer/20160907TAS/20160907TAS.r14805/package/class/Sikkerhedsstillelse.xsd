@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/Tekst240Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:element name="SikkerhedsstillelseOrdningValg" type="skat2016:Tekst240Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse om bevillingen kræver at der stilles en sikkerhed.  I forbindelse med bevilling skal der angives sikkerhedsstillelsesordning. Der kan vælges mellem:  - Sikkerhed pr. toldangivelse - Samlet sikkerhed - SKAT's sikkerhedsstillelsesordning</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedsstillelseKrævet" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med ansøgning om bevilling skal der angives JA/NEJ om bevillingen kræver at der stilles en sikkerhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedsstillelseBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis bevillingen kræver at der stilles en sikkerhed, skal der angives et sikkerhedsstillelsesbeløb. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

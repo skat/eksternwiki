@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Basis informationer til en ansøgning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/Type500Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="AnsøgningID" type="skat2016:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnsøgningType" type="skat2016:Type500Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøgningstype er et felt på, hvor brugeren i en dropdown skal vælge hvilken type ansøgning det er, som han/hun indsender. Brugeren kan på UCC blanketter vælges mellem værdierne:  1) Første ansøgning 2) Ansøgning om ændring af bevilling (angiv referencenummer) 3) Ansøgning om fornyelse af bevilling (angiv referencenummer) 4) Ansøgning om tilbagekaldelse af bevilling (angiv referencenummer)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnsøgningSted" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det sted, hvor ansøgningen er underskrevet eller på anden måde bekræftet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnsøgningDato" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøgningsdatoen som kunden angiver i forbindelse med sin underskrift af ansøgningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

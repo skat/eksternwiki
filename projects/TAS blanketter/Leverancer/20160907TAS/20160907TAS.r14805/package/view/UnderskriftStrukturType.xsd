@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Underskrift.xsd"/>
+         <xs:element name="UnderskriftStruktur" type="skat2016:UnderskriftStrukturType"/>
+         <xs:complexType name="UnderskriftStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:UnderskriftNavn"/>
+                  
+                  <xs:element ref="skat2016:UnderskriftDato"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

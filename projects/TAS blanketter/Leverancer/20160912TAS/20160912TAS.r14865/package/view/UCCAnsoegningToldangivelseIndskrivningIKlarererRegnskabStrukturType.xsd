@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14865</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/ToldFormaliteter.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningBasisoplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningDokumentationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningKontaktOplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ToldangivelseIndskrivningIKlarererRegnskabDatoStederStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ToldangivelseIndskrivningIKlarererRegnskabAktiviteterProcedurerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/ToldangivelseIndskrivningIKlarererRegnskabAndetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UnderskriftStrukturType.xsd"/>
+				     
+         <xs:element name="UCCAnsøgningToldangivelseIndskrivningIKlarererRegnskabStruktur"
+                     type="skat2016:UCCAnsøgningToldangivelseIndskrivningIKlarererRegnskabStrukturType"/>
+         <xs:complexType name="UCCAnsøgningToldangivelseIndskrivningIKlarererRegnskabStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:UCCAnsøgningBasisoplysningerStruktur"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningDokumentationStruktur" minOccurs="0"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningKontaktOplysningerStruktur"/>
+                  
+                  <xs:element ref="skat2016:ToldangivelseIndskrivningIKlarererRegnskabDatoStederStruktur"/>
+               <xs:element name="BetingelserVilkår">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:ToldFormaliteterForbudOgRestriktionerAngivelse" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:ToldangivelseIndskrivningIKlarererRegnskabAktiviteterProcedurerStruktur"/>
+                  
+                  <xs:element ref="skat2016:ToldangivelseIndskrivningIKlarererRegnskabAndetStruktur"/>
+                  
+                  <xs:element ref="skat2016:UnderskriftStruktur"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

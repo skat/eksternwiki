@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specifikke attributter for UCC blanket 8A: Ansøgning og bevilling vedrørende anvendelse af proceduren for aktiv forædling.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/TalHelType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst255Type.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="AktivForædlingID" type="skat2016:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivForædlingVidereEkspeditionFrist" type="skat2016:TalHelType">
+               
+            </xs:element>
+         <xs:element name="AktivForædlingVidereEkspeditionFristAutomatiskFornyelse"
+                     type="skat2016:Tekst255Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver en tekst på max. 255 karakterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivForædlingFriOmsætningVedAfslutningOpgørelse"
+                     type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Omhandler overgang til fro omsætning ved anvendelse af en afslutningsopgørelse. Her angives der Ja / Nej til spørgsmålet: Skal de forædlede produkter eller varer, anses for at være overgået til fri omsætning, hvis de ikke er blevet henført under en efterfølgende toldprocedure eller reeksporteret inden for fristen for afslutning?</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AktivForædlingBeregingAfImportAfgiftBeløb" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beregning af importafgiftsbeløbet i overensstemmelse med kodeksens artikel 86, stk. 3.  Her angiver ansøgeren ja / nej til spørgsmålet: Skal importafgiftsbeløbet beregnes ud fra suspensionsordningen (kodeksens artikel 86, stk. 3</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

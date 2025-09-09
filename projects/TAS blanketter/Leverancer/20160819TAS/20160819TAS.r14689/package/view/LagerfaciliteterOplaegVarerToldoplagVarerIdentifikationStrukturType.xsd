@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KN.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../class/VareIdentifikation.xsd"/>
+         <xs:element name="LagerfaciliteterOplægVarerToldoplagVarerIdentifikationStruktur"
+                     type="skat2016:LagerfaciliteterOplægVarerToldoplagVarerIdentifikationStrukturType"/>
+         <xs:complexType name="LagerfaciliteterOplægVarerToldoplagVarerIdentifikationStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="VarerHenføresUnderToldprocedurenListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="VarerHenføresUnderToldproceduren" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:KNKode"/>
+                  
+                                 <xs:element ref="skat2016:VarePostBeskrivelse"/>
+
+                                 <xs:element ref="skat2016:VarePostMængde" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2016:VarePostMængdeEnhed" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2016:VarePostVærdiPrEnhed" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="skat2016:ValutaKode" minOccurs="0"/>
+
+
+                                 <!--Sequence removed-->
+
+                                    <xs:element name="AndenValuta" minOccurs="0">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="skat2016:ValutaKode"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 
+
+                                 <!--Sequence removed-->
+
+                                    <xs:element name="AndenMængedEnhed" minOccurs="0">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="skat2016:VarePostMængdeEnhed"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="ÆkvivalentVareListe">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element name="ÆkvivalentVare" minOccurs="0" maxOccurs="unbounded">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:KNKode"/>
+                  
+                                 <xs:element ref="skat2016:KNKvalitetOgTekniskeEgenskaber"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element name="VareIdentifikation">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="VareIdentifikationTypeListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:VareIdentifikationType" minOccurs="0" maxOccurs="unbounded"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="VarePostIdentifikationOlysningListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="VarePostIdentifikationOplysning" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="skat2016:VarePostIdentifikationKodeAndenForm"/>
+                  
+                                          <xs:element ref="skat2016:VarePostIdentifikationKodeAndenFormBeskrivelse"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

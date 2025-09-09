@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/UCCAnsoegningBevillingGeografiskGyldighed.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:element name="MedlemsstaterGyldighedAngivelseStruktur"
+                     type="skat2016:MedlemsstaterGyldighedAngivelseStrukturType"/>
+         <xs:complexType name="MedlemsstaterGyldighedAngivelseStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="skat2016:UCCAnsøgningBevillingGeografiskGyldighedOmråde"/>
+                  <!--Sequence removed-->
+
+                     <xs:element name="LandeListe" minOccurs="0">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="skat2016:LandKode" minOccurs="1" maxOccurs="unbounded"/>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

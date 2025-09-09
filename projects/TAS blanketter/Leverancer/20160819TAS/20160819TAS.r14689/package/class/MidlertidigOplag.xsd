@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specifikke attributter for UCC blanket 5: Ansøgning og bevilling vedrørende drift af lagerfaciliteter til midlertidig opbevaring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebType.xsd"/>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="MidlertidigOplagID" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>En mindre tekst - typisk et eller få ord - som unikt giver mulighed for identifikationen af et givet begreb.  I nogle sammenhænge er det også brugt til mindre forklaringer (sætningsniveau)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOplagSikkerhedsstillelseBeløb" type="skat2016:BeløbType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis der I forbindelse med ansøgning om bevilling er angivet, at bevillingen kræver at der stilles en sikkerhed, skal et sikkerhedsbeløb her angives.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOplagType" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af kodetype for ansøgningen (type af oplag). Der kan her vælges mellem:  - Midlertidig Opbevaring på oplag (MIO) - Midlertidig opbevaring på grænsen (MIG) - Midlertidig opbevaring på egne og andres oplag (MIO) - Midlertidig opbevaring ved samlesendinger (MIO)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOplagSikkerhedsstillelseKrævet" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med ansøgning om bevilling skal der angives JA/NEJ om bevillingen kræver at der stilles en sikkerhed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOplagRetsgrundlagForVarebevægelsen" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med ansøgerens angivelse af varebevægelser, skal der angives retsgrundlaget for varebevægelserne. Der kan her vælges mellem følgende værdier:  A. Kodeksens artikel 148, stk. 5, litra a) bevægelsen sker på en toldmyndigheds ansvar   B. Kodeksens artikel 148, stk. 5, litra a) bevægelsen er alene omfattet af en enkelt tilladelse, der er udstedet til en autoriseret økonomisk operator med bevilling til at udnytte forenklede toldbestemmelser  C. Kodeksens artikel 148, stk. 5, litra a) i andre tilfælde, hvor varer flyttes</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

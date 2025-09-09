@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14865</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Oplag.xsd"/>
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/MidlertidigOplag.xsd"/>
+         <xs:include schemaLocation="../class/OEkonomiskOperatoer.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningBasisoplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningDokumentationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningKontaktOplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterMidlertidigOpbevaringDatoStederStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterMidlertidigOpbevaringAndetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAdresseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UnderskriftStrukturType.xsd"/>
+				     
+         <xs:element name="UCCAnsøgningLagerfaciliteterMidlertidigOpbevaringStruktur"
+                     type="skat2016:UCCAnsøgningLagerfaciliteterMidlertidigOpbevaringStrukturType"/>
+         <xs:complexType name="UCCAnsøgningLagerfaciliteterMidlertidigOpbevaringStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Basisoplysninger">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:OplagType"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:UCCAnsøgningBasisoplysningerStruktur"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningDokumentationStruktur" minOccurs="0"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningKontaktOplysningerStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterMidlertidigOpbevaringDatoStederStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterMidlertidigOpbevaringAndetStruktur"/>
+               <xs:element name="LagerfaciliteterMidlertidigOpbevaringVarebevægelser">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:MidlertidigOplagRetsgrundlagForVarebevægelsen"/>
+                        <xs:element name="AndreTilfældeVarerFlyttesHar">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:ØkonomiskOperatørEORINummer"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:UnderskriftStruktur"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

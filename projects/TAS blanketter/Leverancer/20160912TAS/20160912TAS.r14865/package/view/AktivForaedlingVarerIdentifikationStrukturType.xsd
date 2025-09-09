@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14865</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/KN.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:include schemaLocation="../operational/VarePostMaengdeEnhedNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/ValutaKodeNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../class/VareRegnskab.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningVarerIdentifikationStrukturType.xsd"/>
+				     
+         <xs:element name="AktivForædlingVarerIdentifikationStruktur"
+                     type="skat2016:AktivForædlingVarerIdentifikationStrukturType"/>
+         <xs:complexType name="AktivForædlingVarerIdentifikationStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element name="VarerHenføresUnderToldprocedurenListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="VarerHenføresUnderToldproceduren" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:KNKode"/>
+                  
+                                    <xs:element ref="skat2016:VarePostBeskrivelse"/>
+                  
+                                    <xs:element ref="skat2016:VarePostMængde"/>
+                  
+                                    <xs:element ref="skat2016:VarePostMængdeEnhed"/>
+                                    <xs:element name="AndenMængedEnhed">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="skat2016:VarePostMængdeEnhedNavn"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element ref="skat2016:VarePostVærdiPrEnhed"/>
+                  
+                                    <xs:element ref="skat2016:ValutaKode"/>
+                                    <xs:element name="AndenValuta">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element ref="skat2016:ValutaKodeNavn"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element name="ForædlingProduktListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="ForædlingProdukt" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:KNKode"/>
+                  
+                                    <xs:element ref="skat2016:VarePostBeskrivelse"/>
+                  
+                                    <xs:element ref="skat2016:VareRegnskabUdbyttesats"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element ref="skat2016:UCCAnsøgningVarerIdentifikationStruktur"/>
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

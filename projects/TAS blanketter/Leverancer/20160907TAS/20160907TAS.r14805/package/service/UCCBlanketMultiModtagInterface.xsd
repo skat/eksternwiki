@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Service udstillet af UCC, med det formål at modtage blanketter vedrørende UCC (EU-toldkodeks), der er indberettet via Erhvervsstyrelsens Blanketservice på virk.dk</xs:documentation>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/UCCBlanketMultiModtag_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/UCCBlanketMultiModtag_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="UCCBlanketMultiModtagInterface"
+                     type="skat2016:UCCBlanketMultiModtagInterfaceType"/>
+         <xs:complexType name="UCCBlanketMultiModtagInterfaceType">
+            <xs:choice>
+               <xs:element ref="skat2016:UCCBlanketMultiModtag_I"/>
+               <xs:element ref="skat2016:UCCBlanketMultiModtag_O"/>
+               <xs:element ref="skat2016:KompenserTrans"/>
+               <xs:element ref="skat2016:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

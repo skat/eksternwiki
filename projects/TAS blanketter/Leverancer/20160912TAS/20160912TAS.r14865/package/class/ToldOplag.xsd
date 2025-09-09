@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specifikke attributter for UCC blanket 8E: Ansøgning og bevilling vedrørende drift af lagerfaciliteter til oplæggelse af varer på toldoplag.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="ToldOplagID" type="skat2016:IDType">
+               
+               <xs:annotation>
+                  <xs:documentation>Vilkårligt unikt identifikationsnummer</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldOplagEUVareDetaljer" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Hvis de ansægte varer oplagres sammen med EU-varer, angiver ansøgeren her detaljer om dette.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

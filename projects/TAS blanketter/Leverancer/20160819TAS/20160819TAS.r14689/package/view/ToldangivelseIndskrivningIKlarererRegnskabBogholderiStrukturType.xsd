@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../class/AnvendelsesSted.xsd"/>
+         <xs:include schemaLocation="../class/KN.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:include schemaLocation="../view/UCCAnsoegningAdresseStrukturType.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAfgoerelseIkraefttraedelseStrukturType.xsd"/>
+				     
+				     
+         <xs:element name="ToldangivelseIndskrivningIKlarererRegnskabBogholderiStruktur"
+                     type="skat2016:ToldangivelseIndskrivningIKlarererRegnskabBogholderiStrukturType"/>
+         <xs:complexType name="ToldangivelseIndskrivningIKlarererRegnskabBogholderiStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element name="RegnskabAdresse">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="RegnskabStedListe">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+                  <xs:element ref="skat2016:UCCAnsøgningAfgørelseIkræfttrædelseStruktur"/>
+                  
+                  <!--Sequence removed-->
+
+                     <xs:element name="VarerLokalisering">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+
+                              <xs:element ref="skat2016:AnvendelsesStedDetaljer" minOccurs="0"/>
+
+
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  
+
+                  <xs:element name="SpecifikVarebeskrivelseListe">
+                     <xs:complexType>
+                        <xs:sequence>
+
+                           <xs:element name="SpecifikVarebeskrivelse" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:KNKode"/>
+                  
+                                    <xs:element ref="skat2016:VarePostBeskrivelse"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

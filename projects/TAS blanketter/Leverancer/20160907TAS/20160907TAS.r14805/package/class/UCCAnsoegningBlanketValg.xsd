@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Disse felter anvendes i forbindelse med ja/nej felter i UCC blanketterne.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/JaNejType.xsd"/>
+         <xs:element name="UCCAnsøgningBlanketValgHarRepræsentant" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøgeren angiver JA eller NEJ til om virksomheden er repræsenteret af en tredjepart.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAnsøgningBlanketValgHarEORINummer" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Når en virksomhed er repræsenteret af en tredjepart, skal der angives om denne tredjepart har et EORI nummeret (Ja / Nej).</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAnsøgningBlanketValgToldoplagSammenMedEUVarer"
+                     type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøgeren skal her angive Ja / Nej til om de ansøgte varer oplagres sammen med EU-varer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAnsøgningBlanketValgErVirksomhedSENummer" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med ansøgerens udfyldelse af Kontakt og identifikationsoplysninger, skal ansøgeren angive om det er et SE-nummer eller CVR-nummer de har angivet i kontakt-formularen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAnsøgningBlanketValgErAEOCertificeret" type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>I forbindelse med ansøgerens udfyldelse af Kontakt og identifikationsoplysninger, skal ansøgeren angive om virksomheden er AEO-certificeret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="UCCAnsøgningBlanketValgHarPlanEksportereForædlingProdukt"
+                     type="skat2016:JaNejType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøger skal angive ja / nej om der er planer om at eksportere forædlingsprodukter, der er fremstillet af ækvivalente varer, forud for importen af de varer, som de træder i stedet for (IP EX/IM).  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

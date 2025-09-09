@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Formen som virksomheden drives på.   Angiver de driftsformer som der kan oprettes virksomheder for. Driftsformen angiver, hvordan en virksomhed hæfter for sine økonomiske forpligtelser. Driftsformerne kan opdeles i hovedgrupperne: Personligt ejede, flerejede, selskaber under stiftelse, selskaber og øvrige. Der kan være sammenhæng mellem driftsform og ejer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/TekstKortType.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:include schemaLocation="../types/KodeEtCifferStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="DriftFormKode" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Entydig kode som identificerer driftformen.  DriftFormKode: DriftFormTekstLang (DriftFormTekstKort)  001: Enkeltmandsfirma (EF) 002: Dødsbo (BO) 003: Interessentskab (IS) 004: Registreret interessentskab (RIS)  005: Partrederi (PR) 006: Kommanditselskab (KS) 007: Registreret kommanditselskab (RKS) 008: Enhed under oprettelse (EUO) 009: Aktieselskab (AS) 010: AS beskattet som andelsforening (AS) 011: ApS beskattet som andelsforening (ApS) 012: Filial af udenlandsk aktieselskab (UAS) 013: Anpartsselskab under stiftelse (APU) 014: Anpartsselskab (APS) 015: Filial af udenlandsk anpartsselskab (UAP) 016: Europæisk Økonomisk Firmagruppe (EØF) 017: Andelsforening (FAF) 018: Indkøbsforening (FIF) 019: Produktions- og salgsforening (FPS) 020: Brugsforening (FNB) (FNB) 021: Brugsforening (FBF) (FBF) 022: Øvrige andelsforening (FØF) 023: Gensidige forsikringsforening (FGF) 024: Investeringsforening (FAI) 025: Selskab med begrænset ansvar (SBA) 026: Andelsforen. m/ begrænset ansvar (ABA 027: Forening m/begrænset ansvar (FBA) 029: Forening (FO) 030: Finansierings- og kreditinstitut (FRI) 031: Finansieringsinstitut (LFI) 032: Realkreditinstitut (LFR) 033: Sparekasse og Andelskasse (SP) 034: Udenlandsk, anden virksomhed (UØ) 035: Udenlandsk forening (UF) 036: Erhvervsdrivende fond (LFF) 037: Fond (FF) 038: Arbejdsmarkedsforening (LFA) 039: Selvejende institution, forening, fond mv (SI) 040: Selvejende institution med offentlig støtte (SIO) 041: Legat (FL) 042: Stiftelse (FST) 043: Stat (OS) 044: Amt (OA) 045: Kommune (OK) 046: Folkekirkeligt menighedsråd (MR) 047: Særlig offentlig virksomhed (SOV) 048: Afregnende enhed, fællesregistrering (YY) 049: AS beskattet som indkøbsforening (AS) 050: ApS beskattet som indkøbsforening (ApS) 051: Forening omfattet af lov om fonde (LFØ) 052: Konkursbo (BKB) 054: Anden forening (Ø) 055: Registreret enkeltmandsfirma (REF) 056: Udenlandsk aktieselskab (UA) 057: Udenlandsk anpartsselskab (UDP) 058: SE-selskab (SE) 059: Frivillig Forening (FFO) 060: Region (REG) 061: Udenlandsk pengeinstitut (UPI) 062: Udenlandsk forsikringsselskab (UFO) 063: Udenlandsk pensionsinstitut (UPE) 064: Personlig mindre virksomhed (PMV)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormTekstKort" type="skat2016:TekstKortType">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver kort tekst for tilladte værdier af driftsform, eksempelvis EF, A/S, APS m.fl.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormTekstLang" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Længere beskrivelse af en driftform.  Angiver den fulde tekst for tilladte værdier af driftsform, eksempelvis Enkeltmandsfirma, Aktieselskab, Anpartsselskab m. fl.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormBeskrivelse" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af en given driftform.  Beskrivelsen har til formål at give bruger og vedligeholder mulighed for en supplerende og/eller forklarende tekst til en konkret tilladt værdi. Beskrivelsen kan eksempelvis angive formålet med den konkrete værdi og kan, når det er relevant, henvise til lovgivningens paragraffer og faglige vejledninger, hvor bruger og vedligeholder kan finde yderligere hjælp.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormHæftelseForhold" type="skat2016:KodeEtCifferStartEtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode som angiver hvilket hæftelsesforhold, der er gældende for driftformen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormGyldigFra" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår driftform blev opfundet og oprettet rent lovgivningmæssigt. Fx hvis en ny driftform fødes, så vil denne dato angive fra hvornår den kan bruges.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="DriftFormGyldigTil" type="skat2016:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for hvornår driftform blev nedlægges rent lovgivningmæssigt. Fx hvis en ny driftform fødes, så vil denne dato angive fra hvornår den kan bruges.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

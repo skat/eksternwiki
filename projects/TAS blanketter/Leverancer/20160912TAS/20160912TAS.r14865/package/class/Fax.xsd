@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En specialisering af klassen KontaktOplysning. Indeholder et faxnummer til en given person/virksomhed. Ifølge standarden E.164 kan et internationalt telefonnummer være op til 15 cifre inkl. landekode og excl. præfix. Et udenlandsk faxnummer kan indeholde flere tegn end 15, derfor er det også muligt at angive et udenlandsk telefonnummer.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TelefonFaxLandeKodeType.xsd"/>
+         <xs:include schemaLocation="../types/TelefonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/UdenlandskTelefonNummerType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:element name="FaxLandeKode" type="skat2016:TelefonFaxLandeKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Telefon- og faxnummer landekode. Fx +45 eller 0045. Selve telefonnummeret indgår ikke.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FaxNummer" type="skat2016:TelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et faxnummer som opfylder gyldige formater for danske og udenlandske telefonnumre</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FaxUdlandNummer" type="skat2016:UdenlandskTelefonNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan rumme både udenlandske og danske faxnumre</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FaxGyldigFra" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra faxnummeret er gyldigt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FaxGyldigTil" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvortil faxnummeret er gyldigt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

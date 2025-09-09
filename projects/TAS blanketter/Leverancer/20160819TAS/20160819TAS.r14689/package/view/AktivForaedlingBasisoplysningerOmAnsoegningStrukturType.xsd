@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Ansoegning.xsd"/>
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAfgoerelseReferenceNummerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/MedlemsstaterGyldighedAngivelseStrukturType.xsd"/>
+				     
+         <xs:element name="AktivForædlingBasisoplysningerOmAnsøgningStruktur"
+                     type="skat2016:AktivForædlingBasisoplysningerOmAnsøgningStrukturType"/>
+         <xs:complexType name="AktivForædlingBasisoplysningerOmAnsøgningStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="AnsøgningStatus">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:AnsøgningType"/>
+                  
+                        <xs:element ref="skat2016:UCCAfgørelseReferenceNummerStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="MedlemsstaterGyldighedAngivelse">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:MedlemsstaterGyldighedAngivelseStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

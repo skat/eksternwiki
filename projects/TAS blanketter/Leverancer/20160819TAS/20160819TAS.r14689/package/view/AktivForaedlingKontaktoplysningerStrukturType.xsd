@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+				     
+         <xs:include schemaLocation="../class/UCCAnsoegningBlanketValg.xsd"/>
+         <xs:include schemaLocation="../class/OEkonomiskOperatoer.xsd"/>
+         <xs:include schemaLocation="../class/PersonNavn.xsd"/>
+         <xs:include schemaLocation="../class/EmailAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Telefon.xsd"/>
+         <xs:include schemaLocation="../class/Fax.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../view/BlanketmotorVirksomhedStamoplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAdresseStrukturType.xsd"/>
+				     
+         <xs:element name="AktivForædlingKontaktoplysningerStruktur"
+                     type="skat2016:AktivForædlingKontaktoplysningerStrukturType"/>
+         <xs:complexType name="AktivForædlingKontaktoplysningerStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Ansøger">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:BlanketmotorVirksomhedStamoplysningerStruktur"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <!--Sequence removed-->
+                  <xs:element ref="skat2016:UCCAnsøgningBlanketValgErVirksomhedSENummer"/>
+                  
+                  <xs:element ref="skat2016:UCCAnsøgningBlanketValgHarEORINummer"/>
+
+                  <xs:element ref="skat2016:ØkonomiskOperatørEORINummer" minOccurs="0"/>
+
+                  <xs:element ref="skat2016:UCCAnsøgningBlanketValgErAEOCertificeret"/>
+
+                  <xs:element ref="skat2016:ØkonomiskOperatørAEONummer" minOccurs="0"/>
+
+
+               
+               <xs:element name="Kontaktperson">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:PersonNavnForNavn"/>
+                  
+                        <xs:element ref="skat2016:PersonNavnEfterNavn"/>
+                  
+                        <xs:element ref="skat2016:EmailAdresseEmail"/>
+                  
+                        <xs:element ref="skat2016:TelefonNummer"/>
+
+                        <xs:element ref="skat2016:FaxNummer" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <!--Sequence removed-->
+
+                  <xs:element name="RepræsenteretAfTredjepart" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:UCCAnsøgningBlanketValgHarRepræsentant"/>
+                  
+                           <xs:element ref="skat2016:VirksomhedNavnFirmaNavn"/>
+                  
+                           <xs:element ref="skat2016:EmailAdresseEmail"/>
+                  
+                           <xs:element ref="skat2016:TelefonNummer"/>
+
+                           <xs:element ref="skat2016:FaxNummer" minOccurs="0"/>
+
+                           <xs:element ref="skat2016:UCCAnsøgningBlanketValgHarEORINummer"/>
+                  
+                           <xs:element ref="skat2016:ØkonomiskOperatørEORINummer"/>
+                           <xs:element name="UCCAnsøgningAdresse">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/VareRegnskab.xsd"/>
+         <xs:include schemaLocation="../operational/VareRegnskabSystemNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../class/SupplerendeOplysninger.xsd"/>
+         <xs:include schemaLocation="../class/MidlertidigOplag.xsd"/>
+         <xs:include schemaLocation="../class/UCCAfgoerelse.xsd"/>
+         <xs:include schemaLocation="../class/Valuta.xsd"/>
+         <xs:include schemaLocation="../operational/ValutaNavn.xsd"/>
+				     
+         <xs:include schemaLocation="../class/LagerFacilitet.xsd"/>
+         <xs:include schemaLocation="../class/UCCAnsoegningBlanketValg.xsd"/>
+         <xs:include schemaLocation="../class/ToldOplag.xsd"/>
+         <xs:include schemaLocation="../class/UCCSamtykkeOffentliggoerBevilling.xsd"/>
+         <xs:element name="LagerfaciliteterMidlertidigOpbevaringAndetStruktur"
+                     type="skat2016:LagerfaciliteterMidlertidigOpbevaringAndetStrukturType"/>
+         <xs:complexType name="LagerfaciliteterMidlertidigOpbevaringAndetStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Vareregnskab">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:VareRegnskabSystem"/>
+
+                        <xs:element ref="skat2016:VareRegnskabSystemNavn" minOccurs="0"/>
+
+
+                        <xs:element name="VareregnskabTypeListe">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="skat2016:VareRegnskabType" minOccurs="0" maxOccurs="unbounded"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="SupplerendeOplysninger">
+                  <xs:complexType>
+                     <xs:sequence>
+
+                        <xs:element ref="skat2016:SupplerendeOplysningerBeskrivelse" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="Sikkerhedsstillelse">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:MidlertidigOplagSikkerhedsstillelseKrævet"/>
+
+                        <xs:element ref="skat2016:UCCAfgørelseReferenceNummer" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:MidlertidigOplagSikkerhedsstillelseBeløb" minOccurs="0"/>
+
+
+
+                        <xs:element ref="skat2016:ValutaKode" minOccurs="0"/>
+
+
+                        <xs:element name="AndetValuta">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="skat2016:ValutaNavn" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="OplysningerOmLagerfaciliteterne">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:LagerFacilitetBeskrivelse"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="DetaljerOplagringEUVarerr">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCAnsøgningBlanketValgToldoplagSammenMedEUVarer"/>
+
+                        <xs:element ref="skat2016:ToldOplagEUVareDetaljer" minOccurs="0"/>
+
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="SamtykkeOffentliggørelse">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCSamtykkeOffentliggørBevillingSamtykke"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

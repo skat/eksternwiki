@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En specialisering af KontaktOplysning som indeholder en email.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MailAdresseType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/TypeType.xsd"/>
+         <xs:element name="EmailAdresseEmail" type="skat2016:MailAdresseType">
+               
+               <xs:annotation>
+                  <xs:documentation>En generisk email adresse, som kan være indeholde en vilkårlig emailadresse, fx. en.person@skat.dk</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EmailAdresseGyldigFra" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvorfra emailadressen er gyldig</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EmailAdresseGyldigTil" type="skat2016:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato hvortil emailadressen er gyldig</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EmailAdresseSikkerhedserklæring" type="skat2016:TypeType">
+               
+               <xs:annotation>
+                  <xs:documentation>SKAT giver kunden mulighed for at definere, hvilke informationsniveau (sikkerhed) kunden ønsker at modtage via kommunikationsformen e-mail.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

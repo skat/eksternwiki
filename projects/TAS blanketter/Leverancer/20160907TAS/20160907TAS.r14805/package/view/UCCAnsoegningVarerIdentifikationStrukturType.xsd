@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../operational/UCCAnsoegningBlanketFindesAEkvivalentVare.xsd"/>
+				     
+         <xs:include schemaLocation="../class/KN.xsd"/>
+         <xs:include schemaLocation="../class/VareIdentifikation.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:element name="UCCAnsøgningVarerIdentifikationStruktur"
+                     type="skat2016:UCCAnsøgningVarerIdentifikationStrukturType"/>
+         <xs:complexType name="UCCAnsøgningVarerIdentifikationStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="skat2016:UCCAnsøgningBlanketFindesÆkvivalentVare"/>
+                  
+                     <!--Sequence removed-->
+                        <xs:element name="ÆkvivalentVareFindes">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element name="ÆkvivalentVareListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          
+                                             <xs:element ref="skat2016:KNKode" minOccurs="1" maxOccurs="unbounded"/>
+                  
+                                             <xs:element ref="skat2016:KNKvalitetOgTekniskeEgenskaber" minOccurs="1"
+                                             maxOccurs="unbounded"/>
+                                          
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+				
+				                 
+                     <!--Sequence removed-->
+				
+                        <xs:element name="ÆkvivalentVareFindesIkke">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element name="VareIdentifikation">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element name="VareIdentifikationTypeListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="skat2016:VareIdentifikationType" minOccurs="1" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                          <xs:element ref="skat2016:VarePostIdentifikationKodeAndenForm"/>
+                                          <xs:element name="AndenVareIdentifikationListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element ref="skat2016:VarePostIdentifikationKodeAndenFormBeskrivelse" minOccurs="1"
+                                                      maxOccurs="unbounded"/>
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     
+                  
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

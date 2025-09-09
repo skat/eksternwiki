@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Omhandler specifikke angivelser inden for aktiv forædlings og  omhandleder økonomiske forudsætninger </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="ØkonomiskeForudsætningerKodePrVare" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En ansøger skal i forbindelse med angivelse af økonomiske forudsætninger angive en kode per vare. Ansøger kan vælge mellem 19 forskellige koder. For hver enkelt økonomisk forudsætning, skal alle de varer, der er omfattet af økonomiske forudsætninger angives.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

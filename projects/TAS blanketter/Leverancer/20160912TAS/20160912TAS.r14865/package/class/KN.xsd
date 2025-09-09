@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En KN kode er et varekoder, som afgiftsprodukter tilhører.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KNKodeType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst350Type.xsd"/>
+         <xs:include schemaLocation="../types/TekstLangType.xsd"/>
+         <xs:element name="KNKode" type="skat2016:KNKodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>En kode som benyttes til at gruppere afgiftsprodukter på et mere detaljeret niveau end kategori.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KNBeskrivelse" type="skat2016:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En kort beskrivelse af KN kode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KNKvalitetOgTekniskeEgenskaber" type="skat2016:TekstLangType">
+               
+               <xs:annotation>
+                  <xs:documentation>Omhandler handelsmæssig kvalitet og tekniske egenskaber. Ansøger udfylder den handelsmæssige kvalitet og de teksniske egenskaber.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

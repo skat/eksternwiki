@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/AlternativAdresse.xsd"/>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:element name="UCCAnsøgningAdresseStruktur"
+                     type="skat2016:UCCAnsøgningAdresseStrukturType"/>
+         <xs:complexType name="UCCAnsøgningAdresseStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:AlternativAdresseAdresseLinie1"/>
+                  
+                  <xs:element ref="skat2016:AlternativAdresseAdresseLinie2"/>
+                  
+                  <xs:element ref="skat2016:AlternativAdresseAdresseLinie3"/>
+                  
+                  <xs:element ref="skat2016:AlternativAdresseAdresseLinie4"/>
+                  
+                  <xs:element ref="skat2016:LandNavn"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

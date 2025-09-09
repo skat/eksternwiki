@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Opbevaring af lagerfaciliteter</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst50Type.xsd"/>
+         <xs:element name="OplagType" type="skat2016:Tekst50Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Blanket 5 har fælgende værdier: Drift af faciliteter til midlertidig opbevaring - egne og andres oplag (MIO) Drift af faciliteter til midlertidig opbevaring - Samlesendinger (MIO) Drift af faciliteter til midlertidig opbevaring - andres oplag (MIO) Drift af faciliteter til midlertidig opbevaring - på grænsen (MIG)  Blanket 8e har følgende værdier: Offentligt toldoplag type 1 (CW1) Privat toldoplag (CWP) </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

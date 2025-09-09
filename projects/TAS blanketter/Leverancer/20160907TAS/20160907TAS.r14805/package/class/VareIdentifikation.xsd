@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Angiver identifikation af varen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:element name="VareIdentifikationType" type="skat2016:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Ansøger kan vælge 1 eller flere af følgende vareidentifikationskoder:   1. Serie- eller fabrikationsnummer  2. Plomber, segl, kontrolmærker og andre særlige mærker  3. Oplysningsskema, INF  4. Prøveudtagning, illustrationer eller tekniske beskrivelser  5. Analyser  6. Oplysningsblad til lettelse af midlertidig eksport af varer  7. Andre former for identifikation (angiv nærmere)  8. Uden identifikationsforanstaltninger, jf. kodeksens artikel 250, stk. 2, litra b) (kun for midlertidig indførsel)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

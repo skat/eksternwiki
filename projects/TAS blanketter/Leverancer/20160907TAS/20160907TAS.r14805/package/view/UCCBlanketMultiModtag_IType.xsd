@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+         <xs:include schemaLocation="../class/Sag.xsd"/>
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAktivForaedlingStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningLagerfaciliteterOplaegVarerToldoplagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningLagerfaciliteterMidlertidigOpbevaringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningToldangivelseIndskrivningIKlarererRegnskabStrukturType.xsd"/>
+				     
+         <xs:element name="UCCBlanketMultiModtag_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="skat2016:UCCBlanketMultiModtag_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14805"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="UCCBlanketMultiModtag_IType">
+            <xs:sequence>
+               <xs:element ref="skat2016:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="BlanketListe">
+                        <xs:complexType>
+                           <xs:sequence>
+
+                              <xs:element name="Blanket" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="skat2016:SagNummer"/>
+                                       <xs:element name="BlanketValg">
+                                          <xs:complexType>
+                                             <xs:choice>
+                                                <xs:element ref="skat2016:UCCAnsøgningAktivForædlingStruktur"/>
+				
+				
+				                                            <xs:element ref="skat2016:UCCAnsøgningLagerfaciliteterOplægVarerToldoplagStruktur"/>
+				
+				
+				                                            <xs:element ref="skat2016:UCCAnsøgningLagerfaciliteterMidlertidigOpbevaringStruktur"/>
+				
+				
+				                                            <xs:element ref="skat2016:UCCAnsøgningToldangivelseIndskrivningIKlarererRegnskabStruktur"/>
+                                             </xs:choice>
+                                          </xs:complexType>
+                                       </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

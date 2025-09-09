@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14865</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/UCCDatakravOplaegAfVarer.xsd"/>
+         <xs:element name="LagerfaciliteterOplægVarerToldoplagOplæggelseAfVarerStruktur"
+                     type="skat2016:LagerfaciliteterOplægVarerToldoplagOplæggelseAfVarerStrukturType"/>
+         <xs:complexType name="LagerfaciliteterOplægVarerToldoplagOplæggelseAfVarerStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:UCCDatakravOplægAfVarerFjernelseAfVarerKrævet"/>
+               <xs:element name="FjernelseAfMidlertidigVarerFindes">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2016:UCCDatakravOplægAfVarerFjernelseAfVarerOplysninger"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element ref="skat2016:UCCDatakravOplægAfVarerSvindProcent"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

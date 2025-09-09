@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14689</xs:documentation>
+         </xs:annotation>
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagBasisoplysningerOmAnsoegningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningDokumentationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagKontaktoplysningerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagDatoStederStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagVarerIdentifikationStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagPlanlagteAktiviteterStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagAndetStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagOplaeggelseAfVarerStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/LagerfaciliteterOplaegVarerToldoplagUnderskriftType.xsd"/>
+				     
+         <xs:element name="UCCAnsøgningLagerfaciliteterOplægVarerToldoplagStruktur"
+                     type="skat2016:UCCAnsøgningLagerfaciliteterOplægVarerToldoplagStrukturType"/>
+         <xs:complexType name="UCCAnsøgningLagerfaciliteterOplægVarerToldoplagStrukturType">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagBasisoplysningerOmAnsøgningStruktur"/>
+
+               <xs:element ref="skat2016:UCCAnsøgningDokumentationStruktur" minOccurs="0"/>
+
+               <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagKontaktoplysningerStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagDatoStederStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagVarerIdentifikationStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagPlanlagteAktiviteterStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagAndetStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagOplæggelseAfVarerStruktur"/>
+                  
+                  <xs:element ref="skat2016:LagerfaciliteterOplægVarerToldoplagUnderskrift"/>
+               </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

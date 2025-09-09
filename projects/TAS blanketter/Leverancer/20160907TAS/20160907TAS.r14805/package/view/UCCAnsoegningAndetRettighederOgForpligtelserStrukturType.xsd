@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14805</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/UCCAnsoegningBlanketValg.xsd"/>
+         <xs:include schemaLocation="../class/FuldmagtErhverver.xsd"/>
+         <xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+         <xs:include schemaLocation="../class/Virksomhed.xsd"/>
+         <xs:include schemaLocation="../class/OEkonomiskOperatoer.xsd"/>
+				     
+         <xs:include schemaLocation="../view/UCCAnsoegningAdresseStrukturType.xsd"/>
+				     
+         <xs:element name="UCCAnsøgningAndetRettighederOgForpligtelserStruktur"
+                     type="skat2016:UCCAnsøgningAndetRettighederOgForpligtelserStrukturType"/>
+         <xs:complexType name="UCCAnsøgningAndetRettighederOgForpligtelserStrukturType">
+            <xs:sequence>
+         
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+               <!--Sequence removed-->
+                  <xs:element ref="skat2016:UCCAnsøgningBlanketValgHarRepræsentant"/>
+                  <xs:element name="TredjepartRepræsentantFindes">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2016:FuldmagtErhververFormaliteterBeskrivelse"/>
+                  
+                           <xs:element ref="skat2016:VirksomhedNavnFirmaNavn"/>
+
+                           <xs:element ref="skat2016:VirksomhedCVRNummer" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2016:ØkonomiskOperatørEORINummer" minOccurs="0"/>
+
+
+                           <xs:element name="UCCAnsøgningAdresse">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="skat2016:UCCAnsøgningAdresseStruktur"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+            
+         
+         
+         
+         
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

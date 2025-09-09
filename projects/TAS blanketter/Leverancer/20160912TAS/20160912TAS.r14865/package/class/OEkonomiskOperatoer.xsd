@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2016="http://skat.dk/begrebsmodel/2016/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2016/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Af EU specificeret som: Economic Operator (EO).  En økonomisk operatør er en virksomhed eller en person, som i forbindelse med varehandel (og dermed told) skal kommunikere med myndigheder i EU.  En økonomisk operatør er registreret med et EORI-nummer i et givent EU-land. EORI-nummeret er gyldigt i alle EU-lande.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst17Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst8Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/KodeEtCifferStartEtType.xsd"/>
+         <xs:include schemaLocation="../types/Tal5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst15Type.xsd"/>
+         <xs:element name="ØkonomiskOperatørEORINummer" type="skat2016:Tekst17Type">
+               
+               <xs:annotation>
+                  <xs:documentation>EORI-Nummer </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørAEONummer" type="skat2016:Tekst30Type">
+               
+               <xs:annotation>
+                  <xs:documentation>AEO-nummer - Autoriserede økonomiske operatører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørAEOStatus" type="skat2016:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>AEO = Autoriserede økonomiske operatører.  Gælder for virksomheder, der opfylder en række betingelser - og opnår en status, der giver adgang til visse fordele primært i forhold til sikkerhed i forbindelse med vareførslen feks. Lavere risikoværdier i forbindelse med risikoanalysen, afgivelse af færre data i forbindelse med sumarisk indgangsangivelse. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørErOffentligMarkering" type="skat2016:MarkeringType">
+               
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørEtableretDato" type="skat2016:DatoType">
+               
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørVirksomhedType" type="skat2016:KodeEtCifferStartEtType">
+               
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørAktivitetType" type="skat2016:Tal5Type">
+               
+            </xs:element>
+         <xs:element name="ØkonomiskOperatørTredjeLandNummer" type="skat2016:Tekst15Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det nationale identifikationsnummer der er tildelt en økonomisk operatør til told formål af den kompetente myndighed i et tredje land.  Fx: En amerikansk virksomhed, som optræder som økonomisk operatør i EU, vil have en national virksomhedsregistering i USA.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>
