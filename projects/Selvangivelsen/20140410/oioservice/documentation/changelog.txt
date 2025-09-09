@@ -1,0 +1,50 @@
+ÆNDRINGSLOG v. 3.11
+====================================================================================
+De beløbsfelter, der før var defineret som en streng, er nu ændret til typen decimal. Af samme grund ændrer en række felter navn:
+- ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloebTekst -> ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloeb
+- BefordringsFradragBeloebTekst -> BefordringsFradragBeloeb
+- BeskaeftigelsesFradragBeloebTekst -> BeskaeftigelsesFradragBeloeb
+- FastEjendomTabBeloebTekst -> FastEjendomTabBeloeb
+- KapitalIndkomstAndenKapitalIndkomstBeloebTekst -> KapitalIndkomstAndenKapitalIndkomstBeloeb
+- KapitalIndkomstFinansielleKontrakterBeloebTekst -> KapitalIndkomstFinansielleKontrakterBeloeb
+- KapitalIndkomstGevinstTabAktierBevisInvesteringsSelskabBeloebTekst -> KapitalIndkomstGevinstTabAktierBevisInvesteringsSelskabBeloeb
+- KapitalIndkomstGevinstTabObligationerEjMarkedBeloebTekst -> KapitalIndkomstGevinstTabObligationerEjMarkedBeloeb
+- KapitalIndkomstGevinstTabObligationerInvesteringForeningBeloebTekst -> KapitalIndkomstGevinstTabObligationerInvesteringForeningBeloeb
+- KapitalIndkomstGevinstTabObligationerMarkedBeloebTekst -> KapitalIndkomstGevinstTabObligationerMarkedBeloeb
+- KapitalIndkomstNettoLejeIndtaegtBeloebTekst -> KapitalIndkomstNettoLejeIndtaegtBeloeb
+- KapitalIndkomstRenteIndtaegtBeloebTekst -> KapitalIndkomstRenteIndtaegtBeloeb
+- KapitalIndkomstReserveFondsUdlodningVaerdiStigningBeloebTekst -> KapitalIndkomstReserveFondsUdlodningVaerdiStigningBeloeb
+- KapitalIndkomstUdbytteUdlodningInvesteringsForeningBeloebTekst -> KapitalIndkomstUdbytteUdlodningInvesteringsForeningBeloeb
+- LigningsmaessigtFradragAkasseBeloebTekst -> LigningsmaessigtFradragAkasseBeloeb
+- LigningsmaessigtFradragBoerneDagplejereFiskereBeloebTekst -> LigningsmaessigtFradragBoerneDagplejereFiskereBeloeb
+- LigningsmaessigtFradragFagligtKontingentBeloebTekst -> LigningsmaessigtFradragFagligtKontingentBeloeb
+- LigningsmaessigtFradragGaverForeningerBeloebTekst -> LigningsmaessigtFradragGaverForeningerBeloeb
+- LigningsmaessigtFradragGaverKulturForskningBeloebTekst -> LigningsmaessigtFradragGaverKulturForskningBeloeb
+- LigningsmaessigtFradragIndskudEtableringsKontoBeloebTekst -> LigningsmaessigtFradragIndskudEtableringsKontoBeloeb
+- LigningsmaessigtFradragKontingentVirksomhedBeloebTekst -> LigningsmaessigtFradragKontingentVirksomhedBeloeb
+- LigningsmaessigtFradragLoebendeYdelserForeningerBeloebTekst -> LigningsmaessigtFradragLoebendeYdelserForeningerBeloeb
+- LigningsmaessigtFradragRejseUdgifterBeloebTekst -> LigningsmaessigtFradragRejseUdgifterBeloeb
+- LigningsmaessigtFradragUdgifterFrededeBygningerBeloebTekst -> LigningsmaessigtFradragUdgifterFrededeBygningerBeloeb
+- LigningsmaessigtFradragUdgifterServiceFradragBeloebTekst -> LigningsmaessigtFradragUdgifterServiceFradragBeloeb
+- LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb -> LigningsmaessigtFradragUnderholdsBidragBoerneBidragBeloeb (*)
+- LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloebTekst -> LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloeb
+- PersonligIndkomstAndenPersonligIndkomstBeloebTekst -> PersonligIndkomstAndenPersonligIndkomstBeloeb
+- PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoderBeloebTekst -> PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoderBeloeb
+- PersonligIndkomstHonorarBeloebTekst -> PersonligIndkomstHonorarBeloeb
+- PersonligIndkomstHonorarEfterAMBidragBeloeb (beholder samme navn)
+- PersonligIndkomstHaedersGaverBeloebTekst -> PersonligIndkomstHaedersGaverBeloeb
+- PersonligIndkomstHaevningEtableringsKontoBeloebTekst -> PersonligIndkomstHaevningEtableringsKontoBeloeb
+- PersonligIndkomstHaevningIvaerksaetterKontoBeloebTekst -> PersonligIndkomstHaevningIvaerksaetterKontoBeloeb
+- PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseBeloebTekst -> PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseBeloeb
+- PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloebTekst -> PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloeb
+- PersonligIndkomstKapitalafkastAktierAnparterBeloebTekst -> PersonligIndkomstKapitalafkastAktierAnparterBeloeb
+- PersonligIndkomstLoenIndkomstBeloebTekst -> PersonligIndkomstLoenIndkomstBeloeb
+- PersonligIndkomstPensionDagpengeStipendieBeloebTekst -> PersonligIndkomstPensionDagpengeStipendieBeloeb
+- PersonligIndkomstPrivatDagplejeHushjaelpBeloebTekst -> PersonligIndkomstPrivatDagplejeHushjaelpBeloeb
+- PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloebTekst -> PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb
+- PersonligIndkomstTotalEfterAMBidragBeloebTekst -> PersonligIndkomstTotalEfterAMBidragBeloeb
+- PersonligIndkomstUnderholdsbidragBeloebTekst -> PersonligIndkomstUnderholdsbidragBeloeb
+- ReguleretTabKontrakterBeloebTekst -> ReguleretTabKontrakterBeloeb
+- ReguleretTabKontrakterFremfoerselBeloebTekst -> ReguleretTabKontrakterFremfoerselBeloeb
+- RenteudgiftOffentligGaeldBeloebTekst -> RenteudgiftOffentligGaeldBeloeb
+(*) Fejl rettet i navngivningen

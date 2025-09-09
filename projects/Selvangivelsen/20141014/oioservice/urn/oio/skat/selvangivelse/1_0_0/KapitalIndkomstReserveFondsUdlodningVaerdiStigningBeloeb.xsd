@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:kapitalindkomstreservefondsudlodningvaerdistigningbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="KapitalIndkomstReserveFondsUdlodningVaerdiStigningBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Beløb der udgør:  - Reservefondsudlodninger fra danske realkreditinstitutter.  - Kapitalværdistigninger af danske kapitalforsikringer, hvor forsikringsbegivenheden (dødsfald, opnået alder eller lignende) er indtrådt, men udbetalingen sker ratevis eller er udskudt.  - Når du indfrier gamle lån ved at få udbetalt reservefondsandele: 2/3 af det beløb, udlodningen overstiger det oprindelige indskud med. Det gælder, uanset om du får udlodningen udbetalt kontant, eller om du anvender beløbet helt eller delvis som indskud til reservefond i et nyt lån. - Når du får en reservefondsudlodning ved ekstraordinært at afskrive på restgælden, uden at det har forbindelse med indfrielsen af lånet: 2/3 af det beløb, du får udloddet fra reservefonden.  Rubrik: 33 Felt: 249</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

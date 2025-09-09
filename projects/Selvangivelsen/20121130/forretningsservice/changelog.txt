@@ -1,0 +1,46 @@
+ÆNDRINGSLOG FOR PersonSelvangivelseOpret v. 3.1
+====================================================================================
+
+Input
+------------------------------------------------------------------------------------
+Adresser på udenlandske ejendomme under EjendomsavanceAngivelse er ændret til ét element
+
+EjendomAngivelseListe ændret til en liste
+
+Adresser på udenlandske ejendomme under EjendomAngivelse er ændret til en adresselinje + landekode
+
+ID på RegnskabAngivelse ændret til valg mellem SE- eller personnummer
+
+Nyt element i input: PersonSelvangivelseRevisorindberetning (boolean)
+
+BeløbFeltListe: AngivelseFeltIndholdBeløb ændret navn til SelvangivelseFeltIndholdBeløb som max. kan indeholde 13 cifre + to decimaler
+
+Nyt element i input: PersonSelvangivelseFradragHelårsomregning (boolean)
+
+Blokke med underholds- og renteangivelse er fjernet. 
+
+
+Output
+------------------------------------------------------------------------------------
+Personnavn og virksomhedsnavn fjernet fra FejlIdentifikation-blokken i output.
+
+Årsopgørelse er nu liste af max 2 med personnummer som id (person + evt. ægtefælle)
+
+Tilføjet blokke KonjunkturUdligningListe og OpsparetOverskudListe i opgørelsen
+
+
+OIO-mapning
+------------------------------------------------------------------------------------
+Ændret mapning af ejendomsnummer. Elementet EjendomNummer mappes nu til 
+RealPropertyNumber (string), som er uden kommunenummer. Bemærk typekonverteringen.
+
+Tilføjet nye OIO-elementer afledt af ovenstående:
+PersonligIndkomstOverfoertKonjunkturUdligningProcent
+PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb
+PersonligIndkomstOverfoertOpsparetOverskudProcent
+PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb
+SelvangivelseFeltIndholdBeloeb
+PersonSelvangivelseFradragHelaarsomregningIndikator
+PersonSelvangivelseRevisorindberetningIndikator
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:adresse="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2005/06/24/" xmlns:vandindvinding="urn:oio:skat:vandindvinding:1.0.0" xmlns:dkcc2="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" xmlns:xkom1="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" xmlns:adressetype="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" xmlns:land="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/4677/artefact/SKAT_LandNavn.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" schemaLocation="http://digitaliser.dk/resource/971/artefact/SKAT_AdresseTypeNavn.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" schemaLocation="http://digitaliser.dk/resource/6316/artefact/SKAT_AdresseTypeKode.xsd"/><xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" schemaLocation="http://digitaliser.dk/resource/3018/artefact/XKOM_EndDate.xsd"/><xs:import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/784/artefact/XKOM_StartDate.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/" schemaLocation="http://digitaliser.dk/resource/2988/artefact/DKCC_PostOfficeBoxIdentifier.xsd"/><xs:import namespace="urn:oio:skat:vandindvinding:1.0.0" schemaLocation="http://digitaliser.dk/resource/346488/artefact/AdresseByNavn.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="http://digitaliser.dk/resource/3904/artefact/DKCC_DistrictName.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="http://digitaliser.dk/resource/320/artefact/DKCC_PostCodeIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2005/06/24/" schemaLocation="http://digitaliser.dk/resource/6293/artefact/ITST_CareOfName.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="http://digitaliser.dk/resource/4780/artefact/DKCC_SuiteIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="http://digitaliser.dk/resource/4260/artefact/DKCC_FloorIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="http://digitaliser.dk/resource/1721/artefact/SKAT_AdresseHusNummerLigeIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2548414/artefact/AdresseTilHusBogstavIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" schemaLocation="http://digitaliser.dk/resource/3189/artefact/BBR_HouseNumberCharacterIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="http://digitaliser.dk/resource/5943/artefact/SKAT_AdresseHusNummerSlutIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="http://digitaliser.dk/resource/1553/artefact/SKAT_AdresseHusNummerStartIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/1222/artefact/CPR_StreetCode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" schemaLocation="http://digitaliser.dk/resource/6355/artefact/DKCC_StreetName.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" schemaLocation="http://digitaliser.dk/resource/2137/artefact/SKAT_AdresseAnvendelseKode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="http://digitaliser.dk/resource/3166/artefact/DKCC_CountryIdentificationCode.xsd"/><xs:element name="AdresseStruktur" type="sla:AdresseStrukturType"/>
+	<xs:complexType name="AdresseStrukturType">
+		<xs:sequence>
+			<xs:element name="Adresse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="adresse:AdresseAnvendelseKode" minOccurs="0"/>
+						<xs:element ref="dkcc1:StreetName" minOccurs="0"/>
+						<xs:element ref="core:StreetCode" minOccurs="0"/>
+						<xs:element ref="adresse:AdresseHusNummerStartIdentifikator" minOccurs="0"/>
+						<xs:element ref="adresse:AdresseHusNummerSlutIdentifikator" minOccurs="0"/>
+						<xs:element ref="bbr:HouseNumberCharacterIdentifier" minOccurs="0"/>
+						<xs:element ref="selvangivelse:AdresseTilHusBogstavIdentifikator" minOccurs="0"/>
+						<xs:element ref="adresse:AdresseHusNummerLigeIndikator" minOccurs="0"/>
+						<xs:element ref="dkcc:FloorIdentifier" minOccurs="0"/>
+						<xs:element ref="dkcc:SuiteIdentifier" minOccurs="0"/>
+						<xs:element ref="itst:CareOfName" minOccurs="0"/>
+						<xs:element ref="dkcc1:PostCodeIdentifier" minOccurs="0"/>
+						<xs:element ref="dkcc1:DistrictName" minOccurs="0"/>
+						<xs:element ref="vandindvinding:AdresseByNavn" minOccurs="0"/>
+						<xs:element ref="dkcc2:PostOfficeBoxIdentifier" minOccurs="0"/>
+						<xs:element ref="xkom:StartDate" minOccurs="0"/>
+						<xs:element ref="xkom1:EndDate" minOccurs="0"/>
+						<xs:element ref="adressetype:AdresseTypeKode" minOccurs="0"/>
+						<xs:element ref="adressetype:AdresseTypeNavn" minOccurs="0"/>
+						<xs:element ref="dkcc:CountryIdentificationCode" minOccurs="0"/>
+						<xs:element ref="land:LandNavn" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb.xsd"/><xs:element name="OevrigeOplysningerStruktur" type="sla:OevrigeOplysningerStrukturType"/>
+	<xs:complexType name="OevrigeOplysningerStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

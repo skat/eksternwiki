@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609387/artefact/PersonligIndkomstOevrigeFradragPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609737/artefact/PersonligIndkomstVirksomhedsBeskatningKonjunkturBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609726/artefact/PersonligIndkomstUnderskudVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609714/artefact/PersonligIndkomstUnderholdsbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547432/artefact/PersonligIndkomstTotalEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609703/artefact/PersonligIndkomstTilbageBetalingKontantHjaelpIntroYdelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609692/artefact/PersonligIndkomstRenteIndtaegtVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609681/artefact/PersonligIndkomstPrivatLivsvarigPensionsOrdningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2548339/artefact/PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609670/artefact/PersonligIndkomstPrivatDagplejeHushjaelpBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609658/artefact/PersonligIndkomstPensionDagpengeStipendieBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609647/artefact/PersonligIndkomstOverskudVirksomhedUdlejningEjendomBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609803/artefact/PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609793/artefact/PersonligIndkomstOverfoertOpsparetOverskudProcent.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609782/artefact/PersonligIndkomstOverfoertOpsparetOverskudBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609771/artefact/PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609760/artefact/PersonligIndkomstOverfoertKonjunkturUdligningProcent.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609748/artefact/PersonligIndkomstOverfoertKonjunkturUdligningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609636/artefact/PersonligIndkomstLoenIndkomstEfterAMBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609624/artefact/PersonligIndkomstLoenIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609612/artefact/PersonligIndkomstKapitalafkastAktierAnparterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547423/artefact/PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609600/artefact/PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609589/artefact/PersonligIndkomstIndkomstVirksomhedsBeskatningEfterAMBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609578/artefact/PersonligIndkomstIndkomstVirksomhedsBeskatningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609565/artefact/PersonligIndkomstHaevningIvaerksaetterKontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609553/artefact/PersonligIndkomstHaevningEtableringsKontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609541/artefact/PersonligIndkomstHaedersGaverBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2548330/artefact/PersonligIndkomstHonorarEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608744/artefact/PersonligIndkomstHonorarBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2606422/artefact/PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoderBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609530/artefact/PersonligIndkomstFradragMedarbejdendeAegtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609519/artefact/PersonligIndkomstFradragIndskudIvaerksaetterKontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609443/artefact/PersonligIndkomstFradragIndbetalingFoerPensionsOrdningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609432/artefact/PersonligIndkomstFradragGaesteStuderendeFoerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609421/artefact/PersonligIndkomstFradragGaesteStuderendeEfterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609410/artefact/PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2609398/artefact/PersonligIndkomstAndenPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2606411/artefact/ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloeb.xsd"/><xs:element name="PersonligIndkomstStruktur" type="sla:PersonligIndkomstStrukturType"/>
+	<xs:complexType name="PersonligIndkomstStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstOevrigeFradragPersonligIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstAndenPersonligIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragGaesteStuderendeEfterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragGaesteStuderendeFoerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragIndbetalingFoerPensionsOrdningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragIndskudIvaerksaetterKontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragMedarbejdendeAegtefaelleBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoderBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHaedersGaverBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHaevningEtableringsKontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHaevningIvaerksaetterKontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHonorarBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHonorarEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstIndkomstVirksomhedsBeskatningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstIndkomstVirksomhedsBeskatningEfterAMBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstKapitalafkastAktierAnparterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstLoenIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstLoenIndkomstEfterAMBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstOverskudVirksomhedUdlejningEjendomBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPensionDagpengeStipendieBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPrivatDagplejeHushjaelpBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPrivatLivsvarigPensionsOrdningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstRenteIndtaegtVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstTilbageBetalingKontantHjaelpIntroYdelseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstTotalEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstUnderholdsbidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstUnderskudVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstVirksomhedsBeskatningKonjunkturBeloeb" minOccurs="0"/>
+			<xs:element name="KonjunkturUdligningListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="KonjunkturUdligning" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertKonjunkturUdligningBeloeb"/>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertKonjunkturUdligningProcent"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="selvangivelse:PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb" minOccurs="0"/>
+			<xs:element name="OpsparetOverskudListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OpsparetOverskud" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertOpsparetOverskudBeloeb"/>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertOpsparetOverskudProcent"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="selvangivelse:PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

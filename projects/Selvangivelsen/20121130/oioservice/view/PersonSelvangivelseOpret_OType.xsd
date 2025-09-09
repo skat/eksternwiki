@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:hentselv="urn:oio:skat:hentselv:1.0.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:schema="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247432/artefact/SKAT_HovedOplysningerSvar.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/DelaarSpecifikationBiblioteksafgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625866/artefact/AarligSkatteOplysningSkattepligtigIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625802/artefact/AarligSkatteOplysningRestskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625752/artefact/AarligSkatteOplysningPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625604/artefact/AarligSkatteOplysningOverskydendeSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625556/artefact/AarligSkatteOplysningLigningsmaessigtFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625498/artefact/AarligSkatteOplysningKapitalindkomstBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" schemaLocation="http://digitaliser.dk/resource/7439/artefact/AarIdentifikator_20080901.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AarligSkatteoplysningForskudSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1625148/artefact/AarligSkatteOplysningBeregnetSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:hentselv:1.0.0" schemaLocation="http://digitaliser.dk/resource/1624757/artefact/OpgoerelseFilIndholdData.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="http://digitaliser.dk/resource/3166/artefact/DKCC_CountryIdentificationCode.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/6448/artefact/DKCC_PostalAddressFirstLineText.xsd"/><xs:import namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2002/06/28/" schemaLocation="http://digitaliser.dk/resource/5317/artefact/BBR_RealPropertyIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="http://digitaliser.dk/resource/2665/artefact/SKAT_VirksomhedSENummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:include schemaLocation="../view/PersonligIndkomstStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KapitalIndkomstStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/LigningmaessigFradragStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/AktierSpecifikationStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/OEvrigeOplysningerStrukturType.xsd"/>
+	<xs:element name="PersonSelvangivelseOpret_O" type="sla:PersonSelvangivelseOpret_OType">
+	</xs:element>
+	<xs:complexType name="PersonSelvangivelseOpret_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="FejlIdentifikation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier" minOccurs="0"/>
+						<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator" minOccurs="0"/>
+						<xs:element ref="bbr:RealPropertyIdentifier" minOccurs="0"/>
+						<xs:element ref="dkcc:PostalAddressFirstLineText" minOccurs="0"/>
+						<xs:element ref="dkcc1:CountryIdentificationCode" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AarsopgoerelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Aarsopgoerelse" minOccurs="0" maxOccurs="2">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+									<xs:element ref="hentselv:OpgoerelseFilIndholdData"/>
+									<xs:element name="AarsopgoerelseData">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="hentselv:AarligSkatteOplysningBeregnetSkatBeloeb"/>
+												<xs:element ref="selvangivelse:AarligSkatteoplysningForskudSkatBeloeb"/>
+												<xs:element ref="schema:AarIdentifikator"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningKapitalindkomstBeloeb"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningLigningsmaessigtFradragBeloeb"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningOverskydendeSkatBeloeb"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningPersonligIndkomstBeloeb"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningRestskatBeloeb"/>
+												<xs:element ref="hentselv:AarligSkatteOplysningSkattepligtigIndkomstBeloeb"/>
+												<xs:element ref="sla:PersonligIndkomstStruktur" minOccurs="0"/>
+												<xs:element ref="sla:KapitalIndkomstStruktur" minOccurs="0"/>
+												<xs:element ref="sla:LigningmaessigFradragStruktur" minOccurs="0"/>
+												<xs:element ref="sla:AktierSpecifikationStruktur" minOccurs="0"/>
+												<xs:element ref="sla:OevrigeOplysningerStruktur" minOccurs="0"/>
+												<xs:element name="DelaarSpecifikation" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="selvangivelse:DelaarSpecifikationBiblioteksafgiftBeloeb" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

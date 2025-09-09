@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation>At indberette den udvidede selvangivelse (S10) og returnere den opdaterede årsopgørelse inkl. evt. ægtefælles.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/PersonSelvangivelseOpret_IType.xsd"/>
+	<xs:include schemaLocation="../view/PersonSelvangivelseOpret_OType.xsd"/>
+	<xs:element name="PersonSelvangivelseOpretInterface" type="sla:PersonSelvangivelseOpretInterfaceType"/>
+	<xs:complexType name="PersonSelvangivelseOpretInterfaceType">
+		<xs:choice>
+			<xs:element ref="sla:PersonSelvangivelseOpret_I"/>
+			<xs:element ref="sla:PersonSelvangivelseOpret_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547218/artefact/UdenlandskAdresseUstruktureretText.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="http://digitaliser.dk/resource/3166/artefact/DKCC_CountryIdentificationCode.xsd"/><xs:include schemaLocation="../view/AdresseStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/UdenlandskAdresseStrukturType.xsd"/>
+	<xs:element name="InternationalAdresseStruktur" type="sla:InternationalAdresseStrukturType"/>
+	<xs:complexType name="InternationalAdresseStrukturType">
+		<xs:sequence>
+			<xs:element ref="dkcc:CountryIdentificationCode"/>
+			<xs:element name="AdresseTypeValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="selvangivelse:UdenlandskAdresseUstruktureretText"/>
+						<xs:element ref="sla:AdresseStruktur"/>
+						<xs:element ref="sla:UdenlandskAdresseStruktur"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

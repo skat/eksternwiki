@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+<wsdl:definitions targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseOpretService" xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At indberette den udvidede selvangivelse (S10) og returnere den opdaterede årsopgørelse inkl. evt. ægtefælles.</xs:documentation>
+		<xs:documentation>3.9</xs:documentation>
+		<xs:documentation>r10453</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="../service/PersonSelvangivelseOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="PersonSelvangivelseOpretServiceRequest">
+		<wsdl:part name="Request" element="skat2012:PersonSelvangivelseOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="PersonSelvangivelseOpretServiceResponse">
+		<wsdl:part name="Response" element="skat2012:PersonSelvangivelseOpret_O"/>
+	</wsdl:message>
+	<wsdl:portType name="PersonSelvangivelseOpretServicePortType">
+		<wsdl:operation name="getPersonSelvangivelseOpret">
+			<wsdl:input message="skat2012:PersonSelvangivelseOpretServiceRequest"/>
+			<wsdl:output message="skat2012:PersonSelvangivelseOpretServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PersonSelvangivelseOpretServiceBinding" type="skat2012:PersonSelvangivelseOpretServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getPersonSelvangivelseOpret">
+			<soap:operation soapAction="getPersonSelvangivelseOpret"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PersonSelvangivelseOpretServiceBindingQSService">
+		<wsdl:port name="PersonSelvangivelseOpretServiceBindingQSPort" binding="skat2012:PersonSelvangivelseOpretServiceBinding">
+			<soap:address location="https://xxxxxxxxx/PersonSelvangivelseOpretServicePort"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547405/artefact/LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547396/artefact/LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547387/artefact/LigningsmaessigtFradragUdgifterServiceFradragBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547378/artefact/LigningsmaessigtFradragUdgifterFrededeBygningerBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547317/artefact/LigningsmaessigtFradragRejseUdgifterBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547308/artefact/LigningsmaessigtFradragLoebendeYdelserForeningerBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547299/artefact/LigningsmaessigtFradragKontingentVirksomhedBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547290/artefact/LigningsmaessigtFradragIndskudEtableringsKontoBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547281/artefact/LigningsmaessigtFradragGaverKulturForskningBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547272/artefact/LigningsmaessigtFradragGaverForeningerBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547263/artefact/LigningsmaessigtFradragFagligtKontingentBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547254/artefact/LigningsmaessigtFradragBoerneDagplejereFiskereBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547227/artefact/LigningsmaessigtFradragAkasseBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547245/artefact/BeskaeftigelsesFradragBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547236/artefact/BefordringsFradragBeloebTekst.xsd"/><xs:element name="LigningmaessigFradragStruktur" type="sla:LigningmaessigFradragStrukturType"/>
+	<xs:complexType name="LigningmaessigFradragStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragAkasseBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:BefordringsFradragBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:BeskaeftigelsesFradragBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragBoerneDagplejereFiskereBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragFagligtKontingentBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragGaverForeningerBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragGaverKulturForskningBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragIndskudEtableringsKontoBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragKontingentVirksomhedBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragLoebendeYdelserForeningerBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragRejseUdgifterBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragUdgifterFrededeBygningerBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragUdgifterServiceFradragBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloebTekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

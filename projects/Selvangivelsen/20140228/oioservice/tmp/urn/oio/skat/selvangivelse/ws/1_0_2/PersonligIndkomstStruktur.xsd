@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstTotalEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstHonorarEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOverfoertOpsparetOverskudProcent.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOverfoertKonjunkturUdligningProcent.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstLoenindkomstEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstIndkomstVirksomhedsbeskatningEfterAMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOverfoertOpsparetOverskudBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOverfoertKonjunkturudligningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstVirksomhedsbeskatningKonjunkturBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstOevrigeFradragPersonligIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstUnderskudVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstUnderholdsbidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstTilbagebetalingKontanthjaelpIntroydelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstRenteIndtaegtVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstPrivatLivsvarigPensionsordningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstPrivatDagplejeHushjaelpBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstPensionDagpengeStipendieBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstLoenindkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstKapitalafkastAktierAnparterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstGratialeFratraedelsesgodtgoerelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstIndkomstVirksomhedsbeskatningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstHaevningIvaerksaetterkontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstHaevningEtableringskontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstHaedersgaverBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstHonorarBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstFradragMedarbejdendeAegtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstFradragIndskudIvaerksaetterkontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstFradragIndbetalingFoerPensionsordningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstFradragGaestestuderendeFoerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstFradragGaestestuderendeEfterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonligIndkomstAndenPersonligIndkomstBeloeb.xsd"/><xs:element name="PersonligIndkomstStruktur" type="sla:PersonligIndkomstStrukturType"/>
+	<xs:complexType name="PersonligIndkomstStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:PersonligIndkomstAndenPersonligIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragGaestestuderendeEfterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragGaestestuderendeFoerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragIndbetalingFoerPensionsordningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragIndskudIvaerksaetterkontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstFradragMedarbejdendeAegtefaelleBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHonorarBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHonorarEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHaedersgaverBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHaevningEtableringskontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstHaevningIvaerksaetterkontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstIndkomstVirksomhedsbeskatningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstIndkomstVirksomhedsbeskatningEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstGratialeFratraedelsesgodtgoerelseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstKapitalafkastAktierAnparterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstLoenindkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstLoenindkomstEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPensionDagpengeStipendieBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPrivatDagplejeHushjaelpBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstPrivatLivsvarigPensionsordningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstRenteIndtaegtVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstTilbagebetalingKontanthjaelpIntroydelseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstUnderholdsbidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstUnderskudVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstOevrigeFradragPersonligIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstTotalEfterAMBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:PersonligIndkomstVirksomhedsbeskatningKonjunkturBeloeb" minOccurs="0"/>
+			<xs:element name="KonjunkturUdligningListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="KonjunkturUdligning" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertKonjunkturudligningBeloeb"/>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertKonjunkturUdligningProcent"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="selvangivelse:PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb" minOccurs="0"/>
+			<xs:element name="OpsparetOverskudListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OpsparetOverskud" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertOpsparetOverskudBeloeb"/>
+									<xs:element ref="selvangivelse:PersonligIndkomstOverfoertOpsparetOverskudProcent"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="selvangivelse:PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

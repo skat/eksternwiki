@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteEjUdbytteSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteDkAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/AktierSpecifikationGevinstTabAktierMarkedBeloeb.xsd"/><xs:element name="AktierSpecifikationStruktur" type="sla:AktierSpecifikationStrukturType"/>
+	<xs:complexType name="AktierSpecifikationStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:AktierSpecifikationGevinstTabAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteDkAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjUdbytteSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

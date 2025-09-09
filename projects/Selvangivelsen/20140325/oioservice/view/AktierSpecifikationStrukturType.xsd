@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2549200/artefact/ReguleretTabKontrakterKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547209/artefact/ReguleretTabKontrakterFremfoerselBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547191/artefact/ReguleretTabKontrakterBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547200/artefact/FastEjendomTabBeloebTekst.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608668/artefact/AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608652/artefact/AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608638/artefact/AktierSpecifikationUdbytteEjUdbytteSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608626/artefact/AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608615/artefact/AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608604/artefact/AktierSpecifikationUdbytteDkAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608593/artefact/AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2608580/artefact/AktierSpecifikationGevinstTabAktierMarkedBeloeb.xsd"/><xs:element name="AktierSpecifikationStruktur" type="sla:AktierSpecifikationStrukturType"/>
+	<xs:complexType name="AktierSpecifikationStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:AktierSpecifikationGevinstTabAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteDkAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjUdbytteSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretTabKontrakterBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretTabKontrakterKode" minOccurs="0"/>
+			<xs:element ref="selvangivelse:FastEjendomTabBeloebTekst" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretTabKontrakterFremfoerselBeloebTekst" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

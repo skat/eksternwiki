@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:virksomhedsordningindskudskontokode="urn:oio:skat:selvangivelse:1.0.0" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="VirksomhedsordningIndskudskontoKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>En kombination af svarmuligheder vedr. indskudskonto: 1) forøget negativ saldo, 2) negativ saldo større end 1/2 mio, 3) sikkerhed for gæld. For hver kan der angives ja eller nej. Der er ialt 8 kodekombinationer: 135, 136, 145, 146, 235, 236, 245, 246. De tre cifre angiver svar på de tre spørgsmål (sprm.1: 1=ja, 2=nej; sprm. 2: 3=ja, 4=nej; sprm. 3: 5=ja, 6=nej). Eksempelvis betyder koden 135 ja til alle tre sprm.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

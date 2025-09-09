@@ -1,0 +1,902 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<conversion>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonCPRNummer"/>
+		<to namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" name="PersonCivilRegistrationIdentifier" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="VirksomhedSENummer"/>
+		<to namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" name="VirksomhedSENummerIdentifikator" schemaLocation="http://digitaliser.dk/resource/2665/artefact/SKAT_VirksomhedSENummerIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseIndkomstÅr"/>
+		<to namespace="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" name="AarIdentifikator" schemaLocation="http://digitaliser.dk/resource/7439/artefact/AarIdentifikator_20080901.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="BlanketFeltNummer"/>
+		<to namespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" name="BlanketFeltNummerIdentifikator" schemaLocation="http://digitaliser.dk/resource/2307/artefact/SKAT_BlanketFeltNummerIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseVirksomhedOphør"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseVirksomhedOphoerIndikator" schemaLocation="../class/PersonSelvangivelseVirksomhedOphoerIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseVirksomhedOphørTidligere"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseVirksomhedOphoerTidligereIndikator" schemaLocation="../class/PersonSelvangivelseVirksomhedOphoerTidligereIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseHenstandsbegæring"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseHenstandsbegaeringIndikator" schemaLocation="../class/PersonSelvangivelseHenstandsbegaeringIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseBeskatningsordning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseBeskatningsordningKode" schemaLocation="../class/PersonSelvangivelseBeskatningsordningKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseEjendomsoplysningAccept"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseEjendomsoplysningAcceptIndikator" schemaLocation="../class/PersonSelvangivelseEjendomsoplysningAcceptIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseEjendomsoplysningSupplement"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseEjendomsoplysningSupplementIndikator" schemaLocation="../class/PersonSelvangivelseEjendomsoplysningSupplementIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseOplysningsfritagelse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseOplysningsfritagelseIndikator" schemaLocation="../class/RegnskabAngivelseOplysningsfritagelseIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseOplysningsfritagelseÅrsag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseOplysningsfritagelseAarsagKode" schemaLocation="../class/RegnskabAngivelseOplysningsfritagelseAarsagKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseRevisorbistand"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseRevisorbistandIndikator" schemaLocation="../class/RegnskabAngivelseRevisorbistandIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseRevisorbistandArt"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseRevisorbistandArtKode" schemaLocation="../class/RegnskabAngivelseRevisorbistandArtKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseRevisorerklæring"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseRevisorerklaeringKode" schemaLocation="../class/RegnskabAngivelseRevisorerklaeringKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseRevisorforbehold"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseRevisorforbeholdKode" schemaLocation="../class/RegnskabAngivelseRevisorforbeholdKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelsePrivateAndeleArt"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelsePrivateAndeleArtKode" schemaLocation="../class/RegnskabAngivelsePrivateAndeleArtKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RegnskabAngivelseGældseftergivelse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RegnskabAngivelseGaeldseftergivelseIndikator" schemaLocation="../class/RegnskabAngivelseGaeldseftergivelseIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomsavanceAngivelseGenanbringelsePlacering"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomsavanceGenanbringelsePlaceringKode" schemaLocation="../class/EjendomsavanceGenanbringelsePlaceringKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomNummer"/>
+		<to namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" name="MunicipalRealPropertyIdentifier" schemaLocation="http://digitaliser.dk/resource/5760/artefact/BBR_MunicipalRealPropertyIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie1"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" name="PostalAddressFirstLineText" schemaLocation="http://digitaliser.dk/resource/6448/artefact/DKCC_PostalAddressFirstLineText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie2"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" name="PostalAddressSecondLineText" schemaLocation="http://digitaliser.dk/resource/5909/artefact/DKCC_PostalAddressSecondLineText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie3"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" name="PostalAddressThirdLineText" schemaLocation="http://digitaliser.dk/resource/1572/artefact/DKCC_PostalAddressThirdLineText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie4"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" name="PostalAddressFourthLineText" schemaLocation="http://digitaliser.dk/resource/4045/artefact/DKCC_PostalAddressFourthLineText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie5"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" name="PostalAddressFifthLineText" schemaLocation="http://digitaliser.dk/resource/6906/artefact/DKCC_PostalAddressFifthLineText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie6"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" name="PostalAddressSixthLineText" schemaLocation="http://digitaliser.dk/resource/4722/artefact/DKCC_PostalAddressSixthLineText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LandKode"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" name="CountryIdentificationCode" schemaLocation="http://digitaliser.dk/resource/3166/artefact/DKCC_CountryIdentificationCode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AngivelseFeltIndhold"/>
+		<to namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" name="AngivelseFeltIndholdTekst" schemaLocation="http://digitaliser.dk/resource/4455/artefact/SKAT_AngivelseFeltIndholdTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseEjerandel"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseEjerandelProcent" schemaLocation="../class/EjendomAngivelseEjerandelProcent.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseErhvervetFør1998"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseErhvervetFoerOtteoghalvfemsIndikator" schemaLocation="../class/EjendomAngivelseErhvervetFoerOtteoghalvfemsIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseEjendomstype"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseEjendomstypeKode" schemaLocation="../class/EjendomAngivelseEjendomstypeKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseOvertagelsesdato"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseOvertagelseDato" schemaLocation="../class/EjendomAngivelseOvertagelseDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseIndflytningsdato"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseIndflytningDato" schemaLocation="../class/EjendomAngivelseIndflytningDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseIndflytningEfterIndkomstår"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseIndflytningEfterIndkomstaarIndikator" schemaLocation="../class/EjendomAngivelseIndflytningEfterIndkomstaarIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseKøberOvertagelsesdato"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseKoeberOvertagelseDato" schemaLocation="../class/EjendomAngivelseKoeberOvertagelseDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseUdflytningsdato"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseUdflytningDato" schemaLocation="../class/EjendomAngivelseUdflytningDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseUbeboeligdage"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseUbeboeligdageKvantitet" schemaLocation="../class/EjendomAngivelseUbeboeligdageKvantitet.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseDelvisUdlejningsdage"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseDelvisUdlejningsdageKvantitet" schemaLocation="../class/EjendomAngivelseDelvisUdlejningsdageKvantitet.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseDelvisUdlejningsandel"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseDelvisUdlejningsandelProcent" schemaLocation="../class/EjendomAngivelseDelvisUdlejningsandelProcent.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseHelUdlejningsdage"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseHelUdlejningsdageKvantitet" schemaLocation="../class/EjendomAngivelseHelUdlejningsdageKvantitet.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseErhvervsanvendelsesandel"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseErhvervsanvendelsesandelProcent" schemaLocation="../class/EjendomAngivelseErhvervsanvendelsesandelProcent.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseErhvervsanvendelsesdage"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseErhvervsanvendelsesdageKvantitet" schemaLocation="../class/EjendomAngivelseErhvervsanvendelsesdageKvantitet.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="EjendomAngivelseErhvervsudlejningsdage"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="EjendomAngivelseErhvervsudlejningsdageKvantitet" schemaLocation="../class/EjendomAngivelseErhvervsudlejningsdageKvantitet.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="SlutOpgørelseFilIndhold"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="OpgoerelseFilIndholdData" schemaLocation="http://digitaliser.dk/resource/1624757/artefact/OpgoerelseFilIndholdData.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationGevinstTabAktierMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationGevinstTabAktierMarkedBeloeb" schemaLocation="../class/AktierSpecifikationGevinstTabAktierMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteDkAktierEjMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteDkAktierMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteDkAktierMarkedBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteDkAktierMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteEjDkAktierEjMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteEjDkAktierMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteEjUdbytteSkat"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteEjUdbytteSkatBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteEjUdbytteSkatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteUdenlandskAktierMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AktierSpecifikationUdbytteUdlodningEjUdbytteSkat"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb" schemaLocation="../class/AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstAndenGældSURenteudgift"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstAndenGaeldSURenteudgiftBeloeb" schemaLocation="../class/KapitalindkomstAndenGaeldSURenteudgiftBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstAndenKapitalIndkomst"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstAndenKapitalindkomstBeloeb" schemaLocation="../class/KapitalindkomstAndenKapitalindkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstAndenKapitalIndkomstVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstAndenKapitalindkomstVirksomhedBeloeb" schemaLocation="../class/KapitalindkomstAndenKapitalindkomstVirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstEjendomsAvance"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstEjendomsavanceBeloeb" schemaLocation="../class/KapitalindkomstEjendomsavanceBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstGevinstTabAktierBevisInvesteringsSelskab"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstGevinstTabAktierBevisInvesteringsselskabBeloeb" schemaLocation="../class/KapitalindkomstGevinstTabAktierBevisInvesteringsselskabBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstGevinstTabObligationerEjMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstGevinstTabObligationerEjMarkedBeloeb" schemaLocation="../class/KapitalindkomstGevinstTabObligationerEjMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstGevinstTabObligationerMarked"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstGevinstTabObligationerMarkedBeloeb" schemaLocation="../class/KapitalindkomstGevinstTabObligationerMarkedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstNettoLejeIndtægt"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstNettolejeindtaegtBeloeb" schemaLocation="../class/KapitalindkomstNettolejeindtaegtBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstOverskudOphørSkibsVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstOverskudOphoerSkibsvirksomhedBeloeb" schemaLocation="../class/KapitalindkomstOverskudOphoerSkibsvirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstOverskudSkibsVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstOverskudSkibsvirksomhedBeloeb" schemaLocation="../class/KapitalindkomstOverskudSkibsvirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstPengeinstitutRenteudgift"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstPengeinstitutRenteudgiftBeloeb" schemaLocation="../class/KapitalindkomstPengeinstitutRenteudgiftBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstRealkreditinstitutRenteudgift"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstRealkreditinstitutRenteudgiftBeloeb" schemaLocation="../class/KapitalindkomstRealkreditinstitutRenteudgiftBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstRenteIndtægt"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstRenteindtaegtBeloeb" schemaLocation="../class/KapitalindkomstRenteindtaegtBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstRentekorrektion"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstRentekorrektionBeloeb" schemaLocation="../class/KapitalindkomstRentekorrektionBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstReserveFondsUdlodningVærdiStigning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstReservefondsudlodningVaerdistigningBeloeb" schemaLocation="../class/KapitalindkomstReservefondsudlodningVaerdistigningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstStudielånRenteudgift"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstStudielaanRenteudgiftBeloeb" schemaLocation="../class/KapitalindkomstStudielaanRenteudgiftBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstUdbytteUdlodningInvesteringsForening"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstUdbytteUdlodningInvesteringsforeningBeloeb" schemaLocation="../class/KapitalindkomstUdbytteUdlodningInvesteringsforeningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstUdlodningInvesteringsForeningVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstUdlodningInvesteringsforeningVirksomhedBeloeb" schemaLocation="../class/KapitalindkomstUdlodningInvesteringsforeningVirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstVirksomhedRenteudgift"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstVirksomhedRenteudgiftBeloeb" schemaLocation="../class/KapitalindkomstVirksomhedRenteudgiftBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstKapitalafkastOrdningen"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstKapitalafkastordningenBeloeb" schemaLocation="../class/KapitalindkomstKapitalafkastordningenBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstKapitalafkastVirksomhedOrdningen"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstKapitalafkastVirksomhedordningenBeloeb" schemaLocation="../class/KapitalindkomstKapitalafkastVirksomhedordningenBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstGevinstTabObligationerInvesteringForening"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstGevinstTabObligationerInvesteringforeningBeloeb" schemaLocation="../class/KapitalindkomstGevinstTabObligationerInvesteringforeningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KapitalIndkomstFinansielleKontrakter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="KapitalindkomstFinansielleKontrakterBeloeb" schemaLocation="../class/KapitalindkomstFinansielleKontrakterBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragAkasse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragAkasseBeloeb" schemaLocation="../class/LigningmaessigFradragAkasseBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragBefordring"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragBefordringBeloeb" schemaLocation="../class/LigningmaessigFradragBefordringBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragBeskæftigelsesFradrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragBeskaeftigelsesfradragBeloeb" schemaLocation="../class/LigningmaessigFradragBeskaeftigelsesfradragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragBørneDagplejereFiskere"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragBoernedagplejereFiskereBeloeb" schemaLocation="../class/LigningmaessigFradragBoernedagplejereFiskereBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragFagligtKontingent"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragFagligtKontingentBeloeb" schemaLocation="../class/LigningmaessigFradragFagligtKontingentBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragGaver"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragGaverBeloeb" schemaLocation="../class/LigningmaessigFradragGaverBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragGaverKulturForskning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragGaverKulturForskningBeloeb" schemaLocation="../class/LigningmaessigFradragGaverKulturForskningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragIndskudEtableringsKonto"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragIndskudEtableringskontoBeloeb" schemaLocation="../class/LigningmaessigFradragIndskudEtableringskontoBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragKontingentVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragKontingentVirksomhedBeloeb" schemaLocation="../class/LigningmaessigFradragKontingentVirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragLøbendeYdelserForening"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragLoebendeYdelserForeningBeloeb" schemaLocation="../class/LigningmaessigFradragLoebendeYdelserForeningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragRejseUdgifter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragRejseUdgifterBeloeb" schemaLocation="../class/LigningmaessigFradragRejseUdgifterBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragUdgifterFrededeBygninger"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragUdgifterFrededeBygningerBeloeb" schemaLocation="../class/LigningmaessigFradragUdgifterFrededeBygningerBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragUdgifterServiceFradrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragUdgifterServicefradragBeloeb" schemaLocation="../class/LigningmaessigFradragUdgifterServicefradragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragUnderholdsBidragBørneBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb" schemaLocation="../class/LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningmæssigFradragØvrigeLønmodtagerUdgifter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragOevrigeLoenmodtagerudgifterBeloeb" schemaLocation="../class/LigningmaessigFradragOevrigeLoenmodtagerudgifterBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ØvrigeOplysningerBeregningsGrundlagAcontoSkat"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb" schemaLocation="../class/OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ØvrigeOplysningerBeregningsGrundlagAcontoSkatSuccession"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb" schemaLocation="../class/OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningBeregnetSkat"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningBeregnetSkatBeloeb" schemaLocation="http://digitaliser.dk/resource/1625148/artefact/AarligSkatteOplysningBeregnetSkatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningForskudSkat"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AarligSkatteoplysningForskudSkatBeloeb" schemaLocation="../class/AarligSkatteoplysningForskudSkatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningIndkomstÅr"/>
+		<to namespace="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" name="AarIdentifikator" schemaLocation="http://digitaliser.dk/resource/7439/artefact/AarIdentifikator_20080901.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningKapitalIndkomst"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningKapitalindkomstBeloeb" schemaLocation="http://digitaliser.dk/resource/1625498/artefact/AarligSkatteOplysningKapitalindkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningLigningsmæssigtFradrag"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningLigningsmaessigtFradragBeloeb" schemaLocation="http://digitaliser.dk/resource/1625556/artefact/AarligSkatteOplysningLigningsmaessigtFradragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningOverskydendeSkat"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningOverskydendeSkatBeloeb" schemaLocation="http://digitaliser.dk/resource/1625604/artefact/AarligSkatteOplysningOverskydendeSkatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningPersonligIndkomst"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningPersonligIndkomstBeloeb" schemaLocation="http://digitaliser.dk/resource/1625752/artefact/AarligSkatteOplysningPersonligIndkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningRestSkat"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningRestskatBeloeb" schemaLocation="http://digitaliser.dk/resource/1625802/artefact/AarligSkatteOplysningRestskatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ÅrligSkatteOplysningSkattePligtigIndkomst"/>
+		<to namespace="urn:oio:skat:hentselv:1.0.0" name="AarligSkatteOplysningSkattepligtigIndkomstBeloeb" schemaLocation="http://digitaliser.dk/resource/1625866/artefact/AarligSkatteOplysningSkattepligtigIndkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="DelårSpecifikationBiblioteksAfgift"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="DelaarSpecifikationBiblioteksafgiftBeloeb" schemaLocation="../class/DelaarSpecifikationBiblioteksafgiftBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstAndenPersonligIndkomst"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstAndenPersonligIndkomstBeloeb" schemaLocation="../class/PersonligIndkomstAndenPersonligIndkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstFradragGæsteStuderendeEfter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstFradragGaestestuderendeEfterBeloeb" schemaLocation="../class/PersonligIndkomstFradragGaestestuderendeEfterBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstFradragGæsteStuderendeFør"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstFradragGaestestuderendeFoerBeloeb" schemaLocation="../class/PersonligIndkomstFradragGaestestuderendeFoerBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstFradragIndbetalingFørPensionsOrdning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstFradragIndbetalingFoerPensionsordningBeloeb" schemaLocation="../class/PersonligIndkomstFradragIndbetalingFoerPensionsordningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstFradragIndskudIværksætterKonto"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstFradragIndskudIvaerksaetterkontoBeloeb" schemaLocation="../class/PersonligIndkomstFradragIndskudIvaerksaetterkontoBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstFradragMedarbejdendeÆgtefælle"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstFradragMedarbejdendeAegtefaelleBeloeb" schemaLocation="../class/PersonligIndkomstFradragMedarbejdendeAegtefaelleBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstHonorar"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstHonorarBeloeb" schemaLocation="../class/PersonligIndkomstHonorarBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstHædersGaver"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstHaedersgaverBeloeb" schemaLocation="../class/PersonligIndkomstHaedersgaverBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstHævningEtableringsKonto"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstHaevningEtableringskontoBeloeb" schemaLocation="../class/PersonligIndkomstHaevningEtableringskontoBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstHævningIværksætterKonto"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstHaevningIvaerksaetterkontoBeloeb" schemaLocation="../class/PersonligIndkomstHaevningIvaerksaetterkontoBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstIndkomstVirksomhedsBeskatning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstIndkomstVirksomhedsbeskatningBeloeb" schemaLocation="../class/PersonligIndkomstIndkomstVirksomhedsbeskatningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstJubilæumsGratialeFratrædelsesGodtgørelse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstGratialeFratraedelsesgodtgoerelseBeloeb" schemaLocation="../class/PersonligIndkomstGratialeFratraedelsesgodtgoerelseBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstKapitalafkastAktierAnparter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstKapitalafkastAktierAnparterBeloeb" schemaLocation="../class/PersonligIndkomstKapitalafkastAktierAnparterBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstLønIndkomst"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstLoenindkomstBeloeb" schemaLocation="../class/PersonligIndkomstLoenindkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstPensionDagpengeStipendie"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstPensionDagpengeStipendieBeloeb" schemaLocation="../class/PersonligIndkomstPensionDagpengeStipendieBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstPrivatDagplejeHushjælp"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstPrivatDagplejeHushjaelpBeloeb" schemaLocation="../class/PersonligIndkomstPrivatDagplejeHushjaelpBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstPrivatLivsvarigPensionsOrdning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstPrivatLivsvarigPensionsordningBeloeb" schemaLocation="../class/PersonligIndkomstPrivatLivsvarigPensionsordningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstRenteIndtægtVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstRenteIndtaegtVirksomhedBeloeb" schemaLocation="../class/PersonligIndkomstRenteIndtaegtVirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstTilbageBetalingKontantHjælpIntroYdelse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstTilbagebetalingKontanthjaelpIntroydelseBeloeb" schemaLocation="../class/PersonligIndkomstTilbagebetalingKontanthjaelpIntroydelseBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstUnderholdsbidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstUnderholdsbidragBeloeb" schemaLocation="../class/PersonligIndkomstUnderholdsbidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstUnderskudVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstUnderskudVirksomhedBeloeb" schemaLocation="../class/PersonligIndkomstUnderskudVirksomhedBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstØvrigeFradragPersonligIndkomst"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOevrigeFradragPersonligIndkomstBeloeb" schemaLocation="../class/PersonligIndkomstOevrigeFradragPersonligIndkomstBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstVirksomhedsBeskatningKonjunktur"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstVirksomhedsbeskatningKonjunkturBeloeb" schemaLocation="../class/PersonligIndkomstVirksomhedsbeskatningKonjunkturBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverførtKonjunkturUdligning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverfoertKonjunkturudligningBeloeb" schemaLocation="../class/PersonligIndkomstOverfoertKonjunkturudligningBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverførtOpsparetOverskud"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverfoertOpsparetOverskudBeloeb" schemaLocation="../class/PersonligIndkomstOverfoertOpsparetOverskudBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstAndenPersonligIndkomstEfterAM"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb" schemaLocation="../class/PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstHonorarEfterAM"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstHonorarEfterAMBidragBeloeb" schemaLocation="../class/PersonligIndkomstHonorarEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstIndkomstVirksomhedsBeskatningEfterAM"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstIndkomstVirksomhedsbeskatningEfterAMBidragBeloeb" schemaLocation="../class/PersonligIndkomstIndkomstVirksomhedsbeskatningEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstJubilæumsGratialeFratrædelsesGodtgørelseEfterAM"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstGratialeFratraedelsesgodtgoerelseEfterAMBidragBeloeb" schemaLocation="../class/PersonligIndkomstGratialeFratraedelsesgodtgoerelseEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstLønIndkomstEfterAM"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstLoenindkomstEfterAMBidragBeloeb" schemaLocation="../class/PersonligIndkomstLoenindkomstEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstPrivatDagplejeHushjælpEfterAM"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb" schemaLocation="../class/PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverførtKonjunkturUdligningProcent"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverfoertKonjunkturUdligningProcent" schemaLocation="../class/PersonligIndkomstOverfoertKonjunkturUdligningProcent.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverførtKonjunkturUdligningSum"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb" schemaLocation="../class/PersonligIndkomstOverfoertKonjunkturUdligningSumBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverførtOpsparetOverskudProcent"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverfoertOpsparetOverskudProcent" schemaLocation="../class/PersonligIndkomstOverfoertOpsparetOverskudProcent.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverførtOpsparetOverskudSum"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb" schemaLocation="../class/PersonligIndkomstOverfoertOpsparetOverskudSumBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="SelvangivelseFeltIndholdBeløb"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="SelvangivelseFeltIndholdBeloeb" schemaLocation="../class/SelvangivelseFeltIndholdBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseFradragHelårsomregning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseFradragHelaarsomregningIndikator" schemaLocation="../class/PersonSelvangivelseFradragHelaarsomregningIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonSelvangivelseRevisorindberetning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonSelvangivelseRevisorindberetningIndikator" schemaLocation="../class/PersonSelvangivelseRevisorindberetningIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="MyndighedNummer"/>
+		<to namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" name="AuthorityCode" schemaLocation="http://digitaliser.dk/resource/1042/artefact/CPR_AuthorityCode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UdenlandskEjendomBeskatningKode"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UdenlandskEjendomBeskatningKode" schemaLocation="../class/UdenlandskEjendomBeskatningKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseFortløbendeNummer"/>
+		<to namespace="" name="" schemaLocation=""/>
+		<!--obsolete-->
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseAnvendelseKode"/>
+		<to namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" name="AdresseAnvendelseKode" schemaLocation="http://digitaliser.dk/resource/2137/artefact/SKAT_AdresseAnvendelseKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseVejNavn"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" name="StreetName" schemaLocation="http://digitaliser.dk/resource/6355/artefact/DKCC_StreetName.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseVejKode"/>
+		<to namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" name="StreetCode" schemaLocation="http://digitaliser.dk/resource/1222/artefact/CPR_StreetCode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseFraHusNummer"/>
+		<to namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" name="AdresseHusNummerStartIdentifikator" schemaLocation="http://digitaliser.dk/resource/1553/artefact/SKAT_AdresseHusNummerStartIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseTilHusNummer"/>
+		<to namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" name="AdresseHusNummerSlutIdentifikator" schemaLocation="http://digitaliser.dk/resource/5943/artefact/SKAT_AdresseHusNummerSlutIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseFraHusBogstav"/>
+		<to namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" name="HouseNumberCharacterIdentifier" schemaLocation="http://digitaliser.dk/resource/3189/artefact/BBR_HouseNumberCharacterIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseTilHusBogstav"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AdresseTilHusBogstavIdentifikator" schemaLocation="http://digitaliser.dk/resource/2548414/artefact/AdresseTilHusBogstavIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseLigeUlige"/>
+		<to namespace="http://rep.oio.dk/skat.dk/emcs/class/adresse/xml/schemas/20080301/" name="AdresseHusNummerLigeIndikator" schemaLocation="http://digitaliser.dk/resource/1721/artefact/SKAT_AdresseHusNummerLigeIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseEtageTekst"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" name="FloorIdentifier" schemaLocation="http://digitaliser.dk/resource/4260/artefact/DKCC_FloorIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseSideDørTekst"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" name="SuiteIdentifier" schemaLocation="http://digitaliser.dk/resource/4780/artefact/DKCC_SuiteIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseCONavn"/>
+		<to namespace="http://rep.oio.dk/itst.dk/xml/schemas/2005/06/24/" name="CareOfName" schemaLocation="http://digitaliser.dk/resource/6293/artefact/ITST_CareOfName.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdressePostNummer"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" name="PostCodeIdentifier" schemaLocation="http://digitaliser.dk/resource/320/artefact/DKCC_PostCodeIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdressePostDistrikt"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" name="DistrictName" schemaLocation="http://digitaliser.dk/resource/3904/artefact/DKCC_DistrictName.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseByNavn"/>
+		<to namespace="urn:oio:skat:vandindvinding:1.0.0" name="AdresseByNavn" schemaLocation="http://digitaliser.dk/resource/346488/artefact/AdresseByNavn.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdressePostBox"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/" name="PostOfficeBoxIdentifier" schemaLocation="http://digitaliser.dk/resource/2988/artefact/DKCC_PostOfficeBoxIdentifier.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseGyldigFra"/>
+		<to namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/09/01/" name="StartDate" schemaLocation="http://digitaliser.dk/resource/784/artefact/XKOM_StartDate.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseGyldigTil"/>
+		<to namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2007/04/15/" name="EndDate" schemaLocation="http://digitaliser.dk/resource/3018/artefact/XKOM_EndDate.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseTypeKode"/>
+		<to namespace="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" name="AdresseTypeKode" schemaLocation="http://digitaliser.dk/resource/6316/artefact/SKAT_AdresseTypeKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseTypeTekst"/>
+		<to namespace="http://rep.oio.dk/skat.dk/motor/class/adressetype/xml/schemas/20080401/" name="AdresseTypeNavn" schemaLocation="http://digitaliser.dk/resource/971/artefact/SKAT_AdresseTypeNavn.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseTypeGyldigFra"/>
+		<to namespace="" name="" schemaLocation=""/>
+		<!--obsolete-->
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AdresseTypeGyldigTil"/>
+		<to namespace="" name="" schemaLocation=""/>
+		<!--obsolete-->
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LandNavn"/>
+		<to namespace="http://rep.oio.dk/skat.dk/eindkomst/class/land/xml/schemas/20071202/" name="LandNavn" schemaLocation="http://digitaliser.dk/resource/4677/artefact/SKAT_LandNavn.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ReguleretTabKontrakter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ReguleretTabKontrakterBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547191/artefact/ReguleretTabKontrakterBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="FastEjendomTabBeløb"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="FastEjendomTabBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547200/artefact/FastEjendomTabBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ReguleretTabKontrakterFremførsel"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ReguleretTabKontrakterFremfoerselBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547209/artefact/ReguleretTabKontrakterFremfoerselBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UdenlandskAdresseUstruktureret"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UdenlandskAdresseUstruktureretText" schemaLocation="http://digitaliser.dk/resource/2547218/artefact/UdenlandskAdresseUstruktureretText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="BefordringsFradragBeløb"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="BefordringsFradragBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547236/artefact/BefordringsFradragBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragAkasse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragAkasseBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547227/artefact/LigningsmaessigtFradragAkasseBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragBørneDagplejereFiskere"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragBoerneDagplejereFiskereBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547254/artefact/LigningsmaessigtFradragBoerneDagplejereFiskereBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="BeskæftigelsesFradragBeløb"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="BeskaeftigelsesFradragBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547245/artefact/BeskaeftigelsesFradragBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragFagligtKontingent"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragFagligtKontingentBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547263/artefact/LigningsmaessigtFradragFagligtKontingentBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragGaverForeninger"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragGaverForeningerBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547272/artefact/LigningsmaessigtFradragGaverForeningerBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragGaverKulturForskning"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragGaverKulturForskningBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547281/artefact/LigningsmaessigtFradragGaverKulturForskningBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragIndskudEtableringsKonto"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragIndskudEtableringsKontoBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547290/artefact/LigningsmaessigtFradragIndskudEtableringsKontoBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragKontingentVirksomhed"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragKontingentVirksomhedBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547299/artefact/LigningsmaessigtFradragKontingentVirksomhedBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragLøbendeYdelserForeninger"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragLoebendeYdelserForeningerBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547308/artefact/LigningsmaessigtFradragLoebendeYdelserForeningerBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragRejseUdgifter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragRejseUdgifterBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547317/artefact/LigningsmaessigtFradragRejseUdgifterBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragUdgifterFrededeBygninger"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragUdgifterFrededeBygningerBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547378/artefact/LigningsmaessigtFradragUdgifterFrededeBygningerBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragUdgifterServiceFradrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragUdgifterServiceFradragBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547387/artefact/LigningsmaessigtFradragUdgifterServiceFradragBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragUnderholdsBidragBørneBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb" schemaLocation="http://digitaliser.dk/resource/2547396/artefact/LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="LigningsmæssigtFradragØvrigeLønmodtagerUdgifter"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547405/artefact/LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RenteudgiftOffentligGæld"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RenteudgiftOffentligGaeldBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547414/artefact/RenteudgiftOffentligGaeldBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstAndenPersonligIndkomstEfterAMBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb" schemaLocation="http://digitaliser.dk/resource/2548321/artefact/PersonligIndkomstAndenPersonligIndkomstEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstHonorarEfterAMBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstHonorarEfterAMBidragBeloeb" schemaLocation="http://digitaliser.dk/resource/2548330/artefact/PersonligIndkomstHonorarEfterAMBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstJubilæumsGratialeFratrædelsesGodtgørelseEfterAMBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547423/artefact/PersonligIndkomstJubilaeumsGratialeFratraedelsesGodtgoerelseEfterAMBidragBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstPrivatDagplejeHushjælpEfterAMBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2548339/artefact/PersonligIndkomstPrivatDagplejeHushjaelpEfterAMBidragBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstTotalEfterAMBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstTotalEfterAMBidragBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2547432/artefact/PersonligIndkomstTotalEfterAMBidragBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="VirksomhedCVRNummer"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="VirksomhedCVRNummerIdentifikator" schemaLocation="http://digitaliser.dk/resource/2547441/artefact/VirksomhedCVRNummerIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UdenlandskPersonMomsRegistreringNummer"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UdenlandskPersonMomsRegistreringNummerIdentifikator" schemaLocation="http://digitaliser.dk/resource/2547450/artefact/UdenlandskPersonMomsRegistreringNummerIdentifikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ServicefradragAngivelseBeløb"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ServicefradragAngivelseBeloeb" schemaLocation="http://digitaliser.dk/resource/2547459/artefact/ServicefradragAngivelseBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ServicefradragBetalingDato"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ServicefradragBetalingDato" schemaLocation="http://digitaliser.dk/resource/2547468/artefact/ServicefradragBetalingDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ServicefradragArbejdstypeKode"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ServicefradragArbejdstypeKode" schemaLocation="http://digitaliser.dk/resource/2547483/artefact/ServicefradragArbejdstypeKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ServicefradragAngivelseValuta"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ServicefradragAngivelseValutaKode" schemaLocation="http://digitaliser.dk/resource/2547501/artefact/ServicefradragAngivelseValutaKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdAftægtYdelse"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdAftaegtYdelseBeloeb" schemaLocation="http://digitaliser.dk/resource/2547510/artefact/UnderholdAftaegtYdelseBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidrag"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragBeloeb" schemaLocation="http://digitaliser.dk/resource/2547519/artefact/UnderholdBoerneBidragBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonNavnNavn"/>
+		<to namespace="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" name="PersonName" schemaLocation="http://digitaliser.dk/resource/2418/artefact/ITST_PersonName.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidragDækningPeriodeStart"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragDaekningPeriodeStartDato" schemaLocation="http://digitaliser.dk/resource/2547528/artefact/UnderholdBoerneBidragDaekningPeriodeStartDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidragDækningPeriodeSlut"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragDaekningPeriodeSlutDato" schemaLocation="http://digitaliser.dk/resource/2547537/artefact/UnderholdBoerneBidragDaekningPeriodeSlutDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="DummyMarkering"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="DummyMarkeringIndikator" schemaLocation="http://digitaliser.dk/resource/2547546/artefact/DummyMarkeringIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidragNormalbidragProcentTillæg"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragNormalbidragProcentTillaegProcent" schemaLocation="http://digitaliser.dk/resource/2547850/artefact/UnderholdBoerneBidragNormalbidragProcentTillaegProcent.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidragAftaltBeløbMånedlig"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragAftaltBeloebMaanedligBeloeb" schemaLocation="http://digitaliser.dk/resource/2547859/artefact/UnderholdBoerneBidragAftaltBeloebMaanedligBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdÆgtefælleBidragMånedlig"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdAEgtefaelleBidragMaanedligBeloeb" schemaLocation="http://digitaliser.dk/resource/2547869/artefact/UnderholdAEgtefaelleBidragMaanedligBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdÆgtefælleBidragPeriodeStart"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdAEgtefaelleBidragPeriodeStartDato" schemaLocation="http://digitaliser.dk/resource/2547878/artefact/UnderholdAEgtefaelleBidragPeriodeStartDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdÆgtefælleBidragPeriodeSlut"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdAEgtefaelleBidragPeriodeSlutDato" schemaLocation="http://digitaliser.dk/resource/2547887/artefact/UnderholdAEgtefaelleBidragPeriodeSlutDato.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="KundeNavn"/>
+		<to namespace="urn:oio:skat:dmi:1.0.0" name="KundeNavn" schemaLocation="http://digitaliser.dk/resource/1371454/artefact/KundeNavn.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="AlternativAdresseAdresseLinie7"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="AlternativAdresseAdresseLinie7Text" schemaLocation="http://digitaliser.dk/resource/2547941/artefact/AlternativAdresseAdresseLinie7Text.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ServicefradragUdenlandskVirksomhedNummerEllerNavn"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ServicefradragUdenlandskVirksomhedNummerEllerNavnText" schemaLocation="http://digitaliser.dk/resource/2586324/artefact/ServicefradragUdenlandskVirksomhedNummerEllerNavnText.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonNavnForNavn"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" name="PersonGivenName" schemaLocation="http://digitaliser.dk/resource/4823/artefact/DKCC_PersonGivenName.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonNavnEfterNavn"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" name="PersonSurnameName" schemaLocation="http://digitaliser.dk/resource/1123/artefact/DKCC_PersonSurnameName.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonFødselDato"/>
+		<to namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/" name="BirthDate" schemaLocation="http://digitaliser.dk/resource/6189/artefact/DKCC_BirthDate.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidragBeløbDåb"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragBeloebDaabBeloeb" schemaLocation="http://digitaliser.dk/resource/2586350/artefact/UnderholdBoerneBidragBeloebDaabBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="UnderholdBørneBidragBeløbKonfirmation"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="UnderholdBoerneBidragBeloebKonfirmationBeloeb" schemaLocation="http://digitaliser.dk/resource/2586359/artefact/UnderholdBoerneBidragBeloebKonfirmationBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ReguleretTabKontrakterKode"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ReguleretTabKontrakterKode" schemaLocation="http://digitaliser.dk/resource/2549200/artefact/ReguleretTabKontrakterKode.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ServicefradragFritidsboligUdlejet"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ServicefradragFritidsboligUdlejetIndikator" schemaLocation="http://digitaliser.dk/resource/2594835/artefact/ServicefradragFritidsboligUdlejetIndikator.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RenteUdgiftAndenGældGældTilPrivat"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RenteUdgiftAndenGaeldGaeldTilPrivatBeloeb" schemaLocation="http://digitaliser.dk/resource/2547923/artefact/RenteUdgiftAndenGaeldGaeldTilPrivatBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RenteUdgiftAndenGældStatsgarantStudielånIPengeinstitut"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RenteUdgiftAndenGaeldStatsgarantStudielaanIPengeinstitutBeloeb" schemaLocation="http://digitaliser.dk/resource/2547896/artefact/RenteUdgiftAndenGaeldStatsgarantStudielaanIPengeinstitutBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RenteUdgiftAndenGældStiftelseProvision"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RenteUdgiftAndenGaeldStiftelseProvisionBeloeb" schemaLocation="http://digitaliser.dk/resource/2547905/artefact/RenteUdgiftAndenGaeldStiftelseProvisionBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="RenteUdgiftAndenGældLånMedMereEndToEjere"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="RenteUdgiftAndenGaeldLaanMedMereEndToEjereBeloeb" schemaLocation="http://digitaliser.dk/resource/2586368/artefact/RenteUdgiftAndenGaeldLaanMedMereEndToEjereBeloeb.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="ArbejdsgiverAdministreretBidragIndskudPåAlderpension"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2606411/artefact/ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoder"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoderBeloebTekst" schemaLocation="http://digitaliser.dk/resource/2606422/artefact/PersonligIndkomstGruppeLivsForsikringLegatPersonaleGoderBeloebTekst.xsd"/>
+	</element>
+	<element>
+		<from namespace="http://skat.dk/begrebsmodel/2012/01/01/" name="PersonligIndkomstOverskudVirksomhedUdlejningEjendom"/>
+		<to namespace="urn:oio:skat:selvangivelse:1.0.0" name="PersonligIndkomstOverskudVirksomhedUdlejningEjendomBeloeb" schemaLocation="http://digitaliser.dk/resource/2606433/artefact/PersonligIndkomstOverskudVirksomhedUdlejningEjendomBeloeb.xsd"/>
+	</element>
+</conversion>

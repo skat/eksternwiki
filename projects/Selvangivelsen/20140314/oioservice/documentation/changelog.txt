@@ -1,0 +1,16 @@
+ÆNDRINGSLOG v. 3.9
+====================================================================================
+En række data er flyttet ud i separate skemaer: 
+- ServiceFradragAngivelseStruktur
+- BørneBidragAngivelseStruktur
+- ÆgtefælleBidragAngivelseStruktur
+- GældTilPrivatRenteUdgiftAngivelseAngivelseStruktur
+
+LandKode er gjort obligatorisk
+PersonFødselDato er fjernet for *NonCprPerson* ifm. renteudgifter
+Adresseformatet for *NonCprPerson* er ændret til 7 generiske adresselinier + LandKode
+
+RenteUdgiftAndenGældStatsgarantStudielånIPengeinstitut er nu element i en liste i stedet for en total
+RenteUdgiftAndenGældStiftelseProvision er nu element i en liste i stedet for en total
+RenteUdgiftAndenGældLånMedMereEndToEjere er nu element i en liste i stedet for en total
+UnderholdAftægtYdelse er nu element i en liste i stedet for en total

@@ -1,0 +1,13 @@
+ÆNDRINGSLOG FOR PersonSelvangivelseOpret v3.12
+====================================================================================
+
+Ændringer:
+- Koderne på ServicefradragArbejdstypeKode er ændret til A1, A2, A3, B1, B1.
+  De tilsvarende gamle tekstkoder fx RENPUDS bevares aht. bagudkompatibilitet.
+  Se beskrivelsen: http://digitaliser.dk/resource/2729590
+  En tilsvarende ændring gennemføres i PersonKontrolOplysningHent, så koderne
+  bliver de samme. 
+  
+  Servicegrænsefladen er ikke ændret, så det er ikke nødvendigt at rekompliere 
+  schemaerne. Det er udelukkende de tilladte koder i implementeringen, der ændres.
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:blanketfelt="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:angivelsefelt="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="http://digitaliser.dk/resource/247432/artefact/SKAT_HovedOplysningerSvar.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/angivelsefelt/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/4455/artefact/SKAT_AngivelseFeltIndholdTekst.xsd"/><xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="http://digitaliser.dk/resource/6448/artefact/DKCC_PostalAddressFirstLineText.xsd"/><xs:import namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2002/06/28/" schemaLocation="http://digitaliser.dk/resource/5317/artefact/BBR_RealPropertyIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" schemaLocation="http://digitaliser.dk/resource/2307/artefact/SKAT_BlanketFeltNummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="http://digitaliser.dk/resource/2665/artefact/SKAT_VirksomhedSENummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:element name="PersonSelvangivelseOpret_O" type="sla:PersonSelvangivelseOpret_OType">
+	</xs:element>
+	<xs:complexType name="PersonSelvangivelseOpret_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="FejlIdentifikation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AngivelseFeltIndholdListe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AngivelseFeltIndhold" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="blanketfelt:BlanketFeltNummerIdentifikator"/>
+												<xs:element ref="angivelsefelt:AngivelseFeltIndholdTekst" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier" minOccurs="0"/>
+						<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator" minOccurs="0"/>
+						<xs:element ref="bbr:RealPropertyIdentifier" minOccurs="0"/>
+						<xs:element ref="dkcc:PostalAddressFirstLineText" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,11 @@
+ÆNDRINGSLOG v2.0->3.0
+========================================================================================
+- I input er RegnskabAngivelseListe, EjendomsavanceAngivelseListe og EjendomAngivelseListe
+  nu rent faktisk lister. Før var der kun mulighed for en af disse angivelser.
+- I output er strukturen med årsopgørelsen ændret væsentligt, da modellen med feltnumre
+  viste sig at være uholdbar. Alle felter er i stedet navngivet og strukturen er 
+  formet over en årsopgørelse.
+- Årsopgørelsesfelter er fjernet fra PersSelvangFelter2012112.xlsx pga. ovenstående.
+- VirksomhedSENummer er tilføjet til RegnskabAngivelse
+- PersonNavnNavn, VirksomhedNavnFirmaNavn, adresselinje 2-6 og LandKode er tilføjet til 
+  de supplerende fejldata (FejlIdentifikation). Beløbsliste er fjernet.

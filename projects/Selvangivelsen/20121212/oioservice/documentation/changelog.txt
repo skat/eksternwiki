@@ -1,0 +1,17 @@
+ÆNDRINGSLOG FOR PersonSelvangivelseOpret v. 3.3
+====================================================================================
+
+Input
+------------------------------------------------------------------------------------
+1) Tilføjet ejendomsnummer på udenlandske ejendomme (køb, salg, angivelse)
+   Kommunenummer/MyndighedNummer er låst til 0999 for udenlandske og kan derfor 
+   ikke angives. Bemærk at for ejendomsangivelse ser blokken UdenlandskEjendom 
+   lidt anderledes ud pga. landekoden.
+
+Output
+------------------------------------------------------------------------------------
+(ingen ændring)
+
+OIO-mapning
+------------------------------------------------------------------------------------
+EjendomAngivelseEjerandel ændret fra integer til decimal

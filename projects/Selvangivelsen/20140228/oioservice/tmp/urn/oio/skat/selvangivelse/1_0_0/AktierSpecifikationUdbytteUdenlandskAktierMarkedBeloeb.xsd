@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aktierspecifikationudbytteudenlandskaktiermarkedbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Beløb der udgør udbytte af udenlandske aktier optaget til handel på et reguleret marked i dansk depot, indberettet til SKAT. Udbytter af aktier i visse lande fx Frankrig, Grønland, Kenya og Spanien skal i rubrik 452 på selvangivelse for udenlandsk indkomst.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

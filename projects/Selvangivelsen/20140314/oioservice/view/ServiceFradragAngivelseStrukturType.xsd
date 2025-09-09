@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2594835/artefact/ServicefradragFritidsboligUdlejetIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2586324/artefact/ServicefradragUdenlandskVirksomhedNummerEllerNavnText.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547483/artefact/ServicefradragArbejdstypeKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547468/artefact/ServicefradragBetalingDato.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547459/artefact/ServicefradragAngivelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="http://digitaliser.dk/resource/2547441/artefact/VirksomhedCVRNummerIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/><xs:element name="ServiceFradragAngivelseStruktur" type="skat2012:ServiceFradragAngivelseStrukturType"/>
+	<xs:complexType name="ServiceFradragAngivelseStrukturType">
+		<xs:sequence>
+			<xs:element name="BoligTypeValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="Helaarsbolig">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SaelgerIdentifikationValg">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+													<xs:element ref="selvangivelse:VirksomhedCVRNummerIdentifikator"/>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="FritidsboligDK">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SaelgerIdentifikationValg">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+													<xs:element ref="selvangivelse:VirksomhedCVRNummerIdentifikator"/>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="selvangivelse:ServicefradragFritidsboligUdlejetIndikator"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="FritidsboligUdland">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="selvangivelse:ServicefradragUdenlandskVirksomhedNummerEllerNavnText"/>
+										<xs:element ref="selvangivelse:ServicefradragFritidsboligUdlejetIndikator"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="selvangivelse:ServicefradragAngivelseBeloeb"/>
+			<xs:element ref="selvangivelse:ServicefradragBetalingDato"/>
+			<xs:element ref="selvangivelse:ServicefradragArbejdstypeKode"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

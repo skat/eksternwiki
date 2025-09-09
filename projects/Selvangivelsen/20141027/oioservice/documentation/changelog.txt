@@ -1,0 +1,17 @@
+ÆNDRINGSLOG FOR PersonSelvangivelseOpret v3.13/3.14
+====================================================================================
+Kun ændringer i schemaer listes her.
+
+Ændringer i input (v3.13):
+- Nyt valgfrit felt i input tilføjet: VirksomhedsordningIndskudskontoKode
+
+Ændringer i output (v3.14):
+- LigningmaessigFradragStruktur.xsd - udvidet med: 
+    BeskaeftigelsesFradragEnligForsoergerBeloeb (=felt 409)
+    LigningsmaessigtFradragBoerneDagplejereStandardBeloeb (=felt 464)
+    LigningsmaessigtFradragMedarbejdendeAegtefaelleSygeArbejdsskadeForsikringBeloeb (=felt 497)
+
+- PersonligIndkomstStruktur.xsd - udvidet med:
+    VirksomhedsordningIndskudskontoKode (= felt 065)
+    VirksomhedOrdningIndskudskontoSaldoBeloeb (=felt 948)
+    VirksomhedOrdningSikkerhedsstillelseBeloeb (=felt 960)

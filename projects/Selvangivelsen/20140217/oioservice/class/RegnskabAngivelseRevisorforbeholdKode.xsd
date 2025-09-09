@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:regnskabangivelserevisorforbeholdkode="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="RegnskabAngivelseRevisorforbeholdKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Hvad forbeholdet eller supplerende oplysninger fra revisor vedrører. Muligheder: 1) overholdelse af skatte- og afgiftslovgivning, 2) overholdelse af regnskabslovgivningen, 3) andet. Felt 612</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

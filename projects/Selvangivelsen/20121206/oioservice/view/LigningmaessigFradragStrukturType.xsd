@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragOevrigeLoenmodtagerudgifterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragUdgifterServicefradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragUdgifterFrededeBygningerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragRejseUdgifterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragLoebendeYdelserForeningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragKontingentVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragIndskudEtableringskontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragGaverKulturForskningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragGaverBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragFagligtKontingentBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragBoernedagplejereFiskereBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragBeskaeftigelsesfradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragBefordringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../class/LigningmaessigFradragAkasseBeloeb.xsd"/><xs:element name="LigningmaessigFradragStruktur" type="sla:LigningmaessigFradragStrukturType"/>
+	<xs:complexType name="LigningmaessigFradragStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:LigningmaessigFradragAkasseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragBefordringBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragBeskaeftigelsesfradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragBoernedagplejereFiskereBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragFagligtKontingentBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragGaverBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragGaverKulturForskningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragIndskudEtableringskontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragKontingentVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragLoebendeYdelserForeningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragRejseUdgifterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragUdgifterFrededeBygningerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragUdgifterServicefradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragUnderholdsbidragBoernebidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningmaessigFradragOevrigeLoenmodtagerudgifterBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
