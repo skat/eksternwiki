@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:servicefradragarbejdstypekode="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ServicefradragArbejdstypeKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>En kode som identificerer typen af det udførte arbejde.  Det første sæt af koder (A1 osv.) er det officielle for hele SLUT. De ældre koder (RENPUDS osv) er bevaret aht. bagudkompatibilitet og konverteres til det første kodesæt ved modtagelsen.  Værdisæt: A1: Rengøring og vinduespudsning, A2: Børnepasning,  A3: Havearbejde,  B1: Vedligeholdelse i øvrigt, B2: Vedligeholdelse - energibesparende,   RENPUDS: Rengøring og vinduespudsning (A1), BØRNEPAS: Børnepasning (A2), HAVEARB: Havearbejde (A3), VEDLIØVR: Vedligeholdelse i øvrigt (B1), VEDLENER: Vedligeholdelse - energibesparende (B2) ENERGIBES: Energibesparelser (B2) TILSLUTBRE: Tilslutning af Bredbånd (B1) GRHÅNDYDE: Andre grønne håndværksydelser (B1)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

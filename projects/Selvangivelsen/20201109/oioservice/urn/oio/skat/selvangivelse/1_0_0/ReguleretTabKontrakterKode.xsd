@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:regulerettabkontrakterkode="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="ReguleretTabKontrakterKode" type="regulerettabkontrakterkode:ReguleretTabKontrakterKodeType">
+		<xs:annotation>
+			<xs:documentation>Felt 782 - Kode som angiver hvorledes tab på visse financielle kontrakter skal modregnes i gevinst på aktier, optaget til handel på et reguleret marked, jf. lov nr. 724 af 25.  INGEN: Ingen modregning i gevinst EGEN: Kan modregnes i egen gevinst BEGGE: kan anvendes til modregning i egen og ægtefælles gevinst.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="ReguleretTabKontrakterKodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INGEN"/>
+			<xs:enumeration value="EGEN"/>
+			<xs:enumeration value="BEGGE"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

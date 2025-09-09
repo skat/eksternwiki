@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstRenteIndtaegtVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstVirksomhedRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstUdlodningInvesteringsforeningVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstStudielaanRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstRentekorrektionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstRealkreditinstitutRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstPengeinstitutRenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstOverskudSkibsvirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstOverskudOphoerSkibsvirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstKapitalafkastVirksomhedordningenBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstKapitalafkastordningenBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstEjendomsavanceBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstAndenKapitalindkomstVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalindkomstAndenGaeldSURenteudgiftBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteudgiftOffentligGaeldBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstGevinstTabObligationerInvesteringForeningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstNettoLejeIndtaegtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstUdbytteUdlodningInvesteringsForeningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstReserveFondsUdlodningVaerdiStigningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstFinansielleKontrakterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstGevinstTabObligationerMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstGevinstTabObligationerEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstGevinstTabAktierBevisInvesteringsSelskabBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstRenteIndtaegtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KapitalIndkomstAndenKapitalIndkomstBeloeb.xsd"/><xs:element name="KapitalIndkomstStruktur" type="sla:KapitalIndkomstStrukturType"/>
+	<xs:complexType name="KapitalIndkomstStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:KapitalindkomstAndenGaeldSURenteudgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstAndenKapitalIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstAndenKapitalindkomstVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstEjendomsavanceBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstFinansielleKontrakterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstGevinstTabAktierBevisInvesteringsSelskabBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstGevinstTabObligationerEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstGevinstTabObligationerInvesteringForeningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstGevinstTabObligationerMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstKapitalafkastordningenBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstKapitalafkastVirksomhedordningenBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstNettoLejeIndtaegtBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstOverskudOphoerSkibsvirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstOverskudSkibsvirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstPengeinstitutRenteudgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstRealkreditinstitutRenteudgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstRenteIndtaegtBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstRenteIndtaegtVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstRentekorrektionBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstReserveFondsUdlodningVaerdiStigningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstStudielaanRenteudgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalIndkomstUdbytteUdlodningInvesteringsForeningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstUdlodningInvesteringsforeningVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:KapitalindkomstVirksomhedRenteudgiftBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:RenteudgiftOffentligGaeldBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

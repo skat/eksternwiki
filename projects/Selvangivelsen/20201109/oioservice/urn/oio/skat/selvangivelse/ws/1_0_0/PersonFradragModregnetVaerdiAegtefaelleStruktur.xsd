@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KommuneskatFradragModregnetvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KommuneskatFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/IndkomstskatFradragModregnetvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/IndkomstskatFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BundskatFradragModregnetvaerdiBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BundskatFradragBeloeb.xsd"/><xs:element name="PersonFradragModregnetVaerdiAegtefaelleStruktur" type="selvangivelsews:PersonFradragModregnetVaerdiAegtefaelleStrukturType"/>
+	<xs:complexType name="PersonFradragModregnetVaerdiAegtefaelleStrukturType">
+		<xs:sequence>
+			<xs:element name="FradragAegtefaelle">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FradragVaerdiAegtefaelle" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:BundskatFradragBeloeb" minOccurs="0"/>
+									<xs:element name="KommuneIndkomstFradrag">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:KommuneskatFradragBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:IndkomstskatFradragBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ModregnetVaerdiAegtefaelle" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:BundskatFradragModregnetvaerdiBeloeb" minOccurs="0"/>
+									<xs:element name="KommuneIndkomstModregnetVaerdi">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:KommuneskatFradragModregnetvaerdiBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:IndkomstskatFradragModregnetvaerdiBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:personligindkomstfradragudenlandskesocialebidragbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="PersonligIndkomstFradragUdenlandskeSocialeBidragBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Fradrag for udenlandske obligatoriske sociale bidrag.
+Beløbet er fradrag i den personlige indkomst, der skal fragå i den udenlandske indkomst, men først efter evt. AM-bidraget er fratrukket,
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

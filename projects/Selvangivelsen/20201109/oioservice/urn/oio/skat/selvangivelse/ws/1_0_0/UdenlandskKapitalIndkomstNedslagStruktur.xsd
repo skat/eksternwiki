@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskKapitalIndkomstGammelExemptionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskKapitalIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskKapitalIndkomstCreditBeloeb.xsd"/><xs:element name="UdenlandskKapitalIndkomstNedslagStruktur" type="selvangivelsews:UdenlandskKapitalIndkomstNedslagStrukturType"/>
+	<xs:complexType name="UdenlandskKapitalIndkomstNedslagStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:NedslagUdenlandskKapitalIndkomstCreditBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskKapitalIndkomstBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:NedslagUdenlandskKapitalIndkomstGammelExemptionBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

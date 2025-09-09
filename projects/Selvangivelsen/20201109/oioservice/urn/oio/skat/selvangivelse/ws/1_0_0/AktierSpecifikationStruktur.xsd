@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretUdbytteUdenlandskBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretTabKontrakterKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretTabKontrakterFremfoerselBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretTabKontrakterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretGevinstUdenlandskBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/FastEjendomTabBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjReguleretUdbytteUdenlandskBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjReguleretGevinstUdenlandskBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationTabUdenlandskAktiebaseretInvesteringFraAegtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationTabUdenlandskAktiebaseretInvesteringTilAegtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdenlandskAktiebaseretInvesteringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationAktiebaseretInvesteringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteDkAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteEjUdbytteSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktierSpecifikationGevinstTabAktierMarkedBeloeb.xsd"/><xs:element name="AktierSpecifikationStruktur" type="selvangivelsews:AktierSpecifikationStrukturType"/>
+	<xs:complexType name="AktierSpecifikationStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:AktierSpecifikationGevinstTabAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteDkAktierEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteDkAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjDkAktierEjMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjDkAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteEjUdbytteSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteUdenlandskAktierMarkedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdbytteUdlodningEjUdbytteSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretTabKontrakterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretTabKontrakterKode" minOccurs="0"/>
+			<xs:element ref="selvangivelse:FastEjendomTabBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretTabKontrakterFremfoerselBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretUdbytteUdenlandskBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:ReguleretGevinstUdenlandskBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:EjReguleretUdbytteUdenlandskBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:EjReguleretGevinstUdenlandskBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationAktiebaseretInvesteringBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationUdenlandskAktiebaseretInvesteringBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationTabUdenlandskAktiebaseretInvesteringTilAegtefaelleBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AktierSpecifikationTabUdenlandskAktiebaseretInvesteringFraAegtefaelleBeloeb" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

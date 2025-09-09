@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionDiskvalifikationKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsberegning20PctOg40PctBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsberegning4PctBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb40PctForskudtDiskvalificeretBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb20PctForskudtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb4PctBeloeb.xsd"/><xs:element name="OevrigeOplysningerStruktur" type="sla:OevrigeOplysningerStrukturType"/>
+	<xs:complexType name="OevrigeOplysningerStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb4PctBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb20PctForskudtBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb40PctForskudtDiskvalificeretBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsberegning4PctBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionAfgiftsberegning20PctOg40PctBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:AlderspensionDiskvalifikationKode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

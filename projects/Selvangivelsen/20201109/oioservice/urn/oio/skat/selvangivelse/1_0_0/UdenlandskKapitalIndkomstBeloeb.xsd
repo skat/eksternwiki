@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:udenlandskkapitalindkomstbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="UdenlandskKapitalIndkomstBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Beløbet udgør:
+
+1. Udenlandsk kapitalindkomst som er omfattet af creditreglen i LL § 33 eller af en dobbeltbeskatningsoverenskomst, der følger denne regel. 
+
+2. Udenlandsk kapitalindkomst som ifølge en dobbeltbeskatningsoverenskomst er omfattet af reglerne om ny exemption. 
+
+3. Udenlandsk kapitalindkomst, der ikke er lempelsesberettiget. 
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

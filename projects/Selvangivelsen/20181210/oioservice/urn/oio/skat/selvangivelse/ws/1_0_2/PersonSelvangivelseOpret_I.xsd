@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:sla="urn:oio:skat:selvangivelse:ws:1.0.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:blanketfelt="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:schema="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" xmlns:virksomhed="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../../../../../../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteUdgiftAndenGaeldLaanMedMereEndToEjereBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteUdgiftAndenGaeldStiftelseProvisionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteUdgiftAndenGaeldStatsgarantStudielaanIPengeinstitutBeloeb.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/AuthorityCode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomsavanceGenanbringelsePlaceringKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ReguleretTabKontrakterKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerSENummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedOrdningAfvikletSikkerhedsstillelseKode.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/motor/class/virksomhed/xml/schemas/20080401/" schemaLocation="../../../../../../skat_dk/motor/class/virksomhed/xml/schemas/20080401/VirksomhedSENummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnderholdAftaegtYdelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ToFamilieBenyttelseKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ToFamilieEnhedsloebeNummerIdentifikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SelvangivelseFeltIndholdBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseGaeldseftergivelseIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelsePrivateAndeleArtKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseRevisorforbeholdKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseRevisorerklaeringKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseRevisorbistandArtKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseRevisorbistandIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseOplysningsfritagelseAarsagKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RegnskabAngivelseOplysningsfritagelseIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseFradragHelaarsomregningIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseRevisorindberetningIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseEjendomsoplysningSupplementIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseEjendomsoplysningAcceptIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseBeskatningsordningKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseHenstandsbegaeringIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseVirksomhedOphoerTidligereIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSelvangivelseVirksomhedOphoerIndikator.xsd"/><xs:import namespace="http://rep.oio.dk/oib/dato.tid.maal/xml.schema/" schemaLocation="../../../../../../oib/dato_tid_maal/xml_schema/AarIdentifikator.xsd"/><xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervsudlejningsdageKvantitet.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervsanvendelsesdageKvantitet.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervsanvendelsesandelProcent.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseHelUdlejningsdageKvantitet.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseDelvisUdlejningsandelProcent.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseDelvisUdlejningsdageKvantitet.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseUbeboeligdageKvantitet.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseKoeberOvertagelseDato.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseUdflytningDato.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseIndflytningEfterIndkomstaarIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseIndflytningDato.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseOvertagelseDato.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseEjendomstypeKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervetFoerOtteoghalvfemsIndikator.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseEjerandelProcent.xsd"/><xs:import namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" schemaLocation="../../../../../../bbr_dk/xml/schemas/2005/03/11/MunicipalRealPropertyIdentifier.xsd"/><xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/blanketfelt/xml/schemas/20071202/" schemaLocation="../../../../../../skat_dk/eindkomst/class/blanketfelt/xml/schemas/20071202/BlanketFeltNummerIdentifikator.xsd"/><xs:include schemaLocation="ServiceFradragAngivelseStruktur.xsd"/>
+	<xs:include schemaLocation="BoerneBidragAngivelseStruktur.xsd"/>
+	<xs:include schemaLocation="AegtefaelleBidragAngivelseStruktur.xsd"/>
+	<xs:include schemaLocation="GaeldTilPrivatRenteUdgiftAngivelseAngivelseStruktur.xsd"/>
+	<xs:element name="PersonSelvangivelseOpret_I" type="sla:PersonSelvangivelseOpret_IType">
+	</xs:element>
+	<xs:complexType name="PersonSelvangivelseOpret_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="Angiver">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Indberetter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+						<xs:element ref="selvangivelse:UdviklerSENummerIdentifikator"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="schema:AarIdentifikator"/>
+			<xs:element name="Selvangivelse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BeloebsfeltListe">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Beloebsfelt" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="blanketfelt:BlanketFeltNummerIdentifikator"/>
+												<xs:element ref="selvangivelse:SelvangivelseFeltIndholdBeloeb"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="selvangivelse:PersonSelvangivelseVirksomhedOphoerIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseVirksomhedOphoerTidligereIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseHenstandsbegaeringIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseBeskatningsordningKode" minOccurs="0"/>
+						<xs:element ref="selvangivelse:VirksomhedOrdningAfvikletSikkerhedsstillelseKode" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseFradragHelaarsomregningIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseRevisorindberetningIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseEjendomsoplysningAcceptIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:PersonSelvangivelseEjendomsoplysningSupplementIndikator" minOccurs="0"/>
+						<xs:element ref="selvangivelse:ReguleretTabKontrakterKode" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="RegnskabAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RegnskabAngivelse" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BeloebsfeltListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Beloebsfelt" minOccurs="0" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="blanketfelt:BlanketFeltNummerIdentifikator"/>
+															<xs:element ref="selvangivelse:SelvangivelseFeltIndholdBeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Identifikator">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element ref="virksomhed:VirksomhedSENummerIdentifikator"/>
+												<xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="selvangivelse:RegnskabAngivelseOplysningsfritagelseIndikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelseOplysningsfritagelseAarsagKode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelseRevisorbistandIndikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelseRevisorbistandArtKode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelseRevisorerklaeringKode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelseRevisorforbeholdKode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelsePrivateAndeleArtKode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:RegnskabAngivelseGaeldseftergivelseIndikator" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EjendomsavanceAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EjendomsavanceAngivelse" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BeloebsfeltListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Beloebsfelt" minOccurs="0" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="blanketfelt:BlanketFeltNummerIdentifikator"/>
+															<xs:element ref="selvangivelse:SelvangivelseFeltIndholdBeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="selvangivelse:EjendomsavanceGenanbringelsePlaceringKode"/>
+									<xs:element name="Koeb">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="EjendomIdentifikation">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="DanskEjendom">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="core:AuthorityCode"/>
+																		<xs:element ref="bbr:MunicipalRealPropertyIdentifier"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Salg">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="EjendomIdentifikation">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="DanskEjendom">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="core:AuthorityCode"/>
+																		<xs:element ref="bbr:MunicipalRealPropertyIdentifier"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EjendomAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EjendomAngivelse" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BeloebsfeltListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Beloebsfelt" minOccurs="0" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="blanketfelt:BlanketFeltNummerIdentifikator"/>
+															<xs:element ref="selvangivelse:SelvangivelseFeltIndholdBeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="EjendomIdentifikation">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="DanskEjendom">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="core:AuthorityCode"/>
+															<xs:element ref="bbr:MunicipalRealPropertyIdentifier"/>
+															<xs:element name="ToFamilieEjendom" minOccurs="0">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="selvangivelse:ToFamilieEnhedsloebeNummerIdentifikator" minOccurs="0"/>
+																		<xs:element ref="selvangivelse:ToFamilieBenyttelseKode" minOccurs="0"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="selvangivelse:EjendomAngivelseEjerandelProcent" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseErhvervetFoerOtteoghalvfemsIndikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseEjendomstypeKode" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseOvertagelseDato" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseIndflytningDato" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseIndflytningEfterIndkomstaarIndikator" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseKoeberOvertagelseDato" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseUdflytningDato" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseUbeboeligdageKvantitet" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseDelvisUdlejningsdageKvantitet" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseDelvisUdlejningsandelProcent" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseHelUdlejningsdageKvantitet" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseErhvervsanvendelsesandelProcent" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseErhvervsanvendelsesdageKvantitet" minOccurs="0"/>
+									<xs:element ref="selvangivelse:EjendomAngivelseErhvervsudlejningsdageKvantitet" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ServiceFradragAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="sla:ServiceFradragAngivelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AftaegtYdelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="selvangivelse:UnderholdAftaegtYdelseBeloeb" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BoerneBidragAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="sla:BoerneBidragAngivelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AegtefaelleBidragAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="sla:AegtefaelleBidragAngivelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SGStudielaanListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="selvangivelse:RenteUdgiftAndenGaeldStatsgarantStudielaanIPengeinstitutBeloeb" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StiftelseProvisionListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="selvangivelse:RenteUdgiftAndenGaeldStiftelseProvisionBeloeb" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LaanMereEndToEjereListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="selvangivelse:RenteUdgiftAndenGaeldLaanMedMereEndToEjereBeloeb" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GaeldTilPrivatRenteUdgiftAngivelseListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="sla:GaeldTilPrivatRenteUdgiftAngivelseAngivelseStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

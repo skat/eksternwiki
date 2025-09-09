@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:saghandlingtypetekst="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="SagHandlingTypeTekst" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Angiver hvilken handling der foretages for det enkelte forhold.
+
+Værdisæt: C, S, U, D og F
+
+C = Opret
+S = Samme/uændret
+U = Opdater/ret
+D = Slet
+F = fremført 
+
+Værdien F kan ikke indberettes af revisorer, men er udelukkende en hjælpevariabel til den bagvedliggende styring af fremførte værdier</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

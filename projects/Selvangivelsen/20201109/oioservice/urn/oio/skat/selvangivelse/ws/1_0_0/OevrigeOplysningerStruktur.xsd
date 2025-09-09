@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionDiskvalifikationKode.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsberegning4PctBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsberegning20PctOg40PctBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb4PctBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedsskatNedslagBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedsskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedSkattetillaegBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdligningsskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSkattepligtigIndkomstBeloebPeriodeNedslagBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSkattepligtigIndkomstSkatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/PersonSkattepligtigIndkomstSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPensionFranskskatCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPensionSaerligOrdningExemptionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPensionSaerligOrdningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskPensionSaerligOrdningCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskKapitalIndkomst33GBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskIndkomst33ABeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagNegativKapitalIndkomstAegtefaelleBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagNegativKapitalIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KonkursskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KonkursskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KommunalIndkomstskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KommunalIndkomstskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KirkeskatNedslagPeriodeBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KirkeskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/KirkeskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ForskerskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/ForskerskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomvaerdiskatBeregnetSumBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/DISIndkomstNedslagBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/CFCskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/CFCskatBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/CFCIndkomstNedslagBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BundskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BundskatTotalBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregnetPersonligIndkomstGraenseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregnetKapitalIndkomstOverskydendeTotalNedslagGraenseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AMBidragNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AMBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktieskatManueltNettoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktieskatGrundBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AktieskatBeloeb.xsd"/><xs:include schemaLocation="TopskatStruktur.xsd"/>
+	<xs:include schemaLocation="UdenlandskPersonligIndkomstNedslagStruktur.xsd"/>
+	<xs:include schemaLocation="UdenlandskKapitalIndkomstNedslagStruktur.xsd"/>
+	<xs:include schemaLocation="UdenlandskVirksomhedIndkomstNedslagStruktur.xsd"/>
+	<xs:include schemaLocation="UdenlandskAktieIndkomstNedslagStruktur.xsd"/>
+	<xs:include schemaLocation="PersonFradragModregnetVaerdiStruktur.xsd"/>
+	<xs:include schemaLocation="PersonFradragModregnetVaerdiAegtefaelleStruktur.xsd"/>
+	<xs:element name="OevrigeOplysningerStruktur" type="selvangivelsews:OevrigeOplysningerStrukturType"/>
+	<xs:complexType name="OevrigeOplysningerStrukturType">
+		<xs:sequence>
+			<xs:element name="BeregnetSkat" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AMBidrag" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AlmenAMBidrag">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:AMBidragBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:AMBidragNettoBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="ForskerAMBidrag" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:AMBidragBeloeb"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Bundskat" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:BundskatTotalBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:BundskatManueltNettoBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="selvangivelsews:TopskatStruktur" minOccurs="0"/>
+						<xs:element name="KommuneIndkomstSkat" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Kommuneskat" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:KommunalIndkomstskatBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:KommunalIndkomstskatManueltNettoBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Indkomstskat" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:PersonSkattepligtigIndkomstSkatBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:PersonSkattepligtigIndkomstSkatManueltNettoBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Kirkeskat" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:KirkeskatBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:KirkeskatManueltNettoBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="NedslagForBeskatningSkatteloft" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:BeregnetPersonligIndkomstGraenseBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:BeregnetKapitalIndkomstOverskydendeTotalNedslagGraenseBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Forskerskat" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:ForskerskatBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:ForskerskatManueltNettoBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="SkatAfAktieindkomst" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="UnderGrundbeloeb" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:AktieskatGrundBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:AktieskatBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="OverGrundbeloeb" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:AktieskatManueltNettoBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:AktieskatBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="BegraensetSkattepligt" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:AktieskatBeloeb"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="SkatAfKonkursindkomst" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:KonkursskatBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:KonkursskatManueltNettoBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="SkatCFCIndkomst" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:CFCskatBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:CFCskatManueltNettoBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="UdenlandskNedslag" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CFCIndkomst" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:CFCIndkomstNedslagBeloeb"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="selvangivelsews:UdenlandskPersonligIndkomstNedslagStruktur" minOccurs="0"/>
+									<xs:element ref="selvangivelsews:UdenlandskKapitalIndkomstNedslagStruktur" minOccurs="0"/>
+									<xs:element ref="selvangivelsews:UdenlandskVirksomhedIndkomstNedslagStruktur" minOccurs="0"/>
+									<xs:element ref="selvangivelsews:UdenlandskAktieIndkomstNedslagStruktur" minOccurs="0"/>
+									<xs:element name="Paragraf33A" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:NedslagUdenlandskIndkomst33ABeloeb"/>
+												<xs:element name="NordiskMinisterRaad" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="selvangivelse:NedslagUdenlandskIndkomst33ABeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="NedslagPensionSaerligOrdning" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:NedslagUdenlandskPensionSaerligOrdningCreditBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:NedslagUdenlandskPensionSaerligOrdningExemptionBeloeb" minOccurs="0"/>
+												<xs:element name="NedslagSaerligOrdningIngenIndberettetSkatCredit" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="selvangivelse:NedslagUdenlandskPensionSaerligOrdningBeloeb"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="selvangivelsews:PersonFradragModregnetVaerdiStruktur" minOccurs="0"/>
+						<xs:element ref="selvangivelsews:PersonFradragModregnetVaerdiAegtefaelleStruktur" minOccurs="0"/>
+						<xs:element name="AndreNedslag" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:DISIndkomstNedslagBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:NedslagNegativKapitalIndkomstBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:NedslagNegativKapitalIndkomstAegtefaelleBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:NedslagUdenlandskPensionFranskskatCreditBeloeb" minOccurs="0"/>
+									<xs:element name="Eftergivelse" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:NedslagUdenlandskKapitalIndkomst33GBeloeb"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="NedslagForPeriode" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="selvangivelse:PersonSkattepligtigIndkomstBeloebPeriodeNedslagBeloeb" minOccurs="0"/>
+												<xs:element ref="selvangivelse:KirkeskatNedslagPeriodeBeloeb" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Virksomhedsskat" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:VirksomhedsskatNedslagBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:UdligningsskatBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:VirksomhedsskatBeloeb" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Aldersopsparing" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb4PctBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:AlderspensionAfgiftsberegning4PctBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:AlderspensionAfgiftsberegning20PctOg40PctBeloeb" minOccurs="0"/>
+									<xs:element ref="selvangivelse:AlderspensionDiskvalifikationKode" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="selvangivelse:EjendomvaerdiskatBeregnetSumBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:VirksomhedSkattetillaegBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:OevrigeOplysningerBeregningsgrundlagAcontoSkatBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:OevrigeOplysningerBeregningsgrundlagAcontoSkatSuccessionBeloeb" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

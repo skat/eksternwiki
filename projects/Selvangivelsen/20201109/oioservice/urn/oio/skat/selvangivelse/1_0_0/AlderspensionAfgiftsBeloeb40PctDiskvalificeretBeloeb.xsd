@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:alderspensionafgiftsbeloeb40pctdiskvalificeretbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" version="1.0" xml:lang="DA">
+	<xs:element name="AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Beløb med beregnet afgift ved indbetaling til aldersopsparing, hvor personen er diskvalificeret for at indskyde høje beløb, og indskuddet overstiger grundbeløbet på kr. 5.100 (beløbet reguleres årligt). Beløbet er beregnet med 40 % kr. af felt 982 reduceret med 5.100 (beløbet reguleres årligt).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

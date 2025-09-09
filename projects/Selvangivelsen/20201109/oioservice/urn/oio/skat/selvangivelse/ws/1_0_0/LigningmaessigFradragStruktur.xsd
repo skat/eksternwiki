@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragJobFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragEkstraPensionsfradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskLigningmaessigtFradragPersonligIndkomstGammelExemptionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskLigningmaessigtFradragVirksomhedIndkomstBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskLigningmaessigtFradragPersonligIndkomstHalvLempelseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskLigningmaessigtFradragLoenindtaegtBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningmaessigtFradragUdenlandskCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragUdenlandskExemptionBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragMedarbejdendeAegtefaelleSygeArbejdsskadeForsikringBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragBoerneDagplejereStandardBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragDISFradragAndenFartBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragSoefradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragEfterloensbidragGraensegaengerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragUnderholdsBidragBoerneBidragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragUdgifterServiceFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragUdgifterFrededeBygningerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragLoebendeYdelserForeningerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragKontingentVirksomhedBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragIndskudEtableringsKontoBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragGaverKulturForskningBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragGaverForeningerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragFagligtKontingentBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragRejseUdgifterBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragBoerneDagplejereFiskereBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragAkasseBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelsesFradragEnligForsoergerBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelsesFradragBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BefordringsFradragBeregnetBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BefordringsFradragBeloeb.xsd"/><xs:element name="LigningmaessigFradragStruktur" type="selvangivelsews:LigningmaessigFradragStrukturType"/>
+	<xs:complexType name="LigningmaessigFradragStrukturType">
+		<xs:sequence>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragAkasseBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:BefordringsFradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:BefordringsFradragBeregnetBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:BeskaeftigelsesFradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:BeskaeftigelsesFradragEnligForsoergerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragBoerneDagplejereFiskereBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragBoerneDagplejereStandardBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragFagligtKontingentBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragGaverForeningerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragGaverKulturForskningBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragIndskudEtableringsKontoBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragKontingentVirksomhedBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragLoebendeYdelserForeningerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragMedarbejdendeAegtefaelleSygeArbejdsskadeForsikringBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragRejseUdgifterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragUdgifterFrededeBygningerBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragUdgifterServiceFradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragUnderholdsBidragBoerneBidragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragJobFradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragEkstraPensionsfradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragSoefradragBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragDISFradragAndenFartBeloeb" minOccurs="0"/>
+			<xs:element ref="selvangivelse:LigningsmaessigtFradragEfterloensbidragGraensegaengerBeloeb" minOccurs="0"/>
+			<xs:element name="UdenlandskLigningsmaessigFradrag" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="selvangivelse:UdenlandskLigningmaessigtFradragPersonligIndkomstHalvLempelseBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:LigningsmaessigtFradragUdenlandskExemptionBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:LigningmaessigtFradragUdenlandskCreditBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:UdenlandskLigningmaessigtFradragVirksomhedIndkomstBeloeb" minOccurs="0"/>
+						<xs:element ref="selvangivelse:UdenlandskLigningmaessigtFradragPersonligIndkomstGammelExemptionBeloeb" minOccurs="0"/>
+						<xs:element name="DanskBeskatning" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UdenlandskLigningmaessigtFradragLoenindtaegtBeloeb"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Paragraf33A" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:UdenlandskLigningmaessigtFradragLoenindtaegtBeloeb"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

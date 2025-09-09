@@ -1,0 +1,461 @@
+﻿OIO XML Ændringslog for PersonSelvangivelseOpret2020 (Version 1-3)
+
+__VERSION 1 [11-08-2020]_______________________________________________________________________________________________________________________________________________________________
+Følgende strukturer er tilføjet
+	UdenlandskAktieindkomstStruktur
+	UdenlandskEjendomStruktur
+	UdenlandskLoenStruktur
+	UdenlandskRentefradragStruktur
+	UdenlandskVirksomhedStruktur
+	
+Følgende strukturer er opdateret
+	AktierSpecifikationStruktur
+		Nye Dataelementer
+			ReguleretUdbytteUdenlandskBeloeb
+			ReguleretGevinstUdenlandskBeloeb
+			EjReguleretUdbytteUdenlandskBeloeb
+			EjReguleretGevinstUdenlandskBeloeb
+	
+	LigningmaessigFradragStruktur
+		Dataelement har skiftet navn (tidl. stavefejl)
+			UdenlandskLigningmaessigtFradragPersonligIndkomstGammelExeptionBeloeb --> UdenlandskLigningmaessigtFradragPersonligIndkomstGammelExemptionBeloeb
+
+		Nye dataelementer
+			BefordringsFradragBeregnetBeloeb
+			LigningsmaessigtFradragSoefradragBeloeb
+			LigningsmaessigtFradragDISFradragAndenFartBeloeb
+			LigningsmaessigtFradragEfterloensbidragGraensegaengerBeloeb
+			UdenlandskLigningmaessigtFradragPersonligIndkomstHalvLempelseBeloeb
+			LigningsmaessigtFradragUdenlandskExemptionBeloeb
+			LigningmaessigtFradragUdenlandskCreditBeloeb
+			UdenlandskLigningmaessigtFradragVirksomhedIndkomstBeloeb
+			UdenlandskLigningmaessigtFradragPersonligIndkomstGammelExemptionBeloeb
+			UdenlandskLigningmaessigtFradragLoenindtaegtBeloeb
+
+	KapitalIndkomstStruktur
+		Nye dataelementer
+			UdenlandskKapitalIndkomstBeloebGammelExemptionBeloeb
+			UdenlandskSelvstaendigVirksomhedNettoRenterBeloeb
+			RenteudgiftUdenlandskEjendomBeloeb
+			RenteudgiftAndenUdenlandskGaeldBeloeb
+			VirksomhedOrdningRentekorrektionBeloeb
+			VirksomhedOrdningKapitalafkastBeloeb
+			KapitalafkastOrdningKapitalafkastBeloeb
+			UdenlandskKapitalIndkomstBeloeb
+
+	PersonligIndkomstStruktur
+		Nye dataelementer
+			KunstnerVirksomhedOrdningBeloebOverfoertFraKontoBeloeb
+			KunstnerVirksomhedOrdningIndkomstTilBeskatningBeloeb
+			MedarbejdendeAegtefaelleIndkomstBeloeb
+			MedarbejdendeAegtefaelleIndkomstEfterAMBidragBeloeb
+			PersonligIndkomstFradragUdenlandskeSocialeBidragBeloeb
+			SelvstaendigVirksomhedAndenKapitalindkomstBeloeb
+			SelvstaendigVirksomhedBiblioteksafgiftGodtgoerelseBeloeb
+			SelvstaendigVirksomhedBiblioteksafgiftGodtgoerelseEfterAMBidragBeloeb
+			PersonligIndkomstOverfoertOpsparetOverskudSuccessionBeloeb
+			PersonligIndkomstOverfoertOpsparetOverskudSuccessionProcent
+			PersonligIndkomstOverfoertOpsparetOverskudSuccessionSumBeloeb
+			VirksomhedOrdningKapitalafkastBeloeb
+			KapitalafkastOrdningKapitalafkastBeloeb
+			UdenlandskSelvstaendigVirksomhedOverskudBeloeb
+			UdenlandskSelvstaendigVirksomhedNettoRenterBeloeb
+			VirksomhedOrdningIndkomstTilVirksomhedsbeskatningBeloeb
+			KapitalafkastOrdningVirksomhedsbeskatningKonjunkturBeloeb
+			VirksomhedOrdningRentekorrektionBeloeb
+			VirksomhedOrdningRentekorrektionEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtDanskBeskatningBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtDanskBeskatningEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtUdenlandskBeskatningBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtUdenlandskBeskatningEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtExemptionBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtExemptionEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtCreditBeloeb
+			UdenlandskPersonligIndkomstLoenindtaegtCreditEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstBeloebGammelExemptionBeloeb
+			UdenlandskPersonligIndkomstBeloebGammelExemptionEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstAndenIndkomstFraUdlArbejdsgiverBeloeb
+			UdenlandskPersonligIndkomstAndenIndkomstFraUdlArbejdsgiverEfterAMBidragBeloeb
+			UdenlandskPersonligIndkomstBeloebHalvLempelseBeloeb
+			UdenlandskPersonligIndkomstBeloebHalvLempelseEfterAMBidragBeloeb
+			UdenlandskPensionUdbetalingDanskBeskatningBeloeb
+			UdenlandskPensionUdbetalingCreditBeloeb
+			UdenlandskPensionUdbetalingGammelExemptionBeloeb
+			UdenlandskPensionUdbetalingExemptionBeloeb
+			UdenlandskPensionUdbetalingSaerligOrdningBeloeb
+			UdenlandskPensionUdbetalingSaerligOrdningExemptionBeloeb
+
+	OevrigeOplysningerStruktur
+		Nye datastrukturer
+			UdenlandskPersonligIndkomstNedslagStruktur
+			UdenlandskKapitalIndkomstNedslagStruktur
+			UdenlandskVirksomhedIndkomstNedslagStruktur
+			UdenlandskAktieIndkomstNedslagStruktur
+			PersonFradragModregnetVaerdiStruktur
+			PersonFradragModregnetVaerdiAegtefaelleStruktur
+			TopskatStruktur
+			
+		Nye dataelementer
+			AMBidragNettoBeloeb
+			AMBidragBeloeb
+			BundskatTotalBeloeb
+			BundskatManueltNettoBeloeb
+			KommunalIndkomstskatBeloeb
+			KommunalIndkomstskatManueltNettoBeloeb
+			PersonSkattepligtigIndkomstSkatBeloeb
+			PersonSkattepligtigIndkomstSkatManueltNettoBeloeb
+			KirkeskatBeloeb
+			KirkeskatManueltNettoBeloeb
+			BeregnetPersonligIndkomstGraenseBeloeb
+			BeregnetKapitalIndkomstOverskydendeTotalNedslagGraenseBeloeb
+			ForskerskatBeloeb
+			ForskerskatManueltNettoBeloeb
+			AktieskatGrundBeloeb
+			AktieskatBeloeb
+			AktieskatManueltNettoBeloeb
+			KonkursskatBeloeb
+			KonkursskatManueltNettoBeloeb
+			CFCskatBeloeb
+			CFCskatManueltNettoBeloeb
+			CFCIndkomstNedslagBeloeb
+			NedslagUdenlandskIndkomst33ABeloeb
+			NedslagUdenlandskPensionSaerligOrdningCreditBeloeb
+			NedslagUdenlandskPensionSaerligOrdningExemptionBeloeb
+			NedslagUdenlandskPensionSaerligOrdningBeloeb
+			DISIndkomstNedslagBeloeb
+			NedslagNegativKapitalIndkomstBeloeb
+			NedslagNegativKapitalIndkomstAegtefaelleBeloeb
+			NedslagUdenlandskPensionFranskskatCreditBeloeb
+			NedslagUdenlandskKapitalIndkomst33GBeloeb
+			PersonSkattepligtigIndkomstBeloebPeriodeNedslagBeloeb
+			KirkeskatNedslagPeriodeBeloeb
+			VirksomhedsskatNedslagBeloeb
+			UdligningsskatBeloeb
+			VirksomhedsskatBeloeb
+			EjendomvaerdiskatBeloeb
+			VirksomhedSkattetillaegBeloeb
+		
+		Flytning af dataelementer til ny blok *Alderspension*
+			AlderspensionAfgiftsBeloeb4PctBeloeb
+			AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb
+			AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb
+			AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb
+			AlderspensionAfgiftsberegning4PctBeloeb
+			AlderspensionAfgiftsberegning20PctOg40PctBeloeb
+			AlderspensionDiskvalifikationKode
+
+	PersonSelvangivelseOpret_O 
+		Nye datastrukturer
+			EjendomsoplysningerStruktur
+			UdenlandskNedslagStruktur 
+			
+		Udgåede dataelementer
+			AarligSkatteOplysningUdenlandskEjendom
+			AarligSkatteOplysningUdenlandskAktieindkomst
+			AarligSkatteOplysningUdenlandskRentefradrag
+	
+Andet
+	Ændret beskrivelse 
+		KommunalIndkomstskatNedslagBeloeb
+		EjReguleretGevinstUdenlandskBeloeb
+		LigningsmaessigtFradragUdenlandskExemptionBeloeb
+		LigningmaessigtFradragUdenlandskCreditBeloeb
+		LigningsmaessigtFradragEfterloensbidragGraensegaengerBeloeb
+		NedslagUdenlandskKapitalIndkomstVirksomhedCreditBeloeb
+		NedslagUdenlandskKapitalIndkomstVirksomhedBeloeb
+		NedslagUdenlandskPensionFranskskatCreditBeloeb
+		ReguleretGevinstUdenlandskBeloeb
+
+__VERSION 2 [13-09-2020]______________________________________________________________________________________________________________________________________________
+Andet
+	Denne blok
+	
+	(
+		*XXXSletUaendret*
+		[
+			(UnikIdentifikationskodeIdentifikator)
+			(UdviklerUnikIdentifikationskodeIdentifikator)
+			(SagHandlingTypeTekst)
+		]
+	)
+	
+	er indsat i følgende strukturer
+		UdenlandskEjendomStruktur
+		UdenlandskRenteFradragStruktur
+		UdenlandskAktieIndkomstNedslagStruktur
+
+Ændret navn
+	HandlingTypeIndikator er omdøbt til SagHandlingTypeTekst
+
+Ændret beskrivelse 
+	AktieskatDBOGrundBeloeb
+	BegraensetSkattepligtigUdenlandskIndkomstHalvLempelseNedslagBeloeb
+	BeskaeftigelseByggeAnlaegMonteringIndikator
+	BeskaeftigelseSystemeksportIndikator
+	FlyOpgaveIndikator
+	KapitalafkastOrdningVirksomhedsbeskatningKonjunkturBeloeb
+	KommunalIndkomstskatNedslagBeloeb
+	MedarbejdendeAegtefaelleIndkomstEfterAMBidragBeloeb
+	NedslagUdenlandskIndkomstHalvLempelseMedAcontoAMBidragBeloeb
+	RenteudgiftAndenUdenlandskGaeldBeloeb
+	SelvstaendigVirksomhedAndenKapitalindkomstBeloeb
+	SelvstaendigVirksomhedBiblioteksafgiftGodtgoerelseEfterAMBidragBeloeb
+	SkibGroenlandskIndikator
+	SkibOpgaveIndikator
+	SaerligIndkomstFlyvningIDanmarkIndikator
+	TopskatUdenlandskPensionSaerligOrdningCreditNedslagBeloeb
+	UdenlandskAnsaettelseAnsaettelsesforholdTypeTekst
+	UdenlandskAnsaettelseArbejdslandLigUdbetalingslandTekst
+	UdenlandskArbejdsgiverTuristoriganisationKommercielIndikator
+	UdenlandskArbejdsgiverVelgoerendeIndikator
+	UdenlandskFormueAktieBevisKursvaerdiBeloeb
+	UdenlandskKapitalIndkomstAndenKapitalIndkomstBeloeb
+	UdenlandskKapitalIndkomstRenteindtaegtBeloeb
+	UdenlandskPensionUdbetalingSaerligOrdningBeloeb
+	UdenlandskPensionUdbetalingSaerligOrdningExemptionBeloeb
+	UdenlandskPersonligIndkomstAndenIndkomstFraUdlArbejdsgiverBeloeb
+	UdenlandskPersonligIndkomstAndenIndkomstFraUdlArbejdsgiverEfterAMBidragBeloeb
+	UdenlandskPersonligIndkomstBeloebGammelExemptionEfterAMBidragBeloeb
+	UdenlandskPersonligIndkomstBeloebHalvLempelseEfterAMBidragBeloeb
+	UdenlandskPersonligIndkomstSocialtSikretArbejdslandIndikator
+	UdenlandskPersonligIndkomstTypeTekst
+	VirksomhedOrdningIndkomstTilVirksomhedsbeskatningBeloeb
+	VirksomhedOrdningRentekorrektionBeloeb
+	VirksomhedOrdningRentekorrektionEfterAMBidragBeloeb
+
+Tilrettet værdisæt
+	FlySelskabKodeTekst
+	SagHandlingTypeTekst
+	SkibNationalitetIdentifikator
+	SkibRegistreringLandTekst
+	UdenlandskAnsaettelseAnsaettelsesforholdTypeTekst
+	UdenlandskAnsaettelseArbejdslandLigUdbetalingslandTekst
+	UdenlandskArbejdsgiverFastDriftstedArbejdslandTekst
+	UdenlandskArbejdsgiverFastRepraesentationIndikator
+	UdenlandskArbejdsgiverLandTekst
+	UdenlandskArbejdsgiverLedelseTekst
+ 
+Nyt datatype (boolean --> string)
+	BeskaeftigelseByggeAnlaegMonteringIndikator
+	BeskaeftigelseJournalistIndikator
+	BeskaeftigelseMyndighedIndikator
+	BeskaeftigelseSystemeksportIndikator
+	BeskaeftigelseTekniskEkspertIndikator
+	FlyFastBesaetningIndikator
+	FlyInternationaltIndikator
+	FlyOpgaveIndikator
+	OpholdUdlandByggeAnlaegMonteringPeriodeIndikator
+	OpholdUdlandByggeAnlaegMonteringPeriode2Indikator
+	OpholdUdlandMereEnd6MaanederIndikator
+	OpholdUdlandOver365DageIndikator
+	OpholdUdlandPeriodeOver30DageIndikator
+	OpholdUdlandPeriodeOver120DageIndikator
+	OpholdUdlandPeriodeOver60DageIndikator
+	SkibDanmarkHeleAaretIndikator
+	SkibFASIndikator
+	SkibFastBesaetningIndikator
+	SkibGroenlandHeleAaretIndikator
+	SkibGroenlandskIndikator
+	SkibNationalitetIdentifikator
+	SkibOpgaveIndikator
+	SkibRegistreringLandTekst
+	SkibSejladsFlereLandeIndikator
+	SkibSejladsIndreVandvejeIndikator
+	SaerligIndkomstDanskVelgoerendeIndikator
+	SaerligIndkomstFlyvningIDanmarkIndikator
+	SaerligIndkomstKulturaftaleIndikator
+	SaerligIndkomstPraemierPriserIndikator
+	SaerligIndkomstSejladsIDanmarkIndikator
+	SaerligIndkomstTilfalderPersonIndikator
+	SaerligIndkomstTurneIndikator
+	UdenlandskAnsaettelseAnsaettelsesforholdTypeTekst
+	UdenlandskAnsaettelseArbejdslandLigUdbetalingslandTekst
+	UdenlandskAnsaettelseArbejdsudlejetIndikator
+	UdenlandskAnsaettelseFormaalIndikator
+	UdenlandskAnsaettelseFritErhvervIndikator
+	UdenlandskAnsaettelseOffentligErhvervIndikator
+	UdenlandskAnsaettelseStatsborgerskabMarkeringIndikator
+	UdenlandskAnsaettelseSaedvanligArbejdsgiverIndikator
+	UdenlandskAnsaettelseTjenesteforholdIndikator
+	UdenlandskAnsaettelseTuristorganisationIndikator
+	UdenlandskArbejdsgiverAmbassadeIndikator
+	UdenlandskArbejdsgiverFastDriftstedArbejdslandTekst
+	UdenlandskArbejdsgiverFastRepraesentationIndikator
+	UdenlandskArbejdsgiverGroenlandIndikator
+	UdenlandskArbejdsgiverKommercielIndikator
+	UdenlandskArbejdsgiverKonsortieIndikator
+	UdenlandskArbejdsgiverLandTekst
+	UdenlandskArbejdsgiverLandEjArbejdslandIndikator
+	UdenlandskArbejdsgiverLedelseTekst
+	UdenlandskArbejdsgiverOffentligIndikator
+	UdenlandskArbejdsgiverTuristoriganisationKommercielIndikator
+	UdenlandskArbejdsgiverVelgoerendeIndikator
+	UdenlandskPersonligIndkomstDokumentationIndikator
+	UdenlandskPersonligIndkomstLempelseBetingelserLigningslov33AIndikator
+	UdenlandskPersonligIndkomstOverBeloebGraenseIndikator
+	UdenlandskPersonligIndkomstSocialtSikretArbejdslandIndikator
+	UdenlandskSkatArbejdsgiverHjemlandIndikator
+	UdenlandskSkatDokumentationIndikator
+	UdenlandskSkattepligtBundgraenseIndikator
+	UdenlandskSkattepligtDelvisIndikator
+	UdenlandskSkattepligtHelIndikator
+	UdenlandskSkattepligtMarkeringIndikator
+
+__VERSION 3 [26-10-2020]_____________________________________________________________________________________________________________________________________________
+
+PersonSelvangivelseOpret_O 
+	Udgåede elementer
+		PersonligIndkomstFradragIndbetalingFoerPensionsOrdningBeloeb
+
+UdenlandskLoenStruktur
+	Nye dataelementer
+		UdenlandskPersonligIndkomstPendlerArbejdslandBopaelslandIndikator
+	
+	Strukturændringer
+		*IndkomstoplysningTvaergaaende*
+			*Periode* er gjort optionel
+		
+UdenlandskEjendomStruktur
+	Nye dataelementer
+		EjendomAngivelseUdlejningBundfradragIndikator
+	
+UdenlandskAktieindkomstStruktur	
+	Nye dataelementer
+		UdenlandskAktieAktiebaseretInvesteringBeloeb	
+		UdenlandskAktieObligationsbaseretInvesteringBeloeb
+	
+AktierSpecifikationStruktur	
+	Nye dataelementer
+		AktierSpecifikationAktiebaseretInvesteringBeloeb		
+		AktierSpecifikationUdenlandskAktiebaseretInvesteringBeloeb
+		AktierSpecifikationTabUdenlandskAktiebaseretInvesteringTilAegtefaelleBeloeb
+		AktierSpecifikationTabUdenlandskAktiebaseretInvesteringFraAegtefaelleBeloeb
+	
+PersonligIndkomstStruktur
+	Nye dataelementer	
+		ArbejdsgiverAdministreretBidragIndskudAldersopsparingDISBeloeb
+	
+OevrigeOplysningerStruktur
+	Bloknavnændring			
+		Overskriften *Alderspension* er ændret til *Aldersopsparing*
+	
+Andet
+	Servicebeskrivelse
+		PersonSelvangivelseOpret har fået opdateret sin overordnede servicebeskrivelse
+	
+	Tværgående nye dataelementer
+		RenteudgiftUdenlandskGaeldBeloeb 			indsat i		UdenlandskEjendomStruktur, UdenlandskRentefradragStruktur
+	
+	Ny datatype											
+		OpholdUdlandAntalDageMereEnd183Indikator	boolean --> string
+		SaerligIndkomstOffentligStoetteIndikator	boolean --> string
+		UdenlandskSkatBeloeb						decimal --> string
+	
+	Nyt værdisæt (til A Ja/ B Nej)											
+		BeskaeftigelseByggeAnlaegMonteringIndikator
+		BeskaeftigelseJournalistIndikator
+		BeskaeftigelseMyndighedIndikator
+		BeskaeftigelseSystemeksportIndikator
+		BeskaeftigelseTekniskEkspertIndikator
+		FlyFastBesaetningIndikator
+		FlyInternationaltIndikator
+		FlyOpgaveIndikator
+		OpholdUdlandAntalDageMereEnd183Indikator
+		OpholdUdlandByggeAnlaegMonteringPeriodeIndikator
+		OpholdUdlandByggeAnlaegMonteringPeriode2Indikator
+		OpholdUdlandMereEnd6MaanederIndikator
+		OpholdUdlandOver365DageIndikator
+		OpholdUdlandPeriodeOver120DageIndikator
+		OpholdUdlandPeriodeOver30DageIndikator
+		OpholdUdlandPeriodeOver60DageIndikator
+		SkibDanmarkHeleAaretIndikator
+		SkibFASIndikator
+		SkibFastBesaetningIndikator
+		SkibGroenlandHeleAaretIndikator
+		SkibGroenlandskIndikator
+		SkibOpgaveIndikator
+		SkibSejladsFlereLandeIndikator
+		SkibSejladsIndreVandvejeIndikator
+		SaerligIndkomstDanskVelgoerendeIndikator
+		SaerligIndkomstFlyvningIDanmarkIndikator
+		SaerligIndkomstKulturaftaleIndikator
+		SaerligIndkomstOffentligStoetteIndikator
+		SaerligIndkomstPraemierPriserIndikator
+		SaerligIndkomstSejladsIDanmarkIndikator
+		SaerligIndkomstTilfalderPersonIndikator
+		SaerligIndkomstTurneIndikator
+		UdenlandskAnsaettelseArbejdsudlejetIndikator
+		UdenlandskAnsaettelseFormaalIndikator
+		UdenlandskAnsaettelseFritErhvervIndikator
+		UdenlandskAnsaettelseOffentligErhvervIndikator
+		UdenlandskAnsaettelseStatsborgerskabMarkeringIndikator
+		UdenlandskAnsaettelseSaedvanligArbejdsgiverIndikator
+		UdenlandskAnsaettelseTjenesteforholdIndikator
+		UdenlandskAnsaettelseTuristorganisationIndikator
+		UdenlandskArbejdsgiverAmbassadeIndikator
+		UdenlandskArbejdsgiverGroenlandIndikator
+		UdenlandskArbejdsgiverKommercielIndikator
+		UdenlandskArbejdsgiverKonsortieIndikator
+		UdenlandskArbejdsgiverLandEjArbejdslandIndikator
+		UdenlandskArbejdsgiverOffentligIndikator
+		UdenlandskArbejdsgiverTuristoriganisationKommercielIndikator
+		UdenlandskArbejdsgiverVelgoerendeIndikator
+		UdenlandskPersonligIndkomstDokumentationIndikator
+		UdenlandskPersonligIndkomstLempelseBetingelserLigningslov33AIndikator
+		UdenlandskPersonligIndkomstOverBeloebGraenseIndikator
+		UdenlandskPersonligIndkomstSocialtSikretArbejdslandIndikator
+		UdenlandskSkatArbejdsgiverHjemlandIndikator
+		UdenlandskSkatDokumentationIndikator
+		UdenlandskSkattepligtBundgraenseIndikator
+		UdenlandskSkattepligtDelvisIndikator
+		UdenlandskSkattepligtHelIndikator
+		UdenlandskSkattepligtMarkeringIndikator
+
+	Beskrivelse opdateret (rettelse af stavefejl, ordvalg, mm)
+		IndkomstPeriodeFraDato
+		IndkomstPeriodeTilDato
+		PersonligIndkomstUdlodningInvesteringsForeningVirksomhedBeloeb
+		PersonSelvangivelseRevisorindberetningTekst
+		KapitalindkomstUdlodningInvesteringsforeningVirksomhedBeloeb
+		PersonligIndkomstOverfoertKonjunkturUdligningProcent
+		AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb
+		AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb
+		AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb
+		AlderspensionAfgiftsBeloeb4PctBeloeb
+		ArbejdsgiverAdministreretBidragIndskudPaaAlderpensionBeloeb
+		PersonligIndkomstFradragUdenlandskeSocialeBidragBeloeb
+		UdenlandskKapitalIndkomstBeloeb
+		UdenlandskKapitalIndkomstBeloebGammelExemptionBeloeb
+		UdenlandskLigningmaessigtFradragLoenindtaegtBeloeb
+		UdenlandskLigningmaessigtFradragPersonligIndkomstGammelExemptionBeloeb
+		UdenlandskLigningmaessigtFradragPersonligIndkomstHalvLempelseBeloeb
+		UdenlandskPensionUdbetalingCreditBeloeb
+		UdenlandskPensionUdbetalingDanskBeskatningBeloeb
+		UdenlandskPensionUdbetalingExemptionBeloeb
+		UdenlandskPensionUdbetalingGammelExemptionBeloeb
+		UdenlandskPersonligIndkomstAndenIndkomstFraUdlArbejdsgiverBeloeb
+		UdenlandskPersonligIndkomstBeloebGammelExemptionBeloeb
+		UdenlandskPersonligIndkomstBeloebHalvLempelseBeloeb
+		UdenlandskPersonligIndkomstLoenindtaegtBeloeb
+		UdenlandskSkatKapitalIndkomstBeloeb
+		UdenlandskSkatUdbytteskatBeloeb
+		UdenlandskArbejdsgiverFastDriftstedArbejdslandTekst
+		BeskaeftigelseJournalistIndikator
+		FlyFastBesaetningIndikator
+		FlyOpgaveIndikator
+		NedslagBundkskatUdenlandskPensionExemptionSaerligOrdningBeloeb
+		NedslagUdenlandskPensionSaerligOrdningBeloeb
+		NedslagUdenlandskPensionSaerligOrdningCreditBeloeb
+		NedslagUdenlandskPensionSaerligOrdningExemptionBeloeb
+		OpholdUdlandAntalDageMereEnd183Indikator
+		PersonligIndkomstOverfoertOpsparetOverskudSuccessionProcent
+		RenteudgiftOffentligGaeldBeloeb
+		SkibNationalitetIdentifikator
+		SaerligIndkomstSejladsIDanmarkIndikator
+		TopskatUdenlandskPensionExemptionSaerligOrdningNedslagBeloeb
+		TopskatUdenlandskPensionSaerligOrdningCreditNedslagBeloeb
+		
+Namespace
+	Skiftet namespace til urn:oio:skat:selvangivelse:1.0.0	
+		IndkomstPeriodeFraDato
+		IndkomstPeriodeTilDato

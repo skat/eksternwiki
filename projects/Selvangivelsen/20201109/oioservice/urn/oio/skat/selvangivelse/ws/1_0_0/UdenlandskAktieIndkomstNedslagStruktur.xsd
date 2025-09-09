@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation/>
+	</xs:annotation>
+	<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagUdenlandskAktieudbytteCreditBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagAktieskatUdenlandskEjReguleretUnderOgOverGrundBeloeb.xsd"/><xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/NedslagAktieskatDBOUnderOgOverBeloeb.xsd"/><xs:element name="UdenlandskAktieIndkomstNedslagStruktur" type="selvangivelsews:UdenlandskAktieIndkomstNedslagStrukturType"/>
+	<xs:complexType name="UdenlandskAktieIndkomstNedslagStrukturType">
+		<xs:sequence>
+			<xs:element name="Aktier">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DanskDepotUdenDBOUdenlandskDepot" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:NedslagUdenlandskAktieudbytteCreditBeloeb"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="DanskDepotMedDBO" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:NedslagAktieskatDBOUnderOgOverBeloeb"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="EjReguleretMarked" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="selvangivelse:NedslagAktieskatUdenlandskEjReguleretUnderOgOverGrundBeloeb"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
