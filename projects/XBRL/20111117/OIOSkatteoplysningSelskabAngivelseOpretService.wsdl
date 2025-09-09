@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s1:definitions name="OIOSkatteoplysningSelskabAngivelseOpretServiceDefinitions" targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0" xmlns="" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:s1="http://schemas.xmlsoap.org/wsdl/" xmlns:s2="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+  <wsp:UsingPolicy s1:Required="true"/>
+  <wsp:Policy s0:Id="Encrypt.xml">
+    <wssp:Confidentiality xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:KeyWrappingAlgorithm URI="http://www.w3.org/2001/04/xmlenc#rsa-1_5"/>
+      <wssp:Target>
+        <wssp:EncryptionAlgorithm URI="http://www.w3.org/2001/04/xmlenc#tripledes-cbc"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">wsp:Body()</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:KeyInfo>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+        <wssp:SecurityTokenReference>
+          <wssp:Embedded>
+            <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">MIIE+DCCBGGgAwIBAgIEQDfv2jANBgkqhkiG9w0BAQUFADA/MQswCQYDVQQGEwJESzEMMAoGA1UEChMDVERDMSIwIAYDVQQDExlUREMgT0NFUyBTeXN0ZW10ZXN0IENBIElJMB4XDTExMDkyMTExMjEzN1oXDTEzMDkyMTExNTEzN1owbjELMAkGA1UEBhMCREsxHTAbBgNVBAoTFFNLQVQgLy8gQ1ZSOjE5NTUyMTAxMUAwFwYDVQQDExBTS0FUIC0gU0tBVCBURVNUMCUGA1UEBRMeQ1ZSOjE5NTUyMTAxLVVJRDoxMzE2NjAxNDgxNjQ1MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCgwuXVhjHLmroyUn/mbWbRpG2QZZ7sD3ZmRWiGbsEb+ek+pBdnREC74+t9JytYJKpegxEyvJbcBbevTqMdJxCOGj65QjHN2DbnwGlU7hzV9tXC8FqVeKbu2qxxi5oo8JZlLh3Q1UNVbYvuwIQvzcGrSB0WlYtjXt/LBhhTwGzIQIDAQABo4IC0DCCAswwDgYDVR0PAQH/BAQDAgO4MCsGA1UdEAQkMCKADzIwMTEwOTIxMTEyMTM3WoEPMjAxMzA5MjExMTUxMzdaMEYGCCsGAQUFBwEBBDowODA2BggrBgEFBQcwAYYqaHR0cDovL3Rlc3Qub2NzcC5jZXJ0aWZpa2F0LmRrL29jc3Avc3RhdHVzMIIBAwYDVR0gBIH7MIH4MIH1BgkpAQEBAQEBAQMwgecwLwYIKwYBBQUHAgEWI2h0dHA6Ly93d3cuY2VydGlmaWthdC5kay9yZXBvc2l0b3J5MIGzBggrBgEFBQcCAjCBpjAKFgNUREMwAwIBARqBl1REQyBUZXN0IENlcnRpZmlrYXRlciBmcmEgZGVubmUgQ0EgdWRzdGVkZXMgdW5kZXIgT0lEIDEuMS4xLjEuMS4xLjEuMS4xLjMuIFREQyBUZXN0IENlcnRpZmljYXRlcyBmcm9tIHRoaXMgQ0EgYXJlIGlzc3VlZCB1bmRlciBPSUQgMS4xLjEuMS4xLjEuMS4xLjEuMy4wHAYJYIZIAYb4QgENBA8WDW9yZ2FuV2ViTm9EaXIwIAYDVR0RBBkwF4EVcGV0ZXIuanVuZ2RhbEBza2F0LmRrMIGXBgNVHR8EgY8wgYwwV6BVoFOkUTBPMQswCQYDVQQGEwJESzEMMAoGA1UEChMDVERDMSIwIAYDVQQDExlUREMgT0NFUyBTeXN0ZW10ZXN0IENBIElJMQ4wDAYDVQQDEwVDUkwyODAxoC+gLYYraHR0cDovL3Rlc3QuY3JsLm9jZXMuY2VydGlmaWthdC5kay9vY2VzLmNybDAfBgNVHSMEGDAWgBQcmAlHGkw4uRDFBClb8fROgGrMfjAdBgNVHQ4EFgQUUvlD9SiLbxRiTRw+LIZ0Lz5pnAMwCQYDVR0TBAIwADAZBgkqhkiG9n0HQQAEDDAKGwRWNy4xAwIDqDANBgkqhkiG9w0BAQUFAAOBgQCkwhsZd/IHcYjytr+okcLcdNkZfjv27xAseUkWWCGpRve+S5PqQP4xRpKIhw57ZJW1etW2DfRAYrEWEre1v4QKR6XZUnEtYOQYFTBFeGje+KQ16AmfiG2K08ZV61RMmY8Ucgm8PX031caU03V1JOCWpSFXuDnfFAwsMhLcwk7REg==</wsse:BinarySecurityToken>
+          </wssp:Embedded>
+        </wssp:SecurityTokenReference>
+      </wssp:KeyInfo>
+    </wssp:Confidentiality>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="SkatEsbAuthentication">
+    <wssp:Identity xmlns:wssp="http://www.bea.com/wls90/security/policy">
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+			</wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Identity>
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+				wsp:Body()
+			</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part">
+				wls:SecurityHeader(wsu:Timestamp)
+			</wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+  </wsp:Policy>
+  <wsp:Policy s0:Id="Sign.xml">
+    <wssp:Integrity xmlns:wls="http://www.bea.com/wls90/security/policy/wsee#part" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wssp:SignatureAlgorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <wssp:CanonicalizationAlgorithm URI="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SystemHeaders()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://www.bea.com/wls90/security/policy/wsee#part"> 
+        wls:SecurityHeader(wsu:Timestamp)
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:Target>
+        <wssp:DigestAlgorithm URI="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <wssp:MessageParts Dialect="http://schemas.xmlsoap.org/2002/12/wsse#part">
+      wsp:Body()
+      </wssp:MessageParts>
+      </wssp:Target>
+      <wssp:SupportedTokens>
+        <wssp:SecurityToken IncludeInMessage="true" TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3">
+          <wssp:TokenIssuer>CN=CACERT,OU=FOR TESTING ONLY,O=MyOrganization,L=MyTown,ST=MyState,C=US,1.2.840.113549.1.9.1=#160f737570706f7274406265612e636f6d,CN=Demo Certificate Authority Constraints,OU=Security,O=BEA WebLogic,L=San Francisco,ST=California,C=US,1.2.840.113549.1.9.1=#16107365637572697479406265612e636f6d,CN=Demo Certificate Authority Constraints,OU=Security,O=BEA WebLogic,L=San Francisco,ST=California,C=US,CN=CertGenCAB,OU=FOR TESTING ONLY,O=MyOrganization,L=MyTown,ST=MyState,C=US,CN=Equifax Secure eBusiness CA-1,O=Equifax Secure Inc.,C=US,CN=VeriSign Class 1 Public Primary Certification Authority - G3,OU=(c) 1999 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US,OU=VeriSign Trust Network,OU=(c) 1998 VeriSign\, Inc. - For authorized use only,OU=Class 2 Public Primary Certification Authority - G2,O=VeriSign\, Inc.,C=US,CN=VeriSign Class 3 Public Primary Certification Authority - G3,OU=(c) 1999 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US,CN=Entrust.net Client Certification Authority,OU=(c) 2000 Entrust.net Limited,OU=www.entrust.net/GCCA_CPS incorp. by ref. (limits liab.),O=Entrust.net,OU=Go Daddy Class 2 Certification Authority,O=The Go Daddy Group\, Inc.,C=US,CN=GTE CyberTrust Global Root,OU=GTE CyberTrust Solutions\, Inc.,O=GTE Corporation,C=US,CN=Entrust.net Secure Server Certification Authority,OU=(c) 2000 Entrust.net Limited,OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.),O=Entrust.net,OU=Class 1 Public Primary Certification Authority,O=VeriSign\, Inc.,C=US,1.2.840.113549.1.9.1=#1619706572736f6e616c2d6261736963407468617774652e636f6d,CN=Thawte Personal Basic CA,OU=Certification Services Division,O=Thawte Consulting,L=Cape Town,ST=Western Cape,C=ZA,OU=VeriSign Trust Network,OU=(c) 1998 VeriSign\, Inc. - For authorized use only,OU=Class 1 Public Primary Certification Authority - G2,O=VeriSign\, Inc.,C=US,CN=Entrust.net Secure Server Certification Authority,OU=(c) 1999 Entrust.net Limited,OU=www.entrust.net/CPS incorp. by ref. (limits liab.),O=Entrust.net,C=US,1.2.840.113549.1.9.1=#161c706572736f6e616c2d667265656d61696c407468617774652e636f6d,CN=Thawte Personal Freemail CA,OU=Certification Services Division,O=Thawte Consulting,L=Cape Town,ST=Western Cape,C=ZA,OU=Class 3 Public Primary Certification Authority,O=VeriSign\, Inc.,C=US,CN=GTE CyberTrust Root,O=GTE Corporation,C=US,CN=VeriSign Class 2 Public Primary Certification Authority - G3,OU=(c) 1999 VeriSign\, Inc. - For authorized use only,OU=VeriSign Trust Network,O=VeriSign\, Inc.,C=US,1.2.840.113549.1.9.1=#16177365727665722d6365727473407468617774652e636f6d,CN=Thawte Server CA,OU=Certification Services Division,O=Thawte Consulting cc,L=Cape Town,ST=Western Cape,C=ZA,OU=Equifax Secure Certificate Authority,O=Equifax,C=US,1.2.840.113549.1.9.1=#161b706572736f6e616c2d7072656d69756d407468617774652e636f6d,CN=Thawte Personal Premium CA,OU=Certification Services Division,O=Thawte Consulting,L=Cape Town,ST=Western Cape,C=ZA,1.2.840.113549.1.9.1=#16197072656d69756d2d736572766572407468617774652e636f6d,CN=Thawte Premium Server CA,OU=Certification Services Division,O=Thawte Consulting cc,L=Cape Town,ST=Western Cape,C=ZA,OU=VeriSign Trust Network,OU=(c) 1998 VeriSign\, Inc. - For authorized use only,OU=Class 3 Public Primary Certification Authority - G2,O=VeriSign\, Inc.,C=US,CN=Entrust.net Certification Authority (2048),OU=(c) 1999 Entrust.net Limited,OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.),O=Entrust.net,1.2.840.113549.1.9.1=#1611696e666f4076616c69636572742e636f6d,CN=http://www.valicert.com/,OU=ValiCert Class 2 Policy Validation Authority,O=ValiCert\, Inc.,L=ValiCert Validation Network,CN=Baltimore CyberTrust Root,OU=CyberTrust,O=Baltimore,C=IE,OU=Secure Server Certification Authority,O=RSA Data Security\, Inc.,C=US,CN=Entrust.net Client Certification Authority,OU=(c) 1999 Entrust.net Limited,OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab.,O=Entrust.net,C=US,CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US,CN=GTE CyberTrust Root 5,OU=GTE CyberTrust Solutions\, Inc.,O=GTE Corporation,C=US,OU=Starfield Class 2 Certification Authority,O=Starfield Technologies\, Inc.,C=US,CN=Equifax Secure Global eBusiness CA-1,O=Equifax Secure Inc.,C=US,CN=Baltimore CyberTrust Code Signing Root,OU=CyberTrust,O=Baltimore,C=IE,OU=Class 2 Public Primary Certification Authority,O=VeriSign\, Inc.,C=US,OU=Equifax Secure eBusiness CA-2,O=Equifax Secure,C=US,</wssp:TokenIssuer>
+        </wssp:SecurityToken>
+      </wssp:SupportedTokens>
+    </wssp:Integrity>
+    <wssp:MessageAge Age="60" xmlns:wssp="http://www.bea.com/wls90/security/policy"/>
+  </wsp:Policy>
+  <s1:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selskabskat:ws:1.0.0" version="1.0" xml:lang="DA" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:selskabskat="urn:oio:skat:selskabskat:1.0.0" xmlns:ssws="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:annotation>
+        <xs:documentation>
+			At modtage skatteoplysninger i XBRL-format fra Erhvervs- og
+			Selskabsstyrelsen.
+		</xs:documentation>
+      </xs:annotation>
+      <xs:element name="AngiverVirksomhedSENummer" type="ssws:AngiverVirksomhedSENummerType"/>
+      <xs:element name="IndberetterVirksomhedSENummer" type="ssws:IndberetterVirksomhedSENummerType"/>
+      <xs:element name="OIOSkatteoplysningSelskabAngivelseOpret_I" type="ssws:OIOSkatteoplysningSelskabAngivelseOpret_IType">
+	</xs:element>
+      <xs:element name="OIOSkatteoplysningSelskabAngivelseOpret_O" type="ssws:OIOSkatteoplysningSelskabAngivelseOpret_OType">
+	</xs:element>
+      <xs:element name="OIOSkatteoplysningSelskabAngivelseOpretInterface" type="ssws:OIOSkatteoplysningSelskabAngivelseOpretInterfaceType"/>
+      <xs:complexType name="OIOSkatteoplysningSelskabAngivelseOpretInterfaceType">
+        <xs:choice>
+          <xs:element ref="ssws:OIOSkatteoplysningSelskabAngivelseOpret_I"/>
+          <xs:element ref="ssws:OIOSkatteoplysningSelskabAngivelseOpret_O"/>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="AngiverVirksomhedSENummerType">
+        <xs:sequence>
+          <xs:element ref="cvr:CVRnumberIdentifier"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IndberetterVirksomhedSENummerType">
+        <xs:sequence>
+          <xs:element ref="cvr:CVRnumberIdentifier"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OIOSkatteoplysningSelskabAngivelseOpret_OType">
+        <xs:sequence>
+          <xs:element ref="kontekst:HovedOplysningerSvar"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OIOSkatteoplysningSelskabAngivelseOpret_IType">
+        <xs:sequence>
+          <xs:element ref="kontekst:HovedOplysninger"/>
+          <xs:element ref="selskabskat:XbrlDokumentData"/>
+          <xs:element ref="ssws:IndberetterVirksomhedSENummer"/>
+          <xs:element ref="ssws:AngiverVirksomhedSENummer"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" version="1.1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2005/03/22/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+      <element name="CVRnumberIdentifier" type="cvr:CVRnumberIdentifierType">
+        <annotation>
+          <documentation>Unique and generally usable identifier for all legal units included i CVR.
+			</documentation>
+        </annotation>
+      </element>
+      <simpleType name="CVRnumberIdentifierType">
+        <restriction base="string">
+          <length value="8"/>
+        </restriction>
+      </simpleType>
+    </schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:ctxt="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="HovedOplysninger" type="ctxt:HovedOplysningerType"/>
+      <xs:element name="HovedOplysningerSvar" type="ctxt:HovedOplysningerSvarType">
+        <xs:annotation>
+          <xs:documentation>
+				Strukturen er en generisk svarmekanisme til at udveksle
+				forretningsmæssige fejl og adviser med et modsvarende
+				system. Strukturen forudsætter ikke nogen servicespecifk
+				viden, udover at navnet på den konkrete service skal stå
+				i feltet ServiceIndikator. De fejl og adviser der
+				rapporteres med strukturen skal betragtes som unikt
+				identificeret af ServiceIdentifikator+FejlIdentifikator
+				henholdsvis ServiceIdentifikator+AdvisIdentifikator.
+				Herved kan forskellige services benytte overlappende
+				serier af identifikatorer og stadigvæk være unikt
+				identificeret.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceIdentifikator" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+				Element til at identificere den service der svarer. Dens
+				værdi skal antage navnet på den service der svarer.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SvarStruktur" type="ctxt:SvarStrukturType">
+        <xs:annotation>
+          <xs:documentation>
+				Valg mellem et antal forretningsmæssige adviser og fejl
+				der kan returneres fra en service. Der kan rapporteres
+				et ubegrænset antal af begge dele i en vilkårlig orden.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FejlIdentifikator" type="ctxt:FejlIdentifikatorType">
+        <xs:annotation>
+          <xs:documentation>
+				Element til at identificere en forretningsmæssig fejl
+				fra et servicekald. Elementet er typisk en kode hvis
+				aktuelle betydning er en del af beskrivelsen af
+				funktionaliteten for den enkelte service.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdvisIdentifikator" type="ctxt:FejlIdentifikatorType">
+        <xs:annotation>
+          <xs:documentation>
+				Element til at identificere en forretningsmæssig advis
+				fra et servicekald. Elementet er typisk en kode hvis
+				aktuelle betydning er en del af beskrivelsen af
+				funktionaliteten for den enkelte service.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdvisTekst" type="ctxt:FejlTekstType">
+        <xs:annotation>
+          <xs:documentation>
+				Element til at beskrive en forretningsmæssig advis fra
+				et servicekald. Indholdet er typisk en tekst der
+				beskriver en advarsel fra en service.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdvisStruktur" type="ctxt:AdvisStrukturType">
+        <xs:annotation>
+          <xs:documentation>
+				Et dokumentfragment med denne struktur beskriver en
+				enkelt forretningsmæssig advisering i svaret fra en
+				webservice. Adviseringen består i en identifikator for
+				advisen samt en advisbeskrivelse der kan have specifikt
+				forretningsmæssigt indhold. De forventelige værdierne i
+				denne struktur er en del af kontrakten for de enkelte
+				services som AdvisStruktur indgår i.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FejlStruktur" type="ctxt:FejlStrukturType">
+        <xs:annotation>
+          <xs:documentation>
+				Et dokumentfragment med denne struktur beskriver en
+				enkelt forretningsmæssig fejl i svaret fra en
+				webservice. Fejlen består i en identifikator for fejlen
+				samt en fejlbeskrivelse der kan have specifikt
+				forretningsmæssigt indhold. De forventelige værdierne i
+				denne struktur er en del af kontrakten for de enkelte
+				services som FejlStruktur indgår i.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FejlTekst" type="ctxt:FejlTekstType">
+        <xs:annotation>
+          <xs:documentation>
+				Element til at beskrive en forretningsmæssig fejl fra et
+				servicekald. Indholdet er typisk en tekst der beskriver
+				en forretningsmæssig fejl opstået i en service.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransaktionTid" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>
+				Felt der giver kalder af service mulighed for at
+				tidsstemple sit eget transaktionsspor uafhængigt af
+				kaldte systems interne tid. Når brug af dette felt
+				understøttes af en service, så vil værdier af en
+				TransaktionTid der gives ved et kald af service blive
+				returneret ved svar fra samme service. Der er ikke nogen
+				bindinger på hvordan TransaktionTid skal udformes,
+				udover at det er et xs:dateTime, men det er hensigten at
+				det kaldende system kan anvende tidsstempel til hurtigt
+				at kunne udsøge servicekald i egne loggingmekanismer.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransaktionIdentifikator" type="ctxt:TransaktionIdentifikatorType">
+        <xs:annotation>
+          <xs:documentation>
+				Felt der giver kalder af service mulighed for at binde
+				sit eget transaktionsspor sammen med den kaldte
+				webservice. Når brug af dette felt understøttes af en
+				service, så vil værdier af en TransaktionIdentifikator
+				der gives ved et kald af service blive returneret ved
+				svar fra samme service. Der er ikke nogen bindinger på
+				hvordan TransaktionsIdentifikatoren skal udformes, men
+				det er hensigten at det kaldende system selv skal
+				administrere anvendelsen af unikke identifikationer af
+				sine kald, så svar kan matches til kald.
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="AdvisStrukturType">
+        <xs:sequence>
+          <xs:element ref="ctxt:AdvisIdentifikator"/>
+          <xs:element minOccurs="0" ref="ctxt:AdvisTekst"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="FejlIdentifikatorType">
+        <xs:restriction base="xs:integer"/>
+      </xs:simpleType>
+      <xs:complexType name="FejlStrukturType">
+        <xs:sequence>
+          <xs:element ref="ctxt:FejlIdentifikator"/>
+          <xs:element minOccurs="0" ref="ctxt:FejlTekst"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="FejlTekstType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TransaktionIdentifikatorType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="100"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SvarStrukturType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+          <xs:element ref="ctxt:AdvisStruktur"/>
+          <xs:element ref="ctxt:FejlStruktur"/>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="HovedOplysningerType">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ctxt:TransaktionIdentifikator"/>
+          <xs:element minOccurs="0" ref="ctxt:TransaktionTid"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="HovedOplysningerSvarType">
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="ctxt:TransaktionIdentifikator"/>
+          <xs:element minOccurs="0" ref="ctxt:ServiceIdentifikator"/>
+          <xs:element minOccurs="0" ref="ctxt:TransaktionTid"/>
+          <xs:element ref="ctxt:SvarStruktur"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:oio:skat:selskabskat:1.0.0" version="1.0" xml:lang="DA" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:selskabskat:ws:1.0.0" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xbrldokumentdata="urn:oio:skat:selskabskat:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="XbrlDokumentData" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>
+				XML dokument i XBRL-format. Dokumentet repræsenteres som
+				en base64-kodet tekst i UTF-8-format .
+			</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:schema>
+  </s1:types>
+  <s1:message name="getOIOSkatteoplysningSelskabAngivelseOpret">
+    <s1:part element="s2:OIOSkatteoplysningSelskabAngivelseOpret_I" name="request"/>
+  </s1:message>
+  <s1:message name="getOIOSkatteoplysningSelskabAngivelseOpretResponse">
+    <s1:part element="s2:OIOSkatteoplysningSelskabAngivelseOpret_O" name="OIOSkatteoplysningSelskabAngivelseOpret_O"/>
+  </s1:message>
+  <s1:portType name="OIOSkatteoplysningSelskabAngivelseOpretServicePortType" wsp:PolicyURIs="#Sign.xml #Encrypt.xml">
+    <s1:operation name="getOIOSkatteoplysningSelskabAngivelseOpret" parameterOrder="request">
+      <s1:input message="s2:getOIOSkatteoplysningSelskabAngivelseOpret"/>
+      <s1:output message="s2:getOIOSkatteoplysningSelskabAngivelseOpretResponse"/>
+    </s1:operation>
+  </s1:portType>
+  <s1:binding name="OIOSkatteoplysningSelskabAngivelseOpretServiceSoapBinding" type="s2:OIOSkatteoplysningSelskabAngivelseOpretServicePortType">
+    <s3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s1:operation name="getOIOSkatteoplysningSelskabAngivelseOpret">
+      <s3:operation soapAction="getOIOSkatteoplysningSelskabAngivelseOpret" style="document"/>
+      <s1:input>
+        <s3:body parts="request" use="literal"/>
+        <wsp:Policy>
+          <wsp:PolicyReference URI="#SkatEsbAuthentication"/>
+        </wsp:Policy>
+      </s1:input>
+      <s1:output>
+        <s3:body parts="OIOSkatteoplysningSelskabAngivelseOpret_O" use="literal"/>
+      </s1:output>
+    </s1:operation>
+  </s1:binding>
+  <s1:service name="OIOSkatteoplysningSelskabAngivelseOpretService">
+    <s1:port binding="s2:OIOSkatteoplysningSelskabAngivelseOpretServiceSoapBinding" name="OIOSkatteoplysningSelskabAngivelseOpretService">
+      <s3:address location="http://10.0.2.15:7031/skat-xbrl-b2b-web/OIOSkatteoplysningSelskabAngivelseOpretServicePort"/>
+    </s1:port>
+  </s1:service>
+</s1:definitions>
