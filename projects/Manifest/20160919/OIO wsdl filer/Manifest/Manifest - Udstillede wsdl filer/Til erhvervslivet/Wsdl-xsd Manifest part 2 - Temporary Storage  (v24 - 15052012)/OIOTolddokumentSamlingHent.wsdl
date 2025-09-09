@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s0:definitions xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:tfe:ws:1.0.1" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" name="OIOTolddokumentSamlingHentService" targetNamespace="urn:oio:skat:tfe:ws:1.0.1">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>The english translation of "OIOTolddokumentSamlingHent" is "InquiryForProducedCustomsDocumentStatusList".
+		 This translation applies to all names containing "OIOTolddokumentSamlingHent".
+		 Example: "OIOTolddokumentSamlingHentServicePortType" translates to "InquiryForProducedCustomsDocumentStatusListServicePortType".</xs:documentation>
+	</xs:annotation>
+	<s0:types>
+		<xsd:schema targetNamespace="urn:oio:skat:tfe:ws:1.0.1" xmlns:fase2.1="urn:oio:skat:tfe:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="OIOTolddokumentSamlingHentInterface.xsd"/>
+		</xsd:schema>
+	</s0:types>
+	<s0:message name="OIOTolddokumentSamlingHentServiceRequest">
+		<s0:part name="Request" element="s1:OIOTolddokumentSamlingHent_I"/>
+	</s0:message>
+	<s0:message name="OIOTolddokumentSamlingHentServiceResponse">
+		<s0:part name="Response" element="s1:OIOTolddokumentSamlingHent_O"/>
+	</s0:message>
+	<s0:portType name="OIOTolddokumentSamlingHentServicePortType">
+		<s0:operation name="getOIOTolddokumentSamlingHent">
+			<s0:input message="s1:OIOTolddokumentSamlingHentServiceRequest"/>
+			<s0:output message="s1:OIOTolddokumentSamlingHentServiceResponse"/>
+		</s0:operation>
+	</s0:portType>
+	<s0:binding name="OIOTolddokumentSamlingHentServicePortBinding" type="s1:OIOTolddokumentSamlingHentServicePortType">
+		<s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<s0:operation name="getOIOTolddokumentSamlingHent">
+			<s2:operation soapAction=""/>
+			<s0:input>
+				<s2:body use="literal"/>
+			</s0:input>
+			<s0:output>
+				<s2:body use="literal"/>
+			</s0:output>
+		</s0:operation>
+	</s0:binding>
+	<s0:service name="OIOTolddokumentSamlingHentService">
+		<s0:port name="OIOTolddokumentSamlingHentServicePort" binding="s1:OIOTolddokumentSamlingHentServicePortBinding">
+			<s2:address location="http://not.used.on.ftpgateway"/>
+		</s0:port>
+	</s0:service>
+</s0:definitions>

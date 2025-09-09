@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Specifikation af transportmidlets samlede last.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tal5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal11Decimaler3Type.xsd"/>
+         <xs:element name="ManifestAntalPoster" type="fase2.1:Tal5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Samlede antal poster på et manifest.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestTotalBruttoMasse" type="fase2.1:Tal11Decimaler3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den totale bruttomasse på samtlige manifestposter på et manifest.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

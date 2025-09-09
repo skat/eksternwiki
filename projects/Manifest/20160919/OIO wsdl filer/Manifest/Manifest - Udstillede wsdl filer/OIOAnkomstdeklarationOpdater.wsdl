@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s0:definitions xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:tfe:ws:1.0.1" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" name="OIOAnkomstdeklarationOpdaterService" targetNamespace="urn:oio:skat:tfe:ws:1.0.1">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>The english translation of "OIOAnkomstdeklarationOpdater" is "ArrivalDeclarationUpdate".
+		 This translation applies to all names containing "OIOAnkomstdeklarationOpdater".
+		 Example: "OIOAnkomstdeklarationOpdaterServicePortType" translates to "ArrivalDeclarationUpdateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<s0:types>
+		<xsd:schema targetNamespace="urn:oio:skat:tfe:ws:1.0.1" xmlns:fase2.1="urn:oio:skat:tfe:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="OIOAnkomstdeklarationOpdaterInterface.xsd"/>
+		</xsd:schema>
+	</s0:types>
+	<s0:message name="OIOAnkomstdeklarationOpdaterServiceRequest">
+		<s0:part name="Request" element="s1:OIOAnkomstdeklarationOpdater_I"/>
+	</s0:message>
+	<s0:message name="OIOAnkomstdeklarationOpdaterServiceResponse">
+		<s0:part name="Response" element="s1:OIOAnkomstdeklarationOpdater_O"/>
+	</s0:message>
+	<s0:portType name="OIOAnkomstdeklarationOpdaterServicePortType">
+		<s0:operation name="getOIOAnkomstdeklarationOpdater">
+			<s0:input message="s1:OIOAnkomstdeklarationOpdaterServiceRequest"/>
+			<s0:output message="s1:OIOAnkomstdeklarationOpdaterServiceResponse"/>
+		</s0:operation>
+	</s0:portType>
+	<s0:binding name="OIOAnkomstdeklarationOpdaterServicePortBinding" type="s1:OIOAnkomstdeklarationOpdaterServicePortType">
+		<s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<s0:operation name="getOIOAnkomstdeklarationOpdater">
+			<s2:operation soapAction=""/>
+			<s0:input>
+				<s2:body use="literal"/>
+			</s0:input>
+			<s0:output>
+				<s2:body use="literal"/>
+			</s0:output>
+		</s0:operation>
+	</s0:binding>
+	<s0:service name="OIOAnkomstdeklarationOpdaterService">
+		<s0:port name="OIOAnkomstdeklarationOpdaterServicePort" binding="s1:OIOAnkomstdeklarationOpdaterServicePortBinding">
+			<s2:address location="http://not.used.on.ftpgateway"/>
+		</s0:port>
+	</s0:service>
+</s0:definitions>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Eventuelle fejl som opdages i en modtaget meddelelse skal rapporteres i en funkstionel datagruppe, som består af følgende datafelter.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst6Type.xsd"/>
+         <xs:element name="FunktionelFejlType" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kodeværdi som identificierer den type fejl som er identificieret og rapporteres.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FunktionelFejlPointer" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En entydig pointer til den datagruppe eller det datafelt som forårsagede fejlen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FunktionelFejlBegrundelse" type="fase2.1:Tekst6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af den betingelse eller regel som var årsag til fejlen. Skal kun benyttes i forbindelse med fejltype '15'.  De enkelte betingelser og regler vil blive identificieret som angivet i beskrivelsen af den enkelte IE-meddelelse </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="FunktionelFejlOprindeligAttributVærdi" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>En præcis gengivelse af den oprindelige modtagede dataværdi som forårsagede fejlen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/MidlertidigOpbevaring.xsd"/>
+         <xs:include schemaLocation="../class/SummariskAngivelse.xsd"/>
+         <xs:include schemaLocation="../class/ToldDeklaration.xsd"/>
+         <xs:include schemaLocation="../class/FunktionelFejl.xsd"/>
+         <xs:element name="IES71SlutMidlertidigOpbevaringImportSvarStruktur"
+                     type="fase2.1:IES71SlutMidlertidigOpbevaringImportSvarStrukturType"/>
+         <xs:complexType name="IES71SlutMidlertidigOpbevaringImportSvarStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IES71">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="MidlertidigOpbevaringListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="MidlertidigOpbevaring" minOccurs="1" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:MidlertidigOpbevaringMIONummer"/>
+
+                                          <xs:element ref="fase2.1:SummariskAngivelseAfsluttetDatoTid" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="Import">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="FunktionelFejlListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:FunktionelFejlType"/>
+                  
+                                          <xs:element ref="fase2.1:FunktionelFejlPointer"/>
+                  
+                                          <xs:element ref="fase2.1:FunktionelFejlBegrundelse"/>
+
+                                          <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="MidlertidigOpbevaringSletService" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+			<xsd:include schemaLocation="../service/MidlertidigOpbevaringSletInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	
+	
+	
+	<!-- STF'ified I method -->
+	<message name="MidlertidigOpbevaringSletSTFSendAnmodRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselSendAnmod_I"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFSendAnmodResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselSendAnmod_O"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFSendAfslutRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselSendAfslut_I"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFSendAfslutResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselSendAfslut_O"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFModtagAnmodRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselModtagAnmod_I"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFModtagAnmodResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselModtagAnmod_O"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFModtagAfslutRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselModtagAfslut_I"/>
+	</message>
+	<message name="MidlertidigOpbevaringSletSTFModtagAfslutResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselModtagAfslut_O"/>
+	</message>
+	
+	<!-- Standard messages for all services -->
+	<message name="KompenserTransRequest">
+		<part name="Request" element="fase2.1:KompenserTrans"/>
+	</message>
+	<message name="KompenserTransResponse">
+		<part name="Response" element="fase2.1:KompenserTransSvar"/>
+	</message>
+		
+		
+	<portType name="MidlertidigOpbevaringSletServiceAsynkronPortIndType">
+			<!-- Replace proper I operation with STF operations -->
+		<operation name="getMidlertidigOpbevaringSlet_ISTFSendAnmod">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFSendAnmodRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFSendAnmodResponse"/>
+		</operation>
+		<operation name="getMidlertidigOpbevaringSlet_ISTFSendAfslut">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFSendAfslutRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFSendAfslutResponse"/>
+		</operation>
+		<operation name="getStyretFiloverførselModtagAnmod">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFModtagAnmodRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFModtagAnmodResponse"/>
+		</operation>
+		<operation name="getStyretFiloverførselModtagAfslut">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFModtagAfslutRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFModtagAfslutResponse"/>
+		</operation>
+	</portType>
+	
+		
+	<portType name="MidlertidigOpbevaringSletServiceAsynkronPortUdType">
+		<!-- Replace proper O operation with STF operations -->
+		<operation name="getMidlertidigOpbevaringSlet_OSTFSendAnmod">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFSendAnmodRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFSendAnmodResponse"/>
+		</operation>
+		<operation name="getMidlertidigOpbevaringSlet_OSTFSendAfslut">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFSendAfslutRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFSendAfslutResponse"/>
+		</operation>
+		<operation name="getStyretFiloverførselModtagAnmod">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFModtagAnmodRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFModtagAnmodResponse"/>
+		</operation>
+		<operation name="getStyretFiloverførselModtagAfslut">
+			<input message="fase2.1:MidlertidigOpbevaringSletSTFModtagAfslutRequest"/>
+			<output message="fase2.1:MidlertidigOpbevaringSletSTFModtagAfslutResponse"/>
+		</operation>
+		<!-- Default operation - always present -->
+		<operation name="getKompenserTrans">
+			<input message="fase2.1:KompenserTransRequest"/>
+			<output message="fase2.1:KompenserTransResponse"/>
+		</operation>
+	</portType>
+		
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Beskrivelse mangler</xs:documentation>
+	</xs:annotation>
+</definitions>

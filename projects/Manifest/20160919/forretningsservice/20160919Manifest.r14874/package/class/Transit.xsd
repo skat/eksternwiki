@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Summarisk angivelse, i transitsystemet</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/MRNType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst3Type.xsd"/>
+         <xs:include schemaLocation="../types/TalMarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst9Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal1Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal3Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:element name="TransitMRNNummer" type="fase2.1:MRNType">
+               
+            </xs:element>
+         <xs:element name="TransitStatusKode" type="fase2.1:Tekst3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Status kode for en transitangivelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransitSikkerhedMarkering" type="fase2.1:TalMarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering der fortæller om der er sikkerhdsoplysninger på angivelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransitDeklarationType" type="fase2.1:Tekst9Type">
+               
+            </xs:element>
+         <xs:element name="TransitSletFlag" type="fase2.1:Tal1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt en reference til en anden angivelse skal slettes.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransitTimeOutPeriode" type="fase2.1:Tal3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal minutter risiko har til at risikovurdere transitangivelsen. Når angivne antal minutter er gået, fastlåses risikoresultatet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransitRepræsentant" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Udfyldes af repræsentanten for den givne virksomhed der afleverer angivelsen. Vil typisk være et medarbejder navn eller lign.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

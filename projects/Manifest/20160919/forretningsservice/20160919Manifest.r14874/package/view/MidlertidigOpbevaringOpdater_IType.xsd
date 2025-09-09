@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/IEA55RetMidlertidigOpbevaringPaaGraenseStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA79KvitteringOmGennemfoertFlytningStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA01AfslutMIGMedAndenToldProcesStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA13FlytFraMIOTilMIGStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA90OpretMIOFraMIGStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA65RettelseTilMidlertidigOpbevaringStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA73FlytFraEtOplagTilAndetOplagStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA69IndsaetFaktiskAnkomstFraMCCStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA97MidlertidigOpbevaringPaaGraenseFraTadStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IES58SlutMidlertidigOpbevaringMCCStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IES59SlutMidlertidigOpbevaringImportStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEI34OpretRisikoAnalyseMidlertidigOpbevaringSvarStrukturType.xsd"/>
+				     
+         <xs:element name="MidlertidigOpbevaringOpdater_I">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MidlertidigOpbevaringOpdater_IType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14874"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MidlertidigOpbevaringOpdater_IType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <!--Sequence removed-->
+                     <xs:element name="IEStrukturValg">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:element ref="fase2.1:IEA55RetMidlertidigOpbevaringPåGrænseStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA79KvitteringOmGennemførtFlytningStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA01AfslutMIGMedAndenToldProcesStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA13FlytFraMIOTilMIGStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA90OpretMIOFraMIGStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA65RettelseTilMidlertidigOpbevaringStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA73FlytFraEtOplagTilAndetOplagStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA69IndsætFaktiskAnkomstFraMCCStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA97MidlertidigOpbevaringPåGrænseFraTadStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IES58SlutMidlertidigOpbevaringMCCStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IES59SlutMidlertidigOpbevaringImportStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEI34OpretRisikoAnalyseMidlertidigOpbevaringSvarStruktur"/>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

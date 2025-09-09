@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Bjarne Ulvmose (SKAT Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://manifest.skat.dk/DKD95A" xmlns:complex_manifest="http://manifest.skat.dk/complex_manifest" xmlns:simple_manifest="http://manifest.skat.dk/simple_manifest" xmlns:tcl_manifest="http://manifest.skat.dk/tcl_manifest" xmlns:simple="http://manifest.skat.dk/simple" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/DKD95A" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--=====DKD95:N_ARD_DEL_ACK_DK   -->
+	<!--===== ARRIVAL DECLARATION DELETE ACKNOWLEDGEMENT   -->
+	<!--===== Manifest / ICS Domain Definition  -->
+	<!--===== DDNIA v6.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.23  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/complex_manifest" schemaLocation="complex_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple_manifest" schemaLocation="simple_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl_manifest" schemaLocation="tcl_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple" schemaLocation="simple_types.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl" schemaLocation="tcl.xsd"/>
+	<!--===== Root Element =====-->
+	<xs:element name="DKD95A" type="ie:DKD95AType"/>
+	<!--===== Root Element Content =====-->
+	<xs:complexType name="DKD95AType">
+		<xs:sequence>
+			<xs:group ref="ie:MESSAGE"/>
+			<xs:element name="HEAHEA" type="ie:HEAHEAType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="HEADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPE" type="ie:TRAOPEType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPEREP" type="ie:TRAOPEREPType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR REPRESENTATIVE"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAEXICAR" type="ie:TRAEXICARType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="(EXIT CARRIER) TRADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODDEPDPDD" type="ie:PERLODDEPDPDDType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE DEPARTURE DECLARATION"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODDECDEL" type="ie:PERLODDECDELType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE DECLARATION DELETE"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== MESSAGE Content =====-->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="MesSenMES3" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message sender"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesRecMES6" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message recipient"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatOfPreMES9" type="simple:DatePrepType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimOfPreMES10" type="simple:TimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Time of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriMES15" type="simple:Alpha_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Priority"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TesIndMES18" type="tcl:Flag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Test indicator"/>
+						<rule name="TR9085"/>
+						<codeList name="Flag"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesIdeMES19" type="simple:Alphanumeric_Max14">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message identification"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMES20" type="tcl:MessageTypes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessageTypes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorIdeMES25" type="simple:Alphanumeric_Max14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Correlation identifier"/>
+						<rule name="TR9181"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=== HEADER ===-->
+	<xs:complexType name="HEAHEAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="HEADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ManRefNumHEA1" type="simple:Numeric_13">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Manifest reference number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecDelDatTimHEA" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration delete date and time"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CanReaHEA250" type="simple:Alphanumeric_Max350" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Delete reason"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR ===-->
+	<xs:complexType name="TRAOPEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTRO" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTRO" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR REPRESENTATIVE ===-->
+	<xs:complexType name="TRAOPEREPType">
+		<xs:sequence>
+			<xs:element name="NamTOR" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTOR" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--==== PERSON LODGING THE DEPARTURE DECLARATION ===-->
+	<xs:complexType name="PERLODDEPDPDDType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="PERSON LODGING THE DEPARTURE DECLARATION"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PerLodDepDecTINPDD" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINPDD" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PERSON LODGING THE DECLARATION DELETE === -->
+	<xs:complexType name="PERLODDECDELType">
+		<xs:sequence>
+			<xs:element name="NamLDD" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINLDD" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== (EXIT CARRIER) TRADER ===-->
+	<xs:complexType name="TRAEXICARType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="(EXIT CARRIER) TRADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTEC1" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTEC2" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

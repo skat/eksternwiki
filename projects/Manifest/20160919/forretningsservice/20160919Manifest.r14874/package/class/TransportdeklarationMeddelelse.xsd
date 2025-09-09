@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Meddelelse vedrørende en specifik transportdeklaration.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/KodeType.xsd"/>
+         <xs:include schemaLocation="../types/LokaltReferenceNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst5Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst36Type.xsd"/>
+         <xs:element name="TransportdeklarationMeddelelseReferenceNummer" type="fase2.1:KodeType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en meddelelse vedrørende en transportdeklaration.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationMeddelelseLokalReference"
+                     type="fase2.1:LokaltReferenceNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Lokalt referencenummer, som operatøren selv oplyse fra dennes lokale it-system. Et lokalt referencenummer forventes at være unikt for en den enkelte operatør.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationMeddelelseLastKode" type="fase2.1:Tekst5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der generelt angiver hvorvidt der er last med på transporten eller ej, og eventuelt hvilken type last (feks. lastbil på færge eller T2 flygods) . Det er samtidig her man markerer specielle tilfælde såsom ophugning.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationMeddelelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>DatoTid for modtagelse og accept af ankomstmeddelelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationMeddelelseCallId" type="fase2.1:Tekst36Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Reference identifier, assigned by the notifying MS upon sending the first notification related to the ship call.  Thus, the ShipCallID included in further updates of the initial notification should be the same in all the notifications relevant to the same ship call and UNIQUE as far as a ship call is concerned.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

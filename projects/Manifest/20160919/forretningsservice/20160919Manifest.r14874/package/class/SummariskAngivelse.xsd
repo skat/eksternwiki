@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Summarisk angivelse er en operatørs angivlese af varer før eller samtidigt med bla. Import, Export eller oplæggelse på midlertidig opbevaring.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/LokaltReferenceNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst8Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal11Decimaler3Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tal1Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel1Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ15Decimaler2Type.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel4Type.xsd"/>
+         <xs:element name="SummariskAngivelseLokalReference"
+                     type="fase2.1:LokaltReferenceNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Lokalt referencenummer, som operatøren selv oplyse fra dennes lokale it-system. Et lokalt referencenummer forventes at være unikt for en den enkelte operatør.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAntalVarePoster" type="fase2.1:Tekst5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Totale antal vareposter</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAntalKolli" type="fase2.1:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Totale antal kolli</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseKommercielReferencenummer" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Enhedsnummer, der er tildelt varerne, i forbindelse med indpassage, indførsel, udpassage og udførsel. Der benyttes WCO (ISO154559) koder eller tilsvarende </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseRuteReferencenummer" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Her kan angives rejsens nummer, fx turnummer eller flynummer. Feltet er ikke obligatorisk. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseTotalBruttoMasse" type="fase2.1:Tal11Decimaler3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Den totale bruttomasse for alle vareposter på den summariske angivelse. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseSpecielForholdMarkering" type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for specielle forhold som fx AEO virksomheder</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseTransportUdgifterBetalingsmåde"
+                     type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for betalingsform for transportudgifter fx A for kontant og C for check </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAngivelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tid for angivelse af den Summariskeindgangsangivelse </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAngivelseSted" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Stedet angivelsen er oprettet første gang</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAngivelseRegistreringDatoTid"
+                     type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for registrering af den Summariskeindgangsangivelse </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAngivelseIndsendelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for indsendelse af angivelsen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseÆndringDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for en anmodning om en ændring af en Summerisk Indgangsangivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseÆndringSted" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Stedet som anmoder om en ændring af en Summerisk Indgangsangivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseÆndringAcceptDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for accept af anmodning om en ændring af en Summerisk Indgangsangivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAnmeldelseDatoTid" type="fase2.1:DatoTidType">
+               
+            </xs:element>
+         <xs:element name="SummariskAngivelseRisikoMarkering" type="fase2.1:Tal1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Markerer om der er udført risiko på ENS'en, hvis ja er feltet 1 hvis neh er feltet 0</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseForventetAnkomstDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forventet dato og tid for ankomst.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseFaktiskAnkomstDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tid for transportmiddelets faktiske ankomst til lastnings, eller losningsstedet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseStatusKode" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der viser hvilken status den summariske angivelse er i - kan foreksempel være: status for fejl, antagelse, afsluttet mm.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAfsluttetDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Discharge date and time  Dato/Tidspunkt for afslutning af en angivelse, f.eks. afslutning af en angivelse til midlertidig oplæggelse. Afslutningstidspunktet betyder, at der herefter ikke tilbagestår systemmæssige handlinger eller aktiviteter på den omhandlende angivelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseVareLokationFacilitet" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for hvor stedet varen befinder sig, hvis ikke den er på det pågældene toldsted.  Feltet bliver benyttet i stedet for foreksempel Arrival agrred location code eller arrival agreed location of goods.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseContainerMarkering" type="fase2.1:TalHel1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt forsendelsen er pakket i containere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseFakturaVærdi"
+                     type="fase2.1:BeløbPositivNegativ15Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Det fakturerede beløb, i den fakturerede valuta, for samtlige varer omfattet af angivelsen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseFakturaVærdiValuta" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation> Beskriver hvilken valuta Fakturaens værdi er angivet i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SummariskAngivelseAntalForseglinger" type="fase2.1:TalHel4Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af hvor mang Forseglinger/plomberinger der er på angivelsen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

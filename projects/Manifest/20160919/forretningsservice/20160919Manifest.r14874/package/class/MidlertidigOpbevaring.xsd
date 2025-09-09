@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Data der bliver brugt i forbindelse med en summarisk angivelse omhandlede varer på midlertidigt oplag eller midlertidig opbevaring.  Midlertidig opbevaring er en form for procedure, som frembudte varer er anbragt under, mens varerne afventer at blive angivet til toldmæssig bestemmelse eller anvendelse, fx fortoldning, forsendelse eller genudførsel.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal1Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal3Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst12Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst350Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:element name="MidlertidigOpbevaringMIONummer" type="fase2.1:Tekst45Type">
+               
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringSkønsmæssigKode" type="fase2.1:Tal1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der fortæller om fristen for fortoldning er overskredet. 1 = Advisering 2 = Skønsmæssig ansættelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringBevillingType" type="fase2.1:Tal3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode der angiver hvilke af de enkelte midlertidigopbevarings bevillinger i erhvervssystemet, der er gældende for en specifik midlertidig opbevaring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringSkønsmæssigAnsættelseDatoTid"
+                     type="fase2.1:DatoTidType">
+               
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringFacilitetAdresse" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Adresse for den midlertidige opbevaring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringFacilitetAdresseKode" type="fase2.1:Tekst12Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Skal beskrives af Jørgen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringFacilitetAdresseLøbenummer" type="fase2.1:Tal3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Et nummer der identificerer en konkret oplags adresse i erhverssystemet for varer på midlertidig opbevaring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringAntagelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Det tidspunkt data er antaget, dvs. data er korrekt og valid udfyldt, og er bindene angivet. Antaget data kan ikke rettes uden SKAT's accept.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringKlarTilAntagelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt hvor alle data på angivelsen til midlertidig opbevaring er godkendt i manifestsystemet, således angivelsen i sin nuværende form er klar til antagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringAndenBerigtigelse" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Felt der bliver brugt til at forklare lukning af MIG, uden henvisning til toldreference.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringÆndringBegrundelse" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskriver årsagen til anmodning om rettelse (regulering, ændring mm.)</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringOpsplitMIOAntal" type="fase2.1:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Feltet beskriver det antal angivelser til midlertidig opbevaring, som en tidligere angivelse til midlertidig opbevaring opdeles i.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringSletBegrundelse" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for sletning af en angivelse om midlertidig opbevaring inden antagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringSletDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for sletning af en angivelse til midlertidig opbevaring før antagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringAnnullerBegrundelse" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekstfelt til at begrunde annullering af en antaget angivelse til midlertidig opbevaring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringAnnullerDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>DatoTid for annullering af antaget angivelse til midlertidig opbevaring.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringSKATBemærkning" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Felt hvor SKAT medarbejdere kan tilføje bemærkninger omkring rettelsen angivelsen. Kan kun udfyldes af SKAT medarbejdere.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="MidlertidigOpbevaringUdløbDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato Tid for udløb af den midlertidige opbevaring</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

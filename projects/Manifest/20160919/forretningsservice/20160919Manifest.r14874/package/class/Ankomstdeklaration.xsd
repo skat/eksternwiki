@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Deklaration af oplysninger om det transportmiddel (fx manifest), som ankommer til en havn eller en lufthavn i Danmark, typisk lastbiler eller fly.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TalMarkeringType.xsd"/>
+         <xs:element name="AnkomstdeklarationAnkomstSted" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Ankomststed for transporten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnkomstdeklarationAngivelseRegistreringSted" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Registreringsted hvor ankomstdeklarationen registreres, oftest en havn eller en lufthavn i Danmark.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnkomstdeklarationAnkomstDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>DatoTid for det tidspunkt ankomstmeddelelse er accepteret og har sat ankomst på ankomstdeklarationen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnkomstdeklarationForventetAnkomstDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Forventet ankomsttidspunkt på transporten. Stedets lokal tid.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnkomstdeklarationOmdirigeretMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt transporten er blevet omdirigeret til denne ankomstdestination.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnkomstdeklarationAfgangSted" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver seneste afgangssted det pågældende transportmiddel er ankommet fra.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="AnkomstdeklarationManueltAfsluttet" type="fase2.1:TalMarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Felt til, at markere tolder har gennemtrumfet afslutning af lastbils ankomstsdeklaration.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

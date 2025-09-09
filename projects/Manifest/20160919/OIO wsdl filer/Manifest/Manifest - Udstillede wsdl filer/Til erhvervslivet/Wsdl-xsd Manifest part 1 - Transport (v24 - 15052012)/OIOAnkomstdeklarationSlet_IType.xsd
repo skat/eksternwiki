@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dka94a="http://manifest.skat.dk/DKA94A" xmlns:eu="urn:eu" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAnkomstdeklarationSlet" is "ArrivalDeclarationDelete".
+		 This translation applies to all names containing "OIOAnkomstdeklarationSlet".
+		 Example: "OIOAnkomstdeklarationSletServicePortType" translates to "ArrivalDeclarationDeleteServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysninger.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA94A" schemaLocation="DKA94A.xsd"/>
+	<xs:element name="OIOAnkomstdeklarationSlet_I" type="tfe:OIOAnkomstdeklarationSlet_IType"/>
+	<xs:complexType name="OIOAnkomstdeklarationSlet_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="InputListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka94a:DKA94A"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

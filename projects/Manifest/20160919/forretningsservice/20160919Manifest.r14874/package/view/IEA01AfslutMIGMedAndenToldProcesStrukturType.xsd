@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/MidlertidigOpbevaring.xsd"/>
+         <xs:include schemaLocation="../class/Transit.xsd"/>
+         <xs:include schemaLocation="../class/ToldDeklaration.xsd"/>
+         <xs:include schemaLocation="../class/Transportdeklaration.xsd"/>
+         <xs:include schemaLocation="../class/ManifestPost.xsd"/>
+         <xs:include schemaLocation="../class/ToldOperatoer.xsd"/>
+         <xs:element name="IEA01AfslutMIGMedAndenToldProcesStruktur"
+                     type="fase2.1:IEA01AfslutMIGMedAndenToldProcesStrukturType"/>
+         <xs:complexType name="IEA01AfslutMIGMedAndenToldProcesStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEA01">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="MidlertidigOpbevaringPåGrænseListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="MidlertidigOpbevaringPåGrænse" minOccurs="1" maxOccurs="999">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:MidlertidigOpbevaringMIONummer"/>
+
+                                          <xs:element ref="fase2.1:MidlertidigOpbevaringAndenBerigtigelse" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="MidlertidigOpbevaringListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="MidlertidigOpbevaring" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:MidlertidigOpbevaringMIONummer"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="TransitAngivelseListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="TransitAngivelse" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:TransitMRNNummer"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="FortoldningListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="Fortoldning" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:ToldDeklarationReferenceNummer"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="AfgangsdeklarationListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="Afgangsdeklaration" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:TransportdeklarationReferenceNummer"/>
+                                          <xs:element name="ManifestPostListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="ManifestPost" minOccurs="0" maxOccurs="99">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element ref="fase2.1:ManifestPostLøbeNummer"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="Registrator">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldOperatørType"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørRepræsentantStatus"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

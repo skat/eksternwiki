@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Individuelle artikler, der er emballeret på en sådan måde, at de ikke kan opdeles uden først at åbne emballagen.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst140Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal5Type.xsd"/>
+         <xs:element name="KolliMærkeOgNummer" type="fase2.1:Tekst140Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Identifikation af kolli.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KolliArt" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>FN's kode for hvilken slags emballage der er tale om. FN meballagekode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KolliAntal" type="fase2.1:Tal5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Total antal kolli.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KolliAntalEnheder" type="fase2.1:Tal5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal enheder der er på kolli.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

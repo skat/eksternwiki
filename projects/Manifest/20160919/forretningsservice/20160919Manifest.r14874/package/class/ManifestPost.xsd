@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>En enkelt post i det samlede manifest.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tal5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/booleanType.xsd"/>
+         <xs:include schemaLocation="../types/Tal11Decimaler3Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:element name="ManifestPostLøbeNummer" type="fase2.1:Tal5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fortløbende nummer for en manifestpost i det samlede manifest.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestPostToldStatus" type="fase2.1:Tekst5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Godsets toldmæssige status - Fællesskabsvare eller ikkefællesskabsvare.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestPostAfvigelsesårsag" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Årsag til afvigelse mellem en manifestposts bruttomasse og bruttomasse ifølge diverse referencedokumenter.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestPostAfvigelsesårsagAccept" type="fase2.1:booleanType">
+               
+               <xs:annotation>
+                  <xs:documentation>Accept af afvigelsesårsag på en manifestpost.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestPostBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekstfelt til beskrivelse af Manifestposten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestPostBruttoMasse" type="fase2.1:Tal11Decimaler3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Manifestpostens bruttomasse.  Den enkelte Manifestposts bruttomase med tre decimaler. Ved bruttomasse forstås den samlede vægt af varerne inklusive al emballage, men eksklusive transportørens materiel, fx containere. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ManifestPostKommercielReferenceNummer" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Enhedsnummer, der er tildelt varerne, i forbindelse med indpassage, indførsel, udpassage og udførsel. Der benyttes WCO (ISO154559) koder eller tilsvarende.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Transportdeklaration.xsd"/>
+         <xs:include schemaLocation="../class/Advisering.xsd"/>
+         <xs:include schemaLocation="../class/AdviseringMeddelelse.xsd"/>
+         <xs:include schemaLocation="../class/FunktionelFejl.xsd"/>
+         <xs:include schemaLocation="../class/ToldOperatoer.xsd"/>
+         <xs:include schemaLocation="../class/EUOperatoer.xsd"/>
+         <xs:element name="IEA61AnkomstdeklarationAfvistStruktur"
+                     type="fase2.1:IEA61AnkomstdeklarationAfvistStrukturType"/>
+         <xs:complexType name="IEA61AnkomstdeklarationAfvistStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEA61">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="Ankomstdeklaration">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="fase2.1:TransportdeklarationLokalReference" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:TransportdeklarationReferenceNummer" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:TransportdeklarationRegistreringDatoTid" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:TransportdeklarationStatusKode"/>
+                                 <xs:element name="Advisering">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:AdviseringType"/>
+                  
+                                          <xs:element ref="fase2.1:AdviseringDatoTid"/>
+                  
+                                          <xs:element ref="fase2.1:AdviseringMeddelelseKode"/>
+                  
+                                          <xs:element ref="fase2.1:AdviseringMeddelelseBeskrivelse"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                                 <xs:element name="FunktionelFejlListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="99">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:FunktionelFejlType"/>
+                  
+                                                   <xs:element ref="fase2.1:FunktionelFejlPointer"/>
+                  
+                                                   <xs:element ref="fase2.1:FunktionelFejlBegrundelse"/>
+
+                                                   <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0"/>
+
+
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Registrator">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+
+                                 <xs:element ref="fase2.1:EUOperatørNavn" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

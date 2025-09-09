@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dokument til angivelse ikke-fælleskabsvarer, enten til en toldprocedure eller en midltertidig opbevaring.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst8Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst30Type.xsd"/>
+         <xs:element name="ToldBehandlingDokumentType" type="fase2.1:Tekst5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskriver hvilken type tolddokument der henvises til.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldBehandlingDokumentReference" type="fase2.1:Tekst35Type">
+               
+            </xs:element>
+         <xs:element name="ToldBehandlingDokumentStatus" type="fase2.1:Tekst8Type">
+               
+            </xs:element>
+         <xs:element name="ToldBehandlingDokumentPræsenteret" type="fase2.1:Tekst30Type">
+               
+            </xs:element>
+      </xs:schema>

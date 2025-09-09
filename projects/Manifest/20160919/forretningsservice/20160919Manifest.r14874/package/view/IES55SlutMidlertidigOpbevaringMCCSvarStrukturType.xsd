@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/MidlertidigOpbevaring.xsd"/>
+         <xs:include schemaLocation="../class/SummariskAngivelse.xsd"/>
+         <xs:include schemaLocation="../class/Transit.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:include schemaLocation="../class/FunktionelFejl.xsd"/>
+         <xs:element name="IES55SlutMidlertidigOpbevaringMCCSvarStruktur"
+                     type="fase2.1:IES55SlutMidlertidigOpbevaringMCCSvarStrukturType"/>
+         <xs:complexType name="IES55SlutMidlertidigOpbevaringMCCSvarStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IES55">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="MidlertidigOpbevaring">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:MidlertidigOpbevaringMIONummer"/>
+                  
+                                 <xs:element ref="fase2.1:SummariskAngivelseAfsluttetDatoTid"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Transit">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:TransitMRNNummer"/>
+                                 <xs:element name="VarePostListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="VarePost" minOccurs="0" maxOccurs="999">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="FunktionelFejlListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="FunktionelFejl" minOccurs="0" maxOccurs="9">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:FunktionelFejlType"/>
+                  
+                                          <xs:element ref="fase2.1:FunktionelFejlPointer"/>
+                  
+                                          <xs:element ref="fase2.1:FunktionelFejlBegrundelse"/>
+
+                                          <xs:element ref="fase2.1:FunktionelFejlOprindeligAttributVærdi" minOccurs="0"/>
+
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

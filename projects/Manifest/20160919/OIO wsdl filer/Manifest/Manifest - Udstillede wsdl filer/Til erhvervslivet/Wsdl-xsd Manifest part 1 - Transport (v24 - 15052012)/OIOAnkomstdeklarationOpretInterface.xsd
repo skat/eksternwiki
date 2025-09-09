@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAnkomstdeklarationOpret" is "ArrivalDeclarationCreate".
+		 This translation applies to all names containing "OIOAnkomstdeklarationOpret".
+		 Example: "OIOAnkomstdeklarationOpretServicePortType" translates to "ArrivalDeclarationCreateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="OIOAnkomstdeklarationOpret_IType.xsd"/>
+	<xs:include schemaLocation="OIOAnkomstdeklarationOpret_OType.xsd"/>
+	<xs:element name="OIOAnkomstdeklarationOpretInterface" type="tfe:OIOAnkomstdeklarationOpretInterfaceType"/>
+	<xs:complexType name="OIOAnkomstdeklarationOpretInterfaceType">
+		<xs:choice>
+			<xs:element ref="tfe:OIOAnkomstdeklarationOpret_I"/>
+			<xs:element ref="tfe:OIOAnkomstdeklarationOpret_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

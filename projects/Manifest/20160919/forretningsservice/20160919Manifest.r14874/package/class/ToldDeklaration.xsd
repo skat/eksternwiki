@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Begreber der skal bruges på en import deklaration i importsystemet. Deklarationerne kan enten være ekspresfortoldning (FUE/FOE) eller standardfortoldning.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TalHel13Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal3Type.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositiv11Decimaler3Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst5Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst8Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:element name="ToldDeklarationReferenceNummer" type="fase2.1:TalHel13Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Referencenummer der entydigt identificerer en import deklaration.  Består af Årstal, systemkode på to cifre, og et fortløbende nummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationAntalVareposter" type="fase2.1:Tal3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskriver hvor mange vareposter der er på fortoldningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationTotalBruttoVægt"
+                     type="fase2.1:BeløbPositiv11Decimaler3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Vareposternes samlede vægt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationForventetAnkomstDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato for  den forventede ankomst af de varer der er angivet på fortoldningen.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationStatusKode" type="fase2.1:Tekst5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Status for fortoldningen</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationRegistreretDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Tidspunkt for oprettelse af en toldangivelse i importsystemet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationAngivelseArt" type="fase2.1:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelsesart. Beskriver hvilken slagsangivelse der konkret er tale om f.eks.: 4 = Fuldstændig ekspress 2 = Forenklet ekspress 7 = Standard ekspress  osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationAntalKolli" type="fase2.1:Tekst8Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Totale antal kolli</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationAnkomstDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>DatoTid for den faktiske ankomst.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationTimeOutPeriode" type="fase2.1:Tal3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Antal minutter risiko har til at risikovurdere importangivelsen. Når angivne antal minutter er gået, fastlåses risikoresultatet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationAngivelseType" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken type toldmæssig status varerne har.  F.eks. Hvis varerne er T1 angives IM.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldDeklarationAngivelseIndførselType" type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af hvilken indførselsform der er brugt. Der kan f.eks. anvendes A for almindelig angivelse med almindelig fremgangsmåde.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

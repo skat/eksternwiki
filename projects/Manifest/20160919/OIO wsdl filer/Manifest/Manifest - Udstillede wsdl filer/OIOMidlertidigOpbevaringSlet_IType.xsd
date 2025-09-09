@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1"
+ xmlns:dka10a="http://manifest.skat.dk/DKA10A"
+ xmlns:dka70a="http://manifest.skat.dk/DKA70A"
+ xmlns:eu="urn:eu" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOMidlertidigOpbevaringSlet" is "DeclarationForTemporaryStorageFacilityDelete".
+		 This translation applies to all names containing "OIOMidlertidigOpbevaringSlet".
+		 Example: "OIOMidlertidigOpbevaringSletServicePortType" translates to "DeclarationForTemporaryStorageFacilityDeleteServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysninger.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA10A" schemaLocation="DKA10A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA70A" schemaLocation="DKA70A.xsd"/>
+	<xs:element name="OIOMidlertidigOpbevaringSlet_I" type="tfe:OIOMidlertidigOpbevaringSlet_IType"/>
+	<xs:complexType name="OIOMidlertidigOpbevaringSlet_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="InputListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka10a:DKA10A"/>
+						<xs:element ref="dka70a:DKA70A"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+            <xs:documentation>Opdatere angivelse til midlertidig opbevaring med henblik på afslutning af angivelsen. Servicen kan kaldes både internt og eksternt. Hvis kaldet er internt, så kommer det fra MCC eller Import og derfor er de referede TAD/FUE/FOE accepteret og godkendt. Hvis kaldet er eksternt, skal referencen godkendes i MCC respektiv Import før denne service kan afslutte. </xs:documentation>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../view/MidlertidigOpbevaringOpdater_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/MidlertidigOpbevaringOpdater_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAfslut_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselModtagAnmod_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAfslut_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAfslut_OType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAnmod_IType.xsd"/>
+         
+         <xs:include schemaLocation="../view/StyretFiloverfoerselSendAnmod_OType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransType.xsd"/>
+         
+         <xs:include schemaLocation="../context/KompenserTransSvarType.xsd"/>
+         
+         <xs:element name="MidlertidigOpbevaringOpdaterInterface"
+                     type="fase2.1:MidlertidigOpbevaringOpdaterInterfaceType"/>
+         <xs:complexType name="MidlertidigOpbevaringOpdaterInterfaceType">
+            <xs:choice>
+               <xs:element ref="fase2.1:MidlertidigOpbevaringOpdater_I"/>
+               <xs:element ref="fase2.1:MidlertidigOpbevaringOpdater_O"/>
+               <xs:element ref="fase2.1:StyretFiloverførselModtagAfslut_I"/>
+               <xs:element ref="fase2.1:StyretFiloverførselModtagAfslut_O"/>
+               <xs:element ref="fase2.1:StyretFiloverførselModtagAnmod_I"/>
+               <xs:element ref="fase2.1:StyretFiloverførselModtagAnmod_O"/>
+               <xs:element ref="fase2.1:StyretFiloverførselSendAfslut_I"/>
+               <xs:element ref="fase2.1:StyretFiloverførselSendAfslut_O"/>
+               <xs:element ref="fase2.1:StyretFiloverførselSendAnmod_I"/>
+               <xs:element ref="fase2.1:StyretFiloverførselSendAnmod_O"/>
+               <xs:element ref="fase2.1:KompenserTrans"/>
+               <xs:element ref="fase2.1:KompenserTransSvar"/>
+            </xs:choice>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/MidlertidigOpbevaring.xsd"/>
+         <xs:include schemaLocation="../class/RisikoVurdering.xsd"/>
+         <xs:include schemaLocation="../class/Graensekontrol.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:element name="IEI34OpretRisikoAnalyseMidlertidigOpbevaringSvarStruktur"
+                     type="fase2.1:IEI34OpretRisikoAnalyseMidlertidigOpbevaringSvarStrukturType"/>
+         <xs:complexType name="IEI34OpretRisikoAnalyseMidlertidigOpbevaringSvarStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEA34">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="MidlertidigOpbevaring">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:MidlertidigOpbevaringMIONummer"/>
+
+                                 <xs:element ref="fase2.1:RisikoVurderingAutomatiskDatoTid" minOccurs="0"/>
+
+
+
+                                 <xs:element ref="fase2.1:GrænsekontrolDato" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="RisikoAnalyseListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="RisikoAnalyse" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                  
+                                          <xs:element ref="fase2.1:RisikoVurderingResultatKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="RisikoKontrolListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="RisikoKontrol" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                  
+                                          <xs:element ref="fase2.1:GrænsekontrolResultatKode"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

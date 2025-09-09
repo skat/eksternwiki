@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Dokumenter der ligger til grund for angivelsen, ville kunne være en forsendelsesfaktura</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst3Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst8Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:element name="ForudgåendeAdministrativtDokumentArt" type="fase2.1:Tekst3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for hvilken dokumentart der er tilknyttet den overordnede kategori. Kan også kaldes dokumenttype.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForudgåendeAdministrativtDokumentKategori" type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Førstedel af dokumenttypen, kategori, kan antage værdierne X, Y eller Z, hvor:  X Summarisk angivelse Y Forudgående angivelse Z Forudgående dokument</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ForudgåendeAdministrativtDokumentType" type="fase2.1:Tekst8Type">
+               
+            </xs:element>
+         <xs:element name="ForudgåendeAdministrativtDokumentReference" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Referencen til dokumentet.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

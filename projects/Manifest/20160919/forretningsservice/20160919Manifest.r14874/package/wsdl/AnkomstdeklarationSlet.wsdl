@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="AnkomstdeklarationSletService" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+	<types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/">
+			<xsd:include schemaLocation="../service/AnkomstdeklarationSletInterface.xsd"/>
+		</xsd:schema>
+	</types>
+	
+	
+	<!-- Synchronous method -->
+	<message name="AnkomstdeklarationSletServiceRequest">
+		<part name="Request" element="fase2.1:AnkomstdeklarationSlet_I"/>
+	</message>
+	<message name="AnkomstdeklarationSletServiceResponse">
+		<part name="Response" element="fase2.1:AnkomstdeklarationSlet_O"/>
+	</message>
+	
+	
+	<!-- STF'ified I method -->
+	<message name="AnkomstdeklarationSletSTFSendAnmodRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselSendAnmod_I"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFSendAnmodResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselSendAnmod_O"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFSendAfslutRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselSendAfslut_I"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFSendAfslutResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselSendAfslut_O"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFModtagAnmodRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselModtagAnmod_I"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFModtagAnmodResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselModtagAnmod_O"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFModtagAfslutRequest">
+		<part name="Request" element="fase2.1:StyretFiloverførselModtagAfslut_I"/>
+	</message>
+	<message name="AnkomstdeklarationSletSTFModtagAfslutResponse">
+		<part name="Response" element="fase2.1:StyretFiloverførselModtagAfslut_O"/>
+	</message>
+	
+	<!-- Asynchronous O method -->
+	<message name="AnkomstdeklarationSletServiceRequest_O">
+		<part name="Request" element="fase2.1:AnkomstdeklarationSlet_O_I"/>
+	</message>
+	<message name="AnkomstdeklarationSletServiceResponse_O">
+		<part name="Response" element="fase2.1:AnkomstdeklarationSlet_O_O"/>
+	</message>
+	
+	<!-- Standard messages for all services -->
+	<message name="KompenserTransRequest">
+		<part name="Request" element="fase2.1:KompenserTrans"/>
+	</message>
+	<message name="KompenserTransResponse">
+		<part name="Response" element="fase2.1:KompenserTransSvar"/>
+	</message>
+	
+	<portType name="AnkomstdeklarationSletServiceSynkronPortType">
+		<!-- Synchronous operation -->
+		<operation name="getAnkomstdeklarationSlet">
+			<input message="fase2.1:AnkomstdeklarationSletServiceRequest"/>
+			<output message="fase2.1:AnkomstdeklarationSletServiceResponse"/>
+		</operation>
+		<!-- Default operation - always present -->
+		<operation name="getKompenserTrans">
+			<input message="fase2.1:KompenserTransRequest"/>
+			<output message="fase2.1:KompenserTransResponse"/>
+		</operation>
+	</portType>
+		
+		
+	<portType name="AnkomstdeklarationSletServiceAsynkronPortType">
+	
+		<!-- Replace proper I operation with STF operations -->
+		<operation name="getAnkomstdeklarationSlet_ISTFSendAnmod">
+			<input message="fase2.1:AnkomstdeklarationSletSTFSendAnmodRequest"/>
+			<output message="fase2.1:AnkomstdeklarationSletSTFSendAnmodResponse"/>
+		</operation>
+		<operation name="getAnkomstdeklarationSlet_ISTFSendAfslut">
+			<input message="fase2.1:AnkomstdeklarationSletSTFSendAfslutRequest"/>
+			<output message="fase2.1:AnkomstdeklarationSletSTFSendAfslutResponse"/>
+		</operation>
+		<operation name="getStyretFiloverførselModtagAnmod">
+			<input message="fase2.1:AnkomstdeklarationSletSTFModtagAnmodRequest"/>
+			<output message="fase2.1:AnkomstdeklarationSletSTFModtagAnmodResponse"/>
+		</operation>
+		<operation name="getStyretFiloverførselModtagAfslut">
+			<input message="fase2.1:AnkomstdeklarationSletSTFModtagAfslutRequest"/>
+			<output message="fase2.1:AnkomstdeklarationSletSTFModtagAfslutResponse"/>
+		</operation>
+	
+		<!-- Asynchronous O operation -->
+		<operation name="getAnkomstdeklarationSlet_O">
+			<input message="fase2.1:AnkomstdeklarationSletServiceRequest_O"/>
+			<output message="fase2.1:AnkomstdeklarationSletServiceResponse_O"/>
+		</operation>
+		<!-- Default operation - always present -->
+		<operation name="getKompenserTrans">
+			<input message="fase2.1:KompenserTransRequest"/>
+			<output message="fase2.1:KompenserTransResponse"/>
+		</operation>
+	</portType>
+		
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Beskrivelse mangler</xs:documentation>
+	</xs:annotation>
+</definitions>

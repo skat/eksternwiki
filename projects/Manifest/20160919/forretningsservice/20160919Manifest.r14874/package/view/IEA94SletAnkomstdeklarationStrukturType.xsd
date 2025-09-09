@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Transportdeklaration.xsd"/>
+         <xs:include schemaLocation="../class/ToldOperatoer.xsd"/>
+         <xs:element name="IEA94SletAnkomstdeklarationStruktur"
+                     type="fase2.1:IEA94SletAnkomstdeklarationStrukturType"/>
+         <xs:complexType name="IEA94SletAnkomstdeklarationStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEA94">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="fase2.1:TransportdeklarationReferenceNummer"/>
+
+                        <xs:element ref="fase2.1:TransportdeklarationSletBegrundelse" minOccurs="0"/>
+
+
+                        <xs:element name="OperatørListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="Operatør" minOccurs="2" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:ToldOperatørType"/>
+                  
+                                          <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

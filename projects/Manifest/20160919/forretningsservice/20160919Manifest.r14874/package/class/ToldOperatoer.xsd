@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Omfatter operatører på toldområdet - her skelnes ikke om operatøren er registreret inden for eller uden for EU.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel1Type.xsd"/>
+         <xs:element name="ToldOperatørType" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angiver hvilken type toldoperatør, fx Afsender, Modtager eller Transport.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldOperatørTINNummer" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>TIN er afledt af: Trader Identification Number. Kan enten være EORI-Nummer, SE-Nummer eller CVR-Nummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="ToldOperatørRepræsentantStatus" type="fase2.1:TalHel1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fortæller hvilken status repræsentanten har i forhold til den repræsenterer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

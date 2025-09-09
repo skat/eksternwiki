@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Stedet hvor varerne er lastet på transportmidlet.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:element name="LastningsstedKode" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Her angives navnet på det sted, hvor varerne er lastet i det ankommende transportmiddel, med foranstillet ISO landekode, jf. fortegnelsen over landekoder i toldvejledningens bilag 37. Feltet er ikke obligatorisk for vejtransport. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

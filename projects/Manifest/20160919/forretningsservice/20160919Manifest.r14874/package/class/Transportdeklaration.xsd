@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Deklaration som indeholder oplysninger om et transportmiddel, der ankommer eller forlader enhver havn eller en lufthavn i Danmark. Det gælder skib, fly og lastbiler på færger til trejdeland.  Transportdeklaration vil altid være enten en ankomstdeklaration eller en afgangsdeklaration.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/TransportdeklarationReferenceNummerType.xsd"/>
+         <xs:include schemaLocation="../types/LokaltReferenceNummerType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst350Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:element name="TransportdeklarationReferenceNummer"
+                     type="fase2.1:TransportdeklarationReferenceNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en transportdeklaration, enten i form af en afgangsdeklaration eller en ankomstdeklaration.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationLokalReference"
+                     type="fase2.1:LokaltReferenceNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Lokalt referencenummer, som operatøren selv oplyse fra dennes lokale it-system. Et lokalt referencenummer forventes at være unikt for en den enkelte operatør.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationType" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af hvorvidt det er en ankomst- eller afgangsdekleration.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationFormål" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Formålet med transporten</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationRuteReferenceNummer" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Referencenummer på transporten. Fx et flynummer for transport via fly.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationPræsentationDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for faktisk ankomst eller afgang for transporten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationStatusKode" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode status på transportdeklaration, fx oprettet, afsluttet, afventer ankomst eller afgang.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationRegistreringDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for SKAT's registrering af transportdeklarationen i manifestsystemet.  Tidspunktet transportdeklaration får tildelt et referencenummer.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationKlarTilAntagelseDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt hvor alle data på transportdeklarationen er godkendt i manifestsystemet, således transportdeklarationen i sin nuværende form er klar til antagelse.  </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationSKATBemærkning" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>SKATs bemærkning til transportdeklaration.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationÆndringDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>Dato og tidspunkt for hvornår en transportdeklaration sidst er ændret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationTransportDeling" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering af hvorvidt transportmidlet deles mellem flere transportører.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationSikkerhedDeklarationIndikator"
+                     type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskriver hvilken slags sikkerhedsoplysninger der følger med TransportDeklarationen.  Feltet udfyldes med S, hvis TransportDokumentType = STD.  Ellers forbliver feltet blankt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationSletBegrundelse" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Begrundelse for sletning af en transportdeklaration inden antagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationSletDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>DatoTid for sletning af en transportdeklaration inden antagelse.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="TransportdeklarationAnnulleret" type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Felt hvor der markeres hvis transportdeklarationen er annulleret.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

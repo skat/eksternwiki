@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Et ledsagedokument består af vareposter. Hver varepost rummer et bestemt afgiftsprodukt med angivelse af mængde og vægt, samt andre strategisk vigtige oplysninger.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/VarePostLoebeNummerType.xsd"/>
+         <xs:include schemaLocation="../types/MaengdeVaegtType.xsd"/>
+         <xs:include schemaLocation="../types/Tal11Decimaler3Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst350Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/IDType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst45Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst300Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst4Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst1Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst5Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst2Type.xsd"/>
+         <xs:include schemaLocation="../types/TalHel2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst3Type.xsd"/>
+         <xs:include schemaLocation="../types/ValutaType.xsd"/>
+         <xs:include schemaLocation="../types/BeloebPositivNegativ11Decimaler2Type.xsd"/>
+         <xs:include schemaLocation="../types/Tal6Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst15Type.xsd"/>
+         <xs:include schemaLocation="../types/Tekst70Type.xsd"/>
+         <xs:element name="VarePostLøbeNummer" type="fase2.1:VarePostLøbeNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Et løbenummer som gives til hver varepost i et elektronisk ledsagedokument.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostMængde" type="fase2.1:MængdeVægtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Mængden (eller antallet) af en given vare/produkt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBruttoMasse" type="fase2.1:Tal11Decimaler3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Varepostens bruttovægt.  Den enkelte vareposts bruttovægt med tre decimaler. Ved bruttovægt forstås den samlede vægt af varerne inklusive al emballage, men eksklusive transportørens materiel, fx containere. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostNettoVægt" type="fase2.1:MængdeVægtType">
+               
+               <xs:annotation>
+                  <xs:documentation>Afgiftsproduktet i varepostens nettovægt</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostOprindelseAngivelse" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Et fritekst felt, hvor oprindelsen kan udspecificeres</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostAfgiftMærke" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>En ja/nej markering, som beskriver om vareposten er beskattet</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBeskatningTekst" type="fase2.1:Tekst350Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Beskrivelse af beskatningsforhold</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostEnhedNummer" type="fase2.1:IDType">
+               
+            </xs:element>
+         <xs:element name="VarePostKommercielReferenceNummer" type="fase2.1:Tekst45Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Enhedsnummer, der er tildelt varerne, i forbindelse med indpassage, indførsel, udpassage og udførsel. Der benyttes WCO (ISO154559) koder eller tilsvarende.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBeskrivelse" type="fase2.1:Tekst300Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Tekstfelt til beskrivelse af vareposten. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostFNFarligtGodsKode" type="fase2.1:Tekst4Type">
+               
+            </xs:element>
+         <xs:element name="VarePostTransportUdgifterBetalingsmåde" type="fase2.1:Tekst1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for betalingsform for transportudgifter fx A for kontant og C for check </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostSærligBemærkning" type="fase2.1:Tekst5Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Anvendes til særlige bemærkninger til vareposten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostToldStatus" type="fase2.1:Tekst2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelsestype fx T1, T2, TD osv.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostØnskedeProcedure" type="fase2.1:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Angivelse af hvilken procedure man ønsker at udføre varen med.  f.eks. 10 = Endeligt udførsel 11 = Aktiv forædling 22 = Anden midlertidig udførsel 31 = Genudførsel</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostForudgåendeProcedure" type="fase2.1:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Procedurekode der er afhængig af ØnskedeProcedure.  Hvis Ønskede procedure for eksempl er 10 kan ForudgåendeProcedure for ekempel være:  00 = Uden forudgående procedure 21 = Midlertidig udførsel til passiv forædling</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostFællesskabProcedure" type="fase2.1:Tekst3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fællesskabprocedurekode der er afhængig af både ØnskedeProcedurekode ForudgåendeProcedurekode.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostStatistiskVærdiValuta" type="fase2.1:ValutaType">
+               
+               <xs:annotation>
+                  <xs:documentation>Valuta for beløbet der står angivet i den statistiske værdi.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostStatistiskVærdi"
+                     type="fase2.1:BeløbPositivNegativ11Decimaler2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Varens værdi, med eller uden transport alt efter om det er ved export eller import, til brug for statistiske formål.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostFølsommeVarerKode" type="fase2.1:TalHel2Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for varer der udgår en øget risiko for svig. Henviser i øvrig til Gennemførsles Bestemmelser artikel 340a</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostFølsommeVarerMængde" type="fase2.1:Tal11Decimaler3Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Mængden af følsomme varer på vareposten. For eksempel  Kilo, Liter, styk mm.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostKontingent" type="fase2.1:Tal6Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Felt til anmodning om kontingenttoldbehandling.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostBevillingNummer" type="fase2.1:Tekst15Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Bevillingsnummer for den enkelte varepost. Nummeret svarer til journalnummeret fra tilladelsen. </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="VarePostSærligBemærkningTekst" type="fase2.1:Tekst70Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fritekstfelt til særlige bemærkning vedrørende vareposten.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

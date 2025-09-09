@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Omfatter oplysninger om sikkerhed- og sikringsoplysninger til risikovurdering.</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:include schemaLocation="../types/TalHel1Type.xsd"/>
+         <xs:element name="SikkerhedOgSikringType" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Fortæller hvilken type sikkerhedsoplysningsdokument der henvises til</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedOgSikringReference" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Referencenummer til angivede sikkerhedsdokument</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedOgSikringHelDelvisMarkering" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Udfyldes kun i tilfælde hvor en transportoperatør ved udgangstoldstedet er godkendt til oplæggelse af varer med henblik på senere udførsel. Der anføres P (Partiel) i dette felt, hvis der er tale om udførsel af en del af de varer, der er angivet i udførselsangivelsen. Hvis der derimod er tale om udførsel af hele det angivne og oplagte parti, anføres F (Full). </xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="SikkerhedOgSikringOmdirigeringStatus" type="fase2.1:TalHel1Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Status på omdirigering af summarisk indgangsangivelse (ENS). 1 = Danmark er ikke anført i rejserute, og omdirigering anmodning er indsendt. 2 = Danmark er anført i rejserute. 3 = Danmark er ikke anført i rejserute, og omdirigering anmodning er ikke indsendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

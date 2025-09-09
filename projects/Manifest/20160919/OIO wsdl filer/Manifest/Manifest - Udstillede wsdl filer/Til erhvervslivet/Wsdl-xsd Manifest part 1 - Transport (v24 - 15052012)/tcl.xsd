@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Bjarne Ulvmose (SKAT Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/tcl" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--===== Interdomain Codelists -->
+	<!--===== DDNIA v4.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.21    -->
+	<!--===== Included Features: [10, 12, 18, 20, 26, 27, 28, 29]  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<!--===== Codelists =====-->
+	<!--===== BusinessFunctionalityCode =====-->
+	<!--===== Format: a1 =====-->
+	<!--===== Codelist: 68 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="BusinessFunctionalityCode">
+		<xs:annotation>
+			<xs:documentation>null [Format: a1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="H">
+				<xs:annotation>
+					<xs:documentation>Reference Data</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="O">
+				<xs:annotation>
+					<xs:documentation>Accept sending Entry summary declarations to an Office of First Entry in another MS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="P">
+				<xs:annotation>
+					<xs:documentation>Accept receiving Entry summary declarationslodged at an Office of Lodgement in another MS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="U">
+				<xs:annotation>
+					<xs:documentation>Entry Processing</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="V">
+				<xs:annotation>
+					<xs:documentation>Lodgement</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="W">
+				<xs:annotation>
+					<xs:documentation>ALL FUNCTIONALITY</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== DayInTheWeek =====-->
+	<!--===== Format: n1 =====-->
+	<!--===== Codelist: 105 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="DayInTheWeek">
+		<xs:annotation>
+			<xs:documentation>null [Format: n1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>Monday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>Tuesday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>Wednesday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>Thursday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5">
+				<xs:annotation>
+					<xs:documentation>Friday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="6">
+				<xs:annotation>
+					<xs:documentation>Saturday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="7">
+				<xs:annotation>
+					<xs:documentation>Sunday</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== EoriAeoErrorCode =====-->
+	<!--===== It is an alphanumerical up to 50 characters string (i.e. an..50) that is used to define in an acknowledgement notification message the error code(s). =====-->
+	<!--===== Format: an..50 =====-->
+	<!--===== Codelist: 121 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="EoriAeoErrorCode">
+		<xs:annotation>
+			<xs:documentation>It is an alphanumerical up to 50 characters string (i.e. an..50) that is used to define in an acknowledgement notification message the error code(s). [Format: an..50]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="GEN-CORR">
+				<xs:annotation>
+					<xs:documentation>Non XML message received</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GEN-INVALID-BYTE-SEQUENCE">
+				<xs:annotation>
+					<xs:documentation>Invalid byte sequence: a byte sequence does not represent a valid character in the character encoding scheme (UTF-8).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GEN-WRONG-ENVID">
+				<xs:annotation>
+					<xs:documentation>Envelope Id and/or Originator Reference are missing</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== FunctionalErrorCodes =====-->
+	<!--===== - Subset of the UN/EDIFACT generic error table. - For remarks on the codes : see DDNTA Sec. VII. =====-->
+	<!--===== Format: n2 =====-->
+	<!--===== Codelist: 49 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="FunctionalErrorCodes">
+		<xs:annotation>
+			<xs:documentation>- Subset of the UN/EDIFACT generic error table. - For remarks on the codes : see DDNTA Sec. VII. [Format: n2]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="12">
+				<xs:annotation>
+					<xs:documentation>Incorrect (code) value</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="13">
+				<xs:annotation>
+					<xs:documentation>Missing</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="14">
+				<xs:annotation>
+					<xs:documentation>Value not supported in this position (code value constraint)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="15">
+				<xs:annotation>
+					<xs:documentation>Not supported in this position</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="19">
+				<xs:annotation>
+					<xs:documentation>Invalid decimal notation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="26">
+				<xs:annotation>
+					<xs:documentation>Duplicate detected</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="35">
+				<xs:annotation>
+					<xs:documentation>Too many repetitions</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="37">
+				<xs:annotation>
+					<xs:documentation>Invalid type characters</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="38">
+				<xs:annotation>
+					<xs:documentation>Missing digit in front of decimal sign</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="39">
+				<xs:annotation>
+					<xs:documentation>Element too long (length constraint)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Element too short (length constraint)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="90">
+				<xs:annotation>
+					<xs:documentation>Unknown MRN</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="91">
+				<xs:annotation>
+					<xs:documentation>Duplicate MRN</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="92">
+				<xs:annotation>
+					<xs:documentation>Message out of sequence</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="93">
+				<xs:annotation>
+					<xs:documentation>Invalid MRN</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== XmlErrorCodes =====-->
+	<!--===== Defines the codes to be used for reporting errors on XML messages. =====-->
+	<!--===== Format: n2 =====-->
+	<!--===== Codelist: 30 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="XmlErrorCodes">
+		<xs:annotation>
+			<xs:documentation>Defines the codes to be used for reporting errors on XML messages. [Format: n2]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="12">
+				<xs:annotation>
+					<xs:documentation>Incorrect enumeration</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="13">
+				<xs:annotation>
+					<xs:documentation>Missing</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="15">
+				<xs:annotation>
+					<xs:documentation>Not supported in this position</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="18">
+				<xs:annotation>
+					<xs:documentation>Unspecified Error / Other</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="19">
+				<xs:annotation>
+					<xs:documentation>Invalid decimal notation</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="35">
+				<xs:annotation>
+					<xs:documentation>Too many repetitions</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="39">
+				<xs:annotation>
+					<xs:documentation>Element too long (length constraint)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="40">
+				<xs:annotation>
+					<xs:documentation>Element too short (length constraint)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="50">
+				<xs:annotation>
+					<xs:documentation>Invalid Value for the specific type</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="51">
+				<xs:annotation>
+					<xs:documentation>Invalid value according to the pattern</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="52">
+				<xs:annotation>
+					<xs:documentation>Invalid XML format</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="53">
+				<xs:annotation>
+					<xs:documentation>Invalid character(s)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="54">
+				<xs:annotation>
+					<xs:documentation>Value is lower than the allowed lowest limit (Minimum Inclusive)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="55">
+				<xs:annotation>
+					<xs:documentation>Value is greater than the allowed upper limit (Maximum Inclusive)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="56">
+				<xs:annotation>
+					<xs:documentation>Value is lower than or equal to the allowed lowest limit (Minimum Exlcusive)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="57">
+				<xs:annotation>
+					<xs:documentation>Value is greater than or equal to the allowed upper limit (Maximum Exclusive)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== PrefixSuffixLevel =====-->
+	<!--===== Used for CUSTOMS OFFICE LSD. =====-->
+	<!--===== Format: an1 =====-->
+	<!--===== Codelist: 53 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="PrefixSuffixLevel">
+		<xs:annotation>
+			<xs:documentation>Used for CUSTOMS OFFICE LSD. [Format: an1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="A">
+				<xs:annotation>
+					<xs:documentation>Simple office (see box A in Customs Office List)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="E">
+				<xs:annotation>
+					<xs:documentation>Higher authority (see box E in Customs Office List)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== SystemUnavailabilityType =====-->
+	<!--===== Used for the attribute SYSTEM UNAVAILABILITY.System Unavailability Type. =====-->
+	<!--===== Format: a1 =====-->
+	<!--===== Codelist: 79 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="SystemUnavailabilityType">
+		<xs:annotation>
+			<xs:documentation>Used for the attribute SYSTEM UNAVAILABILITY.System Unavailability Type. [Format: a1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="N">
+				<xs:annotation>
+					<xs:documentation>Business service not implemented</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="S">
+				<xs:annotation>
+					<xs:documentation>Scheduled Unavailability</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="U">
+				<xs:annotation>
+					<xs:documentation>Unscheduled Unavailability</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== Flag =====-->
+	<!--===== Used for attributes that can have a positive or a negative value. =====-->
+	<!--===== Format: n1 =====-->
+	<!--===== Codelist: 27 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="Flag">
+		<xs:annotation>
+			<xs:documentation>Used for attributes that can have a positive or a negative value. [Format: n1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>NO</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>YES</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== MonthOfYear =====-->
+	<!--===== Format: an2 =====-->
+	<!--===== Codelist: 26 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="MonthOfYear">
+		<xs:annotation>
+			<xs:documentation>null [Format: an2]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="01">
+				<xs:annotation>
+					<xs:documentation>January</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="02">
+				<xs:annotation>
+					<xs:documentation>February</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="03">
+				<xs:annotation>
+					<xs:documentation>March</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="04">
+				<xs:annotation>
+					<xs:documentation>April</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="05">
+				<xs:annotation>
+					<xs:documentation>May</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="06">
+				<xs:annotation>
+					<xs:documentation>June</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="07">
+				<xs:annotation>
+					<xs:documentation>July</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="08">
+				<xs:annotation>
+					<xs:documentation>August</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="09">
+				<xs:annotation>
+					<xs:documentation>September</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>October</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="11">
+				<xs:annotation>
+					<xs:documentation>November</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="12">
+				<xs:annotation>
+					<xs:documentation>December</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== MessageTypes =====-->
+	<!--===== Used for attribute MESSAGE ERRORS.Association assigned code and MESSAGE.Message Type. The usage of each code in one of the UNSM templates is defined in the Remarks column. CC should in all cases be instantiated to the value of the particular domain in which the message is created. [Format: an6] =====-->
+	<!--===== Format: an6 =====-->
+	<!--===== Codelist: 60 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="MessageTypes">
+		<xs:annotation>
+			<xs:documentation>Used for attribute MESSAGE ERRORS.Association assigned code and MESSAGE.Message Type. The usage of each code in one of the UNSM templates is defined in the Remarks column. CC should in all cases be instantiated to the value of the particular domain in which the message is created. [Format: an6]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="DKA01A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION TEMPORARY STORAGE DISCHARGE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA02A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION TEMPORARY STORAGE DISCHARGE ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA03A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION TEMPORARY STORAGE DISCHARGE REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA04A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY MIG ACKNOWLEDGEMEN</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA05A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY MIG REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA10A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE ANNULMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA11A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE ANNULMENT ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA12A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE ANNULMENT REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA13A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE MIO</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA14A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE MIO ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA15A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE MIO REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA16A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DEPARTURE REPORTING EXTERNAL AUTHORITY </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA17A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DEPARTURE REPORTING EXTERN AUTHORITY ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA18A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DEPARTURE REPORTING EXTERN AUTHORITY REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA19A">
+				<xs:annotation>
+					<xs:documentation>INQUIRY FOR PRODUCED CUSTOMS DOCUMENT STATUS REQUEST </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA20A">
+				<xs:annotation>
+					<xs:documentation>INQUIRY FOR PRODUCED CUSTOMS DOCUMENT STATUS RESPONSE  </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA21A">
+				<xs:annotation>
+					<xs:documentation>INQUIRY FOR PRODUCED CUSTOMS DOCUMENT STATUS REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA44A">
+				<xs:annotation>
+					<xs:documentation>SUBSEQUENT ARRIVAL DECLARATION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA47A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA52A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE AMENDMENT REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA53A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA54A">
+				<xs:annotation>
+					<xs:documentation>ADVANCE TEMPORARY STORAGE OPERATION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA55A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE AMENDMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA56A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE AMENDMENT ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA57A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA58A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY VALIDATION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA59A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA60A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA61A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA62A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL NOTIFICATION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA63A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL NOTIFICATION ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA64A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL NOTIFICATION REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA65A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY AMENDMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA66A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY AMENDMENT ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA66A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY AMENDMENT ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA67A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY AMENDMENT ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA69A">
+				<xs:annotation>
+					<xs:documentation>PRESENTATION NOTIFICATION DECLARATION FOR TEMPORATY STORAGE FACILITY MCC </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA70A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY DELETE </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA71A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY DELETE ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA72A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY DELETE REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA73A">
+				<xs:annotation>
+					<xs:documentation>CHANGE TEMPORARY STORAGE FACILITY </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA74A">
+				<xs:annotation>
+					<xs:documentation>CHANGE TEMPORARY STORAGE FACILITY ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA75A">
+				<xs:annotation>
+					<xs:documentation>CHANGE TEMPORARY STORAGE FACILITY_REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA76A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY ENS </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA77A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY TSAD </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA79A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL NOTIFICATION TEMPORARY STORAGE FACILITY</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA80A">
+				<xs:annotation>
+					<xs:documentation>DIVIDE REQUEST TEMPORARY STORAGE FACILITY</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA81A">
+				<xs:annotation>
+					<xs:documentation>DIVIDE REGUEST TEMPORARY STORAGE FACILITY VALIDATION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA82A">
+				<xs:annotation>
+					<xs:documentation>DIVIDE REGUEST TEMPORARY STORAGE FACILITY REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA84A">
+				<xs:annotation>
+					<xs:documentation>SUBSEQUENT ARRIVAL DECLARATION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA85A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA86A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA87A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION AMENDMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA88A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION AMENDMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA89A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION AMENDMENT REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA90A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY MIG</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA94A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION DELETE </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA95A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION DELETE ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA96A">
+				<xs:annotation>
+					<xs:documentation>ARRIVAL DECLARATION AMENDMENT REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA97A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE TRANSIT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA98A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE TRANSIT ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKA99A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE TRANSIT REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD44A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD47A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION EXIT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD48A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD49A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION ERROR </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD51A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE NOTIFICATION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD52A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE NOTIFICATION ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD53A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE NOTIFICATION REJECTION </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD84A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION AMENDMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD87A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION EXIT AMENDMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD88A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION EXIT AMENDMENT VALIDATION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD89A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION AMENDMENT ERROR </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD94A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION DELETE </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD95A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION DELETE ACKNOWLEDGEMENT </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKD96A">
+				<xs:annotation>
+					<xs:documentation>DEPARTURE DECLARATION DELETE REJECTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKI29A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE DATA REQUEST </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKI30A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE DATA RESPONSE </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKI34A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION TEMPORARY STORAGE RISK ANALYSIS RESPONSE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKI35A">
+				<xs:annotation>
+					<xs:documentation>DECLARATION FOR TEMPORARY STORAGE FACILITY DATA RESPONSE  </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKS55A">
+				<xs:annotation>
+					<xs:documentation>MCC MANIFEST DECLARATION DISCHARGE ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKS58A">
+				<xs:annotation>
+					<xs:documentation>MCC MANIFEST DECLARATION DISCHARGE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKS59A">
+				<xs:annotation>
+					<xs:documentation>IMPORT MANIFEST DECLARATION DISCHARGE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DKS71A">
+				<xs:annotation>
+					<xs:documentation>IMPORT MANIFEST DECLARATION DISCHARGE ACKNOWLEDGEMENT</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DK906B">
+				<xs:annotation>
+					<xs:documentation>FUNCTIONAL NACK</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DK917B">
+				<xs:annotation>
+					<xs:documentation>XML NACK</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CD917B">
+				<xs:annotation>
+					<xs:documentation>XML NACK</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== ModificationType =====-->
+	<!--===== Used for (multiple) attribute Operation. =====-->
+	<!--===== Format: a1 =====-->
+	<!--===== Codelist: 24 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="ModificationType">
+		<xs:annotation>
+			<xs:documentation>Used for (multiple) attribute Operation. [Format: a1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="C">
+				<xs:annotation>
+					<xs:documentation>Create</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="D">
+				<xs:annotation>
+					<xs:documentation>Delete</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="U">
+				<xs:annotation>
+					<xs:documentation>Update</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--=========================================-->
+	<!--===== CustomSystem =====-->
+	<!--===== Custom System applicable domain =====-->
+	<!--===== Format: n..2 =====-->
+	<!--===== Codelist: 136 =====-->
+	<!--=========================================-->
+	<xs:simpleType name="CustomSystem">
+		<xs:annotation>
+			<xs:documentation>Custom System applicable domain [Format: n..2]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>NCTS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>ECS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>ICS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>EOS</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

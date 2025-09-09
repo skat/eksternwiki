@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Motordrevet køretøj med åbent eller lukket lad, som er indrettet til transport af genstande eller vare OG som transporteres via en færge.  En lastbil er en type transportmiddel.  </xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/MarkeringType.xsd"/>
+         <xs:element name="LastbilPåFærgeIdentifikation" type="fase2.1:Tekst35Type">
+               
+            </xs:element>
+         <xs:element name="LastbilPåFærgeBeskrivelse" type="fase2.1:Tekst35Type">
+               
+            </xs:element>
+         <xs:element name="LastbilPåFærgePræsenteret" type="fase2.1:MarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Markering på færges manifest, af om lastbil er ankommet og præsenteret ved toldsted.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Varer kan betegnes med et kombinerede nomenklatur (KN), som både anvendes i forbindelse med den fælles toldtarif og EU's udenrigshandel. KN er baseret på nomenklaturen i det harmoniserede system, og der tilføjes selvstændige underafdelinger med betegnelsen KN-underpositioner.  Den kombinerede nomenklatur er resultatet af sammensmeltningen af den fælles toldtarifs nomenklatur og Nimexe-nomenklaturen (Fællesskabets statistiske nomenklatur).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/Tekst10Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoTidType.xsd"/>
+         <xs:element name="KombineretNomenklaturKode" type="fase2.1:Tekst10Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kode for kombinerede nomenklatur.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="KombineretNomenklaturValidDatoTid" type="fase2.1:DatoTidType">
+               
+               <xs:annotation>
+                  <xs:documentation>DatoTid For forespørgslen om hvorvidt gældende varekode er gyldig.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

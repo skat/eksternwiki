@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s0:definitions xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:tfe:ws:1.0.1" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" name="OIOAfgangsdeklarationOpdaterService" targetNamespace="urn:oio:skat:tfe:ws:1.0.1">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>The english translation of "OIOAfgangsdeklarationOpdater" is "DepartureDeclarationUpdate".
+		 This translation applies to all names containing "OIOAfgangsdeklarationOpdater".
+		 Example: "OIOAfgangsdeklarationOpdaterServicePortType" translates to "DepartureDeclarationUpdateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<s0:types>
+		<xsd:schema targetNamespace="urn:oio:skat:tfe:ws:1.0.1" xmlns:fase2.1="urn:oio:skat:tfe:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="OIOAfgangsdeklarationOpdaterInterface.xsd"/>
+		</xsd:schema>
+	</s0:types>
+	<s0:message name="OIOAfgangsdeklarationOpdaterServiceRequest">
+		<s0:part name="Request" element="s1:OIOAfgangsdeklarationOpdater_I"/>
+	</s0:message>
+	<s0:message name="OIOAfgangsdeklarationOpdaterServiceResponse">
+		<s0:part name="Response" element="s1:OIOAfgangsdeklarationOpdater_O"/>
+	</s0:message>
+	<s0:portType name="OIOAfgangsdeklarationOpdaterServicePortType">
+		<s0:operation name="getOIOAfgangsdeklarationOpdater">
+			<s0:input message="s1:OIOAfgangsdeklarationOpdaterServiceRequest"/>
+			<s0:output message="s1:OIOAfgangsdeklarationOpdaterServiceResponse"/>
+		</s0:operation>
+	</s0:portType>
+	<s0:binding name="OIOAfgangsdeklarationOpdaterServicePortBinding" type="s1:OIOAfgangsdeklarationOpdaterServicePortType">
+		<s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<s0:operation name="getOIOAfgangsdeklarationOpdater">
+			<s2:operation soapAction=""/>
+			<s0:input>
+				<s2:body use="literal"/>
+			</s0:input>
+			<s0:output>
+				<s2:body use="literal"/>
+			</s0:output>
+		</s0:operation>
+	</s0:binding>
+	<s0:service name="OIOAfgangsdeklarationOpdaterService">
+		<s0:port name="OIOAfgangsdeklarationOpdaterServicePort" binding="s1:OIOAfgangsdeklarationOpdaterServicePortBinding">
+			<s2:address location="http://not.used.on.ftpgateway"/>
+		</s0:port>
+	</s0:service>
+</s0:definitions>

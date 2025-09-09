@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dkd51a="http://manifest.skat.dk/DKD51A" xmlns:dkd84a="http://manifest.skat.dk/DKD84A" xmlns:dkd87a="http://manifest.skat.dk/DKD87A" xmlns:eu="urn:eu" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAfgangsdeklarationOpdater" is "DepartureDeclarationUpdate".
+		 This translation applies to all names containing "OIOAfgangsdeklarationOpdater".
+		 Example: "OIOAfgangsdeklarationOpdaterServicePortType" translates to "DepartureDeclarationUpdateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysninger.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD51A" schemaLocation="DKD51A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD84A" schemaLocation="DKD84A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD87A" schemaLocation="DKD87A.xsd"/>
+	<xs:element name="OIOAfgangsdeklarationOpdater_I" type="tfe:OIOAfgangsdeklarationOpdater_IType"/>
+	<xs:complexType name="OIOAfgangsdeklarationOpdater_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="InputListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dkd51a:DKD51A"/>
+						<xs:element ref="dkd84a:DKD84A"/>
+						<xs:element ref="dkd87a:DKD87A"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

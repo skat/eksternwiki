@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:annotation>
+               <xs:documentation>Operatør i EU. Vil enten være Økonomisk Operatør (ifm import/eksport) eller Afgiftsoperatør (ifm punktafgifter).</xs:documentation>
+            </xs:annotation>
+         <xs:include schemaLocation="../types/NavnType.xsd"/>
+         <xs:include schemaLocation="../types/Tekst35Type.xsd"/>
+         <xs:include schemaLocation="../types/DatoType.xsd"/>
+         <xs:include schemaLocation="../types/VATNummerType.xsd"/>
+         <xs:element name="EUOperatørNavn" type="fase2.1:NavnType">
+               
+               <xs:annotation>
+                  <xs:documentation>Navnet på virksomheden. Navnet kan også være et personnavn, hvis afsender/modtager er en person.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EUOperatørNavnKort" type="fase2.1:Tekst35Type">
+               
+               <xs:annotation>
+                  <xs:documentation>Kort navn for operatøren.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EUOperatørGyldigFra" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Startdato for operatørens gyldighed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EUOperatørGyldigTil" type="fase2.1:DatoType">
+               
+               <xs:annotation>
+                  <xs:documentation>Slutdato for operatørens gyldighed.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="EUOperatørVATNummer" type="fase2.1:VATNummerType">
+               
+               <xs:annotation>
+                  <xs:documentation>Af det europæriske VAT number.   Europærisk standard for identifikation af europæriske virksomheder. Nummeret afhænger af det enkelte eu-land og konstrueret således:  [Landekode] [national identifikation]  For danske virksomheder anvender vi SE-numre. En dansk virksomheds VATNummer er lig DK-xxxxxxxx.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/IEA98OpretMidlertidigOplagPaaGraenseAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA99OpretMidlertidigOplagPaaGraenseAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA58MidlertidigOpbevaringOpretAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA59MidlertidigOpbevaringOpretAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA85OpretMidlertidigOpbevaringPaaGraenseAdviserStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA86OpretMidlertidigOpbevaringPaaGraenseAfvisStrukturType.xsd"/>
+				     
+         <xs:element name="MidlertidigOpbevaringOpret_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MidlertidigOpbevaringOpret_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14874"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MidlertidigOpbevaringOpret_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="IEStrukturValg" minOccurs="0">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:element ref="fase2.1:IEA98OpretMidlertidigOplagPåGrænseAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA99OpretMidlertidigOplagPåGrænseAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA58MidlertidigOpbevaringOpretAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA59MidlertidigOpbevaringOpretAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA85OpretMidlertidigOpbevaringPåGrænseAdviserStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA86OpretMidlertidigOpbevaringPåGrænseAfvisStruktur"/>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

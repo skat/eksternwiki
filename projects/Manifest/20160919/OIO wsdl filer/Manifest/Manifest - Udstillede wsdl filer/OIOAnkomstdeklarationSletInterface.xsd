@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAnkomstdeklarationSlet" is "ArrivalDeclarationDelete".
+		 This translation applies to all names containing "OIOAnkomstdeklarationSlet".
+		 Example: "OIOAnkomstdeklarationSletServicePortType" translates to "ArrivalDeclarationDeleteServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="OIOAnkomstdeklarationSlet_IType.xsd"/>
+	<xs:include schemaLocation="OIOAnkomstdeklarationSlet_OType.xsd"/>
+	<xs:element name="OIOAnkomstdeklarationSletInterface" type="tfe:OIOAnkomstdeklarationSletInterfaceType"/>
+	<xs:complexType name="OIOAnkomstdeklarationSletInterfaceType">
+		<xs:choice>
+			<xs:element ref="tfe:OIOAnkomstdeklarationSlet_I"/>
+			<xs:element ref="tfe:OIOAnkomstdeklarationSlet_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

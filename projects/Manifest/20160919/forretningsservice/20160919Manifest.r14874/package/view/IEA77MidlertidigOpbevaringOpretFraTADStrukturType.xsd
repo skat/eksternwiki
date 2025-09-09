@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Transit.xsd"/>
+         <xs:include schemaLocation="../class/VarePost.xsd"/>
+         <xs:include schemaLocation="../class/SummariskAngivelse.xsd"/>
+         <xs:include schemaLocation="../class/Losningssted.xsd"/>
+         <xs:include schemaLocation="../class/MidlertidigOpbevaring.xsd"/>
+         <xs:include schemaLocation="../class/ToldOperatoer.xsd"/>
+         <xs:include schemaLocation="../class/FremlagtDokument.xsd"/>
+         <xs:element name="IEA77MidlertidigOpbevaringOpretFraTADStruktur"
+                     type="fase2.1:IEA77MidlertidigOpbevaringOpretFraTADStrukturType"/>
+         <xs:complexType name="IEA77MidlertidigOpbevaringOpretFraTADStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEA77">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="SummariskTransitangivelse">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:TransitMRNNummer"/>
+
+                                 <xs:element ref="fase2.1:VarePostLøbeNummer" minOccurs="0"/>
+
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="MidlertidigOpbevaring">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="fase2.1:SummariskAngivelseLokalReference" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:LosningsstedKode"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="MidlertidigOpbevaringFacilitiet">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:MidlertidigOpbevaringBevillingType"/>
+                  
+                                 <xs:element ref="fase2.1:MidlertidigOpbevaringFacilitetAdresseLøbenummer"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="MidlertidigOpbevaringFacilitetOperatør">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldOperatørType"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <!--Sequence removed-->
+
+                           <xs:element name="Modtager" minOccurs="0">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element ref="fase2.1:ToldOperatørType"/>
+                  
+                                    <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        
+
+                        <xs:element name="Registrator">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldOperatørType"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørRepræsentantStatus"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="VarePostListe">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element name="VarePost" minOccurs="0" maxOccurs="99">
+                                    <xs:complexType>
+                                       <xs:sequence>
+                                          <xs:element ref="fase2.1:VarePostLøbeNummer"/>
+                                          <xs:element name="DokumentCertifikatListe">
+                                             <xs:complexType>
+                                                <xs:sequence>
+
+                                                   <xs:element name="DokumentCertifikat" minOccurs="0" maxOccurs="99">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+
+                                                            <xs:element ref="fase2.1:FremlagtDokumentVareBestemmelseKode" minOccurs="0"/>
+
+                                                            <xs:element ref="fase2.1:FremlagtDokumentType"/>
+                  
+                                                            <xs:element ref="fase2.1:FremlagtDokumentReference"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

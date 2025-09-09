@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Bjarne Ulvmose (SKAT Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://manifest.skat.dk/DKA87A" xmlns:complex_manifest="http://manifest.skat.dk/complex_manifest" xmlns:simple_manifest="http://manifest.skat.dk/simple_manifest" xmlns:tcl_manifest="http://manifest.skat.dk/tcl_manifest" xmlns:simple="http://manifest.skat.dk/simple" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/DKA87A" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--=====DKA87A:ARRIVAL DECLARATION AMENDMENT   -->
+	<!--===== ARRIVAL DECLARATION    -->
+	<!--===== Manifest Domain Definition  -->
+	<!--===== DDNIA v6.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.23  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/complex_manifest" schemaLocation="complex_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple_manifest" schemaLocation="simple_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl_manifest" schemaLocation="tcl_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple" schemaLocation="simple_types.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl" schemaLocation="tcl.xsd"/>
+	<!--===== Root Element =====-->
+	<xs:element name="DKA87A" type="ie:DKA87AType"/>
+	<!--===== Root Element Content =====-->
+	<xs:complexType name="DKA87AType">
+		<xs:sequence>
+			<xs:group ref="ie:MESSAGE"/>
+			<xs:element name="HEAHEA" type="ie:HEAHEAType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="HEADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MANITE" type="ie:MANITEType" maxOccurs="9999">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Manifest Item"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPE" type="ie:TRAOPEType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRACARENT601" type="ie:TRACARENT601">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="(ENTRY CARRIER) TRADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPEREP" type="ie:TRAOPEREPType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR REPRESENTATIVE"/>
+						<condition name="C043DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODARRDEC" type="ie:PERLODARRDECType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE ARRIVAL DECLARATION"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== MESSAGE Content =====-->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="MesSenMES3" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message sender"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesRecMES6" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message recipient"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatOfPreMES9" type="simple:DatePrepType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimOfPreMES10" type="simple:TimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Time of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriMES15" type="simple:Alpha_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Priority"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TesIndMES18" type="tcl:Flag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Test indicator"/>
+						<rule name="TR9085"/>
+						<codeList name="Flag"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesIdeMES19" type="simple:Alphanumeric_Max14">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message identification"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMES20" type="tcl:MessageTypes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessageTypes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorIdeMES25" type="simple:Alphanumeric_Max14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Correlation identifier"/>
+						<rule name="TR9181"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=== HEADER ===-->
+	<xs:complexType name="HEAHEAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="HEADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ManRefNumHEA1" type="simple:Numeric_13">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Manifest reference number"/>
+						<rule name="R195DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LRNNumHEA" type="simple:DeclarationRequestNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="LRN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TraModAtBorHEA76" type="simple:Numeric_Max2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Transport mode"/>
+						<rule name="R010DK"/>
+						<codeList name="TransportMode" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UniIdeDivHEA132" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Identification of the means of transport"/>
+						<condition name="R011DK"/>
+						<condition name="C219DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NatOfMeaOfTraHEA" type="simple:CountryCodeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Nationality of the means of transport"/>
+						<codeList name="CountryCodesFullList" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConRefNumHEA" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Conveyance reference number"/>
+						<rule name="R843"/>
+						<condition name="C518"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NamOfMeaTraHEA" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name of the means of transport"/>
+						<condition name="C018DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpDatArrHEA701" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Expected date and time of arrival"/>
+						<rule name="R660"/>
+						<rule name="R009DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArrPlaOfDepHEA" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Place of departure"/>
+						<rule name="R022DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArrPlaOfArr" type="simple:Alphanumeric_10">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Place of arrival facility"/>
+						<codeList name="Loading_UnloadingPlaceFacility"/>
+						<rule name="R043DK"/>
+						<rule name="R044DK"/>
+						<rule name="R224DK"/>
+						<rule name="R234DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DivHEA" type="tcl:Flag">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Diversion"/>
+						<rule name="R302DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DivRefNumHEA119" type="simple:DeclarationRequestNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Diversion LRN"/>
+						<condition name="C243DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotGroMasHEA307" type="simple:Decimal_11_3">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Total gross mass"/>
+						<rule name="R015DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== MANIFEST ITEM ===-->
+	<xs:complexType name="MANITEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="MANIFEST ITEM"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IteNumMANITE" type="simple:Numeric_Max5">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Manifest item number"/>
+						<rule name="R004DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CusStaMANITE" type="simple:Alphanumeric_Max5">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Customs status"/>
+						<codeList name="CustomsStatus"/>
+						<rule name="R035DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaUnlMANITE" type="simple:AlphanumericSpecMax35Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Unloading place"/>
+						<rule name="R001DK"/>
+						<rule name="R032DK"/>
+						<condition name="C023DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaLoaMANITE" type="simple:AlphanumericSpecMax35Type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Loading place"/>
+						<rule name="R001DK"/>
+						<rule name="R032DK"/>
+						<condition name="C023DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DisReaMANITE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Discrepancy reason"/>
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="simple:AlphaType">
+						<xs:maxLength value="255" fixed="false"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TraDocTypMANITE" type="simple:Alphanumeric_Max4">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Transport document type"/>
+						<codeList name="DocumentTypeCommon" type="business"/>
+						<rule name="R199DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TraDocRefMANITE" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Transport document reference"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IteGroMasMANITE" type="simple:Decimal_11_3">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Gross Mass"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUSDAT" type="ie:CUSDATType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="CUSTOMS DATA"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUSDOC" type="ie:CUSDOCType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PRODUCED DOCUMENTS"/>
+						<condition name="C027DK"/>
+						<condition name="C231DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TEMSTOFACOPE" type="ie:TEMSTOFACOPEType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TEMPORARY STORAGE FACILITY OPERATOR"/>
+						<condition name="C239DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CONMC2" type="ie:CONMC2Type" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="CONTAINER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRUSPEC" type="ie:TRUSPCType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRUCK SPECIFIKATION"/>
+						<condition name="C096DK"/>
+						<condition name="C240DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== CUSTOMS DATA ===-->
+	<xs:complexType name="CUSDATType">
+		<xs:sequence>
+			<xs:element name="CusDatTypCDA" type="simple:Alphanumeric_Max4">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Customs data type"/>
+						<rule name="R202DK"/>
+						<rule name="R239DK"/>
+						<codeList name="CustomsDataType"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CusDatRefCDA" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Customs data reference"/>
+						<rule name="R200DK"/>
+						<condition name="C230DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DivStaCDA" type="simple:Numeric_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Diversion status"/>
+						<rule name="R214DK"/>
+						<condition name="C242DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CouCodOFECDA" type="simple:CountryCodeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Country code of declared Office of first entry"/>
+						<codeList name="CountryCodesCommunity" type="business"/>
+						<condition name="C032DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUSDATDET" type="ie:CUSDATDETType" minOccurs="0" maxOccurs="99"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== CUSTOMS DATA DETAIL ===-->
+	<xs:complexType name="CUSDATDETType">
+		<xs:sequence>
+			<xs:element name="IteNumCUSDATDET" type="simple:Numeric_Max5">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Item Number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PRODUCED CUSTOMS DOCUMENT ===-->
+	<xs:complexType name="CUSDOCType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="PRODUCED CUSTOMS DOCUMENT"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CusDocTypCDO" type="simple:Alphanumeric_Max4">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Customs document type"/>
+						<codeList name="CustomsDocumentsType" type="business"/>
+						<rule name="R036DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CusDocRefCDO" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Customs docdument reference"/>
+						<rule name="R200DK"/>
+						<condition name="C326DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TEMPORARY STORAGE FACILITY OPERATOR ===-->
+	<xs:complexType name="TEMSTOFACOPEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TEMPORARY STORAGE FACILITY OPERATOR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TINTS1" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== CONTAINERS ===-->
+	<xs:complexType name="CONMC2Type">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="CONTAINER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConNumMC21" type="simple:Alphanumeric_Max17">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Container number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRUCK SPECIFIKATION ===-->
+	<xs:complexType name="TRUSPCType">
+		<xs:sequence>
+			<xs:element name="IdeOfMeaTraTRS" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Identification of the means of transport"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NatOfMeaOfTraTRS" type="simple:Alpha_2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Nationality of the means of transport"/>
+						<rule name="R038DK"/>
+						<codeList name="CountryCodesFullList"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TxtDesTRS" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Textual description"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR ===-->
+	<xs:complexType name="TRAOPEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTRO" type="simple:TradNameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StrNumTRO" type="simple:StreetNumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Street and number"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CouCodTRO" type="simple:CountryCodeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Country code"/>
+						<codeList name="CountryCodesCommunity" type="business"/>
+						<condition name="C008DK"/>
+						<rule name="R038DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PstCodTRO" type="simple:PostalCodeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Postal code"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CtyTRO" type="simple:CityType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="City"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTRO" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+						<condition name="C229DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== (ENTRY CARRIER) TRADER ===-->
+	<xs:complexType name="TRACARENT601">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="(ENTRY CARRIER) TRADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTRACARENT604" type="simple:TradNameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StrNumTRACARENT607" type="simple:StreetNumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Street and number"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CouCodTRACARENT605" type="simple:CountryCodeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Country code"/>
+						<codeList name="CountryCodesFullList" type="business"/>
+						<condition name="C008DK"/>
+						<rule name="R038DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PstCodTRACARENT606" type="simple:PostalCodeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Postal code"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CtyTRACARENT603" type="simple:CityType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="City"/>
+						<condition name="C008DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTRACARENT602" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+						<condition name="C229DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR REPRESENTATIVE ===-->
+	<xs:complexType name="TRAOPEREPType">
+		<xs:sequence>
+			<xs:element name="TINTOR" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--==== PERSON LODGING THE ARRIVAL DECLARATION ===-->
+	<xs:complexType name="PERLODARRDECType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="PERSON LODGING THE ARRIVAL DECLARATION"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TINPLA" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RepStaPLA" type="simple:Numeric_1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Representantive status"/>
+						<rule name="R203DK"/>
+						<codeList name="RepresentativeStatusCode"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Transportdeklaration.xsd"/>
+         <xs:include schemaLocation="../class/Ankomstdeklaration.xsd"/>
+         <xs:include schemaLocation="../class/Advisering.xsd"/>
+         <xs:include schemaLocation="../class/AdviseringMeddelelse.xsd"/>
+         <xs:include schemaLocation="../class/ToldOperatoer.xsd"/>
+         <xs:include schemaLocation="../class/EUOperatoer.xsd"/>
+         <xs:include schemaLocation="../class/Toldsted.xsd"/>
+         <xs:element name="IEA60AnkomstdeklarationAcceptStruktur"
+                     type="fase2.1:IEA60AnkomstdeklarationAcceptStrukturType"/>
+         <xs:complexType name="IEA60AnkomstdeklarationAcceptStrukturType">
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="IEA60">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element name="Ankomstdeklaration">
+                           <xs:complexType>
+                              <xs:sequence>
+
+                                 <xs:element ref="fase2.1:TransportdeklarationLokalReference" minOccurs="0"/>
+
+                                 <xs:element ref="fase2.1:TransportdeklarationReferenceNummer"/>
+                  
+                                 <xs:element ref="fase2.1:TransportdeklarationRegistreringDatoTid"/>
+                  
+                                 <xs:element ref="fase2.1:TransportdeklarationKlarTilAntagelseDatoTid"/>
+                  
+                                 <xs:element ref="fase2.1:AnkomstdeklarationAnkomstDatoTid"/>
+                  
+                                 <xs:element ref="fase2.1:TransportdeklarationStatusKode"/>
+                                 <xs:element name="AdviseringListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="Advisering" minOccurs="1" maxOccurs="999">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:AdviseringType"/>
+                  
+                                                   <xs:element ref="fase2.1:AdviseringDatoTid"/>
+                  
+                                                   <xs:element ref="fase2.1:AdviseringMeddelelseKode"/>
+                  
+                                                   <xs:element ref="fase2.1:AdviseringMeddelelseBeskrivelse"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                                 <xs:element name="OperatørListe">
+                                    <xs:complexType>
+                                       <xs:sequence>
+
+                                          <xs:element name="Operatør" minOccurs="2" maxOccurs="unbounded">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element ref="fase2.1:ToldOperatørType"/>
+
+                                                   <xs:element ref="fase2.1:ToldOperatørTINNummer" minOccurs="0"/>
+
+                                                   <xs:element ref="fase2.1:EUOperatørNavn"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       </xs:sequence>
+                                    </xs:complexType>
+                                 </xs:element>
+
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Registrator">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldOperatørType"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørTINNummer"/>
+                  
+                                 <xs:element ref="fase2.1:EUOperatørNavn"/>
+                  
+                                 <xs:element ref="fase2.1:ToldOperatørRepræsentantStatus"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Ankomsttoldsted">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element ref="fase2.1:ToldstedReferenceNummer"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+            
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r14874</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../context/KontekstType.xsd"/>
+
+					    
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+				     
+         <xs:include schemaLocation="../view/IEA52RetMIGAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA56RetMIGAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA02AfslutMIGMedAndenToldProcesAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA03AfslutMIGMedAndenToldProcesAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA14OverfoerMIOTilMIGAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA15OverfoerMIOTilMIGAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA04OpretMIOFraMIGAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA05OpretMIOFraMIGAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA66RettelseTilMidlertidigOpbevaringAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA67RettelseTilMidlertidigOpbevaringAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA74FlytFraEtOplagTilAndetOplagAcceptStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IEA75FlytFraEtOplagTilAndetOplagAfvisStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IES55SlutMidlertidigOpbevaringMCCSvarStrukturType.xsd"/>
+				     
+         <xs:include schemaLocation="../view/IES71SlutMidlertidigOpbevaringImportSvarStrukturType.xsd"/>
+				     
+         <xs:element name="MidlertidigOpbevaringOpdater_O">
+            <xs:complexType>
+               <xs:complexContent>
+                  <xs:extension base="fase2.1:MidlertidigOpbevaringOpdater_OType">
+                     <xs:attribute name="revision">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                              <xs:pattern value="r14874"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                  </xs:extension>
+               </xs:complexContent>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="MidlertidigOpbevaringOpdater_OType">
+            <xs:sequence>
+               <xs:element ref="fase2.1:Kontekst"/>
+               <!--Sequence removed-->
+         
+         
+         
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  
+                     <xs:element name="IEStrukturValg" minOccurs="0">
+                        <xs:complexType>
+                           <xs:choice>
+                              <xs:element ref="fase2.1:IEA52RetMIGAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA56RetMIGAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA02AfslutMIGMedAndenToldProcesAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA03AfslutMIGMedAndenToldProcesAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA14OverførMIOTilMIGAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA15OverførMIOTilMIGAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA04OpretMIOFraMIGAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA05OpretMIOFraMIGAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA66RettelseTilMidlertidigOpbevaringAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA67RettelseTilMidlertidigOpbevaringAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA74FlytFraEtOplagTilAndetOplagAcceptStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IEA75FlytFraEtOplagTilAndetOplagAfvisStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IES55SlutMidlertidigOpbevaringMCCSvarStruktur"/>
+				
+				
+				                          <xs:element ref="fase2.1:IES71SlutMidlertidigOpbevaringImportSvarStruktur"/>
+                           </xs:choice>
+                        </xs:complexType>
+                     </xs:element>
+                  
+            
+         
+         
+         
+         
+               
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

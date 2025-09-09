@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:fase2.1="http://skat.dk/begrebsmodel/2009/01/15/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2009/01/15/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         <xs:include schemaLocation="../types/MRNType.xsd"/>
+         <xs:include schemaLocation="../types/TalMarkeringType.xsd"/>
+         <xs:element name="IndgangsangivelseMRNNummer" type="fase2.1:MRNType">
+               
+               <xs:annotation>
+                  <xs:documentation>Unikt nummer som identificerer en summarisk indgangangivelse</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+         <xs:element name="IndgangsangivelseMRNNummerMarkering" type="fase2.1:TalMarkeringType">
+               
+               <xs:annotation>
+                  <xs:documentation>Kan være enten 1 eller 0, fortæller om MRN er blevet sendt.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
+      </xs:schema>
