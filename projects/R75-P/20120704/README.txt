@@ -1,0 +1,13 @@
+Ændring pr. 7/5-2012 (version 2.0)
+================================================================
+Tilføjet optionelt SE-nummer til input. Bruges til at kontrollere
+om revisor (identificeret med SE-nr) er autoriseret til at trække
+oplysninger.
+
+Der er sket ændringer i PersonKontrolOplysningHent_IType.xsd i 
+både forretningsservicen og OIO-servicen.
+
+WSDL med referencer til OIO-schemaer ligger her:
+http://85.81.229.78/services/test/PersonKontrolOplysningHent/PersonKontrolOplysningHent.wsdl
+
+
