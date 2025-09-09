@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOMidlertidigOpbevaringOpret" is "DeclarationForTemporaryStorageFacilityCreate".
+		 This translation applies to all names containing "OIOMidlertidigOpbevaringOpret".
+		 Example: "OIOMidlertidigOpbevaringOpretServicePortType" translates to "DeclarationForTemporaryStorageFacilityCreateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="OIOMidlertidigOpbevaringOpret_IType.xsd"/>
+	<xs:include schemaLocation="OIOMidlertidigOpbevaringOpret_OType.xsd"/>
+	<xs:element name="OIOMidlertidigOpbevaringOpretInterface" type="tfe:OIOMidlertidigOpbevaringOpretInterfaceType"/>
+	<xs:complexType name="OIOMidlertidigOpbevaringOpretInterfaceType">
+		<xs:choice>
+			<xs:element ref="tfe:OIOMidlertidigOpbevaringOpret_I"/>
+			<xs:element ref="tfe:OIOMidlertidigOpbevaringOpret_O"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

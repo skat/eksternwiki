@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s0:definitions xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="urn:oio:skat:tfe:ws:1.0.1" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" name="OIOAnkomstdeklarationSletService" targetNamespace="urn:oio:skat:tfe:ws:1.0.1">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>The english translation of "OIOAnkomstdeklarationSlet" is "ArrivalDeclarationDelete".
+		 This translation applies to all names containing "OIOAnkomstdeklarationSlet".
+		 Example: "OIOAnkomstdeklarationSletServicePortType" translates to "ArrivalDeclarationDeleteServicePortType".</xs:documentation>
+	</xs:annotation>
+	<s0:types>
+		<xsd:schema targetNamespace="urn:oio:skat:tfe:ws:1.0.1" xmlns:fase2.1="urn:oio:skat:tfe:ws:1.0.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:include schemaLocation="OIOAnkomstdeklarationSletInterface.xsd"/>
+		</xsd:schema>
+	</s0:types>
+	<s0:message name="OIOAnkomstdeklarationSletServiceRequest">
+		<s0:part name="Request" element="s1:OIOAnkomstdeklarationSlet_I"/>
+	</s0:message>
+	<s0:message name="OIOAnkomstdeklarationSletServiceResponse">
+		<s0:part name="Response" element="s1:OIOAnkomstdeklarationSlet_O"/>
+	</s0:message>
+	<s0:portType name="OIOAnkomstdeklarationSletServicePortType">
+		<s0:operation name="getOIOAnkomstdeklarationSlet">
+			<s0:input message="s1:OIOAnkomstdeklarationSletServiceRequest"/>
+			<s0:output message="s1:OIOAnkomstdeklarationSletServiceResponse"/>
+		</s0:operation>
+	</s0:portType>
+	<s0:binding name="OIOAnkomstdeklarationSletServicePortBinding" type="s1:OIOAnkomstdeklarationSletServicePortType">
+		<s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<s0:operation name="getOIOAnkomstdeklarationSlet">
+			<s2:operation soapAction=""/>
+			<s0:input>
+				<s2:body use="literal"/>
+			</s0:input>
+			<s0:output>
+				<s2:body use="literal"/>
+			</s0:output>
+		</s0:operation>
+	</s0:binding>
+	<s0:service name="OIOAnkomstdeklarationSletService">
+		<s0:port name="OIOAnkomstdeklarationSletServicePort" binding="s1:OIOAnkomstdeklarationSletServicePortBinding">
+			<s2:address location="http://not.used.on.ftpgateway"/>
+		</s0:port>
+	</s0:service>
+</s0:definitions>

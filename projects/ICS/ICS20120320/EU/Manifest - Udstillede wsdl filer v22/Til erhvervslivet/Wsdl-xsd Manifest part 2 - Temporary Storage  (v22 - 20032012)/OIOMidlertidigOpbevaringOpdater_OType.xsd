@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dka02a="http://manifest.skat.dk/DKA02A" xmlns:dka03a="http://manifest.skat.dk/DKA03A" xmlns:dka04a="http://manifest.skat.dk/DKA04A" xmlns:dka05a="http://manifest.skat.dk/DKA05A" xmlns:dka14a="http://manifest.skat.dk/DKA14A" xmlns:dka15a="http://manifest.skat.dk/DKA15A" xmlns:dka52a="http://manifest.skat.dk/DKA52A" xmlns:dka56a="http://manifest.skat.dk/DKA56A" xmlns:dka66a="http://manifest.skat.dk/DKA66A" xmlns:dka67a="http://manifest.skat.dk/DKA67A" xmlns:dka74a="http://manifest.skat.dk/DKA74A" xmlns:dka75a="http://manifest.skat.dk/DKA75A" xmlns:dk917b="http://manifest.skat.dk/DK917B" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOMidlertidigOpbevaringOpdater" is "DeclarationForTemporaryStorageFacilityUpdate".
+		 This translation applies to all names containing "OIOMidlertidigOpbevaringOpdater".
+		 Example: "OIOMidlertidigOpbevaringOpdaterServicePortType" translates to "DeclarationForTemporaryStorageFacilityUpdateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA02A" schemaLocation="DKA02A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA03A" schemaLocation="DKA03A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA04A" schemaLocation="DKA04A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA05A" schemaLocation="DKA05A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA14A" schemaLocation="DKA14A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA15A" schemaLocation="DKA15A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA52A" schemaLocation="DKA52A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA56A" schemaLocation="DKA56A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA66A" schemaLocation="DKA66A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA67A" schemaLocation="DKA67A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA74A" schemaLocation="DKA74A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA75A" schemaLocation="DKA75A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DK917B" schemaLocation="DK917B.xsd"/>
+	<xs:element name="OIOMidlertidigOpbevaringOpdater_O" type="tfe:OIOMidlertidigOpbevaringOpdater_OType"/>
+	<xs:complexType name="OIOMidlertidigOpbevaringOpdater_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="KvitteringListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka02a:DKA02A"/>
+						<xs:element ref="dka03a:DKA03A"/>
+						<xs:element ref="dka04a:DKA04A"/>
+						<xs:element ref="dka05a:DKA05A"/>
+						<xs:element ref="dka14a:DKA14A"/>
+						<xs:element ref="dka15a:DKA15A"/>
+						<xs:element ref="dka52a:DKA52A"/>
+						<xs:element ref="dka56a:DKA56A"/>
+						<xs:element ref="dka66a:DKA66A"/>
+						<xs:element ref="dka67a:DKA67A"/>
+						<xs:element ref="dka74a:DKA74A"/>
+						<xs:element ref="dka75a:DKA75A"/>
+						<xs:element ref="dk917b:DK917B"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

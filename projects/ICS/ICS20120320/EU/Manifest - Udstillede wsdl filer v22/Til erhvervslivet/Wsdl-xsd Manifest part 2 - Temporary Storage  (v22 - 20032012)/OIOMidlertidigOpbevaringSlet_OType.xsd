@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1"
+ xmlns:dka11a="http://manifest.skat.dk/DKA11A"
+ xmlns:dka12a="http://manifest.skat.dk/DKA12A"
+ xmlns:dka71a="http://manifest.skat.dk/DKA71A"
+ xmlns:dka72a="http://manifest.skat.dk/DKA72A"
+ xmlns:dk917b="http://manifest.skat.dk/DK917B" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOMidlertidigOpbevaringSlet" is "DeclarationForTemporaryStorageFacilityDelete".
+		 This translation applies to all names containing "OIOMidlertidigOpbevaringSlet".
+		 Example: "OIOMidlertidigOpbevaringSletServicePortType" translates to "DeclarationForTemporaryStorageFacilityDeleteServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA11A" schemaLocation="DKA11A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA12A" schemaLocation="DKA12A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA71A" schemaLocation="DKA71A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA72A" schemaLocation="DKA72A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DK917B" schemaLocation="DK917B.xsd"/>
+	<xs:element name="OIOMidlertidigOpbevaringSlet_O" type="tfe:OIOMidlertidigOpbevaringSlet_OType"/>
+	<xs:complexType name="OIOMidlertidigOpbevaringSlet_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="KvitteringListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka11a:DKA11A"/>
+						<xs:element ref="dka12a:DKA12A"/>
+						<xs:element ref="dka71a:DKA71A"/>
+						<xs:element ref="dka72a:DKA72A"/>
+						<xs:element ref="dk917b:DK917B"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

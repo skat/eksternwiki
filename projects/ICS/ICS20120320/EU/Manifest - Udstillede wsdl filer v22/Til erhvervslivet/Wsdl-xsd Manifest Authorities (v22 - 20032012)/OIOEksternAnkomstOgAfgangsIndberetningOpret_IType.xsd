@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dka16a="http://manifest.skat.dk/DKA16A" xmlns:eu="urn:eu" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOEksternAnkomstOgAfgangsIndberetningOpret" is "ArrivalDepartureReportingExternalAuthorityCreate".
+		 This translation applies to all names containing "OIOEksternAnkomstOgAfgangsIndberetningOpret".
+		 Example: "OIOEksternAnkomstOgAfgangsIndberetningOpretServicePortType" translates to "ArrivalDepartureReportingExternalAuthorityCreateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysninger.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA16A" schemaLocation="DKA16A.xsd"/>
+	<xs:element name="OIOEksternAnkomstOgAfgangsIndberetningOpret_I" type="tfe:OIOEksternAnkomstOgAfgangsIndberetningOpret_IType"/>
+	<xs:complexType name="OIOEksternAnkomstOgAfgangsIndberetningOpret_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="InputListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka16a:DKA16A"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

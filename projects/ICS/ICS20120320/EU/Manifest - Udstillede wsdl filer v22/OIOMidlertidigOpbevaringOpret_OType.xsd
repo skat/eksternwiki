@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1"
+ xmlns:dka58a="http://manifest.skat.dk/DKA58A"
+ xmlns:dka59a="http://manifest.skat.dk/DKA59A"
+ xmlns:dka85a="http://manifest.skat.dk/DKA85A"
+ xmlns:dka86a="http://manifest.skat.dk/DKA86A"
+ xmlns:dka98a="http://manifest.skat.dk/DKA98A"
+ xmlns:dka99a="http://manifest.skat.dk/DKA99A"
+ xmlns:dk917b="http://manifest.skat.dk/DK917B"
+ xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOMidlertidigOpbevaringOpret" is "DeclarationForTemporaryStorageFacilityCreate".
+		 This translation applies to all names containing "OIOMidlertidigOpbevaringOpret".
+		 Example: "OIOMidlertidigOpbevaringOpretServicePortType" translates to "DeclarationForTemporaryStorageFacilityCreateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA58A" schemaLocation="DKA58A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA59A" schemaLocation="DKA59A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA85A" schemaLocation="DKA85A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA86A" schemaLocation="DKA86A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA98A" schemaLocation="DKA98A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA99A" schemaLocation="DKA99A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DK917B" schemaLocation="DK917B.xsd"/>
+	<xs:element name="OIOMidlertidigOpbevaringOpret_O" type="tfe:OIOMidlertidigOpbevaringOpret_OType"/>
+	<xs:complexType name="OIOMidlertidigOpbevaringOpret_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="KvitteringListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka58a:DKA58A"/>
+						<xs:element ref="dka59a:DKA59A"/>
+						<xs:element ref="dka85a:DKA85A"/>
+						<xs:element ref="dka86a:DKA86A"/>
+						<xs:element ref="dka98a:DKA98A"/>
+						<xs:element ref="dka99a:DKA99A"/>
+						<xs:element ref="dk917b:DK917B"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dkd52a="http://manifest.skat.dk/DKD52A" xmlns:dkd53a="http://manifest.skat.dk/DKD53A" xmlns:dkd88a="http://manifest.skat.dk/DKD88A" xmlns:dkd89a="http://manifest.skat.dk/DKD89A" xmlns:dk917b="http://manifest.skat.dk/DK917B" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAfgangsdeklarationOpdater" is "DepartureDeclarationUpdate".
+		 This translation applies to all names containing "OIOAfgangsdeklarationOpdater".
+		 Example: "OIOAfgangsdeklarationOpdaterServicePortType" translates to "DepartureDeclarationUpdateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD52A" schemaLocation="DKD52A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD53A" schemaLocation="DKD53A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD88A" schemaLocation="DKD88A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD89A" schemaLocation="DKD89A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DK917B" schemaLocation="DK917B.xsd"/>
+	<xs:element name="OIOAfgangsdeklarationOpdater_O" type="tfe:OIOAfgangsdeklarationOpdater_OType"/>
+	<xs:complexType name="OIOAfgangsdeklarationOpdater_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="KvitteringListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dkd52a:DKD52A"/>
+						<xs:element ref="dkd53a:DKD53A"/>
+						<xs:element ref="dkd88a:DKD88A"/>
+						<xs:element ref="dkd89a:DKD89A"/>
+						<xs:element ref="dk917b:DK917B"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dkd48a="http://manifest.skat.dk/DKD48A" xmlns:dkd49a="http://manifest.skat.dk/DKD49A" xmlns:dk917b="http://manifest.skat.dk/DK917B" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAfgangsdeklarationOpret" is "DepartureDeclarationCreate".
+		 This translation applies to all names containing "OIOAfgangsdeklarationOpret".
+		 Example: "OIOAfgangsdeklarationOpretServicePortType" translates to "DepartureDeclarationCreateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD48A" schemaLocation="DKD48A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKD49A" schemaLocation="DKD49A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DK917B" schemaLocation="DK917B.xsd"/>
+	<xs:element name="OIOAfgangsdeklarationOpret_O" type="tfe:OIOAfgangsdeklarationOpret_OType"/>
+	<xs:complexType name="OIOAfgangsdeklarationOpret_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="KvitteringListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dkd48a:DKD48A"/>
+						<xs:element ref="dkd49a:DKD49A"/>
+						<xs:element ref="dk917b:DK917B"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

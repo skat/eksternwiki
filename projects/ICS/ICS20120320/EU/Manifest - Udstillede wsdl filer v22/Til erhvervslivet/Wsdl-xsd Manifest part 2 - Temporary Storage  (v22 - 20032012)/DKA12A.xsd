@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Bjarne Ulvmose (SKAT Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://manifest.skat.dk/DKA12A" xmlns:complex_manifest="http://manifest.skat.dk/complex_manifest" xmlns:simple_manifest="http://manifest.skat.dk/simple_manifest" xmlns:tcl_manifest="http://manifest.skat.dk/tcl_manifest" xmlns:simple="http://manifest.skat.dk/simple" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/DKA12A" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--=====DKA12A:N_DECL_TS_ANNUL_ACK_DK -->
+	<!--===== DECLARATION FOR TEMPORARY STORAGE ANNULMENT ACKNOWLEDGEMENT   -->
+	<!--===== Manifest /ics Domain Definition  -->
+	<!--===== DDNIA v6.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.23  -->
+	<!--===== Included Features: [10, 12, 18, 20, 26, 27, 28, 29]  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/complex_manifest" schemaLocation="complex_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple_manifest" schemaLocation="simple_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl_manifest" schemaLocation="tcl_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple" schemaLocation="simple_types.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl" schemaLocation="tcl.xsd"/>
+	<!--===== Root Element =====-->
+	<xs:element name="DKA12A" type="ie:DKA12AType"/>
+	<!--===== Root Element Content =====-->
+	<xs:complexType name="DKA12AType">
+		<xs:sequence>
+			<xs:group ref="ie:MESSAGE"/>
+			<xs:element name="HEAHEA" type="ie:HEAType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="HEADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MESMDE" type="ie:MESMDEType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="MESSAGE DETAIL"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FUNERRER1" type="ie:FUNERRER1Type" minOccurs="1" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="FUNCTIONAL ERROR"/>
+						<rule name="R123"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODDECTEMSTODIS" type="ie:PERLODDECTEMSTODISType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE DECLERATION FOR TEMPORARY STORAGE DISCHARGE"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== MESSAGE Content =====-->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="MesSenMES3" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message sender"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesRecMES6" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message recipient"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatOfPreMES9" type="simple:DatePrepType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimOfPreMES10" type="simple:TimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Time of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriMES15" type="simple:Alpha_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Priority"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TesIndMES18" type="tcl:Flag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Test indicator"/>
+						<rule name="TR9085"/>
+						<codeList name="Flag"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesIdeMES19" type="simple:Alphanumeric_Max14">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message identification"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMES20" type="tcl:MessageTypes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessageTypes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorIdeMES25" type="simple:Alphanumeric_Max14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Correlation identifier"/>
+						<rule name="TR9181"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=== HEADER ===-->
+	<xs:complexType name="HEAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="HEADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TemStoRefNumHEA" type="simple:TempStoNumType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Temporary storage reference number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== MESSAGE DETAIL ===-->
+	<xs:complexType name="MESMDEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="MESSAGE DETAIL"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ResDatTimMDE" type="simple:DateTimeType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Response date and time"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMDE" type="simple:Numeric_2" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessagesType" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesReaCodMDE" type="simple:Alphanumeric_Max6" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message reason code"/>
+						<codeList name="MessagesReasonCodes" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesReaMDE" type="simple:Alphanumeric_Max350" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Meassage reason"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== FUNCTIONAL ERROR =====-->
+	<xs:complexType name="FUNERRER1Type">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="FUNCTIONAL ERROR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ErrTypER11" type="tcl:FunctionalErrorCodes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Error type"/>
+						<codeList name="FunctionalErrorCodes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ErrPoiER12" type="simple:Alphanumeric_Max210">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Error pointer"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ErrReaER13" type="simple:Alphanumeric_Max6">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Error reason code"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OriAttValER14" type="simple:Alphanumeric_Max140" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Original attribute value"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PERSON LODGING THE DECLERATION FOR TEMPORARY STORAGE DISCHARGE ===-->
+	<xs:complexType name="PERLODDECTEMSTODISType">
+		<xs:sequence>
+			<xs:element name="TINPTD" type="simple:TINType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

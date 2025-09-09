@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dka62a="http://manifest.skat.dk/DKA62A" xmlns:dka84a="http://manifest.skat.dk/DKA84A" xmlns:dka87a="http://manifest.skat.dk/DKA87A" xmlns:eu="urn:eu" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOAnkomstdeklarationOpdater" is "ArrivalDeclarationUpdate".
+		 This translation applies to all names containing "OIOAnkomstdeklarationOpdater".
+		 Example: "OIOAnkomstdeklarationOpdaterServicePortType" translates to "ArrivalDeclarationUpdateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysninger.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA62A" schemaLocation="DKA62A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA84A" schemaLocation="DKA84A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA87A" schemaLocation="DKA87A.xsd"/>
+	<xs:element name="OIOAnkomstdeklarationOpdater_I" type="tfe:OIOAnkomstdeklarationOpdater_IType"/>
+	<xs:complexType name="OIOAnkomstdeklarationOpdater_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element name="InputListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka62a:DKA62A"/>
+						<xs:element ref="dka84a:DKA84A"/>
+						<xs:element ref="dka87a:DKA87A"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

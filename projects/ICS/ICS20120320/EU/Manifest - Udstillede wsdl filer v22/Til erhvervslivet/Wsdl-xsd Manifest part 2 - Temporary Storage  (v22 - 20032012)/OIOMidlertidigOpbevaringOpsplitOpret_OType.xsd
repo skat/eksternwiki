@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tfe="urn:oio:skat:tfe:ws:1.0.1" xmlns:dka81a="http://manifest.skat.dk/DKA81A" xmlns:dka82a="http://manifest.skat.dk/DKA82A" xmlns:dk917b="http://manifest.skat.dk/DK917B" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" targetNamespace="urn:oio:skat:tfe:ws:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xml:lang="DA">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">The english translation of "OIOMidlertidigOpbevaringOpsplitOpret" is "DivideRequestTemporaryStorageFacilityCreate".
+		 This translation applies to all names containing "OIOMidlertidigOpbevaringOpsplitOpret".
+		 Example: "OIOMidlertidigOpbevaringOpsplitOpretServicePortType" translates to "DivideRequestTemporaryStorageFacilityCreateServicePortType".</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="SKAT_HovedOplysningerSvar.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA81A" schemaLocation="DKA81A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DKA82A" schemaLocation="DKA82A.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/DK917B" schemaLocation="DK917B.xsd"/>
+	<xs:element name="OIOMidlertidigOpbevaringOpsplitOpret_O" type="tfe:OIOMidlertidigOpbevaringOpsplitOpret_OType"/>
+	<xs:complexType name="OIOMidlertidigOpbevaringOpsplitOpret_OType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysningerSvar"/>
+			<xs:element name="KvitteringListe" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dka81a:DKA81A"/>
+						<xs:element ref="dka82a:DKA82A"/>
+						<xs:element ref="dk917b:DK917B"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

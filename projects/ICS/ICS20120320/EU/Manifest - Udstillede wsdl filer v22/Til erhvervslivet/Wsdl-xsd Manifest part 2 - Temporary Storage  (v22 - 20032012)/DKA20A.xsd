@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Bjarne Ulvmose (SKAT Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://manifest.skat.dk/DKA20A" xmlns:complex_manifest="http://manifest.skat.dk/complex_manifest" xmlns:simple_manifest="http://manifest.skat.dk/simple_manifest" xmlns:tcl_manifest="http://manifest.skat.dk/tcl_manifest" xmlns:simple="http://manifest.skat.dk/simple" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/DKA20A" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--=====DKA20A:N_INQ_PROD_CUST_DOC_STAT_RES_DK -->
+	<!--===== INQUIRY FOR PRODUCED CUSTOMS DOCUMENT STATUS RESPONSE  ===-->
+	<!--===== Manifest /ics Domain Definition  -->
+	<!--===== DDNIA v6.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.23  -->
+	<!--===== Included Features: [10, 12, 18, 20, 26, 27, 28, 29]  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/complex_manifest" schemaLocation="complex_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple_manifest" schemaLocation="simple_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl_manifest" schemaLocation="tcl_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple" schemaLocation="simple_types.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl" schemaLocation="tcl.xsd"/>
+	<!--===== Root Element =====-->
+	<xs:element name="DKA20A" type="ie:DKA20AType"/>
+	<!--===== Root Element Content =====-->
+	<xs:complexType name="DKA20AType">
+		<xs:sequence>
+			<xs:group ref="ie:MESSAGE"/>
+			<xs:element name="HEAHEA" type="ie:HEAType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="HEADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MESMDE" type="ie:MESMDEType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="MESSAGE DETAIL"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODINQPROCUSDOCSTA" type="ie:PERLODINQPROCUSDOCSTAType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE INQUIRY FOR PRODUCED CUSTOMS DOCUMENT STATUS"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== MESSAGE Content =====-->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="MesSenMES3" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message sender"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesRecMES6" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message recipient"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatOfPreMES9" type="simple:DatePrepType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimOfPreMES10" type="simple:TimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Time of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriMES15" type="simple:Alpha_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Priority"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TesIndMES18" type="tcl:Flag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Test indicator"/>
+						<rule name="TR9085"/>
+						<codeList name="Flag"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesIdeMES19" type="simple:Alphanumeric_Max14">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message identification"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMES20" type="tcl:MessageTypes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessageTypes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorIdeMES25" type="simple:Alphanumeric_Max14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Correlation identifier"/>
+						<rule name="TR9181"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=== HEADER ===-->
+	<xs:complexType name="HEAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="HEADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RefNumHEA4" type="simple:DeclarationRequestNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="LRN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecRegDatFrom" type="simple:DatePrepType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration registered date from"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecRegDatTo" type="simple:DatePrepType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration registered date to"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPR" type="ie:TRAOPRType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATION"/>
+						<condition name="C315DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ARROPR" type="ie:ARROPRType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="ARRIVAL OPERATION"/>
+						<condition name="C315DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRADOCDAT" type="ie:TRADOCDATType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT DOCUMENT DATA"/>
+						<condition name="C315DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUSDOC" type="ie:CUSDOCType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="CUSTOMS DOCUMENT"/>
+						<condition name="C315DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CONCTR" type="ie:CONCTRType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="CONTAINER"/>
+						<condition name="C315DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATION ===-->
+	<xs:complexType name="TRAOPRType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATION"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IdeOfMeaTraOPE" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Identification of the means of transport"/>
+						<condition name="C316DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConRefNumOPE" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Conveyance reference number"/>
+						<condition name="C316DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PROCUSDOC" type="ie:PROCUSDOCType" minOccurs="0" maxOccurs="9999">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PRODUCED CUSTOMS DOCUMENTS"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== ARRIVAL OPERATION ===-->
+	<xs:complexType name="ARROPRType">
+		<xs:sequence>
+			<xs:element name="ManRefNumOPR" type="simple:Numeric_13" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Reference number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRADOCDAT" type="ie:TRADOCDATType" minOccurs="0" maxOccurs="9999">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT DOCUMENT DATA"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CONCTR" type="ie:CONCTRType" minOccurs="0" maxOccurs="9999">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="CONTAINER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT DOCUMENT DATA ===-->
+	<xs:complexType name="TRADOCDATType">
+		<xs:sequence>
+			<xs:element name="DocTypTDO" type="simple:Alphanumeric_Max4" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Document Type"/>
+						<codeList name="DocumentTypeCommon" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TraDocRefTDO" type="simple:Alphanumeric_Max35" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Transport document reference"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PROCUSDOC" type="ie:PROCUSDOCType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PRODUCED CUSTOMS DOCUMENTS"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== CONTAINERS ===-->
+	<xs:complexType name="CONCTRType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="CONTAINER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ConNumCTR" type="simple:Alphanumeric_Max17" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Container numbers"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PROCUSDOC" type="ie:PROCUSDOCType" minOccurs="0" maxOccurs="99">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PRODUCED CUSTOMS DOCUMENTS"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== CUSTOMS DOCUMENT ===-->
+	<xs:complexType name="CUSDOCType">
+		<xs:sequence>
+			<xs:element name="CusDocRefPRO" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Customs document reference"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PROCUSDOC" type="ie:PROCUSDOCType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PRODUCED CUSTOMS DOCUMENTS"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>	
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PRODUCED CUSTOMS DOCUMENTS ===-->
+	<xs:complexType name="PROCUSDOCType">
+		<xs:sequence>
+			<xs:element name="KinOfOpePCD" type="simple:Number_2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Kind Of Operation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RefNumPCD" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Reference number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecStaCodPCD" type="simple:Number_2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration status code"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdeOfMeaTraPCD" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Identification of the means of transport"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConRefNumPCD" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Conveyance reference number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotGroMasPCD" type="simple:Decimal_11_3">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Total gross mass"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpDatTimArrPCD" type="simple:DateTimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Expected date and time of arrival"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatTimArrPCD" type="simple:DateTimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date and time of arrival"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== MESSAGE DETAIL ===-->
+	<xs:complexType name="MESMDEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="MESSAGE DETAIL"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MesTypMDE" type="simple:Numeric_2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessagesType" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesReaCodMDE" type="simple:Alphanumeric_Max6" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message reason code"/>
+						<codeList name="MessagesReasonCodes" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesReaMDE" type="simple:Alphanumeric_Max350" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Meassage reason"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PERSON LODGING THE DECLERATION FOR TEMPORARY STORAGE DISCHARGE ===-->
+	<xs:complexType name="PERLODINQPROCUSDOCSTAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value=" PERSON LODGING THE INQUIRY FOR PRODUCED CUSTOMS DOCUMENT STATUS"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TINPIQ" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

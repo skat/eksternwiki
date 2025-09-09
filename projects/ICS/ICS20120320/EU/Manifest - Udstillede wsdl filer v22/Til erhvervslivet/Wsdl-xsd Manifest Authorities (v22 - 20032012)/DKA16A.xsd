@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://manifest.skat.dk/DKA16A" xmlns:complex_manifest="http://manifest.skat.dk/complex_manifest" xmlns:simple_manifest="http://manifest.skat.dk/simple_manifest" xmlns:tcl_manifest="http://manifest.skat.dk/tcl_manifest" xmlns:simple="http://manifest.skat.dk/simple" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/DKA16A" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--===== DKA16A:N_ARR_DEP_REP_EXT_AUT_DK -->
+	<!--===== ARRIVAL DEPARTURE REPORTING EXTERNAL AUTHORITY  -->
+	<!--===== Manifest /ics Domain Definition  -->
+	<!--===== DDNIA v6.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.23  -->
+	<!--===== Included Features: [10, 12, 18, 20, 26, 27, 28, 29]  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/complex_manifest" schemaLocation="complex_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple_manifest" schemaLocation="simple_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl_manifest" schemaLocation="tcl_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple" schemaLocation="simple_types.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl" schemaLocation="tcl.xsd"/>
+	<!--===== Root Element =====-->
+	<xs:element name="DKA16A" type="ie:DKA16AType"/>
+	<!--===== Root Element Content =====-->
+	<xs:complexType name="DKA16AType">
+		<xs:sequence>
+			<xs:group ref="ie:MESSAGE"/>
+			<xs:element name="HEAHEA" type="ie:HEAType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="HEADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPR" type="ie:TRAOPRType" maxOccurs="999">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATION"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODREPFORARRDEPPDA" type="ie:PERLODREPFORARRDEPPDAType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE REPORT FOR ARRIVAL_DEPARTURE"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== MESSAGE Content =====-->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="MesSenMES3" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message sender"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesRecMES6" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message recipient"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatOfPreMES9" type="simple:DatePrepType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimOfPreMES10" type="simple:TimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Time of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriMES15" type="simple:Alpha_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Priority"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TesIndMES18" type="tcl:Flag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Test indicator"/>
+						<rule name="TR9085"/>
+						<codeList name="Flag"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesIdeMES19" type="simple:Alphanumeric_Max14">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message identification"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMES20" type="tcl:MessageTypes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessageTypes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorIdeMES25" type="simple:Alphanumeric_Max14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Correlation identifier"/>
+						<rule name="TR9181"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=== HEADER ===-->
+	<xs:complexType name="HEAType">
+		<xs:sequence>
+			<xs:element name="LRNumHEA" type="simple:DeclarationRequestNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="LRN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATION ===-->
+	<xs:complexType name="TRAOPRType">
+		<xs:sequence>
+			<xs:element name="RepIDOPE" type="simple:Alphanumeric_Max36">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Report ID"/>
+						<rule name="R243DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LocCodOPE" type="simple:Alphanumeric_Max6">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Location code"/>
+						<rule name="R174DK"/>
+						<codeList name="Loading_UnloadingPlaceFacility"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Ope228" type="tcl:ModificationType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Update status"/>
+						<rule name="R300DK"/>
+						<rule name="R301DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TraModAtBorOPE" type="simple:Numeric_Max2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Transport mode"/>
+						<rule name="R010DK"/>
+						<codeList name="TransportMode" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdeOfMeaOfTraOPE" type="simple:Alphanumeric_Max27" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Identification of the means of transport"/>
+						<condition name="C219DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NatOfMeaOfTraOPE" type="simple:CountryCodeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Nationality of the means of transport"/>
+						<rule name="R038DK"/>
+						<codeList name="CountryCodesFullList" type="business"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ConRefNumOPE" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Conveyance reference number"/>
+						<condition name="C217DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NamOfMeaOfTraOPE" type="simple:Alphanumeric_Max35" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name of the means of transport"/>
+						<xs:element name="C018DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaOpOPE" type="simple:Alphanumeric_Max2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Planned operation"/>
+						<rule name="R304DK"/>
+						<codeList name="PlannedOperation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaWorOPE" type="simple:Alphanumeric_Max2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Planned works"/>
+						<rule name="R305DK"/>
+						<codeList name="PlanedWorks"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PurOfTraArrOPE" type="simple:Alphanumeric_Max70" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Purpose of transport arrival"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ARRARO" type="ie:ARRAROType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="ARRIVAL OPERATION"/>
+						<condition name="C258DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DEOOPE" type="ie:DEOOPEType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="DEPARTURE OPERATION"/>
+						<condition name="C259DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPE" type="ie:TRAOPEType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR"/>
+						<condition name="C261DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPEREP" type="ie:TRAOPEREPType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR REPRESENTATIVE"/>
+						<condition name="C043DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== ARRIVAL OPERATION ===-->
+	<xs:complexType name="ARRAROType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="ARRIVAL OPERATION"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PlaOfDepARO" type="simple:LongPlaceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Place of departure"/>
+						<rule name="R303DK"/>
+						<condition name="C124DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExpDatTimArrOPE" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Expected date and time of arrival"/>
+						<rule name="R660"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaOfArrFacARO" type="simple:PlaceType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Place of arrival facility"/>
+						<rule name="R229DK"/>
+						<rule name="R230DK"/>
+						<codeList name="Loading_UnloadingPlaceFacility"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActDatTimArrOPE" type="simple:DateTimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Actual date and time of arrival"/>
+						<rule name="R232DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== DEPARTURE OPEARTION ===-->
+	<xs:complexType name="DEOOPEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="DEPARTURE OPERATION"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ExpDatTimOfDepDEO" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Expected date and time of departure"/>
+						<rule name="R660"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PlaOfDepFacDEO" type="simple:PlaceType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Place of departure facility"/>
+						<rule name="R229DK"/>
+						<rule name="R230DK"/>
+						<condition name="C307DK"/>
+						<codeList name="Loading_unloadingPlaceFacility"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NexDesDEO" type="simple:LongPlaceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Next destination"/>
+						<condition name="C124DK"/>
+						<rule name="R303DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ActDatTimOfDepDEO" type="simple:DateTimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Actual date and time of departure"/>
+						<rule name="R231DK"/>
+						<rule name="R232DK"/>
+						<condition name="C091DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR ===-->
+	<xs:complexType name="TRAOPEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTRP" type="simple:TradNameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+						<condition name="C093DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTRP" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR REPRESENTATIVE" ===-->
+	<xs:complexType name="TRAOPEREPType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR REPRESENTATIVE"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTR1" type="simple:TradNameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+						<condition name="C093DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTRP" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PERSON LODGING THE REPORT FOR ARRIVAL_DEPARTURE ===-->
+	<xs:complexType name="PERLODREPFORARRDEPPDAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="PERSON LODGING THE REPORT FOR ARRIVAL_DEPARTURE"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TINPDA" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+						<rule name="R029DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

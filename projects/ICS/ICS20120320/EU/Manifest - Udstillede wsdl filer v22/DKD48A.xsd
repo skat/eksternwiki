@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by Bjarne Ulvmose (SKAT Hovedcentret) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://manifest.skat.dk/DKD48A" xmlns:complex_manifest="http://manifest.skat.dk/complex_manifest" xmlns:simple_manifest="http://manifest.skat.dk/simple_manifest" xmlns:tcl_manifest="http://manifest.skat.dk/tcl_manifest" xmlns:simple="http://manifest.skat.dk/simple" xmlns:tcl="http://manifest.skat.dk/tcl" xmlns:doc="http://manifest.skat.dk/doc" targetNamespace="http://manifest.skat.dk/DKD48A" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.00">
+	<!--=========================================-->
+	<!--=====DKD48A:N_DED_ACK_DK   -->
+	<!--===== DEPARTURE DECLARATION ACKNOWLEDGEMENT  -->
+	<!--===== Manifest / ICS Domain Definition  -->
+	<!--===== DDNIA v6.00  -->
+	<!--===== CSE v0.11 / DDNA KEL 0.23  -->
+	<!--=========================================-->
+	<!--===== Imports =====-->
+	<xs:import namespace="http://manifest.skat.dk/doc" schemaLocation="doc.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/complex_manifest" schemaLocation="complex_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple_manifest" schemaLocation="simple_types_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl_manifest" schemaLocation="tcl_manifest.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/simple" schemaLocation="simple_types.xsd"/>
+	<xs:import namespace="http://manifest.skat.dk/tcl" schemaLocation="tcl.xsd"/>
+	<!--===== Root Element =====-->
+	<xs:element name="DKD48A" type="ie:DKD48AType"/>
+	<!--===== Root Element Content =====-->
+	<xs:complexType name="DKD48AType">
+		<xs:sequence>
+			<xs:group ref="ie:MESSAGE"/>
+			<xs:element name="HEAHEA" type="ie:HEAHEAType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="HEADER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PERLODDEPNOT" type="ie:PERLODDEPNOTType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="PERSON LODGING THE DEPARTURE  NOTIFICATION"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CUSOFFDEPEPT" type="ie:CUSOFFDEPEPTType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="(DEPARTURE) CUSTOMSOFFICE"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--===== MESSAGE Content =====-->
+	<xs:group name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="MesSenMES3" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message sender"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesRecMES6" type="simple:Alphanumeric_Max35">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message recipient"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DatOfPreMES9" type="simple:DatePrepType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Date of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TimOfPreMES10" type="simple:TimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Time of preparation"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PriMES15" type="simple:Alpha_1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Priority"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TesIndMES18" type="tcl:Flag" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Test indicator"/>
+						<rule name="TR9085"/>
+						<codeList name="Flag"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesIdeMES19" type="simple:Alphanumeric_Max14">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message identification"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMES20" type="tcl:MessageTypes">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessageTypes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CorIdeMES25" type="simple:Alphanumeric_Max14" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Correlation identifier"/>
+						<rule name="TR9181"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<!--=== HEADER ===-->
+	<xs:complexType name="HEAHEAType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="HEADER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LRNNUmHEA" type="simple:DeclarationRequestNumberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="LRN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ManReNumHEA1" type="simple:Numeric_13">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Manifest reference number"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegDatTimHEA125" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration registration date and time"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecReaForAccDatTimHEA" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration ready for acceptance date and time"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DepDatTimeHEA" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Departure date and time"/>
+						<condition name="C232DK"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DecStaCodHEA" type="simple:Alphanumeric_Max2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Declaration status code"/>
+						<codeList name="Status Code"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MESDET" type="ie:MESDETType" maxOccurs="999">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="MESSAGE DETAIL"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPE" type="ie:TRAOPEType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TRAOPEREP" type="ie:TRAOPEREPType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TRANSPORT OPERATOR REPRESENTATIVE"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CARCAO" type="ie:CARCAO" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="CARRIER"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== MESSAGE DETAIL ===-->
+	<xs:complexType name="MESDETType">
+		<xs:sequence>
+			<xs:element name="ResDatTimMDT" type="simple:DateTimeType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Response date and time"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesTypMDT" type="simple:Numeric_2">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message type"/>
+						<codeList name="MessagesType"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesReaCoMDT" type="simple:Alphanumeric_Max6">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message reason code"/>
+						<codeList name="MessagesReasonCodes"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MesReaMDT" type="simple:Alphanumeric_Max350">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Message reason"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR ===-->
+	<xs:complexType name="TRAOPEType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTO2" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTO2" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== TRANSPORT OPERATOR REPRESENTATIVE ===-->
+	<xs:complexType name="TRAOPEREPType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR REPRESENTATIVE"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTOR" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTOR" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== CARRIER ===-->
+	<xs:complexType name="CARCAO">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="CARRIER"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamTCA" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINTCA" type="simple:TINType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== PERSON LODGING THE DEPARTUE NOTIFICATION ===-->
+	<xs:complexType name="PERLODDEPNOTType">
+		<xs:annotation>
+			<xs:documentation>
+				<description value="TRANSPORT OPERATOR"/>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NamPDN" type="simple:TradNameType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Name"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TINPDN" type="simple:TINType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="TIN"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RepStaPDN" type="simple:Numeric_1">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Representantive status"/>
+						<codeList name="RepresentativeStatusCode"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--=== (DEPARTURE) CUSOMS OFFICE ===-->
+	<xs:complexType name="CUSOFFDEPEPTType">
+		<xs:sequence>
+			<xs:element name="RefNumEPT1" type="simple:CORefNumType">
+				<xs:annotation>
+					<xs:documentation>
+						<description value="Reference number"/>
+						<codeList name="COL"/>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
