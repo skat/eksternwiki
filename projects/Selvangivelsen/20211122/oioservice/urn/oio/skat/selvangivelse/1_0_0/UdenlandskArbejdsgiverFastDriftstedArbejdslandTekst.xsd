@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:udenlandskarbejdsgiverfastdriftstedarbejdslandtekst="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="UdenlandskArbejdsgiverFastDriftstedArbejdslandTekst" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Oplyser om arbejdsgiver har fast driftssted i arbejdslandet, eller er hjemmehørende i arbejdslandet.
+UI_Rubrik403E eller UI Rubrik 403D 
+
+Værdisæt: 
+A.	Dansk arbejdsgiver har ikke et registreret skattemæssigt fast driftssted i arbejdslandet
+B.	Løn udbetales af dansk arbejdsgiver og påhviler/omkostningsbelaster dansk arbejdsgiver
+C.	Dansk arbejdsgiver har et registreret skattemæssigt fast driftssted i arbejdslandet, og løn er en del af omkostningerne i arbejdsgivers udenlandske del af virksomheden
+D.	Udenlandsk arbejdsgiver er ikke skattemæssigt hjemmehørende i arbejdslandet, og har ikke et registreret skattemæssigt fast driftssted i arbejdslandet
+E.	Udenlandsk arbejdsgiver har et registreret skattemæssigt fast driftssted i arbejdslandet, og løn er en del af omkostningerne i arbejdsgivers udenlandske del af virksomheden (faste driftssted)
+F.	Udenlandsk arbejdsgiver er hjemmehørende i arbejdslandet, dvs. modervirksomheden er skattemæssigt registreret i arbejdslandet, og løn er en del af omkostningerne i denne udenlandske virksomhed.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

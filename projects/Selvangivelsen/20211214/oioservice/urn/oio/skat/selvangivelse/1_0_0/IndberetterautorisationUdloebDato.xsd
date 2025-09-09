@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indberetterautorisationudloebdato="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="IndberetterautorisationUdloebDato" type="xs:date">
+		<xs:annotation>
+			<xs:documentation>Den dato hvor en indberetters autorisation fra en borger udløber. Borgeren giver via TastSelv revisor tilladelse (autorisation) til at hente og indberette oplysninger via SAPro. Autorisationen gives normalt for 4 år (men borger kan ændre løbende).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

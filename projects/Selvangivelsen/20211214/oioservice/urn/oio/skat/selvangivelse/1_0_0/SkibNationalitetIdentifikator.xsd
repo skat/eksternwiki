@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:skibnationalitetidentifikator="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="SkibNationalitetIdentifikator" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Skibets flagstat eller nationalitet angivet som en kode til brug for oplysninger om udenlandsk skat.
+
+A:        Danmark
+B:        Færøerne
+C:        Finland
+D:        Island
+E:        Norge
+F:         Sverige
+G:        Anden flagstat
+H:        Grønland
+I:         Danmark eller Grønland
+J:         Andet land</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

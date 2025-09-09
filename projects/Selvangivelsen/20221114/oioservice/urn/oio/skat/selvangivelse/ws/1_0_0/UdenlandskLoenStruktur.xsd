@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" version="1.0" xml:lang="DA">
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelseMyndighedIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkattepligtHelIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverLandEjArbejdslandIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatDokumentationIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseArbejdsudlejet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverAmbassadeIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibFASIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseSaedvanligArbejdsgiver.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseTuristorganisation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibFastBesaetningIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstOffentligStoetteIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseTjenesteforhold.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseAnsaettelsesforholdType.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverFastRepraesentationIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelseDirektoer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstKulturaftaleIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandPeriodeOver120DageIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstLoenindtaegtBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverLandTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/FlyInternationaltIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelseTekniskEkspertIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstLempelseBetingelserLigningslov33AIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/FlySelskabNavnTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseFritErhverv.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibSejladsFlereLandeIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelseSystemeksportIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkattepligtDelvisIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseStatsborgerskabMarkering.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandPeriodeOver30DageIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverTuristoriganisationKommercielIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandMereEnd6MaanederIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/FlyFastBesaetningIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverKonsortieIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstTilfalderPersonIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragFagligtKontingentBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/IndkomstPeriodeTilDato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandByggeAnlaegMonteringPeriode2Indikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverGroenlandIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstSocialtSikretArbejdslandIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandOver365DageIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibGroenlandHeleAaretIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstDokumentationIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstTurneIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstOverBeloebGraenseIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibDanmarkHeleAaretIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseArbejdslandLigUdbetalingsland.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibOpgaveIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandAntalDageMereEnd183Indikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstSejladsIDanmarkIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkattepligtBundgraenseIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstFlyvningIDanmarkIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BefordringsFradragBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelseJournalistIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibNationalitetIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragRejseUdgifterBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverLedelseTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseOffentligErhverv.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverKommercielIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatArbejdsgiverHjemlandIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SagHandlingTypeTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibGroenlandskIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/FlySelskabKodeTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstPraemierPriserIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SaerligIndkomstDanskVelgoerendeIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/IndkomstPeriodeFraDato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstPendlerArbejdslandBopaelslandIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverVelgoerendeIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatNordiskTraekIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibSejladsIndreVandvejeIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandPeriodeOver60DageIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkattepligtMarkeringIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverOffentligIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskArbejdsgiverFastDriftstedArbejdslandTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeskaeftigelseByggeAnlaegMonteringIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/FlyOpgaveIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskPersonligIndkomstTypeTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskAnsaettelseFormaal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SkibRegistreringLandTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/OpholdUdlandByggeAnlaegMonteringPeriodeIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="UdenlandskLoenStruktur" type="selvangivelsews:UdenlandskLoenStrukturType"/>
+         <xs:complexType name="UdenlandskLoenStrukturType">
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="UdenlandskLoenSletUaendret">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element minOccurs="0" ref="selvangivelse:UnikIdentifikationskodeIdentifikator"/>
+                           <xs:element minOccurs="0" ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator"/>
+                           <xs:element minOccurs="0" ref="selvangivelse:SagHandlingTypeTekst"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="UdenlandskLoenOpretRet">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element minOccurs="0" ref="selvangivelse:UnikIdentifikationskodeIdentifikator"/>
+                           <xs:element minOccurs="0" ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator"/>
+                           <xs:element minOccurs="0" ref="selvangivelse:SagHandlingTypeTekst"/>
+                              <xs:element minOccurs="0" name="ArbejdslandUdbetalingsland">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="dkcc:CountryIdentificationCode"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstTypeTekst"/>
+                              <xs:element minOccurs="0" name="LoenFradrag">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstLoenindtaegtBeloeb"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatBeloeb"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:LigningsmaessigtFradragFagligtKontingentBeloeb"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:LigningsmaessigtFradragOEvrigeLoenmodtagerUdgifterBeloeb"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:BefordringsFradragBeloeb"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:LigningsmaessigtFradragRejseUdgifterBeloeb"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="IndkomstoplysningerTvaergaaende">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element minOccurs="0" name="Periode">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:IndkomstPeriodeFraDato"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:IndkomstPeriodeTilDato"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandMereEnd6MaanederIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandAntalDageMereEnd183Indikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverLandTekst"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverLedelseTekst"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstLempelseBetingelserLigningslov33AIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkattepligtDelvisIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkattepligtMarkeringIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkattepligtBundgraenseIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstOverBeloebGraenseIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstSocialtSikretArbejdslandIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatDokumentationIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseOffentligErhverv"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseStatsborgerskabMarkering"/>
+                                          <xs:element minOccurs="0" name="NordiskTraek">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatNordiskTraekIndikator"/>
+                                                   <xs:element name="Arbejdsland">
+                                                      <xs:complexType>
+                                                         <xs:sequence>
+                                                            <xs:element minOccurs="0" ref="dkcc:CountryIdentificationCode"/>
+                                                         </xs:sequence>
+                                                      </xs:complexType>
+                                                   </xs:element>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="OffentligArbejdsgiver">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element minOccurs="0" name="Periode">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandPeriodeOver60DageIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandPeriodeOver120DageIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseSaedvanligArbejdsgiver"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:BeskaeftigelseMyndighedIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverKommercielIndikator"/>
+                                          <xs:element minOccurs="0" name="DanskOffentligArbejdsgiver">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:BeskaeftigelseSystemeksportIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element minOccurs="0" name="UdenlandskOffentligArbejdsgiver">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverOffentligIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverAmbassadeIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseFormaal"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseArbejdslandLigUdbetalingsland"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="PrivatArbejdsgiver">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverFastDriftstedArbejdslandTekst"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseArbejdsudlejet"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandByggeAnlaegMonteringPeriodeIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandByggeAnlaegMonteringPeriode2Indikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandOver365DageIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:BeskaeftigelseByggeAnlaegMonteringIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseTuristorganisation"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverTuristoriganisationKommercielIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:BeskaeftigelseJournalistIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverFastRepraesentationIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:BeskaeftigelseTekniskEkspertIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstPendlerArbejdslandBopaelslandIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:BeskaeftigelseDirektoer"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="Offshore">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element minOccurs="0" name="SupplySkib">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatArbejdsgiverHjemlandIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverGroenlandIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibFASIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element minOccurs="0" name="SupplyFly">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatArbejdsgiverHjemlandIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverGroenlandIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element minOccurs="0" name="Kulbrinte">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverLandEjArbejdslandIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:OpholdUdlandPeriodeOver30DageIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="ArbejdeOmBord">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkattepligtHelIndikator"/>
+                                          <xs:element minOccurs="0" name="ArbejdeOmBordSkib">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibOpgaveIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibNationalitetIdentifikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibGroenlandskIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibRegistreringLandTekst"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibDanmarkHeleAaretIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibGroenlandHeleAaretIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibSejladsFlereLandeIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibSejladsIndreVandvejeIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstSejladsIDanmarkIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibFASIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SkibFastBesaetningIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element minOccurs="0" name="ArbejdeOmBordFly">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:FlySelskabNavnTekst"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:FlySelskabKodeTekst"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:FlyOpgaveIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:FlyInternationaltIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstFlyvningIDanmarkIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverKonsortieIndikator"/>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:FlyFastBesaetningIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                              <xs:element minOccurs="0" name="KunstnereOgSportsfolk">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseAnsaettelsesforholdType"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstOffentligStoetteIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskArbejdsgiverVelgoerendeIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskPersonligIndkomstDokumentationIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstTilfalderPersonIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstKulturaftaleIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseTjenesteforhold"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstDanskVelgoerendeIndikator"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:UdenlandskAnsaettelseFritErhverv"/>
+                                          <xs:element minOccurs="0" name="Kunstnere">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstTurneIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                          <xs:element minOccurs="0" name="Sportsfolk">
+                                             <xs:complexType>
+                                                <xs:sequence>
+                                                   <xs:element minOccurs="0" ref="selvangivelse:SaerligIndkomstPraemierPriserIndikator"/>
+                                                </xs:sequence>
+                                             </xs:complexType>
+                                          </xs:element>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:renteudgiftudenlandskejendombeloeb="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="RenteudgiftUdenlandskEjendomBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Feltet kan alene indberettes for grænsegængere omfattet af KSL, afsnit 1A.
+
+Feltet skal udfyldes med renteudgifter af gæld, der vedrører den udenlandske ejendom. Fradrag for renteudgifter fordrer, at gælden vedrører ejendommen.
+
+Såfremt lånet ikke vedrører ejendommen, kan der evt. i stedet gives fradrag for renteudgifterne som "andre private renteudgifter". Se forklaring til felt 402 - Andre udenlandske private nettorenteudgifter.
+
+Fradrag for renteudgifter forudsætter endvidere, at den faste ejendom af ejeren selv anvendes til hel eller delårsbeboelse.
+
+Der er kun adgang til at fratrække renteudgifterne ved den danske indkomstopgørelse i det omfang, renteudgifterne overstiger indtægterne fra ejendommen.
+
+Dvs. at af det beløb, der indberettes i felt 407, er der alene fradrag for den del, der overstiger beløbet indberettet i felt 248 (overskud af udenlandsk ejendom). Systemet opgør automatisk det beløb, der skal indgå i kapitalindkomsten og dermed i skattepligtig indkomst.
+
+For gifte skal renteudgifterne fratrækkes hos den af ægtefællerne, der hæfter for rentebetalingerne. I de tilfælde, hvor grænsegængeren hæfter for rentebetalingerne, mens ægtefællen har rådighed over ejendommen, vil indtægterne skulle reducere den fradragsberettigede renteudgift. I disse tilfælde skal SC indberette såvel indtægter som renteudgifter hos grænsegængeren.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

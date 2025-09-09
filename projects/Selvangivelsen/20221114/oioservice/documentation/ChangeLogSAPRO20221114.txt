@@ -1,0 +1,75 @@
+﻿
+ÆNDRING I DATAELEMENT BESKRIVELSE
+
+EjendomRentekorrektion - Ændring i dataelement beskrivelse
+
+ServicefradragArbejdstypeKode - ændring i dataelement beskrivelse
+
+LigningsmæssigtFradragUdgifterHåndværkerFradrag - ændring i dataelement beskrivelse
+
+PersonSelvangivelseRevisorindberetning -ændring i dataelement
+
+ÆNDRING I DATATYPE
+
+5 elementer skal ændres i Datatype til TalHEL (K02-24) (afsluttet)
+EjendomAngivelseDelvisUdlejningsdage 
+EjendomAngivelseErhvervsanvendelsesdage
+EjendomAngivelseErhvervsudlejningsdage
+EjendomAngivelseHelUdlejningsdage
+EjendomAngivelseUbeboeligdage
+
+ServicefradragArbejdstypeKode ændret til datatypen Tekst10
+
+DATAELEMENT UDGÅR
+
+LigningsmæssigtFradragUdgifterEkstraServiceFradrag  - Fjernes
+
+NYE DATAELEMENTER
+
+4 nye dataelementer:
+(SkattepligtigPersonIndtrædenDato)
+(SkattepligtigPersonBemærkningIndtrædenDato) Tekst255
+(SkattepligtigPersonOphørDato) 
+(SkattepligtigPersonBemærkningOphørDato) Tekst255
+
+PersonSelvangivelseÅbenS15D - Nyt dataelement i strukturen PersonSelvangivelseOpret_I
+
+BeskæftigelseDirektør - Nyt dataelement i strukuren UdenlandskLønStruktur (K 12-10)
+
+ÆNDRING I DATASTRUKTUR 
+Ændring i strukturen PersonSelvangivelseOpret_I i listen *EjendomsavanceAngivelseListe*
+
+To optionelle dataelementer tilføjet: 
+(AlternativAdresseAdresseLinie1) Udvikleren begrænser datadomænet til Tekst45
+(LandKode)
+
+To dataelementer er blevet optionelle:
+(MyndighedNummer)
+(EjendomNummer)
+
+DanskEjendom er ændret til *Ejendom*
+
+NAVNEÆNDRNING I DATAELEMENTER:
+
+OIO-navne nu:						OIO-navne før:
+EjendomAngivelseDelvisUdlejningsdage.xsd		EjendomAngivelseDelvisUdlejningsdageKvantitet.xsd
+EjendomAngivelseErhvervsanvendelsesdage.xsd		EjendomAngivelseErhvervsanvendelsesdageKvantitet.xsd
+EjendomAngivelseErhvervsudlejningsdage.xsd		EjendomAngivelseErhvervsudlejningsdageKvantitet.xsd
+EjendomAngivelseHelUdlejningsdage.xsd			EjendomAngivelseHelUdlejningsdageKvantitet.xsd
+EjendomAngivelseUbeboeligdage.xsd			EjendomAngivelseUbeboeligdageKvantitet.xsd
+EjendomEjerskabEjerandel.xsd				EjendomEjerskabEjerandelProcent.xsd
+EjendomRentekorrektion.xsd				EjendomRentekorrektionBeloeb.xsd
+PersonSelvangivelseRevisorindberetning.xsd		PersonSelvangivelseRevisorindberetningTekst.xsd
+UdenlandskAnsaettelseAnsaettelsesforholdType.xsd	UdenlandskAnsaettelseAnsaettelsesforholdTypeTekst.xsd
+UdenlandskAnsaettelseArbejdslandLigUdbetalingsland.xsd	UdenlandskAnsaettelseArbejdslandLigUdbetalingslandTekst.xsd
+UdenlandskAnsaettelseArbejdsudlejet.xsd			UdenlandskAnsaettelseArbejdsudlejetIndikator.xsd
+UdenlandskAnsaettelseFormaal.xsd			UdenlandskAnsaettelseFormaalIndikator.xsd
+UdenlandskAnsaettelseFritErhverv.xsd			UdenlandskAnsaettelseFritErhvervIndikator.xsd
+UdenlandskAnsaettelseOffentligErhverv.xsd		UdenlandskAnsaettelseOffentligErhvervIndikator.xsd
+UdenlandskAnsaettelseStatsborgerskabMarkering.xsd	UdenlandskAnsaettelseStatsborgerskabMarkeringIndikator.xsd
+UdenlandskAnsaettelseSaedvanligArbejdsgiver.xsd		UdenlandskAnsaettelseSaedvanligArbejdsgiverIndikator.xsd
+UdenlandskAnsaettelseTjenesteforhold.xsd		UdenlandskAnsaettelseTjenesteforholdIndikator.xsd
+UdenlandskAnsaettelseTuristorganisation.xsd		UdenlandskAnsaettelseTuristorganisationIndikator.xsd
+
+
+

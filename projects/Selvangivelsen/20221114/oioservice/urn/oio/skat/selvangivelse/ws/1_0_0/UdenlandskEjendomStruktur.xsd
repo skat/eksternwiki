@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" version="1.0" xml:lang="DA">
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregningsgrundlagGammel2001Beloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseOvertagelsesdatoDato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseDelvisUdlejningsandelProcent.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomEjerskabErhvervetFoer1998Indikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueFastEjendomBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstRenteindtaegtBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseUdlejningBundfradragIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseUdflytningDato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomEjerskabErhvervetFoer2007Indikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomEjerskabEjerandel.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregningsgrundlagSamletNy2002Beloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/AuthorityCode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseEjendomstypeKode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseKoeberOvertagelsesdatoDato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueIndestaaendeBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervsanvendelsesdage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomsvaerdiSamletBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregningsgrundlagBeloebBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteudgiftUdenlandskGaeldBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/" schemaLocation="../../../../../../bbr_dk/xml/schemas/2005/03/11/MunicipalRealPropertyIdentifier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatKapitalIndkomstBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervsanvendelsesandelProcent.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseIndflytningEfterIndkomstaarIndikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstLejeindtaegtBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseErhvervsudlejningsdage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregningsgrundlagNy2002Beloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/BeregningsgrundlagSamletGammel2001Beloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseDelvisUdlejningsdage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SagHandlingTypeTekst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseHelUdlejningsdage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseIndflytningDato.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueGaeldBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFirstLineText.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/EjendomAngivelseUbeboeligdage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatEjendomskatBeloeb.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="UdenlandskEjendomStruktur" type="selvangivelsews:UdenlandskEjendomStrukturType"/>
+         <xs:complexType name="UdenlandskEjendomStrukturType">
+               <xs:sequence>
+               <xs:element name="UdenlandskEjendomAngivelse">
+                  <xs:complexType>
+                     <xs:sequence>
+                           <xs:element minOccurs="0" name="UdenlandskEjendomAngivelseSletUaendret">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element minOccurs="0" ref="selvangivelse:UnikIdentifikationskodeIdentifikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:SagHandlingTypeTekst"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element minOccurs="0" name="UdenlandskEjendomAngivelseOpretRet">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element minOccurs="0" ref="selvangivelse:UnikIdentifikationskodeIdentifikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:SagHandlingTypeTekst"/>
+                                    <xs:element name="BeloebListe">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element minOccurs="0" ref="selvangivelse:BeregningsgrundlagBeloebBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:BeregningsgrundlagNy2002Beloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:BeregningsgrundlagGammel2001Beloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:EjendomsvaerdiSamletBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:BeregningsgrundlagSamletNy2002Beloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:BeregningsgrundlagSamletGammel2001Beloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatEjendomskatBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskKapitalIndkomstLejeindtaegtBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskKapitalIndkomstRenteindtaegtBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:RenteudgiftUdenlandskGaeldBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskFormueFastEjendomBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskFormueIndestaaendeBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskFormueGaeldBeloeb"/>
+                                             <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatKapitalIndkomstBeloeb"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="EjendomIdentifikation">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="UdenlandskEjendom">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element minOccurs="0" ref="core:AuthorityCode"/>
+                                                      <xs:element minOccurs="0" ref="bbr:MunicipalRealPropertyIdentifier"/>
+                                                      <xs:element minOccurs="0" ref="dkcc:PostalAddressFirstLineText"/>
+                                                      <xs:element minOccurs="0" ref="dkcc1:CountryIdentificationCode"/>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomEjerskabEjerandel"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomEjerskabErhvervetFoer1998Indikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomEjerskabErhvervetFoer2007Indikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseEjendomstypeKode"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseOvertagelsesdatoDato"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseIndflytningDato"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseIndflytningEfterIndkomstaarIndikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseKoeberOvertagelsesdatoDato"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseUdflytningDato"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseUbeboeligdage"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseUdlejningBundfradragIndikator"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseDelvisUdlejningsdage"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseDelvisUdlejningsandelProcent"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseHelUdlejningsdage"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseErhvervsanvendelsesandelProcent"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseErhvervsanvendelsesdage"/>
+                                    <xs:element minOccurs="0" ref="selvangivelse:EjendomAngivelseErhvervsudlejningsdage"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

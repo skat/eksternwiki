@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:udenlandskselvstaendigvirksomhednettorenterbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+        	
+    
+    <xs:element name="UdenlandskSelvstaendigVirksomhedNettoRenterBeloeb" type="xs:decimal">
+                		
+        
+        <xs:annotation>
+                        			
+            
+            <xs:documentation>Feltet indberettes med renteindtægter og udgifter i udenlandsk virksomhed, som er lempelsesberettiget. Nettorenter skal, når den udenlandske virksomhed ikke er lempelsesberettiget, indberettes i felt 237/488.
+
+Hvis beløbet er negativt, skal det indberettes med minus fortegn.
+
+Hvis indkomsten er omfattet af creditlempelse, skal der også indberettes i felt 589 ("Udenlandsk skat vedrørende felt 296 og felt 297").
+Felt 297.</xs:documentation>
+                        		
+        
+        </xs:annotation>
+                	
+    
+    </xs:element>
+        
+
+</xs:schema>

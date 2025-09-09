@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:alderspensiondiskvalifikationkode="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="AlderspensionDiskvalifikationKode" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Kodeværdien hentes fra felt 035: Kode for diskvalifikation  Koden opsættes med værdien 1, hvis personen bliver diskvalificeret ved udbetaling fra anden pensionsordning, når udbetaling er påbegyndt inden for de sidste 10 år før folkepensionsalderen.  Koden kan være blank, 1 eller 2.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

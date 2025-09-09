@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:servicefradragarbejdstypekode="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="ServicefradragArbejdstypeKode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Koder der kan indberettes: 
+A1
+A2
+A3
+B1
+B2
+B3
+                             
+Kodebeskrivelse:
+A1 = Rengøring og vinduespudsning (RENPUDS)
+A2 = Børnepasning (BØRNEPAS) 
+A3 = Havearbejde, (HAVEARB)
+B1 = Energibesparelser (ENERGIBES)
+B2 = Tilslutning af Bredbånd (TILSLUTBRE)
+B3 = Andre grønne håndværksydelser (GRHÅNDYDE)
+ 
+Bemærkninger:                            
+Kode A# = serviceydelser med max grænse på 6.000
+Kode B# = håndværksydelser med max grænse på 12.000
+</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

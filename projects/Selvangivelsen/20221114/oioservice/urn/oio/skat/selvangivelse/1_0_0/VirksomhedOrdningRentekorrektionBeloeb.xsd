@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:virksomhedordningrentekorrektionbeloeb="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+	<xs:element name="VirksomhedOrdningRentekorrektionBeloeb" type="xs:decimal">
+		<xs:annotation>
+			<xs:documentation>Beløbet udgør rentekorrektion i dansk virksomhed. Virksomhedsordningen skal være valgt.
+
+Felt 280 for selvstændig virksomhed
+Felt 292 for udenlandsk selvstændig virksomhed</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

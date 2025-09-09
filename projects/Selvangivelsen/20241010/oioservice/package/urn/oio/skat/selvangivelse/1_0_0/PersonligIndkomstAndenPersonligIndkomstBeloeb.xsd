@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:personligindkomstandenpersonligindkomstbeloeb="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+            
+    
+    <xs:element name="PersonligIndkomstAndenPersonligIndkomstBeloeb" type="xs:decimal">
+                        
+        
+        <xs:annotation>
+                                    
+            
+            <xs:documentation> I rubrikken skal oplyses lønindkomster, der ikke indgår i andre rubrikker. Skriv det samlede beløb uden at trække arbejdsmarkedsbidrag fra.   Beløbet i rubrikken skal blandt andet omfatte:  - Værdien af fri sommerbolig i udlandet (værdien af fri sommerbolig i Danmark indgår i rubrik 17). - Værdien af kost og logi. - Mindre personalegoder (med en værdi under bagatelgrænsen), men hvor de har en samlet værdi på over bagatelgrænsen (grundbeløb i 2010-niveau 1.000 kr.). - Ferierejser betalt af angiverens arbejdsgiver (gælder også ferierejser, der kombineres med en forretningsrejse). - Legater. - Anden personlig indkomst fx mindre personalegoder, langtidsudlejning af leje- eller andelsbolig, indtægter ved udlejning af bil og båd mv. - Skattepligtige gevinster ved spil og væddemål.  - Skattepligtige offentlige tilskud. - Indtægt fra vedvarende energianlæg, herunder vindmøller. - Fortjeneste ved salg af ædle metaller mv. - Genvundne afskrivninger ved salg af bygninger på lejet grund eller ejendom med hjemfaldspligt og lignende. - Fortjeneste ved salg af aktiver, hvorpå der er foretaget skattemæssige afskrivninger.   Bundgrænsen reguleres årligt.  Rubrik: 20 Felt: 250</xs:documentation>
+                                
+        
+        </xs:annotation>
+                    
+    
+    </xs:element>
+        
+
+</xs:schema>

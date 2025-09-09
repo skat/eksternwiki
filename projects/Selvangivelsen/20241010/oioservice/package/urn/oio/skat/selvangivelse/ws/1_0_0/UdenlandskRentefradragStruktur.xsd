@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" version="1.0" xml:lang="DA">
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdviklerUnikIdentifikationskodeIdentifikator.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstRenteindtaegtBeloeb.xsd"/>
+            
+    
+    <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueIndestaaendeBeloeb.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstPensionsordningVaerdiStigningBeloeb.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteudgiftUdenlandskGaeldBeloeb.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskSkatKapitalIndkomstBeloeb.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskKapitalIndkomstAndenKapitalIndkomstBeloeb.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UnikIdentifikationskodeIdentifikator.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/SagHandlingTypeTekst.xsd"/>
+            
+    
+    <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/UdenlandskFormueGaeldBeloeb.xsd"/>
+            
+    
+    <xs:annotation>
+                        
+        
+        <xs:documentation/>
+                    
+    
+    </xs:annotation>
+            
+    
+    <xs:element name="UdenlandskRentefradragStruktur" type="selvangivelsews:UdenlandskRentefradragStrukturType"/>
+            
+    
+    <xs:complexType name="UdenlandskRentefradragStrukturType">
+                        
+        
+        <xs:sequence>
+                                    
+            
+            <xs:element name="UdenlandskRentefradrag">
+                                                
+                
+                <xs:complexType>
+                                                            
+                    
+                    <xs:sequence>
+                                                                        
+                        
+                        <xs:element minOccurs="0" name="UdenlandskRentefradragSletUaendret">
+                                                                                    
+                            
+                            <xs:complexType>
+                                                                                                
+                                
+                                <xs:sequence>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UnikIdentifikationskodeIdentifikator"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:SagHandlingTypeTekst"/>
+                                                                                                        
+                                
+                                </xs:sequence>
+                                                                                            
+                            
+                            </xs:complexType>
+                                                                                
+                        
+                        </xs:element>
+                                                                        
+                        
+                        <xs:element minOccurs="0" name="UdenlandskRentefradragOpretRet">
+                                                                                    
+                            
+                            <xs:complexType>
+                                                                                                
+                                
+                                <xs:sequence>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UnikIdentifikationskodeIdentifikator"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdviklerUnikIdentifikationskodeIdentifikator"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:SagHandlingTypeTekst"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="dkcc:CountryIdentificationCode"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdenlandskKapitalIndkomstRenteindtaegtBeloeb"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:RenteudgiftUdenlandskGaeldBeloeb"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdenlandskKapitalIndkomstPensionsordningVaerdiStigningBeloeb"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdenlandskKapitalIndkomstAndenKapitalIndkomstBeloeb"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdenlandskFormueIndestaaendeBeloeb"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdenlandskFormueGaeldBeloeb"/>
+                                                                                                            
+                                    
+                                    <xs:element minOccurs="0" ref="selvangivelse:UdenlandskSkatKapitalIndkomstBeloeb"/>
+                                                                                                        
+                                
+                                </xs:sequence>
+                                                                                            
+                            
+                            </xs:complexType>
+                                                                                
+                        
+                        </xs:element>
+                                                                    
+                    
+                    </xs:sequence>
+                                                        
+                
+                </xs:complexType>
+                                            
+            
+            </xs:element>
+                                
+        
+        </xs:sequence>
+                    
+    
+    </xs:complexType>
+        
+
+</xs:schema>

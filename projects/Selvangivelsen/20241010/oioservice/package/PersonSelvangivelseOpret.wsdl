@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PersonSelvangivelseOpretService" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0">
+        
+    <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+                
+        <xs:documentation>At indberette oplysningsskemaet (S10) og returnere den opdaterede årsopgørelse inkl. evt. ægtefælles.</xs:documentation>
+                
+        <xs:documentation>3.15</xs:documentation>
+                
+        <xs:documentation>r27383</xs:documentation>
+            
+    </xs:annotation>
+        
+    <wsdl:types>
+                
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0">
+                        
+            <xsd:include schemaLocation="urn/oio/skat/selvangivelse/ws/1_0_0/PersonSelvangivelseOpretInterface.xsd"/>
+                    
+        </xsd:schema>
+            
+    </wsdl:types>
+        
+    <wsdl:message name="PersonSelvangivelseOpretServiceRequest">
+                
+        <wsdl:part element="selvangivelsews:PersonSelvangivelseOpret_I" name="Request"/>
+            
+    </wsdl:message>
+        
+    <wsdl:message name="PersonSelvangivelseOpretServiceResponse">
+                
+        <wsdl:part element="selvangivelsews:PersonSelvangivelseOpret_O" name="Response"/>
+            
+    </wsdl:message>
+        
+    <wsdl:portType name="PersonSelvangivelseOpretServicePortType">
+                
+        <wsdl:operation name="getPersonSelvangivelseOpret">
+                        
+            <wsdl:input message="selvangivelsews:PersonSelvangivelseOpretServiceRequest"/>
+                        
+            <wsdl:output message="selvangivelsews:PersonSelvangivelseOpretServiceResponse"/>
+                    
+        </wsdl:operation>
+            
+    </wsdl:portType>
+        
+    <wsdl:binding name="PersonSelvangivelseOpretServiceBinding" type="selvangivelsews:PersonSelvangivelseOpretServicePortType">
+                
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+                
+        <wsdl:operation name="getPersonSelvangivelseOpret">
+                        
+            <soap:operation soapAction="getPersonSelvangivelseOpret"/>
+                        
+            <wsdl:input>
+                                
+                <soap:body use="literal"/>
+                            
+            </wsdl:input>
+                        
+            <wsdl:output>
+                                
+                <soap:body use="literal"/>
+                            
+            </wsdl:output>
+                    
+        </wsdl:operation>
+            
+    </wsdl:binding>
+        
+    <wsdl:service name="PersonSelvangivelseOpretServiceBindingQSService">
+                
+        <wsdl:port binding="selvangivelsews:PersonSelvangivelseOpretServiceBinding" name="PersonSelvangivelseOpretServiceBindingQSPort">
+                        
+            <soap:address location="https://xxxxxxxxx/PersonSelvangivelseOpretServicePort"/>
+                    
+        </wsdl:port>
+            
+    </wsdl:service>
+    
+</wsdl:definitions>

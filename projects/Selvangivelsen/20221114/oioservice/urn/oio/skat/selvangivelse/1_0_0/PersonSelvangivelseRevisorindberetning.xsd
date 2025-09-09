@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:personselvangivelserevisorindberetning="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="PersonSelvangivelseRevisorindberetning" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Hvorvidt der ønskes skift fra S13 til S10, hvilket indebærer oplysningspligt. 1. Mulighed for skift til erhverv (borgeren kan blive feltlåst S10) 2. Mulighed for at skifte til udland (borger kan blive ej feltlåst S10) 3. Mulighed for at skifte til både erhverv og udland (borgeren kan blive ej feltlåst S10)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>

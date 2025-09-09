@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:dkcc1="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" xmlns:selvangivelse="urn:oio:skat:selvangivelse:1.0.0" xmlns:selvangivelsews="urn:oio:skat:selvangivelse:ws:1.0.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:ws:1.0.0" version="1.0" xml:lang="DA">
+   <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/RenteUdgiftAndenGaeldGaeldTilPrivatBeloeb.xsd"/>
+   <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/AlternativAdresseAdresseLinie7Text.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/PersonSurnameName.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressSixthLineText.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressThirdLineText.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/CountryIdentificationCode.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressSecondLineText.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFifthLineText.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFourthLineText.xsd"/>
+   <xs:import namespace="urn:oio:skat:selvangivelse:1.0.0" schemaLocation="../../1_0_0/VirksomhedCVRNummerIdentifikator.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/19/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2005/05/19/PostalAddressFirstLineText.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="../../../../../../cpr_dk/xml/schemas/core/2005/03/18/PersonCivilRegistrationIdentifier.xsd"/>
+   <xs:import namespace="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" schemaLocation="../../../../../../ebxml/xml/schemas/dkcc/2003/02/13/PersonGivenName.xsd"/>
+         <xs:annotation>
+            <xs:documentation/>
+         </xs:annotation>
+         <xs:element name="GaeldTilPrivatRenteUdgiftAngivelseAngivelseStruktur" type="selvangivelsews:GaeldTilPrivatRenteUdgiftAngivelseAngivelseStrukturType"/>
+         <xs:complexType name="GaeldTilPrivatRenteUdgiftAngivelseAngivelseStrukturType">
+            <xs:sequence>
+                  <xs:element ref="selvangivelse:RenteUdgiftAndenGaeldGaeldTilPrivatBeloeb"/>
+                  <xs:element name="KreditorIdentifikationValg">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element ref="core:PersonCivilRegistrationIdentifier"/>
+				                       <xs:element ref="selvangivelse:VirksomhedCVRNummerIdentifikator"/>
+				                       <xs:sequence>
+                              <xs:element name="NonCPRPerson">
+                                 <xs:complexType>
+                                    <xs:sequence>
+                                       <xs:element ref="dkcc:PersonGivenName"/>
+                                       <xs:element ref="dkcc:PersonSurnameName"/>
+                                       <xs:element minOccurs="0" ref="dkcc1:PostalAddressFirstLineText"/>
+                                       <xs:element minOccurs="0" ref="dkcc1:PostalAddressSecondLineText"/>
+                                       <xs:element minOccurs="0" ref="dkcc1:PostalAddressThirdLineText"/>
+                                       <xs:element minOccurs="0" ref="dkcc1:PostalAddressFourthLineText"/>
+                                       <xs:element minOccurs="0" ref="dkcc1:PostalAddressFifthLineText"/>
+                                       <xs:element minOccurs="0" ref="dkcc1:PostalAddressSixthLineText"/>
+                                       <xs:element minOccurs="0" ref="selvangivelse:AlternativAdresseAdresseLinie7Text"/>
+                                       <xs:element ref="dkcc:CountryIdentificationCode"/>
+                                    </xs:sequence>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>

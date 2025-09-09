@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tofamilieenhedloebenummer="urn:oio:skat:selvangivelse:1.0.0" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+            
+    
+    <xs:element name="TofamilieenhedLoebenummer" type="xs:integer">
+                        
+        
+        <xs:annotation>
+                                    
+            
+            <xs:documentation>Grundlæggende værdisæt for danske tofamilieshuse med to ejerboligværdier: 1 = enhedsløbenr 1 2 = enhedsløbenr 2 Feltet (027) skal altid indberettes, hvis ejendomstype er et dansk tofamilieshus med to ejerboligværdier (felt 705=4) eller dansk tofamilieshus med en ejerboligværdi (felt 705=5). Felt 027 kan ikke anvendes sammen med andre ejendomstyper.  Enhedsløbenr skal sammen med benyttelseskoden indberettes på hver enkelt lejlighed. </xs:documentation>
+                                
+        
+        </xs:annotation>
+                    
+    
+    </xs:element>
+        
+
+</xs:schema>

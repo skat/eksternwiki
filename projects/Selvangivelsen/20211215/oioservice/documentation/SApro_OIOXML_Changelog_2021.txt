@@ -1,0 +1,71 @@
+NYE BLOKKE
+	Nedenstående blok er indsat i datastrukturen PersonligIndkomstStruktur
+		(																
+			*UdlejningNaertstaaende*
+			[
+				(EjendomRentekorrektionEfterAMBidragBeloeb)
+				(EjendomRentekorrektionBeloeb)
+			]
+		)
+
+	Nedenstående blok er indsat i datastrukturen KapitalIndkomstStruktur
+		(			
+			*UdlejningNaertstaaende*
+			[
+				(EjendomRentekorrektionBeloeb)
+			]
+		)
+____________________________________________________________________________________________________________________________________________________________________________________
+NYE DATAELEMENTER	
+	EjendomAngivelseUdlejningNaertstaaendeIndikator er indsat i datastrukturen PersonSelvangivelseOpret_I
+	LigningsmaessigtFradragUdgifterNytServiceFradragBeloeb	er indsat i datastrukturen LigningmaessigFradragStruktur			
+	LigningsmaessigtFradragUdgifterHaandvaerkerFradragBeloeb	er indsat i datastrukturen LigningmaessigFradragStruktur									
+	LigningsmaessigtFradragUdgifterEkstraServiceFradragBeloeb er indsat i datastrukturen LigningmaessigFradragStruktur								
+____________________________________________________________________________________________________________________________________________________________________________________
+UDGÅEDE DATASTRUKTURER
+	Nedenstående *UdenlandskVirksomhedListe* og dennes tilhørende UdenlandskVirksomhedStruktur er udgået fra PersonSelvangivelseOpret_I og PersonSelvangivelseOpret_O
+		(																			
+			*UdenlandskVirksomhedListe*
+			1{
+				UdenlandskVirksomhedStruktur
+			}
+		)
+____________________________________________________________________________________________________________________________________________________________________________________
+UDGÅEDE DATAELEMENTER
+	RenteudgiftOffentligGaeldBeloeb er udgået fra KapitalIndkomstStruktur
+	LigningsmaessigtFradragUdgifterServiceFradragBeloeb er udgået fra LigningmæssigFradragStruktur																				
+____________________________________________________________________________________________________________________________________________________________________________________
+MAPNINGSRETTELSER
+	Skat dataelementet EjendomAngivelseIndflytningsdato	har fået ny mapning til nyoprettet oioelement EjendomAngivelseIndflytningDato										
+	Skat dataelementet ReguleretTabKontrakterKode har fået ny mapning til nyoprettet oioelement ReguleretTabKontrakterKode																	
+____________________________________________________________________________________________________________________________________________________________________________________
+MODELLERINGSÆNDRINGER
+	I PersonSelvangivelseOpret_I er der i *Selvangivelse* blevet ændret på *BeloebsfeltListe*, således at denne liste nu er optionel. 
+	I UdenlandskLoenStruktur er der i *NordiskTraek* blevet ændret på LandKode, således at dette element nu er optionelt.
+	I PersonSelvangivelseOpret_O er *ÅrsopgørelseListe* markeret optionel vha. (). 
+____________________________________________________________________________________________________________________________________________________________________________________
+OPDATEREDE DATAELEMENTBESKRIVELSER (DOCUMENTATION)
+	EjendomEjerskabEjerandelProcent	
+	PersonSelvangivelseRevisorindberetningTekst	
+	AlderspensionAfgiftsBeloeb20PctOver5AArBeloeb	
+	AlderspensionAfgiftsBeloeb20PctUnder6AArBeloeb	
+	AlderspensionAfgiftsBeloeb40PctDiskvalificeretBeloeb	
+	AlderspensionAfgiftsberegning20PctOg40PctBeloeb	
+	AlderspensionDiskvalifikationKode	
+	BeregningsgrundlagSamletGammel2001Beloeb	
+	BeregningsgrundlagSamletNy2002Beloeb	
+	EjendomsvaerdiSamletBeloeb		
+	PersonligIndkomstOverfoertOpsparetOverskudSuccessionBeloeb		
+	PersonSelvangivelseBeskatningsordningKode	
+	PersonSelvangivelseHenstandsbegaeringIndikator	
+	AktierSpecifikationTabUdenlandskAktiebaseretInvesteringTilAegtefaelleBeloeb
+	AktierSpecifikationTabUdenlandskAktiebaseretInvesteringFraAegtefaelleBeloeb														
+	PersonligIndkomstAndenPersonligIndkomstBeloeb
+	EjReguleretGevinstUdenlandskBeloeb
+	ReguleretGevinstUdenlandskBeloeb	
+	ReguleretTabKontrakterBeloeb	
+	ReguleretTabKontrakterFremfoerselBeloeb	
+	ReguleretUdbytteUdenlandskBeloeb	
+	EjendomRentekorrektionBeloeb	
+	EjendomRentekorrektionEfterAMBidragBeloeb	
+	KapitalIndkomstNettoLejeIndtaegtBeloeb	

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:alderspensionafgiftsberegning20pctog40pctbeloeb="urn:oio:skat:selvangivelse:1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:oio:skat:selvangivelse:1.0.0" version="1.0" xml:lang="DA">
+    <xs:element name="AlderspensionAfgiftsberegning20PctOg40PctBeloeb" type="xs:decimal">
+        <xs:annotation>
+            <xs:documentation>Beløb til afgiftsberegning med 20% eller 40%. Hvis indbetalingen overstiger grundbeløb, beregnes der en afgift med henholdsvis 20% eller 40% efter fradrag af grundbeløb. Beløbet hentes fra Felt 982  Indbetalinger bliver diskvalificeret ved udbetaling fra anden pensionsordning, hvis udbetaling er påbegyndt inden for de sidste 10 år før folkepensionsalderen.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+</xs:schema>
