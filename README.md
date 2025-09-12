@@ -25,7 +25,7 @@ Wikien drives af Center for Strategisk Arkitektur. Ved spørgsmål kontaktes Ark
 
 [Erhvervssystemet](https://github.com/skat/eksternwiki/blob/main/services/ES.md) - virksomhedsregister
 
-Selskabsselvangivelsen
+[Selskabsselvangivelsen](https://github.com/skat/eksternwiki/blob/main/services/selskabselvangivelse.md)
 
 eSKATdata - (tidl. HentSelv)
 
