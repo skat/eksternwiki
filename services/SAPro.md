@@ -5,8 +5,8 @@ SA Pro er en samlende betegnelse for webservices henvendt til revisorer og rådg
 
 Løsningen består af to webservices:
 
-PersonKontrolOplysningHent - træk af skatteoplysninger
+[PersonKontrolOplysningHent](https://github.com/skat/eksternwiki/blob/main/services/R75Person.md) - træk af skatteoplysninger
 
-PersonSelvangivelseOpret - indberetning af oplysningsskemaet
+[PersonSelvangivelseOpret](https://github.com/skat/eksternwiki/blob/main/services/selvangivelse.md) - indberetning af oplysningsskemaet
 
 Oplysninger kan kun hentes eller indberettes, såfremt borgeren har givet specifikt samtykke til den pågældende revisor.
