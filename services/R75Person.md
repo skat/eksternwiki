@@ -22,28 +22,48 @@ Bilag 1 i XML-guiden beskriver hvilke specifikke oplysninger, der udstilles.
 
 Servicen returnerer en generisk struktur med et antal grupperede felter. Hvert felt består af ét eller flere underfelter. Disse underfelter er af en specifik type (fx beløb) og beskrives yderligere med en „kvalifikator“. Markeringsfelter kan suppleres med en kode eller tekst.
 
-**BankHent**
 
-BankHent.wsdl
 
-**Versionshistorik**
+<h2 class="sectionedit7" id="bankhent">BankHent</h2>
+<div class="level2">
 
-Seneste version:
+<p>
+<a href="https://eksternwiki.skat.dk/systems/SLSP/BankHent20161024/OIOXML/BankHent_20161024/BankHent.wsdl" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/SLSP/BankHent20161024/OIOXML/BankHent_20161024/BankHent.wsdl">BankHent.wsdl</a>
+</p>
 
-20210624 - ændringslog
+</div>
+<div class='secedit editbutton_section editbutton_7'><form class="button btn_secedit" method="post" action="/personkontroloplysninghent"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1730466562" /><input type="hidden" name="summary" value="[BankHent] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="bankhent" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1940-2053" /><button type="submit" title="BankHent">Redigér</button></div></form></div>
+<h2 class="sectionedit8" id="versionshistorik">Versionshistorik</h2>
+<div class="level2">
 
-Tidligere versioner:
+<p>
+Seneste version:<br/>
 
-20170809
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20210624/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20210624/oioservice/">20210624</a> - <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20210624/oioservice/documentation/changelog.txt" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20210624/oioservice/documentation/changelog.txt">ændringslog</a></div>
+</li>
+</ul>
 
-20170804
+<p>
+Tidligere versioner:<br/>
 
-20170726
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20170809/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20170809/oioservice/">20170809</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20170804/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20170804/oioservice/">20170804</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20170726/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20170726/oioservice/">20170726</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160301/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160301/oioservice/">20160301</a> - <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160301/oioservice/documentation/changelog.txt" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160301/oioservice/documentation/changelog.txt">ændringslog</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160121/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160121/oioservice/">20160121</a> - <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160121/oioservice/documentation/changelog.txt" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20160121/oioservice/documentation/changelog.txt">ændringslog</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20150210/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20150210/oioservice/">20150210</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20120704/oioservice/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20120704/oioservice/">20120704</a> - <a href="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20120704/oioservice/documentation/changelog.txt" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/projects/R75-P/20120704/oioservice/documentation/changelog.txt">ændringslog</a></div>
+</li>
+</ul>
 
-20160301
-
-20160121
-
-20150210
-
-20120704
+</div>
