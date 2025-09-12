@@ -4,7 +4,7 @@
 Dette er de seneste OIO-services i form af zip-filer med alle schemaer:
 </p>
 <ul>
-<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20250110/OIO/HentSelvSendData_OIO.zip" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20250110/OIO/HentSelvSendData_OIO.zip">HentSelvSendData</a> - leverance 20250110</div>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20250110/OIO/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20250110/OIO/HentSelvSendData_OIO.zip">HentSelvSendData</a> - leverance 20250110</div>
 </li>
 </ul>
 
@@ -25,7 +25,7 @@ PersonKontrolOplysningPantebrevePensionForsikringKursvaerdiBeloeb
 PersonKontrolOplysningGaeldRealkreditinstitutKursvaerdiBeloeb
 </pre>
 <ul>
-<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20140922/OIOXML/HentSelvOIO_20140922.zip" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20140922/OIOXML/HentSelvOIO_20140922.zip">PersonSamtykkeOpret</a> - leverance 20140922 (preview)</div>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20140922/OIOXML/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20140922/OIOXML/HentSelvOIO_20140922.zip">PersonSamtykkeOpret</a> - leverance 20140922 (preview)</div>
 </li>
 </ul>
 
