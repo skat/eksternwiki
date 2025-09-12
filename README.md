@@ -7,7 +7,7 @@ Wikien drives af Center for Strategisk Arkitektur. Ved spørgsmål kontaktes Ark
 
 **Generelt**
 
-[Beskrivelse af OIO-hovedoplysninger](https://eksternwiki.skat.dk/nyhed_hovedoplysninger) - indhold og opbygning
+[Beskrivelse af OIO-hovedoplysninger](https://github.com/skat/eksternwiki/blob/main/media/oiohovedoplysninger_2_.pdf) - indhold og opbygning
 
 [Beskrivelse af SOAP-hovedoplysninger](https://eksternwiki.skat.dk/hovedoplysninger) - indhold og opbygning
 
