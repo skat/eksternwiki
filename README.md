@@ -27,6 +27,6 @@ Wikien drives af Center for Strategisk Arkitektur. Ved spørgsmål kontaktes Ark
 
 [Selskabsselvangivelsen](https://github.com/skat/eksternwiki/blob/main/services/selskabselvangivelse.md)
 
-eSKATdata - (tidl. HentSelv)
+[eSKATdata](https://github.com/skat/eksternwiki/blob/main/services/eSKATdata.md) - (tidl. HentSelv)
 
 [Datafordeler](https://github.com/skat/eksternwiki/tree/main/media)– Kodelister til SE data i grunddataprogrammet
