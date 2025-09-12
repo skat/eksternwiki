@@ -17,11 +17,11 @@ Wikien drives af Center for Strategisk Arkitektur. Ved spørgsmål kontaktes Ark
 **Systemspecifikt**
 
 
-SA Pro - udvidet selvangivelse og træk af skatteoplysninger
+[SA Pro](https://github.com/skat/eksternwiki/blob/main/services/SAPro.md) - udvidet selvangivelse og træk af skatteoplysninger
 
 [eIndkomst dokumentationstart](https://github.com/skat/eksternwiki/blob/main/eIndkomst.md) - Område specielt om eIndkomst OIO-services efter TIN.
 
-R75-person - adgang til kontroloplysninger for personer
+[R75-person](https://github.com/skat/eksternwiki/blob/main/services/R75Person.md) - adgang til kontroloplysninger for personer
 
 Erhvervssystemet - virksomhedsregister
 
