@@ -19,7 +19,7 @@ Wikien drives af Center for Strategisk Arkitektur. Ved spørgsmål kontaktes Ark
 
 SA Pro - udvidet selvangivelse og træk af skatteoplysninger
 
-eIndkomst dokumentationstart - Område specielt om eIndkomst OIO-services efter TIN.
+[eIndkomst dokumentationstart](https://github.com/skat/eksternwiki/blob/main/eIndkomst.md) - Område specielt om eIndkomst OIO-services efter TIN.
 
 R75-person - adgang til kontroloplysninger for personer
 
