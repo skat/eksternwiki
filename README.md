@@ -29,4 +29,4 @@ Selskabsselvangivelsen
 
 eSKATdata - (tidl. HentSelv)
 
-Datafordelelen – Kodelister til SE data i grunddataprogrammet - Test
+[Datafordeler](https://github.com/skat/eksternwiki/tree/main/media)– Kodelister til SE data i grunddataprogrammet
