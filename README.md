@@ -23,7 +23,7 @@ Wikien drives af Center for Strategisk Arkitektur. Ved spørgsmål kontaktes Ark
 
 [R75-person](https://github.com/skat/eksternwiki/blob/main/services/R75Person.md) - adgang til kontroloplysninger for personer
 
-Erhvervssystemet - virksomhedsregister
+[Erhvervssystemet](https://github.com/skat/eksternwiki/blob/main/services/ES.md) - virksomhedsregister
 
 Selskabsselvangivelsen
 
