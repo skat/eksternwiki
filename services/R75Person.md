@@ -15,7 +15,7 @@ Servicen giver kun læseadgang. Det er ikke muligt at foretage rettelser ad denn
 
 Udtrækket indeholder oplysninger om betalte skatter, selvangivne oplysninger, virksomhedsoplysninger, moms, oplysningssedler, diverse fradrag, løn, ydelser og øvrige indtægter, formue og pension, ejendomme og køretøjer. Der er tale om de samme oplysninger, som borgeren selv har adgang til via Skatteoplysninger.
 
-Bilag 1 i XML-guiden beskriver hvilke specifikke oplysninger, der udstilles.
+Bilag 1 i [XML-guiden](https://www.demo.tastselv.skat.dk/R75xmlGuideWeb/R75xmlGuide) beskriver hvilke specifikke oplysninger, der udstilles.
 
 
 **Strukturel opbygning**
