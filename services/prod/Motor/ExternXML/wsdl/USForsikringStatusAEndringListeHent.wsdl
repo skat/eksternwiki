@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USForsikringStatusAendringListeHentService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>Servicen lister køretøjer med ændringer i forsikringsstatus der er af interesse for DFIM i forbindelse med opkrævning af dagbøder for uforsikrede køretøjer. Kriterier for udtrækket er:  Køretøjet er registreret, med mindre andet er angivet Et køretøjs forsikring ophører Et køretøjs forsikring genetableres, efter forsikring har været ophørt Et køretøjs forsikring selskabsskiftes Et køretøj ejer-/bruger skiftes, efter forsikring har været ophørt </xs:documentation>
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USForsikringStatusAEndringListeHentInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USForsikringStatusAendringListeHentServiceRequest">
+		<wsdl:part name="Request" element="dmr:USForsikringStatusAendringListeHent_I"/>
+	</wsdl:message>
+	<wsdl:message name="USForsikringStatusAendringListeHentServiceResponse">
+		<wsdl:part name="Response" element="dmr:USForsikringStatusAendringListeHent_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USForsikringStatusAendringListeHentServicePortType">
+		<wsdl:operation name="getUSForsikringStatusAendringListeHent">
+			<wsdl:input message="dmr:USForsikringStatusAendringListeHentServiceRequest"/>
+			<wsdl:output message="dmr:USForsikringStatusAendringListeHentServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

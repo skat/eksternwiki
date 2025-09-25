@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejMotor.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejDrivmiddelSamlingStrukturType.xsd"/>
+	<xs:element name="KoeretoejMotorStruktur" type="dmr:KoeretoejMotorStrukturType"/>
+	<xs:complexType name="KoeretoejMotorStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejMotorCylinderAntal" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorSlagVolumen" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorSlagVolumenIkkeTilgaengelig" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorStoersteEffekt" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorStoersteEffektIkkeTilgaengelig" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorKilometerstand" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorKilometerstandDokumentation" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorKilometerstandIkkeTilgaengelig" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorMaerkning" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorStandStoej" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorKoerselStoej" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorStandStoejOmdrejningstal" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorInnovativTeknik" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorInnovativTeknikAntal" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorFuelmode" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejDrivmiddelSamlingStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

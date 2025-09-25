@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Anmeldelse.xsd"/>
+	<xs:include schemaLocation="../class/AnmeldelseAArsag.xsd"/>
+	<xs:element name="AnmeldelseStruktur" type="dmr:AnmeldelseStrukturType"/>
+	<xs:complexType name="AnmeldelseStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:AnmeldelseStand" minOccurs="0"/>
+			<xs:element ref="dmr:AnmeldelseKmStand" minOccurs="0"/>
+			<xs:element ref="dmr:AnmeldelseBemaerkning" minOccurs="0"/>
+			<xs:element ref="dmr:AnmeldelseGyldigFra"/>
+			<xs:element ref="dmr:AnmeldelseGyldigTil" minOccurs="0"/>
+			<xs:element ref="dmr:AnmeldelseAarsagNummer"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

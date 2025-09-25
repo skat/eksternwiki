@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USKoeretoejBetegnelseOpretService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>1.0</xs:documentation>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USKoeretoejBetegnelseOpretInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USKoeretoejBetegnelseOpretServiceRequest">
+		<wsdl:part name="Request" element="dmr:USKoeretoejBetegnelseOpret_I"/>
+	</wsdl:message>
+	<wsdl:message name="USKoeretoejBetegnelseOpretServiceResponse">
+		<wsdl:part name="Response" element="dmr:USKoeretoejBetegnelseOpret_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USKoeretoejBetegnelseOpretServicePortType">
+		<wsdl:operation name="getUSKoeretoejBetegnelseOpret">
+			<wsdl:input message="dmr:USKoeretoejBetegnelseOpretServiceRequest"/>
+			<wsdl:output message="dmr:USKoeretoejBetegnelseOpretServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

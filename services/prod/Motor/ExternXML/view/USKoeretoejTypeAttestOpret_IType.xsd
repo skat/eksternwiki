@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:kontekst="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" schemaLocation="../skat_dk/basis/kontekst/xml/schemas/2006/09/01/HovedOplysninger.xsd"/><xs:include schemaLocation="../class/KoeretoejOplysning.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejMotor.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejMiljoeOplysning.xsd"/>
+	<xs:include schemaLocation="../class/TypeAttestVariant.xsd"/>
+	<xs:include schemaLocation="../class/TypeAttest.xsd"/>
+	<xs:include schemaLocation="../class/Virksomhed.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejFarveStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejUdstyrSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/PrisOplysningerStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejAnvendelseStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejSupplerendeKarrosseriSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/DispensationTypeSamlingStrukturType.xsd"/>
+	<xs:element name="USKoeretoejTypeAttestOpret_I">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dmr:USKoeretoejTypeAttestOpret_IType">
+					<xs:attribute name="revision">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="r27806"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="USKoeretoejTypeAttestOpret_IType">
+		<xs:sequence>
+			<xs:element ref="kontekst:HovedOplysninger"/>
+			<xs:element ref="dmr:KoeretoejOplysningStelNummer"/>
+			<xs:element ref="dmr:KoeretoejFarveStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejUdstyrSamlingStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:PrisOplysningerStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejOplysningModelAar" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejOplysningTilkoblingMulighed" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejOplysning30PctVarevogn"/>
+			<xs:element ref="dmr:KoeretoejOplysningNCAPTest" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejAnvendelseStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejSupplerendeKarrosseriSamlingStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejOplysningVejvenligLuftaffjedring" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMotorFuelmode" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejMiljoeOplysningEftermonteretPartikelfilter" minOccurs="0"/>
+			<xs:element ref="dmr:DispensationTypeSamlingStruktur" minOccurs="0"/>
+			<xs:element name="TypeGodkendelseAttest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:TypeAttestVariantNummer"/>
+						<xs:element ref="dmr:TypeAttestTypeAnmeldelseNummer"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:VirksomhedSENummer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

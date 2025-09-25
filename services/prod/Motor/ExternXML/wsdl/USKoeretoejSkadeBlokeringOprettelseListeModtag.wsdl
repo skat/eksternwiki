@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://skat.dk/dmr/2007/05/31/" name="USKoeretoejSkadeBlokeringOprettelseListeModtagService">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:documentation>At sikre, at en skadeblokering på et køretøj kan oprettes.</xs:documentation>
+		<xs:documentation>r3110</xs:documentation>
+	</xs:annotation>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/">
+			<xsd:include schemaLocation="../service/USKoeretoejSkadeBlokeringOprettelseListeModtagInterface.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="USKoeretoejSkadeBlokeringOprettelseListeModtagServiceRequest">
+		<wsdl:part name="Request" element="dmr:USKoeretoejSkadeBlokeringOprettelseListeModtag_I"/>
+	</wsdl:message>
+	<wsdl:message name="USKoeretoejSkadeBlokeringOprettelseListeModtagServiceResponse">
+		<wsdl:part name="Response" element="dmr:USKoeretoejSkadeBlokeringOprettelseListeModtag_O"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransRequest">
+		<wsdl:part name="Request" element="dmr:KompenserTrans"/>
+	</wsdl:message>
+	<wsdl:message name="KompenserTransResponse">
+		<wsdl:part name="Response" element="dmr:KompenserTransSvar"/>
+	</wsdl:message>
+	<wsdl:portType name="USKoeretoejSkadeBlokeringOprettelseListeModtagServicePortType">
+		<wsdl:operation name="getUSKoeretoejSkadeBlokeringOprettelseListeModtag">
+			<wsdl:input message="dmr:USKoeretoejSkadeBlokeringOprettelseListeModtagServiceRequest"/>
+			<wsdl:output message="dmr:USKoeretoejSkadeBlokeringOprettelseListeModtagServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getKompenserTrans">
+			<wsdl:input message="dmr:KompenserTransRequest"/>
+			<wsdl:output message="dmr:KompenserTransResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

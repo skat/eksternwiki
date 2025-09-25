@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejOplysning.xsd"/>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../operational/KoeretoejNationalEfterlysningFundet.xsd"/>
+	<xs:include schemaLocation="../class/Virksomhed.xsd"/>
+	<xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+	<xs:element name="ESKoeretoejNationalEfterlysningIdentitetSend_FejlID" type="dmr:ESKoeretoejNationalEfterlysningIdentitetSend_FejlIDType"/>
+	<xs:complexType name="ESKoeretoejNationalEfterlysningIdentitetSend_FejlIDType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejOplysningStelNummer" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejIdent" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerNummer" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejNationalEfterlysningFundet" minOccurs="0"/>
+			<xs:element ref="dmr:VirksomhedCVRNummer" minOccurs="0"/>
+			<xs:element ref="dmr:ProduktionEnhedNummer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

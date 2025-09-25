@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="QNameType">
+		<xs:annotation>
+			<xs:documentation>Data type svarende til w3c's fundamentale datatype QName.  I forbindelse med vores arbejde med services vil de såkaldte GUN typisk være et QName.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:QName">
+			<xs:maxLength value="300"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

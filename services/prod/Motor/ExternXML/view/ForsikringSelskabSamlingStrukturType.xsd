@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../view/ForsikringSelskabStrukturType.xsd"/>
+	<xs:element name="ForsikringSelskabSamlingStruktur" type="dmr:ForsikringSelskabSamlingStrukturType"/>
+	<xs:complexType name="ForsikringSelskabSamlingStrukturType">
+		<xs:sequence>
+			<xs:element name="ForsikringSelskabSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ForsikringSelskab" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:ForsikringSelskabStruktur"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

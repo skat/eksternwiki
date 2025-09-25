@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Når en klausul sættes på et køretøj, så vil der i mange tilfælde være behov for at angive yderligere detaljer såsom ejerforhold, tidsmæssige begrænsninger, yderligere kommentarer m.v.  En klausul kan forekomme flere gange i forhold til det samme køretøj, men de vil - alt andet lige - være adskilt over tid eller den ene vil være aktiv, og den anden vil være inaktiv.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:include schemaLocation="../types/TekstLangType.xsd"/>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:element name="RegistreringAfgiftKlausulNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Nummer på en klausul.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulBegraensetFra" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Hvis klausulen er tidsbegrænset, så vil denne attribut definere den nedre grænse i det tidsmæssige interval. Attributen skal understøtte angivelsen af ikke defineret dato. Hvis der ikke er defineret nogen dato, bør den betragtes som -uendeligt.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulBegraensetTil" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Hvis klausulen er tidsbegrænset, så vil denne attribut definere den øvre grænse i det tidsmæssige interval. Attributen skal understøtte angivelsen af ikke defineret dato. Hvis der ikke er defineret nogen dato, bør den betragtes som +uendeligt.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulKommentar" type="dmr:TekstLangType">
+		<xs:annotation>
+			<xs:documentation>En kommentar, som beskriver yderligere forhold ved klausulen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RegistreringAfgiftKlausulGaeldendeDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Angiver en dato og tid for hvornår klausulen skal være gældende.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

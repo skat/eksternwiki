@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejRegistreringGrundlag.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejOplysningStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TilladelseSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TypeAttestStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejRegistreringGrundlagStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejRegistreringStrukturType.xsd"/>
+	<xs:element name="KoeretoejTekniskDataStruktur" type="dmr:KoeretoejTekniskDataStrukturType"/>
+	<xs:complexType name="KoeretoejTekniskDataStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejIdent"/>
+			<xs:element ref="dmr:KoeretoejOplysningStruktur"/>
+			<xs:element ref="dmr:TilladelseSamlingStruktur"/>
+			<xs:element ref="dmr:TypeAttestStruktur" minOccurs="0"/>
+			<xs:element name="KoeretoejRegistreringGrundlag">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:KoeretoejRegistreringGrundlagIdent" minOccurs="0"/>
+						<xs:element ref="dmr:KoeretoejRegistreringGrundlagStruktur" minOccurs="0"/>
+						<xs:element ref="dmr:KoeretoejRegistreringStruktur" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagPeriodiskSyn" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagPeriodiskSynGyldigTil" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

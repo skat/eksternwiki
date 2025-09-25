@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/NormType.xsd"/>
+	<xs:element name="NormTypeStruktur" type="dmr:NormTypeStrukturType"/>
+	<xs:complexType name="NormTypeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:NormTypeNummer"/>
+			<xs:element ref="dmr:NormTypeNavn"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

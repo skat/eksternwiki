@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejRegistreringGrundlag.xsd"/>
+	<xs:include schemaLocation="../class/Leasing.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummerRettighed.xsd"/>
+	<xs:include schemaLocation="../class/PladeInddragelse.xsd"/>
+	<xs:include schemaLocation="../class/PladeInddragelseType.xsd"/>
+	<xs:include schemaLocation="../class/PladeOphaevelseType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/EjerBrugerSamlingStrukturType.xsd"/>
+	<xs:element name="KoeretoejSamlingStruktur" type="dmr:KoeretoejSamlingStrukturType"/>
+	<xs:complexType name="KoeretoejSamlingStrukturType">
+		<xs:sequence>
+			<xs:element name="KoeretoejSamling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Koeretoej" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:KoeretoejIdent"/>
+									<xs:element ref="dmr:KoeretoejStruktur"/>
+									<xs:element ref="dmr:EjerBrugerSamlingStruktur"/>
+									<xs:element ref="dmr:KoeretoejRegistreringGrundlagPeriodiskSyn" minOccurs="0"/>
+									<xs:element ref="dmr:KoeretoejRegistreringGrundlagPeriodiskSynGyldigTil" minOccurs="0"/>
+									<xs:element ref="dmr:LeasingGyldigTil" minOccurs="0"/>
+									<xs:element ref="dmr:RegistreringNummerRettighedGyldigTil" minOccurs="0"/>
+									<xs:element name="PladeInddragelseListe">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="PladeInddragelse" minOccurs="0" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element ref="dmr:PladeInddragelseOprettetDato"/>
+															<xs:element ref="dmr:PladeInddragelseStatus"/>
+															<xs:element ref="dmr:PladeInddragelseStatusDato"/>
+															<xs:element ref="dmr:PladeInddragelseTypeNummer"/>
+															<xs:element ref="dmr:PladeInddragelseTypeNavn"/>
+															<xs:element name="OphaevelseAarsagType" minOccurs="0">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element ref="dmr:PladeOphaevelseTypeNummer"/>
+																		<xs:element ref="dmr:PladeOphaevelseTypeNavn"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

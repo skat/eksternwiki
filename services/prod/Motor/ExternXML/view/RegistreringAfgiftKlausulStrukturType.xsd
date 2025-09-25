@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/RegistreringAfgiftKlausulType.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringAfgiftKlausul.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejRegistrering.xsd"/>
+	<xs:element name="RegistreringAfgiftKlausulStruktur" type="dmr:RegistreringAfgiftKlausulStrukturType"/>
+	<xs:complexType name="RegistreringAfgiftKlausulStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:RegistreringAfgiftKlausulTypeNavn" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringAfgiftKlausulTypeNummer"/>
+			<xs:element ref="dmr:RegistreringAfgiftKlausulKommentar" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringAfgiftKlausulBegraensetFra"/>
+			<xs:element ref="dmr:RegistreringAfgiftKlausulBegraensetTil" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejRegistreringNummer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

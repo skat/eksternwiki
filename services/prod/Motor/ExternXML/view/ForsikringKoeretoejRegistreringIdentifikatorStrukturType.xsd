@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/ProduktionEnhed.xsd"/>
+	<xs:include schemaLocation="../class/Person.xsd"/>
+	<xs:include schemaLocation="../class/Virksomhed.xsd"/>
+	<xs:include schemaLocation="../class/PersonNavn.xsd"/>
+	<xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+	<xs:element name="ForsikringKoeretoejRegistreringIdentifikatorStruktur" type="dmr:ForsikringKoeretoejRegistreringIdentifikatorStrukturType"/>
+	<xs:complexType name="ForsikringKoeretoejRegistreringIdentifikatorStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:RegistreringNummerNummer"/>
+			<xs:element ref="dmr:KoeretoejIdent" minOccurs="0"/>
+			<xs:element ref="dmr:ProduktionEnhedNummer" minOccurs="0"/>
+			<xs:element name="NummerValg" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dmr:PersonCPRNummer"/>
+						<xs:element ref="dmr:VirksomhedCVRNummer"/>
+						<xs:element ref="dmr:VirksomhedSENummer"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NavnValg" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="dmr:PersonNavnNavn"/>
+						<xs:element ref="dmr:VirksomhedNavnFirmaNavn"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:PersonFoedselDato" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/FysiskPlade.xsd"/>
+	<xs:include schemaLocation="../class/PladeType.xsd"/>
+	<xs:include schemaLocation="../class/PladeSerieTypeKombination.xsd"/>
+	<xs:include schemaLocation="../class/FysiskPladeOpbevaring.xsd"/>
+	<xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+	<xs:element name="FysiskPladeStruktur" type="dmr:FysiskPladeStrukturType"/>
+	<xs:complexType name="FysiskPladeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:FysiskPladeStatus"/>
+			<xs:element ref="dmr:FysiskPladeStatusDatoTid"/>
+			<xs:element ref="dmr:FysiskPladeDelAfPladeSaet"/>
+			<xs:element ref="dmr:FysiskPladeErstatningspladeBegrundelse" minOccurs="0"/>
+			<xs:element name="PladeType">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:PladeTypeNummer"/>
+						<xs:element ref="dmr:PladeTypeNavn"/>
+						<xs:element ref="dmr:PladeTypeEUPlade"/>
+						<xs:element ref="dmr:PladeTypeViserAarstal"/>
+						<xs:element ref="dmr:PladeTypeKvadratisk"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PladeSerieTypeKombination">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:PladeSerieTypeKombinationNummer"/>
+						<xs:element ref="dmr:PladeSerieTypeKombinationNavn"/>
+						<xs:element ref="dmr:PladeSerieTypeKombinationSaetAntal"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PladeProducent" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:JuridiskEnhedIdentifikatorStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Opbevaring" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PladeOperatoer">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:JuridiskEnhedIdentifikatorStruktur"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="FysiskPladeOpbevaring">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:FysiskPladeOpbevaringOpbevaretFra"/>
+									<xs:element ref="dmr:FysiskPladeOpbevaringOpbevaretTil" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

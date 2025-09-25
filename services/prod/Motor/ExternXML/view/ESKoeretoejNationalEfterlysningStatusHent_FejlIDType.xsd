@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejOplysning.xsd"/>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejArt.xsd"/>
+	<xs:element name="ESKoeretoejNationalEfterlysningStatusHent_FejlID" type="dmr:ESKoeretoejNationalEfterlysningStatusHent_FejlIDType"/>
+	<xs:complexType name="ESKoeretoejNationalEfterlysningStatusHent_FejlIDType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejOplysningStelNummer" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejIdent" minOccurs="0"/>
+			<xs:element ref="dmr:RegistreringNummerNummer" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejArtNummer" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejArtNavn" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejArtKraeverForsikring" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

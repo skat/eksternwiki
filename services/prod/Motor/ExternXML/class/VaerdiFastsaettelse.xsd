@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/BeloebType.xsd"/>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/VaerdiFastsaettelseStatusVaerdiType.xsd"/>
+	<xs:include schemaLocation="../types/CVRNummerType.xsd"/>
+	<xs:include schemaLocation="../types/PctAfgiftVarevognType.xsd"/>
+	<xs:include schemaLocation="../types/VeteranbilStatusVaerdierType.xsd"/>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:include schemaLocation="../types/JaNejType.xsd"/>
+	<xs:element name="VaerdiFastsaettelseIdent" type="dmr:TalHelType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseAfgiftspligtigVaerdi" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseGyldigFra" type="dmr:DatoTidType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseGyldigTil" type="dmr:DatoTidType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseHandelspris" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseRegistreringAfgift" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseStatusDato" type="dmr:DatoTidType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseTilEksport" type="dmr:BolskType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseOprettet" type="dmr:DatoTidType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseStatus" type="dmr:VaerdiFastsaettelseStatusVaerdiType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseNypris" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseFradragForBoandel" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseVaerdiFastsatAf" type="dmr:CVRNummerType">
+		<xs:annotation>
+			<xs:documentation>Registrering på den ny værdifastsættelse, hvem der har oprettet værdifastsættelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelsePctAfgiftVarevogn" type="dmr:PctAfgiftVarevognType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseToldSynImport" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver om der i forbindelse med import er foretaget et toldsyn som kan modregnes i registreringsafgiften.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseToldSynEksport" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver om der i forbindelse med eksport er foretaget et toldsyn som kan medregnes i eksportgodtgørelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseNytKoeretoej" type="dmr:BolskType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseVeteranbilStatus" type="dmr:VeteranbilStatusVaerdierType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseBruttoAfgiftspligtigVaerdi" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseEksportLoft" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Værdifastsættelsesloft for eksportgodtgørelse.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseNedslagForEnergieffektivitetFoer2016" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Nedslag for brændstofforbrug regler før 1.1.2016. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseSamletRegistreringsafgiftFoer2016" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Samlet registreringsafgift før 1.1.2016. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseNedslagForEnergieffektivitetEfter2016" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Nedslag for brændstofforbrug regler efter 1.1.2016. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseSamletRegistreringsafgiftEfter2016" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Samlet registreringsafgift efter 1.1.2016. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseMerafgiftVedFuldIndfasning" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Merafgift for plug-in-hybrid-biler. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseFradragUnderLoft" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Nedslag i registreringsafgift for El-, plug-in hybrid- og brændselscelle biler. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseBundfradrag" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Bundfradrag for El-, plug-in hybrid- og brændselscelle biler. (gælder kun for el-drevne køretøjer samt plug-in-hybrid biler, samt fra 2019 også for brændselscelledrevne køretøjer.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseEksportFradrag" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Fradrag i eksportgodtgørelse.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseNedsaettelseTilEksportLoft" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Nedsættelse til loft over eksportgodtgørelsen svarende til oprindelig betalt afgift.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseAfgiftspligtigVaerdiSomNytBeloeb" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>eltet er et beløb og indikerer køretøjets afgiftspligtige værdi som nyt, jf. lovens § 10, stk. 2.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseRegistreringAfgiftFoerOmregistreringBetaltAfgift" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Beløb der er betalt i registreringsafgift. Feltet bruges ved omregistrering  af varebil til personbil hvor der sker modregning  af afgiften  som varebil. Dog maks den oprindelige betalte afgift som varebil </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseGenberegningFristDato" type="dmr:DatoType">
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseSamletModregningRegulering" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>Summen af beløb der modregnes i den fulde registreringsafgift. Beløb angivet som decimaltal, fx. 1500,00</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseHistorikMarkering" type="dmr:JaNejType">
+		<xs:annotation>
+			<xs:documentation>En værdifastsættelse kan enten være gyldig (gyldigtil er blank eller i fremtiden) eller historisk (gyldigtil er i fortiden). Feltet fortæller (Ja/Nej) hvordan eventuelle gyldige berigtigede værdifastsættelser skal håndteres.  VærdifastsættelseHistorisk = Nej: en eventuel gyldig berigtiget værdifastsættelse vil automatisk blive afbrudt (gyldigtil sættes til dags dato). Dette er den klassiske måde servicen fungerer på i DMR.  VærdifastsættelseHistorisk = Ja: en eventuel gyldig berigtiget værdifastsættelse vil ikke automatisk blive afbrudt.  Operationen vil med parameter Ja være relateret til oprettelse af en ny berigtiget version VF2 af en eksisterende værdifastsættelse VF1, som kan være historisk.  Der er ikke noget formaliseret begreb om version af værdifastsættelser, det er teknisk set blot en ny værdifastsættelse, som typisk vil være en omberegning af en eksisterende, f.eks. i forbindelse med ny lovgivning.  Hvis VF1 er historisk, vil den få gyldigtil sat til gyldigfra, og VF2 vil få oprindelig gyldig fra og til fra VF1. En anden eventuel gyldig berigtiget værdifastsættelse VF3 vil ikke blive afbrudt.  Hvis VF1 ikke er historisk (dvs. er gyldig), vil den blive afbrudt, og VF2 vil få gyldigfra dags dato og gyldigtil fra VF1.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaerdiFastsaettelseSidstAendret" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>En datotid datatype, som samlet betegner en dato og tid. Svarer indholdsmæssigt til XML Schematypen dateTime.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

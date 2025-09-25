@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>En efterlysning oprettes enten via SKAT eller via Politiet. Politiet er dog de eneste, som kan oprette efterlysninger på køretøjer. En efterlysning i denne sammenhæng dækker ikke over internationale efterlysninger, som forefindes særskilt i Schengen systemet. Hvis et køretøj er bortkommet (f.eks. grundet tyveri), så vil det typisk afstedkomme to efterlysninger - dels en efterlysning af selve køretøjet, men tillige også en efterlysning efter de plader, som eventuelt var monteret på køretøjet.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:include schemaLocation="../types/TekstLangType.xsd"/>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:element name="EfterlysningEfterlysteDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Datoen for modtagelse af efterlysningen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EfterlysningAarsag" type="dmr:TekstLangType">
+		<xs:annotation>
+			<xs:documentation>Anvendes til at beskriver hvorfor en efterlysning er fundet sted</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EfterlysningNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Et ID der unikt identificerer Efterlysningen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

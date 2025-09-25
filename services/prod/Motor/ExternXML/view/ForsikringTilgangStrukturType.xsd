@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Forsikring.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummer.xsd"/>
+	<xs:include schemaLocation="../class/RegistreringNummerRettighed.xsd"/>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/Virksomhed.xsd"/>
+	<xs:include schemaLocation="../class/VirksomhedNavn.xsd"/>
+	<xs:include schemaLocation="../class/Leasing.xsd"/>
+	<xs:include schemaLocation="../view/ForsikringSelskabIdentifikatorStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/ForsikringKoeretoejStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejArtStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejAnvendelseStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KoeretoejAnvendelseSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/EjerBrugerSamlingStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/AdresseStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/BeskedIdentifikatorStrukturType.xsd"/>
+	<xs:element name="ForsikringTilgangStruktur" type="dmr:ForsikringTilgangStrukturType"/>
+	<xs:complexType name="ForsikringTilgangStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:ForsikringBevisNummer"/>
+			<xs:element ref="dmr:ForsikringBevisDato"/>
+			<xs:element ref="dmr:ForsikringUdstedtDigitalt"/>
+			<xs:element ref="dmr:ForsikringUdstedtPapir"/>
+			<xs:element ref="dmr:ForsikringStatusAendringAarsag"/>
+			<xs:element ref="dmr:ForsikringErFejlhaandteret" minOccurs="0"/>
+			<xs:element name="ForsikringSelskabGammelt" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:ForsikringSelskabIdentifikatorStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ForsikringSelskabNyt">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:ForsikringSelskabIdentifikatorStruktur"/>
+						<xs:element ref="dmr:ForsikringBevisNummer" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ForsikringObjektValg">
+				<xs:complexType>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="RegistreringNummerRettighed">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="dmr:RegistreringNummerNummer"/>
+										<xs:element ref="dmr:RegistreringNummerRettighedNummer"/>
+										<xs:element ref="dmr:RegistreringNummerRettighedGyldigFra"/>
+										<xs:element ref="dmr:RegistreringNummerRettighedGyldigTil"/>
+										<xs:element ref="dmr:RegistreringNummerRettighedType"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="Koeretoej">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="dmr:KoeretoejIdent"/>
+										<xs:element ref="dmr:ForsikringKoeretoejStruktur"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:KoeretoejArtStruktur"/>
+			<xs:element ref="dmr:KoeretoejAnvendelseStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejAnvendelseSamlingStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:EjerBrugerSamlingStruktur"/>
+			<xs:element name="Registrator" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="VirksomhedIdentifikationValg">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element ref="dmr:VirksomhedCVRNummer"/>
+									<xs:element ref="dmr:VirksomhedSENummer"/>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="dmr:VirksomhedNavnFirmaNavn"/>
+						<xs:element ref="dmr:AdresseStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:BeskedIdentifikatorStruktur"/>
+			<xs:element name="Leasing" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:LeasingGyldigFra"/>
+						<xs:element ref="dmr:LeasingGyldigTil"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

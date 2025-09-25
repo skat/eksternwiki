@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejRegistreringGrundlag.xsd"/>
+	<xs:include schemaLocation="../class/AnmeldelseAArsag.xsd"/>
+	<xs:include schemaLocation="../class/BeregningRegulering.xsd"/>
+	<xs:include schemaLocation="../class/BeregningReguleringType.xsd"/>
+	<xs:include schemaLocation="../view/VaerdiFastsaettelseGrundStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/VaerdiFastsaettelseGrundlagStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/JuridiskEnhedIdentifikatorStrukturType.xsd"/>
+	<xs:element name="VaerdiFastsaettelseStruktur" type="dmr:VaerdiFastsaettelseStrukturType"/>
+	<xs:complexType name="VaerdiFastsaettelseStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagIdent" minOccurs="0"/>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundStruktur"/>
+			<xs:element ref="dmr:AnmeldelseAarsagNummer"/>
+			<xs:element name="BeregningReguleringListe">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Beregning" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BeregningRegulering">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="dmr:BeregningReguleringBeloeb"/>
+												<xs:element ref="dmr:BeregningReguleringAntal"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="BeregningReguleringType">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element ref="dmr:BeregningReguleringTypeNummer"/>
+												<xs:element ref="dmr:BeregningReguleringTypeNavn"/>
+												<xs:element ref="dmr:BeregningReguleringTypeBeskrivelse"/>
+												<xs:element ref="dmr:BeregningReguleringTypeVedroerer"/>
+												<xs:element ref="dmr:BeregningReguleringTypeArt"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="dmr:VaerdiFastsaettelseGrundlagStruktur" minOccurs="0"/>
+			<xs:element name="Anmelder" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:JuridiskEnhedIdentifikatorStruktur"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

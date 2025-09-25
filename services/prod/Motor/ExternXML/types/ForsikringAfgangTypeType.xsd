@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="ForsikringAfgangTypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="45"/>
+			<xs:enumeration value="EjerBrugerSkifte"/>
+			<xs:enumeration value="Afmelding"/>
+			<xs:enumeration value="Selskabsskifte"/>
+			<xs:enumeration value="ManglendeBetaling"/>
+			<xs:enumeration value="TilbagedateretEjerBrugerskifte"/>
+			<xs:enumeration value="TilbagedateretAfmelding"/>
+			<xs:enumeration value="TilbagedateretEksisterendeEjerBrugerskifte"/>
+			<xs:enumeration value="TilbagedateretEksisterendeAfmelding"/>
+			<xs:enumeration value="AnnulleringEjerBrugerskifte"/>
+			<xs:enumeration value="AnnulleringAfmelding"/>
+			<xs:enumeration value="FejlrettelseEjerBruger"/>
+			<xs:enumeration value="FejlrettelseKlausulAnvendelse"/>
+			<xs:enumeration value="ÆndretLeasingPeriode"/>
+			<xs:enumeration value="PladeskiftUdenEjerBrugerskifte"/>
+			<xs:enumeration value="ÆndringAnvendelse"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

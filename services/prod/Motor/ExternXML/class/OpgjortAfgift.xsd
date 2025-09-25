@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>En opgjort afgift er en registrering af det beregnede beløb umiddelbart før det bliver til en fordring. Denne klasse vil have en relation til en fordring specificeret i udbudsmaterialet for en skattekonto.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/BeloebType.xsd"/>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:include schemaLocation="../types/TekstKortType.xsd"/>
+	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:include schemaLocation="../types/OpgjortAfgiftStatusType.xsd"/>
+	<xs:element name="OpgjortAfgiftBeloeb" type="dmr:BeloebType">
+		<xs:annotation>
+			<xs:documentation>En registrering af afgiftens beløb</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>En registrering af tidspunktet (inkl. dato) for, hvornår afgiften blev beregnet og opgjort.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftFordringId" type="dmr:TekstKortType">
+		<xs:annotation>
+			<xs:documentation>Den unikke identifikation af den enkelte fordring, som skal bruges primært til at kommunikere serviceudbyder og fordringshaver imellem. Det er en forretningsmæssigt vigtig identifikation da, man præcist skal identificere fordringen i tilfælde af tilbagekaldelse eller bortfald fra fordringshavers side.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Et positivit heltal, som kan være op til 18 tal langt startende fra 0 til 99.999.999.999.999.999.999</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftSidsteBetalingDato" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Sidste rettidige betalingsdato. Den sidste frist for, hvornår en fordring skal være betalt.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftStatus" type="dmr:OpgjortAfgiftStatusType">
+	</xs:element>
+	<xs:element name="OpgjortAfgiftTypeId" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Feltet  bruges ved leasingafgifter til at skelne mellem opkrævning, ekstraopkrævning, samt regulering. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftOprindeligDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>En oprindelig registrering af tidspunktet (inkl. dato) for, hvornår afgiften blev beregnet og opgjort.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftId" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Unik identifikation af den opgjorte afgift.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OpgjortAfgiftOprindeligId" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>En identifikation af den oprindelige opgjorte afgift, som den nuværende opgjorte afgift er en omberegning af.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

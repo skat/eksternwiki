@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r27806</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Adresse.xsd"/>
+	<xs:include schemaLocation="../class/AdresseType.xsd"/>
+	<xs:include schemaLocation="../class/Land.xsd"/>
+	<xs:element name="AdresseStruktur" type="dmr:AdresseStrukturType"/>
+	<xs:complexType name="AdresseStrukturType">
+		<xs:sequence>
+			<xs:element name="Adresse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:AdresseFortloebendeNummer" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseAnvendelseKode" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseVejNavn" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseVejKode" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseFraHusNummer" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseTilHusNummer" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseFraHusBogstav" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseTilHusBogstav" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseLigeUlige" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseEtageTekst" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseSideDoerTekst" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseCONavn" minOccurs="0"/>
+						<xs:element ref="dmr:AdressePostNummer" minOccurs="0"/>
+						<xs:element ref="dmr:AdressePostDistrikt" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseByNavn" minOccurs="0"/>
+						<xs:element ref="dmr:AdressePostBox" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseGyldigFra" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseGyldigTil" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseTypeKode" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseTypeTekst" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseTypeGyldigFra" minOccurs="0"/>
+						<xs:element ref="dmr:AdresseTypeGyldigTil" minOccurs="0"/>
+						<xs:element ref="dmr:LandKode" minOccurs="0"/>
+						<xs:element ref="dmr:LandNavn" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
