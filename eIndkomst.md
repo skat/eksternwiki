@@ -1,4 +1,4 @@
-# eIndkomst efter TIN
+# eIndkomst
 Dette er en samling af den tekniske side ved eIndkomst OIO-service. Du kan finde en mere overordnet beskrivelse af [eIndkomst](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst)
 
 **Servicespecifikationer**
