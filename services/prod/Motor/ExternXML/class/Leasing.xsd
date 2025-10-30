@@ -59,4 +59,9 @@
 			<xs:documentation>Værdifastsættelsen, leasingaftalen er baseret på efter foretaget H81. Dette felt bliver ikke sat før en leasingaftale har været reguleret (H81).</xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:element name="LeasingVaerditabStatusTypeNummer" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Et nummer, som unikt beskriver hvilken værditabsstatus, der er tilknyttet leasing certifikatet.  Kan have en af tre værdier:  - Medtaget - Fravalgt - Fortabt</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>
