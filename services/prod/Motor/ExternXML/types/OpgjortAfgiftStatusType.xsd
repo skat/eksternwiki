@@ -2,12 +2,13 @@
 <xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
 	<xs:simpleType name="OpgjortAfgiftStatusType">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="10"/>
+			<xs:maxLength value="50"/>
 			<xs:enumeration value="Oprettet"/>
 			<xs:enumeration value="Fordret"/>
 			<xs:enumeration value="Tilbagekaldt"/>
 			<xs:enumeration value="LagtIDMOKø"/>
 			<xs:enumeration value="FejlRettet"/>
+			<xs:enumeration value="FordretUdenforDMR"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
