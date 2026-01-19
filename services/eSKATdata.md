@@ -4,7 +4,7 @@
 Dette er de seneste OIO-services i form af zip-filer med alle schemaer:
 </p>
 <ul>
-<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20260119/OIO/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20260119/OIO/HentSelvSendData.zip">HentSelvSendData</a> - leverance 20260119</div>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSkatdata20260119/OIO/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSkatdata20260119/OIO/HentSelvSendData.zip">HentSelvSendData</a> - leverance 20260119</div>
 </li>
 </ul>
 
