@@ -55,4 +55,9 @@
 			<xs:documentation>Bolsk værdi, som fortæller om en registrering er tilknyttet et leasing-forhold. Mulige værdier: True False </xs:documentation>
 		</xs:annotation>
 	</xs:element>
+	<xs:element name="KoeretoejRegistreringAfgoerelseDato" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Angiver tidspunktet en handling har udløst oversendelse af afgørelsesmeddelelse.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>

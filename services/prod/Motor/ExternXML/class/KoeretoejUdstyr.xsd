@@ -4,9 +4,45 @@
 		<xs:documentation>Et køretøj kan have en del udstyr monteret. Derfor er det relevant at kunne identificere hvilke udstyr, der er monteret, og hvilket udstyr der er afmonteret igen.  Der kan forekomme flere tidsmæssige adskilte relationer imellem et specifikt køretøj og et specifikt udstyr.</xs:documentation>
 	</xs:annotation>
 	<xs:include schemaLocation="../types/TalHelType.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
 	<xs:element name="KoeretoejUdstyrAntal" type="dmr:TalHelType">
 		<xs:annotation>
 			<xs:documentation>Antallet af forekomster af det givne udstyr. Dette kunne f.eks. være antallet af sikkerhedspuder, antallet af selestrammere m.v.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrSelealarmAntal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Angiver antal af selealarmer.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrSiderudeVarerum" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver om der er siderude i varerum, kan være true eller false.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrESP" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver om der er Elektronisk Stabiliserings Program i køretøjet, kan være true eller false.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrABSBremser" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver om der er ABS bremser i køretøjet, kan være true eller false.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrAirbagAntal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Angiver antal af airbags.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrRadio" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Angiver om der er radio i køretøjet, kan være true eller false.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejUdstyrIntegreretBarnesaedeAntal" type="dmr:TalHelType">
+		<xs:annotation>
+			<xs:documentation>Angiver antal af integrerede barnesæder.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 </xs:schema>
