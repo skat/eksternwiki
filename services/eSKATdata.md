@@ -4,27 +4,17 @@
 Dette er de seneste OIO-services i form af zip-filer med alle schemaer:
 </p>
 <ul>
-<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSkatdata20260119/OIO/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSkatdata20260119/OIO/HentSelvSendData.zip">HentSelvSendData</a> - leverance 20260119</div>
+<li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSkatdata20260204/OIO/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSkatdata20260204/OIO/HentSelvSendData.zip">HentSelvSendData</a> - leverance 20260204</div>
 </li>
 </ul>
 
 <p>
 <strong>Ændringslog:</strong>
 </p>
-<pre class="code">HentSelvSendData (19-01-2026)
+<pre class="code">HentSelvSendData (04-02-2026)
 
-ÆNDRINGSLOG 19.01.2026
-
-NYE DATAELEMENTER TILFØJET:
-
-PersonKontrolOplysningPantebrevePensionForsikringEjerandelProcent
-PersonKontrolOplysningPantebreveDepotEjerandelProcent
-PersonKontrolOplysningGaeldForsikringPensionEjerandelProcent
-PersonKontrolOplysningGaeldRealkreditinstitutEjerandelProcent
-PersonKontrolOplysningGaeldOEvrigeEjerandelProcent
-PersonKontrolOplysningGaeldBankEjerandelProcent
-EjendomsvaerdiBeloeb
-AuthorityCode
+ÆNDRINGSLOG 04.02.2026
+INGEN NYE OIO ELEMENTER.
 </pre>
 <ul>
 <li class="level1"><div class="li"> <a href="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/Arkiv/eSKATdata20140922/OIOXML/" class="interwiki iw_this" title="https://github.com/skat/eksternwiki/tree/main/systems/eSKATdata (HentSelv)/eSKATdata20140922/OIOXML/HentSelvOIO_20140922.zip">PersonSamtykkeOpret</a> - leverance 20140922 (preview)</div>
