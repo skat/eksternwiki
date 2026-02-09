@@ -1,0 +1,1 @@
+I første omgang skal I se bort fra versionering og namespace elementerne.
