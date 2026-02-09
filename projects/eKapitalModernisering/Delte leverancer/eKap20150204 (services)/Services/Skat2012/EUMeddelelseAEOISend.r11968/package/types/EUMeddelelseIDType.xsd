@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 version="1.0">
+            
+            <xs:simpleType name="EUMeddelelseIDType">
+               <xs:annotation>
+                  <xs:documentation>Unik identifikation af en EU-meddelelse Identen kan maksimalt være 64 karakterer. Afsenderen skal sikre, at identen er unik for systemets levetid.  De første to karakterer i EUMeddelelseID skal altid være landekode.</xs:documentation>
+               </xs:annotation>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="64"/>
+                  <xs:pattern value="[A-Z]{2}[0-9]{62} "/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:schema>

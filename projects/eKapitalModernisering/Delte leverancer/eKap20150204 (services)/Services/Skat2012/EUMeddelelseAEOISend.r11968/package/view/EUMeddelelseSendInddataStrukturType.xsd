@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <xs:schema xmlns:skat2012="http://skat.dk/begrebsmodel/2012/01/01/"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 targetNamespace="http://skat.dk/begrebsmodel/2012/01/01/"
+                 elementFormDefault="qualified"
+                 attributeFormDefault="unqualified"
+                 version="1.0">
+         
+         <xs:annotation>
+            <xs:documentation/>
+            <xs:documentation>r11968</xs:documentation>
+         </xs:annotation>
+         <xs:include schemaLocation="../class/Land.xsd"/>
+         <xs:include schemaLocation="../class/EUMeddelelse.xsd"/>
+         <xs:include schemaLocation="../operational/EUMeddelelseIDBinaer.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseIDHex.xsd"/>
+				     
+				     
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseType.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseUdvekslingstype.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelsePrioritet.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseIntegritetMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseFortroligtMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseKomprimeretMarkering.xsd"/>
+				     
+         <xs:include schemaLocation="../operational/EUMeddelelseKomprimeretAlgoritme.xsd"/>
+				     
+         <xs:element name="EUMeddelelseSendInddataStruktur"
+                     type="skat2012:EUMeddelelseSendInddataStrukturType"/>
+         <xs:complexType name="EUMeddelelseSendInddataStrukturType">
+         
+         
+         
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+               <xs:sequence>
+               <xs:element name="Modtagerland">
+                  <xs:complexType>
+                     <xs:sequence>
+                        <xs:element ref="skat2012:LandKode"/>
+                     </xs:sequence>
+                  </xs:complexType>
+               </xs:element>
+
+               <xs:element ref="skat2012:EUMeddelelseID" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EUMeddelelseIDBinær" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EUMeddelelseIDHex" minOccurs="0"/>
+
+
+               <!--Sequence removed-->
+
+                  <xs:element name="MeddelelseRelation" minOccurs="0">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element ref="skat2012:EUMeddelelseID"/>
+
+                           <xs:element ref="skat2012:EUMeddelelseIDBinær" minOccurs="0"/>
+
+
+
+                           <xs:element ref="skat2012:EUMeddelelseIDHex" minOccurs="0"/>
+
+
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               
+               <xs:element ref="skat2012:EUMeddelelseType"/>
+
+               <xs:element ref="skat2012:EUMeddelelseUdvekslingstype" minOccurs="0"/>
+
+               <xs:element ref="skat2012:EUMeddelelseIndhold"/>
+
+               <xs:element ref="skat2012:EUMeddelelsePrioritet" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EUMeddelelseIntegritetMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EUMeddelelseFortroligtMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EUMeddelelseKomprimeretMarkering" minOccurs="0"/>
+
+
+
+               <xs:element ref="skat2012:EUMeddelelseKomprimeretAlgoritme" minOccurs="0"/>
+
+            </xs:sequence>
+            
+         
+         
+         
+         
+         
+         
+         
+         </xs:complexType>
+      </xs:schema>
