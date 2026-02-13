@@ -1,0 +1,23 @@
+CHANGELOG:
+
+Følgende felt er flyttet fra *PrivatArbejdsgiver* til *IndkomstoplysningerTværgående*:
+UdenlandskPersonligIndkomstPendlerArbejdslandBopælsland
+
+CPR nummer løftes ud i Query parameter
+---------------------------------------
+Oprindelig specifikation:
+
+*Personselvangivelse*
+[
+    *Angiver* OBS: Kommentar: Angiver fjernes helt 
+    [
+        PersonCPRNummer
+    ]
+
+
+Ny specifikation:
+
+*QueryParameters*
+[
+	PersonCPRNummer
+]
