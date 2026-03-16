@@ -32,9 +32,9 @@ Dette er en samling af den tekniske side ved eIndkomst OIO-service. Du kan finde
 
 [eIndkomst14](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst14) - service IndkomstOplysningSumHent
 
-[eIndkomst15](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst14) - service eSkattekortHent
+[eIndkomst15](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst15) - service eSkattekortHent
 
-[eIndkomst17](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst14) - service AnsaettelseForholdPersonHent
+[eIndkomst17](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst17) - service AnsaettelseForholdPersonHent
 
 [eIndkomst18](https://github.com/skat/eksternwiki/tree/main/services/demotin/eIndkomst18) - service AnsaettelseForholdPersonKontroller
 
