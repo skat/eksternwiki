@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:ctxt="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="https://github.com/skat/eksternwiki/blob/main/oioxml/skat_dk/basis/SKAT_FejlIdentifikator.xsd"/>
-	<xs:include schemaLocation="https://github.com/skat/eksternwiki/blob/main/oioxml/skat_dk/basis/SKAT_FejlTekst.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/basis/SKAT_FejlIdentifikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/basis/SKAT_FejlTekst.xsd"/>
 	<xs:element name="FejlStruktur" type="ctxt:FejlStrukturType">
 		<xs:annotation>
 			<xs:documentation>Et dokumentfragment med denne struktur beskriver en enkelt forretningsmæssig fejl i svaret fra en webservice. Fejlen består i en identifikator for fejlen samt en fejlbeskrivelse der kan have specifikt forretningsmæssigt indhold. De forventelige værdierne i denne struktur er en del af kontrakten for de enkelte services som FejlStruktur indgår i.</xs:documentation>
