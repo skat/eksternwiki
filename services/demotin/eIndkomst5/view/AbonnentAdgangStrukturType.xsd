@@ -3,9 +3,9 @@
 	<xs:annotation>
 		<xs:documentation/>
 	</xs:annotation>
-	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/adgangformaaltype/SKAT_AdgangFormaalTypeKode.xsd"/>
-	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/abonnenttype/SKAT_AbonnentTypeKode.xsd"/>
-	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/abonnementtype/SKAT_AbonnementTypeKode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/adgangformaaltype/xml/schemas/20071202/" schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/adgangformaaltype/SKAT_AdgangFormaalTypeKode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnenttype/xml/schemas/20071202/" schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/abonnenttype/SKAT_AbonnentTypeKode.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/skat.dk/eindkomst/class/abonnementtype/xml/schemas/20071202/" schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/abonnementtype/SKAT_AbonnementTypeKode.xsd"/>
 	<xs:element name="AbonnentAdgangStruktur" type="fase2:AbonnentAdgangStrukturType"/>
 	<xs:complexType name="AbonnentAdgangStrukturType">
 		<xs:sequence>
