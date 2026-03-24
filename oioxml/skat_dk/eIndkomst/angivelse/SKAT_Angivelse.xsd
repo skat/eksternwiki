@@ -5,17 +5,17 @@
 	</xs:annotation>
 	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/TSE/angivelse/SKAT_ValutaKode.xsd"/>
 	<xs:import namespace="http://rep.oio.dk/skat.dk/TSE/angivelse/xml/schemas/2006/09/01/" schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/TSE/angivelse/SKAT_AngivelseKvitteringIdentifikator.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseIdentifikator.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelsePeriode.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseDatoTid.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseValgtIndberetningFormKode.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseTilladtAktionKode.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseGyldigPeriode.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseUdbetalingStopIndikator.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseBemaerkningTekst.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseTilsvarBeloeb.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseStatusTekst.xsd"/>
-	<xs:include schemaLocation="http://eksternwiki.skat.dk/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseVirksomhedEgenIdentifikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseIdentifikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelsePeriode.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseDatoTid.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseValgtIndberetningFormKode.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseTilladtAktionKode.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseGyldigPeriode.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseUdbetalingStopIndikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseBemaerkningTekst.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseTilsvarBeloeb.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseStatusTekst.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/skat_dk/eIndkomst/angivelse/SKAT_AngivelseVirksomhedEgenIdentifikator.xsd"/>
 	<xs:element name="AngivelseKvitteringNummer" type="skat:AngivelseKvitteringIdentifikatorType">
 		<xs:annotation>
 			<xs:documentation>Kvitteringsnummer som tildeles angivelsen ved godkendt indberetning.  Kvitteringsnummer er unikt for hver angivelsestype. For enkelte angivelsestyper, f.eks. Udbytteskat, findes dog 2 sekvenser for kvitteringsnummer (et for udbytteskatten og et for udbyttemodtagerne).  Længden af feltet kan være forskelligt fra angivelsestype til angivelsestype, og nogle anvender timestmp.</xs:documentation>
