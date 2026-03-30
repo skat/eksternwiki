@@ -74,3 +74,5 @@ Dette er en samling af den tekniske side ved eIndkomst OIO-service. Du kan finde
 [eIndkomst18](https://github.com/skat/eksternwiki/tree/main/services/prodtin/eIndkomst18) - service AnsaettelseForholdPersonKontroller
 
 **WSDL'erne** indholder referencer til [schema-filer](https://github.com/skat/eksternwiki/tree/main/oioxml/skat_dk/eIndkomst)
+
+**Ændringslog**  - [Ændringslog](https://github.com/skat/eksternwiki/blob/main/services/changelog.txt)
