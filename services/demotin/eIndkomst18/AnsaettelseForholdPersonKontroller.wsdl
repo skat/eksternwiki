@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="AnsaettelseForholdPersonKontrollerService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" name="AnsaettelseForholdPersonKontrollerService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
          <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
             <xs:documentation>1.0</xs:documentation>
             <xs:documentation>r22141</xs:documentation>
@@ -21,14 +21,17 @@
             </wsdl:operation>
          </wsdl:portType>
          <wsdl:binding name="AnsaettelseForholdPersonKontrollerServiceBinding" type="fase2:AnsaettelseForholdPersonKontrollerServicePortType" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsp:PolicyReference URI="#wss10_anonymous_with_cert_policy"/>
 <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
 <wsdl:operation name="getAnsaettelseForholdPersonKontroller">
 <soap:operation soapAction="getAnsaettelseForholdPersonKontroller" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
 <wsdl:input>
-<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<soap:body parts="Request" use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsp:PolicyReference URI="#WSS10Anonymous_with_Certificates_input_policy"/>
 </wsdl:input>
 <wsdl:output>
-<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<soap:body parts="Response" use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+<wsp:PolicyReference URI="#WSS10anonymous_with_certs_output_policy"/>
 </wsdl:output>
 </wsdl:operation>
 </wsdl:binding>
@@ -37,4 +40,110 @@
 			<soap:address location="https://services.extranet.demo.skat.dk/vericert/services/AnsaettelseForholdPersonKontrollerV2ServicePort"/>
 		</wsdl:port>
 	</wsdl:service>
+
+	<wsp:Policy wsu:Id="wss10_anonymous_with_cert_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:AsymmetricBinding>
+					<wsp:Policy>
+						<sp:InitiatorToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+									<wsp:Policy>
+										<sp:WssX509V3Token10 />
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:InitiatorToken>
+						<sp:RecipientToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:WssX509V3Token10 />
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:RecipientToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict />
+							</wsp:Policy>
+						</sp:Layout>
+						<sp:IncludeTimestamp />
+						<sp:ProtectTokens />
+						<sp:OnlySignEntireHeadersAndBody />
+						<sp:SupportingTokens>
+							<wsp:Policy>
+								<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:NoPassword />
+										<sp:WssUsernameToken10 />
+									</wsp:Policy>
+								</sp:UsernameToken>
+							</wsp:Policy>
+						</sp:SupportingTokens>
+					</wsp:Policy>
+				</sp:AsymmetricBinding>
+				<sp:Wss10>
+					<wsp:Policy>
+						<sp:MustSupportRefKeyIdentifier />
+					</wsp:Policy>
+				</sp:Wss10>
+			</wsp:All>
+			<wsp:All>
+				<sp:TransportBinding>
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken>
+									<wsp:Policy>
+										<sp:HttpBasicAuthentication />
+									</wsp:Policy>
+								</sp:HttpsToken>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:SupportingTokens>
+							<wsp:Policy>
+								<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:NoPassword />
+										<sp:WssUsernameToken10 />
+									</wsp:Policy>
+								</sp:UsernameToken>
+							</wsp:Policy>
+						</sp:SupportingTokens>
+					</wsp:Policy>
+				</sp:TransportBinding>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WSS10Anonymous_with_Certificates_input_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts>
+					<sp:Body />
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WSS10anonymous_with_certs_output_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts>
+					<sp:Header />
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+
 </wsdl:definitions>
