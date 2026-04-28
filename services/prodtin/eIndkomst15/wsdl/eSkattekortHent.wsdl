@@ -1,40 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="eSkattekortHentService">
+<definitions targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/"
+	name="eSkattekortHentService"
+	xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+	xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
 	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
-		<xs:documentation>Formålet er at udstille eSkattekort til offentlige myndigheder, A-kasser o. lign., der har brug for et øjebliks-billede af skattekortoplysninger og, som SKAT har givet tilladelse hertil. Der er udelukkende tale om en udstilling af det/de ønskede skattekortoplysninger.   Det kontrolleres, at SKAT har givet bruger tilladelse til at få udstillet det/de ønskede skattekortoplysninger, herunder om bruger kan få alle oplysninger om eSkattekort med specifikation af trækprocent i A-skat og lønindeholdelse - og andre kun de traditionelle skattekortoplysninger.  Der hentes eSkattekort, som er gyldige på den anførte SøgeDatoFra, hvis eSkattekortAlleMarkering er 'Falsk', dvs. det er angivet, at der alene ønskes eSkattekort, som er gældende på den anførte dato ønskes.  Der hentes eSkattekort, som er gyldige på samt fra og med den anførte SøgeDatoFra, hvis eSkattekortAl-leMarkering er 'Sand', dvs. der er angivet, at der ønskes eSkattekort, som er gældende på den anførte dato samt eventuelle 'nyere' eSkattekort.  En anvender af servicen kan pt. anvende følgende værdier af eSkattekortRekvisitionTypeKode: 01 = hovedkort 02 = bikort 06 = hovedkort uden lønindeholdelse  07 = bikort uden lønindeholdelse  Hvis der er anvendt: eSkattekortRekvisitionTypeKode = 01 (Hovedkort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 0 = Intet skattekort 1 = Bruttokort 2 = Hovedkort 3 = Frikort  eSkattekortRekvisitionTypeKode = 02 (Bikort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 0 = Intet skattekort 1 = Bruttokort 3 = Frikort 4 = Bikort  eSkattekortRekvisitionTypeKode = 06 (Hovedkort uden lønindeholdelse) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 0 = Intet skattekort 3 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortSærskiltForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  5 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortSærskiltForskudTrækProcent vil være udfyldt)  6 = Hovedkort uden lønindeholdelse  eSkattekortRekvisitionTypeKode = 07 (Bikort uden lønindeholdelse) så kan svaret indeholde føl-gende værdier af eSkattekortTypeKode: 0 = Intet skattekort 3 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortSærskiltForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  5 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skattekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortSærskiltForskudTrækProcent vil være udfyldt) 7 = Bikort uden lønindeholdelse</xs:documentation>
+		<xs:documentation>Formålet er at udstille eSkattekort til offentlige myndigheder, A-kasser o. lign., der har brug for et øjebliks-billede af skattekortoplysninger og, som SKAT har givet tilladelse hertil. Der er udelukkende tale om en udstilling af det/de ønskede skattekortoplysninger.   Formålet er også at udstille skattekortoplysninger til brug ved opsplitning af indeholdt A-skat i reel A-skat og i lønindeholdelse.  Det kontrolleres, at SKAT har givet bruger tilladelse til at få udstillet det/de ønskede skattekortoplysninger, herunder om bruger kan få alle oplysninger om eSkattekort med specifikation af trækprocent i A-skat og lønindeholdelse - og andre kun de traditionelle skattekortoplysninger.  Der hentes eSkattekort, som er gyldige på den anførte SøgeDatoFra, hvis eSkattekortAlleMarkering er 'Falsk', dvs. det er angivet, at der alene ønskes eSkattekort, som er gældende på den anførte dato ønskes.  Der hentes eSkattekort, som er gyldige på samt fra og med den anførte SøgeDatoFra, hvis eSkattekortAl-leMarkering er 'Sand', dvs. der er angivet, at der ønskes eSkattekort, som er gældende på den anførte dato samt eventuelle 'nyere' eSkattekort.  En anvender af servicen kan pt. anvende følgende værdier af eSkattekortRekvisitionTypeKode:  01 = hovedkort 02 = bikort 06 = hovedkort uden lønindeholdelse  07 = bikort uden lønindeholdelse  Hvis der er anvendt: eSkattekortRekvisitionTypeKode = 01 (Hovedkort) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 01 = Bruttokort 02 = Hovedkort 03 = Frikort  eSkattekortRekvisitionTypeKode = 02 (Bikort) så kan svaret indeholde følgende værdier af eSkatte-kortTypeKode: 00 = Intet skattekort 01 = Bruttokort 03 = Frikort 04 = Bikort  eSkattekortRekvisitionTypeKode = 06 (Hovedkort uden lønindeholdelse) så kan svaret indeholde følgende værdier af eSkattekortTypeKode: 00 = Intet skattekort 03 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Bå-de eSkattekortTrækProcent, eSkattekortForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  05 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortForskudTrækProcent vil være udfyldt)  06 = Hovedkort uden lønindeholdelse  eSkattekortRekvisitionTypeKode = 07 (Bikort uden lønindeholdelse) så kan svaret indeholde føl-gende værdier af eSkattekortTypeKode: 00 = Intet skattekort 03 = Frikort (når aktuelt skattekort er med i Frikortindex og IKKE med i Lønindeholdelsesindex. Både eSkattekortTrækProcent, eSkattekortForskudTrækProcent og eSkatteFrikortSaldo vil være udfyldt)  05 = Bruttokort uden lønindeholdelse (når aktuelt skattekort er bruttoskattekort eller når aktuelt skat-tekort er med i både Frikortindex og Lønindeholdelsesindex. Både eSkattekortTrækProcent og eSkattekortForskudTrækProcent vil være udfyldt) 07 = Bikort uden lønindeholdelse</xs:documentation>
 	</xs:annotation>
-	<wsdl:types>
+	<types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
-			<xsd:include schemaLocation="../service/eSkattekortHentInterface.xsd"/>
+			<xsd:include schemaLocation="../service/eSkattekortHentInterface.oio.xsd"/>
 		</xsd:schema>
-	</wsdl:types>
-	<wsdl:message name="eSkattekortHentServiceRequest">
-		<wsdl:part name="Request" element="fase2:eSkattekortHent_I"/>
-	</wsdl:message>
-	<wsdl:message name="eSkattekortHentServiceResponse">
-		<wsdl:part name="Response" element="fase2:eSkattekortHent_O"/>
-	</wsdl:message>
-	<wsdl:portType name="eSkattekortHentServicePortType">
-		<wsdl:operation name="geteSkattekortHent">
-			<wsdl:input message="fase2:eSkattekortHentServiceRequest"/>
-			<wsdl:output message="fase2:eSkattekortHentServiceResponse"/>
-		</wsdl:operation>
-	</wsdl:portType>
-	<wsdl:binding name="eSkattekortHentServiceBinding" type="fase2:eSkattekortHentServicePortType">
+	</types>
+	<message name="eSkattekortHentServiceRequest">
+		<part name="Request" element="fase2:eSkattekortHent_I"/>
+	</message>
+	<message name="eSkattekortHentServiceResponse">
+		<part name="Response" element="fase2:eSkattekortHent_O"/>
+	</message>
+	<portType name="eSkattekortHentServicePortType">
+		<operation name="geteSkattekortHent">
+			<input message="fase2:eSkattekortHentServiceRequest"/>
+			<output message="fase2:eSkattekortHentServiceResponse"/>
+		</operation>
+	</portType>
+	<binding name="eSkattekortHentServiceBinding" type="fase2:eSkattekortHentServicePortType">
+	 	<wsp:PolicyReference URI="#wss10_anonymous_with_cert_policy"/>
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<wsdl:operation name="geteSkattekortHent">
-			<soap:operation soapAction="geteSkattekortHent"/>
-			<wsdl:input>
-				<soap:body use="literal"/>
-			</wsdl:input>
-			<wsdl:output>
-				<soap:body use="literal"/>
-			</wsdl:output>
-		</wsdl:operation>
-	</wsdl:binding>
-	<wsdl:service name="eSkattekortHentServiceBindingQSService">
-		<wsdl:port name="eSkattekortHentServiceBindingQSPort" binding="fase2:eSkattekortHentServiceBinding">
+		<operation name="geteSkattekortHent">
+			<soap:operation soapAction="urn:geteSkattekortHent"/>
+			<input>
+				<soap:body parts="Request" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10Anonymous_with_Certificates_input_policy"/>
+			</input>
+			<output>
+				<soap:body parts="Response" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10anonymous_with_certs_output_policy"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ESkattekortHentServiceOIO">
+		<port name="eSkattekortHentServicePort" binding="fase2:eSkattekortHentServiceBinding">
 			<soap:address location="https://services.extranet.skat.dk/vericert/services/eSkattekortHentServicePort"/>
-		</wsdl:port>
-	</wsdl:service>
-</wsdl:definitions>
+		</port>
+	</service>
+
+	<wsp:Policy wsu:Id="wss10_anonymous_with_cert_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:AsymmetricBinding>
+					<wsp:Policy>
+						<sp:InitiatorToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+									<wsp:Policy>
+										<sp:WssX509V3Token10/>
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:InitiatorToken>
+						<sp:RecipientToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:WssX509V3Token10/>
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:RecipientToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+						<sp:IncludeTimestamp/>
+						<sp:ProtectTokens/>
+						<sp:OnlySignEntireHeadersAndBody/>
+						<sp:SupportingTokens>
+							<wsp:Policy>
+								<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:NoPassword/>
+										<sp:WssUsernameToken10 />
+									</wsp:Policy>
+								</sp:UsernameToken>
+							</wsp:Policy>
+						</sp:SupportingTokens>
+					</wsp:Policy>
+				</sp:AsymmetricBinding>
+				<sp:Wss10>
+					<wsp:Policy>
+						<sp:MustSupportRefKeyIdentifier/>
+					</wsp:Policy>
+				</sp:Wss10>
+			</wsp:All>
+			<wsp:All>
+				<sp:TransportBinding>
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken>
+									<wsp:Policy>
+										<sp:HttpBasicAuthentication/>
+									</wsp:Policy>
+								</sp:HttpsToken>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:SupportingTokens>
+							<wsp:Policy>
+								<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:NoPassword/>
+										<sp:WssUsernameToken10 />
+									</wsp:Policy>
+								</sp:UsernameToken>
+							</wsp:Policy>
+						</sp:SupportingTokens>
+					</wsp:Policy>
+				</sp:TransportBinding>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WSS10Anonymous_with_Certificates_input_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts>
+					<sp:Body/>
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WSS10anonymous_with_certs_output_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts>
+					<sp:Body/>
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+
+</definitions>

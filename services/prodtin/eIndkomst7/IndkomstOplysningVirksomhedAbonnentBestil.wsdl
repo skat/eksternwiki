@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IndkomstOplysningVirksomhedAbonnentBestilService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
+<wsdl:definitions xmlns:fase2="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" name="IndkomstOplysningVirksomhedAbonnentBestilService" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
 	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
 		<xs:documentation>ABONNEMENT 
 En abonnents bestilling til senere (asynkron) levering af indkomstoplysninger, som en eller flere indberet-ningspligtige (lønudbetalere e. lign.), har indberettet, for en eller flere fysiske eller juridiske personer. (Fy-siske personer er personer identificeret med dansk CPR-nummer og/eller navn, adresse mm. Juridiske personer er virksomheder identificeret med CVR- eller SE-nummer). 
@@ -51,11 +51,11 @@ ANDRE FORHOLD
 Servicen kan ikke anvendes i digitale selvbetjeningsløsninger til virksomheder. 
 Servicen anvendes normalt ikke til præsentation af oplysninger via en brugergrænseflade for en sagsbehandler, da bestilte oplysninger først leveres efter et stykke tid, medmindre abonnenten understøtter asynkron levering af bestilte oplysninger til en brugergrænseflade.</xs:documentation>
 	</xs:annotation>
-	<wsdl:types>
+	<types>
 		<xsd:schema targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			<xsd:include schemaLocation="skat_dk/eindkomst/IndkomstOplysningVirksomhedAbonnentBestilInterface.xsd"/>
 		</xsd:schema>
-	</wsdl:types>
+	</types>
 	<!-- Asynchronous I method -->
 	<wsdl:message name="IndkomstOplysningVirksomhedAbonnentBestilServiceRequest_I">
 		<wsdl:part element="fase2:IndkomstOplysningVirksomhedAbonnentBestil_I_I" name="Request"/>
@@ -98,38 +98,47 @@ Servicen anvendes normalt ikke til præsentation af oplysninger via en brugergr�
 	</wsdl:portType>
 
 	<wsdl:binding name="Binding1" type="fase2:IndkomstOplysningVirksomhedAbonnentBestil_IServicePortType">
+		<wsp:PolicyReference URI="#wss10_anonymous_with_cert_policy"/>
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<wsdl:operation name="getIndkomstOplysningVirksomhedAbonnentBestil_I">
 			<soap:operation soapAction="urn:#IndkomstOplysningVirksomhedAbonnentBestil_I"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body parts="Request" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10Anonymous_with_Certificates_input_policy"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body parts="Response" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10anonymous_with_certs_output_policy"/>
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="Binding2" type="fase2:IndkomstOplysningVirksomhedAbonnentBestil_OServicePortType">
+		<wsp:PolicyReference URI="#wss10_anonymous_with_cert_policy"/>
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<wsdl:operation name="getIndkomstOplysningVirksomhedAbonnentBestil_O">
 			<soap:operation soapAction="urn:#IndkomstOplysningVirksomhedAbonnentBestil_O"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body parts="Request" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10Anonymous_with_Certificates_input_policy"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body parts="Response" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10anonymous_with_certs_output_policy"/>
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="Binding3" type="fase2:IndkomstOplysningVirksomhedAbonnentBestil_AfslutServicePortType">
+		<wsp:PolicyReference URI="#wss10_anonymous_with_cert_policy"/>
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<wsdl:operation name="getIndkomstOplysningVirksomhedAbonnentBestilAfslut_I">
 			<soap:operation soapAction="urn:#getIndkomstOplysningVirksomhedAbonnentBestilAfslut_I"/>
 			<wsdl:input>
-				<soap:body use="literal"/>
+				<soap:body parts="Request" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10Anonymous_with_Certificates_input_policy"/>
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"/>
+				<soap:body parts="Response" use="literal"/>
+				<wsp:PolicyReference URI="#WSS10anonymous_with_certs_output_policy"/>
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
@@ -138,10 +147,116 @@ Servicen anvendes normalt ikke til præsentation af oplysninger via en brugergr�
 			<soap:address location="https://services.extranet.skat.dk/vericert/services/IndkomstOplysningVirksomhedAbonnentBestilV2ServicePort"/>
 		</wsdl:port>
 		<wsdl:port binding="fase2:Binding2" name="Binding2Port">
-			<soap:address location="https://services.extranet.skat.dk/vericert/services/V2/BestillingHent "/>
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/V2.1/BestillingHent"/>
 		</wsdl:port>
 		<wsdl:port binding="fase2:Binding3" name="Binding3Port">
-			<soap:address location="https://services.extranet.skat.dk/vericert/services/V2/BestillingModtaget "/>
+			<soap:address location="https://services.extranet.skat.dk/vericert/services/V2/BestillingModtaget"/>
 		</wsdl:port>
 	</wsdl:service>
+
+	<wsp:Policy wsu:Id="wss10_anonymous_with_cert_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:AsymmetricBinding>
+					<wsp:Policy>
+						<sp:InitiatorToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+									<wsp:Policy>
+										<sp:WssX509V3Token10 />
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:InitiatorToken>
+						<sp:RecipientToken>
+							<wsp:Policy>
+								<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:WssX509V3Token10 />
+									</wsp:Policy>
+								</sp:X509Token>
+							</wsp:Policy>
+						</sp:RecipientToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict />
+							</wsp:Policy>
+						</sp:Layout>
+						<sp:IncludeTimestamp />
+						<sp:ProtectTokens />
+						<sp:OnlySignEntireHeadersAndBody />
+						<sp:SupportingTokens>
+							<wsp:Policy>
+								<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:NoPassword />
+										<sp:WssUsernameToken10 />
+									</wsp:Policy>
+								</sp:UsernameToken>
+							</wsp:Policy>
+						</sp:SupportingTokens>
+					</wsp:Policy>
+				</sp:AsymmetricBinding>
+				<sp:Wss10>
+					<wsp:Policy>
+						<sp:MustSupportRefKeyIdentifier />
+					</wsp:Policy>
+				</sp:Wss10>
+			</wsp:All>
+			<wsp:All>
+				<sp:TransportBinding>
+					<wsp:Policy>
+						<sp:TransportToken>
+							<wsp:Policy>
+								<sp:HttpsToken>
+									<wsp:Policy>
+										<sp:HttpBasicAuthentication />
+									</wsp:Policy>
+								</sp:HttpsToken>
+							</wsp:Policy>
+						</sp:TransportToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256 />
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:SupportingTokens>
+							<wsp:Policy>
+								<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Never">
+									<wsp:Policy>
+										<sp:NoPassword />
+										<sp:WssUsernameToken10 />
+									</wsp:Policy>
+								</sp:UsernameToken>
+							</wsp:Policy>
+						</sp:SupportingTokens>
+					</wsp:Policy>
+				</sp:TransportBinding>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WSS10Anonymous_with_Certificates_input_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts>
+					<sp:Body />
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WSS10anonymous_with_certs_output_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts>
+					<sp:Header />
+				</sp:SignedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+
 </wsdl:definitions>
