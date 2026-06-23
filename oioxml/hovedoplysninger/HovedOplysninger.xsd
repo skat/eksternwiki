@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tsk="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://rep.oio.dk/skat.dk/basis/kontekst/xml/schemas/2006/09/01/" version="1.0">
-	<xs:include schemaLocation="TransaktionIdentifikator.xsd"/>
-	<xs:include schemaLocation="TransaktionTid.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/hovedoplysninger/TransaktionIdentifikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/hovedoplysninger/TransaktionTid.xsd"/>
 	<!-- HovedOplysninger -->
 	<xs:element name="HovedOplysninger" type="tsk:HovedOplysningerType"/>
 	<xs:complexType name="HovedOplysningerType">

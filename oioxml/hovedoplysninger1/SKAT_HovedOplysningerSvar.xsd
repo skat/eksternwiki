@@ -5,10 +5,10 @@
 Strukturen forudsætter ikke nogen servicespecifk viden, udover at navnet på den konkrete service skal stå i feltet ServiceIndikator. 
 De fejl og adviser der rapporteres med strukturen skal betragtes som unikt identificeret af ServiceIdentifikator+FejlIdentifikator henholdsvis ServiceIdentifikator+AdvisIdentifikator. Herved kan forskellige services benytte overlappende serier af identifikatorer og stadigvæk være unikt identificeret.</xs:documentation>
 	</xs:annotation>
-	<xs:include schemaLocation="https://eksternwiki.skat.dk/oioxml/hovedoplysninger1/SvarStruktur.xsd"/>
-	<xs:include schemaLocation="https://eksternwiki.skat.dk/oioxml/hovedoplysninger1/TransaktionIdentifikator.xsd"/>
-	<xs:include schemaLocation="https://eksternwiki.skat.dk/oioxml/hovedoplysninger1/TransaktionTid.xsd"/>
-	<xs:include schemaLocation="https://eksternwiki.skat.dk/oioxml/hovedoplysninger1/ServiceIdentifikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/hovedoplysninger1/SvarStruktur.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/hovedoplysninger1/TransaktionIdentifikator.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/hovedoplysninger1/TransaktionTid.xsd"/>
+	<xs:include schemaLocation="https://raw.githubusercontent.com/skat/eksternwiki/refs/heads/main/oioxml/hovedoplysninger1/ServiceIdentifikator.xsd"/>
 	<!-- HovedOplysningerSvar -->
 	<xs:element name="HovedOplysningerSvar" type="ctxt:HovedOplysningerSvarType">
 		<xs:annotation>
