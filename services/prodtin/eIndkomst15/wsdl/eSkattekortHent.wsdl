@@ -13,7 +13,7 @@
 	</xs:annotation>
 	<types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rep.oio.dk/skat.dk/eindkomst/">
-			<xsd:include schemaLocation="../service/eSkattekortHentInterface.oio.xsd"/>
+			<xsd:include schemaLocation="../service/eSkattekortHentInterface.xsd"/>
 		</xsd:schema>
 	</types>
 	<message name="eSkattekortHentServiceRequest">
@@ -79,7 +79,7 @@
 						</sp:AlgorithmSuite>
 						<sp:Layout>
 							<wsp:Policy>
-								<sp:Strict/>
+								<sp:Lax/>
 							</wsp:Policy>
 						</sp:Layout>
 						<sp:IncludeTimestamp/>
