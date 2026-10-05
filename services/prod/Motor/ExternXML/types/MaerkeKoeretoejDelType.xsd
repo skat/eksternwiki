@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="MaerkeKoeretoejDelType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+			<xs:enumeration value="ENGCT"/>
+			<xs:enumeration value="PASCT"/>
+			<xs:enumeration value="LUGCT"/>
+			<xs:enumeration value="INSPL"/>
+			<xs:enumeration value="DRAWB"/>
+			<xs:enumeration value="CHASS"/>
+			<xs:enumeration value="APILR"/>
+			<xs:enumeration value="BPILR"/>
+			<xs:enumeration value="CPILR"/>
+			<xs:enumeration value="DPILR"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder WLTP-emissionsoplysninger for et køretøjs motor, herunder CO, NOx, partikler, røgtæthed samt CO2-udslip for forbrændingsmotorer og plugin-hybridbiler.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tal8Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal9Decimaler5Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal5Decimaler2Type.xsd"/>
+	<xs:element name="MotorEmissionsDetaljerWLTPEmissionCO" type="dmr:Tal8Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP Type 1 CO-emission målt i mg/km Information findes i CoC dokumentets felt 48.1.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorEmissionsDetaljerWLTPEmissionNOx" type="dmr:Tal8Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP Type 1 NOx-emission målt i mg/km Information findes i CoC dokumentets felt 48.1.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorEmissionsDetaljerWLTPEmissionTHCPlusNOx" type="dmr:Tal8Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP Type 1 THC+NOx-emission målt i mg/km Information findes i CoC dokumentets felt 48.1.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorEmissionsDetaljerWLTPPartikler" type="dmr:Tal9Decimaler5Type">
+		<xs:annotation>
+			<xs:documentation>WLTP Type 1, milligram partikler per kilometer (mg/km) Information findes i CoC dokumentets felt 48.1.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorEmissionsDetaljerRoegTaethed" type="dmr:Tal9Decimaler5Type">
+		<xs:annotation>
+			<xs:documentation>Røgtæthed. En registrering af røgtætheden udledningen fra køretøjet målt i m-1. Informationen findes i CoC dokumentets felt 48.1.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorEmissionsDetaljerWLTPCO2UdslipForbraending" type="dmr:Tal5Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP CO2 kombineret, målt i g/km Information findes i CoC dokumentets felt 49.1 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorEmissionsDetaljerWLTPCO2UdslipPluginHybrid" type="dmr:Tal5Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP CO2 vægtet kombineret, målt i g/km Information findes i CoC dokumentets felt 49.4 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

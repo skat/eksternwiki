@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder emissionsoplysninger for et køretøj, herunder effektivitetsforhold, euronorm, CO2-emission og innovative teknikker. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tal9Decimaler5Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal5Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/Tekst25Type.xsd"/>
+	<xs:element name="EmissionDetaljerEffektivitetForholdM3" type="dmr:Tal9Decimaler5Type">
+		<xs:annotation>
+			<xs:documentation>Effektivitetsforhold pr. m³-kilometer Informationen findes i CoC dokumentets felt 49.11.3 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EmissionDetaljerEffektivitetForholdTon" type="dmr:Tal9Decimaler5Type">
+		<xs:annotation>
+			<xs:documentation>Effektivitetsforhold pr. tonkilometer Informationen findes i CoC dokumentets felt 49.11.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EmissionDetaljerInnovativTeknikCO2Sparet" type="dmr:Tal5Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP total CO2-emission sparet som følge af eco-innovation [Informationen findes i CoC dokumentets felt 49.3.2.2.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EmissionDetaljerSpecifikCO2Emission" type="dmr:Tal9Decimaler5Type">
+		<xs:annotation>
+			<xs:documentation>Specifikke CO2-emissioner pr. vægt Informationen findes i CoC dokumentets felt 49.5 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EmissionDetaljerEuronorm" type="dmr:Tekst25Type">
+		<xs:annotation>
+			<xs:documentation>Euronorm [Informationen findes i CoC dokumentets felt 47.] Værdisæt er: Euro 0, Euro 1, Euro 2, Euro 3, Euro 4, Euro 5, Euro 5+, Euro 5 A, Euro 5 B, Euro 5 C, Euro 5 D, Euro 5 E, Euro 5 F, Euro 5 G, Euro 5 H, Euro 5 I, Euro 5 J, Euro 5 K, Euro 5 L, Euro 5 M, Euro 6, Euro 6 AA, Euro 6 AB, Euro 6 AC, Euro 6 AD, Euro 6 AE, Euro 6 AF, Euro 6 AG, Euro 6 AH, Euro 6 AI, Euro 6 AJ, Euro 6 AK, Euro 6 AL, Euro 6 AM, Euro 6 AN, Euro 6 AO, Euro 6 AP, Euro 6 AQ, Euro 6 AR, Euro 6 BA, Euro 6 BB, Euro 6 BC, Euro 6 BG, Euro 6 BH, Euro 6 BI, Euro 6 CG, Euro 6 CH, Euro 6 CI, Euro 6 DG, Euro 6 EA, Euro 6 EB, Euro 6 EC, Euro 6 N, Euro 6 O, Euro 6 P, Euro 6 PLN, Euro 6 Q, Euro 6 R, Euro 6 S, Euro 6 T, Euro 6 U, Euro 6 V, Euro 6 W, Euro 6 X, Euro 6 Y, Euro 6 ZA, Euro 6 ZB, Euro 6 ZC, Euro 6 ZD, Euro 6 ZE, Euro 6 ZF, Euro 6 ZG, Euro 6 ZH, Euro 6 ZI, Euro 6 ZJ, Euro 6 ZK, Euro 6 ZL, Euro 7 FE, Euro 7 FL, Euro 7 GE, Euro 7 GL, Euro 7 GS, Euro 7 GT, Euro 7 HE, Euro 7 HL, Euro 7 HS, Euro 7 HT, Euro 7 TE, Euro 7 TL, Euro 7 TS, Euro 7 TT, Euro V G, Euro V K, EEV, EEV K, Euro I, Euro II, Euro III, Euro IV, Euro V, Euro VI, Euro VI A, Euro VI B, Euro VI C, Euro VI D, Euro VI E, Euro VI E+, AX, AY, AZ, ZX, ZY, ZZ</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/IdentifikatorPlacering.xsd"/>
+	<xs:element name="PlaceringMaerkeGruppeStruktur" type="dmr:PlaceringMaerkeGruppeStrukturType"/>
+	<xs:complexType name="PlaceringMaerkeGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:IdentifikatorPlaceringMaerkeType"/>
+			<xs:element ref="dmr:IdentifikatorPlaceringMaerkeKoeretoejDel"/>
+			<xs:element ref="dmr:IdentifikatorPlaceringMaerkeKoeretoejDelSide" minOccurs="0"/>
+			<xs:element ref="dmr:IdentifikatorPlaceringMaerkeKoeretoejDelSideSektion" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

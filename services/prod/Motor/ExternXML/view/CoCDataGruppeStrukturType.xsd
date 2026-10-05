@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejInformation.xsd"/>
+	<xs:include schemaLocation="../class/CoCData.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejKategorier.xsd"/>
+	<xs:include schemaLocation="../class/IVIDokument.xsd"/>
+	<xs:include schemaLocation="../class/EmissionDetaljer.xsd"/>
+	<xs:include schemaLocation="../class/KonstruktionDetaljer.xsd"/>
+	<xs:include schemaLocation="../class/Fabrikant.xsd"/>
+	<xs:include schemaLocation="../class/VisuelBeskrivelse.xsd"/>
+	<xs:include schemaLocation="../view/GenerelKonstruktionGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/MasseGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/VectoGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/AkselGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/PlaceringMaerkeGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/PaahaengBremseTypeGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/KarrosseriGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/MekaniskTilkoblingGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/EnergiOmformerGruppeStrukturType.xsd"/>
+	<xs:element name="CoCDataGruppeStruktur" type="dmr:CoCDataGruppeStrukturType"/>
+	<xs:complexType name="CoCDataGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejInformationEUIVIStelNummer"/>
+			<xs:element ref="dmr:KoeretoejInformationTypeGodkendelseType"/>
+			<xs:element ref="dmr:CoCDataFaerdiggoerelseEtape"/>
+			<xs:element ref="dmr:KoeretoejInformationType"/>
+			<xs:element ref="dmr:KoeretoejInformationEUVariant"/>
+			<xs:element ref="dmr:CoCDataEuVersion"/>
+			<xs:element ref="dmr:KoeretoejKategorierEuKoeretoejKlasse"/>
+			<xs:element ref="dmr:IVIDokumentProduktionDato" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejInformationEUTypegodkendelseNummer"/>
+			<xs:element ref="dmr:KoeretoejInformationMaksimalHastighed" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejKategorierInnovativTeknik" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejInformationStoersteEffekt" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejKategorierUdelukkendeElektriskKoeretoej" minOccurs="0"/>
+			<xs:element ref="dmr:EmissionDetaljerEuronorm" minOccurs="0"/>
+			<xs:element ref="dmr:EmissionDetaljerInnovativTeknikCO2Sparet" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejKategorierHybridKlasse" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejKategorierBraendstofType" minOccurs="0"/>
+			<xs:element ref="dmr:GenerelKonstruktionGruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KonstruktionDetaljerAkselAfstand" minOccurs="0"/>
+			<xs:element ref="dmr:MasseGruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:VectoGruppeStruktur" minOccurs="0"/>
+			<xs:element name="AkselTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:AkselGruppeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FabrikantTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:FabrikantNavn" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PlaceringMaerkeTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:PlaceringMaerkeGruppeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PaahaengBremseTypeTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:PaahaengBremseTypeGruppeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FarveTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:VisuelBeskrivelseFarve" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="KarrosseriTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:KarrosseriGruppeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="MekaniskTilkoblingTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:MekaniskTilkoblingGruppeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EnergiOmformerTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="dmr:EnergiOmformerGruppeStruktur" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

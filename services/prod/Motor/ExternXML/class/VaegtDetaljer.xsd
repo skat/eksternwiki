@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder vægtoplysninger for et køretøj, herunder køreklar vægt og teknisk tilladt totalvægt.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHel6Min0Type.xsd"/>
+	<xs:element name="VaegtDetaljerKoereKlarVaegt" type="dmr:TalHel6Min0Type">
+		<xs:annotation>
+			<xs:documentation>Den egentlige køreklare vægt af køretøjet målt i kg [Informationen findes i CoC dokumentets felt 13.2.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VaegtDetaljerTekniskTilladtTotalvaegt" type="dmr:TalHel6Min0Type">
+		<xs:annotation>
+			<xs:documentation>Teknisk tilladt totalvægt af køretøjet målt i kg [Informationen findes i CoC dokumentets felt 16.1.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

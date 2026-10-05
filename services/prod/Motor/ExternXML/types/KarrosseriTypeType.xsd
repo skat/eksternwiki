@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="KarrosseriTypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+			<xs:enumeration value="AA"/>
+			<xs:enumeration value="AB"/>
+			<xs:enumeration value="AC"/>
+			<xs:enumeration value="AD"/>
+			<xs:enumeration value="AE"/>
+			<xs:enumeration value="AF"/>
+			<xs:enumeration value="AG"/>
+			<xs:enumeration value="BA"/>
+			<xs:enumeration value="BB"/>
+			<xs:enumeration value="BC"/>
+			<xs:enumeration value="BD"/>
+			<xs:enumeration value="BE"/>
+			<xs:enumeration value="BX"/>
+			<xs:enumeration value="CA"/>
+			<xs:enumeration value="CB"/>
+			<xs:enumeration value="CC"/>
+			<xs:enumeration value="CD"/>
+			<xs:enumeration value="CE"/>
+			<xs:enumeration value="CF"/>
+			<xs:enumeration value="CG"/>
+			<xs:enumeration value="CH"/>
+			<xs:enumeration value="CI"/>
+			<xs:enumeration value="CJ"/>
+			<xs:enumeration value="CX"/>
+			<xs:enumeration value="DA"/>
+			<xs:enumeration value="DB"/>
+			<xs:enumeration value="DC"/>
+			<xs:enumeration value="DE"/>
+			<xs:enumeration value="DF"/>
+			<xs:enumeration value="DG"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

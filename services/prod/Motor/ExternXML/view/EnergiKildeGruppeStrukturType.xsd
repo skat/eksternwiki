@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/MotorDetaljer.xsd"/>
+	<xs:include schemaLocation="../class/MotorEmissionsDetaljer.xsd"/>
+	<xs:include schemaLocation="../view/StoejNiveauGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/EffektGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TestWLTPType1GruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TestWLTPCO2GruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TestWLTPBraendstofforbrugGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TestWLTPElektriskRaekkeviddeGruppeStrukturType.xsd"/>
+	<xs:include schemaLocation="../view/TestWLTPEnergiForbrugGruppeStrukturType.xsd"/>
+	<xs:element name="EnergiKildeGruppeStruktur" type="dmr:EnergiKildeGruppeStrukturType"/>
+	<xs:complexType name="EnergiKildeGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:MotorDetaljerEnergiKilde"/>
+			<xs:element ref="dmr:MotorEmissionsDetaljerRoegTaethed" minOccurs="0"/>
+			<xs:element ref="dmr:StoejNiveauGruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:EffektGruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:TestWLTPType1GruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:TestWLTPCO2GruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:TestWLTPBraendstofforbrugGruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:TestWLTPElektriskRaekkeviddeGruppeStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:TestWLTPEnergiForbrugGruppeStruktur" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

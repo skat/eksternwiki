@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder oplysninger om skammelbelastning</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHel6Min0Type.xsd"/>
+	<xs:include schemaLocation="../types/TalHel5Min0Type.xsd"/>
+	<xs:element name="MekaniskTilkoblingSkammelBelastningSVaerdi" type="dmr:TalHel6Min0Type">
+		<xs:annotation>
+			<xs:documentation>Skammelbelastning S værdi</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MekaniskTilkoblingSkammelBelastningMotorcykel" type="dmr:TalHel5Min0Type">
+		<xs:annotation>
+			<xs:documentation>Skammelbelastning for motorcykler</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

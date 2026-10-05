@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder karosserioplysninger for et køretøj, herunder karrosseritype.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/KarrosseriTypeType.xsd"/>
+	<xs:element name="KarosseriDetaljerKarrosseriType" type="dmr:KarrosseriTypeType">
+		<xs:annotation>
+			<xs:documentation>Kode for karosseri. [Informationen findes i CoC dokumentets felt 38. Værdisættet er:  AA = Sedan AB = Hatchback AC = Stationcar AD = Coupé AE = Cabriolet AF = Multifunktioneltkøretøj  AG = Stationcar-pickup BA = Lastbil BB = Varevogn BC = Sættevognstrækker BD = Vejtraktor BE = Pick-up BX = Chassis med førerhus eller delvis førerhus CA = Enkeltdækkerbus CB = Dobbeltdækkerbus CC = Enkeltdækkerledbus CD = Dobbeltdækkerledbus CE = Enkeltdækkerlavgulvsbus CF = Dobbeltdækkerlavgulvsbus CG = Enkeltdækker leddelt lavgulvsbus CH = Dobbeltdækker leddelt lavgulvsbus CI = Åben enkeltdækkerbus CJ = Åben dobbeltdækkerbus CX = Buschassis DA = Sættevogn DB = Almindelig påhængsvogn DC = Kærre DE = Påhængskøretøj med stiv trækstang DF = Leddelt sættevogn DG = Leddelt påhængskøretøj med stiv trækstang </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

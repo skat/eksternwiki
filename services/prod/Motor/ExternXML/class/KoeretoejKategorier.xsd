@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder kategoriseringsoplysninger for et køretøj, herunder køretøjskategori, brændstoftype, køretøjsgruppe, hybridklasse og køretøjsundergruppe samt indikatorer for innovative teknikker og emissionsforhold. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/EUKoeretoejKlasseType.xsd"/>
+	<xs:include schemaLocation="../types/BraendstofTypeType.xsd"/>
+	<xs:include schemaLocation="../types/KoeretoejGruppeType.xsd"/>
+	<xs:include schemaLocation="../types/HybridKlasseType.xsd"/>
+	<xs:include schemaLocation="../types/Tekst50Type.xsd"/>
+	<xs:element name="KoeretoejKategorierInnovativTeknik" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Indikator for om eco-innovationer er monteret. [Informationen findes i CoC dokumentets felt 49.3.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierTungtNulEmissionKoeretoej" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Feltet indikerer om køretøjet er et tungt nulemissionskøretøj. Informationen findes i CoC dokumentets felt 49.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierUdelukkendeElektriskKoeretoej" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Dette felt angiver, om køretøjet kun kan drives af elektriske motorer. [Informationen findes i CoC dokumentets felt 23.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierEuKoeretoejKlasse" type="dmr:EUKoeretoejKlasseType">
+		<xs:annotation>
+			<xs:documentation>Køretøjets EU typegodkendte køretøjsklasse. [Informationen findes i CoC dokumentets felt 0.4.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierBraendstofType" type="dmr:BraendstofTypeType">
+		<xs:annotation>
+			<xs:documentation>Brændstofstype. [Informationen findes i CoC dokumentets felt 26.1. Værdisættet er B=Bi fuel; D=Dual Fuel; F=Flex fuel; M=Mono fuel]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierKoeretoejGruppe" type="dmr:KoeretoejGruppeType">
+		<xs:annotation>
+			<xs:documentation>Køretøjsgruppe Informationen findes i CoC dokumentets felt 49.7 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierHybridKlasse" type="dmr:HybridKlasseType">
+		<xs:annotation>
+			<xs:documentation>Klasse for hybridkøretøj [Informationen findes i CoC dokumentets felt 23.1. Værdisættet er OVC-HEV=Off vehicle-charging hybrid electric vehicle; NOVC-HEV= Not off-vehicle charging hybrid electric vehicle; OVC-FCHV= Off-vehicle charging fuel cell hybrid vehicle; NOVC-FCHV= Not off-vehicle charging fuel cell hybrid vehicle]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejKategorierKoeretoejUndergruppe" type="dmr:Tekst50Type">
+		<xs:annotation>
+			<xs:documentation>Køretøjsundergruppe Informationen findes i CoC dokumentets felt 49.7 Værdisæt er: 4-UD, 4-RD, 4-LH, 9-RD, 9-LH, 5-RD, 5-LH, 10-RD, 10-LH, P31 SD, P31 DD, P32 SD, P32 DD, P33 SD, P33 DD, P34 SD, P34 DD, P35 SD, P35 DD, P36 SD, P36 DD, P37 SD, P37 DD, P38 SD, P38 DD, P39 SD, P39 DD, P40 SD, P40 DD</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

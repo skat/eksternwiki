@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder oplysninger om skammelbelastning</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tekst35Min1Type.xsd"/>
+	<xs:include schemaLocation="../types/FaerdiggoerelseEtapeType.xsd"/>
+	<xs:element name="CoCDataEuVersion" type="dmr:Tekst35Min1Type">
+		<xs:annotation>
+			<xs:documentation>Køretøjets EU-version [Angiver køretøjets EU-version, som angives i CoC dokumentets felt 0.2., sammen med Type og EU-variant.] (mindre endVersionstoerre end i IVI-meddelelsen) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CoCDataFaerdiggoerelseEtape" type="dmr:FaerdiggoerelseEtapeType">
+		<xs:annotation>
+			<xs:documentation>Køretøjets FærdiggørelseEtape. [Angiver køretøjets færdiggørelsesstadie. Værdisættet er C=Complete (komplet køretøj), I=Incomplete (ukomplet køretøj), V=Completed (færdiggjort komplet køretøj). (mindre endStageOfCompletionstoerre end i IVI-meddelelsen) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

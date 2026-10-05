@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/AkselDetaljer.xsd"/>
+	<xs:include schemaLocation="../class/Daek.xsd"/>
+	<xs:element name="AkselGruppeStruktur" type="dmr:AkselGruppeStrukturType"/>
+	<xs:complexType name="AkselGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:AkselDetaljerAkselNummer"/>
+			<xs:element ref="dmr:AkselDetaljerTraekkendeAksel" minOccurs="0"/>
+			<xs:element ref="dmr:AkselDetaljerSporVidde" minOccurs="0"/>
+			<xs:element ref="dmr:AkselDetaljerVejVenligLuftAffjedring" minOccurs="0"/>
+			<xs:element ref="dmr:AkselDetaljerTekniskTilladtStoerstAkselTryk" minOccurs="0"/>
+			<xs:element name="TilladtStoersteAkselTrykUnderKoerselTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TilladtStoersteAkselTrykUnderKoerselGruppe" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:AkselDetaljerTilladtStoersteAkselTrykUnderKoersel" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DaekAkselTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DaekAkselGruppe" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:DaekStoerrelse" minOccurs="0"/>
+									<xs:element ref="dmr:DaekBelastningIndeks" minOccurs="0"/>
+									<xs:element ref="dmr:DaekHastighedKode" minOccurs="0"/>
+									<xs:element ref="dmr:DaekFaelgStoerrelse" minOccurs="0"/>
+									<xs:element ref="dmr:DaekFaelgIndpresningDybde" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Repræsenterer et IVI-dokument tilknyttet et køretøj. Indeholder reference-id, versionsnummer, versionsdatotid, produktionsdato samt angivelse af om dokumentet er oprettet manuelt. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/IVIReferenceIDType.xsd"/>
+	<xs:include schemaLocation="../types/TalHel2Min0Type.xsd"/>
+	<xs:include schemaLocation="../types/DatoTidType.xsd"/>
+	<xs:include schemaLocation="../types/DatoType.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/IVIVersionNummerXSDType.xsd"/>
+	<xs:element name="IVIDokumentIVIReferenceID" type="dmr:IVIReferenceIDType">
+		<xs:annotation>
+			<xs:documentation>Unik reference-id for den indledende køretøjsinformation (UUID v4 format). Nummeret findes i headeren på IVI meddelelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IVIDokumentIVIVersionNummer" type="dmr:TalHel2Min0Type">
+		<xs:annotation>
+			<xs:documentation>Versionsnummer for den indledende køretøjsinformation. Nummeret findes i headeren på IVI meddelelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IVIDokumentIVIVersionDatoTid" type="dmr:DatoTidType">
+		<xs:annotation>
+			<xs:documentation>Dato og tidspunkt for versionen af den indledende køretøjsinformation. Nummeret findes i headeren på IVI meddelelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IVIDokumentProduktionDato" type="dmr:DatoType">
+		<xs:annotation>
+			<xs:documentation>Dato for fremstilling af køretøjet. [Informationen findes i CoC dokumentets felt 0.11.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IVIDokumentOprettetManueltIndtastet" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Indikator der viser om køretøjets IVI data er manuelt angivet af importøren der har oprettet denne.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IVIDokumentIVIVersionNummerXSD" type="dmr:IVIVersionNummerXSDType">
+		<xs:annotation>
+			<xs:documentation>Versionsnummer for XSD-skemaet. Nummeret findes i headeren på IVI meddelelsen.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

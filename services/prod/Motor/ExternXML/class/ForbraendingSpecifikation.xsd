@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder forbrændingsspecifikationer for et køretøjs motor, herunder cylinderantal, slagvolumen, maksimal effekt og WLTP-brændstofforbrug. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHel2Min0Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal7Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal6Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal5Decimaler3Type.xsd"/>
+	<xs:element name="ForbraendingSpecifikationAntalCylindre" type="dmr:TalHel2Min0Type">
+		<xs:annotation>
+			<xs:documentation>Antal cylindere. Informationen findes i CoC dokumentets felt 24.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ForbraendingSpecifikationSlagvolumen" type="dmr:Tal7Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>Slagvolumen målt i cm3 Informationen findes i CoC dokumentets felt 25.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ForbraendingSpecifikationStoersteEffektForbraending" type="dmr:Tal6Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>Maksimal netto forbrændingseffekt målt i kW Information findes i CoC dokumentets felt 27.1 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ForbraendingSpecifikationWLTPBraendstofForbrugMaaltForbraending" type="dmr:Tal5Decimaler3Type">
+		<xs:annotation>
+			<xs:documentation>WLTP brændstofforbrug kombineret, målt i l/100km eller m3/100km eller kg/100km afhængig af brændstofstype Information findes i CoC dokumentets felt 49.1 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ForbraendingSpecifikationWLTPBraendstofForbrugMaaltPluginHybrid" type="dmr:Tal5Decimaler3Type">
+		<xs:annotation>
+			<xs:documentation>WLTP brændstofforbrug vægtet kombineret, målt i l/100km eller m3/100km eller kg/100km afhængig af brændstofstype Information findes i CoC dokumentets felt 49.4 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

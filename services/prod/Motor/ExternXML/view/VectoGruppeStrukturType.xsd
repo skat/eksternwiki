@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/KoeretoejKategorier.xsd"/>
+	<xs:include schemaLocation="../class/KonstruktionDetaljer.xsd"/>
+	<xs:include schemaLocation="../class/EmissionDetaljer.xsd"/>
+	<xs:element name="VectoGruppeStruktur" type="dmr:VectoGruppeStrukturType"/>
+	<xs:complexType name="VectoGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:KoeretoejKategorierTungtNulEmissionKoeretoej" minOccurs="0"/>
+			<xs:element ref="dmr:KonstruktionDetaljerNytteLastVaerdi" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejKategorierKoeretoejGruppe" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejKategorierKoeretoejUndergruppe" minOccurs="0"/>
+			<xs:element ref="dmr:KonstruktionDetaljerVolumenOrientering" minOccurs="0"/>
+			<xs:element ref="dmr:EmissionDetaljerSpecifikCO2Emission" minOccurs="0"/>
+			<xs:element ref="dmr:EmissionDetaljerEffektivitetForholdTon" minOccurs="0"/>
+			<xs:element ref="dmr:EmissionDetaljerEffektivitetForholdM3" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

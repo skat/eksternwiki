@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder detaljerede oplysninger om en enkelt aksel på et køretøj, herunder akselnummer, sporvidde, angivelse af trækaksel, teknisk tilladt akselbelastning samt vejvenlig luftaffjedring.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/TalHel2Min0Type.xsd"/>
+	<xs:include schemaLocation="../types/TalHel4Min0Type.xsd"/>
+	<xs:include schemaLocation="../types/BolskType.xsd"/>
+	<xs:include schemaLocation="../types/TalHel5Min0Type.xsd"/>
+	<xs:element name="AkselDetaljerAkselNummer" type="dmr:TalHel2Min0Type">
+		<xs:annotation>
+			<xs:documentation>Akselnummer. Anvendes til at kunne identificere et aksel. Angives fra front til bag startende med nr. 1.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AkselDetaljerSporVidde" type="dmr:TalHel4Min0Type">
+		<xs:annotation>
+			<xs:documentation>Sporvidden på akslen målt i mm Informationen findes i CoC dokumentets felt 30 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AkselDetaljerTraekkendeAksel" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Indikator for om akselet er et trækkende aksel Informationen findes i CoC dokumentets felt 3 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AkselDetaljerTekniskTilladtStoerstAkselTryk" type="dmr:TalHel5Min0Type">
+		<xs:annotation>
+			<xs:documentation>Teknisk tilladt vægt på aksel målt i kg Informationen findes i CoC dokumentets felt 16.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AkselDetaljerVejVenligLuftAffjedring" type="dmr:BolskType">
+		<xs:annotation>
+			<xs:documentation>Indikator for luftaffjedring eller tilsvarende på drivaksel Informationen findes i CoC dokumentets felt 33 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AkselDetaljerTilladtStoersteAkselTrykUnderKoersel" type="dmr:TalHel5Min0Type">
+		<xs:annotation>
+			<xs:documentation>Maksimalt tilladt lastet masse på aksel i drift målt i kg. Informationen findes i CoC dokumentets felt 17.2. (mindre endInServiceMaximumPermissibleLadenMassAxlestoerre end i IVI-meddelelsen) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

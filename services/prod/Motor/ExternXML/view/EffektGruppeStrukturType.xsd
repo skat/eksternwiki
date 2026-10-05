@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/ForbraendingSpecifikation.xsd"/>
+	<xs:include schemaLocation="../class/ElektriskSpecifikation.xsd"/>
+	<xs:element name="EffektGruppeStruktur" type="dmr:EffektGruppeStrukturType"/>
+	<xs:complexType name="EffektGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:ForbraendingSpecifikationStoersteEffektForbraending" minOccurs="0"/>
+			<xs:element ref="dmr:ElektriskSpecifikationStoersteEffektElektrisk" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

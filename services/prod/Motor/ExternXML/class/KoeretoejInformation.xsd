@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Beskriver køretøjet med grundlæggende oplysninger, herunder stelnummer, type, variant og version. KøretøjInformation fungerer som omdrejningspunktet i modellen, hvorfra relationer til specialiserede underentiteter udgår.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tal5Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal6Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/Tekst15Min1Type.xsd"/>
+	<xs:include schemaLocation="../types/Tekst25Min1Type.xsd"/>
+	<xs:include schemaLocation="../types/Tekst35Min1Type.xsd"/>
+	<xs:include schemaLocation="../types/TypeGodkendelseTypeType.xsd"/>
+	<xs:include schemaLocation="../types/EUIVIStelNummerType.xsd"/>
+	<xs:element name="KoeretoejInformationMaksimalHastighed" type="dmr:Tal5Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>Maksimal hastighed I km/t [Informationen findes i CoC dokumentets felt 29.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationStoersteEffekt" type="dmr:Tal6Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>Største effekt I kW, bliver brugt til batteridrevne elektriske køretøjer (BEV - Battery Electric Vehicle). [Informationen findes i CoC dokumentets felt 27.3.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationType" type="dmr:Tekst15Min1Type">
+		<xs:annotation>
+			<xs:documentation>Køretøjstype. [Angiver køretøjets type, som angives i CoC dokumentets felt 0.2., sammen med EU-variant og EU-version]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationEUVariant" type="dmr:Tekst25Min1Type">
+		<xs:annotation>
+			<xs:documentation>Køretøjets EU-variant [Angiver køretøjets EU-variant, som angives i CoC dokumentets felt 0.2., sammen med Type og EU-version. Skal ikke forveksles med variant fra mærke,model, variant.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationEUVersion" type="dmr:Tekst35Min1Type">
+		<xs:annotation>
+			<xs:documentation>Køretøjets EU typegodkendte køretøjsklasse. [Informationen findes i CoC dokumentets felt 0.4.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationTypeGodkendelseType" type="dmr:TypeGodkendelseTypeType">
+		<xs:annotation>
+			<xs:documentation>Angiver hvilken typegodkendelses type som er anvendt. NSS = National Smal Series type approval, ESS= European Smal Series type approval, EU= European whole vehicle type approval. (mindre endTypeApprovalTypestoerre end i IVI-meddelsen.) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationEUTypegodkendelseNummer" type="dmr:Tekst35Min1Type">
+		<xs:annotation>
+			<xs:documentation>Typegodkendelsesnummer (mindre endTypeApprovalNumberstoerre end i IVI-meddelelsen) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="KoeretoejInformationEUIVIStelNummer" type="dmr:EUIVIStelNummerType">
+		<xs:annotation>
+			<xs:documentation>Køretøjets EU IVI stelnummer. Kaldes VIN (Vehicle Identification Number). Findes i felt 0.10 på CoC dokumentet.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

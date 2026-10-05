@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="PaahaengBremseTypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+			<xs:enumeration value="BRK"/>
+			<xs:enumeration value="HBD"/>
+			<xs:enumeration value="INB"/>
+			<xs:enumeration value="PNB"/>
+			<xs:enumeration value="PNH"/>
+			<xs:enumeration value="UNB"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

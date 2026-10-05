@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/PaahaengsvognVaegtDetaljer.xsd"/>
+	<xs:element name="PaahaengBremseTypeGruppeStruktur" type="dmr:PaahaengBremseTypeGruppeStrukturType"/>
+	<xs:complexType name="PaahaengBremseTypeGruppeStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:PaahaengsvognVaegtDetaljerPaahaengBremseType" minOccurs="0"/>
+			<xs:element name="PaahaengKarrosseriTypeTabelListe" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PaahaengKarrosseriTypeGruppe" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="dmr:PaahaengsvognVaegtDetaljerPaahaengKarrosseriType" minOccurs="0"/>
+									<xs:element ref="dmr:PaahaengsvognVaegtDetaljerVognTogVaegt" minOccurs="0"/>
+									<xs:element ref="dmr:PaahaengsvognVaegtDetaljerTekniskTilladtPaahaengVaegt" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="Tal9Decimaler5Type">
+		<xs:restriction base="xs:decimal">
+			<xs:maxInclusive value="9999.99999"/>
+			<xs:minInclusive value="0"/>
+			<xs:totalDigits value="9"/>
+			<xs:fractionDigits value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

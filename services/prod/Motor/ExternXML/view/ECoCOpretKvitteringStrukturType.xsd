@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation/>
+		<xs:documentation>r28496</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../class/Koeretoej.xsd"/>
+	<xs:include schemaLocation="../class/KoeretoejRegistreringGrundlag.xsd"/>
+	<xs:include schemaLocation="../view/ECoCIVIHeaderInformationStrukturType.xsd"/>
+	<xs:element name="ECoCOpretKvitteringStruktur" type="dmr:ECoCOpretKvitteringStrukturType"/>
+	<xs:complexType name="ECoCOpretKvitteringStrukturType">
+		<xs:sequence>
+			<xs:element ref="dmr:ECoCIVIHeaderInformationStruktur" minOccurs="0"/>
+			<xs:element ref="dmr:KoeretoejIdent"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagKode"/>
+			<xs:element ref="dmr:KoeretoejRegistreringGrundlagIdent" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

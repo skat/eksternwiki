@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="EnergiKildeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+			<xs:enumeration value="21"/>
+			<xs:enumeration value="22"/>
+			<xs:enumeration value="30"/>
+			<xs:enumeration value="40"/>
+			<xs:enumeration value="44"/>
+			<xs:enumeration value="50"/>
+			<xs:enumeration value="55"/>
+			<xs:enumeration value="60"/>
+			<xs:enumeration value="90"/>
+			<xs:enumeration value="91"/>
+			<xs:enumeration value="95"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

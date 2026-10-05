@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder støjmålingsoplysninger for et køretøjs motor, herunder støj ved forbikoersel, standstøj og tilhørende omdrejningstal. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tal5Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/TalHel5Min0Type.xsd"/>
+	<xs:element name="StoejDetaljerStoejVedForbiKoersel" type="dmr:Tal5Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>Støjniveau ved forbikørsel målt i db(A)  Informationen findes i CoC dokumentets felt 46.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StoejDetaljerStandStoej" type="dmr:Tal5Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>En registrering af køretøjets støjniveau målt i db(A). Informationen findes i CoC dokumentets felt 46.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StoejDetaljerStandStoejVedOmdrejningstal" type="dmr:TalHel5Min0Type">
+		<xs:annotation>
+			<xs:documentation>Omdrejningstallet der har været anvendt ved måling af standstøj, for køretøjet målt i antal omdrejninger per minut. (min-1). Informationen findes i CoC dokumentets felt 46.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

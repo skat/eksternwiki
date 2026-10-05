@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder specifikationer for et køretøjs elektriske motor, herunder maksimal effekt, WLTP-rækkevidde og energiforbrug for både rene elbiler og plugin-hybridbiler. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tal6Decimaler2Type.xsd"/>
+	<xs:include schemaLocation="../types/TalHel5Min0Type.xsd"/>
+	<xs:include schemaLocation="../types/Tal7Decimaler2Type.xsd"/>
+	<xs:element name="ElektriskSpecifikationStoersteEffektElektrisk" type="dmr:Tal6Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>Maksimal netto elektrisk effekt målt i kW Information findes i CoC dokumentets felt 27.3 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ElektriskSpecifikationWLTPElektriskRaekkevidde" type="dmr:TalHel5Min0Type">
+		<xs:annotation>
+			<xs:documentation>Elektrisk rækkevidde målt i km Information findes i CoC dokumentets felt 49.2 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ElektriskSpecifikationWLTPElektriskForbrugMaalt" type="dmr:Tal7Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP energiforbrug rent elektrisk kombineret målt i Wh/km Information findes i CoC dokumentets felt 49.1 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ElektriskSpecifikationWLTPElektriskForbrugMaaltPluginHybrid" type="dmr:Tal7Decimaler2Type">
+		<xs:annotation>
+			<xs:documentation>WLTP energiforbrug eksternt opladet vægtet kombineret målt i Wh/km Information findes i CoC dokumentets felt 49.4 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ElektriskSpecifikationWLTPElektriskRaekkeviddePluginHybrid" type="dmr:TalHel5Min0Type">
+		<xs:annotation>
+			<xs:documentation>WLTP fuld elektrisk rækkevidde ved opladning igennem hybridmotor målt i km Information findes i CoC dokumentets felt 49.5 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Angiver placeringen af identifikationsmærker på et køretøj, herunder mærketype, køretøjsdel, side og sektion. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/MaerkeKoeretoejDelSideType.xsd"/>
+	<xs:include schemaLocation="../types/MaerkeKoeretoejDelSideSektionType.xsd"/>
+	<xs:include schemaLocation="../types/MaerkeKoeretoejDelType.xsd"/>
+	<xs:include schemaLocation="../types/MaerkeTypeType.xsd"/>
+	<xs:element name="IdentifikatorPlaceringMaerkeKoeretoejDelSide" type="dmr:MaerkeKoeretoejDelSideType">
+		<xs:annotation>
+			<xs:documentation>Side af køretøjsdel for placeringsopmærkningens placering. [Informationen findes i CoC dokumentets felt 0.6.. Værdisættet er FRONTSIDE (Front); LEFTSIDE (Venstre side); RIGHTSIDE (Højre side); BACKSIDE (Bagende)]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IdentifikatorPlaceringMaerkeKoeretoejDelSideSektion" type="dmr:MaerkeKoeretoejDelSideSektionType">
+		<xs:annotation>
+			<xs:documentation>Sektion af side af køretøjsdel for placeringsopmærkningens placering. [Informationen findes i CoC dokumentets felt 0.6.  Værdisættet er BACK (bag), FRONT (front), LEFT (venstre), MIDDLE (midte), RIGHT (højre)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IdentifikatorPlaceringMaerkeKoeretoejDel" type="dmr:MaerkeKoeretoejDelType">
+		<xs:annotation>
+			<xs:documentation>Køretøjsdel for PlaceringMærkeTypen [Informationen findes i CoC dokumentets felt 0.6.. Værdisættet er ENGCT = Engine compartment (motorrum) PASCT = Passenger compartment (passagerkabine) LUGCT = Luggage compartment (baggagerum) INSPL = Instrument panel (instrumentpanel) DRAWB = Drawbar (trækstang) CHASS = Chassis (chassis) APILR = A-pillar (A-stolpe) BPILR = B-pillar (B-stolpe) CPILR = C-pillar (C-stolpe) DPILR = D-pillar (D-stolpe) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IdentifikatorPlaceringMaerkeType" type="dmr:MaerkeTypeType">
+		<xs:annotation>
+			<xs:documentation>Felt om tilhørende placeringsopmærkning omhandler stelnummer (VIN) eller fabrikationsplade (STAT) [Informationen findes i CoC dokumentets felt 0.6.]</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

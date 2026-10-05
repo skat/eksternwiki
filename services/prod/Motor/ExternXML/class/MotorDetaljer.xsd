@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dmr="http://skat.dk/dmr/2007/05/31/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://skat.dk/dmr/2007/05/31/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Indeholder detaljerede oplysninger om et køretøjs motor, herunder energikilde, motorkode samt referencer til støjdetaljer, motoremissionsdetaljer, forbrændingsspecifikation og elektrisk specifikation. </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="../types/Tekst40Min1Type.xsd"/>
+	<xs:include schemaLocation="../types/EnergiKildeType.xsd"/>
+	<xs:element name="MotorDetaljerMotorKode" type="dmr:Tekst40Min1Type">
+		<xs:annotation>
+			<xs:documentation>Motorkode. Køretøjets motorkode er en unik identifikator for motorens specifikationer. Motorkoden består af tal og bogstaver, der identificerer en motors specifikke type, ydeevne, brændstoftype og cylinderantal mm. Motorkoden anvendes blandt andet under synskontrol til kontrol af, hvorvidt motoren er blevet udskiftet. Informationen findes i CoC dokumentets felt 21.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MotorDetaljerEnergiKilde" type="dmr:EnergiKildeType">
+		<xs:annotation>
+			<xs:documentation>Drivkraften på køretøjet. Informationen findes i CoC dokumentets felt 26. Værdisættet er: 10 = Petrol 11 = Petrol E5 12 = Petrol E10 15 = Ethanol 16 = Ethanol E85 19 = Mixture 20 = Diesel 21 = Biodiesel 22 = ED95 30 = LPG 40 = CNG 44 = Biomethane 50 = Hydrogen 55 = H2NG 60 = LNG 90 = Other 91 = Compressed air 95 = Electricity </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>
