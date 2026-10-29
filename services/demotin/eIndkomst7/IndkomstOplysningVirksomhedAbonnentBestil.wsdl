@@ -128,17 +128,14 @@ Servicen anvendes normalt ikke til pr√¶sentation af oplysninger via en brugergr√
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="Binding3" type="fase2:IndkomstOplysningVirksomhedAbonnentBestil_AfslutServicePortType">
-		<wsp:PolicyReference URI="#wss10_anonymous_with_cert_policy"/>
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<wsdl:operation name="getIndkomstOplysningVirksomhedAbonnentBestilAfslut_I">
 			<soap:operation soapAction="urn:#getIndkomstOplysningVirksomhedAbonnentBestilAfslut_I"/>
 			<wsdl:input>
 				<soap:body parts="Request" use="literal"/>
-				<wsp:PolicyReference URI="#WSS10Anonymous_with_Certificates_input_policy"/>
 			</wsdl:input>
 			<wsdl:output>
 				<soap:body parts="Response" use="literal"/>
-				<wsp:PolicyReference URI="#WSS10anonymous_with_certs_output_policy"/>
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
